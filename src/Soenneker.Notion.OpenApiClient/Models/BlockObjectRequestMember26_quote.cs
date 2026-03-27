@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BlockObjectRequestMember25_quote : IParsable
+    public partial class BlockObjectRequestMember26_quote : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The children property</summary>
@@ -33,12 +33,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember25_quote"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26_quote"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember25_quote CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26_quote CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember25_quote();
+            return new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26_quote();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -20,13 +20,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Object { get; set; }
 #endif
-        /// <summary>The template property</summary>
+        /// <summary>The toggle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26_template? Template { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest? Toggle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26_template Template { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest Toggle { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "object", n => { Object = n.GetStringValue(); } },
-                { "template", n => { Template = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26_template>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26_template.CreateFromDiscriminatorValue); } },
+                { "toggle", n => { Toggle = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26_template>("template", Template);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>("toggle", Toggle);
             writer.WriteStringValue("type", Type);
         }
     }

@@ -12,13 +12,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class BlockObjectWithSingleLevelOfChildrenRequestMember21 : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The numbered_list_item property</summary>
+        /// <summary>The bulleted_list_item property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest? NumberedListItem { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest? BulletedListItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest NumberedListItem { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest BulletedListItem { get; set; }
 #endif
         /// <summary>The object property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "numbered_list_item", n => { NumberedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue); } },
+                { "bulleted_list_item", n => { BulletedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -66,7 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>("numbered_list_item", NumberedListItem);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>("bulleted_list_item", BulletedListItem);
             writer.WriteStringValue("object", Object);
             writer.WriteStringValue("type", Type);
         }

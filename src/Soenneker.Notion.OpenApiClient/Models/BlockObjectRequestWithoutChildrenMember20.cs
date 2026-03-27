@@ -12,14 +12,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class BlockObjectRequestWithoutChildrenMember20 : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The bulleted_list_item property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest? BulletedListItem { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest BulletedListItem { get; set; }
-#endif
         /// <summary>The object property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +19,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public string Object { get; set; }
+#endif
+        /// <summary>The paragraph property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconRequest? Paragraph { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconRequest Paragraph { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,8 +54,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bulleted_list_item", n => { BulletedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
+                { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconRequest.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -66,8 +66,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest>("bulleted_list_item", BulletedListItem);
             writer.WriteStringValue("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconRequest>("paragraph", Paragraph);
             writer.WriteStringValue("type", Type);
         }
     }

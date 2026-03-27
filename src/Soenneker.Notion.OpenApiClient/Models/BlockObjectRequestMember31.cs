@@ -9,16 +9,24 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BlockObjectWithSingleLevelOfChildrenRequestMember28_synced_block_synced_from : IParsable
+    public partial class BlockObjectRequestMember31 : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The block_id property</summary>
+        /// <summary>The object property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockId { get; set; }
+        public string? Object { get; set; }
 #nullable restore
 #else
-        public string BlockId { get; set; }
+        public string Object { get; set; }
+#endif
+        /// <summary>The synced_block property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31_synced_block? SyncedBlock { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31_synced_block SyncedBlock { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,12 +39,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember28_synced_block_synced_from"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember28_synced_block_synced_from CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember28_synced_block_synced_from();
+            return new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +54,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "block_id", n => { BlockId = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
+                { "synced_block", n => { SyncedBlock = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31_synced_block>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31_synced_block.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -57,7 +66,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("block_id", BlockId);
+            writer.WriteStringValue("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31_synced_block>("synced_block", SyncedBlock);
             writer.WriteStringValue("type", Type);
         }
     }

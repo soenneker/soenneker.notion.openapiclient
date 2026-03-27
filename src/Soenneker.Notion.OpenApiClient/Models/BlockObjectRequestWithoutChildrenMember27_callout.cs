@@ -9,21 +9,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class BlockObjectRequestMember26_to_do : IParsable
+    public partial class BlockObjectRequestWithoutChildrenMember27_callout : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The checked property</summary>
-        public bool? Checked { get; set; }
-        /// <summary>The children property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequest>? Children { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequest> Children { get; set; }
-#endif
         /// <summary>One of: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`, `default_background`, `gray_background`, `brown_background`, `orange_background`, `yellow_background`, `green_background`, `blue_background`, `purple_background`, `pink_background`, `red_background`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ApiColor? Color { get; set; }
+        /// <summary>The icon property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest? Icon { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest Icon { get; set; }
+#endif
         /// <summary>The rich_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,12 +33,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26_to_do"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_callout"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26_to_do CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_callout CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26_to_do();
+            return new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_callout();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,9 +48,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "checked", n => { Checked = n.GetBoolValue(); } },
-                { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "color", n => { Color = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ApiColor>(); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest.CreateFromDiscriminatorValue); } },
                 { "rich_text", n => { RichText = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -63,9 +60,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("checked", Checked);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequest>("children", Children);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ApiColor>("color", Color);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>("icon", Icon);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("rich_text", RichText);
         }
     }

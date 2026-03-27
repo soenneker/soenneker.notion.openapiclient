@@ -12,14 +12,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class BlockObjectRequestMember29 : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The callout property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_callout? Callout { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_callout Callout { get; set; }
-#endif
         /// <summary>The object property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,6 +19,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public string Object { get; set; }
+#endif
+        /// <summary>The template property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_template? Template { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_template Template { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,8 +54,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "callout", n => { Callout = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_callout>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_callout.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
+                { "template", n => { Template = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_template>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_template.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -66,8 +66,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_callout>("callout", Callout);
             writer.WriteStringValue("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29_template>("template", Template);
             writer.WriteStringValue("type", Type);
         }
     }

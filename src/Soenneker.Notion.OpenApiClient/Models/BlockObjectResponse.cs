@@ -162,6 +162,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse Heading3 { get; set; }
 #endif
+        /// <summary>The heading_4 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse? Heading4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse Heading4 { get; set; }
+#endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The image property</summary>
@@ -227,10 +235,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The paragraph property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse? Paragraph { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse? Paragraph { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse Paragraph { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse Paragraph { get; set; }
 #endif
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -389,6 +397,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "heading_1", n => { Heading1 = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
                 { "heading_2", n => { Heading2 = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
                 { "heading_3", n => { Heading3 = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
+                { "heading_4", n => { Heading4 = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "image", n => { Image = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
@@ -399,7 +408,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "meeting_notes", n => { MeetingNotes = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse.CreateFromDiscriminatorValue); } },
                 { "numbered_list_item", n => { NumberedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
-                { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
+                { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse.CreateFromDiscriminatorValue); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse.CreateFromDiscriminatorValue); } },
                 { "pdf", n => { Pdf = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
                 { "quote", n => { Quote = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
@@ -443,6 +452,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse>("heading_1", Heading1);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse>("heading_2", Heading2);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse>("heading_3", Heading3);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorResponse>("heading_4", Heading4);
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("image", Image);
             writer.WriteBoolValue("in_trash", InTrash);
@@ -453,7 +463,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse>("meeting_notes", MeetingNotes);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse>("numbered_list_item", NumberedListItem);
             writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>("paragraph", Paragraph);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse>("paragraph", Paragraph);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("pdf", Pdf);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>("quote", Quote);

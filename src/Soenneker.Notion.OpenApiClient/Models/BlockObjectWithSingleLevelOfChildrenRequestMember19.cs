@@ -12,6 +12,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class BlockObjectWithSingleLevelOfChildrenRequestMember19 : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The heading_4 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithSingleLevelOfChildrenRequest? Heading4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithSingleLevelOfChildrenRequest Heading4 { get; set; }
+#endif
         /// <summary>The object property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -19,14 +27,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public string Object { get; set; }
-#endif
-        /// <summary>The paragraph property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest? Paragraph { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest Paragraph { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,8 +54,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "heading_4", n => { Heading4 = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
-                { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -66,8 +66,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithSingleLevelOfChildrenRequest>("heading_4", Heading4);
             writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>("paragraph", Paragraph);
             writer.WriteStringValue("type", Type);
         }
     }

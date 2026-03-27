@@ -12,6 +12,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class BlockObjectRequestWithoutChildrenMember27 : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The callout property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_callout? Callout { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_callout Callout { get; set; }
+#endif
         /// <summary>The object property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -19,14 +27,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public string Object { get; set; }
-#endif
-        /// <summary>The synced_block property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_synced_block? SyncedBlock { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_synced_block SyncedBlock { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,8 +54,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "callout", n => { Callout = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_callout>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_callout.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
-                { "synced_block", n => { SyncedBlock = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_synced_block>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_synced_block.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -66,8 +66,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_callout>("callout", Callout);
             writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27_synced_block>("synced_block", SyncedBlock);
             writer.WriteStringValue("type", Type);
         }
     }

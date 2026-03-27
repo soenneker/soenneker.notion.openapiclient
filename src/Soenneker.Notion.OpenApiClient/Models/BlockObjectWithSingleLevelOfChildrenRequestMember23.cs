@@ -20,13 +20,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Object { get; set; }
 #endif
-        /// <summary>The table property</summary>
+        /// <summary>The quote property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren? Table { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest? Quote { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren Table { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest Quote { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "object", n => { Object = n.GetStringValue(); } },
-                { "table", n => { Table = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren>(global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren.CreateFromDiscriminatorValue); } },
+                { "quote", n => { Quote = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren>("table", Table);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>("quote", Quote);
             writer.WriteStringValue("type", Type);
         }
     }

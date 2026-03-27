@@ -20,13 +20,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Object { get; set; }
 #endif
-        /// <summary>The to_do property</summary>
+        /// <summary>The table property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24_to_do? ToDo { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren? Table { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24_to_do ToDo { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren Table { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "object", n => { Object = n.GetStringValue(); } },
-                { "to_do", n => { ToDo = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24_to_do>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24_to_do.CreateFromDiscriminatorValue); } },
+                { "table", n => { Table = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren>(global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24_to_do>("to_do", ToDo);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren>("table", Table);
             writer.WriteStringValue("type", Type);
         }
     }

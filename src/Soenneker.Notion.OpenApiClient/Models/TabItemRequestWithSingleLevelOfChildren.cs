@@ -23,10 +23,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The paragraph property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest? Paragraph { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ParagraphWithSingleLevelOfChildrenRequest? Paragraph { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest Paragraph { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ParagraphWithSingleLevelOfChildrenRequest Paragraph { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "object", n => { Object = n.GetStringValue(); } },
-                { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue); } },
+                { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParagraphWithSingleLevelOfChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.ParagraphWithSingleLevelOfChildrenRequest.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithSingleLevelOfChildrenRequest>("paragraph", Paragraph);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParagraphWithSingleLevelOfChildrenRequest>("paragraph", Paragraph);
             writer.WriteStringValue("type", Type);
         }
     }
