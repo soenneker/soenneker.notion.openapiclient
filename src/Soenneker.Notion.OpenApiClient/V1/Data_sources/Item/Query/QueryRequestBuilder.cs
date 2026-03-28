@@ -48,6 +48,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_429">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_503">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostResponse?> PostAsQueryPostResponseAsync(global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,6 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
                 { "429", global::Soenneker.Notion.OpenApiClient.Models.Error_api_429.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.Error_api_500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.Error_api_503.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -87,6 +89,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_429">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_503">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
         [Obsolete("This method is obsolete. Use PostAsQueryPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +112,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
                 { "429", global::Soenneker.Notion.OpenApiClient.Models.Error_api_429.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.Error_api_500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.Error_api_503.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
