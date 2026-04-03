@@ -68,11 +68,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_GetResponse?> GetAsWithPage_GetResponseAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_GetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_GetResponse> GetAsWithPage_GetResponseAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_GetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -89,46 +89,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_GetResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieve a page
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_409">When receiving a 409 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_429">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_500">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_503">When receiving a 503 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsWithPage_GetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Notion.OpenApiClient.Models.Error_api_400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Notion.OpenApiClient.Models.Error_api_401.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Notion.OpenApiClient.Models.Error_api_403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Notion.OpenApiClient.Models.Error_api_404.CreateFromDiscriminatorValue },
-                { "409", global::Soenneker.Notion.OpenApiClient.Models.Error_api_409.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Notion.OpenApiClient.Models.Error_api_429.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Notion.OpenApiClient.Models.Error_api_500.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Notion.OpenApiClient.Models.Error_api_503.CreateFromDiscriminatorValue },
-                { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update page
@@ -148,11 +108,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_PatchResponse?> PatchAsWithPage_PatchResponseAsync(global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_PatchResponse?> PatchAsync(global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_PatchResponse> PatchAsWithPage_PatchResponseAsync(global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_PatchResponse> PatchAsync(global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -170,48 +130,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_PatchResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Update page
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_409">When receiving a 409 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_429">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_500">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_503">When receiving a 503 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
-        [Obsolete("This method is obsolete. Use PatchAsWithPage_PatchResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response?> PatchAsync(global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response> PatchAsync(global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Notion.OpenApiClient.Models.Error_api_400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Notion.OpenApiClient.Models.Error_api_401.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Notion.OpenApiClient.Models.Error_api_403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Notion.OpenApiClient.Models.Error_api_404.CreateFromDiscriminatorValue },
-                { "409", global::Soenneker.Notion.OpenApiClient.Models.Error_api_409.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Notion.OpenApiClient.Models.Error_api_429.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Notion.OpenApiClient.Models.Error_api_500.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Notion.OpenApiClient.Models.Error_api_503.CreateFromDiscriminatorValue },
-                { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a page
@@ -355,22 +273,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithPage_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_ItemRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithPage_ItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -425,81 +327,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse>(null, PageObjectResponse, PartialPageObjectResponse);
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithPage_Response : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse? PageObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse PageObjectResponse { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse? PartialPageObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse PartialPageObjectResponse { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPage_ItemRequestBuilder.WithPage_Response();
-                if("pageObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PageObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse();
-                }
-                else if("partialPageObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PartialPageObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(PageObjectResponse != null)
-                {
-                    return PageObjectResponse.GetFieldDeserializers();
-                }
-                else if(PartialPageObjectResponse != null)
-                {
-                    return PartialPageObjectResponse.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(PageObjectResponse != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse>(null, PageObjectResponse);
-                }
-                else if(PartialPageObjectResponse != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse>(null, PartialPageObjectResponse);
-                }
             }
         }
     }

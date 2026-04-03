@@ -69,11 +69,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Users
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersGetResponse?> GetAsUsersGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersGetResponse> GetAsUsersGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -90,46 +90,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Users
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersGetResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Users.UsersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// List all users
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Users.UsersResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_404">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_409">When receiving a 409 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_429">When receiving a 429 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_500">When receiving a 500 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_503">When receiving a 503 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsUsersGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "400", global::Soenneker.Notion.OpenApiClient.Models.Error_api_400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Notion.OpenApiClient.Models.Error_api_401.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Notion.OpenApiClient.Models.Error_api_403.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Notion.OpenApiClient.Models.Error_api_404.CreateFromDiscriminatorValue },
-                { "409", global::Soenneker.Notion.OpenApiClient.Models.Error_api_409.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Notion.OpenApiClient.Models.Error_api_429.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Notion.OpenApiClient.Models.Error_api_500.CreateFromDiscriminatorValue },
-                { "503", global::Soenneker.Notion.OpenApiClient.Models.Error_api_503.CreateFromDiscriminatorValue },
-                { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Users.UsersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all users
@@ -176,14 +136,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Users
             [QueryParameter("start_cursor")]
             public string StartCursor { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UsersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>
-        {
         }
     }
 }
