@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Soenneker.Notion.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -31,14 +30,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
 #else
         public global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsPostRequestBody.CommentsPostRequestBody_display_name DisplayName { get; set; }
 #endif
-        /// <summary>An array of rich text objects that represent the content of the comment.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>? RichText { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest> RichText { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -66,7 +57,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
             {
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsPostRequestBody_attachments>(global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsPostRequestBody_attachments.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsPostRequestBody.CommentsPostRequestBody_display_name>(global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsPostRequestBody.CommentsPostRequestBody_display_name.CreateFromDiscriminatorValue); } },
-                { "rich_text", n => { RichText = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -78,7 +68,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsPostRequestBody_attachments>("attachments", Attachments);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsPostRequestBody.CommentsPostRequestBody_display_name>("display_name", DisplayName);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("rich_text", RichText);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
