@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// The user who created the data source.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class PartialUserObjectResponse : IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
