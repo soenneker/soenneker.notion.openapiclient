@@ -34,6 +34,45 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments.Item
         {
         }
         /// <summary>
+        /// Delete a comment
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_DeleteResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_409">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_429">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_503">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_DeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_DeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Notion.OpenApiClient.Models.Error_api_400.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Notion.OpenApiClient.Models.Error_api_401.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Notion.OpenApiClient.Models.Error_api_403.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Notion.OpenApiClient.Models.Error_api_404.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Notion.OpenApiClient.Models.Error_api_409.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Notion.OpenApiClient.Models.Error_api_429.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Notion.OpenApiClient.Models.Error_api_500.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Notion.OpenApiClient.Models.Error_api_503.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_DeleteResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Retrieve a comment
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_GetResponse"/></returns>
@@ -73,6 +112,66 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_GetResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Update a comment
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_409">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_429">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_503">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_api_504">When receiving a 504 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchResponse?> PatchAsync(global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchResponse> PatchAsync(global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Notion.OpenApiClient.Models.Error_api_400.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Notion.OpenApiClient.Models.Error_api_401.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Notion.OpenApiClient.Models.Error_api_403.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Notion.OpenApiClient.Models.Error_api_404.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Notion.OpenApiClient.Models.Error_api_409.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Notion.OpenApiClient.Models.Error_api_429.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Notion.OpenApiClient.Models.Error_api_500.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Notion.OpenApiClient.Models.Error_api_503.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.Notion.OpenApiClient.Models.Error_api_504.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Delete a comment
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// Retrieve a comment
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -92,6 +191,28 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments.Item
             return requestInfo;
         }
         /// <summary>
+        /// Update a comment
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder"/></returns>
@@ -99,6 +220,81 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments.Item
         public global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithComment_DeleteResponse : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse? CommentObjectResponse { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse CommentObjectResponse { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse? PartialCommentObjectResponse { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse PartialCommentObjectResponse { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_DeleteResponse"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_DeleteResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_DeleteResponse();
+                if("commentObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CommentObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse();
+                }
+                else if("partialCommentObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PartialCommentObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(CommentObjectResponse != null)
+                {
+                    return CommentObjectResponse.GetFieldDeserializers();
+                }
+                else if(PartialCommentObjectResponse != null)
+                {
+                    return PartialCommentObjectResponse.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(CommentObjectResponse != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse>(null, CommentObjectResponse);
+                }
+                else if(PartialCommentObjectResponse != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse>(null, PartialCommentObjectResponse);
+                }
+            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse"/>
@@ -132,6 +328,156 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments.Item
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_GetResponse();
+                if("commentObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.CommentObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse();
+                }
+                else if("partialCommentObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.PartialCommentObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(CommentObjectResponse != null)
+                {
+                    return CommentObjectResponse.GetFieldDeserializers();
+                }
+                else if(PartialCommentObjectResponse != null)
+                {
+                    return PartialCommentObjectResponse.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(CommentObjectResponse != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse>(null, CommentObjectResponse);
+                }
+                else if(PartialCommentObjectResponse != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse>(null, PartialCommentObjectResponse);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember2"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithComment_PatchRequestBody : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember1? WithCommentPatchRequestBodyMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember1 WithCommentPatchRequestBodyMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember2? WithCommentPatchRequestBodyMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember2 WithCommentPatchRequestBodyMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchRequestBody"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchRequestBody();
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.WithCommentPatchRequestBodyMember1 = new global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember1();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.WithCommentPatchRequestBodyMember2 = new global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember2();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(WithCommentPatchRequestBodyMember1 != null)
+                {
+                    return WithCommentPatchRequestBodyMember1.GetFieldDeserializers();
+                }
+                else if(WithCommentPatchRequestBodyMember2 != null)
+                {
+                    return WithCommentPatchRequestBodyMember2.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(WithCommentPatchRequestBodyMember1 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember1>(null, WithCommentPatchRequestBodyMember1);
+                }
+                else if(WithCommentPatchRequestBodyMember2 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_PatchRequestBodyMember2>(null, WithCommentPatchRequestBodyMember2);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithComment_PatchResponse : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse? CommentObjectResponse { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse CommentObjectResponse { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse? PartialCommentObjectResponse { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Notion.OpenApiClient.Models.PartialCommentObjectResponse PartialCommentObjectResponse { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchResponse"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Notion.OpenApiClient.V1.Comments.Item.WithComment_ItemRequestBuilder.WithComment_PatchResponse();
                 if("commentObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.CommentObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse();
