@@ -39,6 +39,14 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
 #else
         public string Object { get; set; }
 #endif
+        /// <summary>The request_status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse? RequestStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse RequestStatus { get; set; }
+#endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +85,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsGetResponse.CommentsGetResponse_next_cursor>(global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsGetResponse.CommentsGetResponse_next_cursor.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
+                { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>(global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -92,6 +101,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsGetResponse.CommentsGetResponse_next_cursor>("next_cursor", NextCursor);
             writer.WriteStringValue("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>("request_status", RequestStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse>("results", Results);
             writer.WriteStringValue("type", Type);
         }

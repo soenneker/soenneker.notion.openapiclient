@@ -34,6 +34,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Object { get; set; }
 #endif
+        /// <summary>Set to `{ type: &apos;incomplete&apos;, incomplete_reason: &apos;query_result_limit_reached&apos; }` when the view&apos;s underlying data source has more rows matching this query than the server-side pagination depth limit allows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse? RequestStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse RequestStatus { get; set; }
+#endif
         /// <summary>The page results for this page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +77,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor>(global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
+                { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>(global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse>(global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "total_count", n => { TotalCount = n.GetDoubleValue(); } },
                 { "view_id", n => { ViewId = n.GetGuidValue(); } },
@@ -86,6 +95,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor>("next_cursor", NextCursor);
             writer.WriteStringValue("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>("request_status", RequestStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse>("results", Results);
             writer.WriteDoubleValue("total_count", TotalCount);
             writer.WriteGuidValue("view_id", ViewId);

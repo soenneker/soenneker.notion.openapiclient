@@ -16259,6 +16259,28 @@
           "one_month_from_now"
         ]
       },
+      "requestStatusResponse": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "complete",
+              "incomplete"
+            ],
+            "description": "Whether the result set is complete or incomplete. `incomplete` means the response does not include all rows that match the query parameters (e.g. due to a server-side pagination depth limit)."
+          },
+          "incomplete_reason": {
+            "type": "string",
+            "const": "query_result_limit_reached",
+            "description": "Why the result set is incomplete. Only present when `type` is `incomplete`."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "type"
+        ]
+      },
       "richTextArrayBasedPropertyValueResponse": {
         "type": "object",
         "properties": {
@@ -20883,6 +20905,10 @@
           "has_more": {
             "type": "boolean",
             "description": "Whether there are more results."
+          },
+          "request_status": {
+            "$ref": "#/components/schemas/requestStatusResponse",
+            "description": "Set to `{ type: 'incomplete', incomplete_reason: 'query_result_limit_reached' }` when the view's underlying data source has more rows matching this query than the server-side pagination depth limit allows."
           }
         },
         "additionalProperties": false,
@@ -27210,6 +27236,27 @@
                           }
                         ]
                       }
+                    },
+                    "request_status": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "complete",
+                            "incomplete"
+                          ]
+                        },
+                        "incomplete_reason": {
+                          "type": "string",
+                          "enum": [
+                            "query_result_limit_reached"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
                     }
                   },
                   "required": [
@@ -28496,6 +28543,27 @@
                           }
                         ]
                       }
+                    },
+                    "request_status": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "complete",
+                            "incomplete"
+                          ]
+                        },
+                        "incomplete_reason": {
+                          "type": "string",
+                          "enum": [
+                            "query_result_limit_reached"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "type"
+                      ]
                     }
                   },
                   "required": [
@@ -29073,6 +29141,9 @@
                     },
                     "comment": {
                       "$ref": "#/components/schemas/emptyObject"
+                    },
+                    "request_status": {
+                      "$ref": "#/components/schemas/requestStatusResponse"
                     }
                   },
                   "required": [
@@ -29904,6 +29975,9 @@
                     },
                     "file_upload": {
                       "$ref": "#/components/schemas/emptyObject"
+                    },
+                    "request_status": {
+                      "$ref": "#/components/schemas/requestStatusResponse"
                     }
                   },
                   "required": [
@@ -30733,6 +30807,9 @@
                     },
                     "view": {
                       "$ref": "#/components/schemas/emptyObject"
+                    },
+                    "request_status": {
+                      "$ref": "#/components/schemas/requestStatusResponse"
                     }
                   },
                   "required": [
@@ -31637,6 +31714,9 @@
                     },
                     "page": {
                       "$ref": "#/components/schemas/emptyObject"
+                    },
+                    "request_status": {
+                      "$ref": "#/components/schemas/requestStatusResponse"
                     }
                   },
                   "required": [

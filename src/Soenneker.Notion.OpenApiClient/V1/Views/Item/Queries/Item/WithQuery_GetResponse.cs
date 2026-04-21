@@ -39,6 +39,14 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Page { get; set; }
 #endif
+        /// <summary>The request_status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse? RequestStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse RequestStatus { get; set; }
+#endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +85,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item
                 { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQuery_GetResponse.WithQuery_GetResponse_next_cursor>(global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQuery_GetResponse.WithQuery_GetResponse_next_cursor.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "page", n => { Page = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>(global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -92,6 +101,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQuery_GetResponse.WithQuery_GetResponse_next_cursor>("next_cursor", NextCursor);
             writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("page", Page);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>("request_status", RequestStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse>("results", Results);
             writer.WriteStringValue("type", Type);
         }

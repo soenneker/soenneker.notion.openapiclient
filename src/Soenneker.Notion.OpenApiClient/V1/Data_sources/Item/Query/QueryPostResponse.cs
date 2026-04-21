@@ -41,6 +41,14 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject PageOrDataSource { get; set; }
 #endif
+        /// <summary>The request_status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostResponse_request_status? RequestStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostResponse_request_status RequestStatus { get; set; }
+#endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +94,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "page_or_data_source", n => { PageOrDataSource = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostResponse_request_status>(global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostResponse_request_status.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -101,6 +110,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
             writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("page_or_data_source", PageOrDataSource);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostResponse_request_status>("request_status", RequestStatus);
             writer.WriteObjectValue<UntypedNode>("results", Results);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
