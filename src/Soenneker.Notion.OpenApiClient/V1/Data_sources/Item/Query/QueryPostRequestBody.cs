@@ -36,7 +36,13 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         public List<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostRequestBody.QueryPostRequestBody_sorts> Sorts { get; set; }
 #endif
         /// <summary>The start_cursor property</summary>
-        public Guid? StartCursor { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StartCursor { get; set; }
+#nullable restore
+#else
+        public string StartCursor { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,7 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
                 { "page_size", n => { PageSize = n.GetDoubleValue(); } },
                 { "result_type", n => { ResultType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostRequestBody_result_type>(); } },
                 { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostRequestBody.QueryPostRequestBody_sorts>(global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostRequestBody.QueryPostRequestBody_sorts.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "start_cursor", n => { StartCursor = n.GetGuidValue(); } },
+                { "start_cursor", n => { StartCursor = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +81,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
             writer.WriteDoubleValue("page_size", PageSize);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostRequestBody_result_type>("result_type", ResultType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostRequestBody.QueryPostRequestBody_sorts>("sorts", Sorts);
-            writer.WriteGuidValue("start_cursor", StartCursor);
+            writer.WriteStringValue("start_cursor", StartCursor);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryPostRequestBody_filterMember1"/>

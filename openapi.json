@@ -27158,8 +27158,7 @@
                     ]
                   },
                   "start_cursor": {
-                    "type": "string",
-                    "format": "uuid"
+                    "type": "string"
                   },
                   "page_size": {
                     "type": "number"
