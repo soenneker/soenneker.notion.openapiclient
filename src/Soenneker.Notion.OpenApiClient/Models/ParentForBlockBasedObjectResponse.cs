@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.DataSourceParentResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageIdParentForBlockBasedObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.DataSourceParentResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageIdParentForBlockBasedObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ParentForBlockBasedObjectResponse : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse? AgentIdParentForBlockBasedObjectResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse AgentIdParentForBlockBasedObjectResponse { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +71,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse();
-            if("blockIdParentForBlockBasedObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("agentIdParentForBlockBasedObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AgentIdParentForBlockBasedObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse();
+            }
+            else if("blockIdParentForBlockBasedObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BlockIdParentForBlockBasedObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponse();
             }
@@ -91,7 +103,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(BlockIdParentForBlockBasedObjectResponse != null)
+            if(AgentIdParentForBlockBasedObjectResponse != null)
+            {
+                return AgentIdParentForBlockBasedObjectResponse.GetFieldDeserializers();
+            }
+            else if(BlockIdParentForBlockBasedObjectResponse != null)
             {
                 return BlockIdParentForBlockBasedObjectResponse.GetFieldDeserializers();
             }
@@ -120,7 +136,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(BlockIdParentForBlockBasedObjectResponse != null)
+            if(AgentIdParentForBlockBasedObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse>(null, AgentIdParentForBlockBasedObjectResponse);
+            }
+            else if(BlockIdParentForBlockBasedObjectResponse != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponse>(null, BlockIdParentForBlockBasedObjectResponse);
             }

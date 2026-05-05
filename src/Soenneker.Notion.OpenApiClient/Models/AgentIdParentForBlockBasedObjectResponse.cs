@@ -7,31 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// The user who created the data source.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PartialUserObjectResponse : IParsable
+    #pragma warning disable CS1591
+    public partial class AgentIdParentForBlockBasedObjectResponse : IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
-        /// <summary>Always `user`</summary>
+        /// <summary>The ID of the parent agent.</summary>
+        public Guid? AgentId { get; set; }
+        /// <summary>The parent type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Object { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public string Object { get; set; }
+        public string Type { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse();
+            return new global::Soenneker.Notion.OpenApiClient.Models.AgentIdParentForBlockBasedObjectResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,8 +40,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "agent_id", n => { AgentId = n.GetGuidValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,8 +51,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("id", Id);
-            writer.WriteStringValue("object", Object);
+            writer.WriteGuidValue("agent_id", AgentId);
+            writer.WriteStringValue("type", Type);
         }
     }
 }
