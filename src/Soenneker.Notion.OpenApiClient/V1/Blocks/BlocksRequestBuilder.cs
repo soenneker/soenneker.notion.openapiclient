@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Notion.OpenApiClient.V1.Blocks.Item;
+using Soenneker.Notion.OpenApiClient.V1.Blocks.Meeting_notes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,6 +16,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BlocksRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The meeting_notes property</summary>
+        public global::Soenneker.Notion.OpenApiClient.V1.Blocks.Meeting_notes.Meeting_notesRequestBuilder Meeting_notes
+        {
+            get => new global::Soenneker.Notion.OpenApiClient.V1.Blocks.Meeting_notes.Meeting_notesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Notion.OpenApiClient.v1.blocks.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.WithBlock_ItemRequestBuilder"/></returns>
