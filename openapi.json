@@ -32002,7 +32002,7 @@
           {
             "lang": "javascript",
             "label": "TypeScript SDK",
-            "source": "import { Client } from \"@notionhq/client\"\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.meetingNotes.query({\n  filter: {\n    operator: \"and\",\n    filters: [\n      {\n        property: \"title\",\n        filter: {\n          operator: \"string_contains\",\n          value: {\n            type: \"exact\",\n            value: \"Weekly sync\"\n          }\n        }\n      },\n      {\n        property: \"attendees\",\n        filter: {\n          operator: \"is_not_empty\"\n        }\n      }\n    ]\n  },\n  sort: [\n    {\n      property: \"created_time\",\n      direction: \"descending\"\n    }\n  ],\n  limit: 10\n})"
+            "source": "import { Client } from \"@notionhq/client\"\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.blocks.meetingNotes.query({\n  filter: {\n    operator: \"and\",\n    filters: [\n      {\n        property: \"title\",\n        filter: {\n          operator: \"string_contains\",\n          value: {\n            type: \"exact\",\n            value: \"Weekly sync\"\n          }\n        }\n      },\n      {\n        property: \"attendees\",\n        filter: {\n          operator: \"is_not_empty\"\n        }\n      }\n    ]\n  },\n  sort: [\n    {\n      property: \"created_time\",\n      direction: \"descending\"\n    }\n  ],\n  limit: 10\n})"
           }
         ],
         "x-notion-docs-ref": "https://developers.notion.com/reference/query-meeting-notes",
