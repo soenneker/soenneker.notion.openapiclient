@@ -9,22 +9,22 @@ namespace Soenneker.Notion.OpenApiClient.V1.Search
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchPostRequestBody_sort : IParsable
+    public partial class SearchPostRequestBody_sortMember1 : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The direction property</summary>
-        public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort_direction? Direction { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1_direction? Direction { get; set; }
         /// <summary>The timestamp property</summary>
-        public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort_timestamp? Timestamp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1_timestamp? Timestamp { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort();
+            return new global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -34,8 +34,8 @@ namespace Soenneker.Notion.OpenApiClient.V1.Search
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort_direction>(); } },
-                { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort_timestamp>(); } },
+                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1_direction>(); } },
+                { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1_timestamp>(); } },
             };
         }
         /// <summary>
@@ -45,8 +45,8 @@ namespace Soenneker.Notion.OpenApiClient.V1.Search
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort_direction>("direction", Direction);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort_timestamp>("timestamp", Timestamp);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1_direction>("direction", Direction);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1_timestamp>("timestamp", Timestamp);
         }
     }
 }

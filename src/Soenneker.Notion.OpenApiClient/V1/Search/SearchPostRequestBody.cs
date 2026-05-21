@@ -33,10 +33,10 @@ namespace Soenneker.Notion.OpenApiClient.V1.Search
         /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort? Sort { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody.SearchPostRequestBody_sort? Sort { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort Sort { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody.SearchPostRequestBody_sort Sort { get; set; }
 #endif
         /// <summary>The start_cursor property</summary>
         public Guid? StartCursor { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Search
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_filter>(global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_filter.CreateFromDiscriminatorValue); } },
                 { "page_size", n => { PageSize = n.GetDoubleValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
-                { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort>(global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort.CreateFromDiscriminatorValue); } },
+                { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody.SearchPostRequestBody_sort>(global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody.SearchPostRequestBody_sort.CreateFromDiscriminatorValue); } },
                 { "start_cursor", n => { StartCursor = n.GetGuidValue(); } },
             };
         }
@@ -75,8 +75,65 @@ namespace Soenneker.Notion.OpenApiClient.V1.Search
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_filter>("filter", Filter);
             writer.WriteDoubleValue("page_size", PageSize);
             writer.WriteStringValue("query", Query);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sort>("sort", Sort);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody.SearchPostRequestBody_sort>("sort", Sort);
             writer.WriteGuidValue("start_cursor", StartCursor);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember2"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SearchPostRequestBody_sort : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1? SearchPostRequestBodySortMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1 SearchPostRequestBodySortMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember2? SearchPostRequestBodySortMember2 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember2 SearchPostRequestBodySortMember2 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody.SearchPostRequestBody_sort"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody.SearchPostRequestBody_sort CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody.SearchPostRequestBody_sort();
+                result.SearchPostRequestBodySortMember1 = new global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1();
+                result.SearchPostRequestBodySortMember2 = new global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember2();
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(SearchPostRequestBodySortMember1 != null || SearchPostRequestBodySortMember2 != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(SearchPostRequestBodySortMember1, SearchPostRequestBodySortMember2);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Search.SearchPostRequestBody_sortMember1>(null, SearchPostRequestBodySortMember1, SearchPostRequestBodySortMember2);
+            }
         }
     }
 }

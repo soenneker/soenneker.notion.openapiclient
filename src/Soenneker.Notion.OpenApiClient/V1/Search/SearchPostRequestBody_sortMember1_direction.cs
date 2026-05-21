@@ -5,7 +5,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Search
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum SearchPostRequestBody_sort_direction
+    public enum SearchPostRequestBody_sortMember1_direction
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "ascending")]
