@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// The user who created the data source.
+    /// User who created the page.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PartialUserObjectResponse : IParsable
