@@ -7,17 +7,16 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// All rich text objects contain an annotations object that sets the styling for the rich text.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class AnnotationResponse : IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>The bold property</summary>
         public bool? Bold { get; set; }
         /// <summary>The code property</summary>
         public bool? Code { get; set; }
-        /// <summary>One of: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`, `default_background`, `gray_background`, `brown_background`, `orange_background`, `yellow_background`, `green_background`, `blue_background`, `purple_background`, `pink_background`, `red_background`</summary>
+        /// <summary>&quot;One of: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`, `default_background`, `gray_background`, `brown_background`, `orange_background`, `yellow_background`, `green_background`, `blue_background`, `purple_background`, `pink_background`, `red_background`&quot;</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ApiColor? Color { get; set; }
         /// <summary>The italic property</summary>
         public bool? Italic { get; set; }

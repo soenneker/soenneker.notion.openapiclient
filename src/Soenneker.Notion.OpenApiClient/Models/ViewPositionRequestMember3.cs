@@ -15,14 +15,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Position type. &quot;after_view&quot; places the new view immediately after the specified view.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The ID of an existing view in the database. The new view will be placed after this view.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3_type? Type { get; set; }
+        /// <summary>The view_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ViewId { get; set; }
@@ -55,7 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3_type>(); } },
                 { "view_id", n => { ViewId = n.GetStringValue(); } },
             };
         }
@@ -66,7 +60,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3_type>("type", Type);
             writer.WriteStringValue("view_id", ViewId);
             writer.WriteAdditionalData(AdditionalData);
         }

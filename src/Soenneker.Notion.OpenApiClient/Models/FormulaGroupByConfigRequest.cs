@@ -33,13 +33,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string PropertyId { get; set; }
 #endif
         /// <summary>The property type for grouping.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by>(global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by.CreateFromDiscriminatorValue); } },
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest_type>(); } },
             };
         }
         /// <summary>
@@ -81,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by>("group_by", GroupBy);
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteStringValue("property_id", PropertyId);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -132,19 +126,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by();
-                if("formulaCheckboxSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("FormulaCheckboxSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.FormulaCheckboxSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest();
                 }
-                else if("formulaDateSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("FormulaDateSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.FormulaDateSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest();
                 }
-                else if("formulaNumberSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("FormulaNumberSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.FormulaNumberSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest();
                 }
-                else if("formulaTextSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("FormulaTextSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.FormulaTextSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest();
                 }

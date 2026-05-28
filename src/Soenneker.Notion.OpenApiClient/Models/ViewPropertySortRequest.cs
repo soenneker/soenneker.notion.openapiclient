@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Sort direction.</summary>
+        /// <summary>&quot;One of: `ascending`, `descending`&quot;</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.SortDirectionRequest? Direction { get; set; }
         /// <summary>Property name or ID to sort by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

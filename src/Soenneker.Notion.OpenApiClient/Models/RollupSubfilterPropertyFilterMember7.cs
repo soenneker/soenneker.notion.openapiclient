@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter? Date { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter Date { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember7"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("date", Date);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("date", Date);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -37,13 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceResponse();
-            if("dataSourceParentResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("DataSourceParentResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DataSourceParentResponse = new global::Soenneker.Notion.OpenApiClient.Models.DataSourceParentResponse();
             }
-            else if("databaseParentResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("DatabaseParentResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DatabaseParentResponse = new global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse();
             }

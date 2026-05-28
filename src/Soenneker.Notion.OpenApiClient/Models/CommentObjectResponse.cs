@@ -20,7 +20,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_attachments> Attachments { get; set; }
 #endif
-        /// <summary>The user who created the comment.</summary>
+        /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? CreatedBy { get; set; }
@@ -30,29 +30,23 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The time when the comment was created.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
-        /// <summary>The ID of the discussion thread this comment belongs to.</summary>
+        /// <summary>The discussion_id property</summary>
         public Guid? DiscussionId { get; set; }
         /// <summary>The display name of the comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_display_name? DisplayName { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName? DisplayName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_display_name DisplayName { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName DisplayName { get; set; }
 #endif
-        /// <summary>The ID of the comment.</summary>
+        /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The time when the comment was last edited.</summary>
         public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>The comment object type name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
-        /// <summary>The parent of the comment.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object? Object { get; set; }
+        /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse? Parent { get; set; }
@@ -90,10 +84,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "discussion_id", n => { DiscussionId = n.GetGuidValue(); } },
-                { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_display_name>(global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_display_name.CreateFromDiscriminatorValue); } },
+                { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName>(global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object>(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse.CreateFromDiscriminatorValue); } },
                 { "rich_text", n => { RichText = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -109,10 +103,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteGuidValue("discussion_id", DiscussionId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_display_name>("display_name", DisplayName);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName>("display_name", DisplayName);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse>("parent", Parent);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("rich_text", RichText);
         }

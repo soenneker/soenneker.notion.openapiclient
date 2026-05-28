@@ -17,19 +17,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The file_upload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest_file_upload? FileUpload { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestFileUpload? FileUpload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest_file_upload FileUpload { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestFileUpload FileUpload { get; set; }
 #endif
         /// <summary>Always `file_upload`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest"/> and sets the default values.
         /// </summary>
@@ -55,8 +49,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "file_upload", n => { FileUpload = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest_file_upload>(global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest_file_upload.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "file_upload", n => { FileUpload = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestFileUpload>(global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestFileUpload.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest_type>(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest_file_upload>("file_upload", FileUpload);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestFileUpload>("file_upload", FileUpload);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

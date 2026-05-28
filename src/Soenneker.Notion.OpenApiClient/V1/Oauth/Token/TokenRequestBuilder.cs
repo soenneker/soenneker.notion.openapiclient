@@ -36,33 +36,33 @@ namespace Soenneker.Notion.OpenApiClient.V1.Oauth.Token
         /// <summary>
         /// Exchange an authorization code for an access and refresh token
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_oauth_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_oauth_401">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_oauth_403">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.Error_oauth_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorOauth400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorOauth401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorOauth403">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorOauth500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostResponse?> PostAsync(global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder.TokenPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostResponse> PostAsync(global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder.TokenPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Notion.OpenApiClient.Models.Error_oauth_400.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Notion.OpenApiClient.Models.Error_oauth_401.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Notion.OpenApiClient.Models.Error_oauth_403.CreateFromDiscriminatorValue },
-                { "500", global::Soenneker.Notion.OpenApiClient.Models.Error_oauth_500.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Notion.OpenApiClient.Models.ErrorOauth400.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Notion.OpenApiClient.Models.ErrorOauth401.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Notion.OpenApiClient.Models.ErrorOauth403.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorOauth500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Exchange an authorization code for an access and refresh token
@@ -72,11 +72,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Oauth.Token
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder.TokenPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder.TokenPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,63 +94,6 @@ namespace Soenneker.Notion.OpenApiClient.V1.Oauth.Token
         public global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TokenPostRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember1? TokenPostRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember1 TokenPostRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember2? TokenPostRequestBodyMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember2 TokenPostRequestBodyMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder.TokenPostRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder.TokenPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenRequestBuilder.TokenPostRequestBody();
-                result.TokenPostRequestBodyMember1 = new global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember1();
-                result.TokenPostRequestBodyMember2 = new global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember2();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TokenPostRequestBodyMember1 != null || TokenPostRequestBodyMember2 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TokenPostRequestBodyMember1, TokenPostRequestBodyMember2);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Oauth.Token.TokenPostRequestBodyMember1>(null, TokenPostRequestBodyMember1, TokenPostRequestBodyMember2);
-            }
         }
     }
 }

@@ -17,13 +17,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The 0-based index of the existing row to add the widget to.</summary>
         public int? RowIndex { get; set; }
         /// <summary>Placement type. &quot;existing_row&quot; adds the widget to an existing row (side-by-side with other widgets).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2"/> and sets the default values.
         /// </summary>
@@ -50,7 +44,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "row_index", n => { RowIndex = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2_type>(); } },
             };
         }
         /// <summary>
@@ -61,7 +55,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("row_index", RowIndex);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

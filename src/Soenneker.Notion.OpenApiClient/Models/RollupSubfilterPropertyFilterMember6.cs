@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The relation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Relation { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter? Relation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Relation { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter Relation { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember6"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("relation", Relation);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter>("relation", Relation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

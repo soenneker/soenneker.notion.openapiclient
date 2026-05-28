@@ -12,18 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class DataSourceParentResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the data source&apos;s parent database.</summary>
+        /// <summary>The database_id property</summary>
         public Guid? DatabaseId { get; set; }
-        /// <summary>The ID of the parent data source.</summary>
+        /// <summary>The data_source_id property</summary>
         public Guid? DataSourceId { get; set; }
         /// <summary>The parent type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceParentResponse_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +38,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "data_source_id", n => { DataSourceId = n.GetGuidValue(); } },
                 { "database_id", n => { DatabaseId = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceParentResponse_type>(); } },
             };
         }
         /// <summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("database_id", DatabaseId);
             writer.WriteGuidValue("data_source_id", DataSourceId);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceParentResponse_type>("type", Type);
         }
     }
 }

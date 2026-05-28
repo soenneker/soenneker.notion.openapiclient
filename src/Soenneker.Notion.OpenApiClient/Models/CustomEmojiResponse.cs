@@ -7,13 +7,12 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// The custom emoji details for the icon.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class CustomEmojiResponse : IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>The ID of the custom emoji.</summary>
+        /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The name of the custom emoji.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

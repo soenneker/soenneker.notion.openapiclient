@@ -12,7 +12,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class DataSourceReferenceResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the data source.</summary>
+        /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The name of the data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

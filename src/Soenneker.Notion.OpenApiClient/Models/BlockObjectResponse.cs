@@ -33,10 +33,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The breadcrumb property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Breadcrumb { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb? Breadcrumb { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Breadcrumb { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb Breadcrumb { get; set; }
 #endif
         /// <summary>The bulleted_list_item property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The callout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_callout? Callout { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CalloutBlockObjectResponseCallout? Callout { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_callout Callout { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CalloutBlockObjectResponseCallout Callout { get; set; }
 #endif
         /// <summary>The child_database property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,10 +73,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_code? Code { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CodeBlockObjectResponseCode? Code { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_code Code { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CodeBlockObjectResponseCode Code { get; set; }
 #endif
         /// <summary>The column property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The column_list property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? ColumnList { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list? ColumnList { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject ColumnList { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list ColumnList { get; set; }
 #endif
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,10 +107,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The divider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Divider { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider? Divider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Divider { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider Divider { get; set; }
 #endif
         /// <summary>The embed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -203,10 +203,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The link_to_page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse.BlockObjectResponse_link_to_page? LinkToPage { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage? LinkToPage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse.BlockObjectResponse_link_to_page LinkToPage { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage LinkToPage { get; set; }
 #endif
         /// <summary>The meeting_notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -225,13 +225,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse NumberedListItem { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_object? Object { get; set; }
         /// <summary>The paragraph property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -267,18 +261,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The synced_block property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_synced_block? SyncedBlock { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock? SyncedBlock { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_synced_block SyncedBlock { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock SyncedBlock { get; set; }
 #endif
         /// <summary>The tab property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Tab { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab? Tab { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Tab { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab Tab { get; set; }
 #endif
         /// <summary>The table property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -291,10 +285,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The table_of_contents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_table_of_contents? TableOfContents { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents? TableOfContents { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_table_of_contents TableOfContents { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents TableOfContents { get; set; }
 #endif
         /// <summary>The table_row property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -307,18 +301,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The template property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_template? Template { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TemplateBlockObjectResponseTemplate? Template { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_template Template { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TemplateBlockObjectResponseTemplate Template { get; set; }
 #endif
         /// <summary>The to_do property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_to_do? ToDo { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ToDoBlockObjectResponseToDo? ToDo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_to_do ToDo { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ToDoBlockObjectResponseToDo ToDo { get; set; }
 #endif
         /// <summary>The toggle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -328,7 +322,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse Toggle { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -339,10 +333,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The unsupported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_unsupported? Unsupported { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedBlockObjectResponseUnsupported? Unsupported { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_unsupported Unsupported { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedBlockObjectResponseUnsupported Unsupported { get; set; }
 #endif
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -379,17 +373,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "audio", n => { Audio = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
                 { "bookmark", n => { Bookmark = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse.CreateFromDiscriminatorValue); } },
-                { "breadcrumb", n => { Breadcrumb = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "breadcrumb", n => { Breadcrumb = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb.CreateFromDiscriminatorValue); } },
                 { "bulleted_list_item", n => { BulletedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
-                { "callout", n => { Callout = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_callout>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_callout.CreateFromDiscriminatorValue); } },
+                { "callout", n => { Callout = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalloutBlockObjectResponseCallout>(global::Soenneker.Notion.OpenApiClient.Models.CalloutBlockObjectResponseCallout.CreateFromDiscriminatorValue); } },
                 { "child_database", n => { ChildDatabase = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse.CreateFromDiscriminatorValue); } },
                 { "child_page", n => { ChildPage = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse.CreateFromDiscriminatorValue); } },
-                { "code", n => { Code = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_code>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_code.CreateFromDiscriminatorValue); } },
+                { "code", n => { Code = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CodeBlockObjectResponseCode>(global::Soenneker.Notion.OpenApiClient.Models.CodeBlockObjectResponseCode.CreateFromDiscriminatorValue); } },
                 { "column", n => { Column = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnResponse>(global::Soenneker.Notion.OpenApiClient.Models.ColumnResponse.CreateFromDiscriminatorValue); } },
-                { "column_list", n => { ColumnList = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "column_list", n => { ColumnList = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list.CreateFromDiscriminatorValue); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "divider", n => { Divider = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "divider", n => { Divider = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider.CreateFromDiscriminatorValue); } },
                 { "embed", n => { Embed = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse.CreateFromDiscriminatorValue); } },
                 { "equation", n => { Equation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExpressionObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.ExpressionObjectResponse.CreateFromDiscriminatorValue); } },
                 { "file", n => { File = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionResponse.CreateFromDiscriminatorValue); } },
@@ -404,24 +398,24 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "link_preview", n => { LinkPreview = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlResponse.CreateFromDiscriminatorValue); } },
-                { "link_to_page", n => { LinkToPage = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse.BlockObjectResponse_link_to_page>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse.BlockObjectResponse_link_to_page.CreateFromDiscriminatorValue); } },
+                { "link_to_page", n => { LinkToPage = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage>(global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage.CreateFromDiscriminatorValue); } },
                 { "meeting_notes", n => { MeetingNotes = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse.CreateFromDiscriminatorValue); } },
                 { "numbered_list_item", n => { NumberedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_object>(); } },
                 { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse.CreateFromDiscriminatorValue); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse.CreateFromDiscriminatorValue); } },
                 { "pdf", n => { Pdf = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
                 { "quote", n => { Quote = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
-                { "synced_block", n => { SyncedBlock = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_synced_block>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_synced_block.CreateFromDiscriminatorValue); } },
-                { "tab", n => { Tab = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "synced_block", n => { SyncedBlock = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock>(global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock.CreateFromDiscriminatorValue); } },
+                { "tab", n => { Tab = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab.CreateFromDiscriminatorValue); } },
                 { "table", n => { Table = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableResponse.CreateFromDiscriminatorValue); } },
-                { "table_of_contents", n => { TableOfContents = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_table_of_contents>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_table_of_contents.CreateFromDiscriminatorValue); } },
+                { "table_of_contents", n => { TableOfContents = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents>(global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents.CreateFromDiscriminatorValue); } },
                 { "table_row", n => { TableRow = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableRowResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableRowResponse.CreateFromDiscriminatorValue); } },
-                { "template", n => { Template = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_template>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_template.CreateFromDiscriminatorValue); } },
-                { "to_do", n => { ToDo = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_to_do>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_to_do.CreateFromDiscriminatorValue); } },
+                { "template", n => { Template = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateBlockObjectResponseTemplate>(global::Soenneker.Notion.OpenApiClient.Models.TemplateBlockObjectResponseTemplate.CreateFromDiscriminatorValue); } },
+                { "to_do", n => { ToDo = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ToDoBlockObjectResponseToDo>(global::Soenneker.Notion.OpenApiClient.Models.ToDoBlockObjectResponseToDo.CreateFromDiscriminatorValue); } },
                 { "toggle", n => { Toggle = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "unsupported", n => { Unsupported = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_unsupported>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_unsupported.CreateFromDiscriminatorValue); } },
+                { "unsupported", n => { Unsupported = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedBlockObjectResponseUnsupported>(global::Soenneker.Notion.OpenApiClient.Models.UnsupportedBlockObjectResponseUnsupported.CreateFromDiscriminatorValue); } },
                 { "video", n => { Video = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
             };
         }
@@ -434,17 +428,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("audio", Audio);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse>("bookmark", Bookmark);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("breadcrumb", Breadcrumb);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb>("breadcrumb", Breadcrumb);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>("bulleted_list_item", BulletedListItem);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_callout>("callout", Callout);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalloutBlockObjectResponseCallout>("callout", Callout);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse>("child_database", ChildDatabase);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse>("child_page", ChildPage);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_code>("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CodeBlockObjectResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnResponse>("column", Column);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("column_list", ColumnList);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list>("column_list", ColumnList);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("divider", Divider);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider>("divider", Divider);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse>("embed", Embed);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExpressionObjectResponse>("equation", Equation);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionResponse>("file", File);
@@ -459,92 +453,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("last_edited_by", LastEditedBy);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlResponse>("link_preview", LinkPreview);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse.BlockObjectResponse_link_to_page>("link_to_page", LinkToPage);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage>("link_to_page", LinkToPage);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse>("meeting_notes", MeetingNotes);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse>("numbered_list_item", NumberedListItem);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_object>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse>("paragraph", Paragraph);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("pdf", Pdf);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>("quote", Quote);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_synced_block>("synced_block", SyncedBlock);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("tab", Tab);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock>("synced_block", SyncedBlock);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab>("tab", Tab);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableResponse>("table", Table);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_table_of_contents>("table_of_contents", TableOfContents);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents>("table_of_contents", TableOfContents);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableRowResponse>("table_row", TableRow);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_template>("template", Template);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_to_do>("to_do", ToDo);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateBlockObjectResponseTemplate>("template", Template);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ToDoBlockObjectResponseToDo>("to_do", ToDo);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>("toggle", Toggle);
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_unsupported>("unsupported", Unsupported);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedBlockObjectResponseUnsupported>("unsupported", Unsupported);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("video", Video);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember3"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BlockObjectResponse_link_to_page : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember1? BlockObjectResponseLinkToPageMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember1 BlockObjectResponseLinkToPageMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember2? BlockObjectResponseLinkToPageMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember2 BlockObjectResponseLinkToPageMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember3? BlockObjectResponseLinkToPageMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember3 BlockObjectResponseLinkToPageMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse.BlockObjectResponse_link_to_page"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse.BlockObjectResponse_link_to_page CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse.BlockObjectResponse_link_to_page();
-                result.BlockObjectResponseLinkToPageMember1 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember1();
-                result.BlockObjectResponseLinkToPageMember2 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember2();
-                result.BlockObjectResponseLinkToPageMember3 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember3();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BlockObjectResponseLinkToPageMember1 != null || BlockObjectResponseLinkToPageMember2 != null || BlockObjectResponseLinkToPageMember3 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BlockObjectResponseLinkToPageMember1, BlockObjectResponseLinkToPageMember2, BlockObjectResponseLinkToPageMember3);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_link_to_pageMember1>(null, BlockObjectResponseLinkToPageMember1, BlockObjectResponseLinkToPageMember2, BlockObjectResponseLinkToPageMember3);
-            }
         }
     }
 }

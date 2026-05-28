@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>One of: `pending`, `uploaded`, `expired`, `failed`</summary>
+    /// <summary>&quot;One of: `pending`, `uploaded`, `expired`, `failed`&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FileUploadObjectResponse_status
     {

@@ -17,19 +17,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>External URL for the cover.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest_external? External { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequestExternal? External { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest_external External { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequestExternal External { get; set; }
 #endif
         /// <summary>Always `external`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest"/> and sets the default values.
         /// </summary>
@@ -55,8 +49,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "external", n => { External = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest_external>(global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest_external.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "external", n => { External = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequestExternal>(global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequestExternal.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest_type>(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest_external>("external", External);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequestExternal>("external", External);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

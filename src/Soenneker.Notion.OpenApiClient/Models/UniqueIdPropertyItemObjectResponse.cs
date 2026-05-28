@@ -23,28 +23,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_object? Object { get; set; }
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_type? Type { get; set; }
         /// <summary>The unique_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_unique_id? UniqueId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId? UniqueId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_unique_id UniqueId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId UniqueId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse"/> and sets the default values.
@@ -72,9 +60,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "unique_id", n => { UniqueId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_unique_id>(global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_unique_id.CreateFromDiscriminatorValue); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_object>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_type>(); } },
+                { "unique_id", n => { UniqueId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId>(global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,9 +73,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("object", Object);
-            writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_unique_id>("unique_id", UniqueId);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId>("unique_id", UniqueId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

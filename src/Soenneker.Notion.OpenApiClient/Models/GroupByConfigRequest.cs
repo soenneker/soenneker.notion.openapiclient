@@ -8,13 +8,11 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Group-by configuration based on property type.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CheckboxGroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PersonGroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RelationGroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.SelectGroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GroupByConfigRequest : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    public partial class GroupByConfigRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CheckboxGroupByConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,10 +37,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest FormulaGroupByConfigRequest { get; set; }
 #endif
-        /// <summary>How to group status values. &quot;group&quot; groups by status group (To Do/In Progress/Done), &quot;option&quot; groups by individual option.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest_group_by? GroupBy { get; set; }
-        /// <summary>Whether to hide groups that have no items.</summary>
-        public bool? HideEmptyGroups { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,20 +53,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PersonGroupByConfigRequest PersonGroupByConfigRequest { get; set; }
 #endif
-        /// <summary>Property ID to group by.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PropertyId { get; set; }
-#nullable restore
-#else
-        public string PropertyId { get; set; }
-#endif
-        /// <summary>End of the range for number grouping buckets.</summary>
-        public int? RangeEnd { get; set; }
-        /// <summary>Size of each bucket in number grouping.</summary>
-        public int? RangeSize { get; set; }
-        /// <summary>Start of the range for number grouping buckets.</summary>
-        public int? RangeStart { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RelationGroupByConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,16 +69,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.SelectGroupByConfigRequest SelectGroupByConfigRequest { get; set; }
 #endif
-        /// <summary>Sort order for groups.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest? Sort { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest Sort { get; set; }
-#endif
-        /// <summary>Start day of week for week grouping (0 = Sunday, 1 = Monday).</summary>
-        public double? StartDayOfWeek { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,15 +85,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest TextGroupByConfigRequest { get; set; }
 #endif
-        /// <summary>The property type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest_type? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest"/> and sets the default values.
-        /// </summary>
-        public GroupByConfigRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -132,79 +93,43 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest();
-            if("checkboxGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CheckboxGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CheckboxGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.CheckboxGroupByConfigRequest();
             }
-            else if("dateGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("DateGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DateGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest();
             }
-            else if("formulaGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("FormulaGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest();
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest_group_by>() is global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest_group_by groupByValue)
-            {
-                result.GroupBy = groupByValue;
-            }
-            else if("numberGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("NumberGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.NumberGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigRequest();
             }
-            else if("personGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PersonGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PersonGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.PersonGroupByConfigRequest();
             }
-            else if("relationGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RelationGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RelationGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.RelationGroupByConfigRequest();
             }
-            else if("selectGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SelectGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SelectGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.SelectGroupByConfigRequest();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Sort = new global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest();
-            }
-            else if("statusGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("StatusGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.StatusGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigRequest();
             }
-            else if("textGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TextGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TextGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest();
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest_type>() is global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest_type typeValue)
-            {
-                result.Type = typeValue;
-            }
-            else if(parseNode.GetBoolValue() is bool hideEmptyGroupsValue)
-            {
-                result.HideEmptyGroups = hideEmptyGroupsValue;
-            }
-            else if(parseNode.GetStringValue() is string propertyIdValue)
-            {
-                result.PropertyId = propertyIdValue;
-            }
-            else if(parseNode.GetIntValue() is int rangeEndValue)
-            {
-                result.RangeEnd = rangeEndValue;
-            }
-            else if(parseNode.GetIntValue() is int rangeSizeValue)
-            {
-                result.RangeSize = rangeSizeValue;
-            }
-            else if(parseNode.GetIntValue() is int rangeStartValue)
-            {
-                result.RangeStart = rangeStartValue;
-            }
-            else if(parseNode.GetDoubleValue() is double startDayOfWeekValue)
-            {
-                result.StartDayOfWeek = startDayOfWeekValue;
             }
             return result;
         }
@@ -242,10 +167,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 return SelectGroupByConfigRequest.GetFieldDeserializers();
             }
-            else if(Sort != null)
-            {
-                return Sort.GetFieldDeserializers();
-            }
             else if(StatusGroupByConfigRequest != null)
             {
                 return StatusGroupByConfigRequest.GetFieldDeserializers();
@@ -275,10 +196,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest>(null, FormulaGroupByConfigRequest);
             }
-            else if(GroupBy != null)
-            {
-                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest_group_by>(null, GroupBy);
-            }
             else if(NumberGroupByConfigRequest != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigRequest>(null, NumberGroupByConfigRequest);
@@ -295,10 +212,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectGroupByConfigRequest>(null, SelectGroupByConfigRequest);
             }
-            else if(Sort != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(null, Sort);
-            }
             else if(StatusGroupByConfigRequest != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigRequest>(null, StatusGroupByConfigRequest);
@@ -307,35 +220,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest>(null, TextGroupByConfigRequest);
             }
-            else if(Type != null)
-            {
-                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest_type>(null, Type);
-            }
-            else if(HideEmptyGroups != null)
-            {
-                writer.WriteBoolValue(null, HideEmptyGroups);
-            }
-            else if(PropertyId != null)
-            {
-                writer.WriteStringValue(null, PropertyId);
-            }
-            else if(RangeEnd != null)
-            {
-                writer.WriteIntValue(null, RangeEnd);
-            }
-            else if(RangeSize != null)
-            {
-                writer.WriteIntValue(null, RangeSize);
-            }
-            else if(RangeStart != null)
-            {
-                writer.WriteIntValue(null, RangeStart);
-            }
-            else if(StartDayOfWeek != null)
-            {
-                writer.WriteDoubleValue(null, StartDayOfWeek);
-            }
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class PageMarkdownResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the page or block.</summary>
+        /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The page content rendered as enhanced Markdown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,13 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Markdown { get; set; }
 #endif
         /// <summary>The type of object, always &apos;page_markdown&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse_object? Object { get; set; }
         /// <summary>Whether the content was truncated due to exceeding the record count limit.</summary>
         public bool? Truncated { get; set; }
         /// <summary>Block IDs that could not be loaded (appeared as &lt;unknown&gt; tags in the markdown). Pass these IDs back to this endpoint to fetch their content separately.</summary>
@@ -60,7 +54,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse_object>(); } },
                 { "truncated", n => { Truncated = n.GetBoolValue(); } },
                 { "unknown_block_ids", n => { UnknownBlockIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
             };
@@ -74,7 +68,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("markdown", Markdown);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse_object>("object", Object);
             writer.WriteBoolValue("truncated", Truncated);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("unknown_block_ids", UnknownBlockIds);
         }

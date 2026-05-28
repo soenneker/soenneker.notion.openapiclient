@@ -19,37 +19,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Group-by configuration for the table. Pass null to remove grouping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_group_by? GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_by? GroupBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_group_by GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_by GroupBy { get; set; }
 #endif
         /// <summary>Property visibility and display configuration. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_properties? Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_properties Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch Properties { get; set; }
 #endif
         /// <summary>Whether to show vertical grid lines between columns.</summary>
         public bool? ShowVerticalLines { get; set; }
-        /// <summary>Subtask (sub-item) configuration. Pass null to reset subtask config to defaults (which may show subtasks). Use `{ &quot;display_mode&quot;: &quot;disabled&quot; }` to explicitly disable subtasks.</summary>
+        /// <summary>&quot;Subtask (sub-item) configuration. Pass null to reset subtask config to defaults (which may show subtasks). Use `{ \&quot;display_mode\&quot;: \&quot;disabled\&quot; }` to explicitly disable subtasks.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_subtasks? Subtasks { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest? Subtasks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_subtasks Subtasks { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest Subtasks { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;table&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_type? Type { get; set; }
         /// <summary>Whether to wrap cell content in the table.</summary>
         public bool? WrapCells { get; set; }
         /// <summary>
@@ -78,11 +72,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "frozen_column_index", n => { FrozenColumnIndex = n.GetIntValue(); } },
-                { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_group_by>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_group_by.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_properties>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_properties.CreateFromDiscriminatorValue); } },
+                { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_by>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_by.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>(global::Soenneker.Notion.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "show_vertical_lines", n => { ShowVerticalLines = n.GetBoolValue(); } },
-                { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_subtasks>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_subtasks.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_type>(); } },
                 { "wrap_cells", n => { WrapCells = n.GetBoolValue(); } },
             };
         }
@@ -94,234 +88,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("frozen_column_index", FrozenColumnIndex);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_group_by>("group_by", GroupBy);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_by>("group_by", GroupBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>("properties", Properties);
             writer.WriteBoolValue("show_vertical_lines", ShowVerticalLines);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_subtasks>("subtasks", Subtasks);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest>("subtasks", Subtasks);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_type>("type", Type);
             writer.WriteBoolValue("wrap_cells", WrapCells);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_byMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TableViewConfigRequest_group_by : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? GroupByConfigRequest { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest GroupByConfigRequest { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_byMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_byMember1? TableViewConfigRequestGroupByMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_byMember1 TableViewConfigRequestGroupByMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_group_by"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_group_by CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_group_by();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.GroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TableViewConfigRequestGroupByMember1 = new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_byMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(GroupByConfigRequest != null)
-                {
-                    return GroupByConfigRequest.GetFieldDeserializers();
-                }
-                else if(TableViewConfigRequestGroupByMember1 != null)
-                {
-                    return TableViewConfigRequestGroupByMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(GroupByConfigRequest != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>(null, GroupByConfigRequest);
-                }
-                else if(TableViewConfigRequestGroupByMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_group_byMember1>(null, TableViewConfigRequestGroupByMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_propertiesMember1"/>, List&lt;global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TableViewConfigRequest_properties : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_propertiesMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_propertiesMember1? TableViewConfigRequestPropertiesMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_propertiesMember1 TableViewConfigRequestPropertiesMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? ViewPropertyConfigRequest { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> ViewPropertyConfigRequest { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_properties"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_properties CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_properties();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TableViewConfigRequestPropertiesMember1 = new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_propertiesMember1();
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> viewPropertyConfigRequestValue)
-                {
-                    result.ViewPropertyConfigRequest = viewPropertyConfigRequestValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TableViewConfigRequestPropertiesMember1 != null)
-                {
-                    return TableViewConfigRequestPropertiesMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(TableViewConfigRequestPropertiesMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_propertiesMember1>(null, TableViewConfigRequestPropertiesMember1);
-                }
-                else if(ViewPropertyConfigRequest != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(null, ViewPropertyConfigRequest);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_subtasksMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TableViewConfigRequest_subtasks : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest? SubtaskConfigRequest { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest SubtaskConfigRequest { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_subtasksMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_subtasksMember1? TableViewConfigRequestSubtasksMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_subtasksMember1 TableViewConfigRequestSubtasksMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_subtasks"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_subtasks CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest.TableViewConfigRequest_subtasks();
-                if("subtaskConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.SubtaskConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TableViewConfigRequestSubtasksMember1 = new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_subtasksMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(SubtaskConfigRequest != null)
-                {
-                    return SubtaskConfigRequest.GetFieldDeserializers();
-                }
-                else if(TableViewConfigRequestSubtasksMember1 != null)
-                {
-                    return TableViewConfigRequestSubtasksMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(SubtaskConfigRequest != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest>(null, SubtaskConfigRequest);
-                }
-                else if(TableViewConfigRequestSubtasksMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest_subtasksMember1>(null, TableViewConfigRequestSubtasksMember1);
-                }
-            }
         }
     }
 }

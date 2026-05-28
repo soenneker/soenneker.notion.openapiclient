@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter Status { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember10"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

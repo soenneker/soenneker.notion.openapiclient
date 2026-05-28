@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// The file URL for the icon.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class InternalFileResponse : IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>The time when the URL will expire.</summary>
         public DateTimeOffset? ExpiryTime { get; set; }

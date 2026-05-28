@@ -7,29 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Create a new linked database block on a page and add the view to it. Mutually exclusive with database_id and view_id.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class CreateDatabaseForViewRequest : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The parent page for the new linked database block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_parent? Parent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent? Parent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_parent Parent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent Parent { get; set; }
 #endif
         /// <summary>Where to place the new database block within the parent page. Defaults to appending at the end.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_position? Position { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition? Position { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_position Position { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition Position { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest"/> and sets the default values.
@@ -56,8 +55,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_parent>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_parent.CreateFromDiscriminatorValue); } },
-                { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_position>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_position.CreateFromDiscriminatorValue); } },
+                { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent.CreateFromDiscriminatorValue); } },
+                { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +66,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_parent>("parent", Parent);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest_position>("position", Position);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent>("parent", Parent);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition>("position", Position);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

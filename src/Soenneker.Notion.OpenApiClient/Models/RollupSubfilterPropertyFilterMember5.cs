@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The multi_select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? MultiSelect { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter? MultiSelect { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter MultiSelect { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter MultiSelect { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember5"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "multi_select", n => { MultiSelect = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "multi_select", n => { MultiSelect = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("multi_select", MultiSelect);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter>("multi_select", MultiSelect);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

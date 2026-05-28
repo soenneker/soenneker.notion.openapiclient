@@ -23,29 +23,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_object? Object { get; set; }
         /// <summary>The rollup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse.RollupPropertyItemObjectResponse_rollup? Rollup { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup? Rollup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse.RollupPropertyItemObjectResponse_rollup Rollup { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup Rollup { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -72,9 +60,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "rollup", n => { Rollup = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse.RollupPropertyItemObjectResponse_rollup>(global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse.RollupPropertyItemObjectResponse_rollup.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_object>(); } },
+                { "rollup", n => { Rollup = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup>(global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_type>(); } },
             };
         }
         /// <summary>
@@ -85,94 +73,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse.RollupPropertyItemObjectResponse_rollup>("rollup", Rollup);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_object>("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup>("rollup", Rollup);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember5"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RollupPropertyItemObjectResponse_rollup : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember1? RollupPropertyItemObjectResponseRollupMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember1 RollupPropertyItemObjectResponseRollupMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember2? RollupPropertyItemObjectResponseRollupMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember2 RollupPropertyItemObjectResponseRollupMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember3? RollupPropertyItemObjectResponseRollupMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember3 RollupPropertyItemObjectResponseRollupMember3 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember4? RollupPropertyItemObjectResponseRollupMember4 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember4 RollupPropertyItemObjectResponseRollupMember4 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember5? RollupPropertyItemObjectResponseRollupMember5 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember5 RollupPropertyItemObjectResponseRollupMember5 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse.RollupPropertyItemObjectResponse_rollup"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse.RollupPropertyItemObjectResponse_rollup CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse.RollupPropertyItemObjectResponse_rollup();
-                result.RollupPropertyItemObjectResponseRollupMember1 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember1();
-                result.RollupPropertyItemObjectResponseRollupMember2 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember2();
-                result.RollupPropertyItemObjectResponseRollupMember3 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember3();
-                result.RollupPropertyItemObjectResponseRollupMember4 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember4();
-                result.RollupPropertyItemObjectResponseRollupMember5 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember5();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RollupPropertyItemObjectResponseRollupMember1 != null || RollupPropertyItemObjectResponseRollupMember2 != null || RollupPropertyItemObjectResponseRollupMember3 != null || RollupPropertyItemObjectResponseRollupMember4 != null || RollupPropertyItemObjectResponseRollupMember5 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RollupPropertyItemObjectResponseRollupMember1, RollupPropertyItemObjectResponseRollupMember2, RollupPropertyItemObjectResponseRollupMember3, RollupPropertyItemObjectResponseRollupMember4, RollupPropertyItemObjectResponseRollupMember5);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse_rollupMember1>(null, RollupPropertyItemObjectResponseRollupMember1, RollupPropertyItemObjectResponseRollupMember2, RollupPropertyItemObjectResponseRollupMember3, RollupPropertyItemObjectResponseRollupMember4, RollupPropertyItemObjectResponseRollupMember5);
-            }
         }
     }
 }

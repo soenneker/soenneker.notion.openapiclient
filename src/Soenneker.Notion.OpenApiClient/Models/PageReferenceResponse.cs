@@ -12,7 +12,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class PageReferenceResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The object ID.</summary>
+        /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The object type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

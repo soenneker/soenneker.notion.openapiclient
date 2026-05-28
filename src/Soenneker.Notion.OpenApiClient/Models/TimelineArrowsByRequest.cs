@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Relation property ID used for dependency arrows, or null to disable arrows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.TimelineArrowsByRequest_property_id? PropertyId { get; set; }
+        public string? PropertyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.TimelineArrowsByRequest_property_id PropertyId { get; set; }
+        public string PropertyId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "property_id", n => { PropertyId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.TimelineArrowsByRequest_property_id>(global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.TimelineArrowsByRequest_property_id.CreateFromDiscriminatorValue); } },
+                { "property_id", n => { PropertyId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,79 +57,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.TimelineArrowsByRequest_property_id>("property_id", PropertyId);
+            writer.WriteStringValue("property_id", PropertyId);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest_property_idMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TimelineArrowsByRequest_property_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest_property_idMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest_property_idMember1? TimelineArrowsByRequestPropertyIdMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest_property_idMember1 TimelineArrowsByRequestPropertyIdMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.TimelineArrowsByRequest_property_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.TimelineArrowsByRequest_property_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.TimelineArrowsByRequest_property_id();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TimelineArrowsByRequestPropertyIdMember1 = new global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest_property_idMember1();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TimelineArrowsByRequestPropertyIdMember1 != null)
-                {
-                    return TimelineArrowsByRequestPropertyIdMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(TimelineArrowsByRequestPropertyIdMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest_property_idMember1>(null, TimelineArrowsByRequestPropertyIdMember1);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
         }
     }
 }

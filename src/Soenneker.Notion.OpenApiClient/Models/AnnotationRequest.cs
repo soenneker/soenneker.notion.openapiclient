@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// All rich text objects contain an annotations object that sets the styling for the rich text.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class AnnotationRequest : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -19,7 +18,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public bool? Bold { get; set; }
         /// <summary>Whether the text is formatted as code.</summary>
         public bool? Code { get; set; }
-        /// <summary>The color of the text.</summary>
+        /// <summary>&quot;One of: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`, `default_background`, `gray_background`, `brown_background`, `orange_background`, `yellow_background`, `green_background`, `blue_background`, `purple_background`, `pink_background`, `red_background`&quot;</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ApiColor? Color { get; set; }
         /// <summary>Whether the text is formatted as italic.</summary>
         public bool? Italic { get; set; }

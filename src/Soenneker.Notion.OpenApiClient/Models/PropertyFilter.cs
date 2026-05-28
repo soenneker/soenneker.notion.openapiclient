@@ -25,34 +25,34 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter CreatedBy { get; set; }
 #endif
         /// <summary>The created_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? CreatedTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter? CreatedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter CreatedTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter CreatedTime { get; set; }
 #endif
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter? Date { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter Date { get; set; }
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Email { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Email { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter Email { get; set; }
 #endif
         /// <summary>The files property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,50 +73,50 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The last_edited_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter? LastEditedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter LastEditedBy { get; set; }
 #endif
         /// <summary>The last_edited_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? LastEditedTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter? LastEditedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter LastEditedTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter LastEditedTime { get; set; }
 #endif
         /// <summary>The multi_select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? MultiSelect { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter? MultiSelect { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter MultiSelect { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter MultiSelect { get; set; }
 #endif
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Number { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter? Number { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Number { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter Number { get; set; }
 #endif
         /// <summary>The people property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? People { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter? People { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter People { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter People { get; set; }
 #endif
         /// <summary>The phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? PhoneNumber { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter? PhoneNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter PhoneNumber { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter PhoneNumber { get; set; }
 #endif
         /// <summary>The property property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,18 +129,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The relation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Relation { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter? Relation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Relation { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter Relation { get; set; }
 #endif
         /// <summary>The rich_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? RichText { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter? RichText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter RichText { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter RichText { get; set; }
 #endif
         /// <summary>The rollup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,28 +153,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Select { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyFilter? Select { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Select { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyFilter Select { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter Status { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Title { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Title { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter Title { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -185,18 +185,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The unique_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? UniqueId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter? UniqueId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter UniqueId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter UniqueId { get; set; }
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? Url { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter Url { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter Url { get; set; }
 #endif
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -232,28 +232,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkbox", n => { Checkbox = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter.CreateFromDiscriminatorValue); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "files", n => { Files = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
                 { "formula", n => { Formula = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilter.CreateFromDiscriminatorValue); } },
-                { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "last_edited_time", n => { LastEditedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "multi_select", n => { MultiSelect = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "number", n => { Number = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "people", n => { People = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "last_edited_time", n => { LastEditedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "multi_select", n => { MultiSelect = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter.CreateFromDiscriminatorValue); } },
+                { "number", n => { Number = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter.CreateFromDiscriminatorValue); } },
+                { "people", n => { People = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "phone_number", n => { PhoneNumber = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "property", n => { Property = n.GetStringValue(); } },
-                { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "rich_text", n => { RichText = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter.CreateFromDiscriminatorValue); } },
+                { "rich_text", n => { RichText = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "rollup", n => { Rollup = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilter.CreateFromDiscriminatorValue); } },
-                { "select", n => { Select = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "select", n => { Select = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyFilter.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "unique_id", n => { UniqueId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "unique_id", n => { UniqueId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyStatusFilter>(global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyStatusFilter.CreateFromDiscriminatorValue); } },
             };
         }
@@ -265,28 +265,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter>("checkbox", Checkbox);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("created_by", CreatedBy);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("date", Date);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("email", Email);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("created_time", CreatedTime);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("date", Date);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>("email", Email);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("files", Files);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilter>("formula", Formula);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("last_edited_by", LastEditedBy);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("last_edited_time", LastEditedTime);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("multi_select", MultiSelect);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("number", Number);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("people", People);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("phone_number", PhoneNumber);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter>("last_edited_by", LastEditedBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("last_edited_time", LastEditedTime);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyFilter>("multi_select", MultiSelect);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter>("number", Number);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyFilter>("people", People);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>("phone_number", PhoneNumber);
             writer.WriteStringValue("property", Property);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("relation", Relation);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("rich_text", RichText);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyFilter>("relation", Relation);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>("rich_text", RichText);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilter>("rollup", Rollup);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("select", Select);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("title", Title);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyFilter>("select", Select);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>("title", Title);
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("unique_id", UniqueId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("url", Url);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter>("unique_id", UniqueId);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>("url", Url);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyStatusFilter>("verification", Verification);
             writer.WriteAdditionalData(AdditionalData);
         }

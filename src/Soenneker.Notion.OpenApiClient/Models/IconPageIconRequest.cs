@@ -17,19 +17,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>A Notion native icon, specified by name and optional color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest_icon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest_icon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon Icon { get; set; }
 #endif
         /// <summary>Always `icon`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest"/> and sets the default values.
         /// </summary>
@@ -55,8 +49,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest_icon>(global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest_icon.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon>(global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest_type>(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest_icon>("icon", Icon);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon>("icon", Icon);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

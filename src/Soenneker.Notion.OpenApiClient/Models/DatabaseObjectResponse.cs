@@ -15,10 +15,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The cover of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_cover? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover? Cover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_cover Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover Cover { get; set; }
 #endif
         /// <summary>The time when the database was created.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
@@ -41,12 +41,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The icon of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_icon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_icon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon Icon { get; set; }
 #endif
-        /// <summary>The ID of the database.</summary>
+        /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>Whether the database is in the trash.</summary>
         public bool? InTrash { get; set; }
@@ -57,14 +57,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The time when the database was last edited.</summary>
         public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>The database object type name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
-        /// <summary>The parent of the database. This is typically a page, block, or workspace, but can be another database in the case of wikis.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_object? Object { get; set; }
+        /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse? Parent { get; set; }
@@ -75,10 +69,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The public URL of the database if it is publicly accessible.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_public_url? PublicUrl { get; set; }
+        public string? PublicUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_public_url PublicUrl { get; set; }
+        public string PublicUrl { get; set; }
 #endif
         /// <summary>The title of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,19 +108,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_cover>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_cover.CreateFromDiscriminatorValue); } },
+                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "data_sources", n => { DataSources = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.DataSourceReferenceResponse>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceReferenceResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_icon>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_icon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "is_inline", n => { IsInline = n.GetBoolValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_object>(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse.CreateFromDiscriminatorValue); } },
-                { "public_url", n => { PublicUrl = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_public_url>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_public_url.CreateFromDiscriminatorValue); } },
+                { "public_url", n => { PublicUrl = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -138,242 +132,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_cover>("cover", Cover);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover>("cover", Cover);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.DataSourceReferenceResponse>("data_sources", DataSources);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_icon>("icon", Icon);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon>("icon", Icon);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteBoolValue("is_inline", IsInline);
             writer.WriteBoolValue("is_locked", IsLocked);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_object>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>("parent", Parent);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_public_url>("public_url", PublicUrl);
+            writer.WriteStringValue("public_url", PublicUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);
             writer.WriteStringValue("url", Url);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_coverMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DatabaseObjectResponse_cover : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_coverMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_coverMember1? DatabaseObjectResponseCoverMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_coverMember1 DatabaseObjectResponseCoverMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse? PageCoverResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse PageCoverResponse { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_cover"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_cover CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_cover();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DatabaseObjectResponseCoverMember1 = new global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_coverMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PageCoverResponse = new global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DatabaseObjectResponseCoverMember1 != null)
-                {
-                    return DatabaseObjectResponseCoverMember1.GetFieldDeserializers();
-                }
-                else if(PageCoverResponse != null)
-                {
-                    return PageCoverResponse.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DatabaseObjectResponseCoverMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_coverMember1>(null, DatabaseObjectResponseCoverMember1);
-                }
-                else if(PageCoverResponse != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse>(null, PageCoverResponse);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_iconMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DatabaseObjectResponse_icon : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_iconMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_iconMember1? DatabaseObjectResponseIconMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_iconMember1 DatabaseObjectResponseIconMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse? PageIconResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse PageIconResponse { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_icon"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_icon CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_icon();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DatabaseObjectResponseIconMember1 = new global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_iconMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.PageIconResponse = new global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DatabaseObjectResponseIconMember1 != null)
-                {
-                    return DatabaseObjectResponseIconMember1.GetFieldDeserializers();
-                }
-                else if(PageIconResponse != null)
-                {
-                    return PageIconResponse.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DatabaseObjectResponseIconMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_iconMember1>(null, DatabaseObjectResponseIconMember1);
-                }
-                else if(PageIconResponse != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse>(null, PageIconResponse);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_public_urlMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DatabaseObjectResponse_public_url : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_public_urlMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_public_urlMember1? DatabaseObjectResponsePublicUrlMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_public_urlMember1 DatabaseObjectResponsePublicUrlMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_public_url"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_public_url CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse.DatabaseObjectResponse_public_url();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.DatabaseObjectResponsePublicUrlMember1 = new global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_public_urlMember1();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DatabaseObjectResponsePublicUrlMember1 != null)
-                {
-                    return DatabaseObjectResponsePublicUrlMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DatabaseObjectResponsePublicUrlMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_public_urlMember1>(null, DatabaseObjectResponsePublicUrlMember1);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
         }
     }
 }

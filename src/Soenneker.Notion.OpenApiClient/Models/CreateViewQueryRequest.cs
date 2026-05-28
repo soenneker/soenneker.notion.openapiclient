@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of results to return per page. Maximum: 100</summary>
+        /// <summary>&quot;The number of results to return per page. Maximum: 100&quot;</summary>
         public int? PageSize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateViewQueryRequest"/> and sets the default values.

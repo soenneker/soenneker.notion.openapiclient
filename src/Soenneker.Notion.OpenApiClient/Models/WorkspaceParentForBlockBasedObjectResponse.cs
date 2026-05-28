@@ -13,15 +13,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The parent type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse_type? Type { get; set; }
         /// <summary>Always true for workspace parent.</summary>
-        public bool? Workspace { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse_workspace? Workspace { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,8 +34,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "workspace", n => { Workspace = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse_type>(); } },
+                { "workspace", n => { Workspace = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse_workspace>(); } },
             };
         }
         /// <summary>
@@ -51,8 +45,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteBoolValue("workspace", Workspace);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse_workspace>("workspace", Workspace);
         }
     }
 }

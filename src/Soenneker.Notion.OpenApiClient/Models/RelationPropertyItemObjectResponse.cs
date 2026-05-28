@@ -23,29 +23,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_object? Object { get; set; }
         /// <summary>The relation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_relation? Relation { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation? Relation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_relation Relation { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation Relation { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -72,9 +60,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_relation>(global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_relation.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_object>(); } },
+                { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation>(global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_type>(); } },
             };
         }
         /// <summary>
@@ -85,9 +73,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_relation>("relation", Relation);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_object>("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation>("relation", Relation);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

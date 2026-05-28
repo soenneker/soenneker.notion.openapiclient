@@ -14,6 +14,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Property width mode in compact card layouts (board/gallery).</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_card_property_width_mode? CardPropertyWidthMode { get; set; }
+        /// <summary>Date display format (date properties only).</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_date_format? DateFormat { get; set; }
+        /// <summary>Property ID (stable identifier).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PropertyId { get; set; }
+#nullable restore
+#else
+        public string PropertyId { get; set; }
+#endif
+        /// <summary>How to display status properties (select dropdown or checkbox).</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_status_show_as? StatusShowAs { get; set; }
+        /// <summary>Time display format (date properties only).</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_time_format? TimeFormat { get; set; }
+        /// <summary>Whether this property is visible in the view.</summary>
+        public bool? Visible { get; set; }
+        /// <summary>Width of the property column in pixels (table view only).</summary>
+        public int? Width { get; set; }
+        /// <summary>Whether to wrap content in this property cell/card.</summary>
+        public bool? Wrap { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest"/> and sets the default values.
         /// </summary>
@@ -39,6 +61,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "card_property_width_mode", n => { CardPropertyWidthMode = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_card_property_width_mode>(); } },
+                { "date_format", n => { DateFormat = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_date_format>(); } },
+                { "property_id", n => { PropertyId = n.GetStringValue(); } },
+                { "status_show_as", n => { StatusShowAs = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_status_show_as>(); } },
+                { "time_format", n => { TimeFormat = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_time_format>(); } },
+                { "visible", n => { Visible = n.GetBoolValue(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
+                { "wrap", n => { Wrap = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +78,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_card_property_width_mode>("card_property_width_mode", CardPropertyWidthMode);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_date_format>("date_format", DateFormat);
+            writer.WriteStringValue("property_id", PropertyId);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_status_show_as>("status_show_as", StatusShowAs);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest_time_format>("time_format", TimeFormat);
+            writer.WriteBoolValue("visible", Visible);
+            writer.WriteIntValue("width", Width);
+            writer.WriteBoolValue("wrap", Wrap);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

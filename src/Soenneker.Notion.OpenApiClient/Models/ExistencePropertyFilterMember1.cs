@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The is_empty property</summary>
-        public bool? IsEmpty { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1_is_empty? IsEmpty { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "is_empty", n => { IsEmpty = n.GetBoolValue(); } },
+                { "is_empty", n => { IsEmpty = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1_is_empty>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("is_empty", IsEmpty);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1_is_empty>("is_empty", IsEmpty);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

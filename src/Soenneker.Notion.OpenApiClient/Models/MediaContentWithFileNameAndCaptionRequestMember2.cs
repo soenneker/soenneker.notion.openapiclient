@@ -37,13 +37,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequestMember2_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,7 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "caption", n => { Caption = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "file_upload", n => { FileUpload = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadIdRequest>(global::Soenneker.Notion.OpenApiClient.Models.FileUploadIdRequest.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequestMember2_type>(); } },
             };
         }
         /// <summary>
@@ -78,7 +72,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("caption", Caption);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadIdRequest>("file_upload", FileUpload);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequestMember2_type>("type", Type);
         }
     }
 }

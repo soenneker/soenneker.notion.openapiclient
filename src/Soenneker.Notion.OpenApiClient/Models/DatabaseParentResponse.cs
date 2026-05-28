@@ -12,16 +12,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class DatabaseParentResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the parent database.</summary>
+        /// <summary>The database_id property</summary>
         public Guid? DatabaseId { get; set; }
         /// <summary>The parent type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "database_id", n => { DatabaseId = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse_type>(); } },
             };
         }
         /// <summary>
@@ -52,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("database_id", DatabaseId);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse_type>("type", Type);
         }
     }
 }

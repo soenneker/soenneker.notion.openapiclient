@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>View presentation configuration. The type field must match the view type.</summary>
+        /// <summary>View configuration, discriminated by the type field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ViewConfigRequest? Configuration { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.ViewConfigRequest Configuration { get; set; }
 #endif
-        /// <summary>Create a new linked database block on a page and add the view to it. Mutually exclusive with database_id and view_id.</summary>
+        /// <summary>The create_database property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest? CreateDatabase { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest CreateDatabase { get; set; }
 #endif
-        /// <summary>The ID of the database to create a view in. Mutually exclusive with view_id and create_database.</summary>
+        /// <summary>The database_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DatabaseId { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string DatabaseId { get; set; }
 #endif
-        /// <summary>The ID of the data source this view should be scoped to.</summary>
+        /// <summary>The data_source_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DataSourceId { get; set; }
@@ -46,13 +46,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string DataSourceId { get; set; }
 #endif
-        /// <summary>Filter to apply to the view. Uses the same format as the data source query filter.</summary>
+        /// <summary>&quot;Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view&apos;s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { \&quot;does_not_equal\&quot;: [\&quot;Done\&quot;, \&quot;Archive\&quot;] }).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest? Filter { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter? Filter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest Filter { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter Filter { get; set; }
 #endif
         /// <summary>The name of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Where to place the new widget in a dashboard view. Only applicable when view_id is provided. Defaults to creating a new row at the end.</summary>
+        /// <summary>Where to place the new widget in the dashboard. &quot;new_row&quot; creates a new row, &quot;existing_row&quot; adds to an existing row side-by-side with other widgets.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest? Placement { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest Placement { get; set; }
 #endif
-        /// <summary>Where to place the new view in the database&apos;s view tab bar. Only applicable when database_id is provided. Defaults to &quot;end&quot; (append).</summary>
+        /// <summary>Position of the new view in the database&apos;s view tab bar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest? Position { get; set; }
@@ -86,17 +86,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters QuickFilters { get; set; }
 #endif
-        /// <summary>Sorts to apply to the view. Uses the same format as the data source query sorts.</summary>
+        /// <summary>The sorts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>? Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts>? Sorts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest> Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts> Sorts { get; set; }
 #endif
-        /// <summary>The type of view to create.</summary>
+        /// <summary>&quot;One of: `table`, `board`, `list`, `calendar`, `timeline`, `gallery`, `form`, `chart`, `map`, `dashboard`&quot;</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest? Type { get; set; }
-        /// <summary>The ID of a dashboard view to add this view to as a widget. Mutually exclusive with database_id and create_database.</summary>
+        /// <summary>The view_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ViewId { get; set; }
@@ -133,12 +133,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "create_database", n => { CreateDatabase = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest.CreateFromDiscriminatorValue); } },
                 { "data_source_id", n => { DataSourceId = n.GetStringValue(); } },
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest>(global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest.CreateFromDiscriminatorValue); } },
                 { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest.CreateFromDiscriminatorValue); } },
                 { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters.CreateFromDiscriminatorValue); } },
-                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest>(); } },
                 { "view_id", n => { ViewId = n.GetStringValue(); } },
             };
@@ -154,12 +154,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest>("create_database", CreateDatabase);
             writer.WriteStringValue("database_id", DatabaseId);
             writer.WriteStringValue("data_source_id", DataSourceId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter>("filter", Filter);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest>("placement", Placement);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest>("position", Position);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters>("quick_filters", QuickFilters);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>("sorts", Sorts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts>("sorts", Sorts);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest>("type", Type);
             writer.WriteStringValue("view_id", ViewId);
             writer.WriteAdditionalData(AdditionalData);

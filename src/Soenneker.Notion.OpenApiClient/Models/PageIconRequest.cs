@@ -7,21 +7,12 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PageIconRequest : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
-    #pragma warning restore CS1591
+    public partial class PageIconRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The custom_emoji property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_custom_emoji? CustomEmoji { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_custom_emoji CustomEmoji { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,14 +20,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconRequest CustomEmojiPageIconRequest { get; set; }
-#endif
-        /// <summary>An emoji character.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Emoji { get; set; }
-#nullable restore
-#else
-        public string Emoji { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,14 +29,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconRequest EmojiPageIconRequest { get; set; }
 #endif
-        /// <summary>The external property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_external? External { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_external External { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,14 +36,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequest ExternalPageIconRequest { get; set; }
-#endif
-        /// <summary>The file_upload property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_file_upload? FileUpload { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_file_upload FileUpload { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,14 +45,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest FileUploadPageIconRequest { get; set; }
 #endif
-        /// <summary>A Notion native icon, specified by name and optional color.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_icon? Icon { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_icon Icon { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,21 +53,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest IconPageIconRequest { get; set; }
 #endif
-        /// <summary>Always `file_upload`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest"/> and sets the default values.
-        /// </summary>
-        public PageIconRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -117,51 +61,27 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CustomEmoji = new global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_custom_emoji();
-            }
-            else if("customEmojiPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CustomEmojiPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomEmojiPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconRequest();
             }
-            else if("emojiPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("EmojiPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.EmojiPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconRequest();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.External = new global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_external();
-            }
-            else if("externalPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ExternalPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ExternalPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequest();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.FileUpload = new global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_file_upload();
-            }
-            else if("fileUploadPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("FileUploadPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FileUploadPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Icon = new global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_icon();
-            }
-            else if("iconPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("IconPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.IconPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest();
-            }
-            else if(parseNode.GetStringValue() is string emojiValue)
-            {
-                result.Emoji = emojiValue;
-            }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
             }
             return result;
         }
@@ -171,11 +91,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CustomEmoji != null)
-            {
-                return CustomEmoji.GetFieldDeserializers();
-            }
-            else if(CustomEmojiPageIconRequest != null)
+            if(CustomEmojiPageIconRequest != null)
             {
                 return CustomEmojiPageIconRequest.GetFieldDeserializers();
             }
@@ -183,25 +99,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 return EmojiPageIconRequest.GetFieldDeserializers();
             }
-            else if(External != null)
-            {
-                return External.GetFieldDeserializers();
-            }
             else if(ExternalPageIconRequest != null)
             {
                 return ExternalPageIconRequest.GetFieldDeserializers();
             }
-            else if(FileUpload != null)
-            {
-                return FileUpload.GetFieldDeserializers();
-            }
             else if(FileUploadPageIconRequest != null)
             {
                 return FileUploadPageIconRequest.GetFieldDeserializers();
-            }
-            else if(Icon != null)
-            {
-                return Icon.GetFieldDeserializers();
             }
             else if(IconPageIconRequest != null)
             {
@@ -216,11 +120,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CustomEmoji != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_custom_emoji>(null, CustomEmoji);
-            }
-            else if(CustomEmojiPageIconRequest != null)
+            if(CustomEmojiPageIconRequest != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconRequest>(null, CustomEmojiPageIconRequest);
             }
@@ -228,39 +128,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconRequest>(null, EmojiPageIconRequest);
             }
-            else if(External != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_external>(null, External);
-            }
             else if(ExternalPageIconRequest != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequest>(null, ExternalPageIconRequest);
-            }
-            else if(FileUpload != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_file_upload>(null, FileUpload);
             }
             else if(FileUploadPageIconRequest != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest>(null, FileUploadPageIconRequest);
             }
-            else if(Icon != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest_icon>(null, Icon);
-            }
             else if(IconPageIconRequest != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest>(null, IconPageIconRequest);
             }
-            else if(Emoji != null)
-            {
-                writer.WriteStringValue(null, Emoji);
-            }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
-            }
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

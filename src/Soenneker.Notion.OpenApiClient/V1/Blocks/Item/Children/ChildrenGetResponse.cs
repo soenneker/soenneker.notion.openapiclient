@@ -18,10 +18,10 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         /// <summary>The block property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Block { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_block? Block { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Block { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_block Block { get; set; }
 #endif
         /// <summary>The has_more property</summary>
         public bool? HasMore { get; set; }
@@ -34,13 +34,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         public string NextCursor { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_object? Object { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,13 +44,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         public List<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse.ChildrenGetResponse_results> Results { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse"/> and sets the default values.
         /// </summary>
@@ -82,12 +70,12 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "block", n => { Block = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "block", n => { Block = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_block>(global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_block.CreateFromDiscriminatorValue); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_object>(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse.ChildrenGetResponse_results>(global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse.ChildrenGetResponse_results.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_type>(); } },
             };
         }
         /// <summary>
@@ -97,12 +85,12 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("block", Block);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_block>("block", Block);
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_object>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse.ChildrenGetResponse_results>("results", Results);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

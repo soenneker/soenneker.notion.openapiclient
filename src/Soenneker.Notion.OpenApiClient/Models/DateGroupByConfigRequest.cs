@@ -26,7 +26,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string PropertyId { get; set; }
 #endif
-        /// <summary>Sort order for groups.</summary>
+        /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest? Sort { get; set; }

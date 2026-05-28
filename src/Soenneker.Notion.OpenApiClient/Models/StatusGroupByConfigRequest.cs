@@ -26,7 +26,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string PropertyId { get; set; }
 #endif
-        /// <summary>Sort order for groups.</summary>
+        /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest? Sort { get; set; }
@@ -35,13 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest Sort { get; set; }
 #endif
         /// <summary>The property type for grouping.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigRequest_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigRequest"/> and sets the default values.
         /// </summary>
@@ -71,7 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigRequest_type>(); } },
             };
         }
         /// <summary>
@@ -85,7 +79,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteStringValue("property_id", PropertyId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>("sort", Sort);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

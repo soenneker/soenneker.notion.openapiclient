@@ -16,25 +16,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>Whether there are more results.</summary>
         public bool? HasMore { get; set; }
-        /// <summary>The query ID.</summary>
+        /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>Cursor for the next page of results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor? NextCursor { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor NextCursor { get; set; }
-#endif
+        public Guid? NextCursor { get; set; }
         /// <summary>The object type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
-        /// <summary>Set to `{ type: &apos;incomplete&apos;, incomplete_reason: &apos;query_result_limit_reached&apos; }` when the view&apos;s underlying data source has more rows matching this query than the server-side pagination depth limit allows.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_object? Object { get; set; }
+        /// <summary>The request_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse? RequestStatus { get; set; }
@@ -52,7 +40,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>Total number of results in the query.</summary>
         public double? TotalCount { get; set; }
-        /// <summary>The view this query was executed against.</summary>
+        /// <summary>The view_id property</summary>
         public Guid? ViewId { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -75,8 +63,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor>(global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "next_cursor", n => { NextCursor = n.GetGuidValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_object>(); } },
                 { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>(global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse>(global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "total_count", n => { TotalCount = n.GetDoubleValue(); } },
@@ -93,87 +81,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor>("next_cursor", NextCursor);
-            writer.WriteStringValue("object", Object);
+            writer.WriteGuidValue("next_cursor", NextCursor);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_object>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>("request_status", RequestStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse>("results", Results);
             writer.WriteDoubleValue("total_count", TotalCount);
             writer.WriteGuidValue("view_id", ViewId);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.IdResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_next_cursorMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ViewQueryResponse_next_cursor : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.IdResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.IdResponse? IdResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.IdResponse IdResponse { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_next_cursorMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_next_cursorMember1? ViewQueryResponseNextCursorMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_next_cursorMember1 ViewQueryResponseNextCursorMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse.ViewQueryResponse_next_cursor();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.IdResponse = new global::Soenneker.Notion.OpenApiClient.Models.IdResponse();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ViewQueryResponseNextCursorMember1 = new global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_next_cursorMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(IdResponse != null)
-                {
-                    return IdResponse.GetFieldDeserializers();
-                }
-                else if(ViewQueryResponseNextCursorMember1 != null)
-                {
-                    return ViewQueryResponseNextCursorMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(IdResponse != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IdResponse>(null, IdResponse);
-                }
-                else if(ViewQueryResponseNextCursorMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponse_next_cursorMember1>(null, ViewQueryResponseNextCursorMember1);
-                }
-            }
         }
     }
 }
