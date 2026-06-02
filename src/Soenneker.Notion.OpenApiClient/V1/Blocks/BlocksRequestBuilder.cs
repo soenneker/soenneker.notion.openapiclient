@@ -23,14 +23,14 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks
         }
         /// <summary>Gets an item from the Soenneker.Notion.OpenApiClient.v1.blocks.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.WithBlock_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.WithBlock_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.WithBlockItemRequestBuilder"/></returns>
+        public global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.WithBlockItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("block_id", position);
-                return new global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.WithBlock_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("blockId", position);
+                return new global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.WithBlockItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

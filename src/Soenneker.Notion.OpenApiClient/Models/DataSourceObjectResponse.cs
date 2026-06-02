@@ -15,10 +15,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The cover of the data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_cover? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseCover? Cover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_cover Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseCover Cover { get; set; }
 #endif
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The icon of the data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_icon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseIcon? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_icon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseIcon Icon { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -83,10 +83,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The properties schema of the data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_properties? Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponsePropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_properties Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponsePropertiesProperty Properties { get; set; }
 #endif
         /// <summary>The public URL of the data source if it is publicly accessible.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,12 +130,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_cover>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_cover.CreateFromDiscriminatorValue); } },
+                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseCover>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseCover.CreateFromDiscriminatorValue); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "database_parent", n => { DatabaseParent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_icon>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_icon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseIcon>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseIcon.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "is_inline", n => { IsInline = n.GetBoolValue(); } },
@@ -143,7 +143,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_object>(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceResponse.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_properties>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponsePropertiesProperty>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponsePropertiesProperty.CreateFromDiscriminatorValue); } },
                 { "public_url", n => { PublicUrl = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -156,12 +156,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_cover>("cover", Cover);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseCover>("cover", Cover);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>("database_parent", DatabaseParent);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_icon>("icon", Icon);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseIcon>("icon", Icon);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteBoolValue("is_inline", IsInline);
@@ -169,7 +169,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_object>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceResponse>("parent", Parent);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponsePropertiesProperty>("properties", Properties);
             writer.WriteStringValue("public_url", PublicUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);
             writer.WriteStringValue("url", Url);

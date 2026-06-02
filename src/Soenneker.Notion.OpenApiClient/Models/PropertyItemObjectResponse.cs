@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The button property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_button? Button { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton? Button { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_button Button { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton Button { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_created_by? CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_created_by CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,10 +69,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse? Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate? Date { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate Date { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,10 +141,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The last_edited_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_last_edited_by? LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy? LastEditedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_last_edited_by LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy LastEditedBy { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,10 +195,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The people property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_people? People { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponsePeople? People { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_people People { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponsePeople People { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -227,10 +227,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The place property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_place? Place { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponsePlace? Place { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_place Place { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponsePlace Place { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -291,10 +291,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Select { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect? Select { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Select { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect Select { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -307,10 +307,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseStatus? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseStatus Status { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -379,10 +379,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_verification? Verification { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification? Verification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_verification Verification { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification Verification { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -457,27 +457,27 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 result.MultiSelect = multiSelectValue;
             }
             else {
-                result.Button = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_button();
+                result.Button = new global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton();
                 result.ButtonPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponse();
                 result.CheckboxPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyItemObjectResponse();
-                result.CreatedBy = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_created_by();
+                result.CreatedBy = new global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy();
                 result.CreatedByPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse();
                 result.CreatedTimePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CreatedTimePropertyItemObjectResponse();
-                result.Date = new global::Soenneker.Notion.OpenApiClient.Models.DateResponse();
+                result.Date = new global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate();
                 result.DatePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse();
                 result.EmailPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.EmailPropertyItemObjectResponse();
                 result.FilesPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponse();
                 result.Formula = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse();
                 result.FormulaPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponse();
-                result.LastEditedBy = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_last_edited_by();
+                result.LastEditedBy = new global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy();
                 result.LastEditedByPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponse();
                 result.LastEditedTimePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimePropertyItemObjectResponse();
                 result.MultiSelectPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyItemObjectResponse();
                 result.NumberPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse();
-                result.People = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_people();
+                result.People = new global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponsePeople();
                 result.PeoplePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponse();
                 result.PhoneNumberPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberPropertyItemObjectResponse();
-                result.Place = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_place();
+                result.Place = new global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponsePlace();
                 result.PlacePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponse();
                 result.Relation = new global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation();
                 result.RelationPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse();
@@ -485,16 +485,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 result.RichTextPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.RichTextPropertyItemObjectResponse();
                 result.Rollup = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup();
                 result.RollupPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse();
-                result.Select = new global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse();
+                result.Select = new global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect();
                 result.SelectPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse();
-                result.Status = new global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse();
+                result.Status = new global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseStatus();
                 result.StatusPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse();
                 result.Title = new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse();
                 result.TitlePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.TitlePropertyItemObjectResponse();
                 result.UniqueId = new global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId();
                 result.UniqueIdPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse();
                 result.UrlPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UrlPropertyItemObjectResponse();
-                result.Verification = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_verification();
+                result.Verification = new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification();
                 result.VerificationPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse();
             }
             return result;
@@ -567,180 +567,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>(null, MultiSelect);
             }
             else {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_button>(null, Button, ButtonPropertyItemObjectResponse, CheckboxPropertyItemObjectResponse, CreatedBy, CreatedByPropertyItemObjectResponse, CreatedTimePropertyItemObjectResponse, Date, DatePropertyItemObjectResponse, EmailPropertyItemObjectResponse, FilesPropertyItemObjectResponse, Formula, FormulaPropertyItemObjectResponse, LastEditedBy, LastEditedByPropertyItemObjectResponse, LastEditedTimePropertyItemObjectResponse, MultiSelectPropertyItemObjectResponse, NumberPropertyItemObjectResponse, People, PeoplePropertyItemObjectResponse, PhoneNumberPropertyItemObjectResponse, Place, PlacePropertyItemObjectResponse, Relation, RelationPropertyItemObjectResponse, RichText, RichTextPropertyItemObjectResponse, Rollup, RollupPropertyItemObjectResponse, Select, SelectPropertyItemObjectResponse, Status, StatusPropertyItemObjectResponse, Title, TitlePropertyItemObjectResponse, UniqueId, UniqueIdPropertyItemObjectResponse, UrlPropertyItemObjectResponse, Verification, VerificationPropertyItemObjectResponse);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton>(null, Button, ButtonPropertyItemObjectResponse, CheckboxPropertyItemObjectResponse, CreatedBy, CreatedByPropertyItemObjectResponse, CreatedTimePropertyItemObjectResponse, Date, DatePropertyItemObjectResponse, EmailPropertyItemObjectResponse, FilesPropertyItemObjectResponse, Formula, FormulaPropertyItemObjectResponse, LastEditedBy, LastEditedByPropertyItemObjectResponse, LastEditedTimePropertyItemObjectResponse, MultiSelectPropertyItemObjectResponse, NumberPropertyItemObjectResponse, People, PeoplePropertyItemObjectResponse, PhoneNumberPropertyItemObjectResponse, Place, PlacePropertyItemObjectResponse, Relation, RelationPropertyItemObjectResponse, RichText, RichTextPropertyItemObjectResponse, Rollup, RollupPropertyItemObjectResponse, Select, SelectPropertyItemObjectResponse, Status, StatusPropertyItemObjectResponse, Title, TitlePropertyItemObjectResponse, UniqueId, UniqueIdPropertyItemObjectResponse, UrlPropertyItemObjectResponse, Verification, VerificationPropertyItemObjectResponse);
             }
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PropertyItemObjectResponse_created_by : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? PartialUserObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse PartialUserObjectResponse { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse? UserObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse UserObjectResponse { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_created_by"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_created_by CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_created_by();
-                result.PartialUserObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse();
-                result.UserObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(PartialUserObjectResponse != null || UserObjectResponse != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PartialUserObjectResponse, UserObjectResponse);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(null, PartialUserObjectResponse, UserObjectResponse);
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PropertyItemObjectResponse_last_edited_by : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? PartialUserObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse PartialUserObjectResponse { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse? UserObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse UserObjectResponse { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_last_edited_by"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_last_edited_by CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_last_edited_by();
-                result.PartialUserObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse();
-                result.UserObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(PartialUserObjectResponse != null || UserObjectResponse != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PartialUserObjectResponse, UserObjectResponse);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(null, PartialUserObjectResponse, UserObjectResponse);
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PropertyItemObjectResponse_people : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? PartialUserObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse PartialUserObjectResponse { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse? UserObjectResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse UserObjectResponse { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_people"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_people CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse.PropertyItemObjectResponse_people();
-                result.PartialUserObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse();
-                result.UserObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(PartialUserObjectResponse != null || UserObjectResponse != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PartialUserObjectResponse, UserObjectResponse);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(null, PartialUserObjectResponse, UserObjectResponse);
-            }
         }
     }
 }

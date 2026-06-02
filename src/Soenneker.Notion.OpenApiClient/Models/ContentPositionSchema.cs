@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentPositionSchema : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember1? ContentPositionSchemaMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf1? ContentPositionSchemaAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember1 ContentPositionSchemaMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf1 ContentPositionSchemaAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember2? ContentPositionSchemaMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf2? ContentPositionSchemaAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember2 ContentPositionSchemaMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf2 ContentPositionSchemaAnyOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember3? ContentPositionSchemaMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf3? ContentPositionSchemaAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember3 ContentPositionSchemaMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf3 ContentPositionSchemaAnyOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,9 +46,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchema();
-            result.ContentPositionSchemaMember1 = new global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember1();
-            result.ContentPositionSchemaMember2 = new global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember2();
-            result.ContentPositionSchemaMember3 = new global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember3();
+            result.ContentPositionSchemaAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf1();
+            result.ContentPositionSchemaAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf2();
+            result.ContentPositionSchemaAnyOf3 = new global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf3();
             return result;
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ContentPositionSchemaMember1 != null || ContentPositionSchemaMember2 != null || ContentPositionSchemaMember3 != null)
+            if(ContentPositionSchemaAnyOf1 != null || ContentPositionSchemaAnyOf2 != null || ContentPositionSchemaAnyOf3 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ContentPositionSchemaMember1, ContentPositionSchemaMember2, ContentPositionSchemaMember3);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ContentPositionSchemaAnyOf1, ContentPositionSchemaAnyOf2, ContentPositionSchemaAnyOf3);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaMember1>(null, ContentPositionSchemaMember1, ContentPositionSchemaMember2, ContentPositionSchemaMember3);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchemaAnyOf1>(null, ContentPositionSchemaAnyOf1, ContentPositionSchemaAnyOf2, ContentPositionSchemaAnyOf3);
         }
     }
 }

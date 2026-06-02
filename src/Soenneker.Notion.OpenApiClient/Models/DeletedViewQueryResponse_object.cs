@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "view_query")]
         #pragma warning disable CS1591
-        View_query,
+        ViewQuery,
         #pragma warning restore CS1591
     }
 }

@@ -15,19 +15,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Card layout mode. &quot;list&quot; shows full cards, &quot;compact&quot; shows condensed cards. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_card_layout? CardLayout { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCardLayout? CardLayout { get; set; }
         /// <summary>Cover image configuration for cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCover? Cover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCover Cover { get; set; }
 #endif
         /// <summary>Aspect ratio mode for cover images. &quot;contain&quot; fits the image, &quot;cover&quot; fills the area. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_cover_aspect? CoverAspect { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect? CoverAspect { get; set; }
         /// <summary>Size of the cover image on cards. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_cover_size? CoverSize { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize? CoverSize { get; set; }
         /// <summary>Group-by configuration based on property type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,18 +39,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property visibility and display configuration on cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch? Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties Properties { get; set; }
 #endif
         /// <summary>Secondary group-by configuration for sub-grouping within columns. Pass null to remove sub-grouping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_sub_group_by? SubGroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy? SubGroupBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_sub_group_by SubGroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy SubGroupBy { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;board&quot;.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_type? Type { get; set; }
@@ -79,13 +79,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "card_layout", n => { CardLayout = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_card_layout>(); } },
-                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest.CreateFromDiscriminatorValue); } },
-                { "cover_aspect", n => { CoverAspect = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_cover_aspect>(); } },
-                { "cover_size", n => { CoverSize = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_cover_size>(); } },
+                { "card_layout", n => { CardLayout = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCardLayout>(); } },
+                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCover>(global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCover.CreateFromDiscriminatorValue); } },
+                { "cover_aspect", n => { CoverAspect = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect>(); } },
+                { "cover_size", n => { CoverSize = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize>(); } },
                 { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>(global::Soenneker.Notion.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
-                { "sub_group_by", n => { SubGroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_sub_group_by>(global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_sub_group_by.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
+                { "sub_group_by", n => { SubGroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy>(global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_type>(); } },
             };
         }
@@ -96,13 +96,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_card_layout>("card_layout", CardLayout);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest>("cover", Cover);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_cover_aspect>("cover_aspect", CoverAspect);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_cover_size>("cover_size", CoverSize);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCardLayout>("card_layout", CardLayout);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCover>("cover", Cover);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect>("cover_aspect", CoverAspect);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize>("cover_size", CoverSize);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>("group_by", GroupBy);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>("properties", Properties);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_sub_group_by>("sub_group_by", SubGroupBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy>("sub_group_by", SubGroupBy);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

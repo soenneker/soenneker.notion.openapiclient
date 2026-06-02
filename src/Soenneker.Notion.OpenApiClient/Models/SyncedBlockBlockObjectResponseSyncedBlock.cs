@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The synced_from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock_synced_from? SyncedFrom { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom? SyncedFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock_synced_from SyncedFrom { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom SyncedFrom { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "synced_from", n => { SyncedFrom = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock_synced_from>(global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock_synced_from.CreateFromDiscriminatorValue); } },
+                { "synced_from", n => { SyncedFrom = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom>(global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock_synced_from>("synced_from", SyncedFrom);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom>("synced_from", SyncedFrom);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

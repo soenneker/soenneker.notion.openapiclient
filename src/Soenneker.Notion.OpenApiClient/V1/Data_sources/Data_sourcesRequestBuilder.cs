@@ -20,14 +20,14 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources
     {
         /// <summary>Gets an item from the Soenneker.Notion.OpenApiClient.v1.data_sources.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.WithData_source_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.WithData_source_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.WithDataSourceItemRequestBuilder"/></returns>
+        public global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.WithDataSourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("data_source_id", position);
-                return new global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.WithData_source_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("dataSourceId", position);
+                return new global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.WithDataSourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources
         /// <summary>
         /// Create a data source
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,11 +64,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200Response?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200Response> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -85,7 +85,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a data source
@@ -95,11 +95,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

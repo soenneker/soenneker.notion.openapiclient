@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>&quot;One of: `person`, `bot`, `agent`&quot;</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedByType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedByType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedByType>("type", Type);
         }
     }
 }

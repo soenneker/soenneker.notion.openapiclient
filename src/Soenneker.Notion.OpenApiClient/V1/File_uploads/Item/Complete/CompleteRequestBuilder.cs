@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.Complete
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\file_uploads\{file_upload_id}\complete
+    /// Builds and executes requests for operations under \v1\file_uploads\{fileUploadId}\complete
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompleteRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.Complete
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/file_uploads/{file_upload_id}/complete", pathParameters)
+        public CompleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/file_uploads/{fileUploadId}/complete", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.Complete
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/file_uploads/{file_upload_id}/complete", rawUrl)
+        public CompleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/file_uploads/{fileUploadId}/complete", rawUrl)
         {
         }
         /// <summary>

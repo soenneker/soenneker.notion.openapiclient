@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\pages\{page_id}\properties
+    /// Builds and executes requests for operations under \v1\pages\{pageId}\properties
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Notion.OpenApiClient.v1.pages.item.properties.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties.Item.WithProperty_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties.Item.WithProperty_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties.Item.WithPropertyItemRequestBuilder"/></returns>
+        public global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties.Item.WithPropertyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("property_id", position);
-                return new global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties.Item.WithProperty_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("propertyId", position);
+                return new global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties.Item.WithPropertyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PropertiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{page_id}/properties", pathParameters)
+        public PropertiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/properties", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Properties
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PropertiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{page_id}/properties", rawUrl)
+        public PropertiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/properties", rawUrl)
         {
         }
     }

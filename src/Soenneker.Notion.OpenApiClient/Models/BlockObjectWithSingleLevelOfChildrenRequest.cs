@@ -8,242 +8,242 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember10"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember11"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember12"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember13"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember14"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember15"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember16"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember17"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember18"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember19"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember20"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember21"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember22"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember23"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember25"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember27"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember28"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember29"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember5"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember6"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember7"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember8"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember9"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestAudio"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCallout"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCode"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestDivider"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEmbed"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEquation"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestFile"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestImage"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestLinkToPage"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestParagraph"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestPdf"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestQuote"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTab"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTable"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableOfContents"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableRow"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTemplate"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToDo"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToggle"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BlockObjectWithSingleLevelOfChildrenRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestAudio"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember1? BlockObjectWithSingleLevelOfChildrenRequestMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestAudio? BlockObjectWithSingleLevelOfChildrenRequestAudio { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember1 BlockObjectWithSingleLevelOfChildrenRequestMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestAudio BlockObjectWithSingleLevelOfChildrenRequestAudio { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember10"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember10? BlockObjectWithSingleLevelOfChildrenRequestMember10 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark? BlockObjectWithSingleLevelOfChildrenRequestBookmark { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember10 BlockObjectWithSingleLevelOfChildrenRequestMember10 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark BlockObjectWithSingleLevelOfChildrenRequestBookmark { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember11"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember11? BlockObjectWithSingleLevelOfChildrenRequestMember11 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb? BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember11 BlockObjectWithSingleLevelOfChildrenRequestMember11 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember12"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember12? BlockObjectWithSingleLevelOfChildrenRequestMember12 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem? BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember12 BlockObjectWithSingleLevelOfChildrenRequestMember12 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember13"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCallout"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember13? BlockObjectWithSingleLevelOfChildrenRequestMember13 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCallout? BlockObjectWithSingleLevelOfChildrenRequestCallout { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember13 BlockObjectWithSingleLevelOfChildrenRequestMember13 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCallout BlockObjectWithSingleLevelOfChildrenRequestCallout { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember14"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCode"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember14? BlockObjectWithSingleLevelOfChildrenRequestMember14 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCode? BlockObjectWithSingleLevelOfChildrenRequestCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember14 BlockObjectWithSingleLevelOfChildrenRequestMember14 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCode BlockObjectWithSingleLevelOfChildrenRequestCode { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember15"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestDivider"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember15? BlockObjectWithSingleLevelOfChildrenRequestMember15 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestDivider? BlockObjectWithSingleLevelOfChildrenRequestDivider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember15 BlockObjectWithSingleLevelOfChildrenRequestMember15 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestDivider BlockObjectWithSingleLevelOfChildrenRequestDivider { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember16"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEmbed"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember16? BlockObjectWithSingleLevelOfChildrenRequestMember16 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEmbed? BlockObjectWithSingleLevelOfChildrenRequestEmbed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember16 BlockObjectWithSingleLevelOfChildrenRequestMember16 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEmbed BlockObjectWithSingleLevelOfChildrenRequestEmbed { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember17"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEquation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember17? BlockObjectWithSingleLevelOfChildrenRequestMember17 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEquation? BlockObjectWithSingleLevelOfChildrenRequestEquation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember17 BlockObjectWithSingleLevelOfChildrenRequestMember17 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEquation BlockObjectWithSingleLevelOfChildrenRequestEquation { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember18"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestFile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember18? BlockObjectWithSingleLevelOfChildrenRequestMember18 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestFile? BlockObjectWithSingleLevelOfChildrenRequestFile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember18 BlockObjectWithSingleLevelOfChildrenRequestMember18 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestFile BlockObjectWithSingleLevelOfChildrenRequestFile { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember19"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember19? BlockObjectWithSingleLevelOfChildrenRequestMember19 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading1? BlockObjectWithSingleLevelOfChildrenRequestHeading1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember19 BlockObjectWithSingleLevelOfChildrenRequestMember19 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading1 BlockObjectWithSingleLevelOfChildrenRequestHeading1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember2? BlockObjectWithSingleLevelOfChildrenRequestMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading2? BlockObjectWithSingleLevelOfChildrenRequestHeading2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember2 BlockObjectWithSingleLevelOfChildrenRequestMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading2 BlockObjectWithSingleLevelOfChildrenRequestHeading2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember20"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember20? BlockObjectWithSingleLevelOfChildrenRequestMember20 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading3? BlockObjectWithSingleLevelOfChildrenRequestHeading3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember20 BlockObjectWithSingleLevelOfChildrenRequestMember20 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading3 BlockObjectWithSingleLevelOfChildrenRequestHeading3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember21"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember21? BlockObjectWithSingleLevelOfChildrenRequestMember21 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading4? BlockObjectWithSingleLevelOfChildrenRequestHeading4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember21 BlockObjectWithSingleLevelOfChildrenRequestMember21 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading4 BlockObjectWithSingleLevelOfChildrenRequestHeading4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember22"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestImage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember22? BlockObjectWithSingleLevelOfChildrenRequestMember22 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestImage? BlockObjectWithSingleLevelOfChildrenRequestImage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember22 BlockObjectWithSingleLevelOfChildrenRequestMember22 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestImage BlockObjectWithSingleLevelOfChildrenRequestImage { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember23"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestLinkToPage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember23? BlockObjectWithSingleLevelOfChildrenRequestMember23 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestLinkToPage? BlockObjectWithSingleLevelOfChildrenRequestLinkToPage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember23 BlockObjectWithSingleLevelOfChildrenRequestMember23 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestLinkToPage BlockObjectWithSingleLevelOfChildrenRequestLinkToPage { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24? BlockObjectWithSingleLevelOfChildrenRequestMember24 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem? BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24 BlockObjectWithSingleLevelOfChildrenRequestMember24 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember25"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestParagraph"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember25? BlockObjectWithSingleLevelOfChildrenRequestMember25 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestParagraph? BlockObjectWithSingleLevelOfChildrenRequestParagraph { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember25 BlockObjectWithSingleLevelOfChildrenRequestMember25 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestParagraph BlockObjectWithSingleLevelOfChildrenRequestParagraph { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestPdf"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26? BlockObjectWithSingleLevelOfChildrenRequestMember26 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestPdf? BlockObjectWithSingleLevelOfChildrenRequestPdf { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26 BlockObjectWithSingleLevelOfChildrenRequestMember26 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestPdf BlockObjectWithSingleLevelOfChildrenRequestPdf { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember27"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestQuote"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember27? BlockObjectWithSingleLevelOfChildrenRequestMember27 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestQuote? BlockObjectWithSingleLevelOfChildrenRequestQuote { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember27 BlockObjectWithSingleLevelOfChildrenRequestMember27 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestQuote BlockObjectWithSingleLevelOfChildrenRequestQuote { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember28"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember28? BlockObjectWithSingleLevelOfChildrenRequestMember28 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock? BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember28 BlockObjectWithSingleLevelOfChildrenRequestMember28 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember29"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTab"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember29? BlockObjectWithSingleLevelOfChildrenRequestMember29 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTab? BlockObjectWithSingleLevelOfChildrenRequestTab { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember29 BlockObjectWithSingleLevelOfChildrenRequestMember29 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTab BlockObjectWithSingleLevelOfChildrenRequestTab { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTable"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember3? BlockObjectWithSingleLevelOfChildrenRequestMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTable? BlockObjectWithSingleLevelOfChildrenRequestTable { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember3 BlockObjectWithSingleLevelOfChildrenRequestMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTable BlockObjectWithSingleLevelOfChildrenRequestTable { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableOfContents"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember4? BlockObjectWithSingleLevelOfChildrenRequestMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableOfContents? BlockObjectWithSingleLevelOfChildrenRequestTableOfContents { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember4 BlockObjectWithSingleLevelOfChildrenRequestMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableOfContents BlockObjectWithSingleLevelOfChildrenRequestTableOfContents { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableRow"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember5? BlockObjectWithSingleLevelOfChildrenRequestMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableRow? BlockObjectWithSingleLevelOfChildrenRequestTableRow { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember5 BlockObjectWithSingleLevelOfChildrenRequestMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableRow BlockObjectWithSingleLevelOfChildrenRequestTableRow { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember6"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTemplate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember6? BlockObjectWithSingleLevelOfChildrenRequestMember6 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTemplate? BlockObjectWithSingleLevelOfChildrenRequestTemplate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember6 BlockObjectWithSingleLevelOfChildrenRequestMember6 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTemplate BlockObjectWithSingleLevelOfChildrenRequestTemplate { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember7"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToDo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember7? BlockObjectWithSingleLevelOfChildrenRequestMember7 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToDo? BlockObjectWithSingleLevelOfChildrenRequestToDo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember7 BlockObjectWithSingleLevelOfChildrenRequestMember7 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToDo BlockObjectWithSingleLevelOfChildrenRequestToDo { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember8"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToggle"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember8? BlockObjectWithSingleLevelOfChildrenRequestMember8 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToggle? BlockObjectWithSingleLevelOfChildrenRequestToggle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember8 BlockObjectWithSingleLevelOfChildrenRequestMember8 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToggle BlockObjectWithSingleLevelOfChildrenRequestToggle { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember9"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember9? BlockObjectWithSingleLevelOfChildrenRequestMember9 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo? BlockObjectWithSingleLevelOfChildrenRequestVideo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember9 BlockObjectWithSingleLevelOfChildrenRequestMember9 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo BlockObjectWithSingleLevelOfChildrenRequestVideo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -254,35 +254,35 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequest();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember1 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember1();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember10 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember10();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember11 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember11();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember12 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember12();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember13 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember13();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember14 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember14();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember15 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember15();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember16 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember16();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember17 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember17();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember18 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember18();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember19 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember19();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember2 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember2();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember20 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember20();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember21 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember21();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember22 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember22();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember23 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember23();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember24 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember24();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember25 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember25();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember26 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember26();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember27 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember27();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember28 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember28();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember29 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember29();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember3 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember3();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember4 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember4();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember5 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember5();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember6 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember6();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember7 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember7();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember8 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember8();
-            result.BlockObjectWithSingleLevelOfChildrenRequestMember9 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember9();
+            result.BlockObjectWithSingleLevelOfChildrenRequestAudio = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestAudio();
+            result.BlockObjectWithSingleLevelOfChildrenRequestBookmark = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark();
+            result.BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb();
+            result.BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem();
+            result.BlockObjectWithSingleLevelOfChildrenRequestCallout = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCallout();
+            result.BlockObjectWithSingleLevelOfChildrenRequestCode = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestCode();
+            result.BlockObjectWithSingleLevelOfChildrenRequestDivider = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestDivider();
+            result.BlockObjectWithSingleLevelOfChildrenRequestEmbed = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEmbed();
+            result.BlockObjectWithSingleLevelOfChildrenRequestEquation = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestEquation();
+            result.BlockObjectWithSingleLevelOfChildrenRequestFile = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestFile();
+            result.BlockObjectWithSingleLevelOfChildrenRequestHeading1 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading1();
+            result.BlockObjectWithSingleLevelOfChildrenRequestHeading2 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading2();
+            result.BlockObjectWithSingleLevelOfChildrenRequestHeading3 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading3();
+            result.BlockObjectWithSingleLevelOfChildrenRequestHeading4 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestHeading4();
+            result.BlockObjectWithSingleLevelOfChildrenRequestImage = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestImage();
+            result.BlockObjectWithSingleLevelOfChildrenRequestLinkToPage = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestLinkToPage();
+            result.BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem();
+            result.BlockObjectWithSingleLevelOfChildrenRequestParagraph = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestParagraph();
+            result.BlockObjectWithSingleLevelOfChildrenRequestPdf = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestPdf();
+            result.BlockObjectWithSingleLevelOfChildrenRequestQuote = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestQuote();
+            result.BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock();
+            result.BlockObjectWithSingleLevelOfChildrenRequestTab = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTab();
+            result.BlockObjectWithSingleLevelOfChildrenRequestTable = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTable();
+            result.BlockObjectWithSingleLevelOfChildrenRequestTableOfContents = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableOfContents();
+            result.BlockObjectWithSingleLevelOfChildrenRequestTableRow = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTableRow();
+            result.BlockObjectWithSingleLevelOfChildrenRequestTemplate = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestTemplate();
+            result.BlockObjectWithSingleLevelOfChildrenRequestToDo = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToDo();
+            result.BlockObjectWithSingleLevelOfChildrenRequestToggle = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestToggle();
+            result.BlockObjectWithSingleLevelOfChildrenRequestVideo = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo();
             return result;
         }
         /// <summary>
@@ -291,9 +291,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(BlockObjectWithSingleLevelOfChildrenRequestMember1 != null || BlockObjectWithSingleLevelOfChildrenRequestMember10 != null || BlockObjectWithSingleLevelOfChildrenRequestMember11 != null || BlockObjectWithSingleLevelOfChildrenRequestMember12 != null || BlockObjectWithSingleLevelOfChildrenRequestMember13 != null || BlockObjectWithSingleLevelOfChildrenRequestMember14 != null || BlockObjectWithSingleLevelOfChildrenRequestMember15 != null || BlockObjectWithSingleLevelOfChildrenRequestMember16 != null || BlockObjectWithSingleLevelOfChildrenRequestMember17 != null || BlockObjectWithSingleLevelOfChildrenRequestMember18 != null || BlockObjectWithSingleLevelOfChildrenRequestMember19 != null || BlockObjectWithSingleLevelOfChildrenRequestMember2 != null || BlockObjectWithSingleLevelOfChildrenRequestMember20 != null || BlockObjectWithSingleLevelOfChildrenRequestMember21 != null || BlockObjectWithSingleLevelOfChildrenRequestMember22 != null || BlockObjectWithSingleLevelOfChildrenRequestMember23 != null || BlockObjectWithSingleLevelOfChildrenRequestMember24 != null || BlockObjectWithSingleLevelOfChildrenRequestMember25 != null || BlockObjectWithSingleLevelOfChildrenRequestMember26 != null || BlockObjectWithSingleLevelOfChildrenRequestMember27 != null || BlockObjectWithSingleLevelOfChildrenRequestMember28 != null || BlockObjectWithSingleLevelOfChildrenRequestMember29 != null || BlockObjectWithSingleLevelOfChildrenRequestMember3 != null || BlockObjectWithSingleLevelOfChildrenRequestMember4 != null || BlockObjectWithSingleLevelOfChildrenRequestMember5 != null || BlockObjectWithSingleLevelOfChildrenRequestMember6 != null || BlockObjectWithSingleLevelOfChildrenRequestMember7 != null || BlockObjectWithSingleLevelOfChildrenRequestMember8 != null || BlockObjectWithSingleLevelOfChildrenRequestMember9 != null)
+            if(BlockObjectWithSingleLevelOfChildrenRequestAudio != null || BlockObjectWithSingleLevelOfChildrenRequestBookmark != null || BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb != null || BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem != null || BlockObjectWithSingleLevelOfChildrenRequestCallout != null || BlockObjectWithSingleLevelOfChildrenRequestCode != null || BlockObjectWithSingleLevelOfChildrenRequestDivider != null || BlockObjectWithSingleLevelOfChildrenRequestEmbed != null || BlockObjectWithSingleLevelOfChildrenRequestEquation != null || BlockObjectWithSingleLevelOfChildrenRequestFile != null || BlockObjectWithSingleLevelOfChildrenRequestHeading1 != null || BlockObjectWithSingleLevelOfChildrenRequestHeading2 != null || BlockObjectWithSingleLevelOfChildrenRequestHeading3 != null || BlockObjectWithSingleLevelOfChildrenRequestHeading4 != null || BlockObjectWithSingleLevelOfChildrenRequestImage != null || BlockObjectWithSingleLevelOfChildrenRequestLinkToPage != null || BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem != null || BlockObjectWithSingleLevelOfChildrenRequestParagraph != null || BlockObjectWithSingleLevelOfChildrenRequestPdf != null || BlockObjectWithSingleLevelOfChildrenRequestQuote != null || BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock != null || BlockObjectWithSingleLevelOfChildrenRequestTab != null || BlockObjectWithSingleLevelOfChildrenRequestTable != null || BlockObjectWithSingleLevelOfChildrenRequestTableOfContents != null || BlockObjectWithSingleLevelOfChildrenRequestTableRow != null || BlockObjectWithSingleLevelOfChildrenRequestTemplate != null || BlockObjectWithSingleLevelOfChildrenRequestToDo != null || BlockObjectWithSingleLevelOfChildrenRequestToggle != null || BlockObjectWithSingleLevelOfChildrenRequestVideo != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BlockObjectWithSingleLevelOfChildrenRequestMember1, BlockObjectWithSingleLevelOfChildrenRequestMember10, BlockObjectWithSingleLevelOfChildrenRequestMember11, BlockObjectWithSingleLevelOfChildrenRequestMember12, BlockObjectWithSingleLevelOfChildrenRequestMember13, BlockObjectWithSingleLevelOfChildrenRequestMember14, BlockObjectWithSingleLevelOfChildrenRequestMember15, BlockObjectWithSingleLevelOfChildrenRequestMember16, BlockObjectWithSingleLevelOfChildrenRequestMember17, BlockObjectWithSingleLevelOfChildrenRequestMember18, BlockObjectWithSingleLevelOfChildrenRequestMember19, BlockObjectWithSingleLevelOfChildrenRequestMember2, BlockObjectWithSingleLevelOfChildrenRequestMember20, BlockObjectWithSingleLevelOfChildrenRequestMember21, BlockObjectWithSingleLevelOfChildrenRequestMember22, BlockObjectWithSingleLevelOfChildrenRequestMember23, BlockObjectWithSingleLevelOfChildrenRequestMember24, BlockObjectWithSingleLevelOfChildrenRequestMember25, BlockObjectWithSingleLevelOfChildrenRequestMember26, BlockObjectWithSingleLevelOfChildrenRequestMember27, BlockObjectWithSingleLevelOfChildrenRequestMember28, BlockObjectWithSingleLevelOfChildrenRequestMember29, BlockObjectWithSingleLevelOfChildrenRequestMember3, BlockObjectWithSingleLevelOfChildrenRequestMember4, BlockObjectWithSingleLevelOfChildrenRequestMember5, BlockObjectWithSingleLevelOfChildrenRequestMember6, BlockObjectWithSingleLevelOfChildrenRequestMember7, BlockObjectWithSingleLevelOfChildrenRequestMember8, BlockObjectWithSingleLevelOfChildrenRequestMember9);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BlockObjectWithSingleLevelOfChildrenRequestAudio, BlockObjectWithSingleLevelOfChildrenRequestBookmark, BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb, BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem, BlockObjectWithSingleLevelOfChildrenRequestCallout, BlockObjectWithSingleLevelOfChildrenRequestCode, BlockObjectWithSingleLevelOfChildrenRequestDivider, BlockObjectWithSingleLevelOfChildrenRequestEmbed, BlockObjectWithSingleLevelOfChildrenRequestEquation, BlockObjectWithSingleLevelOfChildrenRequestFile, BlockObjectWithSingleLevelOfChildrenRequestHeading1, BlockObjectWithSingleLevelOfChildrenRequestHeading2, BlockObjectWithSingleLevelOfChildrenRequestHeading3, BlockObjectWithSingleLevelOfChildrenRequestHeading4, BlockObjectWithSingleLevelOfChildrenRequestImage, BlockObjectWithSingleLevelOfChildrenRequestLinkToPage, BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem, BlockObjectWithSingleLevelOfChildrenRequestParagraph, BlockObjectWithSingleLevelOfChildrenRequestPdf, BlockObjectWithSingleLevelOfChildrenRequestQuote, BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock, BlockObjectWithSingleLevelOfChildrenRequestTab, BlockObjectWithSingleLevelOfChildrenRequestTable, BlockObjectWithSingleLevelOfChildrenRequestTableOfContents, BlockObjectWithSingleLevelOfChildrenRequestTableRow, BlockObjectWithSingleLevelOfChildrenRequestTemplate, BlockObjectWithSingleLevelOfChildrenRequestToDo, BlockObjectWithSingleLevelOfChildrenRequestToggle, BlockObjectWithSingleLevelOfChildrenRequestVideo);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -304,7 +304,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestMember1>(null, BlockObjectWithSingleLevelOfChildrenRequestMember1, BlockObjectWithSingleLevelOfChildrenRequestMember10, BlockObjectWithSingleLevelOfChildrenRequestMember11, BlockObjectWithSingleLevelOfChildrenRequestMember12, BlockObjectWithSingleLevelOfChildrenRequestMember13, BlockObjectWithSingleLevelOfChildrenRequestMember14, BlockObjectWithSingleLevelOfChildrenRequestMember15, BlockObjectWithSingleLevelOfChildrenRequestMember16, BlockObjectWithSingleLevelOfChildrenRequestMember17, BlockObjectWithSingleLevelOfChildrenRequestMember18, BlockObjectWithSingleLevelOfChildrenRequestMember19, BlockObjectWithSingleLevelOfChildrenRequestMember2, BlockObjectWithSingleLevelOfChildrenRequestMember20, BlockObjectWithSingleLevelOfChildrenRequestMember21, BlockObjectWithSingleLevelOfChildrenRequestMember22, BlockObjectWithSingleLevelOfChildrenRequestMember23, BlockObjectWithSingleLevelOfChildrenRequestMember24, BlockObjectWithSingleLevelOfChildrenRequestMember25, BlockObjectWithSingleLevelOfChildrenRequestMember26, BlockObjectWithSingleLevelOfChildrenRequestMember27, BlockObjectWithSingleLevelOfChildrenRequestMember28, BlockObjectWithSingleLevelOfChildrenRequestMember29, BlockObjectWithSingleLevelOfChildrenRequestMember3, BlockObjectWithSingleLevelOfChildrenRequestMember4, BlockObjectWithSingleLevelOfChildrenRequestMember5, BlockObjectWithSingleLevelOfChildrenRequestMember6, BlockObjectWithSingleLevelOfChildrenRequestMember7, BlockObjectWithSingleLevelOfChildrenRequestMember8, BlockObjectWithSingleLevelOfChildrenRequestMember9);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestAudio>(null, BlockObjectWithSingleLevelOfChildrenRequestAudio, BlockObjectWithSingleLevelOfChildrenRequestBookmark, BlockObjectWithSingleLevelOfChildrenRequestBreadcrumb, BlockObjectWithSingleLevelOfChildrenRequestBulletedListItem, BlockObjectWithSingleLevelOfChildrenRequestCallout, BlockObjectWithSingleLevelOfChildrenRequestCode, BlockObjectWithSingleLevelOfChildrenRequestDivider, BlockObjectWithSingleLevelOfChildrenRequestEmbed, BlockObjectWithSingleLevelOfChildrenRequestEquation, BlockObjectWithSingleLevelOfChildrenRequestFile, BlockObjectWithSingleLevelOfChildrenRequestHeading1, BlockObjectWithSingleLevelOfChildrenRequestHeading2, BlockObjectWithSingleLevelOfChildrenRequestHeading3, BlockObjectWithSingleLevelOfChildrenRequestHeading4, BlockObjectWithSingleLevelOfChildrenRequestImage, BlockObjectWithSingleLevelOfChildrenRequestLinkToPage, BlockObjectWithSingleLevelOfChildrenRequestNumberedListItem, BlockObjectWithSingleLevelOfChildrenRequestParagraph, BlockObjectWithSingleLevelOfChildrenRequestPdf, BlockObjectWithSingleLevelOfChildrenRequestQuote, BlockObjectWithSingleLevelOfChildrenRequestSyncedBlock, BlockObjectWithSingleLevelOfChildrenRequestTab, BlockObjectWithSingleLevelOfChildrenRequestTable, BlockObjectWithSingleLevelOfChildrenRequestTableOfContents, BlockObjectWithSingleLevelOfChildrenRequestTableRow, BlockObjectWithSingleLevelOfChildrenRequestTemplate, BlockObjectWithSingleLevelOfChildrenRequestToDo, BlockObjectWithSingleLevelOfChildrenRequestToggle, BlockObjectWithSingleLevelOfChildrenRequestVideo);
         }
     }
 }

@@ -8,50 +8,50 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember5"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeople"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelation"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichText"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollup"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemTitle"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PropertyItemPropertyItemListResponsePropertyItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeople"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember1? PropertyItemPropertyItemListResponsePropertyItemMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeople? PropertyItemPropertyItemListResponsePropertyItemPeople { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember1 PropertyItemPropertyItemListResponsePropertyItemMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeople PropertyItemPropertyItemListResponsePropertyItemPeople { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember2? PropertyItemPropertyItemListResponsePropertyItemMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelation? PropertyItemPropertyItemListResponsePropertyItemRelation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember2 PropertyItemPropertyItemListResponsePropertyItemMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelation PropertyItemPropertyItemListResponsePropertyItemRelation { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichText"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember3? PropertyItemPropertyItemListResponsePropertyItemMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichText? PropertyItemPropertyItemListResponsePropertyItemRichText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember3 PropertyItemPropertyItemListResponsePropertyItemMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichText PropertyItemPropertyItemListResponsePropertyItemRichText { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollup"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember4? PropertyItemPropertyItemListResponsePropertyItemMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollup? PropertyItemPropertyItemListResponsePropertyItemRollup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember4 PropertyItemPropertyItemListResponsePropertyItemMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollup PropertyItemPropertyItemListResponsePropertyItemRollup { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemTitle"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember5? PropertyItemPropertyItemListResponsePropertyItemMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemTitle? PropertyItemPropertyItemListResponsePropertyItemTitle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember5 PropertyItemPropertyItemListResponsePropertyItemMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemTitle PropertyItemPropertyItemListResponsePropertyItemTitle { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,11 +62,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItem();
-            result.PropertyItemPropertyItemListResponsePropertyItemMember1 = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember1();
-            result.PropertyItemPropertyItemListResponsePropertyItemMember2 = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember2();
-            result.PropertyItemPropertyItemListResponsePropertyItemMember3 = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember3();
-            result.PropertyItemPropertyItemListResponsePropertyItemMember4 = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember4();
-            result.PropertyItemPropertyItemListResponsePropertyItemMember5 = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember5();
+            result.PropertyItemPropertyItemListResponsePropertyItemPeople = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeople();
+            result.PropertyItemPropertyItemListResponsePropertyItemRelation = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelation();
+            result.PropertyItemPropertyItemListResponsePropertyItemRichText = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichText();
+            result.PropertyItemPropertyItemListResponsePropertyItemRollup = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollup();
+            result.PropertyItemPropertyItemListResponsePropertyItemTitle = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemTitle();
             return result;
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PropertyItemPropertyItemListResponsePropertyItemMember1 != null || PropertyItemPropertyItemListResponsePropertyItemMember2 != null || PropertyItemPropertyItemListResponsePropertyItemMember3 != null || PropertyItemPropertyItemListResponsePropertyItemMember4 != null || PropertyItemPropertyItemListResponsePropertyItemMember5 != null)
+            if(PropertyItemPropertyItemListResponsePropertyItemPeople != null || PropertyItemPropertyItemListResponsePropertyItemRelation != null || PropertyItemPropertyItemListResponsePropertyItemRichText != null || PropertyItemPropertyItemListResponsePropertyItemRollup != null || PropertyItemPropertyItemListResponsePropertyItemTitle != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PropertyItemPropertyItemListResponsePropertyItemMember1, PropertyItemPropertyItemListResponsePropertyItemMember2, PropertyItemPropertyItemListResponsePropertyItemMember3, PropertyItemPropertyItemListResponsePropertyItemMember4, PropertyItemPropertyItemListResponsePropertyItemMember5);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PropertyItemPropertyItemListResponsePropertyItemPeople, PropertyItemPropertyItemListResponsePropertyItemRelation, PropertyItemPropertyItemListResponsePropertyItemRichText, PropertyItemPropertyItemListResponsePropertyItemRollup, PropertyItemPropertyItemListResponsePropertyItemTitle);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +88,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemMember1>(null, PropertyItemPropertyItemListResponsePropertyItemMember1, PropertyItemPropertyItemListResponsePropertyItemMember2, PropertyItemPropertyItemListResponsePropertyItemMember3, PropertyItemPropertyItemListResponsePropertyItemMember4, PropertyItemPropertyItemListResponsePropertyItemMember5);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeople>(null, PropertyItemPropertyItemListResponsePropertyItemPeople, PropertyItemPropertyItemListResponsePropertyItemRelation, PropertyItemPropertyItemListResponsePropertyItemRichText, PropertyItemPropertyItemListResponsePropertyItemRollup, PropertyItemPropertyItemListResponsePropertyItemTitle);
         }
     }
 }

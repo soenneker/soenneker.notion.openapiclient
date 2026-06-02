@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WidgetPlacementRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember1? WidgetPlacementRequestMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf1? WidgetPlacementRequestOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember1 WidgetPlacementRequestMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf1 WidgetPlacementRequestOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2? WidgetPlacementRequestMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf2? WidgetPlacementRequestOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2 WidgetPlacementRequestMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf2 WidgetPlacementRequestOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("WidgetPlacementRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WidgetPlacementRequestMember1 = new global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember1();
+                result.WidgetPlacementRequestOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WidgetPlacementRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WidgetPlacementRequestMember2 = new global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2();
+                result.WidgetPlacementRequestOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WidgetPlacementRequestMember1 != null)
+            if(WidgetPlacementRequestOneOf1 != null)
             {
-                return WidgetPlacementRequestMember1.GetFieldDeserializers();
+                return WidgetPlacementRequestOneOf1.GetFieldDeserializers();
             }
-            else if(WidgetPlacementRequestMember2 != null)
+            else if(WidgetPlacementRequestOneOf2 != null)
             {
-                return WidgetPlacementRequestMember2.GetFieldDeserializers();
+                return WidgetPlacementRequestOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(WidgetPlacementRequestMember1 != null)
+            if(WidgetPlacementRequestOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember1>(null, WidgetPlacementRequestMember1);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf1>(null, WidgetPlacementRequestOneOf1);
             }
-            else if(WidgetPlacementRequestMember2 != null)
+            else if(WidgetPlacementRequestOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestMember2>(null, WidgetPlacementRequestMember2);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf2>(null, WidgetPlacementRequestOneOf2);
             }
         }
     }

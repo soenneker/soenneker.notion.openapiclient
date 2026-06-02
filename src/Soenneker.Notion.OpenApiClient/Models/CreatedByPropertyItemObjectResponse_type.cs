@@ -10,7 +10,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "created_by")]
         #pragma warning disable CS1591
-        Created_by,
+        CreatedBy,
         #pragma warning restore CS1591
     }
 }

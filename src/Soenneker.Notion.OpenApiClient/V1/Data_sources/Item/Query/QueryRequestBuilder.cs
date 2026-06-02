@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\data_sources\{data_source_id}\query
+    /// Builds and executes requests for operations under \v1\data_sources\{dataSourceId}\query
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/data_sources/{data_source_id}/query{?filter_properties*}", pathParameters)
+        public QueryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/data_sources/{dataSourceId}/query{?filter_properties*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/data_sources/{data_source_id}/query{?filter_properties*}", rawUrl)
+        public QueryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/data_sources/{dataSourceId}/query{?filter_properties*}", rawUrl)
         {
         }
         /// <summary>
@@ -51,11 +51,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSource?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSource?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSource> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSource> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -82,11 +82,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

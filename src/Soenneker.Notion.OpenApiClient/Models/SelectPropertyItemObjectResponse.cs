@@ -27,10 +27,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Select { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect? Select { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Select { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect Select { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse_type? Type { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse_object>(); } },
-                { "select", n => { Select = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse.CreateFromDiscriminatorValue); } },
+                { "select", n => { Select = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect>(global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse_type>(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse_object>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>("select", Select);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect>("select", Select);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

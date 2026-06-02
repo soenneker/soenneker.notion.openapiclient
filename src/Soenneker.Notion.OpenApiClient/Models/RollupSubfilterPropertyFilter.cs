@@ -8,90 +8,90 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember10"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember5"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember6"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember7"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember8"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember9"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf10"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf5"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf6"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf7"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf8"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf9"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RollupSubfilterPropertyFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember1? RollupSubfilterPropertyFilterMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf1? RollupSubfilterPropertyFilterAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember1 RollupSubfilterPropertyFilterMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf1 RollupSubfilterPropertyFilterAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember10"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf10"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember10? RollupSubfilterPropertyFilterMember10 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf10? RollupSubfilterPropertyFilterAnyOf10 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember10 RollupSubfilterPropertyFilterMember10 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf10 RollupSubfilterPropertyFilterAnyOf10 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember2? RollupSubfilterPropertyFilterMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf2? RollupSubfilterPropertyFilterAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember2 RollupSubfilterPropertyFilterMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf2 RollupSubfilterPropertyFilterAnyOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember3? RollupSubfilterPropertyFilterMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf3? RollupSubfilterPropertyFilterAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember3 RollupSubfilterPropertyFilterMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf3 RollupSubfilterPropertyFilterAnyOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember4? RollupSubfilterPropertyFilterMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf4? RollupSubfilterPropertyFilterAnyOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember4 RollupSubfilterPropertyFilterMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf4 RollupSubfilterPropertyFilterAnyOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember5? RollupSubfilterPropertyFilterMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf5? RollupSubfilterPropertyFilterAnyOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember5 RollupSubfilterPropertyFilterMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf5 RollupSubfilterPropertyFilterAnyOf5 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember6"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember6? RollupSubfilterPropertyFilterMember6 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf6? RollupSubfilterPropertyFilterAnyOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember6 RollupSubfilterPropertyFilterMember6 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf6 RollupSubfilterPropertyFilterAnyOf6 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember7"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf7"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember7? RollupSubfilterPropertyFilterMember7 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf7? RollupSubfilterPropertyFilterAnyOf7 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember7 RollupSubfilterPropertyFilterMember7 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf7 RollupSubfilterPropertyFilterAnyOf7 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember8"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf8"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember8? RollupSubfilterPropertyFilterMember8 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf8? RollupSubfilterPropertyFilterAnyOf8 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember8 RollupSubfilterPropertyFilterMember8 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf8 RollupSubfilterPropertyFilterAnyOf8 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember9"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf9"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember9? RollupSubfilterPropertyFilterMember9 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf9? RollupSubfilterPropertyFilterAnyOf9 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember9 RollupSubfilterPropertyFilterMember9 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf9 RollupSubfilterPropertyFilterAnyOf9 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -102,16 +102,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilter();
-            result.RollupSubfilterPropertyFilterMember1 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember1();
-            result.RollupSubfilterPropertyFilterMember10 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember10();
-            result.RollupSubfilterPropertyFilterMember2 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember2();
-            result.RollupSubfilterPropertyFilterMember3 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember3();
-            result.RollupSubfilterPropertyFilterMember4 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember4();
-            result.RollupSubfilterPropertyFilterMember5 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember5();
-            result.RollupSubfilterPropertyFilterMember6 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember6();
-            result.RollupSubfilterPropertyFilterMember7 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember7();
-            result.RollupSubfilterPropertyFilterMember8 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember8();
-            result.RollupSubfilterPropertyFilterMember9 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember9();
+            result.RollupSubfilterPropertyFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf1();
+            result.RollupSubfilterPropertyFilterAnyOf10 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf10();
+            result.RollupSubfilterPropertyFilterAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf2();
+            result.RollupSubfilterPropertyFilterAnyOf3 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf3();
+            result.RollupSubfilterPropertyFilterAnyOf4 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf4();
+            result.RollupSubfilterPropertyFilterAnyOf5 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf5();
+            result.RollupSubfilterPropertyFilterAnyOf6 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf6();
+            result.RollupSubfilterPropertyFilterAnyOf7 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf7();
+            result.RollupSubfilterPropertyFilterAnyOf8 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf8();
+            result.RollupSubfilterPropertyFilterAnyOf9 = new global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf9();
             return result;
         }
         /// <summary>
@@ -120,9 +120,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RollupSubfilterPropertyFilterMember1 != null || RollupSubfilterPropertyFilterMember10 != null || RollupSubfilterPropertyFilterMember2 != null || RollupSubfilterPropertyFilterMember3 != null || RollupSubfilterPropertyFilterMember4 != null || RollupSubfilterPropertyFilterMember5 != null || RollupSubfilterPropertyFilterMember6 != null || RollupSubfilterPropertyFilterMember7 != null || RollupSubfilterPropertyFilterMember8 != null || RollupSubfilterPropertyFilterMember9 != null)
+            if(RollupSubfilterPropertyFilterAnyOf1 != null || RollupSubfilterPropertyFilterAnyOf10 != null || RollupSubfilterPropertyFilterAnyOf2 != null || RollupSubfilterPropertyFilterAnyOf3 != null || RollupSubfilterPropertyFilterAnyOf4 != null || RollupSubfilterPropertyFilterAnyOf5 != null || RollupSubfilterPropertyFilterAnyOf6 != null || RollupSubfilterPropertyFilterAnyOf7 != null || RollupSubfilterPropertyFilterAnyOf8 != null || RollupSubfilterPropertyFilterAnyOf9 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RollupSubfilterPropertyFilterMember1, RollupSubfilterPropertyFilterMember10, RollupSubfilterPropertyFilterMember2, RollupSubfilterPropertyFilterMember3, RollupSubfilterPropertyFilterMember4, RollupSubfilterPropertyFilterMember5, RollupSubfilterPropertyFilterMember6, RollupSubfilterPropertyFilterMember7, RollupSubfilterPropertyFilterMember8, RollupSubfilterPropertyFilterMember9);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RollupSubfilterPropertyFilterAnyOf1, RollupSubfilterPropertyFilterAnyOf10, RollupSubfilterPropertyFilterAnyOf2, RollupSubfilterPropertyFilterAnyOf3, RollupSubfilterPropertyFilterAnyOf4, RollupSubfilterPropertyFilterAnyOf5, RollupSubfilterPropertyFilterAnyOf6, RollupSubfilterPropertyFilterAnyOf7, RollupSubfilterPropertyFilterAnyOf8, RollupSubfilterPropertyFilterAnyOf9);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -133,7 +133,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterMember1>(null, RollupSubfilterPropertyFilterMember1, RollupSubfilterPropertyFilterMember10, RollupSubfilterPropertyFilterMember2, RollupSubfilterPropertyFilterMember3, RollupSubfilterPropertyFilterMember4, RollupSubfilterPropertyFilterMember5, RollupSubfilterPropertyFilterMember6, RollupSubfilterPropertyFilterMember7, RollupSubfilterPropertyFilterMember8, RollupSubfilterPropertyFilterMember9);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilterAnyOf1>(null, RollupSubfilterPropertyFilterAnyOf1, RollupSubfilterPropertyFilterAnyOf10, RollupSubfilterPropertyFilterAnyOf2, RollupSubfilterPropertyFilterAnyOf3, RollupSubfilterPropertyFilterAnyOf4, RollupSubfilterPropertyFilterAnyOf5, RollupSubfilterPropertyFilterAnyOf6, RollupSubfilterPropertyFilterAnyOf7, RollupSubfilterPropertyFilterAnyOf8, RollupSubfilterPropertyFilterAnyOf9);
         }
     }
 }

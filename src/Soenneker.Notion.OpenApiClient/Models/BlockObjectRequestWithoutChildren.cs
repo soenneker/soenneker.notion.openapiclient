@@ -8,234 +8,234 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember10"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember11"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember12"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember13"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember14"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember15"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember16"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember17"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember18"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember19"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember20"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember21"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember22"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember23"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember24"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember25"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember26"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember28"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember5"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember6"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember7"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember8"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember9"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenAudio"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBookmark"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBreadcrumb"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBulletedListItem"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCallout"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCode"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenDivider"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEquation"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenFile"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenImage"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenLinkToPage"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenNumberedListItem"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenParagraph"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenPdf"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenQuote"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenSyncedBlock"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTab"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableOfContents"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableRow"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTemplate"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToDo"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggle"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenVideo"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BlockObjectRequestWithoutChildren : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenAudio"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember1? BlockObjectRequestWithoutChildrenMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenAudio? BlockObjectRequestWithoutChildrenAudio { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember1 BlockObjectRequestWithoutChildrenMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenAudio BlockObjectRequestWithoutChildrenAudio { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember10"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBookmark"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember10? BlockObjectRequestWithoutChildrenMember10 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBookmark? BlockObjectRequestWithoutChildrenBookmark { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember10 BlockObjectRequestWithoutChildrenMember10 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBookmark BlockObjectRequestWithoutChildrenBookmark { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember11"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBreadcrumb"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember11? BlockObjectRequestWithoutChildrenMember11 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBreadcrumb? BlockObjectRequestWithoutChildrenBreadcrumb { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember11 BlockObjectRequestWithoutChildrenMember11 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBreadcrumb BlockObjectRequestWithoutChildrenBreadcrumb { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember12"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBulletedListItem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember12? BlockObjectRequestWithoutChildrenMember12 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBulletedListItem? BlockObjectRequestWithoutChildrenBulletedListItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember12 BlockObjectRequestWithoutChildrenMember12 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBulletedListItem BlockObjectRequestWithoutChildrenBulletedListItem { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember13"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCallout"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember13? BlockObjectRequestWithoutChildrenMember13 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCallout? BlockObjectRequestWithoutChildrenCallout { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember13 BlockObjectRequestWithoutChildrenMember13 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCallout BlockObjectRequestWithoutChildrenCallout { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember14"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCode"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember14? BlockObjectRequestWithoutChildrenMember14 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCode? BlockObjectRequestWithoutChildrenCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember14 BlockObjectRequestWithoutChildrenMember14 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCode BlockObjectRequestWithoutChildrenCode { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember15"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenDivider"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember15? BlockObjectRequestWithoutChildrenMember15 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenDivider? BlockObjectRequestWithoutChildrenDivider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember15 BlockObjectRequestWithoutChildrenMember15 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenDivider BlockObjectRequestWithoutChildrenDivider { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember16"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember16? BlockObjectRequestWithoutChildrenMember16 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed? BlockObjectRequestWithoutChildrenEmbed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember16 BlockObjectRequestWithoutChildrenMember16 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed BlockObjectRequestWithoutChildrenEmbed { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember17"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEquation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember17? BlockObjectRequestWithoutChildrenMember17 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEquation? BlockObjectRequestWithoutChildrenEquation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember17 BlockObjectRequestWithoutChildrenMember17 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEquation BlockObjectRequestWithoutChildrenEquation { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember18"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenFile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember18? BlockObjectRequestWithoutChildrenMember18 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenFile? BlockObjectRequestWithoutChildrenFile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember18 BlockObjectRequestWithoutChildrenMember18 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenFile BlockObjectRequestWithoutChildrenFile { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember19"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember19? BlockObjectRequestWithoutChildrenMember19 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading1? BlockObjectRequestWithoutChildrenHeading1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember19 BlockObjectRequestWithoutChildrenMember19 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading1 BlockObjectRequestWithoutChildrenHeading1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember2? BlockObjectRequestWithoutChildrenMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading2? BlockObjectRequestWithoutChildrenHeading2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember2 BlockObjectRequestWithoutChildrenMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading2 BlockObjectRequestWithoutChildrenHeading2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember20"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember20? BlockObjectRequestWithoutChildrenMember20 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading3? BlockObjectRequestWithoutChildrenHeading3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember20 BlockObjectRequestWithoutChildrenMember20 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading3 BlockObjectRequestWithoutChildrenHeading3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember21"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember21? BlockObjectRequestWithoutChildrenMember21 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading4? BlockObjectRequestWithoutChildrenHeading4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember21 BlockObjectRequestWithoutChildrenMember21 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading4 BlockObjectRequestWithoutChildrenHeading4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember22"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenImage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember22? BlockObjectRequestWithoutChildrenMember22 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenImage? BlockObjectRequestWithoutChildrenImage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember22 BlockObjectRequestWithoutChildrenMember22 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenImage BlockObjectRequestWithoutChildrenImage { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember23"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenLinkToPage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember23? BlockObjectRequestWithoutChildrenMember23 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenLinkToPage? BlockObjectRequestWithoutChildrenLinkToPage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember23 BlockObjectRequestWithoutChildrenMember23 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenLinkToPage BlockObjectRequestWithoutChildrenLinkToPage { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember24"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenNumberedListItem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember24? BlockObjectRequestWithoutChildrenMember24 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenNumberedListItem? BlockObjectRequestWithoutChildrenNumberedListItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember24 BlockObjectRequestWithoutChildrenMember24 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenNumberedListItem BlockObjectRequestWithoutChildrenNumberedListItem { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember25"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenParagraph"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember25? BlockObjectRequestWithoutChildrenMember25 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenParagraph? BlockObjectRequestWithoutChildrenParagraph { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember25 BlockObjectRequestWithoutChildrenMember25 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenParagraph BlockObjectRequestWithoutChildrenParagraph { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember26"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenPdf"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember26? BlockObjectRequestWithoutChildrenMember26 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenPdf? BlockObjectRequestWithoutChildrenPdf { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember26 BlockObjectRequestWithoutChildrenMember26 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenPdf BlockObjectRequestWithoutChildrenPdf { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenQuote"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27? BlockObjectRequestWithoutChildrenMember27 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenQuote? BlockObjectRequestWithoutChildrenQuote { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27 BlockObjectRequestWithoutChildrenMember27 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenQuote BlockObjectRequestWithoutChildrenQuote { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember28"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenSyncedBlock"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember28? BlockObjectRequestWithoutChildrenMember28 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenSyncedBlock? BlockObjectRequestWithoutChildrenSyncedBlock { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember28 BlockObjectRequestWithoutChildrenMember28 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenSyncedBlock BlockObjectRequestWithoutChildrenSyncedBlock { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTab"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember3? BlockObjectRequestWithoutChildrenMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTab? BlockObjectRequestWithoutChildrenTab { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember3 BlockObjectRequestWithoutChildrenMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTab BlockObjectRequestWithoutChildrenTab { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableOfContents"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember4? BlockObjectRequestWithoutChildrenMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableOfContents? BlockObjectRequestWithoutChildrenTableOfContents { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember4 BlockObjectRequestWithoutChildrenMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableOfContents BlockObjectRequestWithoutChildrenTableOfContents { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableRow"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember5? BlockObjectRequestWithoutChildrenMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableRow? BlockObjectRequestWithoutChildrenTableRow { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember5 BlockObjectRequestWithoutChildrenMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableRow BlockObjectRequestWithoutChildrenTableRow { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember6"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTemplate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember6? BlockObjectRequestWithoutChildrenMember6 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTemplate? BlockObjectRequestWithoutChildrenTemplate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember6 BlockObjectRequestWithoutChildrenMember6 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTemplate BlockObjectRequestWithoutChildrenTemplate { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember7"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToDo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember7? BlockObjectRequestWithoutChildrenMember7 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToDo? BlockObjectRequestWithoutChildrenToDo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember7 BlockObjectRequestWithoutChildrenMember7 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToDo BlockObjectRequestWithoutChildrenToDo { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember8"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggle"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember8? BlockObjectRequestWithoutChildrenMember8 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggle? BlockObjectRequestWithoutChildrenToggle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember8 BlockObjectRequestWithoutChildrenMember8 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggle BlockObjectRequestWithoutChildrenToggle { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember9"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenVideo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember9? BlockObjectRequestWithoutChildrenMember9 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenVideo? BlockObjectRequestWithoutChildrenVideo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember9 BlockObjectRequestWithoutChildrenMember9 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenVideo BlockObjectRequestWithoutChildrenVideo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -246,34 +246,34 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildren();
-            result.BlockObjectRequestWithoutChildrenMember1 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember1();
-            result.BlockObjectRequestWithoutChildrenMember10 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember10();
-            result.BlockObjectRequestWithoutChildrenMember11 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember11();
-            result.BlockObjectRequestWithoutChildrenMember12 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember12();
-            result.BlockObjectRequestWithoutChildrenMember13 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember13();
-            result.BlockObjectRequestWithoutChildrenMember14 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember14();
-            result.BlockObjectRequestWithoutChildrenMember15 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember15();
-            result.BlockObjectRequestWithoutChildrenMember16 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember16();
-            result.BlockObjectRequestWithoutChildrenMember17 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember17();
-            result.BlockObjectRequestWithoutChildrenMember18 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember18();
-            result.BlockObjectRequestWithoutChildrenMember19 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember19();
-            result.BlockObjectRequestWithoutChildrenMember2 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember2();
-            result.BlockObjectRequestWithoutChildrenMember20 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember20();
-            result.BlockObjectRequestWithoutChildrenMember21 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember21();
-            result.BlockObjectRequestWithoutChildrenMember22 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember22();
-            result.BlockObjectRequestWithoutChildrenMember23 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember23();
-            result.BlockObjectRequestWithoutChildrenMember24 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember24();
-            result.BlockObjectRequestWithoutChildrenMember25 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember25();
-            result.BlockObjectRequestWithoutChildrenMember26 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember26();
-            result.BlockObjectRequestWithoutChildrenMember27 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember27();
-            result.BlockObjectRequestWithoutChildrenMember28 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember28();
-            result.BlockObjectRequestWithoutChildrenMember3 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember3();
-            result.BlockObjectRequestWithoutChildrenMember4 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember4();
-            result.BlockObjectRequestWithoutChildrenMember5 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember5();
-            result.BlockObjectRequestWithoutChildrenMember6 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember6();
-            result.BlockObjectRequestWithoutChildrenMember7 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember7();
-            result.BlockObjectRequestWithoutChildrenMember8 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember8();
-            result.BlockObjectRequestWithoutChildrenMember9 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember9();
+            result.BlockObjectRequestWithoutChildrenAudio = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenAudio();
+            result.BlockObjectRequestWithoutChildrenBookmark = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBookmark();
+            result.BlockObjectRequestWithoutChildrenBreadcrumb = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBreadcrumb();
+            result.BlockObjectRequestWithoutChildrenBulletedListItem = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenBulletedListItem();
+            result.BlockObjectRequestWithoutChildrenCallout = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCallout();
+            result.BlockObjectRequestWithoutChildrenCode = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenCode();
+            result.BlockObjectRequestWithoutChildrenDivider = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenDivider();
+            result.BlockObjectRequestWithoutChildrenEmbed = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed();
+            result.BlockObjectRequestWithoutChildrenEquation = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEquation();
+            result.BlockObjectRequestWithoutChildrenFile = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenFile();
+            result.BlockObjectRequestWithoutChildrenHeading1 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading1();
+            result.BlockObjectRequestWithoutChildrenHeading2 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading2();
+            result.BlockObjectRequestWithoutChildrenHeading3 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading3();
+            result.BlockObjectRequestWithoutChildrenHeading4 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenHeading4();
+            result.BlockObjectRequestWithoutChildrenImage = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenImage();
+            result.BlockObjectRequestWithoutChildrenLinkToPage = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenLinkToPage();
+            result.BlockObjectRequestWithoutChildrenNumberedListItem = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenNumberedListItem();
+            result.BlockObjectRequestWithoutChildrenParagraph = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenParagraph();
+            result.BlockObjectRequestWithoutChildrenPdf = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenPdf();
+            result.BlockObjectRequestWithoutChildrenQuote = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenQuote();
+            result.BlockObjectRequestWithoutChildrenSyncedBlock = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenSyncedBlock();
+            result.BlockObjectRequestWithoutChildrenTab = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTab();
+            result.BlockObjectRequestWithoutChildrenTableOfContents = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableOfContents();
+            result.BlockObjectRequestWithoutChildrenTableRow = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTableRow();
+            result.BlockObjectRequestWithoutChildrenTemplate = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTemplate();
+            result.BlockObjectRequestWithoutChildrenToDo = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToDo();
+            result.BlockObjectRequestWithoutChildrenToggle = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggle();
+            result.BlockObjectRequestWithoutChildrenVideo = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenVideo();
             return result;
         }
         /// <summary>
@@ -282,9 +282,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(BlockObjectRequestWithoutChildrenMember1 != null || BlockObjectRequestWithoutChildrenMember10 != null || BlockObjectRequestWithoutChildrenMember11 != null || BlockObjectRequestWithoutChildrenMember12 != null || BlockObjectRequestWithoutChildrenMember13 != null || BlockObjectRequestWithoutChildrenMember14 != null || BlockObjectRequestWithoutChildrenMember15 != null || BlockObjectRequestWithoutChildrenMember16 != null || BlockObjectRequestWithoutChildrenMember17 != null || BlockObjectRequestWithoutChildrenMember18 != null || BlockObjectRequestWithoutChildrenMember19 != null || BlockObjectRequestWithoutChildrenMember2 != null || BlockObjectRequestWithoutChildrenMember20 != null || BlockObjectRequestWithoutChildrenMember21 != null || BlockObjectRequestWithoutChildrenMember22 != null || BlockObjectRequestWithoutChildrenMember23 != null || BlockObjectRequestWithoutChildrenMember24 != null || BlockObjectRequestWithoutChildrenMember25 != null || BlockObjectRequestWithoutChildrenMember26 != null || BlockObjectRequestWithoutChildrenMember27 != null || BlockObjectRequestWithoutChildrenMember28 != null || BlockObjectRequestWithoutChildrenMember3 != null || BlockObjectRequestWithoutChildrenMember4 != null || BlockObjectRequestWithoutChildrenMember5 != null || BlockObjectRequestWithoutChildrenMember6 != null || BlockObjectRequestWithoutChildrenMember7 != null || BlockObjectRequestWithoutChildrenMember8 != null || BlockObjectRequestWithoutChildrenMember9 != null)
+            if(BlockObjectRequestWithoutChildrenAudio != null || BlockObjectRequestWithoutChildrenBookmark != null || BlockObjectRequestWithoutChildrenBreadcrumb != null || BlockObjectRequestWithoutChildrenBulletedListItem != null || BlockObjectRequestWithoutChildrenCallout != null || BlockObjectRequestWithoutChildrenCode != null || BlockObjectRequestWithoutChildrenDivider != null || BlockObjectRequestWithoutChildrenEmbed != null || BlockObjectRequestWithoutChildrenEquation != null || BlockObjectRequestWithoutChildrenFile != null || BlockObjectRequestWithoutChildrenHeading1 != null || BlockObjectRequestWithoutChildrenHeading2 != null || BlockObjectRequestWithoutChildrenHeading3 != null || BlockObjectRequestWithoutChildrenHeading4 != null || BlockObjectRequestWithoutChildrenImage != null || BlockObjectRequestWithoutChildrenLinkToPage != null || BlockObjectRequestWithoutChildrenNumberedListItem != null || BlockObjectRequestWithoutChildrenParagraph != null || BlockObjectRequestWithoutChildrenPdf != null || BlockObjectRequestWithoutChildrenQuote != null || BlockObjectRequestWithoutChildrenSyncedBlock != null || BlockObjectRequestWithoutChildrenTab != null || BlockObjectRequestWithoutChildrenTableOfContents != null || BlockObjectRequestWithoutChildrenTableRow != null || BlockObjectRequestWithoutChildrenTemplate != null || BlockObjectRequestWithoutChildrenToDo != null || BlockObjectRequestWithoutChildrenToggle != null || BlockObjectRequestWithoutChildrenVideo != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BlockObjectRequestWithoutChildrenMember1, BlockObjectRequestWithoutChildrenMember10, BlockObjectRequestWithoutChildrenMember11, BlockObjectRequestWithoutChildrenMember12, BlockObjectRequestWithoutChildrenMember13, BlockObjectRequestWithoutChildrenMember14, BlockObjectRequestWithoutChildrenMember15, BlockObjectRequestWithoutChildrenMember16, BlockObjectRequestWithoutChildrenMember17, BlockObjectRequestWithoutChildrenMember18, BlockObjectRequestWithoutChildrenMember19, BlockObjectRequestWithoutChildrenMember2, BlockObjectRequestWithoutChildrenMember20, BlockObjectRequestWithoutChildrenMember21, BlockObjectRequestWithoutChildrenMember22, BlockObjectRequestWithoutChildrenMember23, BlockObjectRequestWithoutChildrenMember24, BlockObjectRequestWithoutChildrenMember25, BlockObjectRequestWithoutChildrenMember26, BlockObjectRequestWithoutChildrenMember27, BlockObjectRequestWithoutChildrenMember28, BlockObjectRequestWithoutChildrenMember3, BlockObjectRequestWithoutChildrenMember4, BlockObjectRequestWithoutChildrenMember5, BlockObjectRequestWithoutChildrenMember6, BlockObjectRequestWithoutChildrenMember7, BlockObjectRequestWithoutChildrenMember8, BlockObjectRequestWithoutChildrenMember9);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BlockObjectRequestWithoutChildrenAudio, BlockObjectRequestWithoutChildrenBookmark, BlockObjectRequestWithoutChildrenBreadcrumb, BlockObjectRequestWithoutChildrenBulletedListItem, BlockObjectRequestWithoutChildrenCallout, BlockObjectRequestWithoutChildrenCode, BlockObjectRequestWithoutChildrenDivider, BlockObjectRequestWithoutChildrenEmbed, BlockObjectRequestWithoutChildrenEquation, BlockObjectRequestWithoutChildrenFile, BlockObjectRequestWithoutChildrenHeading1, BlockObjectRequestWithoutChildrenHeading2, BlockObjectRequestWithoutChildrenHeading3, BlockObjectRequestWithoutChildrenHeading4, BlockObjectRequestWithoutChildrenImage, BlockObjectRequestWithoutChildrenLinkToPage, BlockObjectRequestWithoutChildrenNumberedListItem, BlockObjectRequestWithoutChildrenParagraph, BlockObjectRequestWithoutChildrenPdf, BlockObjectRequestWithoutChildrenQuote, BlockObjectRequestWithoutChildrenSyncedBlock, BlockObjectRequestWithoutChildrenTab, BlockObjectRequestWithoutChildrenTableOfContents, BlockObjectRequestWithoutChildrenTableRow, BlockObjectRequestWithoutChildrenTemplate, BlockObjectRequestWithoutChildrenToDo, BlockObjectRequestWithoutChildrenToggle, BlockObjectRequestWithoutChildrenVideo);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -295,7 +295,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenMember1>(null, BlockObjectRequestWithoutChildrenMember1, BlockObjectRequestWithoutChildrenMember10, BlockObjectRequestWithoutChildrenMember11, BlockObjectRequestWithoutChildrenMember12, BlockObjectRequestWithoutChildrenMember13, BlockObjectRequestWithoutChildrenMember14, BlockObjectRequestWithoutChildrenMember15, BlockObjectRequestWithoutChildrenMember16, BlockObjectRequestWithoutChildrenMember17, BlockObjectRequestWithoutChildrenMember18, BlockObjectRequestWithoutChildrenMember19, BlockObjectRequestWithoutChildrenMember2, BlockObjectRequestWithoutChildrenMember20, BlockObjectRequestWithoutChildrenMember21, BlockObjectRequestWithoutChildrenMember22, BlockObjectRequestWithoutChildrenMember23, BlockObjectRequestWithoutChildrenMember24, BlockObjectRequestWithoutChildrenMember25, BlockObjectRequestWithoutChildrenMember26, BlockObjectRequestWithoutChildrenMember27, BlockObjectRequestWithoutChildrenMember28, BlockObjectRequestWithoutChildrenMember3, BlockObjectRequestWithoutChildrenMember4, BlockObjectRequestWithoutChildrenMember5, BlockObjectRequestWithoutChildrenMember6, BlockObjectRequestWithoutChildrenMember7, BlockObjectRequestWithoutChildrenMember8, BlockObjectRequestWithoutChildrenMember9);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenAudio>(null, BlockObjectRequestWithoutChildrenAudio, BlockObjectRequestWithoutChildrenBookmark, BlockObjectRequestWithoutChildrenBreadcrumb, BlockObjectRequestWithoutChildrenBulletedListItem, BlockObjectRequestWithoutChildrenCallout, BlockObjectRequestWithoutChildrenCode, BlockObjectRequestWithoutChildrenDivider, BlockObjectRequestWithoutChildrenEmbed, BlockObjectRequestWithoutChildrenEquation, BlockObjectRequestWithoutChildrenFile, BlockObjectRequestWithoutChildrenHeading1, BlockObjectRequestWithoutChildrenHeading2, BlockObjectRequestWithoutChildrenHeading3, BlockObjectRequestWithoutChildrenHeading4, BlockObjectRequestWithoutChildrenImage, BlockObjectRequestWithoutChildrenLinkToPage, BlockObjectRequestWithoutChildrenNumberedListItem, BlockObjectRequestWithoutChildrenParagraph, BlockObjectRequestWithoutChildrenPdf, BlockObjectRequestWithoutChildrenQuote, BlockObjectRequestWithoutChildrenSyncedBlock, BlockObjectRequestWithoutChildrenTab, BlockObjectRequestWithoutChildrenTableOfContents, BlockObjectRequestWithoutChildrenTableRow, BlockObjectRequestWithoutChildrenTemplate, BlockObjectRequestWithoutChildrenToDo, BlockObjectRequestWithoutChildrenToggle, BlockObjectRequestWithoutChildrenVideo);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "table_row")]
         #pragma warning disable CS1591
-        Table_row,
+        TableRow,
         #pragma warning restore CS1591
     }
 }

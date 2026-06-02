@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ViewPositionRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember1? ViewPositionRequestMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf1? ViewPositionRequestOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember1 ViewPositionRequestMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf1 ViewPositionRequestOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember2? ViewPositionRequestMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf2? ViewPositionRequestOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember2 ViewPositionRequestMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf2 ViewPositionRequestOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3? ViewPositionRequestMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf3? ViewPositionRequestOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3 ViewPositionRequestMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf3 ViewPositionRequestOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,17 +47,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ViewPositionRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ViewPositionRequestMember1 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember1();
+                result.ViewPositionRequestOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ViewPositionRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ViewPositionRequestMember2 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember2();
+                result.ViewPositionRequestOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf2();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ViewPositionRequestOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ViewPositionRequestMember3 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3();
+                result.ViewPositionRequestOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf3();
             }
             return result;
         }
@@ -67,17 +67,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ViewPositionRequestMember1 != null)
+            if(ViewPositionRequestOneOf1 != null)
             {
-                return ViewPositionRequestMember1.GetFieldDeserializers();
+                return ViewPositionRequestOneOf1.GetFieldDeserializers();
             }
-            else if(ViewPositionRequestMember2 != null)
+            else if(ViewPositionRequestOneOf2 != null)
             {
-                return ViewPositionRequestMember2.GetFieldDeserializers();
+                return ViewPositionRequestOneOf2.GetFieldDeserializers();
             }
-            else if(ViewPositionRequestMember3 != null)
+            else if(ViewPositionRequestOneOf3 != null)
             {
-                return ViewPositionRequestMember3.GetFieldDeserializers();
+                return ViewPositionRequestOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,17 +88,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ViewPositionRequestMember1 != null)
+            if(ViewPositionRequestOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember1>(null, ViewPositionRequestMember1);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf1>(null, ViewPositionRequestOneOf1);
             }
-            else if(ViewPositionRequestMember2 != null)
+            else if(ViewPositionRequestOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember2>(null, ViewPositionRequestMember2);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf2>(null, ViewPositionRequestOneOf2);
             }
-            else if(ViewPositionRequestMember3 != null)
+            else if(ViewPositionRequestOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestMember3>(null, ViewPositionRequestMember3);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf3>(null, ViewPositionRequestOneOf3);
             }
         }
     }

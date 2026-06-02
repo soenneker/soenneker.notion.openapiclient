@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\data_sources\{data_source_id}\templates
+    /// Builds and executes requests for operations under \v1\data_sources\{dataSourceId}\templates
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TemplatesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TemplatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/data_sources/{data_source_id}/templates{?name*,page_size*,start_cursor*}", pathParameters)
+        public TemplatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/data_sources/{dataSourceId}/templates{?name*,page_size*,start_cursor*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/data_sources/{data_source_id}/templates{?name*,page_size*,start_cursor*}", rawUrl)
+        public TemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/data_sources/{dataSourceId}/templates{?name*,page_size*,start_cursor*}", rawUrl)
         {
         }
         /// <summary>
         /// List templates in a data source
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi400">When receiving a 400 status code</exception>
@@ -50,11 +50,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates.TemplatesRequestBuilder.TemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -70,7 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Templates
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.ListDataSourceTemplates200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List templates in a data source

@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Configuration for dependency arrows between timeline items. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest? ArrowsBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy? ArrowsBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest ArrowsBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy ArrowsBy { get; set; }
 #endif
         /// <summary>Whether to color timeline items by a property. Pass null to clear.</summary>
         public bool? ColorBy { get; set; }
@@ -43,28 +43,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Timeline display preferences (zoom level and center position). Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest? Preference { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference? Preference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest Preference { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference Preference { get; set; }
 #endif
         /// <summary>Property visibility and display configuration on timeline items. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch? Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties Properties { get; set; }
 #endif
         /// <summary>Whether to show the table panel alongside the timeline. Pass null to clear.</summary>
         public bool? ShowTable { get; set; }
         /// <summary>Property configuration for the table panel (when show_table is true). Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch? TableProperties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties? TableProperties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch TableProperties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties TableProperties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;timeline&quot;.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest_type? Type { get; set; }
@@ -93,14 +93,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "arrows_by", n => { ArrowsBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest>(global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest.CreateFromDiscriminatorValue); } },
+                { "arrows_by", n => { ArrowsBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy.CreateFromDiscriminatorValue); } },
                 { "color_by", n => { ColorBy = n.GetBoolValue(); } },
                 { "date_property_id", n => { DatePropertyId = n.GetStringValue(); } },
                 { "end_date_property_id", n => { EndDatePropertyId = n.GetStringValue(); } },
-                { "preference", n => { Preference = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest>(global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>(global::Soenneker.Notion.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "preference", n => { Preference = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
                 { "show_table", n => { ShowTable = n.GetBoolValue(); } },
-                { "table_properties", n => { TableProperties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>(global::Soenneker.Notion.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "table_properties", n => { TableProperties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest_type>(); } },
             };
         }
@@ -111,14 +111,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest>("arrows_by", ArrowsBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy>("arrows_by", ArrowsBy);
             writer.WriteBoolValue("color_by", ColorBy);
             writer.WriteStringValue("date_property_id", DatePropertyId);
             writer.WriteStringValue("end_date_property_id", EndDatePropertyId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest>("preference", Preference);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference>("preference", Preference);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties>("properties", Properties);
             writer.WriteBoolValue("show_table", ShowTable);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>("table_properties", TableProperties);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties>("table_properties", TableProperties);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

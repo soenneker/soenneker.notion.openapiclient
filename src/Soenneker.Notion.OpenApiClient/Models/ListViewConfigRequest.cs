@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property visibility and display configuration. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch? Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties Properties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;list&quot;.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest_type? Type { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>(global::Soenneker.Notion.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest_type>(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties>("properties", Properties);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

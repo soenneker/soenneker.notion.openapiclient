@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Granularity for date grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest_group_by? GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequestGroupBy? GroupBy { get; set; }
         /// <summary>Whether to hide groups that have no items.</summary>
         public bool? HideEmptyGroups { get; set; }
         /// <summary>Property ID to group by.</summary>
@@ -37,7 +37,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Start day of week for week grouping (0 = Sunday, 1 = Monday).</summary>
         public double? StartDayOfWeek { get; set; }
         /// <summary>The property type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest"/> and sets the default values.
         /// </summary>
@@ -63,12 +63,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest_group_by>(); } },
+                { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequestGroupBy>(); } },
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest.CreateFromDiscriminatorValue); } },
                 { "start_day_of_week", n => { StartDayOfWeek = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequestType>(); } },
             };
         }
         /// <summary>
@@ -78,12 +78,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest_group_by>("group_by", GroupBy);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequestGroupBy>("group_by", GroupBy);
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteStringValue("property_id", PropertyId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>("sort", Sort);
             writer.WriteDoubleValue("start_day_of_week", StartDayOfWeek);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateGroupByConfigRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

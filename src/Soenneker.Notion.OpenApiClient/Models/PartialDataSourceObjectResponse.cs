@@ -19,10 +19,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The properties schema of the data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_properties? Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponsePropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_properties Properties { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponsePropertiesProperty Properties { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +44,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_object>(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_properties>(global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_properties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponsePropertiesProperty>(global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponsePropertiesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_object>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_properties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponsePropertiesProperty>("properties", Properties);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "custom_emoji")]
         #pragma warning disable CS1591
-        Custom_emoji,
+        CustomEmoji,
         #pragma warning restore CS1591
     }
 }

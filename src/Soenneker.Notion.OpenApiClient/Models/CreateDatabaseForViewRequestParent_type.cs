@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "page_id")]
         #pragma warning disable CS1591
-        Page_id,
+        PageId,
         #pragma warning restore CS1591
     }
 }

@@ -10,23 +10,23 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "transcription_not_started")]
         #pragma warning disable CS1591
-        Transcription_not_started,
+        TranscriptionNotStarted,
         #pragma warning restore CS1591
         [EnumMember(Value = "transcription_paused")]
         #pragma warning disable CS1591
-        Transcription_paused,
+        TranscriptionPaused,
         #pragma warning restore CS1591
         [EnumMember(Value = "transcription_in_progress")]
         #pragma warning disable CS1591
-        Transcription_in_progress,
+        TranscriptionInProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "summary_in_progress")]
         #pragma warning disable CS1591
-        Summary_in_progress,
+        SummaryInProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "notes_ready")]
         #pragma warning disable CS1591
-        Notes_ready,
+        NotesReady,
         #pragma warning restore CS1591
     }
 }

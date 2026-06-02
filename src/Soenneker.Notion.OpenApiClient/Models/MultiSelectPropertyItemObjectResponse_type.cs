@@ -10,7 +10,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "multi_select")]
         #pragma warning disable CS1591
-        Multi_select,
+        MultiSelect,
         #pragma warning restore CS1591
     }
 }

@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "page_markdown")]
         #pragma warning disable CS1591
-        Page_markdown,
+        PageMarkdown,
         #pragma warning restore CS1591
     }
 }

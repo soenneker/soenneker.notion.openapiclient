@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "True")]
         #pragma warning disable CS1591
-        True,
+        TrueValue,
         #pragma warning restore CS1591
     }
 }

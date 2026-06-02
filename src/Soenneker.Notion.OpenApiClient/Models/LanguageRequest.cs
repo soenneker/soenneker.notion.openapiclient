@@ -48,9 +48,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         C,
         #pragma warning restore CS1591
+        [EnumMember(Value = "c#")]
+        #pragma warning disable CS1591
+        CHash,
+        #pragma warning restore CS1591
         [EnumMember(Value = "c++")]
         #pragma warning disable CS1591
-        C_plus__plus,
+        CPlusPlus,
         #pragma warning restore CS1591
         [EnumMember(Value = "clojure")]
         #pragma warning disable CS1591
@@ -102,7 +106,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "f#")]
         #pragma warning disable CS1591
-        F,
+        FHash,
         #pragma warning restore CS1591
         [EnumMember(Value = "flow")]
         #pragma warning disable CS1591
@@ -362,7 +366,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "java/c/c++/c#")]
         #pragma warning disable CS1591
-        JavaCC_plus__plus_C,
+        JavaCCPlusPlusSlashCHash,
         #pragma warning restore CS1591
     }
 }

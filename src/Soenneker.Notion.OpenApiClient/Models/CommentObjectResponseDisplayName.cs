@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string ResolvedName { get; set; }
 #endif
         /// <summary>&quot;One of: `custom`, `user`, `integration`&quot;</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayNameType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "resolved_name", n => { ResolvedName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayNameType>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("resolved_name", ResolvedName);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayNameType>("type", Type);
         }
     }
 }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\blocks\{block_id}\children
+    /// Builds and executes requests for operations under \v1\blocks\{blockId}\children
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChildrenRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChildrenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/blocks/{block_id}/children{?page_size*,start_cursor*}", pathParameters)
+        public ChildrenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/blocks/{blockId}/children{?page_size*,start_cursor*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,13 +30,13 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChildrenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/blocks/{block_id}/children{?page_size*,start_cursor*}", rawUrl)
+        public ChildrenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/blocks/{blockId}/children{?page_size*,start_cursor*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieve block children
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.Block"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi400">When receiving a 400 status code</exception>
@@ -50,11 +50,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.Block?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.Block> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenRequestBuilder.ChildrenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -70,12 +70,12 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.Block>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.Block.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Append block children
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockResponseJson"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,11 +90,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenPatchResponse?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.BlockResponseJson?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildrenRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenPatchResponse> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.BlockResponseJson> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildrenRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -111,7 +111,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenPatchResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children.ChildrenPatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.BlockResponseJson>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.BlockResponseJson.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve block children
@@ -140,11 +140,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildrenRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildrenRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

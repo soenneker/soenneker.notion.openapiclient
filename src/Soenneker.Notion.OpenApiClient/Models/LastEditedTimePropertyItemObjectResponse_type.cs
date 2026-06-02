@@ -10,7 +10,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "last_edited_time")]
         #pragma warning disable CS1591
-        Last_edited_time,
+        LastEditedTime,
         #pragma warning restore CS1591
     }
 }

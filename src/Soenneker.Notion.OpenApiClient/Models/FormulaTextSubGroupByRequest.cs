@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How to group text values. &quot;exact&quot; = exact match, &quot;alphabet_prefix&quot; = first letter.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest_group_by? GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequestGroupBy? GroupBy { get; set; }
         /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest_group_by>(); } },
+                { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequestGroupBy>(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest_type>(); } },
             };
@@ -63,7 +63,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest_group_by>("group_by", GroupBy);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequestGroupBy>("group_by", GroupBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>("sort", Sort);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

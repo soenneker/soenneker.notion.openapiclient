@@ -75,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Always `file_upload`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse_object? Object { get; set; }
         /// <summary>&quot;One of: `pending`, `uploaded`, `expired`, `failed`&quot;</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse_status? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus? Status { get; set; }
         /// <summary>The upload_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,7 +115,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "number_of_parts", n => { NumberOfParts = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts>(global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse_object>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus>(); } },
                 { "upload_url", n => { UploadUrl = n.GetStringValue(); } },
             };
         }
@@ -139,7 +139,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts>("number_of_parts", NumberOfParts);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse_object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus>("status", Status);
             writer.WriteStringValue("upload_url", UploadUrl);
         }
     }

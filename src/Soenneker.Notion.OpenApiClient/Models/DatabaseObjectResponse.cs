@@ -15,10 +15,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The cover of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseCover? Cover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseCover Cover { get; set; }
 #endif
         /// <summary>The time when the database was created.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
@@ -41,10 +41,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The icon of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseIcon? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseIcon Icon { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -108,11 +108,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover.CreateFromDiscriminatorValue); } },
+                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseCover>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseCover.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "data_sources", n => { DataSources = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.DataSourceReferenceResponse>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceReferenceResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseIcon>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseIcon.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "is_inline", n => { IsInline = n.GetBoolValue(); } },
@@ -132,11 +132,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_cover>("cover", Cover);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseCover>("cover", Cover);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.DataSourceReferenceResponse>("data_sources", DataSources);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponse_icon>("icon", Icon);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObjectResponseIcon>("icon", Icon);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteBoolValue("is_inline", IsInline);

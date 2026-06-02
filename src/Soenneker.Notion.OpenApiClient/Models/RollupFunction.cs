@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "count_values")]
         #pragma warning disable CS1591
-        Count_values,
+        CountValues,
         #pragma warning restore CS1591
         [EnumMember(Value = "empty")]
         #pragma warning disable CS1591
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "not_empty")]
         #pragma warning disable CS1591
-        Not_empty,
+        NotEmpty,
         #pragma warning restore CS1591
         [EnumMember(Value = "unique")]
         #pragma warning disable CS1591
@@ -30,15 +30,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "show_unique")]
         #pragma warning disable CS1591
-        Show_unique,
+        ShowUnique,
         #pragma warning restore CS1591
         [EnumMember(Value = "percent_empty")]
         #pragma warning disable CS1591
-        Percent_empty,
+        PercentEmpty,
         #pragma warning restore CS1591
         [EnumMember(Value = "percent_not_empty")]
         #pragma warning disable CS1591
-        Percent_not_empty,
+        PercentNotEmpty,
         #pragma warning restore CS1591
         [EnumMember(Value = "sum")]
         #pragma warning disable CS1591
@@ -66,43 +66,43 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "earliest_date")]
         #pragma warning disable CS1591
-        Earliest_date,
+        EarliestDate,
         #pragma warning restore CS1591
         [EnumMember(Value = "latest_date")]
         #pragma warning disable CS1591
-        Latest_date,
+        LatestDate,
         #pragma warning restore CS1591
         [EnumMember(Value = "date_range")]
         #pragma warning disable CS1591
-        Date_range,
+        DateRange,
         #pragma warning restore CS1591
         [EnumMember(Value = "checked")]
         #pragma warning disable CS1591
-        Checked,
+        CheckedValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "unchecked")]
         #pragma warning disable CS1591
-        Unchecked,
+        UncheckedValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "percent_checked")]
         #pragma warning disable CS1591
-        Percent_checked,
+        PercentChecked,
         #pragma warning restore CS1591
         [EnumMember(Value = "percent_unchecked")]
         #pragma warning disable CS1591
-        Percent_unchecked,
+        PercentUnchecked,
         #pragma warning restore CS1591
         [EnumMember(Value = "count_per_group")]
         #pragma warning disable CS1591
-        Count_per_group,
+        CountPerGroup,
         #pragma warning restore CS1591
         [EnumMember(Value = "percent_per_group")]
         #pragma warning disable CS1591
-        Percent_per_group,
+        PercentPerGroup,
         #pragma warning restore CS1591
         [EnumMember(Value = "show_original")]
         #pragma warning disable CS1591
-        Show_original,
+        ShowOriginal,
         #pragma warning restore CS1591
     }
 }

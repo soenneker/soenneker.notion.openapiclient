@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Why the result set is incomplete. Only present when `type` is `incomplete`.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse_incomplete_reason? IncompleteReason { get; set; }
         /// <summary>Whether the result set is complete or incomplete. `incomplete` means the response does not include all rows that match the query parameters (e.g. due to a server-side pagination depth limit).</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "incomplete_reason", n => { IncompleteReason = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse_incomplete_reason>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponseType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse_incomplete_reason>("incomplete_reason", IncompleteReason);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponseType>("type", Type);
         }
     }
 }

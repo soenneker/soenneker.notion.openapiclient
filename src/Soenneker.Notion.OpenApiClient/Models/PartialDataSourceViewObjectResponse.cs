@@ -25,7 +25,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse Parent { get; set; }
 #endif
         /// <summary>The view type.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponse_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponse_object>(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponse_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponseType>(); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponse_object>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>("parent", Parent);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponseType>("type", Type);
         }
     }
 }

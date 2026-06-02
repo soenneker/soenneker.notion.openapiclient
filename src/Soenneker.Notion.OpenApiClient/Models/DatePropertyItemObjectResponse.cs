@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse? Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate? Date { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate Date { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>(global::Soenneker.Notion.OpenApiClient.Models.DateResponse.CreateFromDiscriminatorValue); } },
+                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse_object>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse_type>(); } },
@@ -72,7 +72,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>("date", Date);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate>("date", Date);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse_object>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse_type>("type", Type);

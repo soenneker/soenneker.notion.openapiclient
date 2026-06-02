@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How to group text values. &quot;exact&quot; = exact match, &quot;alphabet_prefix&quot; = first letter.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest_group_by? GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequestGroupBy? GroupBy { get; set; }
         /// <summary>Whether to hide groups that have no items.</summary>
         public bool? HideEmptyGroups { get; set; }
         /// <summary>Property ID to group by.</summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest Sort { get; set; }
 #endif
         /// <summary>The property type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest"/> and sets the default values.
         /// </summary>
@@ -61,11 +61,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest_group_by>(); } },
+                { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequestGroupBy>(); } },
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequestType>(); } },
             };
         }
         /// <summary>
@@ -75,11 +75,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest_group_by>("group_by", GroupBy);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequestGroupBy>("group_by", GroupBy);
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteStringValue("property_id", PropertyId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>("sort", Sort);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

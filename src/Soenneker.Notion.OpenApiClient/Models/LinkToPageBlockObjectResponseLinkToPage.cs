@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkToPageBlockObjectResponseLinkToPage : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember1? LinkToPageBlockObjectResponseLinkToPageMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId? LinkToPageBlockObjectResponseLinkToPageCommentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember1 LinkToPageBlockObjectResponseLinkToPageMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId LinkToPageBlockObjectResponseLinkToPageCommentId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember2? LinkToPageBlockObjectResponseLinkToPageMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId? LinkToPageBlockObjectResponseLinkToPageDatabaseId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember2 LinkToPageBlockObjectResponseLinkToPageMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId LinkToPageBlockObjectResponseLinkToPageDatabaseId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember3? LinkToPageBlockObjectResponseLinkToPageMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId? LinkToPageBlockObjectResponseLinkToPagePageId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember3 LinkToPageBlockObjectResponseLinkToPageMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId LinkToPageBlockObjectResponseLinkToPagePageId { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,9 +46,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage();
-            result.LinkToPageBlockObjectResponseLinkToPageMember1 = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember1();
-            result.LinkToPageBlockObjectResponseLinkToPageMember2 = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember2();
-            result.LinkToPageBlockObjectResponseLinkToPageMember3 = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember3();
+            result.LinkToPageBlockObjectResponseLinkToPageCommentId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId();
+            result.LinkToPageBlockObjectResponseLinkToPageDatabaseId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId();
+            result.LinkToPageBlockObjectResponseLinkToPagePageId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId();
             return result;
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LinkToPageBlockObjectResponseLinkToPageMember1 != null || LinkToPageBlockObjectResponseLinkToPageMember2 != null || LinkToPageBlockObjectResponseLinkToPageMember3 != null)
+            if(LinkToPageBlockObjectResponseLinkToPageCommentId != null || LinkToPageBlockObjectResponseLinkToPageDatabaseId != null || LinkToPageBlockObjectResponseLinkToPagePageId != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkToPageBlockObjectResponseLinkToPageMember1, LinkToPageBlockObjectResponseLinkToPageMember2, LinkToPageBlockObjectResponseLinkToPageMember3);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkToPageBlockObjectResponseLinkToPageCommentId, LinkToPageBlockObjectResponseLinkToPageDatabaseId, LinkToPageBlockObjectResponseLinkToPagePageId);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageMember1>(null, LinkToPageBlockObjectResponseLinkToPageMember1, LinkToPageBlockObjectResponseLinkToPageMember2, LinkToPageBlockObjectResponseLinkToPageMember3);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId>(null, LinkToPageBlockObjectResponseLinkToPageCommentId, LinkToPageBlockObjectResponseLinkToPageDatabaseId, LinkToPageBlockObjectResponseLinkToPagePageId);
         }
     }
 }

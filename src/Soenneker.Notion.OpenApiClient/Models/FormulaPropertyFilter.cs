@@ -8,42 +8,42 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember4"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf4"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FormulaPropertyFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember1? FormulaPropertyFilterMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf1? FormulaPropertyFilterAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember1 FormulaPropertyFilterMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf1 FormulaPropertyFilterAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember2? FormulaPropertyFilterMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf2? FormulaPropertyFilterAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember2 FormulaPropertyFilterMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf2 FormulaPropertyFilterAnyOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember3? FormulaPropertyFilterMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf3? FormulaPropertyFilterAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember3 FormulaPropertyFilterMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf3 FormulaPropertyFilterAnyOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember4? FormulaPropertyFilterMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf4? FormulaPropertyFilterAnyOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember4 FormulaPropertyFilterMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf4 FormulaPropertyFilterAnyOf4 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,10 +54,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilter();
-            result.FormulaPropertyFilterMember1 = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember1();
-            result.FormulaPropertyFilterMember2 = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember2();
-            result.FormulaPropertyFilterMember3 = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember3();
-            result.FormulaPropertyFilterMember4 = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember4();
+            result.FormulaPropertyFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf1();
+            result.FormulaPropertyFilterAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf2();
+            result.FormulaPropertyFilterAnyOf3 = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf3();
+            result.FormulaPropertyFilterAnyOf4 = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf4();
             return result;
         }
         /// <summary>
@@ -66,9 +66,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(FormulaPropertyFilterMember1 != null || FormulaPropertyFilterMember2 != null || FormulaPropertyFilterMember3 != null || FormulaPropertyFilterMember4 != null)
+            if(FormulaPropertyFilterAnyOf1 != null || FormulaPropertyFilterAnyOf2 != null || FormulaPropertyFilterAnyOf3 != null || FormulaPropertyFilterAnyOf4 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FormulaPropertyFilterMember1, FormulaPropertyFilterMember2, FormulaPropertyFilterMember3, FormulaPropertyFilterMember4);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FormulaPropertyFilterAnyOf1, FormulaPropertyFilterAnyOf2, FormulaPropertyFilterAnyOf3, FormulaPropertyFilterAnyOf4);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,7 +79,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterMember1>(null, FormulaPropertyFilterMember1, FormulaPropertyFilterMember2, FormulaPropertyFilterMember3, FormulaPropertyFilterMember4);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyFilterAnyOf1>(null, FormulaPropertyFilterAnyOf1, FormulaPropertyFilterAnyOf2, FormulaPropertyFilterAnyOf3, FormulaPropertyFilterAnyOf4);
         }
     }
 }

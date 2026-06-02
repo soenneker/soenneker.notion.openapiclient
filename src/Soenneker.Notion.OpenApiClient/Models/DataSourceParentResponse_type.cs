@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "data_source_id")]
         #pragma warning disable CS1591
-        Data_source_id,
+        DataSourceId,
         #pragma warning restore CS1591
     }
 }

@@ -19,7 +19,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Whether the form is closed for submissions. Pass null to clear.</summary>
         public bool? IsFormClosed { get; set; }
         /// <summary>Permission level granted to the submitter on the created page after form submission. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_submission_permissions? SubmissionPermissions { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions? SubmissionPermissions { get; set; }
         /// <summary>The view type. Must be &quot;form&quot;.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_type? Type { get; set; }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "anonymous_submissions", n => { AnonymousSubmissions = n.GetBoolValue(); } },
                 { "is_form_closed", n => { IsFormClosed = n.GetBoolValue(); } },
-                { "submission_permissions", n => { SubmissionPermissions = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_submission_permissions>(); } },
+                { "submission_permissions", n => { SubmissionPermissions = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_type>(); } },
             };
         }
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("anonymous_submissions", AnonymousSubmissions);
             writer.WriteBoolValue("is_form_closed", IsFormClosed);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_submission_permissions>("submission_permissions", SubmissionPermissions);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions>("submission_permissions", SubmissionPermissions);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

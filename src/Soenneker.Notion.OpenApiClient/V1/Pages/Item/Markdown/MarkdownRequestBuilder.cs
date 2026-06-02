@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\pages\{page_id}\markdown
+    /// Builds and executes requests for operations under \v1\pages\{pageId}\markdown
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MarkdownRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkdownRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{page_id}/markdown{?include_transcript*}", pathParameters)
+        public MarkdownRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkdownRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{page_id}/markdown{?include_transcript*}", rawUrl)
+        public MarkdownRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,11 +90,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -140,11 +140,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

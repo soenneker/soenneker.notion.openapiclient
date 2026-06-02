@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\views\{view_id}\queries
+    /// Builds and executes requests for operations under \v1\views\{viewId}\queries
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Notion.OpenApiClient.v1.views.item.queries.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQuery_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQuery_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQueryItemRequestBuilder"/></returns>
+        public global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQueryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("query_id", position);
-                return new global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQuery_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("queryId", position);
+                return new global::Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries.Item.WithQueryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/views/{view_id}/queries", pathParameters)
+        public QueriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/views/{viewId}/queries", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public QueriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/views/{view_id}/queries", rawUrl)
+        public QueriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/views/{viewId}/queries", rawUrl)
         {
         }
         /// <summary>

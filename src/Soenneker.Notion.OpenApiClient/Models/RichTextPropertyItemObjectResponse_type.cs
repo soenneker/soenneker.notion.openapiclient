@@ -10,7 +10,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "rich_text")]
         #pragma warning disable CS1591
-        Rich_text,
+        RichText,
         #pragma warning restore CS1591
     }
 }

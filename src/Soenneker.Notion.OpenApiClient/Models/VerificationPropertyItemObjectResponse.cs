@@ -29,10 +29,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_verification? Verification { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification? Verification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_verification Verification { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification Verification { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse"/> and sets the default values.
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_object>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_type>(); } },
-                { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_verification>(global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_verification.CreateFromDiscriminatorValue); } },
+                { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification>(global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_object>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse_verification>("verification", Verification);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification>("verification", Verification);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

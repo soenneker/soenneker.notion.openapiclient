@@ -20,14 +20,14 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads
     {
         /// <summary>Gets an item from the Soenneker.Notion.OpenApiClient.v1.file_uploads.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.WithFile_upload_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.WithFile_upload_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.WithFileUploadItemRequestBuilder"/></returns>
+        public global::Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.WithFileUploadItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("file_upload_id", position);
-                return new global::Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.WithFile_upload_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("fileUploadId", position);
+                return new global::Soenneker.Notion.OpenApiClient.V1.File_uploads.Item.WithFileUploadItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads
         /// <summary>
         /// List file uploads
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi400">When receiving a 400 status code</exception>
@@ -63,11 +63,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.File_uploads.File_uploadsRequestBuilder.File_uploadsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.File_uploads.File_uploadsRequestBuilder.File_uploadsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.File_uploads.File_uploadsRequestBuilder.File_uploadsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.File_uploads.File_uploadsRequestBuilder.File_uploadsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -83,7 +83,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.ListFileUploads200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a file upload
@@ -103,11 +103,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateFile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateFileRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateFile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateFileRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -153,11 +153,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateFile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateFileRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateFile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.CreateFileRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -194,7 +194,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.File_uploads
             public string StartCursor { get; set; }
 #endif
             [QueryParameter("status")]
-            public global::Soenneker.Notion.OpenApiClient.V1.File_uploads.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Notion.OpenApiClient.Models.ListFileUploadsStatusParameter? Status { get; set; }
         }
     }
 }

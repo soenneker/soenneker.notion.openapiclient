@@ -8,258 +8,258 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember10"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember11"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember12"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember13"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember14"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember15"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember16"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember17"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember18"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember19"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember20"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember21"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember22"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember23"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember24"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember25"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember27"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember28"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember30"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember5"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember6"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember7"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember8"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember9"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestAudio"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBookmark"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBreadcrumb"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBulletedListItem"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCallout"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCode"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumn"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnList"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestDivider"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbed"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEquation"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFile"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestImage"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestLinkToPage"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItem"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestParagraph"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestPdf"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestQuote"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestSyncedBlock"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTab"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableOfContents"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableRow"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTemplate"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToDo"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToggle"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestVideo"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BlockObjectRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestAudio"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember1? BlockObjectRequestMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestAudio? BlockObjectRequestAudio { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember1 BlockObjectRequestMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestAudio BlockObjectRequestAudio { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember10"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBookmark"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember10? BlockObjectRequestMember10 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBookmark? BlockObjectRequestBookmark { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember10 BlockObjectRequestMember10 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBookmark BlockObjectRequestBookmark { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember11"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBreadcrumb"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember11? BlockObjectRequestMember11 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBreadcrumb? BlockObjectRequestBreadcrumb { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember11 BlockObjectRequestMember11 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBreadcrumb BlockObjectRequestBreadcrumb { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember12"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBulletedListItem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember12? BlockObjectRequestMember12 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBulletedListItem? BlockObjectRequestBulletedListItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember12 BlockObjectRequestMember12 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBulletedListItem BlockObjectRequestBulletedListItem { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember13"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCallout"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember13? BlockObjectRequestMember13 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCallout? BlockObjectRequestCallout { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember13 BlockObjectRequestMember13 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCallout BlockObjectRequestCallout { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember14"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCode"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember14? BlockObjectRequestMember14 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCode? BlockObjectRequestCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember14 BlockObjectRequestMember14 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCode BlockObjectRequestCode { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember15"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumn"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember15? BlockObjectRequestMember15 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumn? BlockObjectRequestColumn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember15 BlockObjectRequestMember15 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumn BlockObjectRequestColumn { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember16"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnList"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember16? BlockObjectRequestMember16 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnList? BlockObjectRequestColumnList { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember16 BlockObjectRequestMember16 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnList BlockObjectRequestColumnList { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember17"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestDivider"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember17? BlockObjectRequestMember17 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestDivider? BlockObjectRequestDivider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember17 BlockObjectRequestMember17 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestDivider BlockObjectRequestDivider { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember18"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbed"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember18? BlockObjectRequestMember18 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbed? BlockObjectRequestEmbed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember18 BlockObjectRequestMember18 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbed BlockObjectRequestEmbed { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember19"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEquation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember19? BlockObjectRequestMember19 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEquation? BlockObjectRequestEquation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember19 BlockObjectRequestMember19 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEquation BlockObjectRequestEquation { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember2? BlockObjectRequestMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFile? BlockObjectRequestFile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember2 BlockObjectRequestMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFile BlockObjectRequestFile { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember20"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember20? BlockObjectRequestMember20 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading1? BlockObjectRequestHeading1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember20 BlockObjectRequestMember20 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading1 BlockObjectRequestHeading1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember21"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember21? BlockObjectRequestMember21 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading2? BlockObjectRequestHeading2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember21 BlockObjectRequestMember21 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading2 BlockObjectRequestHeading2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember22"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember22? BlockObjectRequestMember22 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading3? BlockObjectRequestHeading3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember22 BlockObjectRequestMember22 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading3 BlockObjectRequestHeading3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember23"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember23? BlockObjectRequestMember23 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading4? BlockObjectRequestHeading4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember23 BlockObjectRequestMember23 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading4 BlockObjectRequestHeading4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember24"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestImage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember24? BlockObjectRequestMember24 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestImage? BlockObjectRequestImage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember24 BlockObjectRequestMember24 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestImage BlockObjectRequestImage { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember25"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestLinkToPage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember25? BlockObjectRequestMember25 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestLinkToPage? BlockObjectRequestLinkToPage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember25 BlockObjectRequestMember25 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestLinkToPage BlockObjectRequestLinkToPage { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26? BlockObjectRequestMember26 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItem? BlockObjectRequestNumberedListItem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26 BlockObjectRequestMember26 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItem BlockObjectRequestNumberedListItem { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember27"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestParagraph"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember27? BlockObjectRequestMember27 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestParagraph? BlockObjectRequestParagraph { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember27 BlockObjectRequestMember27 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestParagraph BlockObjectRequestParagraph { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember28"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestPdf"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember28? BlockObjectRequestMember28 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestPdf? BlockObjectRequestPdf { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember28 BlockObjectRequestMember28 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestPdf BlockObjectRequestPdf { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestQuote"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29? BlockObjectRequestMember29 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestQuote? BlockObjectRequestQuote { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29 BlockObjectRequestMember29 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestQuote BlockObjectRequestQuote { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestSyncedBlock"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember3? BlockObjectRequestMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestSyncedBlock? BlockObjectRequestSyncedBlock { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember3 BlockObjectRequestMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestSyncedBlock BlockObjectRequestSyncedBlock { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember30"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTab"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember30? BlockObjectRequestMember30 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTab? BlockObjectRequestTab { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember30 BlockObjectRequestMember30 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTab BlockObjectRequestTab { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31? BlockObjectRequestMember31 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable? BlockObjectRequestTable { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31 BlockObjectRequestMember31 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable BlockObjectRequestTable { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableOfContents"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember4? BlockObjectRequestMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableOfContents? BlockObjectRequestTableOfContents { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember4 BlockObjectRequestMember4 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableOfContents BlockObjectRequestTableOfContents { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableRow"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember5? BlockObjectRequestMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableRow? BlockObjectRequestTableRow { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember5 BlockObjectRequestMember5 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableRow BlockObjectRequestTableRow { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember6"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTemplate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember6? BlockObjectRequestMember6 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTemplate? BlockObjectRequestTemplate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember6 BlockObjectRequestMember6 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTemplate BlockObjectRequestTemplate { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember7"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToDo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember7? BlockObjectRequestMember7 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToDo? BlockObjectRequestToDo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember7 BlockObjectRequestMember7 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToDo BlockObjectRequestToDo { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember8"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToggle"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember8? BlockObjectRequestMember8 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToggle? BlockObjectRequestToggle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember8 BlockObjectRequestMember8 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToggle BlockObjectRequestToggle { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember9"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestVideo"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember9? BlockObjectRequestMember9 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestVideo? BlockObjectRequestVideo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember9 BlockObjectRequestMember9 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestVideo BlockObjectRequestVideo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -270,37 +270,37 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest();
-            result.BlockObjectRequestMember1 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember1();
-            result.BlockObjectRequestMember10 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember10();
-            result.BlockObjectRequestMember11 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember11();
-            result.BlockObjectRequestMember12 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember12();
-            result.BlockObjectRequestMember13 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember13();
-            result.BlockObjectRequestMember14 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember14();
-            result.BlockObjectRequestMember15 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember15();
-            result.BlockObjectRequestMember16 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember16();
-            result.BlockObjectRequestMember17 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember17();
-            result.BlockObjectRequestMember18 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember18();
-            result.BlockObjectRequestMember19 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember19();
-            result.BlockObjectRequestMember2 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember2();
-            result.BlockObjectRequestMember20 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember20();
-            result.BlockObjectRequestMember21 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember21();
-            result.BlockObjectRequestMember22 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember22();
-            result.BlockObjectRequestMember23 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember23();
-            result.BlockObjectRequestMember24 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember24();
-            result.BlockObjectRequestMember25 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember25();
-            result.BlockObjectRequestMember26 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember26();
-            result.BlockObjectRequestMember27 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember27();
-            result.BlockObjectRequestMember28 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember28();
-            result.BlockObjectRequestMember29 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember29();
-            result.BlockObjectRequestMember3 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember3();
-            result.BlockObjectRequestMember30 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember30();
-            result.BlockObjectRequestMember31 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember31();
-            result.BlockObjectRequestMember4 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember4();
-            result.BlockObjectRequestMember5 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember5();
-            result.BlockObjectRequestMember6 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember6();
-            result.BlockObjectRequestMember7 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember7();
-            result.BlockObjectRequestMember8 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember8();
-            result.BlockObjectRequestMember9 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember9();
+            result.BlockObjectRequestAudio = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestAudio();
+            result.BlockObjectRequestBookmark = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBookmark();
+            result.BlockObjectRequestBreadcrumb = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBreadcrumb();
+            result.BlockObjectRequestBulletedListItem = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestBulletedListItem();
+            result.BlockObjectRequestCallout = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCallout();
+            result.BlockObjectRequestCode = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestCode();
+            result.BlockObjectRequestColumn = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumn();
+            result.BlockObjectRequestColumnList = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnList();
+            result.BlockObjectRequestDivider = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestDivider();
+            result.BlockObjectRequestEmbed = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbed();
+            result.BlockObjectRequestEquation = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEquation();
+            result.BlockObjectRequestFile = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFile();
+            result.BlockObjectRequestHeading1 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading1();
+            result.BlockObjectRequestHeading2 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading2();
+            result.BlockObjectRequestHeading3 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading3();
+            result.BlockObjectRequestHeading4 = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestHeading4();
+            result.BlockObjectRequestImage = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestImage();
+            result.BlockObjectRequestLinkToPage = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestLinkToPage();
+            result.BlockObjectRequestNumberedListItem = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItem();
+            result.BlockObjectRequestParagraph = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestParagraph();
+            result.BlockObjectRequestPdf = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestPdf();
+            result.BlockObjectRequestQuote = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestQuote();
+            result.BlockObjectRequestSyncedBlock = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestSyncedBlock();
+            result.BlockObjectRequestTab = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTab();
+            result.BlockObjectRequestTable = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable();
+            result.BlockObjectRequestTableOfContents = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableOfContents();
+            result.BlockObjectRequestTableRow = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTableRow();
+            result.BlockObjectRequestTemplate = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTemplate();
+            result.BlockObjectRequestToDo = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToDo();
+            result.BlockObjectRequestToggle = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestToggle();
+            result.BlockObjectRequestVideo = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestVideo();
             return result;
         }
         /// <summary>
@@ -309,9 +309,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(BlockObjectRequestMember1 != null || BlockObjectRequestMember10 != null || BlockObjectRequestMember11 != null || BlockObjectRequestMember12 != null || BlockObjectRequestMember13 != null || BlockObjectRequestMember14 != null || BlockObjectRequestMember15 != null || BlockObjectRequestMember16 != null || BlockObjectRequestMember17 != null || BlockObjectRequestMember18 != null || BlockObjectRequestMember19 != null || BlockObjectRequestMember2 != null || BlockObjectRequestMember20 != null || BlockObjectRequestMember21 != null || BlockObjectRequestMember22 != null || BlockObjectRequestMember23 != null || BlockObjectRequestMember24 != null || BlockObjectRequestMember25 != null || BlockObjectRequestMember26 != null || BlockObjectRequestMember27 != null || BlockObjectRequestMember28 != null || BlockObjectRequestMember29 != null || BlockObjectRequestMember3 != null || BlockObjectRequestMember30 != null || BlockObjectRequestMember31 != null || BlockObjectRequestMember4 != null || BlockObjectRequestMember5 != null || BlockObjectRequestMember6 != null || BlockObjectRequestMember7 != null || BlockObjectRequestMember8 != null || BlockObjectRequestMember9 != null)
+            if(BlockObjectRequestAudio != null || BlockObjectRequestBookmark != null || BlockObjectRequestBreadcrumb != null || BlockObjectRequestBulletedListItem != null || BlockObjectRequestCallout != null || BlockObjectRequestCode != null || BlockObjectRequestColumn != null || BlockObjectRequestColumnList != null || BlockObjectRequestDivider != null || BlockObjectRequestEmbed != null || BlockObjectRequestEquation != null || BlockObjectRequestFile != null || BlockObjectRequestHeading1 != null || BlockObjectRequestHeading2 != null || BlockObjectRequestHeading3 != null || BlockObjectRequestHeading4 != null || BlockObjectRequestImage != null || BlockObjectRequestLinkToPage != null || BlockObjectRequestNumberedListItem != null || BlockObjectRequestParagraph != null || BlockObjectRequestPdf != null || BlockObjectRequestQuote != null || BlockObjectRequestSyncedBlock != null || BlockObjectRequestTab != null || BlockObjectRequestTable != null || BlockObjectRequestTableOfContents != null || BlockObjectRequestTableRow != null || BlockObjectRequestTemplate != null || BlockObjectRequestToDo != null || BlockObjectRequestToggle != null || BlockObjectRequestVideo != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BlockObjectRequestMember1, BlockObjectRequestMember10, BlockObjectRequestMember11, BlockObjectRequestMember12, BlockObjectRequestMember13, BlockObjectRequestMember14, BlockObjectRequestMember15, BlockObjectRequestMember16, BlockObjectRequestMember17, BlockObjectRequestMember18, BlockObjectRequestMember19, BlockObjectRequestMember2, BlockObjectRequestMember20, BlockObjectRequestMember21, BlockObjectRequestMember22, BlockObjectRequestMember23, BlockObjectRequestMember24, BlockObjectRequestMember25, BlockObjectRequestMember26, BlockObjectRequestMember27, BlockObjectRequestMember28, BlockObjectRequestMember29, BlockObjectRequestMember3, BlockObjectRequestMember30, BlockObjectRequestMember31, BlockObjectRequestMember4, BlockObjectRequestMember5, BlockObjectRequestMember6, BlockObjectRequestMember7, BlockObjectRequestMember8, BlockObjectRequestMember9);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BlockObjectRequestAudio, BlockObjectRequestBookmark, BlockObjectRequestBreadcrumb, BlockObjectRequestBulletedListItem, BlockObjectRequestCallout, BlockObjectRequestCode, BlockObjectRequestColumn, BlockObjectRequestColumnList, BlockObjectRequestDivider, BlockObjectRequestEmbed, BlockObjectRequestEquation, BlockObjectRequestFile, BlockObjectRequestHeading1, BlockObjectRequestHeading2, BlockObjectRequestHeading3, BlockObjectRequestHeading4, BlockObjectRequestImage, BlockObjectRequestLinkToPage, BlockObjectRequestNumberedListItem, BlockObjectRequestParagraph, BlockObjectRequestPdf, BlockObjectRequestQuote, BlockObjectRequestSyncedBlock, BlockObjectRequestTab, BlockObjectRequestTable, BlockObjectRequestTableOfContents, BlockObjectRequestTableRow, BlockObjectRequestTemplate, BlockObjectRequestToDo, BlockObjectRequestToggle, BlockObjectRequestVideo);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -322,7 +322,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestMember1>(null, BlockObjectRequestMember1, BlockObjectRequestMember10, BlockObjectRequestMember11, BlockObjectRequestMember12, BlockObjectRequestMember13, BlockObjectRequestMember14, BlockObjectRequestMember15, BlockObjectRequestMember16, BlockObjectRequestMember17, BlockObjectRequestMember18, BlockObjectRequestMember19, BlockObjectRequestMember2, BlockObjectRequestMember20, BlockObjectRequestMember21, BlockObjectRequestMember22, BlockObjectRequestMember23, BlockObjectRequestMember24, BlockObjectRequestMember25, BlockObjectRequestMember26, BlockObjectRequestMember27, BlockObjectRequestMember28, BlockObjectRequestMember29, BlockObjectRequestMember3, BlockObjectRequestMember30, BlockObjectRequestMember31, BlockObjectRequestMember4, BlockObjectRequestMember5, BlockObjectRequestMember6, BlockObjectRequestMember7, BlockObjectRequestMember8, BlockObjectRequestMember9);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestAudio>(null, BlockObjectRequestAudio, BlockObjectRequestBookmark, BlockObjectRequestBreadcrumb, BlockObjectRequestBulletedListItem, BlockObjectRequestCallout, BlockObjectRequestCode, BlockObjectRequestColumn, BlockObjectRequestColumnList, BlockObjectRequestDivider, BlockObjectRequestEmbed, BlockObjectRequestEquation, BlockObjectRequestFile, BlockObjectRequestHeading1, BlockObjectRequestHeading2, BlockObjectRequestHeading3, BlockObjectRequestHeading4, BlockObjectRequestImage, BlockObjectRequestLinkToPage, BlockObjectRequestNumberedListItem, BlockObjectRequestParagraph, BlockObjectRequestPdf, BlockObjectRequestQuote, BlockObjectRequestSyncedBlock, BlockObjectRequestTab, BlockObjectRequestTable, BlockObjectRequestTableOfContents, BlockObjectRequestTableRow, BlockObjectRequestTemplate, BlockObjectRequestToDo, BlockObjectRequestToggle, BlockObjectRequestVideo);
         }
     }
 }

@@ -49,10 +49,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>&quot;Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view&apos;s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { \&quot;does_not_equal\&quot;: [\&quot;Done\&quot;, \&quot;Archive\&quot;] }).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter? Filter { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter? Filter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter Filter { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter Filter { get; set; }
 #endif
         /// <summary>The name of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,18 +81,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Quick filters to pin in the view&apos;s filter bar. Keys are property names or IDs. Values are filter conditions (same shape as a property filter but without the property field). Each quick filter appears as a clickable pill above the view, independent of the advanced filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters? QuickFilters { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestQuickFiltersProperty? QuickFilters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters QuickFilters { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestQuickFiltersProperty QuickFilters { get; set; }
 #endif
         /// <summary>The sorts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts>? Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem>? Sorts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts> Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem> Sorts { get; set; }
 #endif
         /// <summary>&quot;One of: `table`, `board`, `list`, `calendar`, `timeline`, `gallery`, `form`, `chart`, `map`, `dashboard`&quot;</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest? Type { get; set; }
@@ -133,12 +133,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "create_database", n => { CreateDatabase = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest.CreateFromDiscriminatorValue); } },
                 { "data_source_id", n => { DataSourceId = n.GetStringValue(); } },
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest>(global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest.CreateFromDiscriminatorValue); } },
                 { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest.CreateFromDiscriminatorValue); } },
-                { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters.CreateFromDiscriminatorValue); } },
-                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestQuickFiltersProperty>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestQuickFiltersProperty.CreateFromDiscriminatorValue); } },
+                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest>(); } },
                 { "view_id", n => { ViewId = n.GetStringValue(); } },
             };
@@ -154,12 +154,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest>("create_database", CreateDatabase);
             writer.WriteStringValue("database_id", DatabaseId);
             writer.WriteStringValue("data_source_id", DataSourceId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_filter>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter>("filter", Filter);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest>("placement", Placement);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest>("position", Position);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_quick_filters>("quick_filters", QuickFilters);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest_sorts>("sorts", Sorts);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestQuickFiltersProperty>("quick_filters", QuickFilters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem>("sorts", Sorts);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest>("type", Type);
             writer.WriteStringValue("view_id", ViewId);
             writer.WriteAdditionalData(AdditionalData);

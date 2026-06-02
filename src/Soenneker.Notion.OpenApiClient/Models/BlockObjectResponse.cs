@@ -33,10 +33,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The breadcrumb property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb? Breadcrumb { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BreadcrumbBlockObjectResponseBreadcrumb? Breadcrumb { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb Breadcrumb { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BreadcrumbBlockObjectResponseBreadcrumb Breadcrumb { get; set; }
 #endif
         /// <summary>The bulleted_list_item property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The column_list property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list? ColumnList { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ColumnListBlockObjectResponseColumnList? ColumnList { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list ColumnList { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ColumnListBlockObjectResponseColumnList ColumnList { get; set; }
 #endif
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,10 +107,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The divider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider? Divider { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DividerBlockObjectResponseDivider? Divider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider Divider { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DividerBlockObjectResponseDivider Divider { get; set; }
 #endif
         /// <summary>The embed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -269,10 +269,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The tab property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab? Tab { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TabBlockObjectResponseTab? Tab { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab Tab { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TabBlockObjectResponseTab Tab { get; set; }
 #endif
         /// <summary>The table property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -373,17 +373,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "audio", n => { Audio = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
                 { "bookmark", n => { Bookmark = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse.CreateFromDiscriminatorValue); } },
-                { "breadcrumb", n => { Breadcrumb = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb.CreateFromDiscriminatorValue); } },
+                { "breadcrumb", n => { Breadcrumb = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BreadcrumbBlockObjectResponseBreadcrumb>(global::Soenneker.Notion.OpenApiClient.Models.BreadcrumbBlockObjectResponseBreadcrumb.CreateFromDiscriminatorValue); } },
                 { "bulleted_list_item", n => { BulletedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
                 { "callout", n => { Callout = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalloutBlockObjectResponseCallout>(global::Soenneker.Notion.OpenApiClient.Models.CalloutBlockObjectResponseCallout.CreateFromDiscriminatorValue); } },
                 { "child_database", n => { ChildDatabase = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse.CreateFromDiscriminatorValue); } },
                 { "child_page", n => { ChildPage = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse.CreateFromDiscriminatorValue); } },
                 { "code", n => { Code = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CodeBlockObjectResponseCode>(global::Soenneker.Notion.OpenApiClient.Models.CodeBlockObjectResponseCode.CreateFromDiscriminatorValue); } },
                 { "column", n => { Column = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnResponse>(global::Soenneker.Notion.OpenApiClient.Models.ColumnResponse.CreateFromDiscriminatorValue); } },
-                { "column_list", n => { ColumnList = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list.CreateFromDiscriminatorValue); } },
+                { "column_list", n => { ColumnList = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnListBlockObjectResponseColumnList>(global::Soenneker.Notion.OpenApiClient.Models.ColumnListBlockObjectResponseColumnList.CreateFromDiscriminatorValue); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "divider", n => { Divider = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider.CreateFromDiscriminatorValue); } },
+                { "divider", n => { Divider = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DividerBlockObjectResponseDivider>(global::Soenneker.Notion.OpenApiClient.Models.DividerBlockObjectResponseDivider.CreateFromDiscriminatorValue); } },
                 { "embed", n => { Embed = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse.CreateFromDiscriminatorValue); } },
                 { "equation", n => { Equation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExpressionObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.ExpressionObjectResponse.CreateFromDiscriminatorValue); } },
                 { "file", n => { File = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionResponse.CreateFromDiscriminatorValue); } },
@@ -407,7 +407,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "pdf", n => { Pdf = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
                 { "quote", n => { Quote = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
                 { "synced_block", n => { SyncedBlock = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock>(global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock.CreateFromDiscriminatorValue); } },
-                { "tab", n => { Tab = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab.CreateFromDiscriminatorValue); } },
+                { "tab", n => { Tab = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TabBlockObjectResponseTab>(global::Soenneker.Notion.OpenApiClient.Models.TabBlockObjectResponseTab.CreateFromDiscriminatorValue); } },
                 { "table", n => { Table = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableResponse.CreateFromDiscriminatorValue); } },
                 { "table_of_contents", n => { TableOfContents = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents>(global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents.CreateFromDiscriminatorValue); } },
                 { "table_row", n => { TableRow = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableRowResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableRowResponse.CreateFromDiscriminatorValue); } },
@@ -428,17 +428,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("audio", Audio);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse>("bookmark", Bookmark);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_breadcrumb>("breadcrumb", Breadcrumb);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BreadcrumbBlockObjectResponseBreadcrumb>("breadcrumb", Breadcrumb);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>("bulleted_list_item", BulletedListItem);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalloutBlockObjectResponseCallout>("callout", Callout);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse>("child_database", ChildDatabase);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitleObjectResponse>("child_page", ChildPage);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CodeBlockObjectResponseCode>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnResponse>("column", Column);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_column_list>("column_list", ColumnList);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnListBlockObjectResponseColumnList>("column_list", ColumnList);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_divider>("divider", Divider);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DividerBlockObjectResponseDivider>("divider", Divider);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionResponse>("embed", Embed);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExpressionObjectResponse>("equation", Equation);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionResponse>("file", File);
@@ -462,7 +462,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("pdf", Pdf);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>("quote", Quote);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlock>("synced_block", SyncedBlock);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_tab>("tab", Tab);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TabBlockObjectResponseTab>("tab", Tab);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableResponse>("table", Table);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents>("table_of_contents", TableOfContents);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableRowResponse>("table_row", TableRow);

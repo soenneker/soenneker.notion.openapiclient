@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExistencePropertyFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1? ExistencePropertyFilterMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1? ExistencePropertyFilterAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1 ExistencePropertyFilterMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1 ExistencePropertyFilterAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember2? ExistencePropertyFilterMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2? ExistencePropertyFilterAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember2 ExistencePropertyFilterMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2 ExistencePropertyFilterAnyOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter();
-            result.ExistencePropertyFilterMember1 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1();
-            result.ExistencePropertyFilterMember2 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember2();
+            result.ExistencePropertyFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1();
+            result.ExistencePropertyFilterAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2();
             return result;
         }
         /// <summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ExistencePropertyFilterMember1 != null || ExistencePropertyFilterMember2 != null)
+            if(ExistencePropertyFilterAnyOf1 != null || ExistencePropertyFilterAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ExistencePropertyFilterMember1, ExistencePropertyFilterMember2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ExistencePropertyFilterAnyOf1, ExistencePropertyFilterAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterMember1>(null, ExistencePropertyFilterMember1, ExistencePropertyFilterMember2);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1>(null, ExistencePropertyFilterAnyOf1, ExistencePropertyFilterAnyOf2);
         }
     }
 }

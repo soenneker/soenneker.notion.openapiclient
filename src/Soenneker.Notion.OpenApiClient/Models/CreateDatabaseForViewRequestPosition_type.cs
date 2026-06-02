@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "after_block")]
         #pragma warning disable CS1591
-        After_block,
+        AfterBlock,
         #pragma warning restore CS1591
     }
 }

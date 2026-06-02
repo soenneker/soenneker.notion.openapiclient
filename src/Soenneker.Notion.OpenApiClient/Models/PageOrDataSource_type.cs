@@ -10,7 +10,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "page_or_data_source")]
         #pragma warning disable CS1591
-        Page_or_data_source,
+        PageOrDataSource,
         #pragma warning restore CS1591
     }
 }

@@ -10,7 +10,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "string")]
         #pragma warning disable CS1591
-        String,
+        StringValue,
         #pragma warning restore CS1591
     }
 }

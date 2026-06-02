@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse? Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponseDate? Date { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponseDate Date { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse_type? Type { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>(global::Soenneker.Notion.OpenApiClient.Models.DateResponse.CreateFromDiscriminatorValue); } },
+                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponseDate>(global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponseDate.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse_type>(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>("date", Date);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponseDate>("date", Date);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

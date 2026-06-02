@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Sub-group-by configuration based on the formula result type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by? GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy? GroupBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy GroupBy { get; set; }
 #endif
         /// <summary>Whether to hide groups that have no items.</summary>
         public bool? HideEmptyGroups { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by>(global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by.CreateFromDiscriminatorValue); } },
+                { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy>(global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy.CreateFromDiscriminatorValue); } },
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest_type>(); } },
@@ -72,126 +72,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by>("group_by", GroupBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy>("group_by", GroupBy);
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteStringValue("property_id", PropertyId);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FormulaGroupByConfigRequest_group_by : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest? FormulaCheckboxSubGroupByRequest { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest FormulaCheckboxSubGroupByRequest { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest? FormulaDateSubGroupByRequest { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest FormulaDateSubGroupByRequest { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest? FormulaNumberSubGroupByRequest { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest FormulaNumberSubGroupByRequest { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest? FormulaTextSubGroupByRequest { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest FormulaTextSubGroupByRequest { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest.FormulaGroupByConfigRequest_group_by();
-                if("FormulaCheckboxSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.FormulaCheckboxSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest();
-                }
-                else if("FormulaDateSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.FormulaDateSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest();
-                }
-                else if("FormulaNumberSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.FormulaNumberSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest();
-                }
-                else if("FormulaTextSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.FormulaTextSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(FormulaCheckboxSubGroupByRequest != null)
-                {
-                    return FormulaCheckboxSubGroupByRequest.GetFieldDeserializers();
-                }
-                else if(FormulaDateSubGroupByRequest != null)
-                {
-                    return FormulaDateSubGroupByRequest.GetFieldDeserializers();
-                }
-                else if(FormulaNumberSubGroupByRequest != null)
-                {
-                    return FormulaNumberSubGroupByRequest.GetFieldDeserializers();
-                }
-                else if(FormulaTextSubGroupByRequest != null)
-                {
-                    return FormulaTextSubGroupByRequest.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(FormulaCheckboxSubGroupByRequest != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest>(null, FormulaCheckboxSubGroupByRequest);
-                }
-                else if(FormulaDateSubGroupByRequest != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest>(null, FormulaDateSubGroupByRequest);
-                }
-                else if(FormulaNumberSubGroupByRequest != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest>(null, FormulaNumberSubGroupByRequest);
-                }
-                else if(FormulaTextSubGroupByRequest != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest>(null, FormulaTextSubGroupByRequest);
-                }
-            }
         }
     }
 }

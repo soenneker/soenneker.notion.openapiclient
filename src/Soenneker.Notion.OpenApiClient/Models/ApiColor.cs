@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "default")]
         #pragma warning disable CS1591
-        Default,
+        DefaultValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "gray")]
         #pragma warning disable CS1591
@@ -49,43 +49,43 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "default_background")]
         #pragma warning disable CS1591
-        Default_background,
+        DefaultBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "gray_background")]
         #pragma warning disable CS1591
-        Gray_background,
+        GrayBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "brown_background")]
         #pragma warning disable CS1591
-        Brown_background,
+        BrownBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "orange_background")]
         #pragma warning disable CS1591
-        Orange_background,
+        OrangeBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "yellow_background")]
         #pragma warning disable CS1591
-        Yellow_background,
+        YellowBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "green_background")]
         #pragma warning disable CS1591
-        Green_background,
+        GreenBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "blue_background")]
         #pragma warning disable CS1591
-        Blue_background,
+        BlueBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "purple_background")]
         #pragma warning disable CS1591
-        Purple_background,
+        PurpleBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "pink_background")]
         #pragma warning disable CS1591
-        Pink_background,
+        PinkBackground,
         #pragma warning restore CS1591
         [EnumMember(Value = "red_background")]
         #pragma warning disable CS1591
-        Red_background,
+        RedBackground,
         #pragma warning restore CS1591
     }
 }

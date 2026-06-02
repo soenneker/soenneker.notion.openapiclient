@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "query_result_limit_reached")]
         #pragma warning disable CS1591
-        Query_result_limit_reached,
+        QueryResultLimitReached,
         #pragma warning restore CS1591
     }
 }

@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Which axis labels to show. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_axis_labels? AxisLabels { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestAxisLabels? AxisLabels { get; set; }
         /// <summary>Chart caption text. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,21 +25,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Caption { get; set; }
 #endif
         /// <summary>The chart type.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_chart_type? ChartType { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestChartType? ChartType { get; set; }
         /// <summary>Whether to color chart elements by their numeric value (gradient coloring). Pass null to clear.</summary>
         public bool? ColorByValue { get; set; }
         /// <summary>Color theme. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_color_theme? ColorTheme { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestColorTheme? ColorTheme { get; set; }
         /// <summary>Cumulative values (line only). Pass null to clear.</summary>
         public bool? Cumulative { get; set; }
         /// <summary>Donut slice labels. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_donut_labels? DonutLabels { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestDonutLabels? DonutLabels { get; set; }
         /// <summary>Which grid lines to show. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_grid_lines? GridLines { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestGridLines? GridLines { get; set; }
         /// <summary>Grouped/stacked bar display style. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_group_style? GroupStyle { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestGroupStyle? GroupStyle { get; set; }
         /// <summary>Chart height. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_height? Height { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestHeight? Height { get; set; }
         /// <summary>Whether to hide groups with no data. Pass null to clear.</summary>
         public bool? HideEmptyGroups { get; set; }
         /// <summary>Hide area fill (line only). Pass null to clear.</summary>
@@ -47,46 +47,46 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Hide title (number only). Pass null to clear.</summary>
         public bool? HideTitle { get; set; }
         /// <summary>Legend position. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_legend_position? LegendPosition { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestLegendPosition? LegendPosition { get; set; }
         /// <summary>Reference lines on the chart. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch? ReferenceLines { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines? ReferenceLines { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UnionBranch ReferenceLines { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines ReferenceLines { get; set; }
 #endif
         /// <summary>Whether to show data labels. Pass null to clear.</summary>
         public bool? ShowDataLabels { get; set; }
         /// <summary>Smooth line curves (line only). Pass null to clear.</summary>
         public bool? SmoothLine { get; set; }
         /// <summary>Sort order for chart data. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_sort? Sort { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestSort? Sort { get; set; }
         /// <summary>Stack-by grouping for stacked/grouped bar charts. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_stack_by? StackBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy? StackBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_stack_by StackBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy StackBy { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;chart&quot;.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_type? Type { get; set; }
         /// <summary>Aggregation for number charts. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest? Value { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest Value { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestValue Value { get; set; }
 #endif
         /// <summary>X-axis grouping configuration for grouped data mode. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_x_axis? XAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestXAxis? XAxis { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_x_axis XAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestXAxis XAxis { get; set; }
 #endif
         /// <summary>Property ID for x-axis values in results mode. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,10 +99,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Y-axis aggregation for grouped data mode. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest? YAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis? YAxis { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest YAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis YAxis { get; set; }
 #endif
         /// <summary>Custom y-axis maximum. Pass null to clear.</summary>
         public double? YAxisMax { get; set; }
@@ -141,30 +141,30 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "axis_labels", n => { AxisLabels = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_axis_labels>(); } },
+                { "axis_labels", n => { AxisLabels = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestAxisLabels>(); } },
                 { "caption", n => { Caption = n.GetStringValue(); } },
-                { "chart_type", n => { ChartType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_chart_type>(); } },
+                { "chart_type", n => { ChartType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestChartType>(); } },
                 { "color_by_value", n => { ColorByValue = n.GetBoolValue(); } },
-                { "color_theme", n => { ColorTheme = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_color_theme>(); } },
+                { "color_theme", n => { ColorTheme = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestColorTheme>(); } },
                 { "cumulative", n => { Cumulative = n.GetBoolValue(); } },
-                { "donut_labels", n => { DonutLabels = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_donut_labels>(); } },
-                { "grid_lines", n => { GridLines = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_grid_lines>(); } },
-                { "group_style", n => { GroupStyle = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_group_style>(); } },
-                { "height", n => { Height = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_height>(); } },
+                { "donut_labels", n => { DonutLabels = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestDonutLabels>(); } },
+                { "grid_lines", n => { GridLines = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestGridLines>(); } },
+                { "group_style", n => { GroupStyle = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestGroupStyle>(); } },
+                { "height", n => { Height = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestHeight>(); } },
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "hide_line_fill_area", n => { HideLineFillArea = n.GetBoolValue(); } },
                 { "hide_title", n => { HideTitle = n.GetBoolValue(); } },
-                { "legend_position", n => { LegendPosition = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_legend_position>(); } },
-                { "reference_lines", n => { ReferenceLines = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>(global::Soenneker.Notion.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "legend_position", n => { LegendPosition = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestLegendPosition>(); } },
+                { "reference_lines", n => { ReferenceLines = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines.CreateFromDiscriminatorValue); } },
                 { "show_data_labels", n => { ShowDataLabels = n.GetBoolValue(); } },
                 { "smooth_line", n => { SmoothLine = n.GetBoolValue(); } },
-                { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_sort>(); } },
-                { "stack_by", n => { StackBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_stack_by>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_stack_by.CreateFromDiscriminatorValue); } },
+                { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestSort>(); } },
+                { "stack_by", n => { StackBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_type>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest>(global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest.CreateFromDiscriminatorValue); } },
-                { "x_axis", n => { XAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_x_axis>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_x_axis.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestValue>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestValue.CreateFromDiscriminatorValue); } },
+                { "x_axis", n => { XAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestXAxis>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestXAxis.CreateFromDiscriminatorValue); } },
                 { "x_axis_property_id", n => { XAxisPropertyId = n.GetStringValue(); } },
-                { "y_axis", n => { YAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest>(global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest.CreateFromDiscriminatorValue); } },
+                { "y_axis", n => { YAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis.CreateFromDiscriminatorValue); } },
                 { "y_axis_max", n => { YAxisMax = n.GetDoubleValue(); } },
                 { "y_axis_min", n => { YAxisMin = n.GetDoubleValue(); } },
                 { "y_axis_property_id", n => { YAxisPropertyId = n.GetStringValue(); } },
@@ -177,30 +177,30 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_axis_labels>("axis_labels", AxisLabels);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestAxisLabels>("axis_labels", AxisLabels);
             writer.WriteStringValue("caption", Caption);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_chart_type>("chart_type", ChartType);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestChartType>("chart_type", ChartType);
             writer.WriteBoolValue("color_by_value", ColorByValue);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_color_theme>("color_theme", ColorTheme);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestColorTheme>("color_theme", ColorTheme);
             writer.WriteBoolValue("cumulative", Cumulative);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_donut_labels>("donut_labels", DonutLabels);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_grid_lines>("grid_lines", GridLines);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_group_style>("group_style", GroupStyle);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_height>("height", Height);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestDonutLabels>("donut_labels", DonutLabels);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestGridLines>("grid_lines", GridLines);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestGroupStyle>("group_style", GroupStyle);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestHeight>("height", Height);
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteBoolValue("hide_line_fill_area", HideLineFillArea);
             writer.WriteBoolValue("hide_title", HideTitle);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_legend_position>("legend_position", LegendPosition);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnionBranch>("reference_lines", ReferenceLines);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestLegendPosition>("legend_position", LegendPosition);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines>("reference_lines", ReferenceLines);
             writer.WriteBoolValue("show_data_labels", ShowDataLabels);
             writer.WriteBoolValue("smooth_line", SmoothLine);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_sort>("sort", Sort);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_stack_by>("stack_by", StackBy);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestSort>("sort", Sort);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy>("stack_by", StackBy);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest>("value", Value);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest_x_axis>("x_axis", XAxis);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestXAxis>("x_axis", XAxis);
             writer.WriteStringValue("x_axis_property_id", XAxisPropertyId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest>("y_axis", YAxis);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis>("y_axis", YAxis);
             writer.WriteDoubleValue("y_axis_max", YAxisMax);
             writer.WriteDoubleValue("y_axis_min", YAxisMin);
             writer.WriteStringValue("y_axis_property_id", YAxisPropertyId);

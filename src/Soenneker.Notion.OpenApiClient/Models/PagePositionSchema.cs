@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagePositionSchema : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember1? PagePositionSchemaMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1? PagePositionSchemaAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember1 PagePositionSchemaMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1 PagePositionSchemaAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember2? PagePositionSchemaMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf2? PagePositionSchemaAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember2 PagePositionSchemaMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf2 PagePositionSchemaAnyOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember3? PagePositionSchemaMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf3? PagePositionSchemaAnyOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember3 PagePositionSchemaMember3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf3 PagePositionSchemaAnyOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,9 +46,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema();
-            result.PagePositionSchemaMember1 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember1();
-            result.PagePositionSchemaMember2 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember2();
-            result.PagePositionSchemaMember3 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember3();
+            result.PagePositionSchemaAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1();
+            result.PagePositionSchemaAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf2();
+            result.PagePositionSchemaAnyOf3 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf3();
             return result;
         }
         /// <summary>
@@ -57,9 +57,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PagePositionSchemaMember1 != null || PagePositionSchemaMember2 != null || PagePositionSchemaMember3 != null)
+            if(PagePositionSchemaAnyOf1 != null || PagePositionSchemaAnyOf2 != null || PagePositionSchemaAnyOf3 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PagePositionSchemaMember1, PagePositionSchemaMember2, PagePositionSchemaMember3);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PagePositionSchemaAnyOf1, PagePositionSchemaAnyOf2, PagePositionSchemaAnyOf3);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaMember1>(null, PagePositionSchemaMember1, PagePositionSchemaMember2, PagePositionSchemaMember3);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1>(null, PagePositionSchemaAnyOf1, PagePositionSchemaAnyOf2, PagePositionSchemaAnyOf3);
         }
     }
 }

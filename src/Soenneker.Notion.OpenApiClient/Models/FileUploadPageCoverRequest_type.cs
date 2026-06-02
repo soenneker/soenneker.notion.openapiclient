@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         [EnumMember(Value = "file_upload")]
         #pragma warning disable CS1591
-        File_upload,
+        FileUpload,
         #pragma warning restore CS1591
     }
 }
