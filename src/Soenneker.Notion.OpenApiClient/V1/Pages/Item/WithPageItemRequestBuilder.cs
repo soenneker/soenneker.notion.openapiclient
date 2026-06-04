@@ -145,7 +145,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/pages/{pageId}{?filter_properties*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -166,7 +166,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/v1/pages/{pageId}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

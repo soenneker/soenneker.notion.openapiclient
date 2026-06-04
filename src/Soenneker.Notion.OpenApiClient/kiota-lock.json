@@ -2,7 +2,7 @@
   "descriptionHash": "0441A0CA2FBB75DA76F4F4558A289F7066104A8A1854CCACDD481519B2BDAD244BE3073225023E3687D6F083ADAD77F9588514970AE48D3BF21F488CF83C5D6D",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.0",
+  "kiotaVersion": "1.32.1",
   "clientClassName": "NotionOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Notion.OpenApiClient",
