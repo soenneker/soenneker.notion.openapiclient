@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public CommentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/comments{?page_size*,start_cursor*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public CommentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/comments{?page_size*,start_cursor*}", rawUrl)
         {
         }
         /// <summary>
@@ -61,6 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503">When receiving a 503 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListComments200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,6 +83,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
+                { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.ListComments200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.ListComments200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +103,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503">When receiving a 503 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Notion.OpenApiClient.Models.CreateAComment200Response?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -123,6 +126,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
+                { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.CreateAComment200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.CreateAComment200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -161,7 +165,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/v1/comments", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

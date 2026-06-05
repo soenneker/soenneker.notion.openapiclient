@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public ViewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/views{?data_source_id*,database_id*,page_size*,start_cursor*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public ViewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/views{?data_source_id*,database_id*,page_size*,start_cursor*}", rawUrl)
         {
         }
         /// <summary>
@@ -61,6 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503">When receiving a 503 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Notion.OpenApiClient.Models.ListViews200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Views.ViewsRequestBuilder.ViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,6 +83,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
+                { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.ListViews200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.ListViews200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,6 +103,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503">When receiving a 503 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Notion.OpenApiClient.Models.CreateView200Response?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -123,6 +126,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
+                { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.CreateView200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.CreateView200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -140,7 +144,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Views.ViewsRequestBuilder.ViewsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/views{?data_source_id*,database_id*,page_size*,start_cursor*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -161,7 +165,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/v1/views", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

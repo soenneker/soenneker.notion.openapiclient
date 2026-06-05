@@ -49,6 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Meeting_notes.Query
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503">When receiving a 503 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200Response?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,6 +72,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Meeting_notes.Query
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
+                { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

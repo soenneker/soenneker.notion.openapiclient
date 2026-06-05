@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkdownRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
+        public MarkdownRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkdownRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
+        public MarkdownRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*}", rawUrl)
         {
         }
         /// <summary>
@@ -48,6 +48,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503">When receiving a 503 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown.MarkdownRequestBuilder.MarkdownRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,6 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
+                { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,6 +90,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503">When receiving a 503 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,6 +113,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
+                { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -127,7 +131,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown.MarkdownRequestBuilder.MarkdownRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -148,7 +152,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/v1/pages/{pageId}/markdown", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

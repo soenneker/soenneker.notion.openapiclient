@@ -123,6 +123,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -244,6 +254,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -377,6 +397,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -499,6 +529,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -638,6 +678,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       },
@@ -766,6 +816,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -899,6 +959,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -1048,6 +1118,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -1177,6 +1257,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -1311,6 +1401,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -1432,6 +1532,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -1566,6 +1676,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       },
@@ -1685,6 +1805,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -1827,6 +1957,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       },
@@ -1958,6 +2098,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -2079,6 +2229,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -2210,6 +2370,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -2356,6 +2526,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -2478,6 +2658,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -2631,6 +2821,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -2752,6 +2952,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -2886,6 +3096,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -3008,6 +3228,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -3136,6 +3366,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -3258,6 +3498,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -3401,6 +3651,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -3522,6 +3782,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -3656,6 +3926,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       },
@@ -3775,6 +4055,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -3900,6 +4190,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -4042,6 +4342,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -4175,6 +4485,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -4299,6 +4619,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -4420,6 +4750,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -4562,6 +4902,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -4713,6 +5063,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       },
@@ -4833,6 +5193,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -4957,6 +5327,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -5091,6 +5471,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       },
@@ -5210,6 +5600,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -5343,6 +5743,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -5496,6 +5906,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       },
@@ -5626,6 +6046,16 @@
                 }
               }
             }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
           }
         }
       }
@@ -5748,6 +6178,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
                 }
               }
             }
@@ -12991,6 +13431,32 @@
           },
           "status": {
             "$ref": "#/components/schemas/ErrorApi504Status"
+          }
+        }
+      },
+      "ErrorApi529": {
+        "required": [
+          "object",
+          "message",
+          "code",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/ErrorApi529Object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "additional_data": {
+            "$ref": "#/components/schemas/ErrorApi529AdditionalData"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ErrorApi529Code"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ErrorApi529Status"
           }
         }
       },
@@ -32899,6 +33365,22 @@
         },
         "additionalProperties": false
       },
+      "ErrorApi529AllOf2": {
+        "required": [
+          "code",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ErrorApi529Code"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ErrorApi529AllOf2Status"
+          }
+        },
+        "additionalProperties": false
+      },
       "ErrorOAuth400AllOf2": {
         "required": [
           "code",
@@ -45586,6 +46068,44 @@
           ]
         }
       },
+      "ErrorApi529Object": {
+        "enum": [
+          "error"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi529Object",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error",
+              "name": "Error"
+            }
+          ]
+        }
+      },
+      "ErrorApi529AdditionalData": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/PublicApiCommonErrorResponseAdditionalDataAdditionalProperties"
+        }
+      },
+      "ErrorApi529Status": {
+        "enum": [
+          "529"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi529Status",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "529",
+              "name": "Value529"
+            }
+          ]
+        }
+      },
       "ErrorOAuth400Object": {
         "enum": [
           "error"
@@ -46033,6 +46553,22 @@
             {
               "value": "504",
               "name": "Value504"
+            }
+          ]
+        }
+      },
+      "ErrorApi529AllOf2Status": {
+        "enum": [
+          "529"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi529AllOf2Status",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "529",
+              "name": "Value529"
             }
           ]
         }
@@ -49097,6 +49633,23 @@
             {
               "value": "gateway_timeout",
               "name": "GatewayTimeout"
+            }
+          ]
+        }
+      },
+      "ErrorApi529Code": {
+        "enum": [
+          "rate_limited"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ErrorApi529Code",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "rate_limited",
+              "name": "RateLimited"
             }
           ]
         }
