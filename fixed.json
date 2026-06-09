@@ -49639,7 +49639,7 @@
       },
       "ErrorApi529Code": {
         "enum": [
-          "rate_limited"
+          "service_overload"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -49648,8 +49648,8 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "rate_limited",
-              "name": "RateLimited"
+              "value": "service_overload",
+              "name": "ServiceOverload"
             }
           ]
         }

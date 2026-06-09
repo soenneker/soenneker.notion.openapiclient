@@ -8,9 +8,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public enum ErrorApi529Code
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "rate_limited")]
+        [EnumMember(Value = "service_overload")]
         #pragma warning disable CS1591
-        RateLimited,
+        ServiceOverload,
         #pragma warning restore CS1591
     }
 }

@@ -8720,7 +8720,7 @@
             "properties": {
               "code": {
                 "enum": [
-                  "rate_limited"
+                  "service_overload"
                 ]
               },
               "status": {
