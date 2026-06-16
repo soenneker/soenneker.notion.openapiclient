@@ -12,5 +12,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         ConflictError,
         #pragma warning restore CS1591
+        [EnumMember(Value = "row_limit_exceeded")]
+        #pragma warning disable CS1591
+        RowLimitExceeded,
+        #pragma warning restore CS1591
     }
 }

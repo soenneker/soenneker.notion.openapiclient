@@ -49554,7 +49554,8 @@
       },
       "ErrorApi409Code": {
         "enum": [
-          "conflict_error"
+          "conflict_error",
+          "row_limit_exceeded"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -49565,6 +49566,10 @@
             {
               "value": "conflict_error",
               "name": "ConflictError"
+            },
+            {
+              "value": "row_limit_exceeded",
+              "name": "RowLimitExceeded"
             }
           ]
         }

@@ -8595,7 +8595,8 @@
             "properties": {
               "code": {
                 "enum": [
-                  "conflict_error"
+                  "conflict_error",
+                  "row_limit_exceeded"
                 ]
               },
               "status": {
