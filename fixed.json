@@ -23423,6 +23423,105 @@
         },
         "additionalProperties": false
       },
+      "StatusOptionGroup": {
+        "enum": [
+          "To-do",
+          "In progress",
+          "Complete"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "\u0022One of: \u0060To-do\u0060, \u0060In progress\u0060, \u0060Complete\u0060\u0022",
+        "x-ms-enum": {
+          "name": "StatusOptionGroup",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "To-do",
+              "name": "ToDo"
+            },
+            {
+              "value": "In progress",
+              "name": "InProgress"
+            }
+          ]
+        }
+      },
+      "StatusOptionRequest": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "$ref": "#/components/schemas/StatusOptionRequestDescription"
+          },
+          "group": {
+            "$ref": "#/components/schemas/StatusOptionGroup"
+          }
+        }
+      },
+      "StatusOptionRequestArray": {
+        "maxItems": 100,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/StatusOptionRequest"
+        }
+      },
+      "StatusOptionUpdateRequest": {
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/StatusOptionUpdateRequestAllOf2OneOf1"
+              },
+              {
+                "$ref": "#/components/schemas/StatusOptionUpdateRequestAllOf2OneOf2"
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "$ref": "#/components/schemas/StatusOptionUpdateRequestCommonDescription"
+          },
+          "group": {
+            "$ref": "#/components/schemas/StatusOptionGroup"
+          }
+        }
+      },
+      "StatusOptionUpdateRequestArray": {
+        "maxItems": 100,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/StatusOptionUpdateRequest"
+        }
+      },
+      "StatusOptionUpdateRequestCommon": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "$ref": "#/components/schemas/StatusOptionUpdateRequestCommonDescription"
+          },
+          "group": {
+            "$ref": "#/components/schemas/StatusOptionGroup"
+          }
+        }
+      },
       "StatusPropertyConfigRequest": {
         "type": "object",
         "properties": {
@@ -23430,9 +23529,8 @@
             "maxItems": 100,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/StatusPropertyConfigRequestOptionsItem"
-            },
-            "description": "The initial status options. If not provided, defaults are created."
+              "$ref": "#/components/schemas/StatusOptionRequest"
+            }
           }
         }
       },
@@ -23443,9 +23541,8 @@
             "maxItems": 100,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/StatusPropertyConfigUpdateRequestOptionsItem"
-            },
-            "description": "Status options to add or update. New options are assigned to the To-do group."
+              "$ref": "#/components/schemas/StatusOptionUpdateRequest"
+            }
           }
         }
       },
@@ -36183,33 +36280,41 @@
           }
         }
       },
-      "StatusPropertyConfigRequestOptionsItemDescription": {
+      "StatusOptionRequestDescription": {
         "type": "string",
         "nullable": true
       },
-      "StatusPropertyConfigUpdateRequestOptionsItem": {
-        "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "oneOf": [
-              {
-                "$ref": "#/components/schemas/StatusPropertyConfigUpdateRequestOptionsItemAllOf2OneOf1"
-              },
-              {
-                "$ref": "#/components/schemas/StatusPropertyConfigUpdateRequestOptionsItemAllOf2OneOf2"
-              }
-            ]
-          }
+      "StatusOptionUpdateRequestAllOf2OneOf1": {
+        "required": [
+          "name"
         ],
+        "type": "object",
         "properties": {
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
+          "name": {
+            "type": "string"
           },
-          "description": {
-            "$ref": "#/components/schemas/StatusPropertyConfigUpdateRequestOptionsItemAllOf1Description"
+          "id": {
+            "type": "string"
           }
         }
+      },
+      "StatusOptionUpdateRequestAllOf2OneOf2": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "StatusOptionUpdateRequestCommonDescription": {
+        "type": "string",
+        "nullable": true
       },
       "StatusPropertyFilterAnyOf1AnyOf1": {
         "required": [
@@ -38504,45 +38609,6 @@
           }
         }
       },
-      "StatusPropertyConfigUpdateRequestOptionsItemAllOf1": {
-        "type": "object",
-        "properties": {
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "$ref": "#/components/schemas/StatusPropertyConfigUpdateRequestOptionsItemAllOf1Description"
-          }
-        }
-      },
-      "StatusPropertyConfigUpdateRequestOptionsItemAllOf2OneOf1": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "StatusPropertyConfigUpdateRequestOptionsItemAllOf2OneOf2": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        }
-      },
       "TextRichTextItemRequestTextLinkOneOf1": {
         "required": [
           "url"
@@ -39088,10 +39154,6 @@
             "DateResponse": "#/components/schemas/DateResponse"
           }
         }
-      },
-      "StatusPropertyConfigUpdateRequestOptionsItemAllOf1Description": {
-        "type": "string",
-        "nullable": true
       },
       "ViewFilterResponseOneOf3OrItemOneOf1": {
         "required": [
@@ -40328,23 +40390,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "StatusPropertyConfigRequestOptionsItem": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "$ref": "#/components/schemas/StatusPropertyConfigRequestOptionsItemDescription"
-          }
-        }
       },
       "SyncedBlockBlockObjectResponseSyncedBlock": {
         "required": [

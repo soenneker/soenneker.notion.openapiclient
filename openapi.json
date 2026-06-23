@@ -17508,36 +17508,121 @@
           "sort"
         ]
       },
+      "statusOptionGroup": {
+        "type": "string",
+        "enum": [
+          "To-do",
+          "In progress",
+          "Complete"
+        ],
+        "description": "One of: `To-do`, `In progress`, `Complete`"
+      },
+      "statusOptionRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "color": {
+            "$ref": "#/components/schemas/selectColor"
+          },
+          "description": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "group": {
+            "$ref": "#/components/schemas/statusOptionGroup"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "statusOptionRequestArray": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/statusOptionRequest"
+        },
+        "maxItems": 100
+      },
+      "statusOptionUpdateRequest": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/statusOptionUpdateRequestCommon"
+          },
+          {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "statusOptionUpdateRequestArray": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/statusOptionUpdateRequest"
+        },
+        "maxItems": 100
+      },
+      "statusOptionUpdateRequestCommon": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "$ref": "#/components/schemas/selectColor"
+          },
+          "description": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "group": {
+            "$ref": "#/components/schemas/statusOptionGroup"
+          }
+        }
+      },
       "statusPropertyConfigRequest": {
         "type": "object",
         "properties": {
           "options": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "color": {
-                  "$ref": "#/components/schemas/selectColor"
-                },
-                "description": {
-                  "oneOf": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "null"
-                    }
-                  ]
-                }
-              },
-              "required": [
-                "name"
-              ]
-            },
-            "maxItems": 100,
+            "$ref": "#/components/schemas/statusOptionRequestArray",
             "description": "The initial status options. If not provided, defaults are created."
           }
         }
@@ -17546,63 +17631,8 @@
         "type": "object",
         "properties": {
           "options": {
-            "type": "array",
-            "items": {
-              "allOf": [
-                {
-                  "type": "object",
-                  "properties": {
-                    "color": {
-                      "$ref": "#/components/schemas/selectColor"
-                    },
-                    "description": {
-                      "oneOf": [
-                        {
-                          "type": "string"
-                        },
-                        {
-                          "type": "null"
-                        }
-                      ]
-                    }
-                  }
-                },
-                {
-                  "oneOf": [
-                    {
-                      "type": "object",
-                      "properties": {
-                        "name": {
-                          "type": "string"
-                        },
-                        "id": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "name"
-                      ]
-                    },
-                    {
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "id"
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            "maxItems": 100,
-            "description": "Status options to add or update. New options are assigned to the To-do group."
+            "$ref": "#/components/schemas/statusOptionUpdateRequestArray",
+            "description": "Status options to add or update. Use group to assign an option to To-do, In progress, or Complete. Existing options keep their current group when group is omitted; new options use To-do when present, or the first existing group otherwise."
           }
         }
       },
