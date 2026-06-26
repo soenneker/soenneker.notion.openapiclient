@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>Always `replace_content`</summary>
+    /// <summary>Insert the content at the start of the page.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UpdatePageMarkdownRequestReplaceContent_type
+    public enum UpdatePageMarkdownRequestAllOf1InsertContentPosition_type
     {
-        [EnumMember(Value = "replace_content")]
+        [EnumMember(Value = "start")]
         #pragma warning disable CS1591
-        ReplaceContent,
+        Start,
         #pragma warning restore CS1591
     }
 }

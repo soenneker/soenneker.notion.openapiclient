@@ -11,7 +11,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// Update specific content using search-and-replace operations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdatePageMarkdownRequestUpdateContentUpdateContent : IAdditionalDataHolder, IParsable
+    public partial class UpdatePageMarkdownRequestAllOf1UpdateContent : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -20,27 +20,27 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem>? ContentUpdates { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem>? ContentUpdates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem> ContentUpdates { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem> ContentUpdates { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContent"/> and sets the default values.
         /// </summary>
-        public UpdatePageMarkdownRequestUpdateContentUpdateContent()
+        public UpdatePageMarkdownRequestAllOf1UpdateContent()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContent();
+            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allow_deleting_content", n => { AllowDeletingContent = n.GetBoolValue(); } },
-                { "content_updates", n => { ContentUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem>(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "content_updates", n => { ContentUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem>(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_deleting_content", AllowDeletingContent);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem>("content_updates", ContentUpdates);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem>("content_updates", ContentUpdates);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,47 +8,39 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Replace a range of content in the page.
+    /// Replace the entire page content with new markdown.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdatePageMarkdownRequestReplaceContentRangeReplaceContentRange : IAdditionalDataHolder, IParsable
+    public partial class UpdatePageMarkdownRequestAllOf1ReplaceContent : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to true to allow the operation to delete child pages or databases. Defaults to false.</summary>
         public bool? AllowDeletingContent { get; set; }
-        /// <summary>The new enhanced markdown content to replace the matched range.</summary>
+        /// <summary>The new enhanced markdown content to replace the entire page content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? NewStr { get; set; }
 #nullable restore
 #else
-        public string Content { get; set; }
-#endif
-        /// <summary>Selection of existing content to replace, using the ellipsis format (&quot;start text...end text&quot;).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContentRange { get; set; }
-#nullable restore
-#else
-        public string ContentRange { get; set; }
+        public string NewStr { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRangeReplaceContentRange"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent"/> and sets the default values.
         /// </summary>
-        public UpdatePageMarkdownRequestReplaceContentRangeReplaceContentRange()
+        public UpdatePageMarkdownRequestAllOf1ReplaceContent()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRangeReplaceContentRange"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRangeReplaceContentRange CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRangeReplaceContentRange();
+            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,8 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allow_deleting_content", n => { AllowDeletingContent = n.GetBoolValue(); } },
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "content_range", n => { ContentRange = n.GetStringValue(); } },
+                { "new_str", n => { NewStr = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,8 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_deleting_content", AllowDeletingContent);
-            writer.WriteStringValue("content", Content);
-            writer.WriteStringValue("content_range", ContentRange);
+            writer.WriteStringValue("new_str", NewStr);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

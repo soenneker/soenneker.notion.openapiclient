@@ -12,6 +12,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class PostPageRequest : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Set to true to receive an async_task response for markdown page creation. Only supported when markdown is provided.</summary>
+        public bool? AllowAsync { get; set; }
         /// <summary>The children property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +104,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allow_async", n => { AllowAsync = n.GetBoolValue(); } },
                 { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "content", n => { Content = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestCover>(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestCover.CreateFromDiscriminatorValue); } },
@@ -120,6 +123,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allow_async", AllowAsync);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>("children", Children);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>("content", Content);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestCover>("cover", Cover);

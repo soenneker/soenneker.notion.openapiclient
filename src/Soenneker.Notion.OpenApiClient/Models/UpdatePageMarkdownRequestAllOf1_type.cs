@@ -5,7 +5,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>Always `insert_content`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UpdatePageMarkdownRequestInsertContent_type
+    public enum UpdatePageMarkdownRequestAllOf1_type
     {
         [EnumMember(Value = "insert_content")]
         #pragma warning disable CS1591

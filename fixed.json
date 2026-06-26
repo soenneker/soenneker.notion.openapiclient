@@ -443,6 +443,16 @@
               }
             }
           },
+          "202": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostPage202Response"
+                }
+              }
+            }
+          },
           "400": {
             "description": "400 response",
             "content": {
@@ -1308,6 +1318,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PageMarkdownResponse"
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Accepted when \u0060allow_async\u0060 is true and the update has been queued for background execution.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdatePageMarkdown202Response"
                 }
               }
             }
@@ -6746,6 +6766,50 @@
               "$ref": "#/components/schemas/SimpleOrArrayPropertyValueResponse"
             }
           }
+        }
+      },
+      "AsyncTaskMcpOperationName": {
+        "enum": [
+          "create_pages",
+          "update_page"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AsyncTaskMcpOperationName",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "create_pages",
+              "name": "CreatePages"
+            },
+            {
+              "value": "update_page",
+              "name": "UpdatePage"
+            }
+          ]
+        }
+      },
+      "AsyncTaskRestOperationName": {
+        "enum": [
+          "POST /v1/pages",
+          "PATCH /v1/pages/:page_id/markdown"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AsyncTaskRestOperationName",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "POST /v1/pages",
+              "name": "PostV1Pages"
+            },
+            {
+              "value": "PATCH /v1/pages/:page_id/markdown",
+              "name": "PATCHV1PagesSlashColonPageIdMarkdown"
+            }
+          ]
         }
       },
       "AudioBlockObjectResponse": {
@@ -18179,6 +18243,33 @@
           }
         },
         "additionalProperties": false
+      },
+      "NonTerminalAsyncTaskStatus": {
+        "enum": [
+          "queued",
+          "running",
+          "retrying"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "NonTerminalAsyncTaskStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "queued",
+              "name": "Queued"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "retrying",
+              "name": "Retrying"
+            }
+          ]
+        }
       },
       "NoticonColor": {
         "enum": [
@@ -42071,6 +42162,10 @@
             "type": "string",
             "description": "Page content as Notion-flavored Markdown. Mutually exclusive with content/children."
           },
+          "allow_async": {
+            "type": "boolean",
+            "description": "Set to true to receive an async_task response for markdown page creation. Only supported when markdown is provided."
+          },
           "template": {
             "$ref": "#/components/schemas/PostPageRequestTemplate"
           },
@@ -42106,6 +42201,59 @@
             "PartialPageObjectResponse": "#/components/schemas/PartialPageObjectResponse"
           }
         }
+      },
+      "PostPage202Response": {
+        "required": [
+          "object",
+          "id",
+          "status",
+          "status_url",
+          "created_time",
+          "poll_after_seconds",
+          "operation"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "enum": [
+              "async_task"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ObjectValue",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "async_task",
+                  "name": "AsyncTask"
+                }
+              ]
+            }
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/NonTerminalAsyncTaskStatus"
+          },
+          "status_url": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "created_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "poll_after_seconds": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "operation": {
+            "$ref": "#/components/schemas/PostPage202ResponseOperation"
+          }
+        },
+        "additionalProperties": false
       },
       "RetrieveAPage200Response": {
         "required": [
@@ -42259,33 +42407,58 @@
         }
       },
       "UpdatePageMarkdownRequest": {
-        "required": [
-          "type"
-        ],
         "type": "object",
-        "oneOf": [
+        "allOf": [
           {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestInsertContent"
-          },
-          {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestReplaceContentRange"
-          },
-          {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestUpdateContent"
-          },
-          {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestReplaceContent"
+            "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1"
           }
         ],
         "properties": {
-          "type": {
+          "allow_async": {
+            "type": "boolean",
+            "description": "Set to true to opt into receiving an async_task result when this update operation is accepted for background execution. If omitted or false, the endpoint keeps the existing synchronous response shape."
+          }
+        }
+      },
+      "UpdatePageMarkdown202Response": {
+        "required": [
+          "object",
+          "id",
+          "status",
+          "status_url",
+          "created_time",
+          "poll_after_seconds",
+          "operation"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/UpdatePageMarkdown202ResponseObject"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/UpdatePageMarkdown202ResponseStatus"
+          },
+          "status_url": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "created_time": {
             "type": "string",
-            "description": "Union discriminator"
+            "format": "date-time"
+          },
+          "poll_after_seconds": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "operation": {
+            "$ref": "#/components/schemas/UpdatePageMarkdown202ResponseOperation"
           }
         },
-        "discriminator": {
-          "propertyName": "type"
-        }
+        "additionalProperties": false
       },
       "RetrieveABlock200Response": {
         "required": [
@@ -44119,11 +44292,9 @@
         ],
         "nullable": true
       },
-      "UpdatePageMarkdownRequestInsertContent": {
-        "title": "Insert Content",
+      "UpdatePageMarkdownRequestAllOf1": {
         "required": [
-          "type",
-          "insert_content"
+          "type"
         ],
         "type": "object",
         "properties": {
@@ -44145,99 +44316,16 @@
             }
           },
           "insert_content": {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestInsertContentInsertContent"
-          }
-        },
-        "deprecated": true
-      },
-      "UpdatePageMarkdownRequestReplaceContentRange": {
-        "title": "Replace Content Range",
-        "required": [
-          "type",
-          "replace_content_range"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "replace_content_range"
-            ],
-            "type": "string",
-            "description": "Always \u0060replace_content_range\u0060",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "replace_content_range",
-                  "name": "ReplaceContentRange"
-                }
-              ]
-            }
+            "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContent"
           },
           "replace_content_range": {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestReplaceContentRangeReplaceContentRange"
-          }
-        },
-        "deprecated": true
-      },
-      "UpdatePageMarkdownRequestUpdateContent": {
-        "title": "Update Content",
-        "required": [
-          "type",
-          "update_content"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "update_content"
-            ],
-            "type": "string",
-            "description": "Always \u0060update_content\u0060",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "update_content",
-                  "name": "UpdateContent"
-                }
-              ]
-            }
+            "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1ReplaceContentRange"
           },
           "update_content": {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestUpdateContentUpdateContent"
-          }
-        }
-      },
-      "UpdatePageMarkdownRequestReplaceContent": {
-        "title": "Replace Content",
-        "required": [
-          "type",
-          "replace_content"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "replace_content"
-            ],
-            "type": "string",
-            "description": "Always \u0060replace_content\u0060",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "replace_content",
-                  "name": "ReplaceContent"
-                }
-              ]
-            }
+            "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1UpdateContent"
           },
           "replace_content": {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestReplaceContentReplaceContent"
+            "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1ReplaceContent"
           }
         }
       },
@@ -46811,6 +46899,34 @@
           }
         }
       },
+      "PostPage202ResponseOperation": {
+        "required": [
+          "surface",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "surface": {
+            "enum": [
+              "rest"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Surface",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "rest",
+                  "name": "Rest"
+                }
+              ]
+            }
+          },
+          "name": {
+            "$ref": "#/components/schemas/AsyncTaskRestOperationName"
+          }
+        }
+      },
       "PatchPageRequestProperties": {
         "type": "object",
         "additionalProperties": {
@@ -46876,6 +46992,21 @@
           }
         },
         "description": "The new parent of the page."
+      },
+      "UpdatePageMarkdown202ResponseOperation": {
+        "required": [
+          "surface",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "surface": {
+            "$ref": "#/components/schemas/UpdatePageMarkdown202ResponseOperationSurface"
+          },
+          "name": {
+            "$ref": "#/components/schemas/UpdatePageMarkdown202ResponseOperationName"
+          }
+        }
       },
       "UpdateADataSourceRequestProperties": {
         "type": "object",
@@ -47279,7 +47410,7 @@
       "BlockResponseJsonBlock": {
         "type": "object"
       },
-      "UpdatePageMarkdownRequestInsertContentInsertContent": {
+      "UpdatePageMarkdownRequestAllOf1InsertContent": {
         "required": [
           "content"
         ],
@@ -47294,12 +47425,12 @@
             "description": "Selection of existing content to insert after, using the ellipsis format (\u0022start text...end text\u0022). Omit to append at the end of the page."
           },
           "position": {
-            "$ref": "#/components/schemas/UpdatePageMarkdownRequestInsertContentInsertContentPosition"
+            "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentPosition"
           }
         },
         "description": "Insert new content into the page."
       },
-      "UpdatePageMarkdownRequestReplaceContentRangeReplaceContentRange": {
+      "UpdatePageMarkdownRequestAllOf1ReplaceContentRange": {
         "required": [
           "content",
           "content_range"
@@ -47321,7 +47452,7 @@
         },
         "description": "Replace a range of content in the page."
       },
-      "UpdatePageMarkdownRequestUpdateContentUpdateContent": {
+      "UpdatePageMarkdownRequestAllOf1UpdateContent": {
         "required": [
           "content_updates"
         ],
@@ -47331,7 +47462,7 @@
             "maxItems": 100,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem"
+              "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem"
             },
             "description": "An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content)."
           },
@@ -47342,7 +47473,7 @@
         },
         "description": "Update specific content using search-and-replace operations."
       },
-      "UpdatePageMarkdownRequestReplaceContentReplaceContent": {
+      "UpdatePageMarkdownRequestAllOf1ReplaceContent": {
         "required": [
           "new_str"
         ],
@@ -47992,7 +48123,7 @@
           }
         }
       },
-      "UpdatePageMarkdownRequestInsertContentInsertContentPosition": {
+      "UpdatePageMarkdownRequestAllOf1InsertContentPosition": {
         "required": [
           "type"
         ],
@@ -48018,7 +48149,7 @@
         },
         "description": "Explicit position for inserted content. Use {\u0022type\u0022:\u0022start\u0022} to prepend or {\u0022type\u0022:\u0022end\u0022} to append. Cannot be combined with after."
       },
-      "UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem": {
+      "UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem": {
         "required": [
           "old_str",
           "new_str"
@@ -51749,6 +51880,50 @@
           ]
         }
       },
+      "UpdatePageMarkdown202ResponseObject": {
+        "enum": [
+          "async_task"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdatePageMarkdown202ResponseObject",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "async_task",
+              "name": "AsyncTask"
+            }
+          ]
+        }
+      },
+      "UpdatePageMarkdown202ResponseStatus": {
+        "enum": [
+          "queued",
+          "running",
+          "retrying"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdatePageMarkdown202ResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "queued",
+              "name": "Queued"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "retrying",
+              "name": "Retrying"
+            }
+          ]
+        }
+      },
       "PostDatabaseQueryRequestResultType": {
         "enum": [
           "page",
@@ -52304,6 +52479,50 @@
             {
               "value": "daterange",
               "name": "Daterange"
+            }
+          ]
+        }
+      },
+      "UpdatePageMarkdown202ResponseOperationSurface": {
+        "enum": [
+          "rest",
+          "mcp"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdatePageMarkdown202ResponseOperationSurface",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "rest",
+              "name": "Rest"
+            },
+            {
+              "value": "mcp",
+              "name": "Mcp"
+            }
+          ]
+        }
+      },
+      "UpdatePageMarkdown202ResponseOperationName": {
+        "enum": [
+          "PATCH /v1/pages/:page_id/markdown",
+          "create_pages"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "UpdatePageMarkdown202ResponseOperationName",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "PATCH /v1/pages/:page_id/markdown",
+              "name": "PATCHV1PagesSlashColonPageIdMarkdown"
+            },
+            {
+              "value": "create_pages",
+              "name": "CreatePages"
             }
           ]
         }

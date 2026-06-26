@@ -7,119 +7,43 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdatePageMarkdownRequest : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class UpdatePageMarkdownRequest : global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent? UpdatePageMarkdownRequestInsertContent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent UpdatePageMarkdownRequestInsertContent { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent? UpdatePageMarkdownRequestReplaceContent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent UpdatePageMarkdownRequestReplaceContent { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange? UpdatePageMarkdownRequestReplaceContentRange { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange UpdatePageMarkdownRequestReplaceContentRange { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent? UpdatePageMarkdownRequestUpdateContent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent UpdatePageMarkdownRequestUpdateContent { get; set; }
-#endif
+        /// <summary>Set to true to opt into receiving an async_task result when this update operation is accepted for background execution. If omitted or false, the endpoint keeps the existing synchronous response shape.</summary>
+        public bool? AllowAsync { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest();
-            if("UpdatePageMarkdownRequestInsertContent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdatePageMarkdownRequestInsertContent = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent();
-            }
-            else if("UpdatePageMarkdownRequestReplaceContent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdatePageMarkdownRequestReplaceContent = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent();
-            }
-            else if("UpdatePageMarkdownRequestReplaceContentRange".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdatePageMarkdownRequestReplaceContentRange = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange();
-            }
-            else if("UpdatePageMarkdownRequestUpdateContent".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.UpdatePageMarkdownRequestUpdateContent = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent();
-            }
-            return result;
+            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(UpdatePageMarkdownRequestInsertContent != null)
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                return UpdatePageMarkdownRequestInsertContent.GetFieldDeserializers();
-            }
-            else if(UpdatePageMarkdownRequestReplaceContent != null)
-            {
-                return UpdatePageMarkdownRequestReplaceContent.GetFieldDeserializers();
-            }
-            else if(UpdatePageMarkdownRequestReplaceContentRange != null)
-            {
-                return UpdatePageMarkdownRequestReplaceContentRange.GetFieldDeserializers();
-            }
-            else if(UpdatePageMarkdownRequestUpdateContent != null)
-            {
-                return UpdatePageMarkdownRequestUpdateContent.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "allow_async", n => { AllowAsync = n.GetBoolValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(UpdatePageMarkdownRequestInsertContent != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent>(null, UpdatePageMarkdownRequestInsertContent);
-            }
-            else if(UpdatePageMarkdownRequestReplaceContent != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent>(null, UpdatePageMarkdownRequestReplaceContent);
-            }
-            else if(UpdatePageMarkdownRequestReplaceContentRange != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange>(null, UpdatePageMarkdownRequestReplaceContentRange);
-            }
-            else if(UpdatePageMarkdownRequestUpdateContent != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent>(null, UpdatePageMarkdownRequestUpdateContent);
-            }
+            base.Serialize(writer);
+            writer.WriteBoolValue("allow_async", AllowAsync);
         }
     }
 }

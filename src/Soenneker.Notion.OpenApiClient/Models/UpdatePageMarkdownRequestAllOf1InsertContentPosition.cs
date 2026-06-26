@@ -11,28 +11,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// Explicit position for inserted content. Use {&quot;type&quot;:&quot;start&quot;} to prepend or {&quot;type&quot;:&quot;end&quot;} to append. Cannot be combined with after.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdatePageMarkdownRequestInsertContentInsertContentPosition : IAdditionalDataHolder, IParsable
+    public partial class UpdatePageMarkdownRequestAllOf1InsertContentPosition : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Insert the content at the start of the page.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContentInsertContentPosition_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentPosition_type? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContentInsertContentPosition"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentPosition"/> and sets the default values.
         /// </summary>
-        public UpdatePageMarkdownRequestInsertContentInsertContentPosition()
+        public UpdatePageMarkdownRequestAllOf1InsertContentPosition()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContentInsertContentPosition"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentPosition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContentInsertContentPosition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentPosition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContentInsertContentPosition();
+            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentPosition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContentInsertContentPosition_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentPosition_type>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContentInsertContentPosition_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentPosition_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

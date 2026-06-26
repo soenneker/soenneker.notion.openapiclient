@@ -7,47 +7,48 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Replace a range of content in the page.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class UpdatePageMarkdownRequestAllOf1ReplaceContentRange : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The new content string to replace old_str with.</summary>
+        /// <summary>Set to true to allow the operation to delete child pages or databases. Defaults to false.</summary>
+        public bool? AllowDeletingContent { get; set; }
+        /// <summary>The new enhanced markdown content to replace the matched range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewStr { get; set; }
+        public string? Content { get; set; }
 #nullable restore
 #else
-        public string NewStr { get; set; }
+        public string Content { get; set; }
 #endif
-        /// <summary>The existing content string to find and replace. Must exactly match the page content.</summary>
+        /// <summary>Selection of existing content to replace, using the ellipsis format (&quot;start text...end text&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldStr { get; set; }
+        public string? ContentRange { get; set; }
 #nullable restore
 #else
-        public string OldStr { get; set; }
+        public string ContentRange { get; set; }
 #endif
-        /// <summary>If true, replaces all occurrences of old_str. If false (default), the operation fails if there are multiple matches.</summary>
-        public bool? ReplaceAllMatches { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange"/> and sets the default values.
         /// </summary>
-        public UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem()
+        public UpdatePageMarkdownRequestAllOf1ReplaceContentRange()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContentUpdateContentContentUpdatesItem();
+            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,9 +58,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "new_str", n => { NewStr = n.GetStringValue(); } },
-                { "old_str", n => { OldStr = n.GetStringValue(); } },
-                { "replace_all_matches", n => { ReplaceAllMatches = n.GetBoolValue(); } },
+                { "allow_deleting_content", n => { AllowDeletingContent = n.GetBoolValue(); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "content_range", n => { ContentRange = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,9 +70,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("new_str", NewStr);
-            writer.WriteStringValue("old_str", OldStr);
-            writer.WriteBoolValue("replace_all_matches", ReplaceAllMatches);
+            writer.WriteBoolValue("allow_deleting_content", AllowDeletingContent);
+            writer.WriteStringValue("content", Content);
+            writer.WriteStringValue("content_range", ContentRange);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

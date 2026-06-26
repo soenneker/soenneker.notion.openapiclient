@@ -9,37 +9,45 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdatePageMarkdownRequestReplaceContent : IAdditionalDataHolder, IParsable
+    public partial class UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Replace the entire page content with new markdown.</summary>
+        /// <summary>The new content string to replace old_str with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentReplaceContent? ReplaceContent { get; set; }
+        public string? NewStr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentReplaceContent ReplaceContent { get; set; }
+        public string NewStr { get; set; }
 #endif
-        /// <summary>Always `replace_content`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent_type? Type { get; set; }
+        /// <summary>The existing content string to find and replace. Must exactly match the page content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OldStr { get; set; }
+#nullable restore
+#else
+        public string OldStr { get; set; }
+#endif
+        /// <summary>If true, replaces all occurrences of old_str. If false (default), the operation fails if there are multiple matches.</summary>
+        public bool? ReplaceAllMatches { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem"/> and sets the default values.
         /// </summary>
-        public UpdatePageMarkdownRequestReplaceContent()
+        public UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent();
+            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,8 +57,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "replace_content", n => { ReplaceContent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentReplaceContent>(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentReplaceContent.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent_type>(); } },
+                { "new_str", n => { NewStr = n.GetStringValue(); } },
+                { "old_str", n => { OldStr = n.GetStringValue(); } },
+                { "replace_all_matches", n => { ReplaceAllMatches = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -60,8 +69,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentReplaceContent>("replace_content", ReplaceContent);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent_type>("type", Type);
+            writer.WriteStringValue("new_str", NewStr);
+            writer.WriteStringValue("old_str", OldStr);
+            writer.WriteBoolValue("replace_all_matches", ReplaceAllMatches);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
