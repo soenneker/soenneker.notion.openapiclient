@@ -15,10 +15,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The embed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest? Embed { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed? Embed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest Embed { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed Embed { get; set; }
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed_object? Object { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "embed", n => { Embed = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest.CreateFromDiscriminatorValue); } },
+                { "embed", n => { Embed = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed_object>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed_type>(); } },
             };
@@ -54,7 +54,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest>("embed", Embed);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed>("embed", Embed);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed_object>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbed_type>("type", Type);
         }

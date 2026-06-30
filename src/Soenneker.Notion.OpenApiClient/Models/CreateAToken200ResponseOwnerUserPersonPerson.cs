@@ -20,6 +20,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
+        /// <summary>The email_verified property</summary>
+        public bool? EmailVerified { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,6 +41,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "email_verified", n => { EmailVerified = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
+            writer.WriteBoolValue("email_verified", EmailVerified);
         }
     }
 }

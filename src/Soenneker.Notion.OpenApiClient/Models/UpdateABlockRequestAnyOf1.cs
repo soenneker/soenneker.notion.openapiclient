@@ -81,10 +81,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The embed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithUrlAndCaptionRequest? Embed { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Embed? Embed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithUrlAndCaptionRequest Embed { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Embed Embed { get; set; }
 #endif
         /// <summary>The equation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -291,7 +291,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "code", n => { Code = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Code>(global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Code.CreateFromDiscriminatorValue); } },
                 { "column", n => { Column = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Column>(global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Column.CreateFromDiscriminatorValue); } },
                 { "divider", n => { Divider = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Divider>(global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Divider.CreateFromDiscriminatorValue); } },
-                { "embed", n => { Embed = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithUrlAndCaptionRequest>(global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithUrlAndCaptionRequest.CreateFromDiscriminatorValue); } },
+                { "embed", n => { Embed = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Embed>(global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Embed.CreateFromDiscriminatorValue); } },
                 { "equation", n => { Equation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithExpressionRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithExpressionRequest.CreateFromDiscriminatorValue); } },
                 { "file", n => { File = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithFileNameAndCaptionRequest>(global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithFileNameAndCaptionRequest.CreateFromDiscriminatorValue); } },
                 { "heading_1", n => { Heading1 = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorRequest>(global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorRequest.CreateFromDiscriminatorValue); } },
@@ -332,7 +332,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Code>("code", Code);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Column>("column", Column);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Divider>("divider", Divider);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithUrlAndCaptionRequest>("embed", Embed);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1Embed>("embed", Embed);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithExpressionRequest>("equation", Equation);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithFileNameAndCaptionRequest>("file", File);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.HeaderContentWithRichTextAndColorRequest>("heading_1", Heading1);

@@ -13016,6 +13016,41 @@
           }
         }
       },
+      "EmbedFileUploadRequest": {
+        "required": [
+          "file_upload"
+        ],
+        "type": "object",
+        "properties": {
+          "file_upload": {
+            "$ref": "#/components/schemas/FileUploadIdRequest"
+          },
+          "type": {
+            "enum": [
+              "file_upload"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "file_upload",
+                  "name": "FileUpload"
+                }
+              ]
+            }
+          },
+          "caption": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemRequest"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
       "EmojiPageIconRequest": {
         "title": "Emoji",
         "required": [
@@ -24961,7 +24996,7 @@
         "type": "object",
         "properties": {
           "embed": {
-            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
+            "$ref": "#/components/schemas/BlockObjectRequestEmbedEmbed"
           },
           "type": {
             "enum": [
@@ -26154,6 +26189,25 @@
             "type": "boolean"
           }
         }
+      },
+      "UpdateEmbedFileUploadRequest": {
+        "required": [
+          "file_upload"
+        ],
+        "type": "object",
+        "properties": {
+          "file_upload": {
+            "$ref": "#/components/schemas/FileUploadIdRequest"
+          },
+          "caption": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemRequest"
+            }
+          }
+        },
+        "additionalProperties": false
       },
       "UpdateMediaContentWithFileAndCaptionRequest": {
         "type": "object",
@@ -28812,7 +28866,7 @@
         "type": "object",
         "properties": {
           "embed": {
-            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
+            "$ref": "#/components/schemas/BlockObjectRequestWithoutChildrenEmbedEmbed"
           },
           "type": {
             "enum": [
@@ -30072,7 +30126,7 @@
         "type": "object",
         "properties": {
           "embed": {
-            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
+            "$ref": "#/components/schemas/BlockObjectWithSingleLevelOfChildrenRequestEmbedEmbed"
           },
           "type": {
             "enum": [
@@ -37251,6 +37305,33 @@
           }
         }
       },
+      "BlockObjectRequestEmbedEmbed": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
+          },
+          {
+            "$ref": "#/components/schemas/EmbedFileUploadRequest"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "MediaContentWithUrlAndCaptionRequest": "#/components/schemas/MediaContentWithUrlAndCaptionRequest",
+            "EmbedFileUploadRequest": "#/components/schemas/EmbedFileUploadRequest"
+          }
+        }
+      },
       "BaseWebhookPayloadAccessibleByItemOneOf1": {
         "required": [
           "id",
@@ -37406,6 +37487,33 @@
           }
         }
       },
+      "BlockObjectRequestWithoutChildrenEmbedEmbed": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
+          },
+          {
+            "$ref": "#/components/schemas/EmbedFileUploadRequest"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "MediaContentWithUrlAndCaptionRequest": "#/components/schemas/MediaContentWithUrlAndCaptionRequest",
+            "EmbedFileUploadRequest": "#/components/schemas/EmbedFileUploadRequest"
+          }
+        }
+      },
       "BlockObjectRequestWithoutChildrenLinkToPageLinkToPage": {
         "required": [
           "type"
@@ -37434,6 +37542,33 @@
             "BlockObjectRequestWithoutChildrenLinkToPageLinkToPagePageId": "#/components/schemas/BlockObjectRequestWithoutChildrenLinkToPageLinkToPagePageId",
             "BlockObjectRequestWithoutChildrenLinkToPageLinkToPageDatabaseId": "#/components/schemas/BlockObjectRequestWithoutChildrenLinkToPageLinkToPageDatabaseId",
             "BlockObjectRequestWithoutChildrenLinkToPageLinkToPageCommentId": "#/components/schemas/BlockObjectRequestWithoutChildrenLinkToPageLinkToPageCommentId"
+          }
+        }
+      },
+      "BlockObjectWithSingleLevelOfChildrenRequestEmbedEmbed": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
+          },
+          {
+            "$ref": "#/components/schemas/EmbedFileUploadRequest"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "MediaContentWithUrlAndCaptionRequest": "#/components/schemas/MediaContentWithUrlAndCaptionRequest",
+            "EmbedFileUploadRequest": "#/components/schemas/EmbedFileUploadRequest"
           }
         }
       },
@@ -40345,6 +40480,10 @@
           "email": {
             "type": "string",
             "description": "The email of the person."
+          },
+          "email_verified": {
+            "type": "boolean",
+            "description": "Whether the person\u0027s email is verified."
           }
         },
         "additionalProperties": false,
@@ -41835,6 +41974,10 @@
           "email": {
             "type": "string",
             "description": "The email of the person."
+          },
+          "email_verified": {
+            "type": "boolean",
+            "description": "Whether the person\u0027s email is verified."
           }
         },
         "additionalProperties": false,
@@ -42681,8 +42824,9 @@
           "page_size": {
             "type": "number"
           },
-          "in_trash": {
-            "type": "boolean"
+          "is_archived": {
+            "type": "boolean",
+            "description": "Whether to return archived pages. When omitted or false, returns non-archived pages. When true, returns archived pages."
           },
           "result_type": {
             "$ref": "#/components/schemas/PostDatabaseQueryRequestResultType"
@@ -44333,7 +44477,7 @@
         "type": "object",
         "properties": {
           "embed": {
-            "$ref": "#/components/schemas/UpdateMediaContentWithUrlAndCaptionRequest"
+            "$ref": "#/components/schemas/UpdateABlockRequestAnyOf1Embed"
           },
           "type": {
             "enum": [
@@ -44975,6 +45119,17 @@
           }
         },
         "additionalProperties": false
+      },
+      "UpdateABlockRequestAnyOf1Embed": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/UpdateMediaContentWithUrlAndCaptionRequest"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateEmbedFileUploadRequest"
+          }
+        ]
       },
       "UpdateADataSourceRequestPropertiesAdditionalPropertiesOneOf1": {
         "type": "object",
@@ -47702,6 +47857,9 @@
         "properties": {
           "email": {
             "type": "string"
+          },
+          "email_verified": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
