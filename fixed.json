@@ -1435,6 +1435,142 @@
         }
       }
     },
+    "/v1/async_tasks/{taskId}": {
+      "get": {
+        "tags": [
+          "Async tasks"
+        ],
+        "summary": "Retrieve an async task",
+        "operationId": "RetrieveAsyncTask",
+        "parameters": [
+          {
+            "name": "taskId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "minLength": 1,
+              "type": "string",
+              "description": "The ID of the async task to retrieve."
+            }
+          },
+          {
+            "$ref": "#/components/parameters/notionVersion"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveAsyncTask200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi400"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi401"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi403"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi409"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi429"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi500"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi503"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "504 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/blocks/{blockId}": {
       "get": {
         "tags": [
@@ -21915,6 +22051,48 @@
           }
         },
         "additionalProperties": false
+      },
+      "PublicApiAsyncTaskStatusResultJsonValue": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch1"
+          },
+          {
+            "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch3"
+          },
+          {
+            "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch5"
+          },
+          {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValue"
+            }
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "PublicApiAsyncTaskStatusResultJsonValue_1": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch1",
+            "PublicApiAsyncTaskStatusResultJsonValue_2": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch2",
+            "PublicApiAsyncTaskStatusResultJsonValue_3": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch3",
+            "PublicApiAsyncTaskStatusResultJsonValue_5": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch5"
+          }
+        }
       },
       "PublicApiCommonErrorResponse": {
         "required": [
@@ -42603,6 +42781,32 @@
         },
         "additionalProperties": false
       },
+      "RetrieveAsyncTask200Response": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf2"
+          },
+          {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf3"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type"
+        }
+      },
       "RetrieveABlock200Response": {
         "required": [
           "type"
@@ -44039,6 +44243,53 @@
           }
         }
       },
+      "PublicApiAsyncTaskStatusResultJsonValueBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "PublicApiAsyncTaskStatusResultJsonValueBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "PublicApiAsyncTaskStatusResultJsonValueBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PublicApiAsyncTaskStatusResultJsonValueBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValue"
+            }
+          }
+        }
+      },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
@@ -44472,6 +44723,189 @@
             "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1ReplaceContent"
           }
         }
+      },
+      "RetrieveAsyncTask200ResponseOneOf1": {
+        "required": [
+          "object",
+          "id",
+          "status",
+          "status_url",
+          "created_time",
+          "operation",
+          "poll_after_seconds"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "enum": [
+              "async_task"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ObjectValue",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "async_task",
+                  "name": "AsyncTask"
+                }
+              ]
+            }
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "status_url": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "created_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "operation": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf1Operation"
+          },
+          "status": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf1Status"
+          },
+          "poll_after_seconds": {
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetrieveAsyncTask200ResponseOneOf2": {
+        "required": [
+          "object",
+          "id",
+          "status",
+          "status_url",
+          "created_time",
+          "operation",
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "enum": [
+              "async_task"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ObjectValue",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "async_task",
+                  "name": "AsyncTask"
+                }
+              ]
+            }
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "status_url": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "created_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "operation": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf2Operation"
+          },
+          "status": {
+            "enum": [
+              "succeeded"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Status",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "succeeded",
+                  "name": "Succeeded"
+                }
+              ]
+            }
+          },
+          "result": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf2Result"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetrieveAsyncTask200ResponseOneOf3": {
+        "required": [
+          "object",
+          "id",
+          "status",
+          "status_url",
+          "created_time",
+          "operation",
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "enum": [
+              "async_task"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ObjectValue",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "async_task",
+                  "name": "AsyncTask"
+                }
+              ]
+            }
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "status_url": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "created_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "operation": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf3Operation"
+          },
+          "status": {
+            "enum": [
+              "failed"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Status",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "failed",
+                  "name": "Failed"
+                }
+              ]
+            }
+          },
+          "error": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf3Error"
+          }
+        },
+        "additionalProperties": false
       },
       "UpdateABlockRequestAnyOf1": {
         "type": "object",
@@ -45119,6 +45553,20 @@
           }
         },
         "additionalProperties": false
+      },
+      "RetrieveAsyncTask200ResponseOneOf3ErrorAdditionalDataAdditionalProperties": {
+        "type": "object",
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "UpdateABlockRequestAnyOf1Embed": {
         "type": "object",
@@ -47645,6 +48093,129 @@
         },
         "description": "Replace the entire page content with new markdown."
       },
+      "RetrieveAsyncTask200ResponseOneOf1Operation": {
+        "required": [
+          "surface",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "surface": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf1OperationSurface"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetrieveAsyncTask200ResponseOneOf2Operation": {
+        "required": [
+          "surface",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "surface": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf2OperationSurface"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetrieveAsyncTask200ResponseOneOf2Result": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValue"
+        }
+      },
+      "RetrieveAsyncTask200ResponseOneOf3Operation": {
+        "required": [
+          "surface",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "surface": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf3OperationSurface"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RetrieveAsyncTask200ResponseOneOf3Error": {
+        "required": [
+          "object",
+          "status",
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "enum": [
+              "error"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ObjectValue",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "error",
+                  "name": "Error"
+                }
+              ]
+            }
+          },
+          "status": {
+            "enum": [
+              "400"
+            ],
+            "type": "integer",
+            "x-ms-enum": {
+              "name": "Status",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "400",
+                  "name": "Value400"
+                }
+              ]
+            }
+          },
+          "code": {
+            "enum": [
+              "invalid_json"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Code",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "invalid_json",
+                  "name": "InvalidJson"
+                }
+              ]
+            }
+          },
+          "message": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "additional_data": {
+            "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf3ErrorAdditionalData"
+          }
+        }
+      },
       "UpdateABlockRequestAnyOf1Code": {
         "type": "object",
         "properties": {
@@ -48326,6 +48897,12 @@
             "type": "boolean",
             "description": "If true, replaces all occurrences of old_str. If false (default), the operation fails if there are multiple matches."
           }
+        }
+      },
+      "RetrieveAsyncTask200ResponseOneOf3ErrorAdditionalData": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/RetrieveAsyncTask200ResponseOneOf3ErrorAdditionalDataAdditionalProperties"
         }
       },
       "UpdateABlockRequestAnyOf1SyncedBlockSyncedFrom": {
@@ -52133,6 +52710,33 @@
           ]
         }
       },
+      "RetrieveAsyncTask200ResponseOneOf1Status": {
+        "enum": [
+          "queued",
+          "running",
+          "retrying"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RetrieveAsyncTask200ResponseOneOf1Status",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "queued",
+              "name": "Queued"
+            },
+            {
+              "value": "running",
+              "name": "Running"
+            },
+            {
+              "value": "retrying",
+              "name": "Retrying"
+            }
+          ]
+        }
+      },
       "UpdateDatabaseRequestParentType": {
         "enum": [
           "page_id",
@@ -53042,6 +53646,72 @@
           ]
         }
       },
+      "RetrieveAsyncTask200ResponseOneOf1OperationSurface": {
+        "enum": [
+          "rest",
+          "mcp"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RetrieveAsyncTask200ResponseOneOf1OperationSurface",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "rest",
+              "name": "Rest"
+            },
+            {
+              "value": "mcp",
+              "name": "Mcp"
+            }
+          ]
+        }
+      },
+      "RetrieveAsyncTask200ResponseOneOf2OperationSurface": {
+        "enum": [
+          "rest",
+          "mcp"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RetrieveAsyncTask200ResponseOneOf2OperationSurface",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "rest",
+              "name": "Rest"
+            },
+            {
+              "value": "mcp",
+              "name": "Mcp"
+            }
+          ]
+        }
+      },
+      "RetrieveAsyncTask200ResponseOneOf3OperationSurface": {
+        "enum": [
+          "rest",
+          "mcp"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RetrieveAsyncTask200ResponseOneOf3OperationSurface",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "rest",
+              "name": "Rest"
+            },
+            {
+              "value": "mcp",
+              "name": "Mcp"
+            }
+          ]
+        }
+      },
       "QueryMeetingNotesRequestFilterFiltersItemOperator": {
         "enum": [
           "and",
@@ -53273,6 +53943,10 @@
     {
       "name": "Pages",
       "description": "Page endpoints"
+    },
+    {
+      "name": "Async tasks",
+      "description": "Async task endpoints"
     },
     {
       "name": "Blocks",

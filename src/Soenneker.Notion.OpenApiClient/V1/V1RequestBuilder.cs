@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Notion.OpenApiClient.V1.Async_tasks;
 using Soenneker.Notion.OpenApiClient.V1.Blocks;
 using Soenneker.Notion.OpenApiClient.V1.Comments;
 using Soenneker.Notion.OpenApiClient.V1.Custom_emojis;
@@ -25,6 +26,11 @@ namespace Soenneker.Notion.OpenApiClient.V1
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The async_tasks property</summary>
+        public global::Soenneker.Notion.OpenApiClient.V1.Async_tasks.Async_tasksRequestBuilder Async_tasks
+        {
+            get => new global::Soenneker.Notion.OpenApiClient.V1.Async_tasks.Async_tasksRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The blocks property</summary>
         public global::Soenneker.Notion.OpenApiClient.V1.Blocks.BlocksRequestBuilder Blocks
         {
