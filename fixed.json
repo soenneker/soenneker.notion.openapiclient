@@ -74,6 +74,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -204,6 +214,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -344,6 +364,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -489,6 +519,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -639,6 +679,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -776,6 +826,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -919,6 +979,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -1079,6 +1149,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -1217,6 +1297,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -1372,6 +1462,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -1508,6 +1608,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -1638,6 +1748,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -1783,6 +1903,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -1911,6 +2041,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -2064,6 +2204,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -2205,6 +2355,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -2335,6 +2495,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -2476,6 +2646,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -2633,6 +2813,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -2764,6 +2954,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -2928,6 +3128,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -3058,6 +3268,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -3203,6 +3423,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -3334,6 +3564,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -3473,6 +3713,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -3604,6 +3854,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -3758,6 +4018,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -3888,6 +4158,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -4033,6 +4313,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -4161,6 +4451,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -4296,6 +4596,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -4449,6 +4759,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -4592,6 +4912,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -4726,6 +5056,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -4856,6 +5196,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -5008,6 +5358,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -5170,6 +5530,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -5299,6 +5669,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -5433,6 +5813,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -5578,6 +5968,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -5706,6 +6106,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -5849,6 +6259,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -6013,6 +6433,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -6153,6 +6583,16 @@
               }
             }
           },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
           "409": {
             "description": "409 response",
             "content": {
@@ -6284,6 +6724,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
                 }
               }
             }
@@ -13536,6 +13986,32 @@
           },
           "status": {
             "$ref": "#/components/schemas/ErrorApi404Status"
+          }
+        }
+      },
+      "ErrorApi406": {
+        "required": [
+          "object",
+          "message",
+          "code",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/ErrorApi406Object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "additional_data": {
+            "$ref": "#/components/schemas/ErrorApi406AdditionalData"
+          },
+          "code": {
+            "$ref": "#/components/schemas/ErrorApi406Code"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ErrorApi406Status"
           }
         }
       },
@@ -33705,6 +34181,22 @@
         },
         "additionalProperties": false
       },
+      "ErrorApi406AllOf2": {
+        "required": [
+          "code",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ErrorApi406Code"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ErrorApi406AllOf2Status"
+          }
+        },
+        "additionalProperties": false
+      },
       "ErrorApi409AllOf2": {
         "required": [
           "code",
@@ -46614,6 +47106,44 @@
           ]
         }
       },
+      "ErrorApi406Object": {
+        "enum": [
+          "error"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi406Object",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error",
+              "name": "Error"
+            }
+          ]
+        }
+      },
+      "ErrorApi406AdditionalData": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/PublicApiCommonErrorResponseAdditionalDataAdditionalProperties"
+        }
+      },
+      "ErrorApi406Status": {
+        "enum": [
+          "406"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi406Status",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "406",
+              "name": "Value406"
+            }
+          ]
+        }
+      },
       "ErrorApi409Object": {
         "enum": [
           "error"
@@ -47209,6 +47739,22 @@
             {
               "value": "404",
               "name": "Value404"
+            }
+          ]
+        }
+      },
+      "ErrorApi406AllOf2Status": {
+        "enum": [
+          "406"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi406AllOf2Status",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "406",
+              "name": "Value406"
             }
           ]
         }
@@ -50463,10 +51009,26 @@
           ]
         }
       },
+      "ErrorApi406Code": {
+        "enum": [
+          "row_limit_exceeded"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ErrorApi406Code",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "row_limit_exceeded",
+              "name": "RowLimitExceeded"
+            }
+          ]
+        }
+      },
       "ErrorApi409Code": {
         "enum": [
-          "conflict_error",
-          "row_limit_exceeded"
+          "conflict_error"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -50477,10 +51039,6 @@
             {
               "value": "conflict_error",
               "name": "ConflictError"
-            },
-            {
-              "value": "row_limit_exceeded",
-              "name": "RowLimitExceeded"
             }
           ]
         }

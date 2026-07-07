@@ -5,12 +5,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ErrorApi409Code
+    public enum ErrorApi406Object
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "conflict_error")]
+        [EnumMember(Value = "error")]
         #pragma warning disable CS1591
-        ConflictError,
+        Error,
         #pragma warning restore CS1591
     }
 }

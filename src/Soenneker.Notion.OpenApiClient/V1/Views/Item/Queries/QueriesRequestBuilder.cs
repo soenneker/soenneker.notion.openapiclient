@@ -57,6 +57,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi401">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi406">When receiving a 406 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi409">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi429">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
@@ -80,6 +81,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Views.Item.Queries
                 { "401", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi401.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404.CreateFromDiscriminatorValue },
+                { "406", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi406.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi409.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi429.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
