@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Page icon.</summary>
+        /// <summary>Data source icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestIcon? Icon { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestIcon Icon { get; set; }
 #endif
-        /// <summary>Whether the database should be moved to or from the trash. If not provided, the trash status will not be updated.</summary>
+        /// <summary>Whether the data source should be moved to or from the trash. If not provided, the trash status will not be updated.</summary>
         public bool? InTrash { get; set; }
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

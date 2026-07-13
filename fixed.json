@@ -43468,7 +43468,7 @@
           },
           "in_trash": {
             "type": "boolean",
-            "description": "Whether the database should be moved to or from the trash. If not provided, the trash status will not be updated."
+            "description": "Whether the data source should be moved to or from the trash. If not provided, the trash status will not be updated."
           },
           "parent": {
             "$ref": "#/components/schemas/ParentOfDataSourceRequest"
@@ -45529,7 +45529,7 @@
             "$ref": "#/components/schemas/PageIconRequest"
           }
         ],
-        "description": "Page icon.",
+        "description": "Data source icon.",
         "nullable": true
       },
       "UpdateADataSourceRequestPropertiesAdditionalProperties": {
