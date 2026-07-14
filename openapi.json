@@ -190,6 +190,7 @@
 					"transcription_not_started",
 					"transcription_paused",
 					"transcription_in_progress",
+					"transcription_failed",
 					"summary_in_progress",
 					"notes_ready"
 				]
@@ -31962,6 +31963,7 @@
 																	"transcription_not_started",
 																	"transcription_paused",
 																	"transcription_in_progress",
+																	"transcription_failed",
 																	"summary_in_progress",
 																	"notes_ready"
 																],

@@ -19,6 +19,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         TranscriptionInProgress,
         #pragma warning restore CS1591
+        [EnumMember(Value = "transcription_failed")]
+        #pragma warning disable CS1591
+        TranscriptionFailed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "summary_in_progress")]
         #pragma warning disable CS1591
         SummaryInProgress,

@@ -7253,6 +7253,7 @@
           "transcription_not_started",
           "transcription_paused",
           "transcription_in_progress",
+          "transcription_failed",
           "summary_in_progress",
           "notes_ready"
         ],
@@ -7273,6 +7274,10 @@
             {
               "value": "transcription_in_progress",
               "name": "TranscriptionInProgress"
+            },
+            {
+              "value": "transcription_failed",
+              "name": "TranscriptionFailed"
             },
             {
               "value": "summary_in_progress",
@@ -54298,6 +54303,7 @@
           "transcription_not_started",
           "transcription_paused",
           "transcription_in_progress",
+          "transcription_failed",
           "summary_in_progress",
           "notes_ready"
         ],
@@ -54319,6 +54325,10 @@
             {
               "value": "transcription_in_progress",
               "name": "TranscriptionInProgress"
+            },
+            {
+              "value": "transcription_failed",
+              "name": "TranscriptionFailed"
             },
             {
               "value": "summary_in_progress",
