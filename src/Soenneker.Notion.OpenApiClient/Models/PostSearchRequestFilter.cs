@@ -9,13 +9,24 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostSearchRequestFilter : IParsable
+    public partial class PostSearchRequestFilter : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The in_trash property</summary>
+        public bool? InTrash { get; set; }
         /// <summary>The property property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterProperty? Property { get; set; }
         /// <summary>The value property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilter"/> and sets the default values.
+        /// </summary>
+        public PostSearchRequestFilter()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -34,6 +45,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterProperty>(); } },
                 { "value", n => { Value = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue>(); } },
             };
@@ -45,8 +57,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterProperty>("property", Property);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue>("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

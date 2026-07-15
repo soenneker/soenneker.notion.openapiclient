@@ -48248,10 +48248,6 @@
         }
       },
       "PostSearchRequestFilter": {
-        "required": [
-          "property",
-          "value"
-        ],
         "type": "object",
         "properties": {
           "property": {
@@ -48259,9 +48255,11 @@
           },
           "value": {
             "$ref": "#/components/schemas/PostSearchRequestFilterValue"
+          },
+          "in_trash": {
+            "type": "boolean"
           }
-        },
-        "additionalProperties": false
+        }
       },
       "PageOrDataSourceResponseJsonPageOrDataSource": {
         "type": "object"
