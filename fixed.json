@@ -22549,6 +22549,11 @@
             "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch3"
           },
           {
+            "enum": [
+              null
+            ]
+          },
+          {
             "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch5"
           },
           {
@@ -22564,7 +22569,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -27344,10 +27348,14 @@
             }
           },
           "date": {
-            "nullable": true
+            "enum": [
+              null
+            ]
           },
           "verified_by": {
-            "nullable": true
+            "enum": [
+              null
+            ]
           }
         },
         "additionalProperties": false
@@ -32090,6 +32098,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/GroupByConfigRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32099,7 +32112,6 @@
           }
         },
         "description": "Secondary group-by configuration for sub-grouping within columns. Pass null to remove sub-grouping.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32116,10 +32128,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertyConfigRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property visibility and display configuration on cards. Pass null to clear.",
-        "nullable": true
+        "description": "Property visibility and display configuration on cards. Pass null to clear."
       },
       "BoardViewConfigRequestCover": {
         "required": [
@@ -32129,6 +32145,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/CoverConfigRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32138,7 +32159,6 @@
           }
         },
         "description": "Cover image configuration for cards. Pass null to clear.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32297,10 +32317,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertyConfigRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property visibility and display configuration on calendar cards. Pass null to clear.",
-        "nullable": true
+        "description": "Property visibility and display configuration on calendar cards. Pass null to clear."
       },
       "CalendarViewConfigRequestViewRange": {
         "enum": [
@@ -32339,6 +32363,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/PageIconResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32347,7 +32376,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32363,6 +32391,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/GroupByConfigRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32372,7 +32405,6 @@
           }
         },
         "description": "X-axis grouping configuration for grouped data mode. Pass null to clear.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32388,6 +32420,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/ChartAggregationRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32397,7 +32434,6 @@
           }
         },
         "description": "Y-axis aggregation for grouped data mode. Pass null to clear.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32423,6 +32459,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/ChartAggregationRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32432,7 +32473,6 @@
           }
         },
         "description": "Aggregation for number charts. Pass null to clear.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32790,6 +32830,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/GroupByConfigRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32799,7 +32844,6 @@
           }
         },
         "description": "Stack-by grouping for stacked/grouped bar charts. Pass null to clear.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32816,10 +32860,14 @@
             "items": {
               "$ref": "#/components/schemas/ChartReferenceLineRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Reference lines on the chart. Pass null to clear.",
-        "nullable": true
+        "description": "Reference lines on the chart. Pass null to clear."
       },
       "ChartViewConfigRequestCaption": {
         "type": "string",
@@ -32839,6 +32887,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/GroupByConfigResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32848,7 +32901,6 @@
           }
         },
         "description": "X-axis grouping configuration for column/bar/line/donut charts using grouped data. Null when using results (raw property values) mode.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32864,6 +32916,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/ChartAggregationResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32873,7 +32930,6 @@
           }
         },
         "description": "Y-axis aggregation for column/bar/line/donut charts using grouped data. Null when using results mode.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32899,6 +32955,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/GroupByConfigResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -32908,7 +32969,6 @@
           }
         },
         "description": "Stack-by grouping configuration for stacked/grouped bar charts (column/bar/line only). Null when not stacked.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -32925,10 +32985,14 @@
             "items": {
               "$ref": "#/components/schemas/ChartReferenceLineResponse"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Reference lines drawn on the chart. Null when no reference lines are configured.",
-        "nullable": true
+        "description": "Reference lines drawn on the chart. Null when no reference lines are configured."
       },
       "ChartViewConfigResponseCaption": {
         "type": "string",
@@ -33144,6 +33208,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/PageIconResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33152,7 +33221,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33327,6 +33395,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageIconResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33336,7 +33409,6 @@
           }
         },
         "description": "The icon of the data source.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33352,6 +33424,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageCoverResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33361,7 +33438,6 @@
           }
         },
         "description": "The cover of the data source.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33453,6 +33529,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PartialUserObjectResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33462,7 +33543,6 @@
           }
         },
         "description": "The user who created the view, or null if not available.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33478,6 +33558,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PartialUserObjectResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33487,7 +33572,6 @@
           }
         },
         "description": "The user who last edited the view, or null if not available.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33503,6 +33587,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/ViewFilterResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33512,7 +33601,6 @@
           }
         },
         "description": "The filter applied to this view (same shape as data source query filter).",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33529,10 +33617,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewSortResponse"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "The sorts applied to this view (same shape as data source query sorts).",
-        "nullable": true
+        "description": "The sorts applied to this view (same shape as data source query sorts)."
       },
       "DataSourceViewObjectResponseQuickFilters": {
         "required": [
@@ -33546,6 +33638,11 @@
               "type": "object",
               "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field. For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33555,7 +33652,6 @@
           }
         },
         "description": "Quick filters pinned to the view\u0027s filter bar. Keys are property IDs. Values are filter conditions (same shape as a property filter without the property field). Null when no quick filters are set.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type"
         }
@@ -33568,6 +33664,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/ViewConfigResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33577,7 +33678,6 @@
           }
         },
         "description": "View presentation configuration.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33725,6 +33825,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageIconResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33734,7 +33839,6 @@
           }
         },
         "description": "The icon of the database.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33750,6 +33854,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageCoverResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33759,7 +33868,6 @@
           }
         },
         "description": "The cover of the database.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33852,6 +33960,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DateResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33860,7 +33973,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33876,6 +33988,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DateResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33884,7 +34001,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -33900,6 +34016,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DateResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -33908,7 +34029,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -34056,6 +34176,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DateResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -34064,7 +34189,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -34102,6 +34226,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DateResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -34110,7 +34239,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -34713,10 +34841,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertyConfigRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property visibility and display configuration on gallery cards. Pass null to clear.",
-        "nullable": true
+        "description": "Property visibility and display configuration on gallery cards. Pass null to clear."
       },
       "GalleryViewConfigRequestCover": {
         "required": [
@@ -34726,6 +34858,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/CoverConfigRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -34735,7 +34872,6 @@
           }
         },
         "description": "Cover image configuration for cards. Pass null to clear.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -34994,10 +35130,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertyConfigRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property visibility and display configuration. Pass null to clear.",
-        "nullable": true
+        "description": "Property visibility and display configuration. Pass null to clear."
       },
       "MapViewConfigRequestHeight": {
         "enum": [
@@ -35047,10 +35187,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertyConfigRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property visibility and display configuration on map pin cards. Pass null to clear.",
-        "nullable": true
+        "description": "Property visibility and display configuration on map pin cards. Pass null to clear."
       },
       "MediaContentWithFileAndCaptionRequestExternal": {
         "title": "External",
@@ -35582,6 +35726,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageIconResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -35591,7 +35740,6 @@
           }
         },
         "description": "Page icon.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -35607,6 +35755,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageCoverResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -35616,7 +35769,6 @@
           }
         },
         "description": "Page cover image.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -35936,6 +36088,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PlacePropertyValueResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -35944,7 +36101,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37056,6 +37212,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/PartialSelectResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37064,7 +37225,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37084,6 +37244,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PartialSelectPropertyValueResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37092,7 +37257,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37166,6 +37330,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/PartialSelectResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37174,7 +37343,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37195,6 +37363,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PartialSelectPropertyValueResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37203,7 +37376,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37224,10 +37396,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertyConfigRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property visibility and display configuration. Pass null to clear.",
-        "nullable": true
+        "description": "Property visibility and display configuration. Pass null to clear."
       },
       "TableViewConfigRequestGroupBy": {
         "required": [
@@ -37237,6 +37413,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/GroupByConfigRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37246,7 +37427,6 @@
           }
         },
         "description": "Group-by configuration for the table. Pass null to remove grouping.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37262,6 +37442,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/SubtaskConfigRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37271,7 +37456,6 @@
           }
         },
         "description": "\u0022Subtask (sub-item) configuration. Pass null to reset subtask config to defaults (which may show subtasks). Use \u0060{ \\\u0022display_mode\\\u0022: \\\u0022disabled\\\u0022 }\u0060 to explicitly disable subtasks.\u0022",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37353,6 +37537,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TextRichTextItemRequestTextLinkOneOf1"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37362,7 +37551,6 @@
           }
         },
         "description": "An object with information about any inline link in this text, if included.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37378,6 +37566,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TextRichTextItemResponseTextLinkOneOf1"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37387,7 +37580,6 @@
           }
         },
         "description": "An object with information about any inline link in this text, if included.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37419,10 +37611,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertyConfigRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property visibility and display configuration on timeline items. Pass null to clear.",
-        "nullable": true
+        "description": "Property visibility and display configuration on timeline items. Pass null to clear."
       },
       "TimelineViewConfigRequestShowTable": {
         "type": "boolean",
@@ -37438,10 +37634,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertyConfigRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property configuration for the table panel (when show_table is true). Pass null to clear.",
-        "nullable": true
+        "description": "Property configuration for the table panel (when show_table is true). Pass null to clear."
       },
       "TimelineViewConfigRequestPreference": {
         "required": [
@@ -37451,6 +37651,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TimelinePreferenceRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37460,7 +37665,6 @@
           }
         },
         "description": "Timeline display preferences (zoom level and center position). Pass null to clear.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37476,6 +37680,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/TimelineArrowsByRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37485,7 +37694,6 @@
           }
         },
         "description": "Configuration for dependency arrows between timeline items. Pass null to clear.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37524,6 +37732,11 @@
           {
             "type": "object",
             "description": "\u0022Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view\u0027s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { \\\u0022does_not_equal\\\u0022: [\\\u0022Done\\\u0022, \\\u0022Archive\\\u0022] }).\u0022"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37533,7 +37746,6 @@
           }
         },
         "description": "Filter to apply to the view. Uses the same format as the data source query filter. Pass null to clear the filter.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37550,10 +37762,14 @@
             "items": {
               "$ref": "#/components/schemas/ViewPropertySortRequest"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Property sorts to apply to the view. Only property-based sorts are supported. Pass null to clear the sorts.",
-        "nullable": true
+        "description": "Property sorts to apply to the view. Only property-based sorts are supported. Pass null to clear the sorts."
       },
       "UpdateViewRequestQuickFilters": {
         "required": [
@@ -37566,6 +37782,11 @@
             "additionalProperties": {
               "$ref": "#/components/schemas/UpdateViewRequestQuickFiltersOneOf1AdditionalProperties"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37575,7 +37796,6 @@
           }
         },
         "description": "Quick filters for the view\u0027s filter bar. Keys are property names or IDs. Set a key to a filter condition to add/update that quick filter. Set a key to null to remove it. Pass null for the entire field to clear all quick filters. Unmentioned quick filters are preserved.",
-        "nullable": true,
         "discriminator": {
           "propertyName": "type"
         }
@@ -37602,6 +37822,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/VerificationPropertyValueResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37610,7 +37835,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37626,6 +37850,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/DateResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37634,7 +37863,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37650,6 +37878,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/UserValueResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37658,7 +37891,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -37674,6 +37906,11 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/VerificationPropertyValueResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -37682,7 +37919,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -39544,6 +39780,11 @@
           {
             "type": "object",
             "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field (the hashmap key identifies the property). For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -39552,7 +39793,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -40040,6 +40280,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DateResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -40048,7 +40293,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -40517,6 +40761,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DateResponse"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -40525,7 +40774,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -45046,9 +45294,13 @@
           },
           {
             "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesSelectAnyOf2"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PostPageRequestPropertiesAdditionalPropertiesPeopleItem": {
         "type": "object",
@@ -45066,9 +45318,13 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DateRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PostPageRequestPropertiesAdditionalPropertiesFilesItem": {
         "type": "object",
@@ -45089,27 +45345,39 @@
           },
           {
             "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesStatusAnyOf2"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PostPageRequestIcon": {
         "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PageIconRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PostPageRequestCover": {
         "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PageCoverRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PatchPageRequestPropertiesAdditionalPropertiesSelect": {
         "type": "object",
@@ -45119,9 +45387,13 @@
           },
           {
             "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesSelectAnyOf2"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PatchPageRequestPropertiesAdditionalPropertiesPeopleItem": {
         "type": "object",
@@ -45139,9 +45411,13 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DateRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PatchPageRequestPropertiesAdditionalPropertiesFilesItem": {
         "type": "object",
@@ -45162,27 +45438,39 @@
           },
           {
             "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesStatusAnyOf2"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PatchPageRequestIcon": {
         "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PageIconRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PatchPageRequestCover": {
         "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PageCoverRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "UpdatePageMarkdownRequestAllOf1": {
         "required": [
@@ -45532,10 +45820,14 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageIconRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Data source icon.",
-        "nullable": true
+        "description": "Data source icon."
       },
       "UpdateADataSourceRequestPropertiesAdditionalProperties": {
         "type": "object",
@@ -45545,9 +45837,13 @@
           },
           {
             "$ref": "#/components/schemas/UpdateADataSourceRequestPropertiesAdditionalPropertiesOneOf2"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "PostDatabaseQueryRequestFilter": {
         "type": "object",
@@ -45595,10 +45891,14 @@
         "oneOf": [
           {
             "$ref": "#/components/schemas/PageIconRequest"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
-        "description": "Page icon.",
-        "nullable": true
+        "description": "Page icon."
       },
       "UpdateDatabaseRequestParent": {
         "required": [
