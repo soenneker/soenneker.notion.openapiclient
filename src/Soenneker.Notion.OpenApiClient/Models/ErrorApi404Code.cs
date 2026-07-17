@@ -12,5 +12,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         ObjectNotFound,
         #pragma warning restore CS1591
+        [EnumMember(Value = "directory_not_found")]
+        #pragma warning disable CS1591
+        DirectoryNotFound,
+        #pragma warning restore CS1591
     }
 }

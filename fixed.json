@@ -51297,7 +51297,8 @@
       },
       "ErrorApi404Code": {
         "enum": [
-          "object_not_found"
+          "object_not_found",
+          "directory_not_found"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -51308,6 +51309,10 @@
             {
               "value": "object_not_found",
               "name": "ObjectNotFound"
+            },
+            {
+              "value": "directory_not_found",
+              "name": "DirectoryNotFound"
             }
           ]
         }

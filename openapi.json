@@ -8637,7 +8637,8 @@
             "properties": {
               "code": {
                 "enum": [
-                  "object_not_found"
+                  "object_not_found",
+                  "directory_not_found"
                 ]
               },
               "status": {
@@ -25616,6 +25617,50 @@
                                 "code": {
                                   "type": "string",
                                   "const": "object_not_found"
+                                },
+                                "message": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "additional_data": {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "oneOf": [
+                                      {
+                                        "type": "string"
+                                      },
+                                      {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "required": [
+                                "object",
+                                "status",
+                                "code",
+                                "message"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "object": {
+                                  "type": "string",
+                                  "const": "error"
+                                },
+                                "status": {
+                                  "type": "integer",
+                                  "const": 404
+                                },
+                                "code": {
+                                  "type": "string",
+                                  "const": "directory_not_found"
                                 },
                                 "message": {
                                   "type": "string",
