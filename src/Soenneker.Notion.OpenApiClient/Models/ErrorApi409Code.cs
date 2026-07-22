@@ -12,5 +12,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         ConflictError,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agent_deleted")]
+        #pragma warning disable CS1591
+        AgentDeleted,
+        #pragma warning restore CS1591
     }
 }

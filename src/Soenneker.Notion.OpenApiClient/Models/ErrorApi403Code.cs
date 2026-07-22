@@ -12,5 +12,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         RestrictedResource,
         #pragma warning restore CS1591
+        [EnumMember(Value = "status_change_not_allowed")]
+        #pragma warning disable CS1591
+        StatusChangeNotAllowed,
+        #pragma warning restore CS1591
     }
 }

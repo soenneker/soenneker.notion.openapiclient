@@ -51280,7 +51280,8 @@
       },
       "ErrorApi403Code": {
         "enum": [
-          "restricted_resource"
+          "restricted_resource",
+          "status_change_not_allowed"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -51291,6 +51292,10 @@
             {
               "value": "restricted_resource",
               "name": "RestrictedResource"
+            },
+            {
+              "value": "status_change_not_allowed",
+              "name": "StatusChangeNotAllowed"
             }
           ]
         }
@@ -51336,7 +51341,8 @@
       },
       "ErrorApi409Code": {
         "enum": [
-          "conflict_error"
+          "conflict_error",
+          "agent_deleted"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -51347,6 +51353,10 @@
             {
               "value": "conflict_error",
               "name": "ConflictError"
+            },
+            {
+              "value": "agent_deleted",
+              "name": "AgentDeleted"
             }
           ]
         }
