@@ -24,9 +24,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         MissingVersion,
         #pragma warning restore CS1591
+        [EnumMember(Value = "invalid_beta")]
+        #pragma warning disable CS1591
+        InvalidBeta,
+        #pragma warning restore CS1591
         [EnumMember(Value = "validation_error")]
         #pragma warning disable CS1591
         ValidationError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "invalid_credit_limit")]
+        #pragma warning disable CS1591
+        InvalidCreditLimit,
         #pragma warning restore CS1591
     }
 }
