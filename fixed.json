@@ -44937,17 +44937,13 @@
         "additionalProperties": false
       },
       "CreateMeetingNoteRequest": {
-        "required": [
-          "source"
-        ],
         "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CreateMeetingNoteRequestAllOf1"
+          }
+        ],
         "properties": {
-          "source": {
-            "$ref": "#/components/schemas/CreateMeetingNoteRequestSource"
-          },
-          "parent": {
-            "$ref": "#/components/schemas/CreateMeetingNoteRequestParent"
-          },
           "title": {
             "maxLength": 2000,
             "type": "string",
@@ -46202,6 +46198,20 @@
           "markdown": {
             "type": "string",
             "description": "The updated content of the comment as a Markdown string. Comment Markdown supports inline formatting only (bold, italic, strikethrough, code, links), inline equations ($expression$), and mentions. Block-level Markdown such as fenced code blocks, headings, lists, tables, and blockquotes does not render as structured blocks in comments."
+          }
+        }
+      },
+      "CreateMeetingNoteRequestAllOf1": {
+        "required": [
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/CreateMeetingNoteRequestAllOf1Source"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/CreateMeetingNoteRequestAllOf1Parent"
           }
         }
       },
@@ -48957,69 +48967,6 @@
       "GetViewQueryResults200ResponsePage": {
         "type": "object"
       },
-      "CreateMeetingNoteRequestSource": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "file_upload"
-            ],
-            "type": "string",
-            "description": "Always \u0022file_upload\u0022.",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "file_upload",
-                  "name": "FileUpload"
-                }
-              ]
-            }
-          },
-          "file_upload_id": {
-            "type": "string"
-          },
-          "block_id": {
-            "type": "string"
-          }
-        },
-        "description": "Audio or video source for the meeting note."
-      },
-      "CreateMeetingNoteRequestParent": {
-        "required": [
-          "type",
-          "page_id"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "page_id"
-            ],
-            "type": "string",
-            "description": "Always \u0022page_id\u0022.",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "page_id",
-                  "name": "PageId"
-                }
-              ]
-            }
-          },
-          "page_id": {
-            "type": "string"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Parent page for the new meeting note. Required when source.type is file_upload."
-      },
       "CreateMeetingNoteRequestOptions": {
         "type": "object",
         "properties": {
@@ -49617,6 +49564,68 @@
           }
         },
         "description": "The parent of the comment. This can be a page or a block."
+      },
+      "CreateMeetingNoteRequestAllOf1Source": {
+        "required": [
+          "type",
+          "file_upload_id"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "file_upload"
+            ],
+            "type": "string",
+            "description": "Always \u0022file_upload\u0022.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "file_upload",
+                  "name": "FileUpload"
+                }
+              ]
+            }
+          },
+          "file_upload_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Audio or video source for the meeting note."
+      },
+      "CreateMeetingNoteRequestAllOf1Parent": {
+        "required": [
+          "type",
+          "page_id"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "page_id"
+            ],
+            "type": "string",
+            "description": "Always \u0022page_id\u0022.",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "page_id",
+                  "name": "PageId"
+                }
+              ]
+            }
+          },
+          "page_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Parent page for the new meeting note."
       },
       "CreateMeetingNote200ResponseOneOf2MeetingNotes": {
         "type": "object",

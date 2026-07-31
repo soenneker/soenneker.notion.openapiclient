@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Parent page for the new meeting note. Required when source.type is file_upload.
+    /// Parent page for the new meeting note.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateMeetingNoteRequestParent : IParsable
+    public partial class CreateMeetingNoteRequestAllOf1Parent : IParsable
     {
         /// <summary>The page_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -22,16 +22,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string PageId { get; set; }
 #endif
         /// <summary>Always &quot;page_id&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestParent_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestAllOf1Parent_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestParent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestAllOf1Parent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestParent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestAllOf1Parent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestParent();
+            return new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestAllOf1Parent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "page_id", n => { PageId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestParent_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestAllOf1Parent_type>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("page_id", PageId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestParent_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestAllOf1Parent_type>("type", Type);
         }
     }
 }

@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>Always &quot;page_id&quot;.</summary>
+    /// <summary>Always &quot;file_upload&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum CreateMeetingNoteRequestParent_type
+    public enum CreateMeetingNoteRequestAllOf1Source_type
     {
-        [EnumMember(Value = "page_id")]
+        [EnumMember(Value = "file_upload")]
         #pragma warning disable CS1591
-        PageId,
+        FileUpload,
         #pragma warning restore CS1591
     }
 }
