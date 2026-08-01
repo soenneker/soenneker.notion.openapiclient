@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Block : IAdditionalDataHolder, IParsable
+    public partial class PatchBlockChildren200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The block property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockBlock? BlockProp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock? Block { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockBlock BlockProp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock Block { get; set; }
 #endif
         /// <summary>The has_more property</summary>
         public bool? HasMore { get; set; }
@@ -33,33 +33,33 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string NextCursor { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.Block_object? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response_object? Object { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.BlockResultsItem>? Results { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseResultsItem>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.BlockResultsItem> Results { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseResultsItem> Results { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.Block_type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response_type? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.Block"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response"/> and sets the default values.
         /// </summary>
-        public Block()
+        public PatchBlockChildren200Response()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.Block"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.Block CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.Block();
+            return new global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,12 +69,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "block", n => { BlockProp = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockBlock>(global::Soenneker.Notion.OpenApiClient.Models.BlockBlock.CreateFromDiscriminatorValue); } },
+                { "block", n => { Block = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock>(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock.CreateFromDiscriminatorValue); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.Block_object>(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockResultsItem>(global::Soenneker.Notion.OpenApiClient.Models.BlockResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.Block_type>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response_object>(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseResultsItem>(global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response_type>(); } },
             };
         }
         /// <summary>
@@ -84,12 +84,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockBlock>("block", BlockProp);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock>("block", Block);
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.Block_object>("object", Object);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockResultsItem>("results", Results);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.Block_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response_object>("object", Object);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseResultsItem>("results", Results);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200Response_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

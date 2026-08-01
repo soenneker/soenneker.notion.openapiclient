@@ -5,16 +5,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum PageOrDataSourceRequestStatusType
+    public enum PostDatabaseQuery200ResponseRequestStatusIncompleteReason
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "complete")]
+        [EnumMember(Value = "query_result_limit_reached")]
         #pragma warning disable CS1591
-        Complete,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "incomplete")]
-        #pragma warning disable CS1591
-        Incomplete,
+        QueryResultLimitReached,
         #pragma warning restore CS1591
     }
 }

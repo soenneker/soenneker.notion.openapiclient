@@ -5,12 +5,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum PageOrDataSourceResponseJson_type
+    public enum PatchBlockChildren200Response_object
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "page_or_data_source")]
+        [EnumMember(Value = "list")]
         #pragma warning disable CS1591
-        PageOrDataSource,
+        List,
         #pragma warning restore CS1591
     }
 }

@@ -5,12 +5,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum BlockResponseJson_type
+    public enum PostSearch200Response_object
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "block")]
+        [EnumMember(Value = "list")]
         #pragma warning disable CS1591
-        Block,
+        List,
         #pragma warning restore CS1591
     }
 }

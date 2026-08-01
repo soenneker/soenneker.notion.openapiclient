@@ -2159,7 +2159,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Block"
+                  "$ref": "#/components/schemas/GetBlockChildren200Response"
                 }
               }
             }
@@ -2310,7 +2310,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BlockResponseJson"
+                  "$ref": "#/components/schemas/PatchBlockChildren200Response"
                 }
               }
             }
@@ -2768,7 +2768,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PageOrDataSource"
+                  "$ref": "#/components/schemas/PostDatabaseQuery200Response"
                 }
               }
             }
@@ -3668,7 +3668,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PageOrDataSourceResponseJson"
+                  "$ref": "#/components/schemas/PostSearch200Response"
                 }
               }
             }
@@ -43928,7 +43928,7 @@
         },
         "additionalProperties": false
       },
-      "PageOrDataSource": {
+      "PostDatabaseQuery200Response": {
         "title": "Page Or Data Source",
         "required": [
           "type",
@@ -43957,7 +43957,7 @@
             }
           },
           "page_or_data_source": {
-            "$ref": "#/components/schemas/PageOrDataSourcePageOrDataSource"
+            "$ref": "#/components/schemas/PostDatabaseQuery200ResponsePageOrDataSource"
           },
           "object": {
             "enum": [
@@ -43985,11 +43985,11 @@
           "results": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PageOrDataSourceResultsItem"
+              "$ref": "#/components/schemas/PostDatabaseQuery200ResponseResultsItem"
             }
           },
           "request_status": {
-            "$ref": "#/components/schemas/PageOrDataSourceRequestStatus"
+            "$ref": "#/components/schemas/PostDatabaseQuery200ResponseRequestStatus"
           }
         }
       },
@@ -44260,7 +44260,7 @@
         },
         "additionalProperties": false
       },
-      "PageOrDataSourceResponseJson": {
+      "PostSearch200Response": {
         "title": "Page Or Data Source",
         "required": [
           "type",
@@ -44289,7 +44289,7 @@
             }
           },
           "page_or_data_source": {
-            "$ref": "#/components/schemas/PageOrDataSourceResponseJsonPageOrDataSource"
+            "$ref": "#/components/schemas/PostSearch200ResponsePageOrDataSource"
           },
           "object": {
             "enum": [
@@ -44317,11 +44317,11 @@
           "results": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/PageOrDataSourceResponseJsonResultsItem"
+              "$ref": "#/components/schemas/PostSearch200ResponseResultsItem"
             }
           },
           "request_status": {
-            "$ref": "#/components/schemas/PageOrDataSourceResponseJsonRequestStatus"
+            "$ref": "#/components/schemas/PostSearch200ResponseRequestStatus"
           }
         }
       },
@@ -45351,7 +45351,7 @@
           }
         }
       },
-      "Block": {
+      "GetBlockChildren200Response": {
         "title": "Block",
         "required": [
           "type",
@@ -45380,7 +45380,7 @@
             }
           },
           "block": {
-            "$ref": "#/components/schemas/BlockBlock"
+            "$ref": "#/components/schemas/GetBlockChildren200ResponseBlock"
           },
           "object": {
             "enum": [
@@ -45408,12 +45408,12 @@
           "results": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BlockResultsItem"
+              "$ref": "#/components/schemas/GetBlockChildren200ResponseResultsItem"
             }
           }
         }
       },
-      "BlockResponseJson": {
+      "PatchBlockChildren200Response": {
         "title": "Block",
         "required": [
           "type",
@@ -45442,7 +45442,7 @@
             }
           },
           "block": {
-            "$ref": "#/components/schemas/BlockResponseJsonBlock"
+            "$ref": "#/components/schemas/PatchBlockChildren200ResponseBlock"
           },
           "object": {
             "enum": [
@@ -45470,7 +45470,7 @@
           "results": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/BlockResponseJsonResultsItem"
+              "$ref": "#/components/schemas/PatchBlockChildren200ResponseResultsItem"
             }
           }
         }
@@ -46048,7 +46048,7 @@
           }
         ]
       },
-      "PageOrDataSourceResultsItem": {
+      "PostDatabaseQuery200ResponseResultsItem": {
         "type": "object",
         "anyOf": [
           {
@@ -46123,7 +46123,7 @@
         },
         "description": "The parent page or workspace where the database will be created."
       },
-      "PageOrDataSourceResponseJsonResultsItem": {
+      "PostSearch200ResponseResultsItem": {
         "type": "object",
         "anyOf": [
           {
@@ -46444,7 +46444,7 @@
           }
         ]
       },
-      "BlockResultsItem": {
+      "GetBlockChildren200ResponseResultsItem": {
         "type": "object",
         "anyOf": [
           {
@@ -46455,7 +46455,7 @@
           }
         ]
       },
-      "BlockResponseJsonResultsItem": {
+      "PatchBlockChildren200ResponseResultsItem": {
         "type": "object",
         "anyOf": [
           {
@@ -48801,20 +48801,20 @@
           }
         }
       },
-      "PageOrDataSourcePageOrDataSource": {
+      "PostDatabaseQuery200ResponsePageOrDataSource": {
         "type": "object"
       },
-      "PageOrDataSourceRequestStatus": {
+      "PostDatabaseQuery200ResponseRequestStatus": {
         "required": [
           "type"
         ],
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/PageOrDataSourceRequestStatusType"
+            "$ref": "#/components/schemas/PostDatabaseQuery200ResponseRequestStatusType"
           },
           "incomplete_reason": {
-            "$ref": "#/components/schemas/PageOrDataSourceRequestStatusIncompleteReason"
+            "$ref": "#/components/schemas/PostDatabaseQuery200ResponseRequestStatusIncompleteReason"
           }
         }
       },
@@ -48876,20 +48876,20 @@
           }
         }
       },
-      "PageOrDataSourceResponseJsonPageOrDataSource": {
+      "PostSearch200ResponsePageOrDataSource": {
         "type": "object"
       },
-      "PageOrDataSourceResponseJsonRequestStatus": {
+      "PostSearch200ResponseRequestStatus": {
         "required": [
           "type"
         ],
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/PageOrDataSourceResponseJsonRequestStatusType"
+            "$ref": "#/components/schemas/PostSearch200ResponseRequestStatusType"
           },
           "incomplete_reason": {
-            "$ref": "#/components/schemas/PageOrDataSourceResponseJsonRequestStatusIncompleteReason"
+            "$ref": "#/components/schemas/PostSearch200ResponseRequestStatusIncompleteReason"
           }
         }
       },
@@ -49182,10 +49182,10 @@
           }
         }
       },
-      "BlockBlock": {
+      "GetBlockChildren200ResponseBlock": {
         "type": "object"
       },
-      "BlockResponseJsonBlock": {
+      "PatchBlockChildren200ResponseBlock": {
         "type": "object"
       },
       "UpdatePageMarkdownRequestAllOf1InsertContent": {
@@ -54824,7 +54824,7 @@
           ]
         }
       },
-      "PageOrDataSourceRequestStatusType": {
+      "PostDatabaseQuery200ResponseRequestStatusType": {
         "enum": [
           "complete",
           "incomplete"
@@ -54832,7 +54832,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "PageOrDataSourceRequestStatusType",
+          "name": "PostDatabaseQuery200ResponseRequestStatusType",
           "modelAsString": false,
           "values": [
             {
@@ -54846,14 +54846,14 @@
           ]
         }
       },
-      "PageOrDataSourceRequestStatusIncompleteReason": {
+      "PostDatabaseQuery200ResponseRequestStatusIncompleteReason": {
         "enum": [
           "query_result_limit_reached"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "PageOrDataSourceRequestStatusIncompleteReason",
+          "name": "PostDatabaseQuery200ResponseRequestStatusIncompleteReason",
           "modelAsString": false,
           "values": [
             {
@@ -54958,7 +54958,7 @@
           ]
         }
       },
-      "PageOrDataSourceResponseJsonRequestStatusType": {
+      "PostSearch200ResponseRequestStatusType": {
         "enum": [
           "complete",
           "incomplete"
@@ -54966,7 +54966,7 @@
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "PageOrDataSourceResponseJsonRequestStatusType",
+          "name": "PostSearch200ResponseRequestStatusType",
           "modelAsString": false,
           "values": [
             {
@@ -54980,14 +54980,14 @@
           ]
         }
       },
-      "PageOrDataSourceResponseJsonRequestStatusIncompleteReason": {
+      "PostSearch200ResponseRequestStatusIncompleteReason": {
         "enum": [
           "query_result_limit_reached"
         ],
         "type": "string",
         "additionalProperties": false,
         "x-ms-enum": {
-          "name": "PageOrDataSourceResponseJsonRequestStatusIncompleteReason",
+          "name": "PostSearch200ResponseRequestStatusIncompleteReason",
           "modelAsString": false,
           "values": [
             {

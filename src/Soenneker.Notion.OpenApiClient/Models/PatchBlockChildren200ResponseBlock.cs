@@ -9,27 +9,27 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PageOrDataSourceResultsItem : IAdditionalDataHolder, IParsable
+    public partial class PatchBlockChildren200ResponseBlock : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceResultsItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock"/> and sets the default values.
         /// </summary>
-        public PageOrDataSourceResultsItem()
+        public PatchBlockChildren200ResponseBlock()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceResultsItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceResultsItem();
+            return new global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseBlock();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -11,7 +11,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialBlockObjectResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class BlockResponseJsonResultsItem : IComposedTypeWrapper, IParsable
+    public partial class PatchBlockChildren200ResponseResultsItem : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,12 +32,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.BlockResponseJsonResultsItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseResultsItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.BlockResponseJsonResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseResultsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.BlockResponseJsonResultsItem();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.PatchBlockChildren200ResponseResultsItem();
             result.BlockObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse();
             result.PartialBlockObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialBlockObjectResponse();
             return result;
