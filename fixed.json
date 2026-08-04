@@ -10311,7 +10311,8 @@
           "last_edited_time",
           "created_by",
           "rich_text",
-          "display_name"
+          "display_name",
+          "original_content_deleted"
         ],
         "type": "object",
         "properties": {
@@ -10366,6 +10367,10 @@
           },
           "display_name": {
             "$ref": "#/components/schemas/CommentObjectResponseDisplayName"
+          },
+          "original_content_deleted": {
+            "type": "boolean",
+            "description": "Whether this comment\u0027s original content was deleted."
           },
           "attachments": {
             "maxItems": 100,

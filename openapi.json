@@ -5523,6 +5523,10 @@
             ],
             "description": "The display name of the comment."
           },
+          "original_content_deleted": {
+            "type": "boolean",
+            "description": "Whether this comment's original content was deleted."
+          },
           "attachments": {
             "type": "array",
             "items": {
@@ -5563,7 +5567,8 @@
           "last_edited_time",
           "created_by",
           "rich_text",
-          "display_name"
+          "display_name",
+          "original_content_deleted"
         ]
       },
       "commentParentResponse": {

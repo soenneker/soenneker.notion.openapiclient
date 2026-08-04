@@ -46,6 +46,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>The comment object type name.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object? Object { get; set; }
+        /// <summary>Whether this comment&apos;s original content was deleted.</summary>
+        public bool? OriginalContentDeleted { get; set; }
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +90,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object>(); } },
+                { "original_content_deleted", n => { OriginalContentDeleted = n.GetBoolValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse.CreateFromDiscriminatorValue); } },
                 { "rich_text", n => { RichText = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -107,6 +110,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object>("object", Object);
+            writer.WriteBoolValue("original_content_deleted", OriginalContentDeleted);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse>("parent", Parent);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("rich_text", RichText);
         }
