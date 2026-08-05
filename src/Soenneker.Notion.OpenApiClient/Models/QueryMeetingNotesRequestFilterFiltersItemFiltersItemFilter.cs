@@ -7,22 +7,19 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// The comparison to apply. Use the arm matching the property&apos;s type.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilter : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Operator.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Operator { get; set; }
-#nullable restore
-#else
-        public string Operator { get; set; }
-#endif
-        /// <summary>Value for the operator.</summary>
+        /// <summary>How to compare the text.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator? Operator { get; set; }
+        /// <summary>Compare against the end of a date range rather than its start.</summary>
+        public bool? UseEnd { get; set; }
+        /// <summary>The text to compare against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue? Value { get; set; }
@@ -55,7 +52,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operator", n => { Operator = n.GetStringValue(); } },
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator>(); } },
+                { "use_end", n => { UseEnd = n.GetBoolValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue>(global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +64,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("operator", Operator);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator>("operator", Operator);
+            writer.WriteBoolValue("use_end", UseEnd);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

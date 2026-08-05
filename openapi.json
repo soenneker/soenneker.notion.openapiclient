@@ -35063,8 +35063,490 @@
                       "filters": {
                         "type": "array",
                         "items": {
-                          "description": "Meeting notes filter node (combinator or property filter).",
-                          "anyOf": [
+                          "oneOf": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "property": {
+                                  "type": "string",
+                                  "enum": [
+                                    "title",
+                                    "attendees",
+                                    "created_time",
+                                    "created_by",
+                                    "last_edited_time",
+                                    "last_edited_by",
+                                    "notion://meeting_notes/attendees"
+                                  ],
+                                  "description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility."
+                                },
+                                "filter": {
+                                  "oneOf": [
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "operator": {
+                                          "type": "string",
+                                          "enum": [
+                                            "string_is",
+                                            "string_is_not",
+                                            "string_contains",
+                                            "string_does_not_contain",
+                                            "string_starts_with",
+                                            "string_ends_with"
+                                          ],
+                                          "description": "How to compare the text."
+                                        },
+                                        "value": {
+                                          "type": "object",
+                                          "properties": {
+                                            "type": {
+                                              "type": "string",
+                                              "const": "exact",
+                                              "description": "Always `exact`"
+                                            },
+                                            "value": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "additionalProperties": false,
+                                          "required": [
+                                            "type",
+                                            "value"
+                                          ],
+                                          "description": "The text to compare against."
+                                        }
+                                      },
+                                      "additionalProperties": false,
+                                      "required": [
+                                        "operator",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "operator": {
+                                          "type": "string",
+                                          "enum": [
+                                            "person_contains",
+                                            "person_does_not_contain"
+                                          ],
+                                          "description": "Whether the property must contain the people listed."
+                                        },
+                                        "value": {
+                                          "type": "array",
+                                          "items": {
+                                            "oneOf": [
+                                              {
+                                                "type": "object",
+                                                "properties": {
+                                                  "type": {
+                                                    "type": "string",
+                                                    "const": "exact",
+                                                    "description": "Always `exact`"
+                                                  },
+                                                  "value": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "table": {
+                                                        "type": "string",
+                                                        "const": "notion_user",
+                                                        "description": "Always `notion_user`"
+                                                      },
+                                                      "id": {
+                                                        "type": "string",
+                                                        "examples": [
+                                                          "3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e",
+                                                          "user://3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e"
+                                                        ],
+                                                        "description": "The user's ID, as a UUID or the `user://<uuid>` form returned by user search."
+                                                      }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                      "table",
+                                                      "id"
+                                                    ]
+                                                  }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                  "type",
+                                                  "value"
+                                                ]
+                                              },
+                                              {
+                                                "type": "object",
+                                                "properties": {
+                                                  "type": {
+                                                    "type": "string",
+                                                    "const": "relative",
+                                                    "description": "Always `relative`"
+                                                  },
+                                                  "value": {
+                                                    "type": "string",
+                                                    "const": "me",
+                                                    "description": "Always `me`"
+                                                  }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                  "type",
+                                                  "value"
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          "maxItems": 100,
+                                          "description": "The people to compare against."
+                                        }
+                                      },
+                                      "additionalProperties": false,
+                                      "required": [
+                                        "operator",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "operator": {
+                                          "type": "string",
+                                          "enum": [
+                                            "date_is",
+                                            "date_is_before",
+                                            "date_is_after",
+                                            "date_is_on_or_before",
+                                            "date_is_on_or_after"
+                                          ],
+                                          "description": "How to compare the date."
+                                        },
+                                        "value": {
+                                          "oneOf": [
+                                            {
+                                              "type": "object",
+                                              "properties": {
+                                                "type": {
+                                                  "type": "string",
+                                                  "const": "relative",
+                                                  "description": "Always `relative`"
+                                                },
+                                                "value": {
+                                                  "type": "string",
+                                                  "enum": [
+                                                    "today",
+                                                    "tomorrow",
+                                                    "yesterday",
+                                                    "one_week_ago",
+                                                    "one_week_from_now",
+                                                    "one_month_ago",
+                                                    "one_month_from_now"
+                                                  ],
+                                                  "description": "One of: `today`, `tomorrow`, `yesterday`, `one_week_ago`, `one_week_from_now`, `one_month_ago`, `one_month_from_now`"
+                                                }
+                                              },
+                                              "additionalProperties": false,
+                                              "required": [
+                                                "type",
+                                                "value"
+                                              ]
+                                            },
+                                            {
+                                              "type": "object",
+                                              "properties": {
+                                                "type": {
+                                                  "type": "string",
+                                                  "const": "exact",
+                                                  "description": "Always `exact`"
+                                                },
+                                                "value": {
+                                                  "oneOf": [
+                                                    {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "type": {
+                                                          "type": "string",
+                                                          "const": "date",
+                                                          "description": "Always `date`"
+                                                        },
+                                                        "start_date": {
+                                                          "type": "string",
+                                                          "examples": [
+                                                            "1990-12-28"
+                                                          ],
+                                                          "format": "date"
+                                                        }
+                                                      },
+                                                      "additionalProperties": false,
+                                                      "required": [
+                                                        "type",
+                                                        "start_date"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "type": {
+                                                          "type": "string",
+                                                          "const": "datetime",
+                                                          "description": "Always `datetime`"
+                                                        },
+                                                        "start_date": {
+                                                          "type": "string",
+                                                          "examples": [
+                                                            "1990-12-28"
+                                                          ],
+                                                          "format": "date"
+                                                        },
+                                                        "start_time": {
+                                                          "type": "string",
+                                                          "examples": [
+                                                            "09:30"
+                                                          ]
+                                                        },
+                                                        "time_zone": {
+                                                          "type": "string",
+                                                          "examples": [
+                                                            "America/Los_Angeles"
+                                                          ]
+                                                        }
+                                                      },
+                                                      "additionalProperties": false,
+                                                      "required": [
+                                                        "type",
+                                                        "start_date",
+                                                        "start_time",
+                                                        "time_zone"
+                                                      ]
+                                                    }
+                                                  ],
+                                                  "description": "Use the is_empty operator to match an unset date."
+                                                }
+                                              },
+                                              "additionalProperties": false,
+                                              "required": [
+                                                "type",
+                                                "value"
+                                              ]
+                                            }
+                                          ],
+                                          "description": "The date to compare against."
+                                        },
+                                        "use_end": {
+                                          "type": "boolean",
+                                          "description": "Compare against the end of a date range rather than its start."
+                                        }
+                                      },
+                                      "additionalProperties": false,
+                                      "required": [
+                                        "operator",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "operator": {
+                                          "type": "string",
+                                          "enum": [
+                                            "date_is_within",
+                                            "date_is_relative_to"
+                                          ],
+                                          "description": "How to compare the date against the range."
+                                        },
+                                        "value": {
+                                          "oneOf": [
+                                            {
+                                              "type": "object",
+                                              "properties": {
+                                                "type": {
+                                                  "type": "string",
+                                                  "const": "relative",
+                                                  "description": "Always `relative`"
+                                                },
+                                                "value": {
+                                                  "type": "string",
+                                                  "const": "custom",
+                                                  "description": "Always `custom`"
+                                                },
+                                                "direction": {
+                                                  "type": "string",
+                                                  "enum": [
+                                                    "past",
+                                                    "future"
+                                                  ],
+                                                  "description": "Whether the window runs backwards or forwards from now."
+                                                },
+                                                "unit": {
+                                                  "type": "string",
+                                                  "enum": [
+                                                    "year",
+                                                    "month",
+                                                    "week",
+                                                    "day"
+                                                  ],
+                                                  "description": "One of: `year`, `month`, `week`, `day`"
+                                                },
+                                                "count": {
+                                                  "type": "integer",
+                                                  "minimum": 1,
+                                                  "description": "How many units wide the window is."
+                                                }
+                                              },
+                                              "additionalProperties": false,
+                                              "required": [
+                                                "type",
+                                                "value",
+                                                "direction",
+                                                "unit",
+                                                "count"
+                                              ]
+                                            },
+                                            {
+                                              "type": "object",
+                                              "properties": {
+                                                "type": {
+                                                  "type": "string",
+                                                  "const": "relative",
+                                                  "description": "Always `relative`"
+                                                },
+                                                "value": {
+                                                  "type": "string",
+                                                  "const": "surrounding",
+                                                  "description": "Always `surrounding`"
+                                                },
+                                                "unit": {
+                                                  "type": "string",
+                                                  "enum": [
+                                                    "year",
+                                                    "month",
+                                                    "week",
+                                                    "day"
+                                                  ],
+                                                  "description": "One of: `year`, `month`, `week`, `day`"
+                                                }
+                                              },
+                                              "additionalProperties": false,
+                                              "required": [
+                                                "type",
+                                                "value",
+                                                "unit"
+                                              ]
+                                            },
+                                            {
+                                              "type": "object",
+                                              "properties": {
+                                                "type": {
+                                                  "type": "string",
+                                                  "const": "relative",
+                                                  "description": "Always `relative`"
+                                                },
+                                                "value": {
+                                                  "type": "string",
+                                                  "enum": [
+                                                    "this_week",
+                                                    "the_past_week",
+                                                    "the_past_month",
+                                                    "the_past_year",
+                                                    "the_next_week",
+                                                    "the_next_month",
+                                                    "the_next_year"
+                                                  ],
+                                                  "description": "One of: `this_week`, `the_past_week`, `the_past_month`, `the_past_year`, `the_next_week`, `the_next_month`, `the_next_year`"
+                                                }
+                                              },
+                                              "additionalProperties": false,
+                                              "required": [
+                                                "type",
+                                                "value"
+                                              ]
+                                            },
+                                            {
+                                              "type": "object",
+                                              "properties": {
+                                                "type": {
+                                                  "type": "string",
+                                                  "const": "exact",
+                                                  "description": "Always `exact`"
+                                                },
+                                                "value": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "type": {
+                                                      "type": "string",
+                                                      "const": "daterange",
+                                                      "description": "Always `daterange`"
+                                                    },
+                                                    "start_date": {
+                                                      "type": "string",
+                                                      "examples": [
+                                                        "1990-12-28"
+                                                      ],
+                                                      "format": "date"
+                                                    },
+                                                    "end_date": {
+                                                      "type": "string",
+                                                      "examples": [
+                                                        "1991-01-04"
+                                                      ],
+                                                      "format": "date"
+                                                    }
+                                                  },
+                                                  "additionalProperties": false,
+                                                  "required": [
+                                                    "type"
+                                                  ],
+                                                  "description": "Use the is_empty operator to match an unset date."
+                                                }
+                                              },
+                                              "additionalProperties": false,
+                                              "required": [
+                                                "type",
+                                                "value"
+                                              ]
+                                            }
+                                          ],
+                                          "description": "The range to compare against."
+                                        },
+                                        "use_end": {
+                                          "type": "boolean",
+                                          "description": "Compare against the end of a date range rather than its start."
+                                        }
+                                      },
+                                      "additionalProperties": false,
+                                      "required": [
+                                        "operator",
+                                        "value"
+                                      ]
+                                    },
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "operator": {
+                                          "type": "string",
+                                          "enum": [
+                                            "is_empty",
+                                            "is_not_empty"
+                                          ],
+                                          "description": "Whether the property must be empty or set."
+                                        }
+                                      },
+                                      "additionalProperties": false,
+                                      "required": [
+                                        "operator"
+                                      ]
+                                    }
+                                  ],
+                                  "description": "The comparison to apply. Use the arm matching the property's type."
+                                }
+                              },
+                              "additionalProperties": false,
+                              "required": [
+                                "property",
+                                "filter"
+                              ]
+                            },
                             {
                               "type": "object",
                               "properties": {
@@ -35074,644 +35556,501 @@
                                     "and",
                                     "or"
                                   ],
-                                  "description": "Operator for nested combinator filters."
+                                  "description": "Whether every child must match, or any of them."
                                 },
                                 "filters": {
                                   "type": "array",
                                   "items": {
-                                    "anyOf": [
-                                      {
-                                        "type": "object",
-                                        "properties": {
-                                          "property": {
-                                            "type": "string",
-                                            "description": "Property name."
-                                          },
-                                          "filter": {
+                                    "type": "object",
+                                    "properties": {
+                                      "property": {
+                                        "type": "string",
+                                        "enum": [
+                                          "title",
+                                          "attendees",
+                                          "created_time",
+                                          "created_by",
+                                          "last_edited_time",
+                                          "last_edited_by",
+                                          "notion://meeting_notes/attendees"
+                                        ],
+                                        "description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility."
+                                      },
+                                      "filter": {
+                                        "oneOf": [
+                                          {
                                             "type": "object",
                                             "properties": {
                                               "operator": {
                                                 "type": "string",
-                                                "description": "Operator."
+                                                "enum": [
+                                                  "string_is",
+                                                  "string_is_not",
+                                                  "string_contains",
+                                                  "string_does_not_contain",
+                                                  "string_starts_with",
+                                                  "string_ends_with"
+                                                ],
+                                                "description": "How to compare the text."
                                               },
                                               "value": {
-                                                "description": "Value for the operator.",
-                                                "anyOf": [
-                                                  {
-                                                    "type": "object",
-                                                    "description": "Single date/datetime filter value.",
-                                                    "properties": {
-                                                      "type": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                          "relative",
-                                                          "exact"
-                                                        ]
-                                                      },
-                                                      "value": {
-                                                        "anyOf": [
-                                                          {
-                                                            "type": "string"
-                                                          },
-                                                          {
-                                                            "type": "object",
-                                                            "properties": {
-                                                              "type": {
-                                                                "type": "string",
-                                                                "enum": [
-                                                                  "date",
-                                                                  "datetime"
-                                                                ]
-                                                              },
-                                                              "start_date": {
-                                                                "type": "string"
-                                                              },
-                                                              "start_time": {
-                                                                "type": "string"
-                                                              },
-                                                              "time_zone": {
-                                                                "type": "string"
-                                                              }
-                                                            },
-                                                            "required": [
-                                                              "type",
-                                                              "start_date"
-                                                            ]
-                                                          }
-                                                        ]
-                                                      }
-                                                    },
-                                                    "required": [
-                                                      "type",
-                                                      "value"
-                                                    ]
+                                                "type": "object",
+                                                "properties": {
+                                                  "type": {
+                                                    "type": "string",
+                                                    "const": "exact",
+                                                    "description": "Always `exact`"
                                                   },
-                                                  {
-                                                    "type": "object",
-                                                    "description": "Date range filter value.",
-                                                    "properties": {
-                                                      "type": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                          "relative",
-                                                          "exact"
-                                                        ]
-                                                      },
-                                                      "value": {
-                                                        "anyOf": [
-                                                          {
-                                                            "type": "string"
-                                                          },
-                                                          {
-                                                            "type": "object",
-                                                            "properties": {
-                                                              "type": {
-                                                                "type": "string",
-                                                                "enum": [
-                                                                  "daterange"
-                                                                ]
-                                                              },
-                                                              "start_date": {
-                                                                "type": "string"
-                                                              },
-                                                              "end_date": {
-                                                                "type": "string"
-                                                              }
-                                                            },
-                                                            "required": [
-                                                              "type",
-                                                              "start_date"
-                                                            ]
-                                                          }
-                                                        ]
-                                                      },
-                                                      "direction": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                          "past",
-                                                          "future"
-                                                        ]
-                                                      },
-                                                      "unit": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                          "day",
-                                                          "week",
-                                                          "month",
-                                                          "year"
-                                                        ]
-                                                      },
-                                                      "count": {
-                                                        "type": "number"
-                                                      }
-                                                    },
-                                                    "required": [
-                                                      "type",
-                                                      "value"
-                                                    ]
-                                                  },
-                                                  {
-                                                    "type": "object",
-                                                    "description": "Text filter value for string_contains and similar operators.",
-                                                    "properties": {
-                                                      "type": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                          "exact"
-                                                        ]
-                                                      },
-                                                      "value": {
-                                                        "type": "string",
-                                                        "description": "The text value to filter on."
-                                                      }
-                                                    },
-                                                    "required": [
-                                                      "type",
-                                                      "value"
-                                                    ]
-                                                  },
-                                                  {
-                                                    "type": "array",
-                                                    "description": "Array of person references for person_contains/person_does_not_contain filters.",
-                                                    "items": {
+                                                  "value": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                  "type",
+                                                  "value"
+                                                ],
+                                                "description": "The text to compare against."
+                                              }
+                                            },
+                                            "additionalProperties": false,
+                                            "required": [
+                                              "operator",
+                                              "value"
+                                            ]
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "operator": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "person_contains",
+                                                  "person_does_not_contain"
+                                                ],
+                                                "description": "Whether the property must contain the people listed."
+                                              },
+                                              "value": {
+                                                "type": "array",
+                                                "items": {
+                                                  "oneOf": [
+                                                    {
                                                       "type": "object",
                                                       "properties": {
                                                         "type": {
                                                           "type": "string",
-                                                          "enum": [
-                                                            "exact"
-                                                          ]
+                                                          "const": "exact",
+                                                          "description": "Always `exact`"
                                                         },
                                                         "value": {
                                                           "type": "object",
                                                           "properties": {
                                                             "table": {
                                                               "type": "string",
-                                                              "enum": [
-                                                                "notion_user"
-                                                              ]
+                                                              "const": "notion_user",
+                                                              "description": "Always `notion_user`"
                                                             },
                                                             "id": {
-                                                              "type": "string"
+                                                              "type": "string",
+                                                              "examples": [
+                                                                "3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e",
+                                                                "user://3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e"
+                                                              ],
+                                                              "description": "The user's ID, as a UUID or the `user://<uuid>` form returned by user search."
                                                             }
                                                           },
+                                                          "additionalProperties": false,
                                                           "required": [
                                                             "table",
                                                             "id"
                                                           ]
                                                         }
                                                       },
+                                                      "additionalProperties": false,
+                                                      "required": [
+                                                        "type",
+                                                        "value"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "type": {
+                                                          "type": "string",
+                                                          "const": "relative",
+                                                          "description": "Always `relative`"
+                                                        },
+                                                        "value": {
+                                                          "type": "string",
+                                                          "const": "me",
+                                                          "description": "Always `me`"
+                                                        }
+                                                      },
+                                                      "additionalProperties": false,
                                                       "required": [
                                                         "type",
                                                         "value"
                                                       ]
                                                     }
-                                                  }
-                                                ]
+                                                  ]
+                                                },
+                                                "maxItems": 100,
+                                                "description": "The people to compare against."
                                               }
                                             },
+                                            "additionalProperties": false,
+                                            "required": [
+                                              "operator",
+                                              "value"
+                                            ]
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "operator": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "date_is",
+                                                  "date_is_before",
+                                                  "date_is_after",
+                                                  "date_is_on_or_before",
+                                                  "date_is_on_or_after"
+                                                ],
+                                                "description": "How to compare the date."
+                                              },
+                                              "value": {
+                                                "oneOf": [
+                                                  {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "type": {
+                                                        "type": "string",
+                                                        "const": "relative",
+                                                        "description": "Always `relative`"
+                                                      },
+                                                      "value": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "today",
+                                                          "tomorrow",
+                                                          "yesterday",
+                                                          "one_week_ago",
+                                                          "one_week_from_now",
+                                                          "one_month_ago",
+                                                          "one_month_from_now"
+                                                        ],
+                                                        "description": "One of: `today`, `tomorrow`, `yesterday`, `one_week_ago`, `one_week_from_now`, `one_month_ago`, `one_month_from_now`"
+                                                      }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                      "type",
+                                                      "value"
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "type": {
+                                                        "type": "string",
+                                                        "const": "exact",
+                                                        "description": "Always `exact`"
+                                                      },
+                                                      "value": {
+                                                        "oneOf": [
+                                                          {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "type": {
+                                                                "type": "string",
+                                                                "const": "date",
+                                                                "description": "Always `date`"
+                                                              },
+                                                              "start_date": {
+                                                                "type": "string",
+                                                                "examples": [
+                                                                  "1990-12-28"
+                                                                ],
+                                                                "format": "date"
+                                                              }
+                                                            },
+                                                            "additionalProperties": false,
+                                                            "required": [
+                                                              "type",
+                                                              "start_date"
+                                                            ]
+                                                          },
+                                                          {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "type": {
+                                                                "type": "string",
+                                                                "const": "datetime",
+                                                                "description": "Always `datetime`"
+                                                              },
+                                                              "start_date": {
+                                                                "type": "string",
+                                                                "examples": [
+                                                                  "1990-12-28"
+                                                                ],
+                                                                "format": "date"
+                                                              },
+                                                              "start_time": {
+                                                                "type": "string",
+                                                                "examples": [
+                                                                  "09:30"
+                                                                ]
+                                                              },
+                                                              "time_zone": {
+                                                                "type": "string",
+                                                                "examples": [
+                                                                  "America/Los_Angeles"
+                                                                ]
+                                                              }
+                                                            },
+                                                            "additionalProperties": false,
+                                                            "required": [
+                                                              "type",
+                                                              "start_date",
+                                                              "start_time",
+                                                              "time_zone"
+                                                            ]
+                                                          }
+                                                        ],
+                                                        "description": "Use the is_empty operator to match an unset date."
+                                                      }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                      "type",
+                                                      "value"
+                                                    ]
+                                                  }
+                                                ],
+                                                "description": "The date to compare against."
+                                              },
+                                              "use_end": {
+                                                "type": "boolean",
+                                                "description": "Compare against the end of a date range rather than its start."
+                                              }
+                                            },
+                                            "additionalProperties": false,
+                                            "required": [
+                                              "operator",
+                                              "value"
+                                            ]
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "operator": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "date_is_within",
+                                                  "date_is_relative_to"
+                                                ],
+                                                "description": "How to compare the date against the range."
+                                              },
+                                              "value": {
+                                                "oneOf": [
+                                                  {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "type": {
+                                                        "type": "string",
+                                                        "const": "relative",
+                                                        "description": "Always `relative`"
+                                                      },
+                                                      "value": {
+                                                        "type": "string",
+                                                        "const": "custom",
+                                                        "description": "Always `custom`"
+                                                      },
+                                                      "direction": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "past",
+                                                          "future"
+                                                        ],
+                                                        "description": "Whether the window runs backwards or forwards from now."
+                                                      },
+                                                      "unit": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "year",
+                                                          "month",
+                                                          "week",
+                                                          "day"
+                                                        ],
+                                                        "description": "One of: `year`, `month`, `week`, `day`"
+                                                      },
+                                                      "count": {
+                                                        "type": "integer",
+                                                        "minimum": 1,
+                                                        "description": "How many units wide the window is."
+                                                      }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                      "type",
+                                                      "value",
+                                                      "direction",
+                                                      "unit",
+                                                      "count"
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "type": {
+                                                        "type": "string",
+                                                        "const": "relative",
+                                                        "description": "Always `relative`"
+                                                      },
+                                                      "value": {
+                                                        "type": "string",
+                                                        "const": "surrounding",
+                                                        "description": "Always `surrounding`"
+                                                      },
+                                                      "unit": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "year",
+                                                          "month",
+                                                          "week",
+                                                          "day"
+                                                        ],
+                                                        "description": "One of: `year`, `month`, `week`, `day`"
+                                                      }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                      "type",
+                                                      "value",
+                                                      "unit"
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "type": {
+                                                        "type": "string",
+                                                        "const": "relative",
+                                                        "description": "Always `relative`"
+                                                      },
+                                                      "value": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "this_week",
+                                                          "the_past_week",
+                                                          "the_past_month",
+                                                          "the_past_year",
+                                                          "the_next_week",
+                                                          "the_next_month",
+                                                          "the_next_year"
+                                                        ],
+                                                        "description": "One of: `this_week`, `the_past_week`, `the_past_month`, `the_past_year`, `the_next_week`, `the_next_month`, `the_next_year`"
+                                                      }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                      "type",
+                                                      "value"
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "type": {
+                                                        "type": "string",
+                                                        "const": "exact",
+                                                        "description": "Always `exact`"
+                                                      },
+                                                      "value": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "type": {
+                                                            "type": "string",
+                                                            "const": "daterange",
+                                                            "description": "Always `daterange`"
+                                                          },
+                                                          "start_date": {
+                                                            "type": "string",
+                                                            "examples": [
+                                                              "1990-12-28"
+                                                            ],
+                                                            "format": "date"
+                                                          },
+                                                          "end_date": {
+                                                            "type": "string",
+                                                            "examples": [
+                                                              "1991-01-04"
+                                                            ],
+                                                            "format": "date"
+                                                          }
+                                                        },
+                                                        "additionalProperties": false,
+                                                        "required": [
+                                                          "type"
+                                                        ],
+                                                        "description": "Use the is_empty operator to match an unset date."
+                                                      }
+                                                    },
+                                                    "additionalProperties": false,
+                                                    "required": [
+                                                      "type",
+                                                      "value"
+                                                    ]
+                                                  }
+                                                ],
+                                                "description": "The range to compare against."
+                                              },
+                                              "use_end": {
+                                                "type": "boolean",
+                                                "description": "Compare against the end of a date range rather than its start."
+                                              }
+                                            },
+                                            "additionalProperties": false,
+                                            "required": [
+                                              "operator",
+                                              "value"
+                                            ]
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "operator": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "is_empty",
+                                                  "is_not_empty"
+                                                ],
+                                                "description": "Whether the property must be empty or set."
+                                              }
+                                            },
+                                            "additionalProperties": false,
                                             "required": [
                                               "operator"
                                             ]
                                           }
-                                        },
-                                        "required": [
-                                          "property",
-                                          "filter"
-                                        ]
-                                      },
-                                      {
-                                        "type": "object",
-                                        "properties": {
-                                          "operator": {
-                                            "type": "string",
-                                            "enum": [
-                                              "and",
-                                              "or"
-                                            ],
-                                            "description": "Operator for nested combinator filters."
-                                          },
-                                          "filters": {
-                                            "type": "array",
-                                            "items": {
-                                              "anyOf": [
-                                                {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "property": {
-                                                      "type": "string",
-                                                      "description": "Property name."
-                                                    },
-                                                    "filter": {
-                                                      "type": "object",
-                                                      "properties": {
-                                                        "operator": {
-                                                          "type": "string",
-                                                          "description": "Operator."
-                                                        },
-                                                        "value": {
-                                                          "description": "Value for the operator.",
-                                                          "anyOf": [
-                                                            {
-                                                              "type": "object",
-                                                              "description": "Single date/datetime filter value.",
-                                                              "properties": {
-                                                                "type": {
-                                                                  "type": "string",
-                                                                  "enum": [
-                                                                    "relative",
-                                                                    "exact"
-                                                                  ]
-                                                                },
-                                                                "value": {
-                                                                  "anyOf": [
-                                                                    {
-                                                                      "type": "string"
-                                                                    },
-                                                                    {
-                                                                      "type": "object",
-                                                                      "properties": {
-                                                                        "type": {
-                                                                          "type": "string",
-                                                                          "enum": [
-                                                                            "date",
-                                                                            "datetime"
-                                                                          ]
-                                                                        },
-                                                                        "start_date": {
-                                                                          "type": "string"
-                                                                        },
-                                                                        "start_time": {
-                                                                          "type": "string"
-                                                                        },
-                                                                        "time_zone": {
-                                                                          "type": "string"
-                                                                        }
-                                                                      },
-                                                                      "required": [
-                                                                        "type",
-                                                                        "start_date"
-                                                                      ]
-                                                                    }
-                                                                  ]
-                                                                }
-                                                              },
-                                                              "required": [
-                                                                "type",
-                                                                "value"
-                                                              ]
-                                                            },
-                                                            {
-                                                              "type": "object",
-                                                              "description": "Date range filter value.",
-                                                              "properties": {
-                                                                "type": {
-                                                                  "type": "string",
-                                                                  "enum": [
-                                                                    "relative",
-                                                                    "exact"
-                                                                  ]
-                                                                },
-                                                                "value": {
-                                                                  "anyOf": [
-                                                                    {
-                                                                      "type": "string"
-                                                                    },
-                                                                    {
-                                                                      "type": "object",
-                                                                      "properties": {
-                                                                        "type": {
-                                                                          "type": "string",
-                                                                          "enum": [
-                                                                            "daterange"
-                                                                          ]
-                                                                        },
-                                                                        "start_date": {
-                                                                          "type": "string"
-                                                                        },
-                                                                        "end_date": {
-                                                                          "type": "string"
-                                                                        }
-                                                                      },
-                                                                      "required": [
-                                                                        "type",
-                                                                        "start_date"
-                                                                      ]
-                                                                    }
-                                                                  ]
-                                                                },
-                                                                "direction": {
-                                                                  "type": "string",
-                                                                  "enum": [
-                                                                    "past",
-                                                                    "future"
-                                                                  ]
-                                                                },
-                                                                "unit": {
-                                                                  "type": "string",
-                                                                  "enum": [
-                                                                    "day",
-                                                                    "week",
-                                                                    "month",
-                                                                    "year"
-                                                                  ]
-                                                                },
-                                                                "count": {
-                                                                  "type": "number"
-                                                                }
-                                                              },
-                                                              "required": [
-                                                                "type",
-                                                                "value"
-                                                              ]
-                                                            },
-                                                            {
-                                                              "type": "object",
-                                                              "description": "Text filter value for string_contains and similar operators.",
-                                                              "properties": {
-                                                                "type": {
-                                                                  "type": "string",
-                                                                  "enum": [
-                                                                    "exact"
-                                                                  ]
-                                                                },
-                                                                "value": {
-                                                                  "type": "string",
-                                                                  "description": "The text value to filter on."
-                                                                }
-                                                              },
-                                                              "required": [
-                                                                "type",
-                                                                "value"
-                                                              ]
-                                                            },
-                                                            {
-                                                              "type": "array",
-                                                              "description": "Array of person references for person_contains/person_does_not_contain filters.",
-                                                              "items": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                  "type": {
-                                                                    "type": "string",
-                                                                    "enum": [
-                                                                      "exact"
-                                                                    ]
-                                                                  },
-                                                                  "value": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                      "table": {
-                                                                        "type": "string",
-                                                                        "enum": [
-                                                                          "notion_user"
-                                                                        ]
-                                                                      },
-                                                                      "id": {
-                                                                        "type": "string"
-                                                                      }
-                                                                    },
-                                                                    "required": [
-                                                                      "table",
-                                                                      "id"
-                                                                    ]
-                                                                  }
-                                                                },
-                                                                "required": [
-                                                                  "type",
-                                                                  "value"
-                                                                ]
-                                                              }
-                                                            }
-                                                          ]
-                                                        }
-                                                      },
-                                                      "required": [
-                                                        "operator"
-                                                      ]
-                                                    }
-                                                  },
-                                                  "required": [
-                                                    "property",
-                                                    "filter"
-                                                  ]
-                                                }
-                                              ]
-                                            }
-                                          }
-                                        },
-                                        "required": [
-                                          "operator",
-                                          "filters"
-                                        ]
+                                        ],
+                                        "description": "The comparison to apply. Use the arm matching the property's type."
                                       }
+                                    },
+                                    "additionalProperties": false,
+                                    "required": [
+                                      "property",
+                                      "filter"
                                     ]
                                   },
-                                  "description": "Nested filters for combinator filters."
+                                  "maxItems": 100,
+                                  "description": "The conditions in this group. A group with no conditions matches nothing, so send at least one."
                                 }
                               },
+                              "additionalProperties": false,
                               "required": [
                                 "operator",
                                 "filters"
-                              ]
-                            },
-                            {
-                              "type": "object",
-                              "properties": {
-                                "property": {
-                                  "type": "string",
-                                  "description": "Property name."
-                                },
-                                "filter": {
-                                  "type": "object",
-                                  "properties": {
-                                    "operator": {
-                                      "type": "string",
-                                      "description": "Operator."
-                                    },
-                                    "value": {
-                                      "description": "Value for the operator.",
-                                      "anyOf": [
-                                        {
-                                          "type": "object",
-                                          "description": "Single date/datetime filter value.",
-                                          "properties": {
-                                            "type": {
-                                              "type": "string",
-                                              "enum": [
-                                                "relative",
-                                                "exact"
-                                              ]
-                                            },
-                                            "value": {
-                                              "anyOf": [
-                                                {
-                                                  "type": "string"
-                                                },
-                                                {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "type": {
-                                                      "type": "string",
-                                                      "enum": [
-                                                        "date",
-                                                        "datetime"
-                                                      ]
-                                                    },
-                                                    "start_date": {
-                                                      "type": "string"
-                                                    },
-                                                    "start_time": {
-                                                      "type": "string"
-                                                    },
-                                                    "time_zone": {
-                                                      "type": "string"
-                                                    }
-                                                  },
-                                                  "required": [
-                                                    "type",
-                                                    "start_date"
-                                                  ]
-                                                }
-                                              ]
-                                            }
-                                          },
-                                          "required": [
-                                            "type",
-                                            "value"
-                                          ]
-                                        },
-                                        {
-                                          "type": "object",
-                                          "description": "Date range filter value.",
-                                          "properties": {
-                                            "type": {
-                                              "type": "string",
-                                              "enum": [
-                                                "relative",
-                                                "exact"
-                                              ]
-                                            },
-                                            "value": {
-                                              "anyOf": [
-                                                {
-                                                  "type": "string"
-                                                },
-                                                {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "type": {
-                                                      "type": "string",
-                                                      "enum": [
-                                                        "daterange"
-                                                      ]
-                                                    },
-                                                    "start_date": {
-                                                      "type": "string"
-                                                    },
-                                                    "end_date": {
-                                                      "type": "string"
-                                                    }
-                                                  },
-                                                  "required": [
-                                                    "type",
-                                                    "start_date"
-                                                  ]
-                                                }
-                                              ]
-                                            },
-                                            "direction": {
-                                              "type": "string",
-                                              "enum": [
-                                                "past",
-                                                "future"
-                                              ]
-                                            },
-                                            "unit": {
-                                              "type": "string",
-                                              "enum": [
-                                                "day",
-                                                "week",
-                                                "month",
-                                                "year"
-                                              ]
-                                            },
-                                            "count": {
-                                              "type": "number"
-                                            }
-                                          },
-                                          "required": [
-                                            "type",
-                                            "value"
-                                          ]
-                                        },
-                                        {
-                                          "type": "object",
-                                          "description": "Text filter value for string_contains and similar operators.",
-                                          "properties": {
-                                            "type": {
-                                              "type": "string",
-                                              "enum": [
-                                                "exact"
-                                              ]
-                                            },
-                                            "value": {
-                                              "type": "string",
-                                              "description": "The text value to filter on."
-                                            }
-                                          },
-                                          "required": [
-                                            "type",
-                                            "value"
-                                          ]
-                                        },
-                                        {
-                                          "type": "array",
-                                          "description": "Array of person references for person_contains/person_does_not_contain filters.",
-                                          "items": {
-                                            "type": "object",
-                                            "properties": {
-                                              "type": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "exact"
-                                                ]
-                                              },
-                                              "value": {
-                                                "type": "object",
-                                                "properties": {
-                                                  "table": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "notion_user"
-                                                    ]
-                                                  },
-                                                  "id": {
-                                                    "type": "string"
-                                                  }
-                                                },
-                                                "required": [
-                                                  "table",
-                                                  "id"
-                                                ]
-                                              }
-                                            },
-                                            "required": [
-                                              "type",
-                                              "value"
-                                            ]
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  "required": [
-                                    "operator"
-                                  ]
-                                }
-                              },
-                              "required": [
-                                "property",
-                                "filter"
                               ]
                             }
                           ]

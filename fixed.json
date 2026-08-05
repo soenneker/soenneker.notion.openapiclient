@@ -8564,7 +8564,8 @@
             }
           },
           "boolean": {
-            "$ref": "#/components/schemas/BooleanFormulaPropertyValueResponseBoolean"
+            "type": "boolean",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -8589,7 +8590,9 @@
             "$ref": "#/components/schemas/BotInfoResponseWorkspaceLimits"
           },
           "workspace_name": {
-            "$ref": "#/components/schemas/BotInfoResponseWorkspaceName"
+            "type": "string",
+            "description": "The name of the bot\u0027s workspace.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -8931,7 +8934,9 @@
             "$ref": "#/components/schemas/CalendarViewConfigRequestViewRange"
           },
           "show_weekends": {
-            "$ref": "#/components/schemas/CalendarViewConfigRequestShowWeekends"
+            "type": "boolean",
+            "description": "Whether to show weekend days. Pass null to clear.",
+            "nullable": true
           }
         }
       },
@@ -9191,10 +9196,14 @@
             "$ref": "#/components/schemas/ChartViewConfigRequestYAxis"
           },
           "x_axis_property_id": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestXAxisPropertyId"
+            "type": "string",
+            "description": "Property ID for x-axis values in results mode. Pass null to clear.",
+            "nullable": true
           },
           "y_axis_property_id": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestYAxisPropertyId"
+            "type": "string",
+            "description": "Property ID for y-axis values in results mode. Pass null to clear.",
+            "nullable": true
           },
           "value": {
             "$ref": "#/components/schemas/ChartViewConfigRequestValue"
@@ -9209,13 +9218,17 @@
             "$ref": "#/components/schemas/ChartViewConfigRequestHeight"
           },
           "hide_empty_groups": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestHideEmptyGroups"
+            "type": "boolean",
+            "description": "Whether to hide groups with no data. Pass null to clear.",
+            "nullable": true
           },
           "legend_position": {
             "$ref": "#/components/schemas/ChartViewConfigRequestLegendPosition"
           },
           "show_data_labels": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestShowDataLabels"
+            "type": "boolean",
+            "description": "Whether to show data labels. Pass null to clear.",
+            "nullable": true
           },
           "axis_labels": {
             "$ref": "#/components/schemas/ChartViewConfigRequestAxisLabels"
@@ -9224,28 +9237,40 @@
             "$ref": "#/components/schemas/ChartViewConfigRequestGridLines"
           },
           "cumulative": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestCumulative"
+            "type": "boolean",
+            "description": "Cumulative values (line only). Pass null to clear.",
+            "nullable": true
           },
           "smooth_line": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestSmoothLine"
+            "type": "boolean",
+            "description": "Smooth line curves (line only). Pass null to clear.",
+            "nullable": true
           },
           "hide_line_fill_area": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestHideLineFillArea"
+            "type": "boolean",
+            "description": "Hide area fill (line only). Pass null to clear.",
+            "nullable": true
           },
           "group_style": {
             "$ref": "#/components/schemas/ChartViewConfigRequestGroupStyle"
           },
           "y_axis_min": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestYAxisMin"
+            "type": "number",
+            "description": "Custom y-axis minimum. Pass null to clear.",
+            "nullable": true
           },
           "y_axis_max": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestYAxisMax"
+            "type": "number",
+            "description": "Custom y-axis maximum. Pass null to clear.",
+            "nullable": true
           },
           "donut_labels": {
             "$ref": "#/components/schemas/ChartViewConfigRequestDonutLabels"
           },
           "hide_title": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestHideTitle"
+            "type": "boolean",
+            "description": "Hide title (number only). Pass null to clear.",
+            "nullable": true
           },
           "stack_by": {
             "$ref": "#/components/schemas/ChartViewConfigRequestStackBy"
@@ -9254,10 +9279,14 @@
             "$ref": "#/components/schemas/ChartViewConfigRequestReferenceLines"
           },
           "caption": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestCaption"
+            "type": "string",
+            "description": "Chart caption text. Pass null to clear.",
+            "nullable": true
           },
           "color_by_value": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestColorByValue"
+            "type": "boolean",
+            "description": "Whether to color chart elements by their numeric value (gradient coloring). Pass null to clear.",
+            "nullable": true
           }
         }
       },
@@ -9347,10 +9376,14 @@
             "$ref": "#/components/schemas/ChartViewConfigResponseGroupStyle"
           },
           "y_axis_min": {
-            "$ref": "#/components/schemas/ChartViewConfigResponseYAxisMin"
+            "type": "number",
+            "description": "Custom minimum value for the y-axis. Null clears the override.",
+            "nullable": true
           },
           "y_axis_max": {
-            "$ref": "#/components/schemas/ChartViewConfigResponseYAxisMax"
+            "type": "number",
+            "description": "Custom maximum value for the y-axis. Null clears the override.",
+            "nullable": true
           },
           "donut_labels": {
             "$ref": "#/components/schemas/ChartViewConfigResponseDonutLabels"
@@ -9366,7 +9399,9 @@
             "$ref": "#/components/schemas/ChartViewConfigResponseReferenceLines"
           },
           "caption": {
-            "$ref": "#/components/schemas/ChartViewConfigResponseCaption"
+            "type": "string",
+            "description": "Text caption displayed below the chart. Null when no caption is shown.",
+            "nullable": true
           },
           "color_by_value": {
             "type": "boolean",
@@ -11788,7 +11823,9 @@
             "description": "The URL of the data source."
           },
           "public_url": {
-            "$ref": "#/components/schemas/DataSourceObjectResponsePublicUrl"
+            "type": "string",
+            "description": "The public URL of the data source if it is publicly accessible.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -12084,7 +12121,9 @@
             "description": "Canonical deep link to the view in Notion."
           },
           "data_source_id": {
-            "$ref": "#/components/schemas/DataSourceViewObjectResponseDataSourceId"
+            "type": "string",
+            "description": "The ID of the data source this view is scoped to, or null for dashboard views.",
+            "nullable": true
           },
           "created_by": {
             "$ref": "#/components/schemas/DataSourceViewObjectResponseCreatedBy"
@@ -12599,7 +12638,9 @@
             "description": "The URL of the database."
           },
           "public_url": {
-            "$ref": "#/components/schemas/DatabaseObjectResponsePublicUrl"
+            "type": "string",
+            "description": "The public URL of the database if it is publicly accessible.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -12722,7 +12763,10 @@
             "description": "The name of the property."
           },
           "description": {
-            "$ref": "#/components/schemas/DatabasePropertyConfigResponseCommonDescription"
+            "maxLength": 280,
+            "type": "string",
+            "description": "The description of the property.",
+            "nullable": true
           }
         }
       },
@@ -12743,7 +12787,10 @@
             "description": "The name of the property."
           },
           "description": {
-            "$ref": "#/components/schemas/DatabasePropertyConfigResponseCommonDescription"
+            "maxLength": 280,
+            "type": "string",
+            "description": "The description of the property.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -13328,10 +13375,15 @@
             "format": "date"
           },
           "end": {
-            "$ref": "#/components/schemas/DateRequestEnd"
+            "type": "string",
+            "description": "The end date of the date object, if any.",
+            "format": "date",
+            "nullable": true
           },
           "time_zone": {
-            "$ref": "#/components/schemas/DateRequestTimeZone"
+            "type": "string",
+            "description": "The time zone of the date object, if any. E.g. America/Los_Angeles, Europe/London, etc.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -13350,10 +13402,15 @@
             "format": "date"
           },
           "end": {
-            "$ref": "#/components/schemas/DateResponseEnd"
+            "type": "string",
+            "description": "The end date of the date object, if any.",
+            "format": "date",
+            "nullable": true
           },
           "time_zone": {
-            "$ref": "#/components/schemas/DateResponseTimeZone"
+            "type": "string",
+            "description": "The time zone of the date object.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -13671,7 +13728,8 @@
             }
           },
           "email": {
-            "$ref": "#/components/schemas/EmailSimplePropertyValueResponseEmail"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -15279,19 +15337,26 @@
             "type": "boolean"
           },
           "expiry_time": {
-            "$ref": "#/components/schemas/FileUploadObjectResponseExpiryTime"
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           },
           "status": {
             "$ref": "#/components/schemas/FileUploadObjectResponseStatus"
           },
           "filename": {
-            "$ref": "#/components/schemas/FileUploadObjectResponseFilename"
+            "type": "string",
+            "nullable": true
           },
           "content_type": {
-            "$ref": "#/components/schemas/FileUploadObjectResponseContentType"
+            "type": "string",
+            "nullable": true
           },
           "content_length": {
-            "$ref": "#/components/schemas/FileUploadObjectResponseContentLength"
+            "minimum": 0,
+            "exclusiveMinimum": false,
+            "type": "integer",
+            "nullable": true
           },
           "upload_url": {
             "type": "string"
@@ -15659,10 +15724,14 @@
             }
           },
           "is_form_closed": {
-            "$ref": "#/components/schemas/FormViewConfigRequestIsFormClosed"
+            "type": "boolean",
+            "description": "Whether the form is closed for submissions. Pass null to clear.",
+            "nullable": true
           },
           "anonymous_submissions": {
-            "$ref": "#/components/schemas/FormViewConfigRequestAnonymousSubmissions"
+            "type": "boolean",
+            "description": "Whether anonymous (non-logged-in) submissions are allowed. Pass null to clear.",
+            "nullable": true
           },
           "submission_permissions": {
             "$ref": "#/components/schemas/FormViewConfigRequestSubmissionPermissions"
@@ -16619,7 +16688,9 @@
             }
           },
           "name": {
-            "$ref": "#/components/schemas/GroupObjectResponseName"
+            "type": "string",
+            "description": "The name of the group.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -18514,7 +18585,9 @@
             "$ref": "#/components/schemas/MapViewConfigRequestHeight"
           },
           "map_by": {
-            "$ref": "#/components/schemas/MapViewConfigRequestMapBy"
+            "type": "string",
+            "description": "Property ID of the location property used to position items on the map. Pass null to clear.",
+            "nullable": true
           },
           "properties": {
             "$ref": "#/components/schemas/MapViewConfigRequestProperties"
@@ -19328,7 +19401,8 @@
             }
           },
           "number": {
-            "$ref": "#/components/schemas/NumberFormulaPropertyValueResponseNumber"
+            "type": "number",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -19466,7 +19540,8 @@
             }
           },
           "number": {
-            "$ref": "#/components/schemas/NumberPartialRollupValueResponseNumber"
+            "type": "number",
+            "nullable": true
           }
         }
       },
@@ -19622,7 +19697,8 @@
             }
           },
           "number": {
-            "$ref": "#/components/schemas/NumberSimplePropertyValueResponseNumber"
+            "type": "number",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -20494,7 +20570,9 @@
             "description": "The URL of the Notion page."
           },
           "public_url": {
-            "$ref": "#/components/schemas/PageObjectResponsePublicUrl"
+            "type": "string",
+            "description": "The public URL of the Notion page, if it has been published to the web.",
+            "nullable": true
           },
           "parent": {
             "$ref": "#/components/schemas/ParentForBlockBasedObjectResponse"
@@ -22056,7 +22134,8 @@
             }
           },
           "phone_number": {
-            "$ref": "#/components/schemas/PhoneNumberSimplePropertyValueResponsePhoneNumber"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -22154,16 +22233,20 @@
             "type": "number"
           },
           "name": {
-            "$ref": "#/components/schemas/PlacePropertyValueResponseName"
+            "type": "string",
+            "nullable": true
           },
           "address": {
-            "$ref": "#/components/schemas/PlacePropertyValueResponseAddress"
+            "type": "string",
+            "nullable": true
           },
           "aws_place_id": {
-            "$ref": "#/components/schemas/PlacePropertyValueResponseAwsPlaceId"
+            "type": "string",
+            "nullable": true
           },
           "google_place_id": {
-            "$ref": "#/components/schemas/PlacePropertyValueResponseGooglePlaceId"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -22288,7 +22371,10 @@
         ],
         "properties": {
           "description": {
-            "$ref": "#/components/schemas/PropertyConfigurationRequestCommonDescription"
+            "maxLength": 280,
+            "type": "string",
+            "description": "The description of the property.",
+            "nullable": true
           }
         }
       },
@@ -22296,7 +22382,10 @@
         "type": "object",
         "properties": {
           "description": {
-            "$ref": "#/components/schemas/PropertyConfigurationRequestCommonDescription"
+            "maxLength": 280,
+            "type": "string",
+            "description": "The description of the property.",
+            "nullable": true
           }
         }
       },
@@ -23308,7 +23397,9 @@
             "description": "The plain text content of the rich text object, without any styling."
           },
           "href": {
-            "$ref": "#/components/schemas/RichTextItemResponseCommonHref"
+            "type": "string",
+            "description": "A URL that the rich text object links to or mentions.",
+            "nullable": true
           },
           "annotations": {
             "$ref": "#/components/schemas/AnnotationResponse"
@@ -23328,7 +23419,9 @@
             "description": "The plain text content of the rich text object, without any styling."
           },
           "href": {
-            "$ref": "#/components/schemas/RichTextItemResponseCommonHref"
+            "type": "string",
+            "description": "A URL that the rich text object links to or mentions.",
+            "nullable": true
           },
           "annotations": {
             "$ref": "#/components/schemas/AnnotationResponse"
@@ -24032,7 +24125,8 @@
             "$ref": "#/components/schemas/SelectColor"
           },
           "description": {
-            "$ref": "#/components/schemas/SelectPropertyResponseDescription"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -24399,7 +24493,8 @@
             "$ref": "#/components/schemas/SelectColor"
           },
           "description": {
-            "$ref": "#/components/schemas/StatusOptionRequestDescription"
+            "type": "string",
+            "nullable": true
           },
           "group": {
             "$ref": "#/components/schemas/StatusOptionGroup"
@@ -24433,7 +24528,8 @@
             "$ref": "#/components/schemas/SelectColor"
           },
           "description": {
-            "$ref": "#/components/schemas/StatusOptionUpdateRequestCommonDescription"
+            "type": "string",
+            "nullable": true
           },
           "group": {
             "$ref": "#/components/schemas/StatusOptionGroup"
@@ -24454,7 +24550,8 @@
             "$ref": "#/components/schemas/SelectColor"
           },
           "description": {
-            "$ref": "#/components/schemas/StatusOptionUpdateRequestCommonDescription"
+            "type": "string",
+            "nullable": true
           },
           "group": {
             "$ref": "#/components/schemas/StatusOptionGroup"
@@ -24619,7 +24716,9 @@
             "$ref": "#/components/schemas/SelectColor"
           },
           "description": {
-            "$ref": "#/components/schemas/StatusPropertyResponseDescription"
+            "type": "string",
+            "description": "The description of the status option.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -24711,7 +24810,8 @@
             }
           },
           "string": {
-            "$ref": "#/components/schemas/StringFormulaPropertyValueResponseString"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -26070,7 +26170,9 @@
         "type": "object",
         "properties": {
           "property_id": {
-            "$ref": "#/components/schemas/TimelineArrowsByRequestPropertyId"
+            "type": "string",
+            "description": "Relation property ID used for dependency arrows, or null to disable arrows.",
+            "nullable": true
           }
         }
       },
@@ -26078,7 +26180,9 @@
         "type": "object",
         "properties": {
           "property_id": {
-            "$ref": "#/components/schemas/TimelineArrowsByResponsePropertyId"
+            "type": "string",
+            "description": "Relation property ID used for dependency arrows.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -26144,13 +26248,17 @@
             "description": "Property ID of the date property used for the start of timeline items."
           },
           "end_date_property_id": {
-            "$ref": "#/components/schemas/TimelineViewConfigRequestEndDatePropertyId"
+            "type": "string",
+            "description": "Property ID of the date property used for the end of timeline items. Pass null to clear.",
+            "nullable": true
           },
           "properties": {
             "$ref": "#/components/schemas/TimelineViewConfigRequestProperties"
           },
           "show_table": {
-            "$ref": "#/components/schemas/TimelineViewConfigRequestShowTable"
+            "type": "boolean",
+            "description": "Whether to show the table panel alongside the timeline. Pass null to clear.",
+            "nullable": true
           },
           "table_properties": {
             "$ref": "#/components/schemas/TimelineViewConfigRequestTableProperties"
@@ -26162,7 +26270,9 @@
             "$ref": "#/components/schemas/TimelineViewConfigRequestArrowsBy"
           },
           "color_by": {
-            "$ref": "#/components/schemas/TimelineViewConfigRequestColorBy"
+            "type": "boolean",
+            "description": "Whether to color timeline items by a property. Pass null to clear.",
+            "nullable": true
           }
         }
       },
@@ -26883,10 +26993,12 @@
         "type": "object",
         "properties": {
           "prefix": {
-            "$ref": "#/components/schemas/UniqueIdPropertyValueResponsePrefix"
+            "type": "string",
+            "nullable": true
           },
           "number": {
-            "$ref": "#/components/schemas/UniqueIdPropertyValueResponseNumber"
+            "type": "number",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -27237,7 +27349,8 @@
             }
           },
           "url": {
-            "$ref": "#/components/schemas/UrlSimplePropertyValueResponseUrl"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -27286,10 +27399,14 @@
             }
           },
           "name": {
-            "$ref": "#/components/schemas/UserObjectResponseCommonName"
+            "type": "string",
+            "description": "The name of the user.",
+            "nullable": true
           },
           "avatar_url": {
-            "$ref": "#/components/schemas/UserObjectResponseCommonAvatarUrl"
+            "type": "string",
+            "description": "The avatar URL of the user.",
+            "nullable": true
           }
         }
       },
@@ -27324,10 +27441,14 @@
             }
           },
           "name": {
-            "$ref": "#/components/schemas/UserObjectResponseCommonName"
+            "type": "string",
+            "description": "The name of the user.",
+            "nullable": true
           },
           "avatar_url": {
-            "$ref": "#/components/schemas/UserObjectResponseCommonAvatarUrl"
+            "type": "string",
+            "description": "The avatar URL of the user.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -28169,7 +28290,10 @@
             "description": "The page results for this page."
           },
           "next_cursor": {
-            "$ref": "#/components/schemas/ViewQueryResponseNextCursor"
+            "type": "string",
+            "description": "Cursor for the next page of results.",
+            "format": "uuid",
+            "nullable": true
           },
           "has_more": {
             "type": "boolean",
@@ -32316,87 +32440,6 @@
           }
         }
       },
-      "BoardViewConfigRequestCoverSize": {
-        "enum": [
-          "small",
-          "medium",
-          "large"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Size of the cover image on cards. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "BoardViewConfigRequestCoverSize",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "small",
-              "name": "Small"
-            },
-            {
-              "value": "medium",
-              "name": "Medium"
-            },
-            {
-              "value": "large",
-              "name": "Large"
-            }
-          ]
-        }
-      },
-      "BoardViewConfigRequestCoverAspect": {
-        "enum": [
-          "contain",
-          "cover"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Aspect ratio mode for cover images. \u0022contain\u0022 fits the image, \u0022cover\u0022 fills the area. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "BoardViewConfigRequestCoverAspect",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "contain",
-              "name": "Contain"
-            },
-            {
-              "value": "cover",
-              "name": "Cover"
-            }
-          ]
-        }
-      },
-      "BoardViewConfigRequestCardLayout": {
-        "enum": [
-          "list",
-          "compact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Card layout mode. \u0022list\u0022 shows full cards, \u0022compact\u0022 shows condensed cards. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "BoardViewConfigRequestCardLayout",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "list",
-              "name": "List"
-            },
-            {
-              "value": "compact",
-              "name": "Compact"
-            }
-          ]
-        }
-      },
-      "BooleanFormulaPropertyValueResponseBoolean": {
-        "type": "boolean",
-        "nullable": true
-      },
       "BotInfoResponseOwner": {
         "required": [
           "type"
@@ -32424,11 +32467,6 @@
             "BotInfoResponseOwnerWorkspace": "#/components/schemas/BotInfoResponseOwnerWorkspace"
           }
         }
-      },
-      "BotInfoResponseWorkspaceName": {
-        "type": "string",
-        "description": "The name of the bot\u0027s workspace.",
-        "nullable": true
       },
       "BotUserObjectResponseBot": {
         "required": [
@@ -32475,35 +32513,6 @@
           }
         ],
         "description": "Property visibility and display configuration on calendar cards. Pass null to clear."
-      },
-      "CalendarViewConfigRequestViewRange": {
-        "enum": [
-          "week",
-          "month"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Default calendar range. \u0022week\u0022 shows a week view, \u0022month\u0022 shows a month view. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "CalendarViewConfigRequestViewRange",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "week",
-              "name": "Week"
-            },
-            {
-              "value": "month",
-              "name": "Month"
-            }
-          ]
-        }
-      },
-      "CalendarViewConfigRequestShowWeekends": {
-        "type": "boolean",
-        "description": "Whether to show weekend days. Pass null to clear.",
-        "nullable": true
       },
       "CalloutBlockObjectResponseCalloutIcon": {
         "required": [
@@ -32591,16 +32600,6 @@
           }
         }
       },
-      "ChartViewConfigRequestXAxisPropertyId": {
-        "type": "string",
-        "description": "Property ID for x-axis values in results mode. Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestYAxisPropertyId": {
-        "type": "string",
-        "description": "Property ID for y-axis values in results mode. Pass null to clear.",
-        "nullable": true
-      },
       "ChartViewConfigRequestValue": {
         "required": [
           "type"
@@ -32629,348 +32628,6 @@
             "ChartAggregationRequest": "#/components/schemas/ChartAggregationRequest"
           }
         }
-      },
-      "ChartViewConfigRequestSort": {
-        "enum": [
-          "manual",
-          "x_ascending",
-          "x_descending",
-          "y_ascending",
-          "y_descending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Sort order for chart data. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "ChartViewConfigRequestSort",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "manual",
-              "name": "Manual"
-            },
-            {
-              "value": "x_ascending",
-              "name": "XAscending"
-            },
-            {
-              "value": "x_descending",
-              "name": "XDescending"
-            },
-            {
-              "value": "y_ascending",
-              "name": "YAscending"
-            },
-            {
-              "value": "y_descending",
-              "name": "YDescending"
-            }
-          ]
-        }
-      },
-      "ChartViewConfigRequestColorTheme": {
-        "enum": [
-          "gray",
-          "blue",
-          "yellow",
-          "green",
-          "purple",
-          "teal",
-          "orange",
-          "pink",
-          "red",
-          "auto",
-          "colorful"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Color theme. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "ChartViewConfigRequestColorTheme",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "gray",
-              "name": "Gray"
-            },
-            {
-              "value": "blue",
-              "name": "Blue"
-            },
-            {
-              "value": "yellow",
-              "name": "Yellow"
-            },
-            {
-              "value": "green",
-              "name": "Green"
-            },
-            {
-              "value": "purple",
-              "name": "Purple"
-            },
-            {
-              "value": "teal",
-              "name": "Teal"
-            },
-            {
-              "value": "orange",
-              "name": "Orange"
-            },
-            {
-              "value": "pink",
-              "name": "Pink"
-            },
-            {
-              "value": "red",
-              "name": "Red"
-            },
-            {
-              "value": "auto",
-              "name": "Auto"
-            },
-            {
-              "value": "colorful",
-              "name": "Colorful"
-            }
-          ]
-        }
-      },
-      "ChartViewConfigRequestHeight": {
-        "enum": [
-          "small",
-          "medium",
-          "large",
-          "extra_large"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Chart height. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "ChartViewConfigRequestHeight",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "small",
-              "name": "Small"
-            },
-            {
-              "value": "medium",
-              "name": "Medium"
-            },
-            {
-              "value": "large",
-              "name": "Large"
-            },
-            {
-              "value": "extra_large",
-              "name": "ExtraLarge"
-            }
-          ]
-        }
-      },
-      "ChartViewConfigRequestHideEmptyGroups": {
-        "type": "boolean",
-        "description": "Whether to hide groups with no data. Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestLegendPosition": {
-        "enum": [
-          "off",
-          "bottom",
-          "side"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Legend position. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "ChartViewConfigRequestLegendPosition",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "off",
-              "name": "Off"
-            },
-            {
-              "value": "bottom",
-              "name": "Bottom"
-            },
-            {
-              "value": "side",
-              "name": "Side"
-            }
-          ]
-        }
-      },
-      "ChartViewConfigRequestShowDataLabels": {
-        "type": "boolean",
-        "description": "Whether to show data labels. Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestAxisLabels": {
-        "enum": [
-          "none",
-          "x_axis",
-          "y_axis",
-          "both"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Which axis labels to show. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "ChartViewConfigRequestAxisLabels",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "none",
-              "name": "None"
-            },
-            {
-              "value": "x_axis",
-              "name": "XAxis"
-            },
-            {
-              "value": "y_axis",
-              "name": "YAxis"
-            },
-            {
-              "value": "both",
-              "name": "Both"
-            }
-          ]
-        }
-      },
-      "ChartViewConfigRequestGridLines": {
-        "enum": [
-          "none",
-          "horizontal",
-          "vertical",
-          "both"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Which grid lines to show. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "ChartViewConfigRequestGridLines",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "none",
-              "name": "None"
-            },
-            {
-              "value": "horizontal",
-              "name": "Horizontal"
-            },
-            {
-              "value": "vertical",
-              "name": "Vertical"
-            },
-            {
-              "value": "both",
-              "name": "Both"
-            }
-          ]
-        }
-      },
-      "ChartViewConfigRequestCumulative": {
-        "type": "boolean",
-        "description": "Cumulative values (line only). Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestSmoothLine": {
-        "type": "boolean",
-        "description": "Smooth line curves (line only). Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestHideLineFillArea": {
-        "type": "boolean",
-        "description": "Hide area fill (line only). Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestGroupStyle": {
-        "enum": [
-          "normal",
-          "percent",
-          "side_by_side"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Grouped/stacked bar display style. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "ChartViewConfigRequestGroupStyle",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "normal",
-              "name": "Normal"
-            },
-            {
-              "value": "percent",
-              "name": "Percent"
-            },
-            {
-              "value": "side_by_side",
-              "name": "SideBySide"
-            }
-          ]
-        }
-      },
-      "ChartViewConfigRequestYAxisMin": {
-        "type": "number",
-        "description": "Custom y-axis minimum. Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestYAxisMax": {
-        "type": "number",
-        "description": "Custom y-axis maximum. Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestDonutLabels": {
-        "enum": [
-          "none",
-          "value",
-          "name",
-          "name_and_value"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Donut slice labels. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "ChartViewConfigRequestDonutLabels",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "none",
-              "name": "None"
-            },
-            {
-              "value": "value",
-              "name": "Value"
-            },
-            {
-              "value": "name",
-              "name": "Name"
-            },
-            {
-              "value": "name_and_value",
-              "name": "NameAndValue"
-            }
-          ]
-        }
-      },
-      "ChartViewConfigRequestHideTitle": {
-        "type": "boolean",
-        "description": "Hide title (number only). Pass null to clear.",
-        "nullable": true
       },
       "ChartViewConfigRequestStackBy": {
         "required": [
@@ -33018,16 +32675,6 @@
           }
         ],
         "description": "Reference lines on the chart. Pass null to clear."
-      },
-      "ChartViewConfigRequestCaption": {
-        "type": "string",
-        "description": "Chart caption text. Pass null to clear.",
-        "nullable": true
-      },
-      "ChartViewConfigRequestColorByValue": {
-        "type": "boolean",
-        "description": "Whether to color chart elements by their numeric value (gradient coloring). Pass null to clear.",
-        "nullable": true
       },
       "ChartViewConfigResponseXAxis": {
         "required": [
@@ -33087,16 +32734,6 @@
           }
         }
       },
-      "ChartViewConfigResponseYAxisMin": {
-        "type": "number",
-        "description": "Custom minimum value for the y-axis. Null clears the override.",
-        "nullable": true
-      },
-      "ChartViewConfigResponseYAxisMax": {
-        "type": "number",
-        "description": "Custom maximum value for the y-axis. Null clears the override.",
-        "nullable": true
-      },
       "ChartViewConfigResponseStackBy": {
         "required": [
           "type"
@@ -33143,11 +32780,6 @@
           }
         ],
         "description": "Reference lines drawn on the chart. Null when no reference lines are configured."
-      },
-      "ChartViewConfigResponseCaption": {
-        "type": "string",
-        "description": "Text caption displayed below the chart. Null when no caption is shown.",
-        "nullable": true
       },
       "CheckboxPropertyFilterAnyOf1": {
         "required": [
@@ -33236,10 +32868,6 @@
             "$ref": "#/components/schemas/CommentDeletedWebhookPayloadAllOf2Data"
           }
         }
-      },
-      "CommentObjectResponseDisplayNameResolvedName": {
-        "type": "string",
-        "nullable": true
       },
       "CommentUpdatedWebhookPayloadAllOf2": {
         "required": [
@@ -33595,11 +33223,6 @@
           }
         }
       },
-      "DataSourceObjectResponsePublicUrl": {
-        "type": "string",
-        "description": "The public URL of the data source if it is publicly accessible.",
-        "nullable": true
-      },
       "DataSourceSchemaUpdatedWebhookPayloadAllOf2": {
         "required": [
           "type",
@@ -33665,11 +33288,6 @@
             "$ref": "#/components/schemas/DataSourceUndeletedWebhookPayloadAllOf2Data"
           }
         }
-      },
-      "DataSourceViewObjectResponseDataSourceId": {
-        "type": "string",
-        "description": "The ID of the data source this view is scoped to, or null for dashboard views.",
-        "nullable": true
       },
       "DataSourceViewObjectResponseCreatedBy": {
         "required": [
@@ -33775,36 +33393,6 @@
           }
         ],
         "description": "The sorts applied to this view (same shape as data source query sorts)."
-      },
-      "DataSourceViewObjectResponseQuickFilters": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field. For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
-            }
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "Quick filters pinned to the view\u0027s filter bar. Keys are property IDs. Values are filter conditions (same shape as a property filter without the property field). Null when no quick filters are set.",
-        "discriminator": {
-          "propertyName": "type"
-        }
       },
       "DataSourceViewObjectResponseConfiguration": {
         "required": [
@@ -34024,17 +33612,6 @@
             "PageCoverResponse": "#/components/schemas/PageCoverResponse"
           }
         }
-      },
-      "DatabaseObjectResponsePublicUrl": {
-        "type": "string",
-        "description": "The public URL of the database if it is publicly accessible.",
-        "nullable": true
-      },
-      "DatabasePropertyConfigResponseCommonDescription": {
-        "maxLength": 280,
-        "type": "string",
-        "description": "The description of the property.",
-        "nullable": true
       },
       "DatabaseSchemaUpdatedWebhookPayloadAllOf2": {
         "required": [
@@ -34346,28 +33923,6 @@
           }
         }
       },
-      "DateRequestEnd": {
-        "type": "string",
-        "description": "The end date of the date object, if any.",
-        "format": "date",
-        "nullable": true
-      },
-      "DateRequestTimeZone": {
-        "type": "string",
-        "description": "The time zone of the date object, if any. E.g. America/Los_Angeles, Europe/London, etc.",
-        "nullable": true
-      },
-      "DateResponseEnd": {
-        "type": "string",
-        "description": "The end date of the date object, if any.",
-        "format": "date",
-        "nullable": true
-      },
-      "DateResponseTimeZone": {
-        "type": "string",
-        "description": "The time zone of the date object.",
-        "nullable": true
-      },
       "DateSimplePropertyValueResponseDate": {
         "required": [
           "type"
@@ -34395,10 +33950,6 @@
             "DateResponse": "#/components/schemas/DateResponse"
           }
         }
-      },
-      "EmailSimplePropertyValueResponseEmail": {
-        "type": "string",
-        "nullable": true
       },
       "ErrorApi400AllOf2": {
         "required": [
@@ -34775,25 +34326,6 @@
           }
         }
       },
-      "FileUploadObjectResponseExpiryTime": {
-        "type": "string",
-        "format": "date-time",
-        "nullable": true
-      },
-      "FileUploadObjectResponseFilename": {
-        "type": "string",
-        "nullable": true
-      },
-      "FileUploadObjectResponseContentType": {
-        "type": "string",
-        "nullable": true
-      },
-      "FileUploadObjectResponseContentLength": {
-        "minimum": 0,
-        "exclusiveMinimum": false,
-        "type": "integer",
-        "nullable": true
-      },
       "FileUploadObjectResponseFileImportResult": {
         "required": [
           "imported_time"
@@ -34851,55 +34383,6 @@
           "data": {
             "$ref": "#/components/schemas/FileUploadUploadFailedWebhookPayloadAllOf2Data"
           }
-        }
-      },
-      "FormViewConfigRequestIsFormClosed": {
-        "type": "boolean",
-        "description": "Whether the form is closed for submissions. Pass null to clear.",
-        "nullable": true
-      },
-      "FormViewConfigRequestAnonymousSubmissions": {
-        "type": "boolean",
-        "description": "Whether anonymous (non-logged-in) submissions are allowed. Pass null to clear.",
-        "nullable": true
-      },
-      "FormViewConfigRequestSubmissionPermissions": {
-        "enum": [
-          "none",
-          "comment_only",
-          "reader",
-          "read_and_write",
-          "editor"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Permission level granted to the submitter on the created page after form submission. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "FormViewConfigRequestSubmissionPermissions",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "none",
-              "name": "None"
-            },
-            {
-              "value": "comment_only",
-              "name": "CommentOnly"
-            },
-            {
-              "value": "reader",
-              "name": "Reader"
-            },
-            {
-              "value": "read_and_write",
-              "name": "ReadAndWrite"
-            },
-            {
-              "value": "editor",
-              "name": "Editor"
-            }
-          ]
         }
       },
       "FormulaGroupByConfigRequestGroupBy": {
@@ -35029,83 +34512,6 @@
           }
         }
       },
-      "GalleryViewConfigRequestCoverSize": {
-        "enum": [
-          "small",
-          "medium",
-          "large"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Size of the cover image on cards. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "GalleryViewConfigRequestCoverSize",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "small",
-              "name": "Small"
-            },
-            {
-              "value": "medium",
-              "name": "Medium"
-            },
-            {
-              "value": "large",
-              "name": "Large"
-            }
-          ]
-        }
-      },
-      "GalleryViewConfigRequestCoverAspect": {
-        "enum": [
-          "contain",
-          "cover"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Aspect ratio mode for cover images. \u0022contain\u0022 fits the image, \u0022cover\u0022 fills the area. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "GalleryViewConfigRequestCoverAspect",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "contain",
-              "name": "Contain"
-            },
-            {
-              "value": "cover",
-              "name": "Cover"
-            }
-          ]
-        }
-      },
-      "GalleryViewConfigRequestCardLayout": {
-        "enum": [
-          "list",
-          "compact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Card layout mode. \u0022list\u0022 shows full cards, \u0022compact\u0022 shows condensed cards. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "GalleryViewConfigRequestCardLayout",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "list",
-              "name": "List"
-            },
-            {
-              "value": "compact",
-              "name": "Compact"
-            }
-          ]
-        }
-      },
       "GroupFilterOperatorArrayItem": {
         "required": [
           "type"
@@ -35139,11 +34545,6 @@
             "PropertyOrTimestampFilter": "#/components/schemas/PropertyOrTimestampFilter"
           }
         }
-      },
-      "GroupObjectResponseName": {
-        "type": "string",
-        "description": "The name of the group.",
-        "nullable": true
       },
       "InternalOrExternalFileWithNameRequestFile": {
         "title": "File",
@@ -35288,45 +34689,6 @@
           }
         ],
         "description": "Property visibility and display configuration. Pass null to clear."
-      },
-      "MapViewConfigRequestHeight": {
-        "enum": [
-          "small",
-          "medium",
-          "large",
-          "extra_large"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Map display height. Pass null to clear.",
-        "nullable": true,
-        "x-ms-enum": {
-          "name": "MapViewConfigRequestHeight",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "small",
-              "name": "Small"
-            },
-            {
-              "value": "medium",
-              "name": "Medium"
-            },
-            {
-              "value": "large",
-              "name": "Large"
-            },
-            {
-              "value": "extra_large",
-              "name": "ExtraLarge"
-            }
-          ]
-        }
-      },
-      "MapViewConfigRequestMapBy": {
-        "type": "string",
-        "description": "Property ID of the location property used to position items on the map. Pass null to clear.",
-        "nullable": true
       },
       "MapViewConfigRequestProperties": {
         "type": "object",
@@ -35594,10 +34956,6 @@
           }
         }
       },
-      "MultiSelectPropertyConfigurationRequestMultiSelectOptionsItemDescription": {
-        "type": "string",
-        "nullable": true
-      },
       "MultiSelectPropertyFilterAnyOf1AnyOf1": {
         "required": [
           "contains"
@@ -35619,14 +34977,6 @@
             "$ref": "#/components/schemas/StringOrStringArray"
           }
         }
-      },
-      "NumberFormulaPropertyValueResponseNumber": {
-        "type": "number",
-        "nullable": true
-      },
-      "NumberPartialRollupValueResponseNumber": {
-        "type": "number",
-        "nullable": true
       },
       "NumberPropertyFilterAnyOf1AnyOf1": {
         "required": [
@@ -35693,10 +35043,6 @@
             "type": "number"
           }
         }
-      },
-      "NumberSimplePropertyValueResponseNumber": {
-        "type": "number",
-        "nullable": true
       },
       "PageContentUpdatedWebhookPayloadAllOf2": {
         "required": [
@@ -35862,11 +35208,6 @@
             "$ref": "#/components/schemas/PageMovedWebhookPayloadAllOf2Data"
           }
         }
-      },
-      "PageObjectResponsePublicUrl": {
-        "type": "string",
-        "description": "The public URL of the Notion page, if it has been published to the web.",
-        "nullable": true
       },
       "PageObjectResponseIcon": {
         "required": [
@@ -36210,26 +35551,6 @@
           }
         }
       },
-      "PhoneNumberSimplePropertyValueResponsePhoneNumber": {
-        "type": "string",
-        "nullable": true
-      },
-      "PlacePropertyValueResponseName": {
-        "type": "string",
-        "nullable": true
-      },
-      "PlacePropertyValueResponseAddress": {
-        "type": "string",
-        "nullable": true
-      },
-      "PlacePropertyValueResponseAwsPlaceId": {
-        "type": "string",
-        "nullable": true
-      },
-      "PlacePropertyValueResponseGooglePlaceId": {
-        "type": "string",
-        "nullable": true
-      },
       "PlaceSimplePropertyValueResponsePlace": {
         "required": [
           "type"
@@ -36257,12 +35578,6 @@
             "PlacePropertyValueResponse": "#/components/schemas/PlacePropertyValueResponse"
           }
         }
-      },
-      "PropertyConfigurationRequestCommonDescription": {
-        "maxLength": 280,
-        "type": "string",
-        "description": "The description of the property.",
-        "nullable": true
       },
       "PropertyFilterTitle": {
         "title": "Title",
@@ -37089,11 +36404,6 @@
           }
         }
       },
-      "RichTextItemResponseCommonHref": {
-        "type": "string",
-        "description": "A URL that the rich text object links to or mentions.",
-        "nullable": true
-      },
       "RollupPropertyConfigurationRequestRollup": {
         "required": [
           "function"
@@ -37328,10 +36638,6 @@
           }
         }
       },
-      "SelectPropertyConfigurationRequestSelectOptionsItemDescription": {
-        "type": "string",
-        "nullable": true
-      },
       "SelectPropertyFilterAnyOf1AnyOf1": {
         "required": [
           "equals"
@@ -37382,10 +36688,6 @@
           }
         }
       },
-      "SelectPropertyResponseDescription": {
-        "type": "string",
-        "nullable": true
-      },
       "SelectSimplePropertyValueResponseSelect": {
         "required": [
           "type"
@@ -37414,10 +36716,6 @@
           }
         }
       },
-      "StatusOptionRequestDescription": {
-        "type": "string",
-        "nullable": true
-      },
       "StatusOptionUpdateRequestAllOf2OneOf1": {
         "required": [
           "name"
@@ -37445,10 +36743,6 @@
             "type": "string"
           }
         }
-      },
-      "StatusOptionUpdateRequestCommonDescription": {
-        "type": "string",
-        "nullable": true
       },
       "StatusPropertyFilterAnyOf1AnyOf1": {
         "required": [
@@ -37500,11 +36794,6 @@
           }
         }
       },
-      "StatusPropertyResponseDescription": {
-        "type": "string",
-        "description": "The description of the status option.",
-        "nullable": true
-      },
       "StatusSimplePropertyValueResponseStatus": {
         "required": [
           "type"
@@ -37532,10 +36821,6 @@
             "PartialSelectPropertyValueResponse": "#/components/schemas/PartialSelectPropertyValueResponse"
           }
         }
-      },
-      "StringFormulaPropertyValueResponseString": {
-        "type": "string",
-        "nullable": true
       },
       "TableViewConfigRequestProperties": {
         "type": "object",
@@ -37679,79 +36964,6 @@
           }
         }
       },
-      "TextRichTextItemRequestTextLink": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/TextRichTextItemRequestTextLinkOneOf1"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "An object with information about any inline link in this text, if included.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "TextRichTextItemRequestTextLinkOneOf1": "#/components/schemas/TextRichTextItemRequestTextLinkOneOf1"
-          }
-        }
-      },
-      "TextRichTextItemResponseTextLink": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/TextRichTextItemResponseTextLinkOneOf1"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "An object with information about any inline link in this text, if included.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "TextRichTextItemResponseTextLinkOneOf1": "#/components/schemas/TextRichTextItemResponseTextLinkOneOf1"
-          }
-        }
-      },
-      "TimelineArrowsByRequestPropertyId": {
-        "type": "string",
-        "description": "Relation property ID used for dependency arrows, or null to disable arrows.",
-        "nullable": true
-      },
-      "TimelineArrowsByResponsePropertyId": {
-        "type": "string",
-        "description": "Relation property ID used for dependency arrows.",
-        "nullable": true
-      },
-      "TimelineViewConfigRequestEndDatePropertyId": {
-        "type": "string",
-        "description": "Property ID of the date property used for the end of timeline items. Pass null to clear.",
-        "nullable": true
-      },
       "TimelineViewConfigRequestProperties": {
         "type": "object",
         "oneOf": [
@@ -37769,11 +36981,6 @@
           }
         ],
         "description": "Property visibility and display configuration on timeline items. Pass null to clear."
-      },
-      "TimelineViewConfigRequestShowTable": {
-        "type": "boolean",
-        "description": "Whether to show the table panel alongside the timeline. Pass null to clear.",
-        "nullable": true
       },
       "TimelineViewConfigRequestTableProperties": {
         "type": "object",
@@ -37851,28 +37058,6 @@
           }
         }
       },
-      "TimelineViewConfigRequestColorBy": {
-        "type": "boolean",
-        "description": "Whether to color timeline items by a property. Pass null to clear.",
-        "nullable": true
-      },
-      "UniqueIdDatabasePropertyConfigResponseUniqueIdPrefix": {
-        "type": "string",
-        "description": "The prefix for the unique ID.",
-        "nullable": true
-      },
-      "UniqueIdPropertyConfigurationRequestUniqueIdPrefix": {
-        "type": "string",
-        "nullable": true
-      },
-      "UniqueIdPropertyValueResponsePrefix": {
-        "type": "string",
-        "nullable": true
-      },
-      "UniqueIdPropertyValueResponseNumber": {
-        "type": "number",
-        "nullable": true
-      },
       "UpdateViewRequestFilter": {
         "required": [
           "type"
@@ -37921,7 +37106,7 @@
         ],
         "description": "Property sorts to apply to the view. Only property-based sorts are supported. Pass null to clear the sorts."
       },
-      "UpdateViewRequestQuickFilters": {
+      "UpdateViewRequestQuickFiltersAdditionalProperties": {
         "required": [
           "type"
         ],
@@ -37929,9 +37114,7 @@
         "oneOf": [
           {
             "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/UpdateViewRequestQuickFiltersOneOf1AdditionalProperties"
-            }
+            "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field (the hashmap key identifies the property). For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
           },
           {
             "enum": [
@@ -37945,24 +37128,12 @@
             "description": "Union discriminator"
           }
         },
-        "description": "Quick filters for the view\u0027s filter bar. Keys are property names or IDs. Set a key to a filter condition to add/update that quick filter. Set a key to null to remove it. Pass null for the entire field to clear all quick filters. Unmentioned quick filters are preserved.",
         "discriminator": {
-          "propertyName": "type"
+          "propertyName": "type",
+          "mapping": {
+            "QuickFilterConditionRequest": "#/components/schemas/QuickFilterConditionRequest"
+          }
         }
-      },
-      "UrlSimplePropertyValueResponseUrl": {
-        "type": "string",
-        "nullable": true
-      },
-      "UserObjectResponseCommonName": {
-        "type": "string",
-        "description": "The name of the user.",
-        "nullable": true
-      },
-      "UserObjectResponseCommonAvatarUrl": {
-        "type": "string",
-        "description": "The avatar URL of the user.",
-        "nullable": true
       },
       "VerificationPropertyItemObjectResponseVerification": {
         "required": [
@@ -38265,12 +37436,6 @@
             "type": "string"
           }
         }
-      },
-      "ViewQueryResponseNextCursor": {
-        "type": "string",
-        "description": "Cursor for the next page of results.",
-        "format": "uuid",
-        "nullable": true
       },
       "ViewUpdatedWebhookPayloadAllOf2": {
         "required": [
@@ -38739,16 +37904,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "DataSourceSchemaUpdatedWebhookPayloadAllOf2DataUpdatedPropertiesItemName": {
-        "type": "string",
-        "description": "The name of the database property, or \u0060null\u0060 if deleted.",
-        "nullable": true
-      },
-      "DatabaseSchemaUpdatedWebhookPayloadAllOf2DataUpdatedPropertiesItemName": {
-        "type": "string",
-        "description": "The name of the database property, or \u0060null\u0060 if deleted.",
-        "nullable": true
       },
       "FileUploadObjectResponseFileImportResultAllOf1": {
         "required": [
@@ -39391,11 +38546,6 @@
         },
         "additionalProperties": false
       },
-      "PageTranscriptionBlockTranscriptDeletedWebhookPayloadAllOf2DataTranscriptId": {
-        "type": "string",
-        "description": "The ID of the deleted transcript, or \u0060null\u0060 if not available.",
-        "nullable": true
-      },
       "PropertyItemPropertyItemListResponsePropertyItemTitle": {
         "title": "Title",
         "required": [
@@ -39896,60 +39046,6 @@
           }
         }
       },
-      "TextRichTextItemRequestTextLinkOneOf1": {
-        "required": [
-          "url"
-        ],
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string",
-            "description": "The URL of the link."
-          }
-        }
-      },
-      "TextRichTextItemResponseTextLinkOneOf1": {
-        "required": [
-          "url"
-        ],
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string",
-            "description": "The URL of the link."
-          }
-        },
-        "additionalProperties": false
-      },
-      "UpdateViewRequestQuickFiltersOneOf1AdditionalProperties": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "object",
-            "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field (the hashmap key identifies the property). For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
-          },
-          {
-            "enum": [
-              null
-            ]
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "QuickFilterConditionRequest": "#/components/schemas/QuickFilterConditionRequest"
-          }
-        }
-      },
       "ViewFilterResponseOneOf3OrItem": {
         "required": [
           "type"
@@ -40303,16 +39399,6 @@
           }
         }
       },
-      "FileUploadObjectResponseFileImportResultAllOf2ErrorErrorParameter": {
-        "type": "string",
-        "description": "The parameter related to the error, if applicable. Null if not applicable.",
-        "nullable": true
-      },
-      "FileUploadObjectResponseFileImportResultAllOf2ErrorErrorStatusCode": {
-        "type": "integer",
-        "description": "The HTTP status code associated with the error, if available. Null if not applicable.",
-        "nullable": true
-      },
       "FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1": {
         "required": [
           "type",
@@ -40573,10 +39659,14 @@
             }
           },
           "name": {
-            "$ref": "#/components/schemas/BotInfoResponseOwnerUserUserOneOf1Name"
+            "type": "string",
+            "description": "The name of the user.",
+            "nullable": true
           },
           "avatar_url": {
-            "$ref": "#/components/schemas/BotInfoResponseOwnerUserUserOneOf1AvatarUrl"
+            "type": "string",
+            "description": "The avatar URL of the user.",
+            "nullable": true
           },
           "type": {
             "enum": [
@@ -40600,16 +39690,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2ErrorParameter": {
-        "type": "string",
-        "description": "The parameter that caused the error, or \u0060null\u0060.",
-        "nullable": true
-      },
-      "FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2ErrorStatusCode": {
-        "type": "integer",
-        "description": "The HTTP status code associated with the error, or \u0060null\u0060.",
-        "nullable": true
       },
       "PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber": {
         "title": "Number",
@@ -40893,16 +39973,6 @@
           }
         }
       },
-      "BotInfoResponseOwnerUserUserOneOf1Name": {
-        "type": "string",
-        "description": "The name of the user.",
-        "nullable": true
-      },
-      "BotInfoResponseOwnerUserUserOneOf1AvatarUrl": {
-        "type": "string",
-        "description": "The avatar URL of the user.",
-        "nullable": true
-      },
       "PropertyItemPropertyItemListResponsePropertyItemRollupRollupDateDate": {
         "required": [
           "type"
@@ -41107,7 +40177,8 @@
             "$ref": "#/components/schemas/CommentObjectResponseDisplayNameType"
           },
           "resolved_name": {
-            "$ref": "#/components/schemas/CommentObjectResponseDisplayNameResolvedName"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -41221,6 +40292,14 @@
           "$ref": "#/components/schemas/DatabasePropertyConfigResponse"
         },
         "description": "The properties schema of the data source."
+      },
+      "DataSourceViewObjectResponseQuickFilters": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DataSourceViewObjectResponseQuickFiltersAdditionalProperties"
+        },
+        "description": "Quick filters pinned to the view\u0027s filter bar. Keys are property IDs. Values are filter conditions (same shape as a property filter without the property field). Null when no quick filters are set.",
+        "nullable": true
       },
       "DualPropertyDatabasePropertyRelationConfigResponseDualProperty": {
         "required": [
@@ -41798,7 +40877,9 @@
         "type": "object",
         "properties": {
           "prefix": {
-            "$ref": "#/components/schemas/UniqueIdDatabasePropertyConfigResponseUniqueIdPrefix"
+            "type": "string",
+            "description": "The prefix for the unique ID.",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -41807,7 +40888,8 @@
         "type": "object",
         "properties": {
           "prefix": {
-            "$ref": "#/components/schemas/UniqueIdPropertyConfigurationRequestUniqueIdPrefix"
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -41839,6 +40921,14 @@
             "description": "\u0022The underlying block type that is not currently supported by the Public API. Example values include: form, button, drive.\u0022"
           }
         }
+      },
+      "UpdateViewRequestQuickFilters": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/UpdateViewRequestQuickFiltersAdditionalProperties"
+        },
+        "description": "Quick filters for the view\u0027s filter bar. Keys are property names or IDs. Set a key to a filter condition to add/update that quick filter. Set a key to null to remove it. Pass null for the entire field to clear all quick filters. Unmentioned quick filters are preserved.",
+        "nullable": true
       },
       "BlockObjectRequestTableOfContentsTableOfContents": {
         "type": "object",
@@ -42812,7 +41902,9 @@
             "$ref": "#/components/schemas/WebhookExternalBlock"
           },
           "transcript_id": {
-            "$ref": "#/components/schemas/PageTranscriptionBlockTranscriptDeletedWebhookPayloadAllOf2DataTranscriptId"
+            "type": "string",
+            "description": "The ID of the deleted transcript, or \u0060null\u0060 if not available.",
+            "nullable": true
           }
         },
         "description": "Additional event-specific data."
@@ -42918,10 +42010,14 @@
             "description": "A human-readable message describing the error."
           },
           "parameter": {
-            "$ref": "#/components/schemas/FileUploadObjectResponseFileImportResultAllOf2ErrorErrorParameter"
+            "type": "string",
+            "description": "The parameter related to the error, if applicable. Null if not applicable.",
+            "nullable": true
           },
           "status_code": {
-            "$ref": "#/components/schemas/FileUploadObjectResponseFileImportResultAllOf2ErrorErrorStatusCode"
+            "type": "integer",
+            "description": "The HTTP status code associated with the error, if available. Null if not applicable.",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -43032,10 +42128,14 @@
             "description": "A human-readable description of the error."
           },
           "parameter": {
-            "$ref": "#/components/schemas/FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2ErrorParameter"
+            "type": "string",
+            "description": "The parameter that caused the error, or \u0060null\u0060.",
+            "nullable": true
           },
           "status_code": {
-            "$ref": "#/components/schemas/FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2ErrorStatusCode"
+            "type": "integer",
+            "description": "The HTTP status code associated with the error, or \u0060null\u0060.",
+            "nullable": true
           }
         },
         "additionalProperties": false,
@@ -43069,7 +42169,8 @@
             "$ref": "#/components/schemas/SelectColor"
           },
           "description": {
-            "$ref": "#/components/schemas/MultiSelectPropertyConfigurationRequestMultiSelectOptionsItemDescription"
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -43086,7 +42187,8 @@
             "$ref": "#/components/schemas/SelectColor"
           },
           "description": {
-            "$ref": "#/components/schemas/SelectPropertyConfigurationRequestSelectOptionsItemDescription"
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -43149,6 +42251,35 @@
             "type": "string"
           }
         },
+        "nullable": true
+      },
+      "TextRichTextItemRequestTextLink": {
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The URL of the link."
+          }
+        },
+        "description": "An object with information about any inline link in this text, if included.",
+        "nullable": true
+      },
+      "TextRichTextItemResponseTextLink": {
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The URL of the link."
+          }
+        },
+        "additionalProperties": false,
+        "description": "An object with information about any inline link in this text, if included.",
         "nullable": true
       },
       "BlockObjectRequestSyncedBlockSyncedBlockSyncedFrom": {
@@ -43254,7 +42385,9 @@
             "description": "The ID of the database property that changed."
           },
           "name": {
-            "$ref": "#/components/schemas/DataSourceSchemaUpdatedWebhookPayloadAllOf2DataUpdatedPropertiesItemName"
+            "type": "string",
+            "description": "The name of the database property, or \u0060null\u0060 if deleted.",
+            "nullable": true
           },
           "action": {
             "$ref": "#/components/schemas/DataSourceSchemaUpdatedWebhookPayloadAllOf2DataUpdatedPropertiesItemAction"
@@ -43275,7 +42408,9 @@
             "description": "The ID of the database property that changed."
           },
           "name": {
-            "$ref": "#/components/schemas/DatabaseSchemaUpdatedWebhookPayloadAllOf2DataUpdatedPropertiesItemName"
+            "type": "string",
+            "description": "The name of the database property, or \u0060null\u0060 if deleted.",
+            "nullable": true
           },
           "action": {
             "$ref": "#/components/schemas/DatabaseSchemaUpdatedWebhookPayloadAllOf2DataUpdatedPropertiesItemAction"
@@ -44659,71 +43794,6 @@
           }
         }
       },
-      "ListCustomEmojis200Response": {
-        "required": [
-          "object",
-          "type",
-          "results",
-          "has_more",
-          "next_cursor"
-        ],
-        "type": "object",
-        "properties": {
-          "object": {
-            "enum": [
-              "list"
-            ],
-            "type": "string",
-            "description": "Always \u0060list\u0060",
-            "x-ms-enum": {
-              "name": "ObjectValue",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "list",
-                  "name": "List"
-                }
-              ]
-            }
-          },
-          "type": {
-            "enum": [
-              "custom_emoji"
-            ],
-            "type": "string",
-            "description": "Always \u0060custom_emoji\u0060",
-            "x-ms-enum": {
-              "name": "Type",
-              "modelAsString": false,
-              "values": [
-                {
-                  "value": "custom_emoji",
-                  "name": "CustomEmoji"
-                }
-              ]
-            }
-          },
-          "results": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CustomEmojiResponse"
-            },
-            "description": "The list of custom emojis."
-          },
-          "has_more": {
-            "type": "boolean",
-            "description": "Whether there are more results available."
-          },
-          "next_cursor": {
-            "type": "string",
-            "description": "The cursor to use for the next page of results, or null if there are no more results.",
-            "format": "uuid",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "ListViews200Response": {
         "required": [
           "object",
@@ -45245,117 +44315,6 @@
           }
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItem"
-            },
-            "description": "Array of person references for person_contains/person_does_not_contain filters."
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueAnyOf1ValueBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueAnyOf2ValueBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItem"
-            },
-            "description": "Array of person references for person_contains/person_does_not_contain filters."
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueAnyOf1ValueBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueAnyOf2ValueBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItem"
-            },
-            "description": "Array of person references for person_contains/person_does_not_contain filters."
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueAnyOf1ValueBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueAnyOf2ValueBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "GetBlockChildren200Response": {
         "title": "Block",
         "required": [
@@ -45479,6 +44438,71 @@
             }
           }
         }
+      },
+      "ListCustomEmojis200Response": {
+        "required": [
+          "object",
+          "type",
+          "results",
+          "has_more",
+          "next_cursor"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "enum": [
+              "list"
+            ],
+            "type": "string",
+            "description": "Always \u0060list\u0060",
+            "x-ms-enum": {
+              "name": "ObjectValue",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "list",
+                  "name": "List"
+                }
+              ]
+            }
+          },
+          "type": {
+            "enum": [
+              "custom_emoji"
+            ],
+            "type": "string",
+            "description": "Always \u0060custom_emoji\u0060",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "custom_emoji",
+                  "name": "CustomEmoji"
+                }
+              ]
+            }
+          },
+          "results": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomEmojiResponse"
+            },
+            "description": "The list of custom emojis."
+          },
+          "has_more": {
+            "type": "boolean",
+            "description": "Whether there are more results available."
+          },
+          "next_cursor": {
+            "type": "string",
+            "description": "The cursor to use for the next page of results, or null if there are no more results.",
+            "format": "uuid",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       },
       "PostPageRequestPropertiesAdditionalPropertiesSelect": {
         "type": "object",
@@ -46332,50 +45356,6 @@
         },
         "additionalProperties": false
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf3"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4"
-          }
-        ],
-        "description": "Value for the operator."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItem": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1"
-          }
-        ]
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValue": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4"
-          }
-        ],
-        "description": "Value for the operator."
-      },
       "CreateATokenRequestAnyOf1": {
         "required": [
           "grant_type",
@@ -46837,138 +45817,6 @@
           }
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1Type"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1Value"
-          }
-        },
-        "description": "Single date/datetime filter value."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Type"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Value"
-          },
-          "direction": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Direction"
-          },
-          "unit": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Unit"
-          },
-          "count": {
-            "type": "number"
-          }
-        },
-        "description": "Date range filter value."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf3": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf3Type"
-          },
-          "value": {
-            "type": "string",
-            "description": "The text value to filter on."
-          }
-        },
-        "description": "Text filter value for string_contains and similar operators."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1": {
-        "required": [
-          "property",
-          "filter"
-        ],
-        "type": "object",
-        "properties": {
-          "property": {
-            "type": "string",
-            "description": "Property name."
-          },
-          "filter": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1Filter"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1Type"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1Value"
-          }
-        },
-        "description": "Single date/datetime filter value."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Type"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Value"
-          },
-          "direction": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Direction"
-          },
-          "unit": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Unit"
-          },
-          "count": {
-            "type": "number"
-          }
-        },
-        "description": "Date range filter value."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3Type"
-          },
-          "value": {
-            "type": "string",
-            "description": "The text value to filter on."
-          }
-        },
-        "description": "Text filter value for string_contains and similar operators."
-      },
       "CreateAToken200ResponseOwnerUserPerson": {
         "title": "Person",
         "required": [
@@ -47117,68 +45965,6 @@
           }
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1Value": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueAnyOf1ValueBranch1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1ValueAnyOf2"
-          }
-        ]
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Value": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueAnyOf2ValueBranch1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2ValueAnyOf2"
-          }
-        ]
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValue": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf3"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4"
-          }
-        ],
-        "description": "Value for the operator."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1Value": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueAnyOf1ValueBranch1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1ValueAnyOf2"
-          }
-        ]
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Value": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueAnyOf2ValueBranch1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2ValueAnyOf2"
-          }
-        ]
-      },
       "UpdateADataSourceRequestPropertiesAdditionalPropertiesOneOf1AllOf1SelectOptionsItem": {
         "type": "object",
         "allOf": [
@@ -47245,142 +46031,6 @@
           }
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1ValueAnyOf2": {
-        "required": [
-          "type",
-          "start_date"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1ValueAnyOf2Type"
-          },
-          "start_date": {
-            "type": "string"
-          },
-          "start_time": {
-            "type": "string"
-          },
-          "time_zone": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2ValueAnyOf2": {
-        "required": [
-          "type",
-          "start_date"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2ValueAnyOf2Type"
-          },
-          "start_date": {
-            "type": "string"
-          },
-          "end_date": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1Type"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1Value"
-          }
-        },
-        "description": "Single date/datetime filter value."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Type"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Value"
-          },
-          "direction": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Direction"
-          },
-          "unit": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Unit"
-          },
-          "count": {
-            "type": "number"
-          }
-        },
-        "description": "Date range filter value."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf3": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf3Type"
-          },
-          "value": {
-            "type": "string",
-            "description": "The text value to filter on."
-          }
-        },
-        "description": "Text filter value for string_contains and similar operators."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1ValueAnyOf2": {
-        "required": [
-          "type",
-          "start_date"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1ValueAnyOf2Type"
-          },
-          "start_date": {
-            "type": "string"
-          },
-          "start_time": {
-            "type": "string"
-          },
-          "time_zone": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2ValueAnyOf2": {
-        "required": [
-          "type",
-          "start_date"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2ValueAnyOf2Type"
-          },
-          "start_date": {
-            "type": "string"
-          },
-          "end_date": {
-            "type": "string"
-          }
-        }
-      },
       "UpdateADataSourceRequestPropertiesAdditionalPropertiesOneOf1AllOf1SelectOptionsItemAllOf1": {
         "type": "object",
         "properties": {
@@ -47444,67 +46094,6 @@
             "type": "string"
           },
           "rollup_property_id": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1Value": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueAnyOf1ValueBranch1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1ValueAnyOf2"
-          }
-        ]
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Value": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueAnyOf2ValueBranch1"
-          },
-          {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2ValueAnyOf2"
-          }
-        ]
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1ValueAnyOf2": {
-        "required": [
-          "type",
-          "start_date"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1ValueAnyOf2Type"
-          },
-          "start_date": {
-            "type": "string"
-          },
-          "start_time": {
-            "type": "string"
-          },
-          "time_zone": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2ValueAnyOf2": {
-        "required": [
-          "type",
-          "start_date"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2ValueAnyOf2Type"
-          },
-          "start_date": {
-            "type": "string"
-          },
-          "end_date": {
             "type": "string"
           }
         }
@@ -48587,6 +47176,10 @@
         "type": "object",
         "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field (the hashmap key identifies the property). For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
       },
+      "DataSourceViewObjectResponseQuickFiltersAdditionalProperties": {
+        "type": "object",
+        "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field. For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
+      },
       "UserUser": {
         "type": "object"
       },
@@ -49142,51 +47735,6 @@
           }
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItemValue"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItemValue"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItem": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItemType"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItemValue"
-          }
-        }
-      },
       "GetBlockChildren200ResponseBlock": {
         "type": "object"
       },
@@ -49674,21 +48222,6 @@
           }
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1Filter": {
-        "required": [
-          "operator"
-        ],
-        "type": "object",
-        "properties": {
-          "operator": {
-            "type": "string",
-            "description": "Operator."
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValue"
-          }
-        }
-      },
       "CreateAToken200ResponseOwnerUserPersonPerson": {
         "required": [
           "email"
@@ -50029,25 +48562,24 @@
       "QueryMeetingNotesRequestFilterFiltersItem": {
         "type": "object",
         "properties": {
+          "property": {
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemProperty"
+          },
+          "filter": {
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilter"
+          },
           "operator": {
             "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemOperator"
           },
           "filters": {
+            "maxItems": 100,
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItem"
             },
-            "description": "Nested filters for combinator filters."
-          },
-          "property": {
-            "type": "string",
-            "description": "Property name."
-          },
-          "filter": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilter"
+            "description": "The conditions in this group. A group with no conditions matches nothing, so send at least one."
           }
-        },
-        "description": "Meeting notes filter node (combinator or property filter)."
+        }
       },
       "QueryMeetingNotes200ResponseResultsItemMeetingNotes": {
         "type": "object",
@@ -50075,51 +48607,6 @@
         },
         "additionalProperties": false,
         "description": "Meeting note content fields."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItemValue": {
-        "required": [
-          "table",
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "table": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItemValueTable"
-          },
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItemValue": {
-        "required": [
-          "table",
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "table": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItemValueTable"
-          },
-          "id": {
-            "type": "string"
-          }
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItemValue": {
-        "required": [
-          "table",
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "table": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItemValueTable"
-          },
-          "id": {
-            "type": "string"
-          }
-        }
       },
       "UpdatePageMarkdownRequestAllOf1InsertContentPosition": {
         "required": [
@@ -50426,27 +48913,6 @@
           }
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItem": {
-        "type": "object",
-        "properties": {
-          "property": {
-            "type": "string",
-            "description": "Property name."
-          },
-          "filter": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilter"
-          },
-          "operator": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemOperator"
-          },
-          "filters": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItem"
-            }
-          }
-        }
-      },
       "QueryMeetingNotesRequestFilterFiltersItemFilter": {
         "required": [
           "operator"
@@ -50454,13 +48920,33 @@
         "type": "object",
         "properties": {
           "operator": {
-            "type": "string",
-            "description": "Operator."
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterOperator"
           },
           "value": {
             "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValue"
+          },
+          "use_end": {
+            "type": "boolean",
+            "description": "Compare against the end of a date range rather than its start."
           }
-        }
+        },
+        "description": "The comparison to apply. Use the arm matching the property\u0027s type."
+      },
+      "QueryMeetingNotesRequestFilterFiltersItemFiltersItem": {
+        "required": [
+          "property",
+          "filter"
+        ],
+        "type": "object",
+        "properties": {
+          "property": {
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemProperty"
+          },
+          "filter": {
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilter"
+          }
+        },
+        "additionalProperties": false
       },
       "QueryMeetingNotes200ResponseResultsItemMeetingNotesChildren": {
         "type": "object",
@@ -50524,6 +49010,37 @@
         "additionalProperties": false,
         "description": "Start and end times of the actual recording."
       },
+      "QueryMeetingNotesRequestFilterFiltersItemFilterValue": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "exact"
+            ],
+            "type": "string",
+            "description": "Always \u0060exact\u0060",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "exact",
+                  "name": "Exact"
+                }
+              ]
+            }
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The text to compare against."
+      },
       "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilter": {
         "required": [
           "operator"
@@ -50531,13 +49048,48 @@
         "type": "object",
         "properties": {
           "operator": {
-            "type": "string",
-            "description": "Operator."
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator"
           },
           "value": {
             "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue"
+          },
+          "use_end": {
+            "type": "boolean",
+            "description": "Compare against the end of a date range rather than its start."
           }
-        }
+        },
+        "description": "The comparison to apply. Use the arm matching the property\u0027s type."
+      },
+      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "exact"
+            ],
+            "type": "string",
+            "description": "Always \u0060exact\u0060",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "exact",
+                  "name": "Exact"
+                }
+              ]
+            }
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The text to compare against."
       },
       "BaseWebhookPayloadApiVersion": {
         "enum": [
@@ -50563,6 +49115,83 @@
             {
               "value": "2026-03-11",
               "name": "Value20260311"
+            }
+          ]
+        }
+      },
+      "BoardViewConfigRequestCoverSize": {
+        "enum": [
+          "small",
+          "medium",
+          "large"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Size of the cover image on cards. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "BoardViewConfigRequestCoverSize",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "small",
+              "name": "Small"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "large",
+              "name": "Large"
+            }
+          ]
+        }
+      },
+      "BoardViewConfigRequestCoverAspect": {
+        "enum": [
+          "contain",
+          "cover"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Aspect ratio mode for cover images. \u0022contain\u0022 fits the image, \u0022cover\u0022 fills the area. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "BoardViewConfigRequestCoverAspect",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "contain",
+              "name": "Contain"
+            },
+            {
+              "value": "cover",
+              "name": "Cover"
+            }
+          ]
+        }
+      },
+      "BoardViewConfigRequestCardLayout": {
+        "enum": [
+          "list",
+          "compact"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Card layout mode. \u0022list\u0022 shows full cards, \u0022compact\u0022 shows condensed cards. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "BoardViewConfigRequestCardLayout",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "list",
+              "name": "List"
+            },
+            {
+              "value": "compact",
+              "name": "Compact"
             }
           ]
         }
@@ -50637,6 +49266,30 @@
             {
               "value": "compact",
               "name": "Compact"
+            }
+          ]
+        }
+      },
+      "CalendarViewConfigRequestViewRange": {
+        "enum": [
+          "week",
+          "month"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Default calendar range. \u0022week\u0022 shows a week view, \u0022month\u0022 shows a month view. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "CalendarViewConfigRequestViewRange",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "month",
+              "name": "Month"
             }
           ]
         }
@@ -51096,6 +49749,308 @@
             {
               "value": "number",
               "name": "Number"
+            }
+          ]
+        }
+      },
+      "ChartViewConfigRequestSort": {
+        "enum": [
+          "manual",
+          "x_ascending",
+          "x_descending",
+          "y_ascending",
+          "y_descending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Sort order for chart data. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ChartViewConfigRequestSort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "manual",
+              "name": "Manual"
+            },
+            {
+              "value": "x_ascending",
+              "name": "XAscending"
+            },
+            {
+              "value": "x_descending",
+              "name": "XDescending"
+            },
+            {
+              "value": "y_ascending",
+              "name": "YAscending"
+            },
+            {
+              "value": "y_descending",
+              "name": "YDescending"
+            }
+          ]
+        }
+      },
+      "ChartViewConfigRequestColorTheme": {
+        "enum": [
+          "gray",
+          "blue",
+          "yellow",
+          "green",
+          "purple",
+          "teal",
+          "orange",
+          "pink",
+          "red",
+          "auto",
+          "colorful"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Color theme. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ChartViewConfigRequestColorTheme",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "gray",
+              "name": "Gray"
+            },
+            {
+              "value": "blue",
+              "name": "Blue"
+            },
+            {
+              "value": "yellow",
+              "name": "Yellow"
+            },
+            {
+              "value": "green",
+              "name": "Green"
+            },
+            {
+              "value": "purple",
+              "name": "Purple"
+            },
+            {
+              "value": "teal",
+              "name": "Teal"
+            },
+            {
+              "value": "orange",
+              "name": "Orange"
+            },
+            {
+              "value": "pink",
+              "name": "Pink"
+            },
+            {
+              "value": "red",
+              "name": "Red"
+            },
+            {
+              "value": "auto",
+              "name": "Auto"
+            },
+            {
+              "value": "colorful",
+              "name": "Colorful"
+            }
+          ]
+        }
+      },
+      "ChartViewConfigRequestHeight": {
+        "enum": [
+          "small",
+          "medium",
+          "large",
+          "extra_large"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Chart height. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ChartViewConfigRequestHeight",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "small",
+              "name": "Small"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "large",
+              "name": "Large"
+            },
+            {
+              "value": "extra_large",
+              "name": "ExtraLarge"
+            }
+          ]
+        }
+      },
+      "ChartViewConfigRequestLegendPosition": {
+        "enum": [
+          "off",
+          "bottom",
+          "side"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Legend position. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ChartViewConfigRequestLegendPosition",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "bottom",
+              "name": "Bottom"
+            },
+            {
+              "value": "side",
+              "name": "Side"
+            }
+          ]
+        }
+      },
+      "ChartViewConfigRequestAxisLabels": {
+        "enum": [
+          "none",
+          "x_axis",
+          "y_axis",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Which axis labels to show. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ChartViewConfigRequestAxisLabels",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "x_axis",
+              "name": "XAxis"
+            },
+            {
+              "value": "y_axis",
+              "name": "YAxis"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "ChartViewConfigRequestGridLines": {
+        "enum": [
+          "none",
+          "horizontal",
+          "vertical",
+          "both"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Which grid lines to show. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ChartViewConfigRequestGridLines",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "horizontal",
+              "name": "Horizontal"
+            },
+            {
+              "value": "vertical",
+              "name": "Vertical"
+            },
+            {
+              "value": "both",
+              "name": "Both"
+            }
+          ]
+        }
+      },
+      "ChartViewConfigRequestGroupStyle": {
+        "enum": [
+          "normal",
+          "percent",
+          "side_by_side"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Grouped/stacked bar display style. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ChartViewConfigRequestGroupStyle",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "normal",
+              "name": "Normal"
+            },
+            {
+              "value": "percent",
+              "name": "Percent"
+            },
+            {
+              "value": "side_by_side",
+              "name": "SideBySide"
+            }
+          ]
+        }
+      },
+      "ChartViewConfigRequestDonutLabels": {
+        "enum": [
+          "none",
+          "value",
+          "name",
+          "name_and_value"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Donut slice labels. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ChartViewConfigRequestDonutLabels",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "value",
+              "name": "Value"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "name_and_value",
+              "name": "NameAndValue"
             }
           ]
         }
@@ -52059,6 +51014,45 @@
           ]
         }
       },
+      "FormViewConfigRequestSubmissionPermissions": {
+        "enum": [
+          "none",
+          "comment_only",
+          "reader",
+          "read_and_write",
+          "editor"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Permission level granted to the submitter on the created page after form submission. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "FormViewConfigRequestSubmissionPermissions",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "comment_only",
+              "name": "CommentOnly"
+            },
+            {
+              "value": "reader",
+              "name": "Reader"
+            },
+            {
+              "value": "read_and_write",
+              "name": "ReadAndWrite"
+            },
+            {
+              "value": "editor",
+              "name": "Editor"
+            }
+          ]
+        }
+      },
       "FormViewConfigResponseSubmissionPermissions": {
         "enum": [
           "none",
@@ -52237,6 +51231,83 @@
           ]
         }
       },
+      "GalleryViewConfigRequestCoverSize": {
+        "enum": [
+          "small",
+          "medium",
+          "large"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Size of the cover image on cards. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "GalleryViewConfigRequestCoverSize",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "small",
+              "name": "Small"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "large",
+              "name": "Large"
+            }
+          ]
+        }
+      },
+      "GalleryViewConfigRequestCoverAspect": {
+        "enum": [
+          "contain",
+          "cover"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Aspect ratio mode for cover images. \u0022contain\u0022 fits the image, \u0022cover\u0022 fills the area. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "GalleryViewConfigRequestCoverAspect",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "contain",
+              "name": "Contain"
+            },
+            {
+              "value": "cover",
+              "name": "Cover"
+            }
+          ]
+        }
+      },
+      "GalleryViewConfigRequestCardLayout": {
+        "enum": [
+          "list",
+          "compact"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Card layout mode. \u0022list\u0022 shows full cards, \u0022compact\u0022 shows condensed cards. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "GalleryViewConfigRequestCardLayout",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "list",
+              "name": "List"
+            },
+            {
+              "value": "compact",
+              "name": "Compact"
+            }
+          ]
+        }
+      },
       "GalleryViewConfigResponseCoverSize": {
         "enum": [
           "small",
@@ -52363,6 +51434,40 @@
             {
               "value": "descending",
               "name": "Descending"
+            }
+          ]
+        }
+      },
+      "MapViewConfigRequestHeight": {
+        "enum": [
+          "small",
+          "medium",
+          "large",
+          "extra_large"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Map display height. Pass null to clear.",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "MapViewConfigRequestHeight",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "small",
+              "name": "Small"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "large",
+              "name": "Large"
+            },
+            {
+              "value": "extra_large",
+              "name": "ExtraLarge"
             }
           ]
         }
@@ -54279,468 +53384,6 @@
           ]
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1Type": {
-        "enum": [
-          "relative",
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "relative",
-              "name": "Relative"
-            },
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Type": {
-        "enum": [
-          "relative",
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "relative",
-              "name": "Relative"
-            },
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Direction": {
-        "enum": [
-          "past",
-          "future"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Direction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "past",
-              "name": "Past"
-            },
-            {
-              "value": "future",
-              "name": "Future"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Unit": {
-        "enum": [
-          "day",
-          "week",
-          "month",
-          "year"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2Unit",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "day",
-              "name": "Day"
-            },
-            {
-              "value": "week",
-              "name": "Week"
-            },
-            {
-              "value": "month",
-              "name": "Month"
-            },
-            {
-              "value": "year",
-              "name": "Year"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf3Type": {
-        "enum": [
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf3Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1Type": {
-        "enum": [
-          "relative",
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "relative",
-              "name": "Relative"
-            },
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Type": {
-        "enum": [
-          "relative",
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "relative",
-              "name": "Relative"
-            },
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Direction": {
-        "enum": [
-          "past",
-          "future"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Direction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "past",
-              "name": "Past"
-            },
-            {
-              "value": "future",
-              "name": "Future"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Unit": {
-        "enum": [
-          "day",
-          "week",
-          "month",
-          "year"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2Unit",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "day",
-              "name": "Day"
-            },
-            {
-              "value": "week",
-              "name": "Week"
-            },
-            {
-              "value": "month",
-              "name": "Month"
-            },
-            {
-              "value": "year",
-              "name": "Year"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3Type": {
-        "enum": [
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1ValueAnyOf2Type": {
-        "enum": [
-          "date",
-          "datetime"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf1ValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "date",
-              "name": "Date"
-            },
-            {
-              "value": "datetime",
-              "name": "Datetime"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2ValueAnyOf2Type": {
-        "enum": [
-          "daterange"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValueAnyOf2ValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "daterange",
-              "name": "Daterange"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1Type": {
-        "enum": [
-          "relative",
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "relative",
-              "name": "Relative"
-            },
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Type": {
-        "enum": [
-          "relative",
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "relative",
-              "name": "Relative"
-            },
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Direction": {
-        "enum": [
-          "past",
-          "future"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Direction",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "past",
-              "name": "Past"
-            },
-            {
-              "value": "future",
-              "name": "Future"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Unit": {
-        "enum": [
-          "day",
-          "week",
-          "month",
-          "year"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2Unit",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "day",
-              "name": "Day"
-            },
-            {
-              "value": "week",
-              "name": "Week"
-            },
-            {
-              "value": "month",
-              "name": "Month"
-            },
-            {
-              "value": "year",
-              "name": "Year"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf3Type": {
-        "enum": [
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf3Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1ValueAnyOf2Type": {
-        "enum": [
-          "date",
-          "datetime"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1ValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "date",
-              "name": "Date"
-            },
-            {
-              "value": "datetime",
-              "name": "Datetime"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2ValueAnyOf2Type": {
-        "enum": [
-          "daterange"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2ValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "daterange",
-              "name": "Daterange"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1ValueAnyOf2Type": {
-        "enum": [
-          "date",
-          "datetime"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf1ValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "date",
-              "name": "Date"
-            },
-            {
-              "value": "datetime",
-              "name": "Datetime"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2ValueAnyOf2Type": {
-        "enum": [
-          "daterange"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFiltersItemAnyOf1FilterValueAnyOf2ValueAnyOf2Type",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "daterange",
-              "name": "Daterange"
-            }
-          ]
-        }
-      },
       "UpdatePageMarkdown202ResponseOperationSurface": {
         "enum": [
           "rest",
@@ -55091,57 +53734,6 @@
           ]
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItemType": {
-        "enum": [
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItemType": {
-        "enum": [
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItemType": {
-        "enum": [
-          "exact"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
       "RetrieveAsyncTask200ResponseOneOf1OperationSurface": {
         "enum": [
           "rest",
@@ -55251,6 +53843,54 @@
           ]
         }
       },
+      "QueryMeetingNotesRequestFilterFiltersItemProperty": {
+        "enum": [
+          "title",
+          "attendees",
+          "created_time",
+          "created_by",
+          "last_edited_time",
+          "last_edited_by",
+          "notion://meeting_notes/attendees"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility.",
+        "x-ms-enum": {
+          "name": "QueryMeetingNotesRequestFilterFiltersItemProperty",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "attendees",
+              "name": "Attendees"
+            },
+            {
+              "value": "created_time",
+              "name": "CreatedTime"
+            },
+            {
+              "value": "created_by",
+              "name": "CreatedBy"
+            },
+            {
+              "value": "last_edited_time",
+              "name": "LastEditedTime"
+            },
+            {
+              "value": "last_edited_by",
+              "name": "LastEditedBy"
+            },
+            {
+              "value": "notion://meeting_notes/attendees",
+              "name": "NotionColonSlashSlashMeetingNotesAttendees"
+            }
+          ]
+        }
+      },
       "QueryMeetingNotesRequestFilterFiltersItemOperator": {
         "enum": [
           "and",
@@ -55258,7 +53898,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "Operator for nested combinator filters.",
+        "description": "Whether every child must match, or any of them.",
         "x-ms-enum": {
           "name": "QueryMeetingNotesRequestFilterFiltersItemOperator",
           "modelAsString": false,
@@ -55317,76 +53957,246 @@
           ]
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItemValueTable": {
+      "QueryMeetingNotesRequestFilterFiltersItemFilterOperator": {
         "enum": [
-          "notion_user"
+          "string_is",
+          "string_is_not",
+          "string_contains",
+          "string_does_not_contain",
+          "string_starts_with",
+          "string_ends_with",
+          "person_contains",
+          "person_does_not_contain",
+          "date_is",
+          "date_is_before",
+          "date_is_after",
+          "date_is_on_or_before",
+          "date_is_on_or_after",
+          "date_is_within",
+          "date_is_relative_to",
+          "is_empty",
+          "is_not_empty"
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "How to compare the text.",
         "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf1FilterValueBranch4ValueItemValueTable",
+          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterOperator",
           "modelAsString": false,
           "values": [
             {
-              "value": "notion_user",
-              "name": "NotionUser"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItemValueTable": {
-        "enum": [
-          "notion_user"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemAnyOf1FiltersItemAnyOf2FiltersItemAnyOf1FilterValueBranch4ValueItemValueTable",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "notion_user",
-              "name": "NotionUser"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItemValueTable": {
-        "enum": [
-          "notion_user"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4ValueItemValueTable",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "notion_user",
-              "name": "NotionUser"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemOperator": {
-        "enum": [
-          "and",
-          "or"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Operator for nested combinator filters.",
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemOperator",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "and",
-              "name": "And"
+              "value": "string_is",
+              "name": "StringIs"
             },
             {
-              "value": "or",
-              "name": "Or"
+              "value": "string_is_not",
+              "name": "StringIsNot"
+            },
+            {
+              "value": "string_contains",
+              "name": "StringContains"
+            },
+            {
+              "value": "string_does_not_contain",
+              "name": "StringDoesNotContain"
+            },
+            {
+              "value": "string_starts_with",
+              "name": "StringStartsWith"
+            },
+            {
+              "value": "string_ends_with",
+              "name": "StringEndsWith"
+            },
+            {
+              "value": "person_contains",
+              "name": "PersonContains"
+            },
+            {
+              "value": "person_does_not_contain",
+              "name": "PersonDoesNotContain"
+            },
+            {
+              "value": "date_is",
+              "name": "DateIs"
+            },
+            {
+              "value": "date_is_before",
+              "name": "DateIsBefore"
+            },
+            {
+              "value": "date_is_after",
+              "name": "DateIsAfter"
+            },
+            {
+              "value": "date_is_on_or_before",
+              "name": "DateIsOnOrBefore"
+            },
+            {
+              "value": "date_is_on_or_after",
+              "name": "DateIsOnOrAfter"
+            },
+            {
+              "value": "date_is_within",
+              "name": "DateIsWithin"
+            },
+            {
+              "value": "date_is_relative_to",
+              "name": "DateIsRelativeTo"
+            },
+            {
+              "value": "is_empty",
+              "name": "IsEmpty"
+            },
+            {
+              "value": "is_not_empty",
+              "name": "IsNotEmpty"
+            }
+          ]
+        }
+      },
+      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemProperty": {
+        "enum": [
+          "title",
+          "attendees",
+          "created_time",
+          "created_by",
+          "last_edited_time",
+          "last_edited_by",
+          "notion://meeting_notes/attendees"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility.",
+        "x-ms-enum": {
+          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemProperty",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "attendees",
+              "name": "Attendees"
+            },
+            {
+              "value": "created_time",
+              "name": "CreatedTime"
+            },
+            {
+              "value": "created_by",
+              "name": "CreatedBy"
+            },
+            {
+              "value": "last_edited_time",
+              "name": "LastEditedTime"
+            },
+            {
+              "value": "last_edited_by",
+              "name": "LastEditedBy"
+            },
+            {
+              "value": "notion://meeting_notes/attendees",
+              "name": "NotionColonSlashSlashMeetingNotesAttendees"
+            }
+          ]
+        }
+      },
+      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator": {
+        "enum": [
+          "string_is",
+          "string_is_not",
+          "string_contains",
+          "string_does_not_contain",
+          "string_starts_with",
+          "string_ends_with",
+          "person_contains",
+          "person_does_not_contain",
+          "date_is",
+          "date_is_before",
+          "date_is_after",
+          "date_is_on_or_before",
+          "date_is_on_or_after",
+          "date_is_within",
+          "date_is_relative_to",
+          "is_empty",
+          "is_not_empty"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How to compare the text.",
+        "x-ms-enum": {
+          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "string_is",
+              "name": "StringIs"
+            },
+            {
+              "value": "string_is_not",
+              "name": "StringIsNot"
+            },
+            {
+              "value": "string_contains",
+              "name": "StringContains"
+            },
+            {
+              "value": "string_does_not_contain",
+              "name": "StringDoesNotContain"
+            },
+            {
+              "value": "string_starts_with",
+              "name": "StringStartsWith"
+            },
+            {
+              "value": "string_ends_with",
+              "name": "StringEndsWith"
+            },
+            {
+              "value": "person_contains",
+              "name": "PersonContains"
+            },
+            {
+              "value": "person_does_not_contain",
+              "name": "PersonDoesNotContain"
+            },
+            {
+              "value": "date_is",
+              "name": "DateIs"
+            },
+            {
+              "value": "date_is_before",
+              "name": "DateIsBefore"
+            },
+            {
+              "value": "date_is_after",
+              "name": "DateIsAfter"
+            },
+            {
+              "value": "date_is_on_or_before",
+              "name": "DateIsOnOrBefore"
+            },
+            {
+              "value": "date_is_on_or_after",
+              "name": "DateIsOnOrAfter"
+            },
+            {
+              "value": "date_is_within",
+              "name": "DateIsWithin"
+            },
+            {
+              "value": "date_is_relative_to",
+              "name": "DateIsRelativeTo"
+            },
+            {
+              "value": "is_empty",
+              "name": "IsEmpty"
+            },
+            {
+              "value": "is_not_empty",
+              "name": "IsNotEmpty"
             }
           ]
         }

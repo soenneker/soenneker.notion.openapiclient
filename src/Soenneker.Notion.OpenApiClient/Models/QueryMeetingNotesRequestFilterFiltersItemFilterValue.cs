@@ -8,42 +8,20 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3"/>
+    /// The text to compare against.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class QueryMeetingNotesRequestFilterFiltersItemFilterValue : IComposedTypeWrapper, IParsable
+    public partial class QueryMeetingNotesRequestFilterFiltersItemFilterValue : IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4"/></summary>
+        /// <summary>Always `exact`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type? Type { get; set; }
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4? QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4 { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4 QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1? QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1 QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2? QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2 QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3? QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3 QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3 { get; set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,12 +31,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue();
-            result.QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4 = new global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4();
-            result.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1();
-            result.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2();
-            result.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3 = new global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3();
-            return result;
+            return new global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,11 +39,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4 != null || QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1 != null || QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2 != null || QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4, QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1, QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2, QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type>(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -79,7 +52,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4>(null, QueryMeetingNotesRequestFilterFiltersItemAnyOf2FilterValueBranch4, QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf1, QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf2, QueryMeetingNotesRequestFilterFiltersItemFilterValueAnyOf3);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type>("type", Type);
+            writer.WriteStringValue("value", Value);
         }
     }
 }

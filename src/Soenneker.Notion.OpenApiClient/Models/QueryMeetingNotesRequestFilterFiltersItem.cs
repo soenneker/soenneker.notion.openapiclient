@@ -7,15 +7,14 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Meeting notes filter node (combinator or property filter).
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class QueryMeetingNotesRequestFilterFiltersItem : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The filter property</summary>
+        /// <summary>The comparison to apply. Use the arm matching the property&apos;s type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilter? Filter { get; set; }
@@ -23,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilter Filter { get; set; }
 #endif
-        /// <summary>Nested filters for combinator filters.</summary>
+        /// <summary>The conditions in this group. A group with no conditions matches nothing, so send at least one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItem>? Filters { get; set; }
@@ -31,16 +30,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItem> Filters { get; set; }
 #endif
-        /// <summary>Operator for nested combinator filters.</summary>
+        /// <summary>Whether every child must match, or any of them.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemOperator? Operator { get; set; }
-        /// <summary>Property name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Property { get; set; }
-#nullable restore
-#else
-        public string Property { get; set; }
-#endif
+        /// <summary>Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemProperty? Property { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItem"/> and sets the default values.
         /// </summary>
@@ -69,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilter>(global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilter.CreateFromDiscriminatorValue); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItem>(global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemOperator>(); } },
-                { "property", n => { Property = n.GetStringValue(); } },
+                { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemProperty>(); } },
             };
         }
         /// <summary>
@@ -82,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilter>("filter", Filter);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItem>("filters", Filters);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemOperator>("operator", Operator);
-            writer.WriteStringValue("property", Property);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemProperty>("property", Property);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

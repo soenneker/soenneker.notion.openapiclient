@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>Operator for nested combinator filters.</summary>
+    /// <summary>Whether every child must match, or any of them.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum QueryMeetingNotesRequestFilterFiltersItemOperator
     {
