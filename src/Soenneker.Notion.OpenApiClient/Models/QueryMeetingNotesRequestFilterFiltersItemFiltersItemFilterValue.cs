@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Always `exact`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue_type? Type { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The literal text the operator compares against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

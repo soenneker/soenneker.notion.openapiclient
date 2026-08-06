@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FormulaPropertyResponse : IComposedTypeWrapper, IParsable
@@ -45,6 +45,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse StringFormulaPropertyResponse { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse? UnsupportedFormulaPropertyResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse UnsupportedFormulaPropertyResponse { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             result.DateFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse();
             result.NumberFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse();
             result.StringFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse();
+            result.UnsupportedFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse();
             return result;
         }
         /// <summary>
@@ -66,9 +75,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(BooleanFormulaPropertyResponse != null || DateFormulaPropertyResponse != null || NumberFormulaPropertyResponse != null || StringFormulaPropertyResponse != null)
+            if(BooleanFormulaPropertyResponse != null || DateFormulaPropertyResponse != null || NumberFormulaPropertyResponse != null || StringFormulaPropertyResponse != null || UnsupportedFormulaPropertyResponse != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BooleanFormulaPropertyResponse, DateFormulaPropertyResponse, NumberFormulaPropertyResponse, StringFormulaPropertyResponse);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BooleanFormulaPropertyResponse, DateFormulaPropertyResponse, NumberFormulaPropertyResponse, StringFormulaPropertyResponse, UnsupportedFormulaPropertyResponse);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,7 +88,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse>(null, BooleanFormulaPropertyResponse, DateFormulaPropertyResponse, NumberFormulaPropertyResponse, StringFormulaPropertyResponse);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse>(null, BooleanFormulaPropertyResponse, DateFormulaPropertyResponse, NumberFormulaPropertyResponse, StringFormulaPropertyResponse, UnsupportedFormulaPropertyResponse);
         }
     }
 }

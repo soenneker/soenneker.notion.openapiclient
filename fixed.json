@@ -16234,6 +16234,9 @@
           },
           {
             "$ref": "#/components/schemas/BooleanFormulaPropertyResponse"
+          },
+          {
+            "$ref": "#/components/schemas/UnsupportedFormulaPropertyResponse"
           }
         ],
         "properties": {
@@ -16248,7 +16251,8 @@
             "StringFormulaPropertyResponse": "#/components/schemas/StringFormulaPropertyResponse",
             "DateFormulaPropertyResponse": "#/components/schemas/DateFormulaPropertyResponse",
             "NumberFormulaPropertyResponse": "#/components/schemas/NumberFormulaPropertyResponse",
-            "BooleanFormulaPropertyResponse": "#/components/schemas/BooleanFormulaPropertyResponse"
+            "BooleanFormulaPropertyResponse": "#/components/schemas/BooleanFormulaPropertyResponse",
+            "UnsupportedFormulaPropertyResponse": "#/components/schemas/UnsupportedFormulaPropertyResponse"
           }
         }
       },
@@ -16269,6 +16273,9 @@
           },
           {
             "$ref": "#/components/schemas/StringFormulaPropertyValueResponse"
+          },
+          {
+            "$ref": "#/components/schemas/UnsupportedFormulaPropertyValueResponse"
           }
         ],
         "properties": {
@@ -16283,7 +16290,8 @@
             "BooleanFormulaPropertyValueResponse": "#/components/schemas/BooleanFormulaPropertyValueResponse",
             "DateFormulaPropertyValueResponse": "#/components/schemas/DateFormulaPropertyValueResponse",
             "NumberFormulaPropertyValueResponse": "#/components/schemas/NumberFormulaPropertyValueResponse",
-            "StringFormulaPropertyValueResponse": "#/components/schemas/StringFormulaPropertyValueResponse"
+            "StringFormulaPropertyValueResponse": "#/components/schemas/StringFormulaPropertyValueResponse",
+            "UnsupportedFormulaPropertyValueResponse": "#/components/schemas/UnsupportedFormulaPropertyValueResponse"
           }
         }
       },
@@ -21512,6 +21520,9 @@
               },
               {
                 "$ref": "#/components/schemas/ArrayPartialRollupValueResponse"
+              },
+              {
+                "$ref": "#/components/schemas/UnsupportedPartialRollupValueResponse"
               }
             ]
           }
@@ -27112,6 +27123,96 @@
           },
           "in_trash": {
             "type": "boolean"
+          }
+        }
+      },
+      "UnsupportedFormulaPropertyResponse": {
+        "title": "Unsupported",
+        "required": [
+          "type",
+          "unsupported"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "unsupported"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "unsupported",
+                  "name": "Unsupported"
+                }
+              ]
+            }
+          },
+          "unsupported": {
+            "$ref": "#/components/schemas/UnsupportedFormulaPropertyResponseUnsupported"
+          }
+        }
+      },
+      "UnsupportedFormulaPropertyValueResponse": {
+        "title": "Unsupported",
+        "required": [
+          "type",
+          "unsupported"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "unsupported"
+            ],
+            "type": "string",
+            "description": "Always \u0060unsupported\u0060",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "unsupported",
+                  "name": "Unsupported"
+                }
+              ]
+            }
+          },
+          "unsupported": {
+            "$ref": "#/components/schemas/UnsupportedFormulaPropertyValueResponseUnsupported"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UnsupportedPartialRollupValueResponse": {
+        "title": "Unsupported",
+        "required": [
+          "type",
+          "unsupported"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "enum": [
+              "unsupported"
+            ],
+            "type": "string",
+            "description": "Always \u0060unsupported\u0060",
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "unsupported",
+                  "name": "Unsupported"
+                }
+              ]
+            }
+          },
+          "unsupported": {
+            "$ref": "#/components/schemas/UnsupportedPartialRollupValueResponseUnsupported"
           }
         }
       },
@@ -46838,6 +46939,15 @@
       "TitlePropertyConfigurationRequestTitle": {
         "type": "object"
       },
+      "UnsupportedFormulaPropertyResponseUnsupported": {
+        "type": "object"
+      },
+      "UnsupportedFormulaPropertyValueResponseUnsupported": {
+        "type": "object"
+      },
+      "UnsupportedPartialRollupValueResponseUnsupported": {
+        "type": "object"
+      },
       "UrlDatabasePropertyConfigResponseUrl": {
         "type": "object"
       },
@@ -49035,7 +49145,8 @@
             }
           },
           "value": {
-            "type": "string"
+            "type": "string",
+            "description": "The literal text the operator compares against."
           }
         },
         "additionalProperties": false,
@@ -49085,7 +49196,8 @@
             }
           },
           "value": {
-            "type": "string"
+            "type": "string",
+            "description": "The literal text the operator compares against."
           }
         },
         "additionalProperties": false,

@@ -7,31 +7,29 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// The text to compare against.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class QueryMeetingNotesRequestFilterFiltersItemFilterValue : IParsable
+    #pragma warning disable CS1591
+    public partial class UnsupportedFormulaPropertyResponseUnsupported : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Always `exact`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type? Type { get; set; }
-        /// <summary>The literal text the operator compares against.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported"/> and sets the default values.
+        /// </summary>
+        public UnsupportedFormulaPropertyResponseUnsupported()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue();
+            return new global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,8 +39,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type>(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,8 +48,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type>("type", Type);
-            writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
