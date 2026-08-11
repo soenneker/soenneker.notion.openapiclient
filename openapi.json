@@ -8427,7 +8427,8 @@
         "title": "Emoji"
       },
       "emojiRequest": {
-        "type": "string"
+        "type": "string",
+        "example": "😀"
       },
       "emptyObject": {
         "type": "object",
@@ -12993,7 +12994,8 @@
         "title": "Number"
       },
       "numberFormat": {
-        "type": "string"
+        "type": "string",
+        "example": "number"
       },
       "numberFormulaPropertyResponse": {
         "title": "Number",
@@ -19073,7 +19075,8 @@
         "title": "Text"
       },
       "timeZoneRequest": {
-        "type": "string"
+        "type": "string",
+        "example": "Africa/Abidjan"
       },
       "timelineArrowsByRequest": {
         "type": "object",
