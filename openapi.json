@@ -8621,7 +8621,9 @@
               "code": {
                 "enum": [
                   "restricted_resource",
-                  "status_change_not_allowed"
+                  "status_change_not_allowed",
+                  "workspace_credits_exhausted",
+                  "agent_credit_limit_reached"
                 ]
               },
               "status": {
@@ -26220,6 +26222,94 @@
                                 "code": {
                                   "type": "string",
                                   "const": "invalid_credit_limit"
+                                },
+                                "message": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "additional_data": {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "oneOf": [
+                                      {
+                                        "type": "string"
+                                      },
+                                      {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "required": [
+                                "object",
+                                "status",
+                                "code",
+                                "message"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "object": {
+                                  "type": "string",
+                                  "const": "error"
+                                },
+                                "status": {
+                                  "type": "integer",
+                                  "const": 403
+                                },
+                                "code": {
+                                  "type": "string",
+                                  "const": "workspace_credits_exhausted"
+                                },
+                                "message": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "additional_data": {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "oneOf": [
+                                      {
+                                        "type": "string"
+                                      },
+                                      {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "required": [
+                                "object",
+                                "status",
+                                "code",
+                                "message"
+                              ],
+                              "additionalProperties": false,
+                              "properties": {
+                                "object": {
+                                  "type": "string",
+                                  "const": "error"
+                                },
+                                "status": {
+                                  "type": "integer",
+                                  "const": 403
+                                },
+                                "code": {
+                                  "type": "string",
+                                  "const": "agent_credit_limit_reached"
                                 },
                                 "message": {
                                   "type": "string",

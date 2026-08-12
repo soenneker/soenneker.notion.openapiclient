@@ -16,5 +16,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         StatusChangeNotAllowed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "workspace_credits_exhausted")]
+        #pragma warning disable CS1591
+        WorkspaceCreditsExhausted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "agent_credit_limit_reached")]
+        #pragma warning disable CS1591
+        AgentCreditLimitReached,
+        #pragma warning restore CS1591
     }
 }

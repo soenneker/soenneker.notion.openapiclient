@@ -50840,7 +50840,9 @@
       "ErrorApi403Code": {
         "enum": [
           "restricted_resource",
-          "status_change_not_allowed"
+          "status_change_not_allowed",
+          "workspace_credits_exhausted",
+          "agent_credit_limit_reached"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -50855,6 +50857,14 @@
             {
               "value": "status_change_not_allowed",
               "name": "StatusChangeNotAllowed"
+            },
+            {
+              "value": "workspace_credits_exhausted",
+              "name": "WorkspaceCreditsExhausted"
+            },
+            {
+              "value": "agent_credit_limit_reached",
+              "name": "AgentCreditLimitReached"
             }
           ]
         }
