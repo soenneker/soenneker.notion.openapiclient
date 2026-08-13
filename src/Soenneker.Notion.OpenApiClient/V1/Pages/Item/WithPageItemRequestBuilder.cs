@@ -114,11 +114,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PatchPage200Response?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PatchPage200Response?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PatchPage200Response> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PatchPage200Response> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -166,11 +166,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -194,6 +194,22 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithPageItemRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter_properties")]
+            public string[]? FilterProperties { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter_properties")]
+            public string[] FilterProperties { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Update page
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithPageItemRequestBuilderPatchQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -15,20 +15,20 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The cover property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestCover? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest? Cover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestCover Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest Cover { get; set; }
 #endif
         /// <summary>Whether to erase all existing content from the page. When used with a template, the template content replaces the existing content. When used without a template, simply clears the page content.</summary>
         public bool? EraseContent { get; set; }
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestIcon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestIcon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest Icon { get; set; }
 #endif
         /// <summary>The in_trash property</summary>
         public bool? InTrash { get; set; }
@@ -70,9 +70,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestCover>(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestCover.CreateFromDiscriminatorValue); } },
+                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest.CreateFromDiscriminatorValue); } },
                 { "erase_content", n => { EraseContent = n.GetBoolValue(); } },
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestIcon>(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestIcon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest.CreateFromDiscriminatorValue); } },
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
@@ -87,9 +87,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestCover>("cover", Cover);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest>("cover", Cover);
             writer.WriteBoolValue("erase_content", EraseContent);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestIcon>("icon", Icon);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>("icon", Icon);
             writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteBoolValue("is_locked", IsLocked);

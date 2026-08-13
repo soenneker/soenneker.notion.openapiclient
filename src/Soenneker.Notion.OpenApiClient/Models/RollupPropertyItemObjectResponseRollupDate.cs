@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateDate? Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse? Date { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateDate Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse Date { get; set; }
 #endif
         /// <summary>The function property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.RollupFunction? Function { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateDate>(global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateDate.CreateFromDiscriminatorValue); } },
+                { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>(global::Soenneker.Notion.OpenApiClient.Models.DateResponse.CreateFromDiscriminatorValue); } },
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDate_type>(); } },
             };
@@ -63,7 +63,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateDate>("date", Date);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>("date", Date);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDate_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

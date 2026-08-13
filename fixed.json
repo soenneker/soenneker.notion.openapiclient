@@ -450,6 +450,16 @@
         "operationId": "PostPage",
         "parameters": [
           {
+            "name": "filter_properties",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
             "$ref": "#/components/parameters/notionVersion"
           }
         ],
@@ -764,6 +774,16 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "filter_properties",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           {
@@ -1550,7 +1570,8 @@
             "schema": {
               "minLength": 1,
               "type": "string",
-              "description": "The ID of the async task to retrieve."
+              "description": "The ID of the async task to retrieve.",
+              "example": "task_abc123"
             }
           },
           {
@@ -10130,7 +10151,8 @@
         "properties": {
           "width_ratio": {
             "type": "number",
-            "description": "Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width."
+            "description": "Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width.",
+            "example": 0.5
           }
         }
       },
@@ -10153,7 +10175,8 @@
             "minimum": false,
             "exclusiveMinimum": true,
             "type": "number",
-            "description": "Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width."
+            "description": "Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width.",
+            "example": 0.5
           }
         },
         "additionalProperties": false
@@ -22801,7 +22824,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           },
           {
             "$ref": "#/components/schemas/PublicApiAsyncTaskStatusResultJsonValueBranch5"
@@ -27722,12 +27746,14 @@
           "date": {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           },
           "verified_by": {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -32477,7 +32503,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32507,7 +32534,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property visibility and display configuration on cards. Pass null to clear."
@@ -32524,7 +32552,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32610,7 +32639,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property visibility and display configuration on calendar cards. Pass null to clear."
@@ -32627,7 +32657,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32655,7 +32686,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32684,7 +32716,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32713,7 +32746,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32742,7 +32776,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32772,7 +32807,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Reference lines on the chart. Pass null to clear."
@@ -32789,7 +32825,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32818,7 +32855,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32847,7 +32885,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -32877,7 +32916,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Reference lines drawn on the chart. Null when no reference lines are configured."
@@ -33091,7 +33131,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33278,7 +33319,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33307,7 +33349,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33402,7 +33445,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33431,7 +33475,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33460,7 +33505,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33490,7 +33536,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "The sorts applied to this view (same shape as data source query sorts)."
@@ -33507,7 +33554,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33668,7 +33716,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33697,7 +33746,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33792,7 +33842,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33820,7 +33871,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -33848,7 +33900,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -34008,7 +34061,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -34036,7 +34090,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -34084,7 +34139,7 @@
         },
         "additionalProperties": false
       },
-      "ErrorApi403AllOf2": {
+      "ErrorApi403OneOf1AllOf2": {
         "required": [
           "code",
           "status"
@@ -34095,10 +34150,48 @@
             "$ref": "#/components/schemas/ErrorApi403Code"
           },
           "status": {
-            "$ref": "#/components/schemas/ErrorApi403AllOf2Status"
+            "$ref": "#/components/schemas/ErrorApi403OneOf1AllOf2Status"
           }
         },
         "additionalProperties": false
+      },
+      "ErrorApi403OneOf2AllOf2": {
+        "required": [
+          "code",
+          "status",
+          "additional_data"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf2AllOf2Code"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf2AllOf2Status"
+          },
+          "additional_data": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf2AllOf2AdditionalData"
+          }
+        }
+      },
+      "ErrorApi403OneOf3AllOf2": {
+        "required": [
+          "code",
+          "status",
+          "additional_data"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf3AllOf2Code"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf3AllOf2Status"
+          },
+          "additional_data": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf3AllOf2AdditionalData"
+          }
+        }
       },
       "ErrorApi404AllOf2": {
         "required": [
@@ -34579,7 +34672,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property visibility and display configuration on gallery cards. Pass null to clear."
@@ -34596,7 +34690,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -34786,7 +34881,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property visibility and display configuration. Pass null to clear."
@@ -34804,7 +34900,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property visibility and display configuration on map pin cards. Pass null to clear."
@@ -35322,7 +35419,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -35351,7 +35449,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -35664,7 +35763,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -36773,7 +36873,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -36801,7 +36902,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -36879,7 +36981,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -36907,7 +37010,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -36936,7 +37040,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property visibility and display configuration. Pass null to clear."
@@ -36953,7 +37058,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -36982,7 +37088,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -37078,7 +37185,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property visibility and display configuration on timeline items. Pass null to clear."
@@ -37096,7 +37204,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property configuration for the table panel (when show_table is true). Pass null to clear."
@@ -37113,7 +37222,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -37142,7 +37252,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -37172,7 +37283,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -37202,7 +37314,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Property sorts to apply to the view. Only property-based sorts are supported. Pass null to clear the sorts."
@@ -37220,7 +37333,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -37248,7 +37362,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -37276,7 +37391,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -37304,7 +37420,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -37332,7 +37449,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -38005,6 +38123,34 @@
           }
         },
         "additionalProperties": false
+      },
+      "ErrorApi403OneOf2AllOf2AdditionalDataAdditionalProperties": {
+        "type": "object",
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "ErrorApi403OneOf3AllOf2AdditionalDataAdditionalProperties": {
+        "type": "object",
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        ]
       },
       "FileUploadObjectResponseFileImportResultAllOf1": {
         "required": [
@@ -39621,7 +39767,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -40086,7 +40233,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "properties": {
@@ -40453,7 +40601,8 @@
         "properties": {
           "expression": {
             "type": "string",
-            "description": "A KaTeX compatible string."
+            "description": "A KaTeX compatible string.",
+            "example": "e=mc^2"
           }
         },
         "description": "Notion supports inline LaTeX equations as rich text objects with a type value of \u0060equation\u0060."
@@ -40466,7 +40615,8 @@
         "properties": {
           "expression": {
             "type": "string",
-            "description": "A KaTeX compatible string."
+            "description": "A KaTeX compatible string.",
+            "example": "e=mc^2"
           }
         },
         "additionalProperties": false,
@@ -41872,6 +42022,68 @@
         "additionalProperties": false,
         "description": "Additional event-specific data."
       },
+      "ErrorApi403OneOf2AllOf2AdditionalData": {
+        "required": [
+          "tool_error_code",
+          "tool_error_class",
+          "tool_error_retryable",
+          "recovery_kind"
+        ],
+        "type": "object",
+        "properties": {
+          "tool_error_code": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf2AllOf2AdditionalDataToolErrorCode"
+          },
+          "tool_error_class": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf2AllOf2AdditionalDataToolErrorClass"
+          },
+          "tool_error_retryable": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf2AllOf2AdditionalDataToolErrorRetryable"
+          },
+          "recovery_kind": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf2AllOf2AdditionalDataRecoveryKind"
+          },
+          "recovery_url": {
+            "type": "string",
+            "description": "Present when recovery_kind directs the caller to a settings page.",
+            "format": "uri"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ErrorApi403OneOf2AllOf2AdditionalDataAdditionalProperties"
+        }
+      },
+      "ErrorApi403OneOf3AllOf2AdditionalData": {
+        "required": [
+          "tool_error_code",
+          "tool_error_class",
+          "tool_error_retryable",
+          "recovery_kind"
+        ],
+        "type": "object",
+        "properties": {
+          "tool_error_code": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf3AllOf2AdditionalDataToolErrorCode"
+          },
+          "tool_error_class": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf3AllOf2AdditionalDataToolErrorClass"
+          },
+          "tool_error_retryable": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf3AllOf2AdditionalDataToolErrorRetryable"
+          },
+          "recovery_kind": {
+            "$ref": "#/components/schemas/ErrorApi403OneOf3AllOf2AdditionalDataRecoveryKind"
+          },
+          "recovery_url": {
+            "type": "string",
+            "description": "Present when recovery_kind directs the caller to a settings page.",
+            "format": "uri"
+          }
+        },
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ErrorApi403OneOf3AllOf2AdditionalDataAdditionalProperties"
+        }
+      },
       "FileUploadUploadFailedWebhookPayloadAllOf2Data": {
         "required": [
           "file_import_result"
@@ -42362,7 +42574,8 @@
         "properties": {
           "url": {
             "type": "string",
-            "description": "The URL of the link."
+            "description": "The URL of the link.",
+            "example": "https://www.notion.com"
           }
         },
         "description": "An object with information about any inline link in this text, if included.",
@@ -42376,7 +42589,8 @@
         "properties": {
           "url": {
             "type": "string",
-            "description": "The URL of the link."
+            "description": "The URL of the link.",
+            "example": "https://www.notion.com"
           }
         },
         "additionalProperties": false,
@@ -43794,11 +44008,13 @@
           },
           "filename": {
             "type": "string",
-            "description": "Name of the file to be created. Required when \u0060mode\u0060 is \u0060multi_part\u0060. Otherwise optional, and used to override the filename. Must include an extension, or have one inferred from the \u0060content_type\u0060 parameter."
+            "description": "Name of the file to be created. Required when \u0060mode\u0060 is \u0060multi_part\u0060. Otherwise optional, and used to override the filename. Must include an extension, or have one inferred from the \u0060content_type\u0060 parameter.",
+            "example": "business_summary.pdf"
           },
           "content_type": {
             "type": "string",
-            "description": "MIME type of the file to be created. Recommended when sending the file in multiple parts. Must match the content type of the file that\u0027s sent, and the extension of the \u0060filename\u0060 parameter if any."
+            "description": "MIME type of the file to be created. Recommended when sending the file in multiple parts. Must match the content type of the file that\u0027s sent, and the extension of the \u0060filename\u0060 parameter if any.",
+            "example": "application/pdf"
           },
           "number_of_parts": {
             "maximum": 10000,
@@ -44617,7 +44833,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44641,7 +44858,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44668,7 +44886,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44681,7 +44900,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44694,7 +44914,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44710,7 +44931,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44734,7 +44956,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44761,7 +44984,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44774,7 +44998,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -44787,7 +45012,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -45143,7 +45369,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Data source icon."
@@ -45160,7 +45387,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ]
       },
@@ -45214,7 +45442,8 @@
           {
             "enum": [
               null
-            ]
+            ],
+            "nullable": true
           }
         ],
         "description": "Page icon."
@@ -47035,13 +47264,77 @@
           ]
         }
       },
-      "ErrorApi403AllOf2Status": {
+      "ErrorApi403OneOf1AllOf2Status": {
         "enum": [
           "403"
         ],
         "type": "object",
         "x-ms-enum": {
-          "name": "ErrorApi403AllOf2Status",
+          "name": "ErrorApi403OneOf1AllOf2Status",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "403",
+              "name": "Value403"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf2AllOf2Code": {
+        "enum": [
+          "workspace_credits_exhausted"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf2AllOf2Code",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "workspace_credits_exhausted",
+              "name": "WorkspaceCreditsExhausted"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf2AllOf2Status": {
+        "enum": [
+          "403"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf2AllOf2Status",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "403",
+              "name": "Value403"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf3AllOf2Code": {
+        "enum": [
+          "agent_credit_limit_reached"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf3AllOf2Code",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "agent_credit_limit_reached",
+              "name": "AgentCreditLimitReached"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf3AllOf2Status": {
+        "enum": [
+          "403"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf3AllOf2Status",
           "modelAsString": false,
           "values": [
             {
@@ -47289,6 +47582,102 @@
       "DataSourceViewObjectResponseQuickFiltersAdditionalProperties": {
         "type": "object",
         "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field. For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
+      },
+      "ErrorApi403OneOf2AllOf2AdditionalDataToolErrorCode": {
+        "enum": [
+          "workspace_credits_exhausted"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf2AllOf2AdditionalDataToolErrorCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "workspace_credits_exhausted",
+              "name": "WorkspaceCreditsExhausted"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf2AllOf2AdditionalDataToolErrorClass": {
+        "enum": [
+          "entitlement_required"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf2AllOf2AdditionalDataToolErrorClass",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "entitlement_required",
+              "name": "EntitlementRequired"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf2AllOf2AdditionalDataToolErrorRetryable": {
+        "enum": [
+          "false"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf2AllOf2AdditionalDataToolErrorRetryable",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "false",
+              "name": "FalseValue"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf3AllOf2AdditionalDataToolErrorCode": {
+        "enum": [
+          "agent_credit_limit_reached"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf3AllOf2AdditionalDataToolErrorCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "agent_credit_limit_reached",
+              "name": "AgentCreditLimitReached"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf3AllOf2AdditionalDataToolErrorClass": {
+        "enum": [
+          "entitlement_required"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf3AllOf2AdditionalDataToolErrorClass",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "entitlement_required",
+              "name": "EntitlementRequired"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf3AllOf2AdditionalDataToolErrorRetryable": {
+        "enum": [
+          "false"
+        ],
+        "type": "object",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf3AllOf2AdditionalDataToolErrorRetryable",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "false",
+              "name": "FalseValue"
+            }
+          ]
+        }
       },
       "UserUser": {
         "type": "object"
@@ -47859,7 +48248,8 @@
         "properties": {
           "content": {
             "type": "string",
-            "description": "The enhanced markdown content to insert into the page."
+            "description": "The enhanced markdown content to insert into the page.",
+            "example": "## New Section\n\nInserted content here."
           },
           "after": {
             "type": "string",
@@ -47880,7 +48270,8 @@
         "properties": {
           "content": {
             "type": "string",
-            "description": "The new enhanced markdown content to replace the matched range."
+            "description": "The new enhanced markdown content to replace the matched range.",
+            "example": "## Updated Section\n\nNew content replaces the old."
           },
           "content_range": {
             "type": "string",
@@ -47922,7 +48313,8 @@
         "properties": {
           "new_str": {
             "type": "string",
-            "description": "The new enhanced markdown content to replace the entire page content."
+            "description": "The new enhanced markdown content to replace the entire page content.",
+            "example": "# Updated Page\n\nCompletely new page content."
           },
           "allow_deleting_content": {
             "type": "boolean",
@@ -48194,7 +48586,8 @@
             "minimum": false,
             "exclusiveMinimum": true,
             "type": "number",
-            "description": "Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width."
+            "description": "Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width.",
+            "example": 0.5
           }
         },
         "additionalProperties": false
@@ -50840,9 +51233,7 @@
       "ErrorApi403Code": {
         "enum": [
           "restricted_resource",
-          "status_change_not_allowed",
-          "workspace_credits_exhausted",
-          "agent_credit_limit_reached"
+          "status_change_not_allowed"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -50857,14 +51248,6 @@
             {
               "value": "status_change_not_allowed",
               "name": "StatusChangeNotAllowed"
-            },
-            {
-              "value": "workspace_credits_exhausted",
-              "name": "WorkspaceCreditsExhausted"
-            },
-            {
-              "value": "agent_credit_limit_reached",
-              "name": "AgentCreditLimitReached"
             }
           ]
         }
@@ -53051,6 +53434,67 @@
             {
               "value": "agent",
               "name": "Agent"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf2AllOf2AdditionalDataRecoveryKind": {
+        "enum": [
+          "contact_workspace_owner",
+          "open_workspace_credit_settings"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The recovery action selected by Notion for the caller.",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf2AllOf2AdditionalDataRecoveryKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "contact_workspace_owner",
+              "name": "ContactWorkspaceOwner"
+            },
+            {
+              "value": "open_workspace_credit_settings",
+              "name": "OpenWorkspaceCreditSettings"
+            }
+          ]
+        }
+      },
+      "ErrorApi403OneOf3AllOf2AdditionalDataRecoveryKind": {
+        "enum": [
+          "contact_workspace_owner",
+          "none",
+          "open_agent_settings",
+          "request_agent_limit_increase",
+          "request_pending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The recovery action selected by Notion for the caller.",
+        "x-ms-enum": {
+          "name": "ErrorApi403OneOf3AllOf2AdditionalDataRecoveryKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "contact_workspace_owner",
+              "name": "ContactWorkspaceOwner"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            },
+            {
+              "value": "open_agent_settings",
+              "name": "OpenAgentSettings"
+            },
+            {
+              "value": "request_agent_limit_increase",
+              "name": "RequestAgentLimitIncrease"
+            },
+            {
+              "value": "request_pending",
+              "name": "RequestPending"
             }
           ]
         }

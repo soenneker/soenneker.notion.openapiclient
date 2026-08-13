@@ -69,10 +69,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate? Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse? Date { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate Date { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse Date { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -291,10 +291,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect? Select { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Select { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect Select { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Select { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -307,10 +307,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseStatus? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseStatus Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Status { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -379,10 +379,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification? Verification { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse? Verification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification Verification { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse Verification { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -463,7 +463,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 result.CreatedBy = new global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy();
                 result.CreatedByPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse();
                 result.CreatedTimePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CreatedTimePropertyItemObjectResponse();
-                result.Date = new global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponseDate();
+                result.Date = new global::Soenneker.Notion.OpenApiClient.Models.DateResponse();
                 result.DatePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse();
                 result.EmailPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.EmailPropertyItemObjectResponse();
                 result.FilesPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponse();
@@ -485,16 +485,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 result.RichTextPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.RichTextPropertyItemObjectResponse();
                 result.Rollup = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup();
                 result.RollupPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse();
-                result.Select = new global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect();
+                result.Select = new global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse();
                 result.SelectPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse();
-                result.Status = new global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseStatus();
+                result.Status = new global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse();
                 result.StatusPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse();
                 result.Title = new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse();
                 result.TitlePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.TitlePropertyItemObjectResponse();
                 result.UniqueId = new global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId();
                 result.UniqueIdPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse();
                 result.UrlPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UrlPropertyItemObjectResponse();
-                result.Verification = new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponseVerification();
+                result.Verification = new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse();
                 result.VerificationPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse();
             }
             return result;

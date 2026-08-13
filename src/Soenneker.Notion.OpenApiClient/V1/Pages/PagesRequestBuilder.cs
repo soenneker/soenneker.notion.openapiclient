@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages", pathParameters)
+        public PagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages{?filter_properties*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages", rawUrl)
+        public PagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages{?filter_properties*}", rawUrl)
         {
         }
         /// <summary>
@@ -66,11 +66,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PostPage200Response?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PostPage200Response?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.PagesRequestBuilder.PagesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PostPage200Response> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PostPage200Response> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.PagesRequestBuilder.PagesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -99,11 +99,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.PagesRequestBuilder.PagesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.PagesRequestBuilder.PagesRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,6 +121,22 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages
         public global::Soenneker.Notion.OpenApiClient.V1.Pages.PagesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Notion.OpenApiClient.V1.Pages.PagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Create a page
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PagesRequestBuilderPostQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter_properties")]
+            public string[]? FilterProperties { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter_properties")]
+            public string[] FilterProperties { get; set; }
+#endif
         }
     }
 }

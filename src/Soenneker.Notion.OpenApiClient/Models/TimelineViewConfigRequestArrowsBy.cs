@@ -8,36 +8,27 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration for dependency arrows between timeline items. Pass null to clear.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsByMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TimelineViewConfigRequestArrowsBy : IAdditionalDataHolder, IParsable
+    public partial class TimelineViewConfigRequestArrowsBy : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Relation property ID used for dependency arrows, or null to disable arrows.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest? TimelineArrowsByRequest { get; set; }
 #nullable restore
 #else
-        public string PropertyId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest TimelineArrowsByRequest { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsByMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsByMember1? TimelineViewConfigRequestArrowsByMember1 { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsByMember1 TimelineViewConfigRequestArrowsByMember1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy"/> and sets the default values.
-        /// </summary>
-        public TimelineViewConfigRequestArrowsBy()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsBy();
+            if("TimelineArrowsByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TimelineArrowsByRequest = new global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,11 +51,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(TimelineArrowsByRequest != null)
             {
-                { "property_id", n => { PropertyId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return TimelineArrowsByRequest.GetFieldDeserializers();
+            }
+            else if(TimelineViewConfigRequestArrowsByMember1 != null)
+            {
+                return TimelineViewConfigRequestArrowsByMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -67,9 +68,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("property_id", PropertyId);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(TimelineArrowsByRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest>(null, TimelineArrowsByRequest);
+            }
+            else if(TimelineViewConfigRequestArrowsByMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestArrowsByMember1>(null, TimelineViewConfigRequestArrowsByMember1);
+            }
         }
     }
 }

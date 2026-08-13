@@ -8,38 +8,27 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Y-axis aggregation for grouped data mode. Pass null to clear.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxisMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChartViewConfigRequestYAxis : IAdditionalDataHolder, IParsable
+    public partial class ChartViewConfigRequestYAxis : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The aggregation operator. &quot;count&quot; counts all rows and does not require a property_id. All other operators require a property_id.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequestAggregator? Aggregator { get; set; }
-        /// <summary>The property to aggregate on. Required for all operators except &quot;count&quot;.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest? ChartAggregationRequest { get; set; }
 #nullable restore
 #else
-        public string PropertyId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest ChartAggregationRequest { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxisMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxisMember1? ChartViewConfigRequestYAxisMember1 { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxisMember1 ChartViewConfigRequestYAxisMember1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis"/> and sets the default values.
-        /// </summary>
-        public ChartViewConfigRequestYAxis()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxis();
+            if("ChartAggregationRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ChartAggregationRequest = new global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,12 +51,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ChartAggregationRequest != null)
             {
-                { "aggregator", n => { Aggregator = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequestAggregator>(); } },
-                { "property_id", n => { PropertyId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return ChartAggregationRequest.GetFieldDeserializers();
+            }
+            else if(ChartViewConfigRequestYAxisMember1 != null)
+            {
+                return ChartViewConfigRequestYAxisMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -70,10 +68,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequestAggregator>("aggregator", Aggregator);
-            writer.WriteStringValue("property_id", PropertyId);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ChartAggregationRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequest>(null, ChartAggregationRequest);
+            }
+            else if(ChartViewConfigRequestYAxisMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestYAxisMember1>(null, ChartViewConfigRequestYAxisMember1);
+            }
         }
     }
 }

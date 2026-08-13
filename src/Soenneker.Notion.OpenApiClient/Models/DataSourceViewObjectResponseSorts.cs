@@ -8,20 +8,27 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// The sorts applied to this view (same shape as data source query sorts).
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSortsMember1"/>, List&lt;global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DataSourceViewObjectResponseSorts : IAdditionalDataHolder, IParsable
+    public partial class DataSourceViewObjectResponseSorts : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts"/> and sets the default values.
-        /// </summary>
-        public DataSourceViewObjectResponseSorts()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSortsMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSortsMember1? DataSourceViewObjectResponseSortsMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSortsMember1 DataSourceViewObjectResponseSortsMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>? ViewSortResponse { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse> ViewSortResponse { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts();
+            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse> viewSortResponseValue)
+            {
+                result.ViewSortResponse = viewSortResponseValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -38,9 +51,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DataSourceViewObjectResponseSortsMember1 != null)
             {
-            };
+                return DataSourceViewObjectResponseSortsMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -49,7 +64,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            if(DataSourceViewObjectResponseSortsMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSortsMember1>(null, DataSourceViewObjectResponseSortsMember1);
+            }
+            else if(ViewSortResponse != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>(null, ViewSortResponse);
+            }
         }
     }
 }

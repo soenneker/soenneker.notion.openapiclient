@@ -8,32 +8,27 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Timeline display preferences (zoom level and center position). Pass null to clear.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreferenceMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TimelineViewConfigRequestPreference : IAdditionalDataHolder, IParsable
+    public partial class TimelineViewConfigRequestPreference : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Timestamp (ms) to center the timeline view on.</summary>
-        public int? CenterTimestamp { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest? TimelinePreferenceRequest { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest TimelinePreferenceRequest { get; set; }
 #endif
-        /// <summary>Zoom level for the timeline.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel? ZoomLevel { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference"/> and sets the default values.
-        /// </summary>
-        public TimelineViewConfigRequestPreference()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreferenceMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreferenceMember1? TimelineViewConfigRequestPreferenceMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreferenceMember1 TimelineViewConfigRequestPreferenceMember1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference();
+            if("TimelinePreferenceRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TimelinePreferenceRequest = new global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,12 +51,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(TimelinePreferenceRequest != null)
             {
-                { "center_timestamp", n => { CenterTimestamp = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "zoom_level", n => { ZoomLevel = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel>(); } },
-            };
+                return TimelinePreferenceRequest.GetFieldDeserializers();
+            }
+            else if(TimelineViewConfigRequestPreferenceMember1 != null)
+            {
+                return TimelineViewConfigRequestPreferenceMember1.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -64,10 +68,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("center_timestamp", CenterTimestamp);
-            writer.WriteStringValue("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel>("zoom_level", ZoomLevel);
-            writer.WriteAdditionalData(AdditionalData);
+            if(TimelinePreferenceRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest>(null, TimelinePreferenceRequest);
+            }
+            else if(TimelineViewConfigRequestPreferenceMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreferenceMember1>(null, TimelineViewConfigRequestPreferenceMember1);
+            }
         }
     }
 }

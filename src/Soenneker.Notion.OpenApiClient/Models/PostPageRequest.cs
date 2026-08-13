@@ -33,18 +33,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The cover property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestCover? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest? Cover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestCover Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest Cover { get; set; }
 #endif
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestIcon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestIcon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest Icon { get; set; }
 #endif
         /// <summary>Page content as Notion-flavored Markdown. Mutually exclusive with content/children.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,8 +107,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "allow_async", n => { AllowAsync = n.GetBoolValue(); } },
                 { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "content", n => { Content = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestCover>(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestCover.CreateFromDiscriminatorValue); } },
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestIcon>(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestIcon.CreateFromDiscriminatorValue); } },
+                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest.CreateFromDiscriminatorValue); } },
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent>(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent.CreateFromDiscriminatorValue); } },
                 { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema>(global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema.CreateFromDiscriminatorValue); } },
@@ -126,8 +126,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("allow_async", AllowAsync);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>("children", Children);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>("content", Content);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestCover>("cover", Cover);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestIcon>("icon", Icon);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest>("cover", Cover);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>("icon", Icon);
             writer.WriteStringValue("markdown", Markdown);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema>("position", Position);
