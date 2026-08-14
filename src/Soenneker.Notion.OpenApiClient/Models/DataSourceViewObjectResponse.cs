@@ -75,7 +75,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +144,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseLastEditedBy>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseLastEditedBy.CreateFromDiscriminatorValue); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse.CreateFromDiscriminatorValue); } },
                 { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFilters>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFilters.CreateFromDiscriminatorValue); } },
                 { "sorts", n => { Sorts = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts.CreateFromDiscriminatorValue); } },
@@ -163,7 +169,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseLastEditedBy>("last_edited_by", LastEditedBy);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFilters>("quick_filters", QuickFilters);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts>("sorts", Sorts);

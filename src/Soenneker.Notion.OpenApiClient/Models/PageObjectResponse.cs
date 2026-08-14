@@ -57,7 +57,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Date and time when this page was last edited.</summary>
         public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>The page object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,7 +124,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
                 { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponsePropertiesProperty>(global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponsePropertiesProperty.CreateFromDiscriminatorValue); } },
                 { "public_url", n => { PublicUrl = n.GetStringValue(); } },
@@ -142,7 +148,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("is_locked", IsLocked);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("last_edited_by", LastEditedBy);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponsePropertiesProperty>("properties", Properties);
             writer.WriteStringValue("public_url", PublicUrl);

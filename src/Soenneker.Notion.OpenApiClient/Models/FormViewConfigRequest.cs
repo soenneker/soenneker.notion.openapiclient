@@ -21,7 +21,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Permission level granted to the submitter on the created page after form submission. Pass null to clear.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions? SubmissionPermissions { get; set; }
         /// <summary>The view type. Must be &quot;form&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "anonymous_submissions", n => { AnonymousSubmissions = n.GetBoolValue(); } },
                 { "is_form_closed", n => { IsFormClosed = n.GetBoolValue(); } },
                 { "submission_permissions", n => { SubmissionPermissions = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,7 +69,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("anonymous_submissions", AnonymousSubmissions);
             writer.WriteBoolValue("is_form_closed", IsFormClosed);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions>("submission_permissions", SubmissionPermissions);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

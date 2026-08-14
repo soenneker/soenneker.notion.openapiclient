@@ -14038,7 +14038,14 @@
 						"type": "object",
 						"properties": {
 							"verification": {
-								"$ref": "#/components/schemas/verificationPropertyStatusFilter"
+								"anyOf": [
+									{
+										"$ref": "#/components/schemas/verificationPropertyStatusFilter"
+									},
+									{
+										"$ref": "#/components/schemas/verificationPropertyDoesNotEqualFilter"
+									}
+								]
 							},
 							"property": {
 								"type": "string"
@@ -18147,6 +18154,17 @@
 				},
 				"required": ["verification"],
 				"title": "Verification"
+			},
+			"verificationPropertyDoesNotEqualFilter": {
+				"type": "object",
+				"properties": {
+					"does_not_equal": {
+						"type": "string",
+						"enum": ["verified", "expired", "none"]
+					}
+				},
+				"additionalProperties": false,
+				"required": ["does_not_equal"]
 			},
 			"verificationPropertyItemObjectResponse": {
 				"title": "Verification",

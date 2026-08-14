@@ -31,7 +31,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The operation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +47,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Operation Operation { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3_status? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>The status_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,9 +83,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "operation", n => { Operation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Operation>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Operation.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3_status>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "status_url", n => { StatusUrl = n.GetStringValue(); } },
             };
         }
@@ -87,9 +99,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error>("error", Error);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Operation>("operation", Operation);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3_status>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteStringValue("status_url", StatusUrl);
         }
     }

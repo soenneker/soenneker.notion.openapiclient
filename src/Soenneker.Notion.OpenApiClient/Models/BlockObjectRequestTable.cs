@@ -13,7 +13,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The table property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +29,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren Table { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,9 +54,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "table", n => { Table = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren>(global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -54,9 +66,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren>("table", Table);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestTable_type>("type", Type);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

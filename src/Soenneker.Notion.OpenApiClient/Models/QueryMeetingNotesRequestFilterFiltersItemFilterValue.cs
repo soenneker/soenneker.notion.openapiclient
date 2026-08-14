@@ -14,7 +14,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class QueryMeetingNotesRequestFilterFiltersItemFilterValue : IParsable
     {
         /// <summary>Always `exact`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>The literal text the operator compares against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -52,7 +58,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotesRequestFilterFiltersItemFilterValue_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteStringValue("value", Value);
         }
     }

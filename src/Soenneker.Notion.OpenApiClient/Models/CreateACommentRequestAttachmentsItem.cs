@@ -23,7 +23,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string FileUploadId { get; set; }
 #endif
         /// <summary>Always `file_upload`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "file_upload_id", n => { FileUploadId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("file_upload_id", FileUploadId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

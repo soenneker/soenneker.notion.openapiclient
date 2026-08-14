@@ -67,7 +67,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties TableProperties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;timeline&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -101,7 +107,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
                 { "show_table", n => { ShowTable = n.GetBoolValue(); } },
                 { "table_properties", n => { TableProperties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -119,7 +125,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties>("properties", Properties);
             writer.WriteBoolValue("show_table", ShowTable);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties>("table_properties", TableProperties);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

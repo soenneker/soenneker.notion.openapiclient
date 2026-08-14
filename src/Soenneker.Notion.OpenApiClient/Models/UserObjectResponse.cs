@@ -33,7 +33,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The user object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse"/> and sets the default values.
         /// </summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +81,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("avatar_url", AvatarUrl);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

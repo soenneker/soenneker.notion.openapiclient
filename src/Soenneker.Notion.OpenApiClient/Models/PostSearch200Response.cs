@@ -25,7 +25,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string NextCursor { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200Response_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The page_or_data_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +57,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public List<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem> Results { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200Response_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearch200Response"/> and sets the default values.
         /// </summary>
@@ -79,11 +91,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200Response_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "page_or_data_source", n => { PageOrDataSource = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponsePageOrDataSource>(global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponsePageOrDataSource.CreateFromDiscriminatorValue); } },
                 { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus>(global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem>(global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200Response_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -95,11 +107,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200Response_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponsePageOrDataSource>("page_or_data_source", PageOrDataSource);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus>("request_status", RequestStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem>("results", Results);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200Response_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,7 +15,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The grant_type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2_grant_type? GrantType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GrantType { get; set; }
+#nullable restore
+#else
+        public string GrantType { get; set; }
+#endif
         /// <summary>The refresh_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +55,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "grant_type", n => { GrantType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2_grant_type>(); } },
+                { "grant_type", n => { GrantType = n.GetStringValue(); } },
                 { "refresh_token", n => { RefreshToken = n.GetStringValue(); } },
             };
         }
@@ -60,7 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2_grant_type>("grant_type", GrantType);
+            writer.WriteStringValue("grant_type", GrantType);
             writer.WriteStringValue("refresh_token", RefreshToken);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,7 +15,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The data source object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The properties schema of the data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,7 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponsePropertiesProperty>(global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponsePropertiesProperty.CreateFromDiscriminatorValue); } },
             };
         }
@@ -55,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponse_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceObjectResponsePropertiesProperty>("properties", Properties);
         }
     }

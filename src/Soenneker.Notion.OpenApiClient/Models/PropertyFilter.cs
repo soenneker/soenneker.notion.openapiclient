@@ -201,10 +201,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyStatusFilter? Verification { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyFilterVerificationVerification? Verification { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyStatusFilter Verification { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyFilterVerificationVerification Verification { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter"/> and sets the default values.
@@ -254,7 +254,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "unique_id", n => { UniqueId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter.CreateFromDiscriminatorValue); } },
-                { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyStatusFilter>(global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyStatusFilter.CreateFromDiscriminatorValue); } },
+                { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyFilterVerificationVerification>(global::Soenneker.Notion.OpenApiClient.Models.PropertyFilterVerificationVerification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -287,7 +287,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter>("unique_id", UniqueId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>("url", Url);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyStatusFilter>("verification", Verification);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyFilterVerificationVerification>("verification", Verification);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

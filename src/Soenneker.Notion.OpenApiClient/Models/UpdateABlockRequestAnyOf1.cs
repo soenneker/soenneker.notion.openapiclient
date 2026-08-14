@@ -249,7 +249,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest Toggle { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -313,7 +319,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "template", n => { Template = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextRequest.CreateFromDiscriminatorValue); } },
                 { "to_do", n => { ToDo = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1ToDo>(global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1ToDo.CreateFromDiscriminatorValue); } },
                 { "toggle", n => { Toggle = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "video", n => { Video = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithFileAndCaptionRequest>(global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithFileAndCaptionRequest.CreateFromDiscriminatorValue); } },
             };
         }
@@ -354,7 +360,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextRequest>("template", Template);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1ToDo>("to_do", ToDo);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest>("toggle", Toggle);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateABlockRequestAnyOf1_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateMediaContentWithFileAndCaptionRequest>("video", Video);
             writer.WriteAdditionalData(AdditionalData);
         }

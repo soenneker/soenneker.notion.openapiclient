@@ -59,9 +59,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotes MeetingNotes { get; set; }
 #endif
         /// <summary>Always &quot;block&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItem_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>Always &quot;meeting_notes&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItem_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,8 +100,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetStringValue(); } },
                 { "meeting_notes", n => { MeetingNotes = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotes>(global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotes.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItem_object>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItem_type>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,8 +119,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("last_edited_by", LastEditedBy);
             writer.WriteStringValue("last_edited_time", LastEditedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotes>("meeting_notes", MeetingNotes);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItem_object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItem_type>("type", Type);
+            writer.WriteStringValue("object", Object);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

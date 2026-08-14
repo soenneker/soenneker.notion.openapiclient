@@ -25,7 +25,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Start day of week for week grouping (0 = Sunday, 1 = Monday).</summary>
         public double? StartDayOfWeek { get; set; }
         /// <summary>The formula result type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponse_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponseGroupBy>(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse.CreateFromDiscriminatorValue); } },
                 { "start_day_of_week", n => { StartDayOfWeek = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponse_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,7 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponseGroupBy>("group_by", GroupBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>("sort", Sort);
             writer.WriteDoubleValue("start_day_of_week", StartDayOfWeek);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponse_type>("type", Type);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

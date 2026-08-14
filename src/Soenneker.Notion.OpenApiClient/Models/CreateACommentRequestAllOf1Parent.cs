@@ -32,7 +32,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string PageId { get; set; }
 #endif
         /// <summary>Always `page_id`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAllOf1Parent_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAllOf1Parent"/> and sets the default values.
         /// </summary>
@@ -60,7 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "block_id", n => { BlockId = n.GetStringValue(); } },
                 { "page_id", n => { PageId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAllOf1Parent_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -72,7 +78,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("block_id", BlockId);
             writer.WriteStringValue("page_id", PageId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAllOf1Parent_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

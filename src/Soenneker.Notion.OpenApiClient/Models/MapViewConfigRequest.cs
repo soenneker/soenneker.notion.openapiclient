@@ -33,7 +33,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties Properties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;map&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "height", n => { Height = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestHeight>(); } },
                 { "map_by", n => { MapBy = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +81,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestHeight>("height", Height);
             writer.WriteStringValue("map_by", MapBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties>("properties", Properties);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

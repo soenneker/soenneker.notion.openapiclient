@@ -29,7 +29,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest Sort { get; set; }
 #endif
         /// <summary>The formula result type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest"/> and sets the default values.
         /// </summary>
@@ -59,7 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "range_size", n => { RangeSize = n.GetIntValue(); } },
                 { "range_start", n => { RangeStart = n.GetIntValue(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,7 +79,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteIntValue("range_size", RangeSize);
             writer.WriteIntValue("range_start", RangeStart);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>("sort", Sort);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

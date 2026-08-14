@@ -23,7 +23,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse Sort { get; set; }
 #endif
         /// <summary>The formula result type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponse_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponseGroupBy>(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponse_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -56,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponseGroupBy>("group_by", GroupBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>("sort", Sort);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponse_type>("type", Type);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

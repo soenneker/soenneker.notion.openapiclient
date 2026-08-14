@@ -45,7 +45,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The time when the comment was last edited.</summary>
         public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>The comment object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>Whether this comment&apos;s original content was deleted.</summary>
         public bool? OriginalContentDeleted { get; set; }
         /// <summary>The parent property</summary>
@@ -89,7 +95,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName>(global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "original_content_deleted", n => { OriginalContentDeleted = n.GetBoolValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse.CreateFromDiscriminatorValue); } },
                 { "rich_text", n => { RichText = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -109,7 +115,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName>("display_name", DisplayName);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteBoolValue("original_content_deleted", OriginalContentDeleted);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse>("parent", Parent);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("rich_text", RichText);

@@ -21,9 +21,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest Bookmark { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,8 +55,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bookmark", n => { Bookmark = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark_object>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark_type>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +67,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithUrlAndCaptionRequest>("bookmark", Bookmark);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark_object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestBookmark_type>("type", Type);
+            writer.WriteStringValue("object", Object);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

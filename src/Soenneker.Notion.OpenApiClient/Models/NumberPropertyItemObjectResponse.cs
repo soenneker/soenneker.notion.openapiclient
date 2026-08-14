@@ -25,9 +25,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The number property</summary>
         public double? Number { get; set; }
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -55,8 +67,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "number", n => { Number = n.GetDoubleValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse_object>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse_type>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,8 +80,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("number", Number);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse_object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse_type>("type", Type);
+            writer.WriteStringValue("object", Object);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

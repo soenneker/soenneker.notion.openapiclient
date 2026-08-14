@@ -31,7 +31,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount ExternalAccount { get; set; }
 #endif
         /// <summary>The grant_type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1_grant_type? GrantType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GrantType { get; set; }
+#nullable restore
+#else
+        public string GrantType { get; set; }
+#endif
         /// <summary>The redirect_uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +73,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "external_account", n => { ExternalAccount = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount>(global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount.CreateFromDiscriminatorValue); } },
-                { "grant_type", n => { GrantType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1_grant_type>(); } },
+                { "grant_type", n => { GrantType = n.GetStringValue(); } },
                 { "redirect_uri", n => { RedirectUri = n.GetStringValue(); } },
             };
         }
@@ -80,7 +86,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount>("external_account", ExternalAccount);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1_grant_type>("grant_type", GrantType);
+            writer.WriteStringValue("grant_type", GrantType);
             writer.WriteStringValue("redirect_uri", RedirectUri);
             writer.WriteAdditionalData(AdditionalData);
         }

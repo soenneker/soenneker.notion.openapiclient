@@ -13,9 +13,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>The video property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,8 +54,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo_object>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo_type>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "video", n => { Video = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionRequest>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionRequest.CreateFromDiscriminatorValue); } },
             };
         }
@@ -54,8 +66,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo_object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectWithSingleLevelOfChildrenRequestVideo_type>("type", Type);
+            writer.WriteStringValue("object", Object);
+            writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionRequest>("video", Video);
         }
     }

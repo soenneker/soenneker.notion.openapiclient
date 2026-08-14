@@ -225,7 +225,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse NumberedListItem { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The paragraph property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -401,7 +407,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "link_to_page", n => { LinkToPage = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage>(global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage.CreateFromDiscriminatorValue); } },
                 { "meeting_notes", n => { MeetingNotes = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse.CreateFromDiscriminatorValue); } },
                 { "numbered_list_item", n => { NumberedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse.CreateFromDiscriminatorValue); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse.CreateFromDiscriminatorValue); } },
                 { "pdf", n => { Pdf = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
@@ -456,7 +462,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage>("link_to_page", LinkToPage);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse>("meeting_notes", MeetingNotes);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse>("numbered_list_item", NumberedListItem);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectResponse_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse>("paragraph", Paragraph);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("pdf", Pdf);

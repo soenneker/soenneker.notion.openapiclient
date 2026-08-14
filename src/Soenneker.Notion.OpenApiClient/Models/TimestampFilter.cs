@@ -31,7 +31,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter LastEditedTime { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter_timestamp? Timestamp { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Timestamp { get; set; }
+#nullable restore
+#else
+        public string Timestamp { get; set; }
+#endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +73,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter_timestamp>(); } },
+                { "timestamp", n => { Timestamp = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -80,7 +86,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("created_time", CreatedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("last_edited_time", LastEditedTime);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter_timestamp>("timestamp", Timestamp);
+            writer.WriteStringValue("timestamp", Timestamp);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

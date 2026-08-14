@@ -39,9 +39,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string PageId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>The workspace property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent_workspace? Workspace { get; set; }
+        public bool? Workspace { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent"/> and sets the default values.
         /// </summary>
@@ -70,8 +76,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "data_source_id", n => { DataSourceId = n.GetStringValue(); } },
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
                 { "page_id", n => { PageId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent_type>(); } },
-                { "workspace", n => { Workspace = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent_workspace>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "workspace", n => { Workspace = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -84,8 +90,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("database_id", DatabaseId);
             writer.WriteStringValue("data_source_id", DataSourceId);
             writer.WriteStringValue("page_id", PageId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent_type>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent_workspace>("workspace", Workspace);
+            writer.WriteStringValue("type", Type);
+            writer.WriteBoolValue("workspace", Workspace);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

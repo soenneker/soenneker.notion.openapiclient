@@ -23,7 +23,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3ErrorAdditionalData AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The code property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_code? Code { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code { get; set; }
+#nullable restore
+#else
+        public string Code { get; set; }
+#endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,9 +39,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Message { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_status? Status { get; set; }
+        public int? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error"/> and sets the default values.
         /// </summary>
@@ -62,10 +74,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additional_data", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3ErrorAdditionalData>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3ErrorAdditionalData.CreateFromDiscriminatorValue); } },
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_code>(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_object>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_status>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -76,10 +88,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3ErrorAdditionalData>("additional_data", AdditionalDataProperty);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_code>("code", Code);
+            writer.WriteStringValue("code", Code);
             writer.WriteStringValue("message", Message);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Error_status>("status", Status);
+            writer.WriteStringValue("object", Object);
+            writer.WriteIntValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

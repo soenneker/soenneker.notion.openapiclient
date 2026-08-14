@@ -23,7 +23,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The operation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "operation", n => { Operation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1Operation>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1Operation.CreateFromDiscriminatorValue); } },
                 { "poll_after_seconds", n => { PollAfterSeconds = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1Status>(); } },
@@ -80,7 +86,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1Operation>("operation", Operation);
             writer.WriteIntValue("poll_after_seconds", PollAfterSeconds);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1Status>("status", Status);

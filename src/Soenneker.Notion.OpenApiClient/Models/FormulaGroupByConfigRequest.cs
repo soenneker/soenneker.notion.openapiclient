@@ -33,7 +33,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string PropertyId { get; set; }
 #endif
         /// <summary>The property type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest"/> and sets the default values.
         /// </summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy>(global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy.CreateFromDiscriminatorValue); } },
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +81,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy>("group_by", GroupBy);
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteStringValue("property_id", PropertyId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

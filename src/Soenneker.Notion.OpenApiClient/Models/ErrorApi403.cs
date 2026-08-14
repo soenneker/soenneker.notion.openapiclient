@@ -36,9 +36,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string MessageEscaped { get; set; }
 #endif
         /// <summary>The object property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Object? Object { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Object Object { get; set; }
+#endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Status Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403"/> and sets the default values.
         /// </summary>
@@ -67,8 +79,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "additional_data", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403AdditionalData>(global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403AdditionalData.CreateFromDiscriminatorValue); } },
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Code>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Object>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Status>(); } },
+                { "object", n => { Object = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Object>(global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Object.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Status>(global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Status.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,8 +93,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403AdditionalData>("additional_data", AdditionalDataProperty);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Code>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Object>("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -191,7 +191,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse NumberPropertyItemObjectResponse { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The people property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -432,6 +438,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 result.Number = numberValue;
             }
+            else if(parseNode.GetStringValue() is string objectValue)
+            {
+                result.Object = objectValue;
+            }
             else if(parseNode.GetStringValue() is string phoneNumberValue)
             {
                 result.PhoneNumber = phoneNumberValue;
@@ -443,10 +453,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if(parseNode.GetStringValue() is string urlValue)
             {
                 result.Url = urlValue;
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_object>() is global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_object objectValue)
-            {
-                result.Object = objectValue;
             }
             else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse>(global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse> filesValue)
             {
@@ -542,6 +548,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 writer.WriteDoubleValue(null, Number);
             }
+            else if(Object != null)
+            {
+                writer.WriteStringValue(null, Object);
+            }
             else if(PhoneNumber != null)
             {
                 writer.WriteStringValue(null, PhoneNumber);
@@ -553,10 +563,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if(Url != null)
             {
                 writer.WriteStringValue(null, Url);
-            }
-            else if(Object != null)
-            {
-                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse_object>(null, Object);
             }
             else if(Files != null)
             {

@@ -71,7 +71,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The time when the data source was last edited.</summary>
         public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>The data source object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The parent of the data source. This is typically a database (`database_id`), but for externally synced data sources, can be another data source (`data_source_id`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,7 +147,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "is_inline", n => { IsInline = n.GetBoolValue(); } },
                 { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceResponse.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponsePropertiesProperty>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponsePropertiesProperty.CreateFromDiscriminatorValue); } },
                 { "public_url", n => { PublicUrl = n.GetStringValue(); } },
@@ -167,7 +173,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("is_inline", IsInline);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("last_edited_by", LastEditedBy);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponse_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceResponse>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponsePropertiesProperty>("properties", Properties);
             writer.WriteStringValue("public_url", PublicUrl);

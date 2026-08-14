@@ -23,7 +23,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties Properties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;list&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequestProperties>("properties", Properties);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

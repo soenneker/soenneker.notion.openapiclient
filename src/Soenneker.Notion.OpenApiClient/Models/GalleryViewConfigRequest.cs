@@ -37,7 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties Properties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;gallery&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "cover_aspect", n => { CoverAspect = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect>(); } },
                 { "cover_size", n => { CoverSize = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize>(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,7 +89,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect>("cover_aspect", CoverAspect);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize>("cover_size", CoverSize);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties>("properties", Properties);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -36,9 +36,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string MessageEscaped { get; set; }
 #endif
         /// <summary>The object property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Object? Object { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Object Object { get; set; }
+#endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Status Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400"/> and sets the default values.
         /// </summary>
@@ -67,8 +79,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "additional_data", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400AdditionalData>(global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400AdditionalData.CreateFromDiscriminatorValue); } },
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Code>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Object>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Status>(); } },
+                { "object", n => { Object = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Object>(global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Object.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Status>(global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Status.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,8 +93,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400AdditionalData>("additional_data", AdditionalDataProperty);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Code>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Object>("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth400Status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

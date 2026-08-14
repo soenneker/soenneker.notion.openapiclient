@@ -25,7 +25,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string NextCursor { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.User_object? Object { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Object { get; set; }
+#nullable restore
+#else
+        public string Object { get; set; }
+#endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,7 +41,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public List<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse> Results { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.User_type? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,9 +83,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.User_object>(); } },
+                { "object", n => { Object = n.GetStringValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.User_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "user", n => { UserProp = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UserUser>(global::Soenneker.Notion.OpenApiClient.Models.UserUser.CreateFromDiscriminatorValue); } },
             };
         }
@@ -86,9 +98,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.User_object>("object", Object);
+            writer.WriteStringValue("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse>("results", Results);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.User_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UserUser>("user", UserProp);
             writer.WriteAdditionalData(AdditionalData);
         }
