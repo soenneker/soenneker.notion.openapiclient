@@ -8,29 +8,29 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Quick filters for the view&apos;s filter bar. Keys are property names or IDs. Set a key to a filter condition to add/update that quick filter. Set a key to null to remove it. Pass null for the entire field to clear all quick filters. Unmentioned quick filters are preserved.
+    /// Quick filters pinned to the view&apos;s filter bar. Keys are property IDs. Values are filter conditions (same shape as a property filter without the property field). Null when no quick filters are set.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdateViewRequestQuickFilters : IAdditionalDataHolder, IParsable
+    public partial class DataSourceViewObjectResponseQuickFiltersProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFilters"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty"/> and sets the default values.
         /// </summary>
-        public UpdateViewRequestQuickFilters()
+        public DataSourceViewObjectResponseQuickFiltersProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFilters"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFilters CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFilters();
+            return new global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

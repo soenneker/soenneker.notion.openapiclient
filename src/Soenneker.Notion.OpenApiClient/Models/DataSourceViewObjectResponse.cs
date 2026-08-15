@@ -93,10 +93,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Quick filters pinned to the view&apos;s filter bar. Keys are property IDs. Values are filter conditions (same shape as a property filter without the property field). Null when no quick filters are set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFilters? QuickFilters { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty? QuickFilters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFilters QuickFilters { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty QuickFilters { get; set; }
 #endif
         /// <summary>The sorts applied to this view (same shape as data source query sorts).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse.CreateFromDiscriminatorValue); } },
-                { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFilters>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFilters.CreateFromDiscriminatorValue); } },
+                { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty.CreateFromDiscriminatorValue); } },
                 { "sorts", n => { Sorts = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -171,7 +171,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>("parent", Parent);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFilters>("quick_filters", QuickFilters);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty>("quick_filters", QuickFilters);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts>("sorts", Sorts);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType>("type", Type);
             writer.WriteStringValue("url", Url);

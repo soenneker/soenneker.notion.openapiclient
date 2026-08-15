@@ -11392,7 +11392,7 @@
             "$ref": "#/components/schemas/DataSourceViewObjectResponseSorts"
           },
           "quick_filters": {
-            "$ref": "#/components/schemas/DataSourceViewObjectResponseQuickFilters"
+            "$ref": "#/components/schemas/DataSourceViewObjectResponseQuickFiltersProperty"
           },
           "configuration": {
             "$ref": "#/components/schemas/DataSourceViewObjectResponseConfiguration"
@@ -23248,7 +23248,7 @@
             "$ref": "#/components/schemas/UpdateViewRequestSorts"
           },
           "quick_filters": {
-            "$ref": "#/components/schemas/UpdateViewRequestQuickFilters"
+            "$ref": "#/components/schemas/UpdateViewRequestQuickFiltersProperty"
           },
           "configuration": {
             "$ref": "#/components/schemas/ViewConfigRequest"
@@ -38215,6 +38215,13 @@
         },
         "description": "The properties schema of the data source."
       },
+      "DataSourceViewObjectResponseQuickFiltersProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DataSourceViewObjectResponseQuickFiltersPropertyAdditionalProperties"
+        },
+        "description": "Quick filters pinned to the view\u0027s filter bar. Keys are property IDs. Values are filter conditions (same shape as a property filter without the property field). Null when no quick filters are set."
+      },
       "DateDatabasePropertyConfigResponseDate": {
         "type": "object"
       },
@@ -38536,6 +38543,13 @@
       },
       "UnsupportedPartialRollupValueResponseUnsupported": {
         "type": "object"
+      },
+      "UpdateViewRequestQuickFiltersProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/UpdateViewRequestQuickFiltersAdditionalProperties"
+        },
+        "description": "Quick filters for the view\u0027s filter bar. Keys are property names or IDs. Set a key to a filter condition to add/update that quick filter. Set a key to null to remove it. Pass null for the entire field to clear all quick filters. Unmentioned quick filters are preserved."
       },
       "UrlDatabasePropertyConfigResponseUrl": {
         "type": "object"
@@ -39688,6 +39702,10 @@
       "CreateViewRequestQuickFiltersPropertyAdditionalProperties": {
         "type": "object",
         "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field (the hashmap key identifies the property). For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
+      },
+      "DataSourceViewObjectResponseQuickFiltersPropertyAdditionalProperties": {
+        "type": "object",
+        "description": "\u0022A property filter condition. Same shape as a property filter but without the \\\u0022property\\\u0022 field. For example: { \\\u0022select\\\u0022: { \\\u0022equals\\\u0022: \\\u0022High\\\u0022 } }.\u0022"
       },
       "PostPageRequestPropertiesAdditionalProperties": {
         "type": "object",
@@ -42104,6 +42122,7 @@
       "ErrorApi409Code": {
         "enum": [
           "conflict_error",
+          "idempotency_key_reused",
           "agent_deleted"
         ],
         "type": "string",
@@ -42115,6 +42134,10 @@
             {
               "value": "conflict_error",
               "name": "ConflictError"
+            },
+            {
+              "value": "idempotency_key_reused",
+              "name": "IdempotencyKeyReused"
             },
             {
               "value": "agent_deleted",

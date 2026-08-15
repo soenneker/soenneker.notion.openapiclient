@@ -7925,7 +7925,11 @@
 						"type": "object",
 						"properties": {
 							"code": {
-								"enum": ["conflict_error", "agent_deleted"]
+								"enum": [
+									"conflict_error",
+									"idempotency_key_reused",
+									"agent_deleted"
+								]
 							},
 							"status": {
 								"const": 409
@@ -23488,6 +23492,50 @@
 																"code": {
 																	"type": "string",
 																	"const": "conflict_error"
+																},
+																"message": {
+																	"type": "string",
+																	"minLength": 1
+																},
+																"additional_data": {
+																	"type": "object",
+																	"additionalProperties": {
+																		"oneOf": [
+																			{
+																				"type": "string"
+																			},
+																			{
+																				"type": "array",
+																				"items": {
+																					"type": "string"
+																				}
+																			}
+																		]
+																	}
+																}
+															}
+														},
+														{
+															"type": "object",
+															"required": [
+																"object",
+																"status",
+																"code",
+																"message"
+															],
+															"additionalProperties": false,
+															"properties": {
+																"object": {
+																	"type": "string",
+																	"const": "error"
+																},
+																"status": {
+																	"type": "integer",
+																	"const": 409
+																},
+																"code": {
+																	"type": "string",
+																	"const": "idempotency_key_reused"
 																},
 																"message": {
 																	"type": "string",
