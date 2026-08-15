@@ -14,14 +14,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `user`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.UserType? Type { get; set; }
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,8 +24,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser User { get; set; }
 #endif
-        /// <summary>The workspace property</summary>
-        public bool? Workspace { get; set; }
+        /// <summary>Always true for workspace parent.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace? Workspace { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner"/> and sets the default values.
         /// </summary>
@@ -57,9 +51,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser>(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser.CreateFromDiscriminatorValue); } },
-                { "workspace", n => { Workspace = n.GetBoolValue(); } },
+                { "workspace", n => { Workspace = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>(); } },
             };
         }
         /// <summary>
@@ -69,9 +63,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser>("user", User);
-            writer.WriteBoolValue("workspace", Workspace);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>("workspace", Workspace);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

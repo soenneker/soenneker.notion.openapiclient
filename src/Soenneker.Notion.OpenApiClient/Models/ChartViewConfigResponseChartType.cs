@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>&quot;The chart type: column (vertical bars), bar (horizontal bars), line, donut, or number (single value display).&quot;</summary>
+    /// <summary>The chart type: column (vertical bars), bar (horizontal bars), line, donut, or number (single value display).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ChartViewConfigResponseChartType
     {

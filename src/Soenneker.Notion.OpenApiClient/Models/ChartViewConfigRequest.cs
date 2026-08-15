@@ -71,13 +71,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy StackBy { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;chart&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartType? Type { get; set; }
         /// <summary>Aggregation for number charts. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,7 +160,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "smooth_line", n => { SmoothLine = n.GetBoolValue(); } },
                 { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestSort>(); } },
                 { "stack_by", n => { StackBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestValue>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestValue.CreateFromDiscriminatorValue); } },
                 { "x_axis", n => { XAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestXAxis>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestXAxis.CreateFromDiscriminatorValue); } },
                 { "x_axis_property_id", n => { XAxisPropertyId = n.GetStringValue(); } },
@@ -202,7 +196,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("smooth_line", SmoothLine);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestSort>("sort", Sort);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestStackBy>("stack_by", StackBy);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestValue>("value", Value);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestXAxis>("x_axis", XAxis);
             writer.WriteStringValue("x_axis_property_id", XAxisPropertyId);

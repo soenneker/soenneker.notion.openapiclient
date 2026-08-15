@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;One of: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`, `default_background`, `gray_background`, `brown_background`, `orange_background`, `yellow_background`, `green_background`, `blue_background`, `purple_background`, `pink_background`, `red_background`&quot;</summary>
+        /// <summary>One of: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`, `default_background`, `gray_background`, `brown_background`, `orange_background`, `yellow_background`, `green_background`, `blue_background`, `purple_background`, `pink_background`, `red_background`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ApiColor? Color { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableOfContentsBlockObjectResponseTableOfContents"/> and sets the default values.

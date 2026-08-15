@@ -17,9 +17,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The direction property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortDirection? Direction { get; set; }
         /// <summary>The property property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortProperty? Property { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RelevanceProperty? Property { get; set; }
         /// <summary>The timestamp property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortTimestamp? Timestamp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimeTimestamp? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSort"/> and sets the default values.
         /// </summary>
@@ -46,8 +46,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortDirection>(); } },
-                { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortProperty>(); } },
-                { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortTimestamp>(); } },
+                { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelevanceProperty>(); } },
+                { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimeTimestamp>(); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortDirection>("direction", Direction);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortProperty>("property", Property);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestSortTimestamp>("timestamp", Timestamp);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelevanceProperty>("property", Property);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimeTimestamp>("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,7 +16,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public bool? Bold { get; set; }
         /// <summary>The code property</summary>
         public bool? Code { get; set; }
-        /// <summary>&quot;One of: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`, `default_background`, `gray_background`, `brown_background`, `orange_background`, `yellow_background`, `green_background`, `blue_background`, `purple_background`, `pink_background`, `red_background`&quot;</summary>
+        /// <summary>One of: `default`, `gray`, `brown`, `orange`, `yellow`, `green`, `blue`, `purple`, `pink`, `red`, `default_background`, `gray_background`, `brown_background`, `orange_background`, `yellow_background`, `green_background`, `blue_background`, `purple_background`, `pink_background`, `red_background`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ApiColor? Color { get; set; }
         /// <summary>The italic property</summary>
         public bool? Italic { get; set; }

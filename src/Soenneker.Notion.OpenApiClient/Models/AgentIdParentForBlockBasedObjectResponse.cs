@@ -15,13 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
         public Guid? AgentId { get; set; }
         /// <summary>The parent type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentIdType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentIdType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("agent_id", AgentId);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentIdType>("type", Type);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>&quot;One of: `custom`, `user`, `integration`&quot;</summary>
+    /// <summary>One of: `custom`, `user`, `integration`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CommentObjectResponseDisplayNameType
     {

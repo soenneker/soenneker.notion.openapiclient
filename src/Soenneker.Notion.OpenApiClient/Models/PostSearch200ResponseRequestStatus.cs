@@ -14,8 +14,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The incomplete_reason property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusIncompleteReason? IncompleteReason { get; set; }
+        /// <summary>Why the result set is incomplete. Only present when `type` is `incomplete`.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.QueryResultLimitReachedIncompleteReason? IncompleteReason { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusType? Type { get; set; }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "incomplete_reason", n => { IncompleteReason = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusIncompleteReason>(); } },
+                { "incomplete_reason", n => { IncompleteReason = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryResultLimitReachedIncompleteReason>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusType>(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusIncompleteReason>("incomplete_reason", IncompleteReason);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryResultLimitReachedIncompleteReason>("incomplete_reason", IncompleteReason);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

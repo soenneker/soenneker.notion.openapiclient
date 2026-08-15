@@ -46,14 +46,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequest FileUploadPageCoverRequest { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest"/> and sets the default values.
         /// </summary>
@@ -69,7 +63,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest();
             if("ExternalPageCoverRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -79,7 +73,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 result.FileUploadPageCoverRequest = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequest();
             }
-            else if(parseNode.GetStringValue() is string typeValue)
+            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>() is global::Soenneker.Notion.OpenApiClient.Models.FileUploadType typeValue)
             {
                 result.Type = typeValue;
             }
@@ -134,7 +128,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             }
             else if(Type != null)
             {
-                writer.WriteStringValue(null, Type);
+                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>(null, Type);
             }
             writer.WriteAdditionalData(AdditionalData);
         }

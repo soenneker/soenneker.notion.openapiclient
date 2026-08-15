@@ -12,7 +12,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class CommentObjectResponseAttachmentsItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;One of: `audio`, `image`, `pdf`, `productivity`, `video`&quot;</summary>
+        /// <summary>One of: `audio`, `image`, `pdf`, `productivity`, `video`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseAttachmentsItemCategory? Category { get; set; }
         /// <summary>The file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

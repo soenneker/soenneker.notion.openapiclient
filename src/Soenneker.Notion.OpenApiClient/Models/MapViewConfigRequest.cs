@@ -33,13 +33,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties Properties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;map&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.MapType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "height", n => { Height = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestHeight>(); } },
                 { "map_by", n => { MapBy = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapType>(); } },
             };
         }
         /// <summary>
@@ -81,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestHeight>("height", Height);
             writer.WriteStringValue("map_by", MapBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties>("properties", Properties);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

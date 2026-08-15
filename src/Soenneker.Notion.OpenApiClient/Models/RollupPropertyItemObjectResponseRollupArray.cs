@@ -24,14 +24,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The function property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.RollupFunction? Function { get; set; }
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `array`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ArrayType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArray"/> and sets the default values.
         /// </summary>
@@ -59,7 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "array", n => { Array = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayArrayItem>(global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayArrayItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ArrayType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayArrayItem>("array", Array);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ArrayType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -39,13 +39,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange ReplaceContentRange { get; set; }
 #endif
         /// <summary>Always `insert_content`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.InsertContentType? Type { get; set; }
         /// <summary>Update specific content using search-and-replace operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,7 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "insert_content", n => { InsertContent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContent>(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContent.CreateFromDiscriminatorValue); } },
                 { "replace_content", n => { ReplaceContent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent>(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent.CreateFromDiscriminatorValue); } },
                 { "replace_content_range", n => { ReplaceContentRange = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange>(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.InsertContentType>(); } },
                 { "update_content", n => { UpdateContent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContent>(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContent.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,7 +90,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContent>("insert_content", InsertContent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent>("replace_content", ReplaceContent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange>("replace_content_range", ReplaceContentRange);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.InsertContentType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContent>("update_content", UpdateContent);
             writer.WriteAdditionalData(AdditionalData);
         }

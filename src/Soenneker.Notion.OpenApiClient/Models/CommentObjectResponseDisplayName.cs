@@ -21,7 +21,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string ResolvedName { get; set; }
 #endif
-        /// <summary>&quot;One of: `custom`, `user`, `integration`&quot;</summary>
+        /// <summary>One of: `custom`, `user`, `integration`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayNameType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

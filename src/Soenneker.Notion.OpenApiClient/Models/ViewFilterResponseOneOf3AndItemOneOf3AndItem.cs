@@ -37,7 +37,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3AndItemOneOf3AndItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3AndItemOneOf3AndItem();
             if("ViewFilterResponseOneOf3AndItemOneOf3AndItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

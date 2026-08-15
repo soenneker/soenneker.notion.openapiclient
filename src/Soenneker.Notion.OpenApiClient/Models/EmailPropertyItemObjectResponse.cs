@@ -31,21 +31,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
+        /// <summary>Always `email`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.EmailType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.EmailPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -73,8 +61,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.EmailType>(); } },
             };
         }
         /// <summary>
@@ -86,8 +74,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("object", Object);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.EmailType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

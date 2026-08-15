@@ -174,14 +174,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter Title { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `title`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.TitleType? Type { get; set; }
         /// <summary>The unique_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -251,7 +245,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "select", n => { Select = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TitleType>(); } },
                 { "unique_id", n => { UniqueId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter.CreateFromDiscriminatorValue); } },
                 { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyFilterVerificationVerification>(global::Soenneker.Notion.OpenApiClient.Models.PropertyFilterVerificationVerification.CreateFromDiscriminatorValue); } },
@@ -284,7 +278,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyFilter>("select", Select);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>("title", Title);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TitleType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyFilter>("unique_id", UniqueId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextPropertyFilter>("url", Url);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyFilterVerificationVerification>("verification", Verification);

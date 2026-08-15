@@ -23,21 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public UntypedNode Date { get; set; }
 #endif
         /// <summary>Always `unverified`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get; set; }
-#nullable restore
-#else
-        public string State { get; set; }
-#endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.UnverifiedState? State { get; set; }
         /// <summary>The verified_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,8 +58,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "date", n => { Date = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnverifiedState>(); } },
                 { "verified_by", n => { VerifiedBy = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
@@ -85,8 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("date", Date);
-            writer.WriteStringValue("state", State);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnverifiedState>("state", State);
             writer.WriteObjectValue<UntypedNode>("verified_by", VerifiedBy);
             writer.WriteAdditionalData(AdditionalData);
         }

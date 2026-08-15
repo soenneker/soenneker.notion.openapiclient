@@ -38,14 +38,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse Sort { get; set; }
 #endif
-        /// <summary>The property type for grouping.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `relation`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
                 { "property_name", n => { PropertyName = n.GetStringValue(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationType>(); } },
             };
         }
         /// <summary>
@@ -82,7 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("property_id", PropertyId);
             writer.WriteStringValue("property_name", PropertyName);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>("sort", Sort);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationType>("type", Type);
         }
     }
 }

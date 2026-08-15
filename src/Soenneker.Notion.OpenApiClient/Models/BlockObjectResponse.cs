@@ -225,13 +225,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse NumberedListItem { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObject? Object { get; set; }
         /// <summary>The paragraph property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -328,14 +322,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse Toggle { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ParagraphType? Type { get; set; }
         /// <summary>The unsupported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -407,7 +395,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "link_to_page", n => { LinkToPage = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage>(global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage.CreateFromDiscriminatorValue); } },
                 { "meeting_notes", n => { MeetingNotes = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse.CreateFromDiscriminatorValue); } },
                 { "numbered_list_item", n => { NumberedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>(); } },
                 { "paragraph", n => { Paragraph = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse.CreateFromDiscriminatorValue); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse.CreateFromDiscriminatorValue); } },
                 { "pdf", n => { Pdf = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
@@ -420,7 +408,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "template", n => { Template = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateBlockObjectResponseTemplate>(global::Soenneker.Notion.OpenApiClient.Models.TemplateBlockObjectResponseTemplate.CreateFromDiscriminatorValue); } },
                 { "to_do", n => { ToDo = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ToDoBlockObjectResponseToDo>(global::Soenneker.Notion.OpenApiClient.Models.ToDoBlockObjectResponseToDo.CreateFromDiscriminatorValue); } },
                 { "toggle", n => { Toggle = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ParagraphType>(); } },
                 { "unsupported", n => { Unsupported = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedBlockObjectResponseUnsupported>(global::Soenneker.Notion.OpenApiClient.Models.UnsupportedBlockObjectResponseUnsupported.CreateFromDiscriminatorValue); } },
                 { "video", n => { Video = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse.CreateFromDiscriminatorValue); } },
             };
@@ -462,7 +450,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage>("link_to_page", LinkToPage);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionBlockResponse>("meeting_notes", MeetingNotes);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorAndListResponse>("numbered_list_item", NumberedListItem);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextColorAndIconResponse>("paragraph", Paragraph);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("pdf", Pdf);
@@ -475,7 +463,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateBlockObjectResponseTemplate>("template", Template);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ToDoBlockObjectResponseToDo>("to_do", ToDo);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorResponse>("toggle", Toggle);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ParagraphType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedBlockObjectResponseUnsupported>("unsupported", Unsupported);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse>("video", Video);
             writer.WriteAdditionalData(AdditionalData);

@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
-        /// <summary>&quot;One of: `person`, `bot`, `agent`&quot;</summary>
+        /// <summary>One of: `person`, `bot`, `agent`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedByType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

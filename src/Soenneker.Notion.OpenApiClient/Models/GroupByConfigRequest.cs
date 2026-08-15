@@ -115,14 +115,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest TextGroupByConfigRequest { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The property type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectGroupByConfigRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest"/> and sets the default values.
         /// </summary>
@@ -138,7 +132,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest();
             if("CheckboxGroupByConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -180,6 +174,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 result.TextGroupByConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest();
             }
+            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectGroupByConfigRequestType>() is global::Soenneker.Notion.OpenApiClient.Models.SelectGroupByConfigRequestType typeValue)
+            {
+                result.Type = typeValue;
+            }
             else if(parseNode.GetBoolValue() is bool hideEmptyGroupsValue)
             {
                 result.HideEmptyGroups = hideEmptyGroupsValue;
@@ -203,10 +201,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if(parseNode.GetDoubleValue() is double startDayOfWeekValue)
             {
                 result.StartDayOfWeek = startDayOfWeekValue;
-            }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
             }
             return result;
         }
@@ -309,6 +303,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TextGroupByConfigRequest>(null, TextGroupByConfigRequest);
             }
+            else if(Type != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectGroupByConfigRequestType>(null, Type);
+            }
             else if(HideEmptyGroups != null)
             {
                 writer.WriteBoolValue(null, HideEmptyGroups);
@@ -332,10 +330,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if(StartDayOfWeek != null)
             {
                 writer.WriteDoubleValue(null, StartDayOfWeek);
-            }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
             }
             writer.WriteAdditionalData(AdditionalData);
         }

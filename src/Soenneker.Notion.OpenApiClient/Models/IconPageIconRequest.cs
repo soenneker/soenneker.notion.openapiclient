@@ -23,13 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon Icon { get; set; }
 #endif
         /// <summary>Always `icon`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.IconType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon>(global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.IconType>(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequestIcon>("icon", Icon);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.IconType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

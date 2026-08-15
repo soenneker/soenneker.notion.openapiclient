@@ -94,14 +94,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest IconPageIconRequest { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest"/> and sets the default values.
         /// </summary>
@@ -117,7 +111,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest();
             if("CustomEmojiPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -139,13 +133,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 result.IconPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest();
             }
+            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>() is global::Soenneker.Notion.OpenApiClient.Models.FileUploadType typeValue)
+            {
+                result.Type = typeValue;
+            }
             else if(parseNode.GetStringValue() is string emojiValue)
             {
                 result.Emoji = emojiValue;
-            }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
             }
             return result;
         }
@@ -236,13 +230,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest>(null, IconPageIconRequest);
             }
+            else if(Type != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>(null, Type);
+            }
             else if(Emoji != null)
             {
                 writer.WriteStringValue(null, Emoji);
-            }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
             }
             writer.WriteAdditionalData(AdditionalData);
         }

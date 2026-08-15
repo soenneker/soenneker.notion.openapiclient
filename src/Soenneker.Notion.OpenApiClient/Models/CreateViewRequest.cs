@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string DataSourceId { get; set; }
 #endif
-        /// <summary>&quot;Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view&apos;s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { \&quot;does_not_equal\&quot;: [\&quot;Done\&quot;, \&quot;Archive\&quot;] }).&quot;</summary>
+        /// <summary>Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view&apos;s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { &quot;does_not_equal&quot;: [&quot;Done&quot;, &quot;Archive&quot;] }).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter? Filter { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem> Sorts { get; set; }
 #endif
-        /// <summary>&quot;One of: `table`, `board`, `list`, `calendar`, `timeline`, `gallery`, `form`, `chart`, `map`, `dashboard`&quot;</summary>
+        /// <summary>One of: `table`, `board`, `list`, `calendar`, `timeline`, `gallery`, `form`, `chart`, `map`, `dashboard`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest? Type { get; set; }
         /// <summary>The view_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

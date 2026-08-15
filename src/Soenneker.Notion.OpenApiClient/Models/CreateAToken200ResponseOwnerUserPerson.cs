@@ -38,14 +38,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        /// <summary>The user object type name.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.UserObject? Object { get; set; }
         /// <summary>The person property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,14 +48,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPersonPerson Person { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Indicates this user is a person.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PersonType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPerson"/> and sets the default values.
         /// </summary>
@@ -90,9 +78,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObject>(); } },
                 { "person", n => { Person = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPersonPerson>(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPersonPerson.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PersonType>(); } },
             };
         }
         /// <summary>
@@ -105,9 +93,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("avatar_url", AvatarUrl);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPersonPerson>("person", Person);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PersonType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

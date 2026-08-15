@@ -23,13 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
         /// <summary>The phone_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,14 +32,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string PhoneNumber { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `phone_number`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -72,9 +60,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
                 { "phone_number", n => { PhoneNumber = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberType>(); } },
             };
         }
         /// <summary>
@@ -85,9 +73,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
             writer.WriteStringValue("phone_number", PhoneNumber);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>&quot;One of: `person`, `bot`, `agent`&quot;</summary>
+    /// <summary>One of: `person`, `bot`, `agent`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum FileUploadObjectResponseCreatedByType
     {

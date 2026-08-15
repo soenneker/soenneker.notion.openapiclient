@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;The underlying block type that is not currently supported by the Public API. Example values include: form, button, drive.&quot;</summary>
+        /// <summary>The underlying block type that is not currently supported by the Public API. Example values include: form, button, drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BlockType { get; set; }

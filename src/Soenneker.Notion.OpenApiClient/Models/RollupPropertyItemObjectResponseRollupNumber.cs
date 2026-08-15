@@ -18,14 +18,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.RollupFunction? Function { get; set; }
         /// <summary>The number property</summary>
         public double? Number { get; set; }
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The formula result type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupNumber"/> and sets the default values.
         /// </summary>
@@ -53,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
                 { "number", n => { Number = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>(); } },
             };
         }
         /// <summary>
@@ -65,7 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
             writer.WriteDoubleValue("number", Number);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

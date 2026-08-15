@@ -17,13 +17,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The function property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.RollupFunction? Function { get; set; }
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType? Type { get; set; }
         /// <summary>The unsupported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType>(); } },
                 { "unsupported", n => { Unsupported = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedUnsupported>(global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedUnsupported.CreateFromDiscriminatorValue); } },
             };
         }
@@ -70,7 +64,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedUnsupported>("unsupported", Unsupported);
             writer.WriteAdditionalData(AdditionalData);
         }

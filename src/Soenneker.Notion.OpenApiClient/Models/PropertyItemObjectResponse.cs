@@ -191,13 +191,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse NumberPropertyItemObjectResponse { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
         /// <summary>The people property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -342,14 +336,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.TitlePropertyItemObjectResponse TitlePropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The formula result type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberType? Type { get; set; }
         /// <summary>The unique_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -438,21 +426,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 result.Number = numberValue;
             }
-            else if(parseNode.GetStringValue() is string objectValue)
-            {
-                result.Object = objectValue;
-            }
             else if(parseNode.GetStringValue() is string phoneNumberValue)
             {
                 result.PhoneNumber = phoneNumberValue;
             }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
-            }
             else if(parseNode.GetStringValue() is string urlValue)
             {
                 result.Url = urlValue;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>() is global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject objectValue)
+            {
+                result.Object = objectValue;
+            }
+            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>() is global::Soenneker.Notion.OpenApiClient.Models.NumberType typeValue)
+            {
+                result.Type = typeValue;
             }
             else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse>(global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse> filesValue)
             {
@@ -548,21 +536,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 writer.WriteDoubleValue(null, Number);
             }
-            else if(Object != null)
-            {
-                writer.WriteStringValue(null, Object);
-            }
             else if(PhoneNumber != null)
             {
                 writer.WriteStringValue(null, PhoneNumber);
             }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
-            }
             else if(Url != null)
             {
                 writer.WriteStringValue(null, Url);
+            }
+            else if(Object != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(null, Object);
+            }
+            else if(Type != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>(null, Type);
             }
             else if(Files != null)
             {

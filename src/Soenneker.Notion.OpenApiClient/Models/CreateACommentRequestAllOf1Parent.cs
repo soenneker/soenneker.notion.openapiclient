@@ -32,13 +32,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string PageId { get; set; }
 #endif
         /// <summary>Always `page_id`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIdType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAllOf1Parent"/> and sets the default values.
         /// </summary>
@@ -66,7 +60,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "block_id", n => { BlockId = n.GetStringValue(); } },
                 { "page_id", n => { PageId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>(); } },
             };
         }
         /// <summary>
@@ -78,7 +72,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("block_id", BlockId);
             writer.WriteStringValue("page_id", PageId);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

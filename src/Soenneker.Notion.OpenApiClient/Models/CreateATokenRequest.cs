@@ -7,28 +7,54 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateATokenRequest : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class CreateATokenRequest : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1? CreateATokenRequestAnyOf1 { get; set; }
+        public string? Code { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1 CreateATokenRequestAnyOf1 { get; set; }
+        public string Code { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2"/></summary>
+        /// <summary>The external_account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2? CreateATokenRequestAnyOf2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestExternalAccount? ExternalAccount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2 CreateATokenRequestAnyOf2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestExternalAccount ExternalAccount { get; set; }
 #endif
+        /// <summary>The grant_type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeGrantType? GrantType { get; set; }
+        /// <summary>The redirect_uri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RedirectUri { get; set; }
+#nullable restore
+#else
+        public string RedirectUri { get; set; }
+#endif
+        /// <summary>The refresh_token property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RefreshToken { get; set; }
+#nullable restore
+#else
+        public string RefreshToken { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest"/> and sets the default values.
+        /// </summary>
+        public CreateATokenRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,10 +63,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest();
-            result.CreateATokenRequestAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1();
-            result.CreateATokenRequestAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2();
-            return result;
+            return new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +71,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateATokenRequestAnyOf1 != null || CreateATokenRequestAnyOf2 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateATokenRequestAnyOf1, CreateATokenRequestAnyOf2);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "external_account", n => { ExternalAccount = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestExternalAccount>(global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestExternalAccount.CreateFromDiscriminatorValue); } },
+                { "grant_type", n => { GrantType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeGrantType>(); } },
+                { "redirect_uri", n => { RedirectUri = n.GetStringValue(); } },
+                { "refresh_token", n => { RefreshToken = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,7 +87,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1>(null, CreateATokenRequestAnyOf1, CreateATokenRequestAnyOf2);
+            writer.WriteStringValue("code", Code);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestExternalAccount>("external_account", ExternalAccount);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeGrantType>("grant_type", GrantType);
+            writer.WriteStringValue("redirect_uri", RedirectUri);
+            writer.WriteStringValue("refresh_token", RefreshToken);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

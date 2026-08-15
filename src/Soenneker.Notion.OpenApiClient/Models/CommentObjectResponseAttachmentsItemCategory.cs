@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>&quot;One of: `audio`, `image`, `pdf`, `productivity`, `video`&quot;</summary>
+    /// <summary>One of: `audio`, `image`, `pdf`, `productivity`, `video`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CommentObjectResponseAttachmentsItemCategory
     {

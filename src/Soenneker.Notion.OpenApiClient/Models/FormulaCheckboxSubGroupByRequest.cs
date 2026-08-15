@@ -22,14 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest Sort { get; set; }
 #endif
-        /// <summary>The formula result type for grouping.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `checkbox`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CheckboxType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CheckboxType>(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>("sort", Sort);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CheckboxType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

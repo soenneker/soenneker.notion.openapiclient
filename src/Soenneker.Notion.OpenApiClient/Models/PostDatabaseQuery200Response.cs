@@ -25,13 +25,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string NextCursor { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get; set; }
         /// <summary>The page_or_data_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,13 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public List<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseResultsItem> Results { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response"/> and sets the default values.
         /// </summary>
@@ -91,11 +79,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>(); } },
                 { "page_or_data_source", n => { PageOrDataSource = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponsePageOrDataSource>(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponsePageOrDataSource.CreateFromDiscriminatorValue); } },
                 { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus>(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseResultsItem>(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType>(); } },
             };
         }
         /// <summary>
@@ -107,11 +95,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponsePageOrDataSource>("page_or_data_source", PageOrDataSource);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus>("request_status", RequestStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseResultsItem>("results", Results);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

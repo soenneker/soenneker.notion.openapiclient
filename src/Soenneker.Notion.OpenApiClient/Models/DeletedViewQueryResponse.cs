@@ -17,13 +17,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The object type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewQueryObject? Object { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +38,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryObject>(); } },
             };
         }
         /// <summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("deleted", Deleted);
             writer.WriteGuidValue("id", Id);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryObject>("object", Object);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The in_trash property</summary>
         public bool? InTrash { get; set; }
         /// <summary>The property property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterProperty? Property { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ObjectValueProperty? Property { get; set; }
         /// <summary>The value property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue? Value { get; set; }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
-                { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterProperty>(); } },
+                { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ObjectValueProperty>(); } },
                 { "value", n => { Value = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue>(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("in_trash", InTrash);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterProperty>("property", Property);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ObjectValueProperty>("property", Property);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

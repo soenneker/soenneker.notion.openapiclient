@@ -38,14 +38,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation Relation { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `relation`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.RelationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelation"/> and sets the default values.
         /// </summary>
@@ -74,7 +68,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "next_url", n => { NextUrl = n.GetStringValue(); } },
                 { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation>(global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationType>(); } },
             };
         }
         /// <summary>
@@ -87,7 +81,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("next_url", NextUrl);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation>("relation", Relation);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

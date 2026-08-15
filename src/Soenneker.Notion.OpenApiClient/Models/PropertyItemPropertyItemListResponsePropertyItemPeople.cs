@@ -38,14 +38,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople People { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `people`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PeopleType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeople"/> and sets the default values.
         /// </summary>
@@ -74,7 +68,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "next_url", n => { NextUrl = n.GetStringValue(); } },
                 { "people", n => { People = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople>(global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PeopleType>(); } },
             };
         }
         /// <summary>
@@ -87,7 +81,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("next_url", NextUrl);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople>("people", People);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PeopleType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

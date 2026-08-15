@@ -38,16 +38,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string PageId { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The workspace property</summary>
-        public bool? Workspace { get; set; }
+        /// <summary>Always `page_id`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIdType? Type { get; set; }
+        /// <summary>Always true for workspace parent.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace? Workspace { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent"/> and sets the default values.
         /// </summary>
@@ -76,8 +70,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "data_source_id", n => { DataSourceId = n.GetStringValue(); } },
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
                 { "page_id", n => { PageId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "workspace", n => { Workspace = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>(); } },
+                { "workspace", n => { Workspace = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>(); } },
             };
         }
         /// <summary>
@@ -90,8 +84,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("database_id", DatabaseId);
             writer.WriteStringValue("data_source_id", DataSourceId);
             writer.WriteStringValue("page_id", PageId);
-            writer.WriteStringValue("type", Type);
-            writer.WriteBoolValue("workspace", Workspace);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>("workspace", Workspace);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

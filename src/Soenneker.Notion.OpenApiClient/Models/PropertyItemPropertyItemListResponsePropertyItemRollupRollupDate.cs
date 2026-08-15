@@ -24,14 +24,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The function property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.RollupFunction? Function { get; set; }
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `date`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.DateType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate"/> and sets the default values.
         /// </summary>
@@ -59,7 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>(global::Soenneker.Notion.OpenApiClient.Models.DateResponse.CreateFromDiscriminatorValue); } },
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>("date", Date);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

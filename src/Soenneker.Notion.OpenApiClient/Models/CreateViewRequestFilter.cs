@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view&apos;s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { \&quot;does_not_equal\&quot;: [\&quot;Done\&quot;, \&quot;Archive\&quot;] }).&quot;
+    /// Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view&apos;s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { &quot;does_not_equal&quot;: [&quot;Done&quot;, &quot;Archive&quot;] }).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateViewRequestFilter : IAdditionalDataHolder, IParsable

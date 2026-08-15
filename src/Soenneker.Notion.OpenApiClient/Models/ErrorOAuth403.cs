@@ -24,7 +24,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403AdditionalData AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The code property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Code? Code { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TestEnvErrorCode? Code { get; set; }
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
         /// <summary>The message property</summary>
@@ -36,21 +36,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string MessageEscaped { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Object? Object { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Object Object { get; set; }
-#endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Status Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403"/> and sets the default values.
         /// </summary>
@@ -77,10 +65,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additional_data", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403AdditionalData>(global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403AdditionalData.CreateFromDiscriminatorValue); } },
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TestEnvErrorCode>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Object>(global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Object.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Status>(global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Status.CreateFromDiscriminatorValue); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Object>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Status>(); } },
             };
         }
         /// <summary>
@@ -91,10 +79,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403AdditionalData>("additional_data", AdditionalDataProperty);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TestEnvErrorCode>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Object>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403Status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

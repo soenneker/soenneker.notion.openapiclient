@@ -73,14 +73,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts NumberOfParts { get; set; }
 #endif
         /// <summary>Always `file_upload`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
-        /// <summary>&quot;One of: `pending`, `uploaded`, `expired`, `failed`&quot;</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObject? Object { get; set; }
+        /// <summary>One of: `pending`, `uploaded`, `expired`, `failed`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus? Status { get; set; }
         /// <summary>The upload_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +114,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "number_of_parts", n => { NumberOfParts = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts>(global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObject>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus>(); } },
                 { "upload_url", n => { UploadUrl = n.GetStringValue(); } },
             };
@@ -144,7 +138,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts>("number_of_parts", NumberOfParts);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObject>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus>("status", Status);
             writer.WriteStringValue("upload_url", UploadUrl);
         }

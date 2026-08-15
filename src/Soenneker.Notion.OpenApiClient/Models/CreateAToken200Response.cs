@@ -45,13 +45,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The request_id property</summary>
         public Guid? RequestId { get; set; }
         /// <summary>The token_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TokenType { get; set; }
-#nullable restore
-#else
-        public string TokenType { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.BearerTokenType? TokenType { get; set; }
         /// <summary>The workspace_icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,7 +95,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner>(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner.CreateFromDiscriminatorValue); } },
                 { "refresh_token", n => { RefreshToken = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetGuidValue(); } },
-                { "token_type", n => { TokenType = n.GetStringValue(); } },
+                { "token_type", n => { TokenType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BearerTokenType>(); } },
                 { "workspace_icon", n => { WorkspaceIcon = n.GetStringValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
                 { "workspace_name", n => { WorkspaceName = n.GetStringValue(); } },
@@ -120,7 +114,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner>("owner", Owner);
             writer.WriteStringValue("refresh_token", RefreshToken);
             writer.WriteGuidValue("request_id", RequestId);
-            writer.WriteStringValue("token_type", TokenType);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BearerTokenType>("token_type", TokenType);
             writer.WriteStringValue("workspace_icon", WorkspaceIcon);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteStringValue("workspace_name", WorkspaceName);

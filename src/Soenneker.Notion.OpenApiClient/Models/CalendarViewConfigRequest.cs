@@ -33,13 +33,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Whether to show weekend days. Pass null to clear.</summary>
         public bool? ShowWeekends { get; set; }
         /// <summary>The view type. Must be &quot;calendar&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.CalendarType? Type { get; set; }
         /// <summary>Default calendar range. &quot;week&quot; shows a week view, &quot;month&quot; shows a month view. Pass null to clear.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange? ViewRange { get; set; }
         /// <summary>
@@ -70,7 +64,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "date_property_id", n => { DatePropertyId = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
                 { "show_weekends", n => { ShowWeekends = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarType>(); } },
                 { "view_range", n => { ViewRange = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange>(); } },
             };
         }
@@ -84,7 +78,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("date_property_id", DatePropertyId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestProperties>("properties", Properties);
             writer.WriteBoolValue("show_weekends", ShowWeekends);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange>("view_range", ViewRange);
             writer.WriteAdditionalData(AdditionalData);
         }

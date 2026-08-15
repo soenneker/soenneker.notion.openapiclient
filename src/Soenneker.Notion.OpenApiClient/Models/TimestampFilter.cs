@@ -31,21 +31,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter LastEditedTime { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Timestamp { get; set; }
-#nullable restore
-#else
-        public string Timestamp { get; set; }
-#endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeTimestamp? Timestamp { get; set; }
+        /// <summary>Always `created_time`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter"/> and sets the default values.
         /// </summary>
@@ -73,8 +61,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "timestamp", n => { Timestamp = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeTimestamp>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeType>(); } },
             };
         }
         /// <summary>
@@ -86,8 +74,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("created_time", CreatedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("last_edited_time", LastEditedTime);
-            writer.WriteStringValue("timestamp", Timestamp);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeTimestamp>("timestamp", Timestamp);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

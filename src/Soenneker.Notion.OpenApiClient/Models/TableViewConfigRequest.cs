@@ -34,7 +34,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>Whether to show vertical grid lines between columns.</summary>
         public bool? ShowVerticalLines { get; set; }
-        /// <summary>&quot;Subtask (sub-item) configuration. Pass null to reset subtask config to defaults (which may show subtasks). Use `{ \&quot;display_mode\&quot;: \&quot;disabled\&quot; }` to explicitly disable subtasks.&quot;</summary>
+        /// <summary>Subtask (sub-item) configuration. Pass null to reset subtask config to defaults (which may show subtasks). Use `{ &quot;display_mode&quot;: &quot;disabled&quot; }` to explicitly disable subtasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestSubtasks? Subtasks { get; set; }
@@ -42,14 +42,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestSubtasks Subtasks { get; set; }
 #endif
-        /// <summary>The view type. Must be &quot;table&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.TableType? Type { get; set; }
         /// <summary>Whether to wrap cell content in the table.</summary>
         public bool? WrapCells { get; set; }
         /// <summary>
@@ -82,7 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
                 { "show_vertical_lines", n => { ShowVerticalLines = n.GetBoolValue(); } },
                 { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestSubtasks>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestSubtasks.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableType>(); } },
                 { "wrap_cells", n => { WrapCells = n.GetBoolValue(); } },
             };
         }
@@ -98,7 +92,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestProperties>("properties", Properties);
             writer.WriteBoolValue("show_vertical_lines", ShowVerticalLines);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestSubtasks>("subtasks", Subtasks);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableType>("type", Type);
             writer.WriteBoolValue("wrap_cells", WrapCells);
             writer.WriteAdditionalData(AdditionalData);
         }

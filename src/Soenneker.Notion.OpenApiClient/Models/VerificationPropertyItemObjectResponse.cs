@@ -23,21 +23,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
+        /// <summary>Always `verification`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.VerificationType? Type { get; set; }
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,8 +60,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationType>(); } },
                 { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse>(global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse.CreateFromDiscriminatorValue); } },
             };
         }
@@ -85,8 +73,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("object", Object);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse>("verification", Verification);
             writer.WriteAdditionalData(AdditionalData);
         }

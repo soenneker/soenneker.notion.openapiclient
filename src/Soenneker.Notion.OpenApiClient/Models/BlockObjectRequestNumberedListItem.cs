@@ -21,21 +21,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItemNumberedListItem NumberedListItem { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObject? Object { get; set; }
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberedListItemType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "numbered_list_item", n => { NumberedListItem = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItemNumberedListItem>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItemNumberedListItem.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberedListItemType>(); } },
             };
         }
         /// <summary>
@@ -67,8 +55,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestNumberedListItemNumberedListItem>("numbered_list_item", NumberedListItem);
-            writer.WriteStringValue("object", Object);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberedListItemType>("type", Type);
         }
     }
 }

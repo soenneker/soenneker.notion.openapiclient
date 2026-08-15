@@ -26,14 +26,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>Start day of week for week grouping (0 = Sunday, 1 = Monday).</summary>
         public double? StartDayOfWeek { get; set; }
-        /// <summary>The formula result type for grouping.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Always `date`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.DateType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest"/> and sets the default values.
         /// </summary>
@@ -62,7 +56,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequestGroupBy>(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest.CreateFromDiscriminatorValue); } },
                 { "start_day_of_week", n => { StartDayOfWeek = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>(); } },
             };
         }
         /// <summary>
@@ -75,7 +69,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequestGroupBy>("group_by", GroupBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>("sort", Sort);
             writer.WriteDoubleValue("start_day_of_week", StartDayOfWeek);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

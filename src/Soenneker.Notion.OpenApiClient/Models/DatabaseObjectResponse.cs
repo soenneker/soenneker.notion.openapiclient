@@ -57,13 +57,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The time when the database was last edited.</summary>
         public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>The database object type name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseObject? Object { get; set; }
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +118,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "is_inline", n => { IsInline = n.GetBoolValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObject>(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse.CreateFromDiscriminatorValue); } },
                 { "public_url", n => { PublicUrl = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -148,7 +142,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("is_inline", IsInline);
             writer.WriteBoolValue("is_locked", IsLocked);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>("parent", Parent);
             writer.WriteStringValue("public_url", PublicUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);

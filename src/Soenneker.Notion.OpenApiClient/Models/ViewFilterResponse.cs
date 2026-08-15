@@ -41,14 +41,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The timestamp to filter on.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf2Timestamp? Timestamp { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse"/> and sets the default values.
         /// </summary>
@@ -78,7 +70,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "or", n => { Or = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3OrItem>(global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3OrItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "property", n => { Property = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf2Timestamp>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -92,7 +83,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3OrItem>("or", Or);
             writer.WriteStringValue("property", Property);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf2Timestamp>("timestamp", Timestamp);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

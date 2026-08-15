@@ -7,36 +7,68 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class RetrieveAsyncTask200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class RetrieveAsyncTask200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The created_time property</summary>
+        public DateTimeOffset? CreatedTime { get; set; }
+        /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1? RetrieveAsyncTask200ResponseOneOf1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseError? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1 RetrieveAsyncTask200ResponseOneOf1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseError Error { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf2"/></summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf2? RetrieveAsyncTask200ResponseOneOf2 { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf2 RetrieveAsyncTask200ResponseOneOf2 { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3"/></summary>
+        /// <summary>The object property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.AsyncTaskObject? Object { get; set; }
+        /// <summary>The operation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3? RetrieveAsyncTask200ResponseOneOf3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOperation? Operation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3 RetrieveAsyncTask200ResponseOneOf3 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOperation Operation { get; set; }
 #endif
+        /// <summary>The poll_after_seconds property</summary>
+        public int? PollAfterSeconds { get; set; }
+        /// <summary>The result property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseResult? Result { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseResult Result { get; set; }
+#endif
+        /// <summary>The status property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseStatus? Status { get; set; }
+        /// <summary>The status_url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StatusUrl { get; set; }
+#nullable restore
+#else
+        public string StatusUrl { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200Response"/> and sets the default values.
+        /// </summary>
+        public RetrieveAsyncTask200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +77,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200Response();
-            if("RetrieveAsyncTask200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RetrieveAsyncTask200ResponseOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1();
-            }
-            else if("RetrieveAsyncTask200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RetrieveAsyncTask200ResponseOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf2();
-            }
-            else if("RetrieveAsyncTask200ResponseOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.RetrieveAsyncTask200ResponseOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3();
-            }
-            return result;
+            return new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +85,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RetrieveAsyncTask200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return RetrieveAsyncTask200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(RetrieveAsyncTask200ResponseOneOf2 != null)
-            {
-                return RetrieveAsyncTask200ResponseOneOf2.GetFieldDeserializers();
-            }
-            else if(RetrieveAsyncTask200ResponseOneOf3 != null)
-            {
-                return RetrieveAsyncTask200ResponseOneOf3.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseError>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseError.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AsyncTaskObject>(); } },
+                { "operation", n => { Operation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOperation>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOperation.CreateFromDiscriminatorValue); } },
+                { "poll_after_seconds", n => { PollAfterSeconds = n.GetIntValue(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseResult>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseResult.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseStatus>(); } },
+                { "status_url", n => { StatusUrl = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +105,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RetrieveAsyncTask200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1>(null, RetrieveAsyncTask200ResponseOneOf1);
-            }
-            else if(RetrieveAsyncTask200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf2>(null, RetrieveAsyncTask200ResponseOneOf2);
-            }
-            else if(RetrieveAsyncTask200ResponseOneOf3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3>(null, RetrieveAsyncTask200ResponseOneOf3);
-            }
+            writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseError>("error", Error);
+            writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AsyncTaskObject>("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOperation>("operation", Operation);
+            writer.WriteIntValue("poll_after_seconds", PollAfterSeconds);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseResult>("result", Result);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseStatus>("status", Status);
+            writer.WriteStringValue("status_url", StatusUrl);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

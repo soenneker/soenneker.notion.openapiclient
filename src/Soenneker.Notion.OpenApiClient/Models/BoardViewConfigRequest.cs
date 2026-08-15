@@ -53,13 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy SubGroupBy { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;board&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -92,7 +86,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
                 { "sub_group_by", n => { SubGroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy>(global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardType>(); } },
             };
         }
         /// <summary>
@@ -109,7 +103,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>("group_by", GroupBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties>("properties", Properties);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy>("sub_group_by", SubGroupBy);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

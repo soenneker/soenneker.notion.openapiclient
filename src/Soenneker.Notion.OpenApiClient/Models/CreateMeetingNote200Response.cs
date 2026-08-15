@@ -7,28 +7,70 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateMeetingNote200Response : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class CreateMeetingNote200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf1? CreateMeetingNote200ResponseOneOf1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf1 CreateMeetingNote200ResponseOneOf1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse CreatedBy { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2"/></summary>
+        /// <summary>ISO-8601 timestamp when this meeting note was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2? CreateMeetingNote200ResponseOneOf2 { get; set; }
+        public string? CreatedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2 CreateMeetingNote200ResponseOneOf2 { get; set; }
+        public string CreatedTime { get; set; }
 #endif
+        /// <summary>Whether this block has child blocks.</summary>
+        public bool? HasChildren { get; set; }
+        /// <summary>The id property</summary>
+        public Guid? Id { get; set; }
+        /// <summary>Whether this meeting note is in the trash.</summary>
+        public bool? InTrash { get; set; }
+        /// <summary>The last_edited_by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? LastEditedBy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse LastEditedBy { get; set; }
+#endif
+        /// <summary>ISO-8601 timestamp when this meeting note was last edited.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastEditedTime { get; set; }
+#nullable restore
+#else
+        public string LastEditedTime { get; set; }
+#endif
+        /// <summary>Meeting note content fields.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseMeetingNotes? MeetingNotes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseMeetingNotes MeetingNotes { get; set; }
+#endif
+        /// <summary>The object property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObject? Object { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200Response"/> and sets the default values.
+        /// </summary>
+        public CreateMeetingNote200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +79,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200Response();
-            if("CreateMeetingNote200ResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CreateMeetingNote200ResponseOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf1();
-            }
-            else if("CreateMeetingNote200ResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CreateMeetingNote200ResponseOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2();
-            }
-            return result;
+            return new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200Response();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +87,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateMeetingNote200ResponseOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return CreateMeetingNote200ResponseOneOf1.GetFieldDeserializers();
-            }
-            else if(CreateMeetingNote200ResponseOneOf2 != null)
-            {
-                return CreateMeetingNote200ResponseOneOf2.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
+                { "created_time", n => { CreatedTime = n.GetStringValue(); } },
+                { "has_children", n => { HasChildren = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "in_trash", n => { InTrash = n.GetBoolValue(); } },
+                { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
+                { "last_edited_time", n => { LastEditedTime = n.GetStringValue(); } },
+                { "meeting_notes", n => { MeetingNotes = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseMeetingNotes>(global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseMeetingNotes.CreateFromDiscriminatorValue); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesType>(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +108,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateMeetingNote200ResponseOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf1>(null, CreateMeetingNote200ResponseOneOf1);
-            }
-            else if(CreateMeetingNote200ResponseOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2>(null, CreateMeetingNote200ResponseOneOf2);
-            }
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("created_by", CreatedBy);
+            writer.WriteStringValue("created_time", CreatedTime);
+            writer.WriteBoolValue("has_children", HasChildren);
+            writer.WriteGuidValue("id", Id);
+            writer.WriteBoolValue("in_trash", InTrash);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("last_edited_by", LastEditedBy);
+            writer.WriteStringValue("last_edited_time", LastEditedTime);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseMeetingNotes>("meeting_notes", MeetingNotes);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
