@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Notion.OpenApiClient.V1.Agents;
 using Soenneker.Notion.OpenApiClient.V1.Async_tasks;
 using Soenneker.Notion.OpenApiClient.V1.Blocks;
 using Soenneker.Notion.OpenApiClient.V1.Comments;
@@ -12,6 +13,7 @@ using Soenneker.Notion.OpenApiClient.V1.File_uploads;
 using Soenneker.Notion.OpenApiClient.V1.Oauth;
 using Soenneker.Notion.OpenApiClient.V1.Pages;
 using Soenneker.Notion.OpenApiClient.V1.Search;
+using Soenneker.Notion.OpenApiClient.V1.Sessions;
 using Soenneker.Notion.OpenApiClient.V1.Users;
 using Soenneker.Notion.OpenApiClient.V1.Views;
 using System.Collections.Generic;
@@ -26,6 +28,11 @@ namespace Soenneker.Notion.OpenApiClient.V1
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agents property</summary>
+        public global::Soenneker.Notion.OpenApiClient.V1.Agents.AgentsRequestBuilder Agents
+        {
+            get => new global::Soenneker.Notion.OpenApiClient.V1.Agents.AgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The async_tasks property</summary>
         public global::Soenneker.Notion.OpenApiClient.V1.Async_tasks.Async_tasksRequestBuilder Async_tasks
         {
@@ -75,6 +82,11 @@ namespace Soenneker.Notion.OpenApiClient.V1
         public global::Soenneker.Notion.OpenApiClient.V1.Search.SearchRequestBuilder Search
         {
             get => new global::Soenneker.Notion.OpenApiClient.V1.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sessions property</summary>
+        public global::Soenneker.Notion.OpenApiClient.V1.Sessions.SessionsRequestBuilder Sessions
+        {
+            get => new global::Soenneker.Notion.OpenApiClient.V1.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
         public global::Soenneker.Notion.OpenApiClient.V1.Users.UsersRequestBuilder Users
