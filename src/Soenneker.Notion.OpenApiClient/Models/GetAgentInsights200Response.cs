@@ -42,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>Always `agent_insights`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject? Object { get; set; }
-        /// <summary>One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`</summary>
+        /// <summary>One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason? PauseReason { get; set; }
         /// <summary>Number of runs recorded for this agent within the window.</summary>
         public double? RunsCompleted { get; set; }

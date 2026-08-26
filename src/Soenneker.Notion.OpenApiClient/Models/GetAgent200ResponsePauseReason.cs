@@ -35,6 +35,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         DisabledFromWorkspaceSettings,
         #pragma warning restore CS1591
+        [EnumMember(Value = "disabled_from_workspace_settings_but_resumable")]
+        #pragma warning disable CS1591
+        DisabledFromWorkspaceSettingsButResumable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled_from_api")]
         #pragma warning disable CS1591
         DisabledFromApi,

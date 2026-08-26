@@ -48183,6 +48183,7 @@
         "type": "object",
         "properties": {
           "old_str": {
+            "minLength": 1,
             "type": "string",
             "description": "The existing content string to find and replace. Must exactly match the page content."
           },
@@ -58376,6 +58377,7 @@
           "failure_limit",
           "mark_session_failed_autopause",
           "disabled_from_workspace_settings",
+          "disabled_from_workspace_settings_but_resumable",
           "disabled_from_api",
           "disabled_from_agent_settings",
           "disabled_due_to_no_members_with_access",
@@ -58422,6 +58424,10 @@
             {
               "value": "disabled_from_workspace_settings",
               "name": "DisabledFromWorkspaceSettings"
+            },
+            {
+              "value": "disabled_from_workspace_settings_but_resumable",
+              "name": "DisabledFromWorkspaceSettingsButResumable"
             },
             {
               "value": "disabled_from_api",
@@ -58554,6 +58560,7 @@
           "failure_limit",
           "mark_session_failed_autopause",
           "disabled_from_workspace_settings",
+          "disabled_from_workspace_settings_but_resumable",
           "disabled_from_api",
           "disabled_from_agent_settings",
           "disabled_due_to_no_members_with_access",
@@ -58568,7 +58575,7 @@
           "string"
         ],
         "additionalProperties": false,
-        "description": "One of: \u0060run_limit\u0060, \u0060credit_limit\u0060, \u0060runaway_credit_usage\u0060, \u0060workspace_credit_limit\u0060, \u0060failure_limit\u0060, \u0060mark_session_failed_autopause\u0060, \u0060disabled_from_workspace_settings\u0060, \u0060disabled_from_api\u0060, \u0060disabled_from_agent_settings\u0060, \u0060disabled_due_to_no_members_with_access\u0060, \u0060disabled_due_to_lack_of_editors\u0060, \u0060disabled_by_notion\u0060, \u0060internal_error\u0060, \u0060needs_user_review\u0060, \u0060tool_unavailable\u0060",
+        "description": "One of: \u0060run_limit\u0060, \u0060credit_limit\u0060, \u0060runaway_credit_usage\u0060, \u0060workspace_credit_limit\u0060, \u0060failure_limit\u0060, \u0060mark_session_failed_autopause\u0060, \u0060disabled_from_workspace_settings\u0060, \u0060disabled_from_workspace_settings_but_resumable\u0060, \u0060disabled_from_api\u0060, \u0060disabled_from_agent_settings\u0060, \u0060disabled_due_to_no_members_with_access\u0060, \u0060disabled_due_to_lack_of_editors\u0060, \u0060disabled_by_notion\u0060, \u0060internal_error\u0060, \u0060needs_user_review\u0060, \u0060tool_unavailable\u0060",
         "x-ms-enum": {
           "name": "GetAgentInsights200ResponsePauseReason",
           "modelAsString": false,
@@ -58600,6 +58607,10 @@
             {
               "value": "disabled_from_workspace_settings",
               "name": "DisabledFromWorkspaceSettings"
+            },
+            {
+              "value": "disabled_from_workspace_settings_but_resumable",
+              "name": "DisabledFromWorkspaceSettingsButResumable"
             },
             {
               "value": "disabled_from_api",
@@ -58696,6 +58707,7 @@
           "failure_limit",
           "mark_session_failed_autopause",
           "disabled_from_workspace_settings",
+          "disabled_from_workspace_settings_but_resumable",
           "disabled_from_api",
           "disabled_from_agent_settings",
           "disabled_due_to_no_members_with_access",
@@ -58742,6 +58754,10 @@
             {
               "value": "disabled_from_workspace_settings",
               "name": "DisabledFromWorkspaceSettings"
+            },
+            {
+              "value": "disabled_from_workspace_settings_but_resumable",
+              "name": "DisabledFromWorkspaceSettingsButResumable"
             },
             {
               "value": "disabled_from_api",
@@ -59987,6 +60003,7 @@
           "failure_limit",
           "mark_session_failed_autopause",
           "disabled_from_workspace_settings",
+          "disabled_from_workspace_settings_but_resumable",
           "disabled_from_api",
           "disabled_from_agent_settings",
           "disabled_due_to_no_members_with_access",
@@ -60033,6 +60050,10 @@
             {
               "value": "disabled_from_workspace_settings",
               "name": "DisabledFromWorkspaceSettings"
+            },
+            {
+              "value": "disabled_from_workspace_settings_but_resumable",
+              "name": "DisabledFromWorkspaceSettingsButResumable"
             },
             {
               "value": "disabled_from_api",
