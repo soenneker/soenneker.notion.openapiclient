@@ -12,7 +12,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class GetAgentInsights200Response : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>One of: `custom_agent`, `autofill_custom_agent`</summary>
+        /// <summary>One of: `notion_ai`, `custom_agent`, `autofill_custom_agent`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseAgentType? AgentType { get; set; }
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +31,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreditLimit CreditLimit { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId? Id { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId Id { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +77,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "agent_type", n => { AgentType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseAgentType>(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy>(global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy.CreateFromDiscriminatorValue); } },
                 { "credit_limit", n => { CreditLimit = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreditLimit>(global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreditLimit.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetGuidValue(); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId>(global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject>(); } },
                 { "pause_reason", n => { PauseReason = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason>(); } },
@@ -90,7 +96,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseAgentType>("agent_type", AgentType);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy>("created_by", CreatedBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreditLimit>("credit_limit", CreditLimit);
-            writer.WriteGuidValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId>("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason>("pause_reason", PauseReason);

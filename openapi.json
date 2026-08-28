@@ -36308,7 +36308,6 @@
 																					"enum": [
 																						"asana",
 																						"box",
-																						"browser",
 																						"calendar",
 																						"computer",
 																						"confluence",
@@ -37396,7 +37395,6 @@
 																					"enum": [
 																						"asana",
 																						"box",
-																						"browser",
 																						"calendar",
 																						"computer",
 																						"confluence",
@@ -38580,7 +38578,6 @@
 																"enum": [
 																	"asana",
 																	"box",
-																	"browser",
 																	"calendar",
 																	"computer",
 																	"confluence",
@@ -39384,15 +39381,28 @@
 											"description": "Always `agent_insights`"
 										},
 										"id": {
-											"$ref": "#/components/schemas/idResponse"
+											"oneOf": [
+												{
+													"$ref": "#/components/schemas/idResponse"
+												},
+												{
+													"type": "string",
+													"const": "notion_ai",
+													"description": "Always `notion_ai`"
+												}
+											]
 										},
 										"name": {
 											"type": "string"
 										},
 										"agent_type": {
 											"type": "string",
-											"enum": ["custom_agent", "autofill_custom_agent"],
-											"description": "One of: `custom_agent`, `autofill_custom_agent`"
+											"enum": [
+												"notion_ai",
+												"custom_agent",
+												"autofill_custom_agent"
+											],
+											"description": "One of: `notion_ai`, `custom_agent`, `autofill_custom_agent`"
 										},
 										"status": {
 											"type": "string",

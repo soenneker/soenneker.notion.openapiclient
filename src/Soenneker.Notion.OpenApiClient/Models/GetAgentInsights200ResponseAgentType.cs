@@ -3,10 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>One of: `custom_agent`, `autofill_custom_agent`</summary>
+    /// <summary>One of: `notion_ai`, `custom_agent`, `autofill_custom_agent`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetAgentInsights200ResponseAgentType
     {
+        [EnumMember(Value = "notion_ai")]
+        #pragma warning disable CS1591
+        NotionAi,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom_agent")]
         #pragma warning disable CS1591
         CustomAgent,

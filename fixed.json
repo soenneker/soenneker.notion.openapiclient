@@ -39854,8 +39854,7 @@
             "$ref": "#/components/schemas/AgentInsightsObject"
           },
           "id": {
-            "type": "string",
-            "format": "uuid"
+            "$ref": "#/components/schemas/GetAgentInsights200ResponseId"
           },
           "name": {
             "type": "string"
@@ -42093,6 +42092,18 @@
           }
         ],
         "description": "The per-agent credit limit that applies to this agent, null when uncapped, or \u0022hidden\u0022 when the caller lacks full access to the agent. This is the effective limit computed at runtime, folding in both the agent\u0027s own limit and any workspace-admin default."
+      },
+      "GetAgentInsights200ResponseId": {
+        "type": "object",
+        "oneOf": [
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "$ref": "#/components/schemas/GetAgentInsights200ResponseIdOneOf2"
+          }
+        ]
       },
       "GetAgentInsights200ResponseCreditLimit": {
         "type": "object",
@@ -58502,16 +58513,21 @@
       },
       "GetAgentInsights200ResponseAgentType": {
         "enum": [
+          "notion_ai",
           "custom_agent",
           "autofill_custom_agent"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "One of: \u0060custom_agent\u0060, \u0060autofill_custom_agent\u0060",
+        "description": "One of: \u0060notion_ai\u0060, \u0060custom_agent\u0060, \u0060autofill_custom_agent\u0060",
         "x-ms-enum": {
           "name": "GetAgentInsights200ResponseAgentType",
           "modelAsString": false,
           "values": [
+            {
+              "value": "notion_ai",
+              "name": "NotionAi"
+            },
             {
               "value": "custom_agent",
               "name": "CustomAgent"
@@ -59310,6 +59326,24 @@
             {
               "value": "hidden",
               "name": "Hidden"
+            }
+          ]
+        }
+      },
+      "GetAgentInsights200ResponseIdOneOf2": {
+        "const": null,
+        "enum": [
+          "notion_ai"
+        ],
+        "type": "string",
+        "description": "Always \u0060notion_ai\u0060",
+        "x-ms-enum": {
+          "name": "GetAgentInsights200ResponseIdOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "notion_ai",
+              "name": "NotionAi"
             }
           ]
         }
