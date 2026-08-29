@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Whether additional results exist beyond the returned limit.</summary>
         public bool? HasMore { get; set; }
-        /// <summary>Meeting note transcription block objects.</summary>
+        /// <summary>Meeting note block objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItem>? Results { get; set; }

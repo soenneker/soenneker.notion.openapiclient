@@ -22628,6 +22628,7 @@
 			"get": {
 				"summary": "Retrieve an async task",
 				"operationId": "retrieve-async-task",
+				"x-notion-sdk-method": "asyncTasks.retrieve",
 				"tags": ["Async tasks"],
 				"x-codeSamples": [
 					{
@@ -28281,6 +28282,7 @@
 			"post": {
 				"summary": "Create a comment",
 				"operationId": "create-a-comment",
+				"x-notion-sdk-method": "comments.create",
 				"tags": ["Comments"],
 				"x-codeSamples": [
 					{
@@ -28649,6 +28651,7 @@
 			"get": {
 				"summary": "List comments",
 				"operationId": "list-comments",
+				"x-notion-sdk-method": "comments.list",
 				"tags": ["Comments"],
 				"x-codeSamples": [
 					{
@@ -33458,7 +33461,7 @@
 												]
 											},
 											"maxItems": 100,
-											"description": "Meeting note transcription block objects."
+											"description": "Meeting note block objects."
 										},
 										"has_more": {
 											"type": "boolean",
@@ -33588,6 +33591,7 @@
 			"post": {
 				"summary": "Query agents",
 				"operationId": "query-agents",
+				"x-notion-sdk-method": "agents.query",
 				"tags": ["Agents"],
 				"x-codeSamples": [
 					{
@@ -37812,6 +37816,7 @@
 			"get": {
 				"summary": "Get agent",
 				"operationId": "get-agent",
+				"x-notion-sdk-method": "agents.retrieve",
 				"tags": ["Agents"],
 				"x-codeSamples": [
 					{
@@ -39141,6 +39146,7 @@
 			"delete": {
 				"summary": "Delete agent",
 				"operationId": "delete-agent",
+				"x-notion-sdk-method": "agents.delete",
 				"tags": ["Agents"],
 				"x-codeSamples": [
 					{
@@ -39317,6 +39323,7 @@
 			"get": {
 				"summary": "Get agent insights",
 				"operationId": "get-agent-insights",
+				"x-notion-sdk-method": "agents.retrieveInsights",
 				"tags": ["Agents"],
 				"x-codeSamples": [
 					{
@@ -40056,6 +40063,7 @@
 			"post": {
 				"summary": "Apply many agent operations",
 				"operationId": "agent-batch",
+				"x-notion-sdk-method": "agents.batch",
 				"tags": ["Agents"],
 				"x-codeSamples": [
 					{
@@ -40390,6 +40398,7 @@
 			"post": {
 				"summary": "Update a session",
 				"operationId": "update-session",
+				"x-notion-sdk-method": "sessions.update",
 				"tags": ["Sessions"],
 				"x-codeSamples": [
 					{
@@ -40769,6 +40778,7 @@
 			"get": {
 				"summary": "Retrieve a session",
 				"operationId": "retrieve-session",
+				"x-notion-sdk-method": "sessions.retrieve",
 				"tags": ["Sessions"],
 				"x-codeSamples": [
 					{
@@ -41187,6 +41197,7 @@
 			"post": {
 				"summary": "Query sessions",
 				"operationId": "query-sessions",
+				"x-notion-sdk-method": "sessions.query",
 				"tags": ["Sessions"],
 				"x-codeSamples": [
 					{
@@ -42750,6 +42761,7 @@
 			"post": {
 				"summary": "Query session events",
 				"operationId": "query-session-events",
+				"x-notion-sdk-method": "sessions.queryEvents",
 				"tags": ["Sessions"],
 				"x-codeSamples": [
 					{
@@ -45770,6 +45782,7 @@
 			"post": {
 				"summary": "Cancel a session",
 				"operationId": "cancel-session",
+				"x-notion-sdk-method": "sessions.cancel",
 				"tags": ["Sessions"],
 				"x-codeSamples": [
 					{

@@ -39611,7 +39611,7 @@
             "items": {
               "$ref": "#/components/schemas/QueryMeetingNotes200ResponseResultsItem"
             },
-            "description": "Meeting note transcription block objects."
+            "description": "Meeting note block objects."
           },
           "has_more": {
             "type": "boolean",
