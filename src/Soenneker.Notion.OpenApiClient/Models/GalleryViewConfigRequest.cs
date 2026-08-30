@@ -31,10 +31,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property visibility and display configuration on gallery cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;gallery&quot;.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.GalleryType? Type { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCover>(global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCover.CreateFromDiscriminatorValue); } },
                 { "cover_aspect", n => { CoverAspect = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect>(); } },
                 { "cover_size", n => { CoverSize = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize>(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryType>(); } },
             };
         }
@@ -82,7 +82,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCover>("cover", Cover);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect>("cover_aspect", CoverAspect);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize>("cover_size", CoverSize);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestProperties>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

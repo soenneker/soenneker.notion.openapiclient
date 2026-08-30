@@ -39,10 +39,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property visibility and display configuration on cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get; set; }
 #endif
         /// <summary>Secondary group-by configuration for sub-grouping within columns. Pass null to remove sub-grouping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "cover_aspect", n => { CoverAspect = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect>(); } },
                 { "cover_size", n => { CoverSize = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize>(); } },
                 { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sub_group_by", n => { SubGroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy>(global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardType>(); } },
             };
@@ -101,7 +101,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect>("cover_aspect", CoverAspect);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize>("cover_size", CoverSize);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>("group_by", GroupBy);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestProperties>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestSubGroupBy>("sub_group_by", SubGroupBy);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

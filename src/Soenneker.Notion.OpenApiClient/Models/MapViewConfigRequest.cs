@@ -27,10 +27,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property visibility and display configuration on map pin cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;map&quot;.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.MapType? Type { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "height", n => { Height = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestHeight>(); } },
                 { "map_by", n => { MapBy = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapType>(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestHeight>("height", Height);
             writer.WriteStringValue("map_by", MapBy);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequestProperties>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MapType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

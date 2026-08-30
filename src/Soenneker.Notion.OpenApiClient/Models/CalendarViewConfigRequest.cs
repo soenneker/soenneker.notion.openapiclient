@@ -25,10 +25,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property visibility and display configuration on calendar cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestProperties? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestProperties Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get; set; }
 #endif
         /// <summary>Whether to show weekend days. Pass null to clear.</summary>
         public bool? ShowWeekends { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "date_property_id", n => { DatePropertyId = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_weekends", n => { ShowWeekends = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarType>(); } },
                 { "view_range", n => { ViewRange = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange>(); } },
@@ -76,7 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("date_property_id", DatePropertyId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestProperties>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);
             writer.WriteBoolValue("show_weekends", ShowWeekends);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarType>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange>("view_range", ViewRange);

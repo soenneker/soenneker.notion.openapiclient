@@ -27,10 +27,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property visibility and display configuration. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestProperties? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestProperties Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get; set; }
 #endif
         /// <summary>Whether to show vertical grid lines between columns.</summary>
         public bool? ShowVerticalLines { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "frozen_column_index", n => { FrozenColumnIndex = n.GetIntValue(); } },
                 { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestGroupBy>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestGroupBy.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_vertical_lines", n => { ShowVerticalLines = n.GetBoolValue(); } },
                 { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestSubtasks>(global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestSubtasks.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableType>(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("frozen_column_index", FrozenColumnIndex);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestGroupBy>("group_by", GroupBy);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestProperties>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);
             writer.WriteBoolValue("show_vertical_lines", ShowVerticalLines);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestSubtasks>("subtasks", Subtasks);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableType>("type", Type);

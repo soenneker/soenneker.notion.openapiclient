@@ -154,10 +154,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Reference lines drawn on the chart. Null when no reference lines are configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseReferenceLines? ReferenceLines { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse>? ReferenceLines { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseReferenceLines ReferenceLines { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse> ReferenceLines { get; set; }
 #endif
         /// <summary>The rows that make up the dashboard layout. Each row contains one or more widget modules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -320,7 +320,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "map_by_property_name", n => { MapByPropertyName = n.GetStringValue(); } },
                 { "preference", n => { Preference = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse>(global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "reference_lines", n => { ReferenceLines = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseReferenceLines>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseReferenceLines.CreateFromDiscriminatorValue); } },
+                { "reference_lines", n => { ReferenceLines = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse>(global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rows", n => { Rows = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse>(global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_data_labels", n => { ShowDataLabels = n.GetBoolValue(); } },
                 { "show_table", n => { ShowTable = n.GetBoolValue(); } },
@@ -384,7 +384,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("map_by_property_name", MapByPropertyName);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse>("preference", Preference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>("properties", Properties);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseReferenceLines>("reference_lines", ReferenceLines);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse>("reference_lines", ReferenceLines);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse>("rows", Rows);
             writer.WriteBoolValue("show_data_labels", ShowDataLabels);
             writer.WriteBoolValue("show_table", ShowTable);

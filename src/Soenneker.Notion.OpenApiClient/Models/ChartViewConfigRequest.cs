@@ -51,10 +51,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Reference lines on the chart. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines? ReferenceLines { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineRequest>? ReferenceLines { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines ReferenceLines { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineRequest> ReferenceLines { get; set; }
 #endif
         /// <summary>Whether to show data labels. Pass null to clear.</summary>
         public bool? ShowDataLabels { get; set; }
@@ -155,7 +155,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "hide_line_fill_area", n => { HideLineFillArea = n.GetBoolValue(); } },
                 { "hide_title", n => { HideTitle = n.GetBoolValue(); } },
                 { "legend_position", n => { LegendPosition = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestLegendPosition>(); } },
-                { "reference_lines", n => { ReferenceLines = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines.CreateFromDiscriminatorValue); } },
+                { "reference_lines", n => { ReferenceLines = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineRequest>(global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_data_labels", n => { ShowDataLabels = n.GetBoolValue(); } },
                 { "smooth_line", n => { SmoothLine = n.GetBoolValue(); } },
                 { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestSort>(); } },
@@ -191,7 +191,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("hide_line_fill_area", HideLineFillArea);
             writer.WriteBoolValue("hide_title", HideTitle);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestLegendPosition>("legend_position", LegendPosition);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestReferenceLines>("reference_lines", ReferenceLines);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineRequest>("reference_lines", ReferenceLines);
             writer.WriteBoolValue("show_data_labels", ShowDataLabels);
             writer.WriteBoolValue("smooth_line", SmoothLine);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequestSort>("sort", Sort);

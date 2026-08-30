@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Domains web search is restricted to, or null when unrestricted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemConnectionsItemPermissionsItemTargetAllowedDomains? AllowedDomains { get; set; }
+        public List<string>? AllowedDomains { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemConnectionsItemPermissionsItemTargetAllowedDomains AllowedDomains { get; set; }
+        public List<string> AllowedDomains { get; set; }
 #endif
         /// <summary>The data_source_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_domains", n => { AllowedDomains = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemConnectionsItemPermissionsItemTargetAllowedDomains>(global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemConnectionsItemPermissionsItemTargetAllowedDomains.CreateFromDiscriminatorValue); } },
+                { "allowed_domains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "data_source_id", n => { DataSourceId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
@@ -87,7 +87,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemConnectionsItemPermissionsItemTargetAllowedDomains>("allowed_domains", AllowedDomains);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowed_domains", AllowedDomains);
             writer.WriteStringValue("data_source_id", DataSourceId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("property_id", PropertyId);

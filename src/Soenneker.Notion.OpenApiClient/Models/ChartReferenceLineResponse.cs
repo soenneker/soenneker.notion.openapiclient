@@ -9,18 +9,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ChartReferenceLineResponse : IAdditionalDataHolder, IParsable
+    public partial class ChartReferenceLineResponse : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse"/> and sets the default values.
-        /// </summary>
-        public ChartReferenceLineResponse()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Color of the reference line.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponseColor? Color { get; set; }
+        /// <summary>Line style: &quot;solid&quot; for a continuous line, &quot;dash&quot; for a dashed line.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponseDashStyle? DashStyle { get; set; }
+        /// <summary>Unique identifier for the reference line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>Label displayed alongside the reference line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Label { get; set; }
+#nullable restore
+#else
+        public string Label { get; set; }
+#endif
+        /// <summary>The y-axis value where the reference line is drawn.</summary>
+        public double? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,6 +52,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "color", n => { Color = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponseColor>(); } },
+                { "dash_style", n => { DashStyle = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponseDashStyle>(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +66,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponseColor>("color", Color);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponseDashStyle>("dash_style", DashStyle);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("label", Label);
+            writer.WriteDoubleValue("value", Value);
         }
     }
 }

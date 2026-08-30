@@ -51,20 +51,20 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property visibility and display configuration on timeline items. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get; set; }
 #endif
         /// <summary>Whether to show the table panel alongside the timeline. Pass null to clear.</summary>
         public bool? ShowTable { get; set; }
         /// <summary>Property configuration for the table panel (when show_table is true). Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties? TableProperties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? TableProperties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties TableProperties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> TableProperties { get; set; }
 #endif
         /// <summary>The view type. Must be &quot;timeline&quot;.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.TimelineType? Type { get; set; }
@@ -98,9 +98,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "date_property_id", n => { DatePropertyId = n.GetStringValue(); } },
                 { "end_date_property_id", n => { EndDatePropertyId = n.GetStringValue(); } },
                 { "preference", n => { Preference = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_table", n => { ShowTable = n.GetBoolValue(); } },
-                { "table_properties", n => { TableProperties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties>(global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties.CreateFromDiscriminatorValue); } },
+                { "table_properties", n => { TableProperties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineType>(); } },
             };
         }
@@ -116,9 +116,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("date_property_id", DatePropertyId);
             writer.WriteStringValue("end_date_property_id", EndDatePropertyId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestPreference>("preference", Preference);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestProperties>("properties", Properties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);
             writer.WriteBoolValue("show_table", ShowTable);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequestTableProperties>("table_properties", TableProperties);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("table_properties", TableProperties);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

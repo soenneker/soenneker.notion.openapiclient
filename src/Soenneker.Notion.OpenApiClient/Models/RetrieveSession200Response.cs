@@ -31,10 +31,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The chat_user_emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseChatUserEmails? ChatUserEmails { get; set; }
+        public List<string>? ChatUserEmails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseChatUserEmails ChatUserEmails { get; set; }
+        public List<string> ChatUserEmails { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -101,10 +101,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The tool_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseToolTypes? ToolTypes { get; set; }
+        public List<string>? ToolTypes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseToolTypes ToolTypes { get; set; }
+        public List<string> ToolTypes { get; set; }
 #endif
         /// <summary>The trigger_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,10 +117,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The type_labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseTypeLabels? TypeLabels { get; set; }
+        public List<string>? TypeLabels { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseTypeLabels TypeLabels { get; set; }
+        public List<string> TypeLabels { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -144,7 +144,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_version", n => { AgentVersion = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseAgentVersion>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseAgentVersion.CreateFromDiscriminatorValue); } },
-                { "chat_user_emails", n => { ChatUserEmails = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseChatUserEmails>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseChatUserEmails.CreateFromDiscriminatorValue); } },
+                { "chat_user_emails", n => { ChatUserEmails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseCreatedBy>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseCreatedBy.CreateFromDiscriminatorValue); } },
                 { "credits_used", n => { CreditsUsed = n.GetDoubleValue(); } },
@@ -158,9 +158,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseStatus>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "tool_call_count", n => { ToolCallCount = n.GetIntValue(); } },
-                { "tool_types", n => { ToolTypes = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseToolTypes>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseToolTypes.CreateFromDiscriminatorValue); } },
+                { "tool_types", n => { ToolTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "trigger_type", n => { TriggerType = n.GetStringValue(); } },
-                { "type_labels", n => { TypeLabels = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseTypeLabels>(global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseTypeLabels.CreateFromDiscriminatorValue); } },
+                { "type_labels", n => { TypeLabels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -173,7 +173,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseAgentVersion>("agent_version", AgentVersion);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseChatUserEmails>("chat_user_emails", ChatUserEmails);
+            writer.WriteCollectionOfPrimitiveValues<string>("chat_user_emails", ChatUserEmails);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseCreatedBy>("created_by", CreatedBy);
             writer.WriteDoubleValue("credits_used", CreditsUsed);
@@ -187,9 +187,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseStatus>("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteIntValue("tool_call_count", ToolCallCount);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseToolTypes>("tool_types", ToolTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("tool_types", ToolTypes);
             writer.WriteStringValue("trigger_type", TriggerType);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseTypeLabels>("type_labels", TypeLabels);
+            writer.WriteCollectionOfPrimitiveValues<string>("type_labels", TypeLabels);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }
     }

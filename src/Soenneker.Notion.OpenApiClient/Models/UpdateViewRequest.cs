@@ -49,10 +49,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property sorts to apply to the view. Only property-based sorts are supported. Pass null to clear the sorts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestSorts? Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertySortRequest>? Sorts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestSorts Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertySortRequest> Sorts { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequest"/> and sets the default values.
@@ -83,7 +83,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter>(global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFiltersProperty>(global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFiltersProperty.CreateFromDiscriminatorValue); } },
-                { "sorts", n => { Sorts = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestSorts>(global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestSorts.CreateFromDiscriminatorValue); } },
+                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertySortRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertySortRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter>("filter", Filter);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFiltersProperty>("quick_filters", QuickFilters);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestSorts>("sorts", Sorts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertySortRequest>("sorts", Sorts);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

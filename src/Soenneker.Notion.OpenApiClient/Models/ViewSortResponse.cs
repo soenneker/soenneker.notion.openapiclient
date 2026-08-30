@@ -7,20 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertySortResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampSortResponse"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ViewSortResponse : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ViewSortResponse : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse"/> and sets the default values.
-        /// </summary>
-        public ViewSortResponse()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertySortResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertySortResponse? PropertySortResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertySortResponse PropertySortResponse { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampSortResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.TimestampSortResponse? TimestampSortResponse { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.TimestampSortResponse TimestampSortResponse { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -29,7 +37,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse();
+            if("PropertySortResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PropertySortResponse = new global::Soenneker.Notion.OpenApiClient.Models.PropertySortResponse();
+            }
+            else if("TimestampSortResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TimestampSortResponse = new global::Soenneker.Notion.OpenApiClient.Models.TimestampSortResponse();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -37,9 +55,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PropertySortResponse != null)
             {
-            };
+                return PropertySortResponse.GetFieldDeserializers();
+            }
+            else if(TimestampSortResponse != null)
+            {
+                return TimestampSortResponse.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -48,7 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            if(PropertySortResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertySortResponse>(null, PropertySortResponse);
+            }
+            else if(TimestampSortResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimestampSortResponse>(null, TimestampSortResponse);
+            }
         }
     }
 }

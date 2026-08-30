@@ -95,10 +95,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The sorts applied to this view (same shape as data source query sorts).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts? Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>? Sorts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse> Sorts { get; set; }
 #endif
         /// <summary>The view type.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType? Type { get; set; }
@@ -141,7 +141,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewObject>(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse.CreateFromDiscriminatorValue); } },
                 { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty.CreateFromDiscriminatorValue); } },
-                { "sorts", n => { Sorts = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts.CreateFromDiscriminatorValue); } },
+                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -166,7 +166,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty>("quick_filters", QuickFilters);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseSorts>("sorts", Sorts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>("sorts", Sorts);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType>("type", Type);
             writer.WriteStringValue("url", Url);
         }

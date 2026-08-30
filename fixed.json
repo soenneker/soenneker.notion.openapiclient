@@ -7196,7 +7196,6 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "object",
               "oneOf": [
                 {
                   "type": "string"
@@ -7356,7 +7355,6 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "object",
               "oneOf": [
                 {
                   "type": "string"
@@ -7510,7 +7508,6 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "object",
               "oneOf": [
                 {
                   "type": "string"
@@ -7682,7 +7679,6 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "object",
               "oneOf": [
                 {
                   "type": "string"
@@ -7846,7 +7842,6 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "object",
               "oneOf": [
                 {
                   "type": "string"
@@ -10466,7 +10461,15 @@
             "$ref": "#/components/schemas/BoardViewConfigRequestSubGroupBy"
           },
           "properties": {
-            "$ref": "#/components/schemas/BoardViewConfigRequestProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property visibility and display configuration on cards. Pass null to clear."
           },
           "cover": {
             "$ref": "#/components/schemas/BoardViewConfigRequestCover"
@@ -10841,7 +10844,15 @@
             "description": "Property ID of the date property used to position items on the calendar."
           },
           "properties": {
-            "$ref": "#/components/schemas/CalendarViewConfigRequestProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property visibility and display configuration on calendar cards. Pass null to clear."
           },
           "view_range": {
             "$ref": "#/components/schemas/CalendarViewConfigRequestViewRange"
@@ -11157,7 +11168,15 @@
             "$ref": "#/components/schemas/ChartViewConfigRequestStackBy"
           },
           "reference_lines": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestReferenceLines"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ChartReferenceLineRequest"
+            },
+            "description": "Reference lines on the chart. Pass null to clear."
           },
           "caption": {
             "type": [
@@ -11271,7 +11290,15 @@
             "$ref": "#/components/schemas/ChartViewConfigResponseStackBy"
           },
           "reference_lines": {
-            "$ref": "#/components/schemas/ChartViewConfigResponseReferenceLines"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ChartReferenceLineResponse"
+            },
+            "description": "Reference lines drawn on the chart. Null when no reference lines are configured."
           },
           "caption": {
             "type": [
@@ -13382,7 +13409,15 @@
             "$ref": "#/components/schemas/DataSourceViewObjectResponseFilter"
           },
           "sorts": {
-            "$ref": "#/components/schemas/DataSourceViewObjectResponseSorts"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewSortResponse"
+            },
+            "description": "The sorts applied to this view (same shape as data source query sorts)."
           },
           "quick_filters": {
             "$ref": "#/components/schemas/DataSourceViewObjectResponseQuickFiltersProperty"
@@ -16603,7 +16638,15 @@
             "$ref": "#/components/schemas/GalleryType"
           },
           "properties": {
-            "$ref": "#/components/schemas/GalleryViewConfigRequestProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property visibility and display configuration on gallery cards. Pass null to clear."
           },
           "cover": {
             "$ref": "#/components/schemas/GalleryViewConfigRequestCover"
@@ -18198,7 +18241,15 @@
             "$ref": "#/components/schemas/ListType"
           },
           "properties": {
-            "$ref": "#/components/schemas/ListViewConfigRequestProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property visibility and display configuration. Pass null to clear."
           }
         }
       },
@@ -18257,7 +18308,15 @@
             "description": "Property ID of the location property used to position items on the map. Pass null to clear."
           },
           "properties": {
-            "$ref": "#/components/schemas/MapViewConfigRequestProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property visibility and display configuration on map pin cards. Pass null to clear."
           }
         }
       },
@@ -23762,7 +23821,15 @@
             "$ref": "#/components/schemas/TableType"
           },
           "properties": {
-            "$ref": "#/components/schemas/TableViewConfigRequestProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property visibility and display configuration. Pass null to clear."
           },
           "group_by": {
             "$ref": "#/components/schemas/TableViewConfigRequestGroupBy"
@@ -24246,7 +24313,15 @@
             "description": "Property ID of the date property used for the end of timeline items. Pass null to clear."
           },
           "properties": {
-            "$ref": "#/components/schemas/TimelineViewConfigRequestProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property visibility and display configuration on timeline items. Pass null to clear."
           },
           "show_table": {
             "type": [
@@ -24256,7 +24331,15 @@
             "description": "Whether to show the table panel alongside the timeline. Pass null to clear."
           },
           "table_properties": {
-            "$ref": "#/components/schemas/TimelineViewConfigRequestTableProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property configuration for the table panel (when show_table is true). Pass null to clear."
           },
           "preference": {
             "$ref": "#/components/schemas/TimelineViewConfigRequestPreference"
@@ -25385,6 +25468,17 @@
           }
         ],
         "properties": {
+          "properties": {
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property visibility and display configuration. Pass null to clear."
+          },
           "subtasks": {
             "$ref": "#/components/schemas/TableViewConfigRequestSubtasks"
           },
@@ -25433,7 +25527,15 @@
             "description": "Whether to show the table panel alongside the timeline. Pass null to clear."
           },
           "table_properties": {
-            "$ref": "#/components/schemas/TimelineViewConfigRequestTableProperties"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
+            },
+            "description": "Property configuration for the table panel (when show_table is true). Pass null to clear."
           },
           "preference": {
             "$ref": "#/components/schemas/TimelineViewConfigRequestPreference"
@@ -25579,7 +25681,15 @@
             "$ref": "#/components/schemas/ChartViewConfigRequestStackBy"
           },
           "reference_lines": {
-            "$ref": "#/components/schemas/ChartViewConfigRequestReferenceLines"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ChartReferenceLineRequest"
+            },
+            "description": "Reference lines on the chart. Pass null to clear."
           },
           "caption": {
             "type": [
@@ -25813,7 +25923,15 @@
             "$ref": "#/components/schemas/ChartViewConfigResponseStackBy"
           },
           "reference_lines": {
-            "$ref": "#/components/schemas/ChartViewConfigResponseReferenceLines"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ChartReferenceLineResponse"
+            },
+            "description": "Reference lines drawn on the chart. Null when no reference lines are configured."
           },
           "caption": {
             "type": [
@@ -28116,22 +28234,6 @@
         },
         "description": "Secondary group-by configuration for sub-grouping within columns. Pass null to remove sub-grouping."
       },
-      "BoardViewConfigRequestProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Property visibility and display configuration on cards. Pass null to clear."
-      },
       "BoardViewConfigRequestCover": {
         "type": "object",
         "oneOf": [
@@ -28203,22 +28305,6 @@
           }
         },
         "description": "Details about the bot, when the \u0060type\u0060 of the user is \u0060bot\u0060."
-      },
-      "CalendarViewConfigRequestProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Property visibility and display configuration on calendar cards. Pass null to clear."
       },
       "CalloutBlockObjectResponseCalloutIcon": {
         "type": "object",
@@ -28372,22 +28458,6 @@
         },
         "description": "Stack-by grouping for stacked/grouped bar charts. Pass null to clear."
       },
-      "ChartViewConfigRequestReferenceLines": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ChartReferenceLineRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Reference lines on the chart. Pass null to clear."
-      },
       "ChartViewConfigResponseXAxis": {
         "type": "object",
         "oneOf": [
@@ -28498,22 +28568,6 @@
           }
         },
         "description": "Stack-by grouping configuration for stacked/grouped bar charts (column/bar/line only). Null when not stacked."
-      },
-      "ChartViewConfigResponseReferenceLines": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ChartReferenceLineResponse"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Reference lines drawn on the chart. Null when no reference lines are configured."
       },
       "CheckboxPropertyFilterAnyOf1": {
         "required": [
@@ -28933,22 +28987,6 @@
         },
         "description": "The filter applied to this view (same shape as data source query filter)."
       },
-      "DataSourceViewObjectResponseSorts": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewSortResponse"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "The sorts applied to this view (same shape as data source query sorts)."
-      },
       "DataSourceViewObjectResponseConfiguration": {
         "type": "object",
         "oneOf": [
@@ -29140,7 +29178,15 @@
             "$ref": "#/components/schemas/ChartViewConfigResponseStackBy"
           },
           "reference_lines": {
-            "$ref": "#/components/schemas/ChartViewConfigResponseReferenceLines"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ChartReferenceLineResponse"
+            },
+            "description": "Reference lines drawn on the chart. Null when no reference lines are configured."
           },
           "caption": {
             "type": [
@@ -30097,22 +30143,6 @@
           }
         }
       },
-      "GalleryViewConfigRequestProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Property visibility and display configuration on gallery cards. Pass null to clear."
-      },
       "GalleryViewConfigRequestCover": {
         "type": "object",
         "oneOf": [
@@ -30324,38 +30354,6 @@
             "type": "string"
           }
         }
-      },
-      "ListViewConfigRequestProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Property visibility and display configuration. Pass null to clear."
-      },
-      "MapViewConfigRequestProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Property visibility and display configuration on map pin cards. Pass null to clear."
       },
       "MediaContentWithFileAndCaptionRequestExternal": {
         "title": "External",
@@ -31980,22 +31978,6 @@
           }
         }
       },
-      "TableViewConfigRequestProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Property visibility and display configuration. Pass null to clear."
-      },
       "TableViewConfigRequestGroupBy": {
         "type": "object",
         "oneOf": [
@@ -32131,38 +32113,6 @@
           }
         }
       },
-      "TimelineViewConfigRequestProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Property visibility and display configuration on timeline items. Pass null to clear."
-      },
-      "TimelineViewConfigRequestTableProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertyConfigRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Property configuration for the table panel (when show_table is true). Pass null to clear."
-      },
       "TimelineViewConfigRequestPreference": {
         "type": "object",
         "oneOf": [
@@ -32206,45 +32156,29 @@
         "description": "Configuration for dependency arrows between timeline items. Pass null to clear."
       },
       "UpdateViewRequestFilter": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "object",
-            "description": "Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view\u0027s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { \u0022does_not_equal\u0022: [\u0022Done\u0022, \u0022Archive\u0022] })."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Filter to apply to the view. Uses the same format as the data source query filter. Pass null to clear the filter."
       },
       "UpdateViewRequestSorts": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewPropertySortRequest"
-            }
-          },
-          {
-            "type": "null"
-          }
+        "maxItems": 100,
+        "type": [
+          "null",
+          "array"
         ],
+        "items": {
+          "$ref": "#/components/schemas/ViewPropertySortRequest"
+        },
         "description": "Property sorts to apply to the view. Only property-based sorts are supported. Pass null to clear the sorts."
       },
       "UpdateViewRequestQuickFiltersAdditionalProperties": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "object",
-            "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
-          },
-          {
-            "type": "null"
-          }
-        ]
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
       },
       "VerificationPropertyItemObjectResponseVerification": {
         "type": "object",
@@ -39315,7 +39249,15 @@
             "$ref": "#/components/schemas/DataSourceViewObjectResponseFilter"
           },
           "sorts": {
-            "$ref": "#/components/schemas/DataSourceViewObjectResponseSorts"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewSortResponse"
+            },
+            "description": "The sorts applied to this view (same shape as data source query sorts)."
           },
           "quick_filters": {
             "$ref": "#/components/schemas/DataSourceViewObjectResponseQuickFiltersProperty"
@@ -39385,7 +39327,15 @@
             "$ref": "#/components/schemas/DataSourceViewObjectResponseFilter"
           },
           "sorts": {
-            "$ref": "#/components/schemas/DataSourceViewObjectResponseSorts"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewSortResponse"
+            },
+            "description": "The sorts applied to this view (same shape as data source query sorts)."
           },
           "quick_filters": {
             "$ref": "#/components/schemas/DataSourceViewObjectResponseQuickFiltersProperty"
@@ -39455,7 +39405,15 @@
             "$ref": "#/components/schemas/DataSourceViewObjectResponseFilter"
           },
           "sorts": {
-            "$ref": "#/components/schemas/DataSourceViewObjectResponseSorts"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ViewSortResponse"
+            },
+            "description": "The sorts applied to this view (same shape as data source query sorts)."
           },
           "quick_filters": {
             "$ref": "#/components/schemas/DataSourceViewObjectResponseQuickFiltersProperty"
@@ -40175,13 +40133,31 @@
             "type": "string"
           },
           "type_labels": {
-            "$ref": "#/components/schemas/RetrieveSession200ResponseTypeLabels"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "chat_user_emails": {
-            "$ref": "#/components/schemas/RetrieveSession200ResponseChatUserEmails"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "tool_types": {
-            "$ref": "#/components/schemas/RetrieveSession200ResponseToolTypes"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "tool_call_count": {
             "minimum": 0,
@@ -41887,22 +41863,6 @@
           }
         }
       },
-      "QueryAgents200ResponseResultsItemConnectionsItemPermissionsItemTargetAllowedDomains": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Domains web search is restricted to, or null when unrestricted."
-      },
       "QueryAgents200ResponseResultsItemConnectionsItemEnabledTools": {
         "type": "object",
         "oneOf": [
@@ -41999,22 +41959,6 @@
             "$ref": "#/components/schemas/GetAgent200ResponseIconOneOf2CustomAgentAvatar"
           }
         }
-      },
-      "GetAgent200ResponseConnectionsItemPermissionsItemTargetAllowedDomains": {
-        "type": "object",
-        "oneOf": [
-          {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Domains web search is restricted to, or null when unrestricted."
       },
       "GetAgent200ResponseConnectionsItemEnabledTools": {
         "type": "object",
@@ -42143,90 +42087,6 @@
           }
         ]
       },
-      "RetrieveSession200ResponseTypeLabels": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "RetrieveSession200ResponseChatUserEmails": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "RetrieveSession200ResponseToolTypes": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "QuerySessions200ResponseResultsItemTypeLabels": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "QuerySessions200ResponseResultsItemChatUserEmails": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "QuerySessions200ResponseResultsItemToolTypes": {
-        "type": "object",
-        "oneOf": [
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
       "CreateAToken200ResponseOwnerUser": {
         "type": "object",
         "anyOf": [
@@ -42262,7 +42122,6 @@
         }
       },
       "GetBlockChildren200ResponseResultsItem": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PartialBlockObjectResponse"
@@ -42413,7 +42272,6 @@
         }
       },
       "PatchBlockChildren200ResponseResultsItem": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/PartialBlockObjectResponse"
@@ -45869,13 +45727,31 @@
             "type": "string"
           },
           "type_labels": {
-            "$ref": "#/components/schemas/QuerySessions200ResponseResultsItemTypeLabels"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "chat_user_emails": {
-            "$ref": "#/components/schemas/QuerySessions200ResponseResultsItemChatUserEmails"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "tool_types": {
-            "$ref": "#/components/schemas/QuerySessions200ResponseResultsItemToolTypes"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
           },
           "tool_call_count": {
             "minimum": 0,
@@ -49074,7 +48950,15 @@
             "type": "string"
           },
           "allowed_domains": {
-            "$ref": "#/components/schemas/GetAgent200ResponseConnectionsItemPermissionsItemTargetAllowedDomains"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Domains web search is restricted to, or null when unrestricted."
           }
         }
       },
@@ -49658,7 +49542,15 @@
             "type": "string"
           },
           "allowed_domains": {
-            "$ref": "#/components/schemas/QueryAgents200ResponseResultsItemConnectionsItemPermissionsItemTargetAllowedDomains"
+            "maxItems": 100,
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Domains web search is restricted to, or null when unrestricted."
           }
         }
       },
