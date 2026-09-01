@@ -4898,10 +4898,14 @@
 									"page_id": {
 										"$ref": "#/components/schemas/idResponse",
 										"description": "The ID of the page containing the comment."
+									},
+									"discussion_id": {
+										"$ref": "#/components/schemas/idResponse",
+										"description": "The ID of the discussion containing the comment."
 									}
 								},
 								"additionalProperties": false,
-								"required": ["parent", "page_id"],
+								"required": ["parent", "page_id", "discussion_id"],
 								"description": "Additional event-specific data."
 							}
 						},
@@ -4936,10 +4940,14 @@
 									"page_id": {
 										"$ref": "#/components/schemas/idResponse",
 										"description": "The ID of the page containing the comment."
+									},
+									"discussion_id": {
+										"$ref": "#/components/schemas/idResponse",
+										"description": "The ID of the discussion containing the comment."
 									}
 								},
 								"additionalProperties": false,
-								"required": ["parent", "page_id"],
+								"required": ["parent", "page_id", "discussion_id"],
 								"description": "Additional event-specific data."
 							}
 						},
@@ -5088,10 +5096,14 @@
 									"page_id": {
 										"$ref": "#/components/schemas/idResponse",
 										"description": "The ID of the page containing the comment."
+									},
+									"discussion_id": {
+										"$ref": "#/components/schemas/idResponse",
+										"description": "The ID of the discussion containing the comment."
 									}
 								},
 								"additionalProperties": false,
-								"required": ["parent", "page_id"],
+								"required": ["parent", "page_id", "discussion_id"],
 								"description": "Additional event-specific data."
 							}
 						},
@@ -42615,10 +42627,12 @@
 													"updated_at"
 												]
 											},
-											"maxItems": 100
+											"maxItems": 100,
+											"description": "Sessions found in this bounded scan. Access filtering can leave this array empty while has_more is true."
 										},
 										"has_more": {
-											"type": "boolean"
+											"type": "boolean",
+											"description": "Whether more session candidates remain after this bounded scan."
 										},
 										"next_cursor": {
 											"oneOf": [
@@ -42628,7 +42642,8 @@
 												{
 													"type": "null"
 												}
-											]
+											],
+											"description": "Pass this cursor as start_cursor when has_more is true, even when results is empty."
 										}
 									},
 									"additionalProperties": false,

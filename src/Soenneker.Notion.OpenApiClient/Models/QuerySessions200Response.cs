@@ -12,9 +12,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class QuerySessions200Response : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The has_more property</summary>
+        /// <summary>Whether more session candidates remain after this bounded scan.</summary>
         public bool? HasMore { get; set; }
-        /// <summary>The next_cursor property</summary>
+        /// <summary>Pass this cursor as start_cursor when has_more is true, even when results is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextCursor { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get; set; }
-        /// <summary>The results property</summary>
+        /// <summary>Sessions found in this bounded scan. Access filtering can leave this array empty while has_more is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItem>? Results { get; set; }

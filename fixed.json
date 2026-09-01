@@ -14388,15 +14388,7 @@
           {
             "$ref": "#/components/schemas/ExistencePropertyFilter"
           }
-        ],
-        "properties": {
-          "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
-          },
-          "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
-          }
-        }
+        ]
       },
       "DatePropertyItemObjectResponse": {
         "title": "Date",
@@ -22720,85 +22712,6 @@
             "items": {
               "$ref": "#/components/schemas/RelationItemPropertyValueResponse"
             }
-          },
-          "number": {
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "url": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "select": {
-            "$ref": "#/components/schemas/SelectSimplePropertyValueResponseSelect"
-          },
-          "multi_select": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PartialSelectPropertyValueResponse"
-            }
-          },
-          "status": {
-            "$ref": "#/components/schemas/StatusSimplePropertyValueResponseStatus"
-          },
-          "date": {
-            "$ref": "#/components/schemas/DateSimplePropertyValueResponseDate"
-          },
-          "email": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "phone_number": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "checkbox": {
-            "type": "boolean"
-          },
-          "files": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/InternalOrExternalFileWithNameResponse"
-            }
-          },
-          "created_by": {
-            "$ref": "#/components/schemas/UserValueResponse"
-          },
-          "created_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "last_edited_by": {
-            "$ref": "#/components/schemas/UserValueResponse"
-          },
-          "last_edited_time": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "formula": {
-            "$ref": "#/components/schemas/FormulaPropertyValueResponse"
-          },
-          "button": {
-            "$ref": "#/components/schemas/ButtonSimplePropertyValueResponseButton"
-          },
-          "unique_id": {
-            "$ref": "#/components/schemas/UniqueIdPropertyValueResponse"
-          },
-          "verification": {
-            "$ref": "#/components/schemas/VerificationSimplePropertyValueResponseVerification"
-          },
-          "place": {
-            "$ref": "#/components/schemas/PlaceSimplePropertyValueResponsePlace"
           }
         }
       },
@@ -35738,7 +35651,8 @@
       "CommentCreatedWebhookPayloadAllOf2Data": {
         "required": [
           "parent",
-          "page_id"
+          "page_id",
+          "discussion_id"
         ],
         "type": "object",
         "properties": {
@@ -35746,6 +35660,10 @@
             "$ref": "#/components/schemas/WebhookExternalBlock"
           },
           "page_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "discussion_id": {
             "type": "string",
             "format": "uuid"
           }
@@ -35756,7 +35674,8 @@
       "CommentDeletedWebhookPayloadAllOf2Data": {
         "required": [
           "parent",
-          "page_id"
+          "page_id",
+          "discussion_id"
         ],
         "type": "object",
         "properties": {
@@ -35764,6 +35683,10 @@
             "$ref": "#/components/schemas/WebhookExternalBlock"
           },
           "page_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "discussion_id": {
             "type": "string",
             "format": "uuid"
           }
@@ -35774,7 +35697,8 @@
       "CommentUpdatedWebhookPayloadAllOf2Data": {
         "required": [
           "parent",
-          "page_id"
+          "page_id",
+          "discussion_id"
         ],
         "type": "object",
         "properties": {
@@ -35782,6 +35706,10 @@
             "$ref": "#/components/schemas/WebhookExternalBlock"
           },
           "page_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "discussion_id": {
             "type": "string",
             "format": "uuid"
           }
@@ -40247,16 +40175,19 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/QuerySessions200ResponseResultsItem"
-            }
+            },
+            "description": "Sessions found in this bounded scan. Access filtering can leave this array empty while has_more is true."
           },
           "has_more": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether more session candidates remain after this bounded scan."
           },
           "next_cursor": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Pass this cursor as start_cursor when has_more is true, even when results is empty."
           }
         },
         "additionalProperties": false
