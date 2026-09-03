@@ -22,6 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest Cover { get; set; }
 #endif
+        /// <summary>Create a typed database with Notion&apos;s canonical schema. One of `tasks`, `projects`, or `skills`. Cannot be combined with `initial_data_source`. When `title` is omitted, the database is named after the type.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestDatabaseType? DatabaseType { get; set; }
         /// <summary>The description of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +92,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest.CreateFromDiscriminatorValue); } },
+                { "database_type", n => { DatabaseType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestDatabaseType>(); } },
                 { "description", n => { Description = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest.CreateFromDiscriminatorValue); } },
                 { "initial_data_source", n => { InitialDataSource = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest>(global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest.CreateFromDiscriminatorValue); } },
@@ -106,6 +109,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest>("cover", Cover);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestDatabaseType>("database_type", DatabaseType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>("icon", Icon);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest>("initial_data_source", InitialDataSource);

@@ -13069,6 +13069,7 @@
           "parent",
           "database_parent",
           "is_inline",
+          "database_type",
           "in_trash",
           "created_time",
           "last_edited_time",
@@ -13114,6 +13115,9 @@
           "is_inline": {
             "type": "boolean",
             "description": "Whether the data source is inline."
+          },
+          "database_type": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseDatabaseType"
           },
           "in_trash": {
             "type": "boolean",
@@ -13757,6 +13761,7 @@
           "description",
           "parent",
           "is_inline",
+          "database_type",
           "in_trash",
           "is_locked",
           "created_time",
@@ -13798,6 +13803,9 @@
           "is_inline": {
             "type": "boolean",
             "description": "Whether the database is inline."
+          },
+          "database_type": {
+            "$ref": "#/components/schemas/DatabaseObjectResponseDatabaseType"
           },
           "in_trash": {
             "type": "boolean",
@@ -37898,6 +37906,9 @@
             "type": "boolean",
             "description": "Whether the data source is inline."
           },
+          "database_type": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseDatabaseType"
+          },
           "in_trash": {
             "type": "boolean",
             "description": "Whether the data source is in the trash."
@@ -38006,6 +38017,9 @@
           "is_inline": {
             "type": "boolean",
             "description": "Whether the data source is inline."
+          },
+          "database_type": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseDatabaseType"
           },
           "in_trash": {
             "type": "boolean",
@@ -38185,6 +38199,9 @@
             "type": "boolean",
             "description": "Whether the data source is inline."
           },
+          "database_type": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseDatabaseType"
+          },
           "in_trash": {
             "type": "boolean",
             "description": "Whether the data source is in the trash."
@@ -38295,6 +38312,9 @@
           "is_inline": {
             "type": "boolean",
             "description": "Whether the database is inline."
+          },
+          "database_type": {
+            "$ref": "#/components/schemas/DatabaseObjectResponseDatabaseType"
           },
           "in_trash": {
             "type": "boolean",
@@ -38424,6 +38444,9 @@
             "type": "boolean",
             "description": "Whether the database is inline."
           },
+          "database_type": {
+            "$ref": "#/components/schemas/DatabaseObjectResponseDatabaseType"
+          },
           "in_trash": {
             "type": "boolean",
             "description": "Whether the database is in the trash."
@@ -38501,6 +38524,9 @@
           "initial_data_source": {
             "$ref": "#/components/schemas/InitialDataSourceRequest"
           },
+          "database_type": {
+            "$ref": "#/components/schemas/CreateDatabaseRequestDatabaseType"
+          },
           "icon": {
             "$ref": "#/components/schemas/PageIconRequest"
           },
@@ -38549,6 +38575,9 @@
           "is_inline": {
             "type": "boolean",
             "description": "Whether the database is inline."
+          },
+          "database_type": {
+            "$ref": "#/components/schemas/DatabaseObjectResponseDatabaseType"
           },
           "in_trash": {
             "type": "boolean",
@@ -52797,6 +52826,67 @@
           ]
         }
       },
+      "DataSourceObjectResponseDatabaseType": {
+        "enum": [
+          "tasks",
+          "projects",
+          "sprints",
+          "docs",
+          "wiki",
+          "meetings",
+          "meeting_notes",
+          "skills",
+          "github_prs"
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "additionalProperties": false,
+        "description": "The type of typed database this data source belongs to, or \u0060null\u0060 for a regular data source.",
+        "x-ms-enum": {
+          "name": "DataSourceObjectResponseDatabaseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "tasks",
+              "name": "Tasks"
+            },
+            {
+              "value": "projects",
+              "name": "Projects"
+            },
+            {
+              "value": "sprints",
+              "name": "Sprints"
+            },
+            {
+              "value": "docs",
+              "name": "Docs"
+            },
+            {
+              "value": "wiki",
+              "name": "Wiki"
+            },
+            {
+              "value": "meetings",
+              "name": "Meetings"
+            },
+            {
+              "value": "meeting_notes",
+              "name": "MeetingNotes"
+            },
+            {
+              "value": "skills",
+              "name": "Skills"
+            },
+            {
+              "value": "github_prs",
+              "name": "GithubPrs"
+            }
+          ]
+        }
+      },
       "DataSourceIdType": {
         "const": null,
         "enum": [
@@ -53018,6 +53108,67 @@
             {
               "value": "database",
               "name": "Database"
+            }
+          ]
+        }
+      },
+      "DatabaseObjectResponseDatabaseType": {
+        "enum": [
+          "tasks",
+          "projects",
+          "sprints",
+          "docs",
+          "wiki",
+          "meetings",
+          "meeting_notes",
+          "skills",
+          "github_prs"
+        ],
+        "type": [
+          "null",
+          "string"
+        ],
+        "additionalProperties": false,
+        "description": "The type of typed database, such as \u0060tasks\u0060, \u0060projects\u0060, or \u0060skills\u0060, or \u0060null\u0060 for a regular database. Create a database accepts \u0060tasks\u0060, \u0060projects\u0060, and \u0060skills\u0060.",
+        "x-ms-enum": {
+          "name": "DatabaseObjectResponseDatabaseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "tasks",
+              "name": "Tasks"
+            },
+            {
+              "value": "projects",
+              "name": "Projects"
+            },
+            {
+              "value": "sprints",
+              "name": "Sprints"
+            },
+            {
+              "value": "docs",
+              "name": "Docs"
+            },
+            {
+              "value": "wiki",
+              "name": "Wiki"
+            },
+            {
+              "value": "meetings",
+              "name": "Meetings"
+            },
+            {
+              "value": "meeting_notes",
+              "name": "MeetingNotes"
+            },
+            {
+              "value": "skills",
+              "name": "Skills"
+            },
+            {
+              "value": "github_prs",
+              "name": "GithubPrs"
             }
           ]
         }
@@ -57945,6 +58096,34 @@
             {
               "value": "page_or_data_source",
               "name": "PageOrDataSource"
+            }
+          ]
+        }
+      },
+      "CreateDatabaseRequestDatabaseType": {
+        "enum": [
+          "tasks",
+          "projects",
+          "skills"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Create a typed database with Notion\u0027s canonical schema. One of \u0060tasks\u0060, \u0060projects\u0060, or \u0060skills\u0060. Cannot be combined with \u0060initial_data_source\u0060. When \u0060title\u0060 is omitted, the database is named after the type.",
+        "x-ms-enum": {
+          "name": "CreateDatabaseRequestDatabaseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "tasks",
+              "name": "Tasks"
+            },
+            {
+              "value": "projects",
+              "name": "Projects"
+            },
+            {
+              "value": "skills",
+              "name": "Skills"
             }
           ]
         }
