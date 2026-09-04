@@ -19508,7 +19508,8 @@
 						"in": "path",
 						"required": true,
 						"schema": {
-							"$ref": "#/components/schemas/idRequest"
+							"$ref": "#/components/schemas/idRequest",
+							"description": "The ID of the user or bot to retrieve."
 						}
 					},
 					{
@@ -21936,7 +21937,8 @@
 						"in": "path",
 						"required": true,
 						"schema": {
-							"$ref": "#/components/schemas/idRequest"
+							"$ref": "#/components/schemas/idRequest",
+							"description": "The ID of the page containing the property."
 						}
 					},
 					{
@@ -21944,7 +21946,8 @@
 						"in": "path",
 						"required": true,
 						"schema": {
-							"type": "string"
+							"type": "string",
+							"description": "The ID or name of the property to retrieve."
 						}
 					},
 					{
@@ -29471,27 +29474,27 @@
 									"mode": {
 										"type": "string",
 										"enum": ["single_part", "multi_part", "external_url"],
-										"description": "How the file is being sent. Use `multi_part` for files larger than 20MB. Use `external_url` for files that are temporarily hosted publicly elsewhere. Default is `single_part`."
+										"description": "How the file is sent. Defaults to single_part. Use multi_part for files larger than 20 MiB or external_url for a temporary public HTTPS URL."
 									},
 									"filename": {
 										"type": "string",
 										"examples": ["business_summary.pdf"],
-										"description": "Name of the file to be created. Required when `mode` is `multi_part`. Otherwise optional, and used to override the filename. Must include an extension, or have one inferred from the `content_type` parameter."
+										"description": "The filename. Required for multi_part and external_url uploads. Include an extension or provide content_type so one can be inferred."
 									},
 									"content_type": {
 										"type": "string",
 										"examples": ["application/pdf"],
-										"description": "MIME type of the file to be created. Recommended when sending the file in multiple parts. Must match the content type of the file that's sent, and the extension of the `filename` parameter if any."
+										"description": "The MIME type. It must match the uploaded file and any filename extension."
 									},
 									"number_of_parts": {
 										"type": "integer",
 										"minimum": 1,
 										"maximum": 10000,
-										"description": "When `mode` is `multi_part`, the number of parts you are uploading. This must match the number of parts as well as the final `part_number` you send."
+										"description": "The number of parts in a multi_part upload. Required only for multi_part uploads. This must match the number of uploaded parts and the final part_number sent."
 									},
 									"external_url": {
 										"type": "string",
-										"description": "When `mode` is `external_url`, provide the HTTPS URL of a publicly accessible file to import into your workspace."
+										"description": "A public HTTPS URL to import. Required only for external_url uploads."
 									}
 								}
 							}
@@ -36403,6 +36406,7 @@
 																						"search",
 																						"security",
 																						"sharepoint",
+																						"sharepoint_oauth",
 																						"skills",
 																						"system",
 																						"test",
@@ -37490,6 +37494,7 @@
 																						"search",
 																						"security",
 																						"sharepoint",
+																						"sharepoint_oauth",
 																						"skills",
 																						"system",
 																						"test",
@@ -38674,6 +38679,7 @@
 																	"search",
 																	"security",
 																	"sharepoint",
+																	"sharepoint_oauth",
 																	"skills",
 																	"system",
 																	"test",

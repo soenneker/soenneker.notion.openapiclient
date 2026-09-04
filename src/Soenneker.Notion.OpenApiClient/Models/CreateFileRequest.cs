@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>MIME type of the file to be created. Recommended when sending the file in multiple parts. Must match the content type of the file that&apos;s sent, and the extension of the `filename` parameter if any.</summary>
+        /// <summary>The MIME type. It must match the uploaded file and any filename extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string ContentType { get; set; }
 #endif
-        /// <summary>When `mode` is `external_url`, provide the HTTPS URL of a publicly accessible file to import into your workspace.</summary>
+        /// <summary>A public HTTPS URL to import. Required only for external_url uploads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalUrl { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string ExternalUrl { get; set; }
 #endif
-        /// <summary>Name of the file to be created. Required when `mode` is `multi_part`. Otherwise optional, and used to override the filename. Must include an extension, or have one inferred from the `content_type` parameter.</summary>
+        /// <summary>The filename. Required for multi_part and external_url uploads. Include an extension or provide content_type so one can be inferred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Filename { get; set; }
@@ -38,9 +38,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Filename { get; set; }
 #endif
-        /// <summary>How the file is being sent. Use `multi_part` for files larger than 20MB. Use `external_url` for files that are temporarily hosted publicly elsewhere. Default is `single_part`.</summary>
+        /// <summary>How the file is sent. Defaults to single_part. Use multi_part for files larger than 20 MiB or external_url for a temporary public HTTPS URL.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.CreateFileRequestMode? Mode { get; set; }
-        /// <summary>When `mode` is `multi_part`, the number of parts you are uploading. This must match the number of parts as well as the final `part_number` you send.</summary>
+        /// <summary>The number of parts in a multi_part upload. Required only for multi_part uploads. This must match the number of uploaded parts and the final part_number sent.</summary>
         public int? NumberOfParts { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateFileRequest"/> and sets the default values.

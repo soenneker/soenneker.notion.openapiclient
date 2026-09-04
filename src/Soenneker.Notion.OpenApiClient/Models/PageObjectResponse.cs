@@ -15,10 +15,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Page cover image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseCover? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse? Cover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseCover Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse Cover { get; set; }
 #endif
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Page icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseIcon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseIcon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse Icon { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -108,10 +108,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseCover>(global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseCover.CreateFromDiscriminatorValue); } },
+                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse>(global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse.CreateFromDiscriminatorValue); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseIcon>(global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseIcon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse>(global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
@@ -132,10 +132,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseCover>("cover", Cover);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse>("cover", Cover);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponseIcon>("icon", Icon);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse>("icon", Icon);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteBoolValue("is_archived", IsArchived);

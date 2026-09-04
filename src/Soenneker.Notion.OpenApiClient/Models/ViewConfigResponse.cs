@@ -182,10 +182,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stack-by grouping configuration for stacked/grouped bar charts (column/bar/line only). Null when not stacked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseStackBy? StackBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? StackBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseStackBy StackBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse StackBy { get; set; }
 #endif
         /// <summary>Group-by configuration based on property type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -230,10 +230,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>X-axis grouping configuration for column/bar/line/donut charts using grouped data. Null when using results (raw property values) mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseXAxis? XAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? XAxis { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseXAxis XAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse XAxis { get; set; }
 #endif
         /// <summary>Property ID for the x-axis name values when using results (raw property values) mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -246,10 +246,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Y-axis aggregation for column/bar/line/donut charts using grouped data. Null when using results mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseYAxis? YAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse? YAxis { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseYAxis YAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse YAxis { get; set; }
 #endif
         /// <summary>Custom maximum value for the y-axis. Null clears the override.</summary>
         public double? YAxisMax { get; set; }
@@ -328,7 +328,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "show_weekends", n => { ShowWeekends = n.GetBoolValue(); } },
                 { "smooth_line", n => { SmoothLine = n.GetBoolValue(); } },
                 { "sort", n => { Sort = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseSort>(); } },
-                { "stack_by", n => { StackBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseStackBy>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseStackBy.CreateFromDiscriminatorValue); } },
+                { "stack_by", n => { StackBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse.CreateFromDiscriminatorValue); } },
                 { "sub_group_by", n => { SubGroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse.CreateFromDiscriminatorValue); } },
                 { "submission_permissions", n => { SubmissionPermissions = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions>(); } },
                 { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse.CreateFromDiscriminatorValue); } },
@@ -337,9 +337,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse>(global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse.CreateFromDiscriminatorValue); } },
                 { "view_range", n => { ViewRange = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange>(); } },
                 { "wrap_cells", n => { WrapCells = n.GetBoolValue(); } },
-                { "x_axis", n => { XAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseXAxis>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseXAxis.CreateFromDiscriminatorValue); } },
+                { "x_axis", n => { XAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse.CreateFromDiscriminatorValue); } },
                 { "x_axis_property_id", n => { XAxisPropertyId = n.GetStringValue(); } },
-                { "y_axis", n => { YAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseYAxis>(global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseYAxis.CreateFromDiscriminatorValue); } },
+                { "y_axis", n => { YAxis = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse>(global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse.CreateFromDiscriminatorValue); } },
                 { "y_axis_max", n => { YAxisMax = n.GetDoubleValue(); } },
                 { "y_axis_min", n => { YAxisMin = n.GetDoubleValue(); } },
                 { "y_axis_property_id", n => { YAxisPropertyId = n.GetStringValue(); } },
@@ -392,7 +392,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("show_weekends", ShowWeekends);
             writer.WriteBoolValue("smooth_line", SmoothLine);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseSort>("sort", Sort);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseStackBy>("stack_by", StackBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse>("stack_by", StackBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse>("sub_group_by", SubGroupBy);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions>("submission_permissions", SubmissionPermissions);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse>("subtasks", Subtasks);
@@ -401,9 +401,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse>("value", Value);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange>("view_range", ViewRange);
             writer.WriteBoolValue("wrap_cells", WrapCells);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseXAxis>("x_axis", XAxis);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse>("x_axis", XAxis);
             writer.WriteStringValue("x_axis_property_id", XAxisPropertyId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseYAxis>("y_axis", YAxis);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse>("y_axis", YAxis);
             writer.WriteDoubleValue("y_axis_max", YAxisMax);
             writer.WriteDoubleValue("y_axis_min", YAxisMin);
             writer.WriteStringValue("y_axis_property_id", YAxisPropertyId);

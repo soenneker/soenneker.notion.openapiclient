@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Data source icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestIcon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestIcon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest Icon { get; set; }
 #endif
         /// <summary>Whether the data source should be moved to or from the trash. If not provided, the trash status will not be updated.</summary>
         public bool? InTrash { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestIcon>(global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestIcon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest.CreateFromDiscriminatorValue); } },
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceRequest>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceRequest.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestProperties.CreateFromDiscriminatorValue); } },
@@ -87,7 +87,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestIcon>("icon", Icon);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>("icon", Icon);
             writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceRequest>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateADataSourceRequestProperties>("properties", Properties);

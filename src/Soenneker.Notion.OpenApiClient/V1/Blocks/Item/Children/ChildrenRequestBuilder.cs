@@ -177,10 +177,14 @@ namespace Soenneker.Notion.OpenApiClient.V1.Blocks.Item.Children
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChildrenRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("page_size")]
             public double? PageSize { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("start_cursor")]
             public Guid? StartCursor { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

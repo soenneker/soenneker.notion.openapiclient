@@ -177,8 +177,10 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MarkdownRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("include_transcript")]
             public bool? IncludeTranscript { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

@@ -129,16 +129,22 @@ namespace Soenneker.Notion.OpenApiClient.V1.Users
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UsersRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("page_size")]
             public double? PageSize { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("start_cursor")]
             public string? StartCursor { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("start_cursor")]
             public string StartCursor { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

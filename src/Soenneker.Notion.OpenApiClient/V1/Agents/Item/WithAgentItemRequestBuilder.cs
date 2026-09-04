@@ -190,8 +190,10 @@ namespace Soenneker.Notion.OpenApiClient.V1.Agents.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithAgentItemRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("verbose")]
             public bool? Verbose { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

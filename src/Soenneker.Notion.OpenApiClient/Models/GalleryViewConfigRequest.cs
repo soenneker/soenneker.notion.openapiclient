@@ -19,10 +19,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Cover image configuration for cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCover? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest? Cover { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCover Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest Cover { get; set; }
 #endif
         /// <summary>Aspect ratio mode for cover images. &quot;contain&quot; fits the image, &quot;cover&quot; fills the area. Pass null to clear.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect? CoverAspect { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "card_layout", n => { CardLayout = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCardLayout>(); } },
-                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCover>(global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCover.CreateFromDiscriminatorValue); } },
+                { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest.CreateFromDiscriminatorValue); } },
                 { "cover_aspect", n => { CoverAspect = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect>(); } },
                 { "cover_size", n => { CoverSize = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize>(); } },
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -79,7 +79,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCardLayout>("card_layout", CardLayout);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCover>("cover", Cover);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest>("cover", Cover);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect>("cover_aspect", CoverAspect);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize>("cover_size", CoverSize);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);

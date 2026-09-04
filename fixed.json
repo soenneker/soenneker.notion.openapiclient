@@ -1107,7 +1107,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "description": "The ID or name of the property to retrieve."
             }
           },
           {
@@ -14396,7 +14397,15 @@
           {
             "$ref": "#/components/schemas/ExistencePropertyFilter"
           }
-        ]
+        ],
+        "properties": {
+          "is_empty": {
+            "$ref": "#/components/schemas/TrueValueIsEmpty"
+          },
+          "is_not_empty": {
+            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+          }
+        }
       },
       "DatePropertyItemObjectResponse": {
         "title": "Date",
@@ -22720,6 +22729,85 @@
             "items": {
               "$ref": "#/components/schemas/RelationItemPropertyValueResponse"
             }
+          },
+          "number": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "url": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "select": {
+            "$ref": "#/components/schemas/SelectSimplePropertyValueResponseSelect"
+          },
+          "multi_select": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PartialSelectPropertyValueResponse"
+            }
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusSimplePropertyValueResponseStatus"
+          },
+          "date": {
+            "$ref": "#/components/schemas/DateSimplePropertyValueResponseDate"
+          },
+          "email": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "phone_number": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "checkbox": {
+            "type": "boolean"
+          },
+          "files": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InternalOrExternalFileWithNameResponse"
+            }
+          },
+          "created_by": {
+            "$ref": "#/components/schemas/UserValueResponse"
+          },
+          "created_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_edited_by": {
+            "$ref": "#/components/schemas/UserValueResponse"
+          },
+          "last_edited_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "formula": {
+            "$ref": "#/components/schemas/FormulaPropertyValueResponse"
+          },
+          "button": {
+            "$ref": "#/components/schemas/ButtonSimplePropertyValueResponseButton"
+          },
+          "unique_id": {
+            "$ref": "#/components/schemas/UniqueIdPropertyValueResponse"
+          },
+          "verification": {
+            "$ref": "#/components/schemas/VerificationSimplePropertyValueResponseVerification"
+          },
+          "place": {
+            "$ref": "#/components/schemas/PlaceSimplePropertyValueResponsePlace"
           }
         }
       },
@@ -39030,24 +39118,24 @@
               "business_summary.pdf"
             ],
             "type": "string",
-            "description": "Name of the file to be created. Required when \u0060mode\u0060 is \u0060multi_part\u0060. Otherwise optional, and used to override the filename. Must include an extension, or have one inferred from the \u0060content_type\u0060 parameter."
+            "description": "The filename. Required for multi_part and external_url uploads. Include an extension or provide content_type so one can be inferred."
           },
           "content_type": {
             "examples": [
               "application/pdf"
             ],
             "type": "string",
-            "description": "MIME type of the file to be created. Recommended when sending the file in multiple parts. Must match the content type of the file that\u0027s sent, and the extension of the \u0060filename\u0060 parameter if any."
+            "description": "The MIME type. It must match the uploaded file and any filename extension."
           },
           "number_of_parts": {
             "maximum": 10000,
             "minimum": 1,
             "type": "integer",
-            "description": "When \u0060mode\u0060 is \u0060multi_part\u0060, the number of parts you are uploading. This must match the number of parts as well as the final \u0060part_number\u0060 you send."
+            "description": "The number of parts in a multi_part upload. Required only for multi_part uploads. This must match the number of uploaded parts and the final part_number sent."
           },
           "external_url": {
             "type": "string",
-            "description": "When \u0060mode\u0060 is \u0060external_url\u0060, provide the HTTPS URL of a publicly accessible file to import into your workspace."
+            "description": "A public HTTPS URL to import. Required only for external_url uploads."
           }
         }
       },
@@ -58136,7 +58224,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "How the file is being sent. Use \u0060multi_part\u0060 for files larger than 20MB. Use \u0060external_url\u0060 for files that are temporarily hosted publicly elsewhere. Default is \u0060single_part\u0060.",
+        "description": "How the file is sent. Defaults to single_part. Use multi_part for files larger than 20 MiB or external_url for a temporary public HTTPS URL.",
         "x-ms-enum": {
           "name": "CreateFileRequestMode",
           "modelAsString": false,

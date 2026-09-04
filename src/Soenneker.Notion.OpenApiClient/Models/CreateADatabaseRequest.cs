@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Page icon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequestIcon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest? Icon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequestIcon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest Icon { get; set; }
 #endif
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequestIcon>(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequestIcon.CreateFromDiscriminatorValue); } },
+                { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest.CreateFromDiscriminatorValue); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceRequest>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceRequest.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequestProperties.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequestIcon>("icon", Icon);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>("icon", Icon);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceRequest>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateADatabaseRequestProperties>("properties", Properties);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("title", Title);

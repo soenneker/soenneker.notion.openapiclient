@@ -15,18 +15,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>View presentation configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseConfiguration? Configuration { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseConfiguration Configuration { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse Configuration { get; set; }
 #endif
         /// <summary>The user who created the view, or null if not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse CreatedBy { get; set; }
 #endif
         /// <summary>The time when the view was created.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
@@ -49,20 +49,20 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The filter applied to this view (same shape as data source query filter).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseFilter? Filter { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse? Filter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseFilter Filter { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse Filter { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The user who last edited the view, or null if not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseLastEditedBy? LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? LastEditedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseLastEditedBy LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse LastEditedBy { get; set; }
 #endif
         /// <summary>The time when the view was last edited.</summary>
         public DateTimeOffset? LastEditedTime { get; set; }
@@ -128,14 +128,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseConfiguration>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseConfiguration.CreateFromDiscriminatorValue); } },
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseCreatedBy>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseCreatedBy.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "dashboard_view_id", n => { DashboardViewId = n.GetStringValue(); } },
                 { "data_source_id", n => { DataSourceId = n.GetStringValue(); } },
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseFilter>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseFilter.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse>(global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseLastEditedBy>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseLastEditedBy.CreateFromDiscriminatorValue); } },
+                { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewObject>(); } },
@@ -153,14 +153,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseConfiguration>("configuration", Configuration);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseCreatedBy>("created_by", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteStringValue("dashboard_view_id", DashboardViewId);
             writer.WriteStringValue("data_source_id", DataSourceId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseFilter>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse>("filter", Filter);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseLastEditedBy>("last_edited_by", LastEditedBy);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("last_edited_by", LastEditedBy);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewObject>("object", Object);

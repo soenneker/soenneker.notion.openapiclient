@@ -110,10 +110,14 @@ namespace Soenneker.Notion.OpenApiClient.V1.Agents.Item.Insights
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InsightsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("end_time")]
             public int? EndTime { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("start_time")]
             public int? StartTime { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }
