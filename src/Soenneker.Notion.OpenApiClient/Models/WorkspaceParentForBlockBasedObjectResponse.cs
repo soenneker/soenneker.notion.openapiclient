@@ -15,7 +15,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The parent type.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.WorkspaceType? Type { get; set; }
         /// <summary>Always true for workspace parent.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace? Workspace { get; set; }
+        public bool? Workspace { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse"/> and sets the default values.
+        /// </summary>
+        public WorkspaceParentForBlockBasedObjectResponse()
+        {
+            Workspace = true;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WorkspaceType>(); } },
-                { "workspace", n => { Workspace = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>(); } },
+                { "workspace", n => { Workspace = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -46,7 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WorkspaceType>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>("workspace", Workspace);
+            writer.WriteBoolValue("workspace", Workspace);
         }
     }
 }

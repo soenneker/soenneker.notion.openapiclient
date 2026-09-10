@@ -40,14 +40,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>Always `page_id`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PageIdType? Type { get; set; }
-        /// <summary>Always true for workspace parent.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace? Workspace { get; set; }
+        /// <summary>The workspace property</summary>
+        public bool? Workspace { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent"/> and sets the default values.
         /// </summary>
         public PostPageRequestParent()
         {
             AdditionalData = new Dictionary<string, object>();
+            Workspace = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,7 +72,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
                 { "page_id", n => { PageId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>(); } },
-                { "workspace", n => { Workspace = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>(); } },
+                { "workspace", n => { Workspace = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -85,7 +86,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("data_source_id", DataSourceId);
             writer.WriteStringValue("page_id", PageId);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>("workspace", Workspace);
+            writer.WriteBoolValue("workspace", Workspace);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

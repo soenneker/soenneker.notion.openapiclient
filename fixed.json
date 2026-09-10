@@ -14400,10 +14400,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -15297,10 +15301,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -18658,10 +18666,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -19058,10 +19070,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -20323,7 +20339,10 @@
             "format": "uuid"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "description": "Always true for workspace parent.",
+            "default": true
           }
         }
       },
@@ -20386,7 +20405,10 @@
             "format": "uuid"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "description": "Always true for workspace parent.",
+            "default": true
           },
           "database_id": {
             "type": "string",
@@ -20766,10 +20788,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -21892,10 +21918,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -22616,10 +22646,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -23237,10 +23271,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -24171,10 +24209,14 @@
         ],
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           },
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -26677,7 +26719,10 @@
             "$ref": "#/components/schemas/WorkspaceType"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "description": "Always true for workspace parent.",
+            "default": true
           }
         },
         "additionalProperties": false
@@ -28279,7 +28324,10 @@
             "$ref": "#/components/schemas/BotInfoResponseOwnerUserUser"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "description": "Details about the owner of the bot, when the \u0060type\u0060 of the owner is \u0060workspace\u0060. This means the bot is for an internal integration.",
+            "default": true
           }
         },
         "description": "Details about the owner of the bot."
@@ -29964,7 +30012,9 @@
         "type": "object",
         "properties": {
           "is_empty": {
-            "$ref": "#/components/schemas/TrueValueIsEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -29975,7 +30025,9 @@
         "type": "object",
         "properties": {
           "is_not_empty": {
-            "$ref": "#/components/schemas/TrueValueIsNotEmpty"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -32709,7 +32761,10 @@
             "$ref": "#/components/schemas/WorkspaceType"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "description": "Details about the owner of the bot, when the \u0060type\u0060 of the owner is \u0060workspace\u0060. This means the bot is for an internal integration.",
+            "default": true
           }
         },
         "additionalProperties": false
@@ -42777,7 +42832,10 @@
             "type": "string"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "description": "Always \u0060true\u0060",
+            "default": true
           }
         }
       },
@@ -42794,7 +42852,10 @@
             "type": "string"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "description": "Always \u0060true\u0060",
+            "default": true
           }
         }
       },
@@ -44704,7 +44765,9 @@
             "type": "string"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -46022,7 +46085,9 @@
             "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUser"
           },
           "workspace": {
-            "$ref": "#/components/schemas/TrueValueWorkspace"
+            "const": null,
+            "type": "boolean",
+            "default": true
           }
         }
       },
@@ -57273,24 +57338,6 @@
           ]
         }
       },
-      "TrueValueWorkspace": {
-        "const": null,
-        "enum": [
-          "True"
-        ],
-        "type": "boolean",
-        "description": "Always true for workspace parent.",
-        "x-ms-enum": {
-          "name": "TrueValueWorkspace",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "True",
-              "name": "TrueValue"
-            }
-          ]
-        }
-      },
       "AfterBlockType": {
         "const": null,
         "enum": [
@@ -57338,40 +57385,6 @@
             {
               "value": "end",
               "name": "End"
-            }
-          ]
-        }
-      },
-      "TrueValueIsEmpty": {
-        "const": null,
-        "enum": [
-          "True"
-        ],
-        "type": "boolean",
-        "x-ms-enum": {
-          "name": "TrueValueIsEmpty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "True",
-              "name": "TrueValue"
-            }
-          ]
-        }
-      },
-      "TrueValueIsNotEmpty": {
-        "const": null,
-        "enum": [
-          "True"
-        ],
-        "type": "boolean",
-        "x-ms-enum": {
-          "name": "TrueValueIsNotEmpty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "True",
-              "name": "TrueValue"
             }
           ]
         }

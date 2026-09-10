@@ -24,14 +24,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>Always `page_id`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PageIdType? Type { get; set; }
-        /// <summary>Always true for workspace parent.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace? Workspace { get; set; }
+        /// <summary>Always `true`</summary>
+        public bool? Workspace { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateDatabaseRequestParentAllOf1"/> and sets the default values.
         /// </summary>
         public UpdateDatabaseRequestParentAllOf1()
         {
             AdditionalData = new Dictionary<string, object>();
+            Workspace = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +54,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "page_id", n => { PageId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>(); } },
-                { "workspace", n => { Workspace = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>(); } },
+                { "workspace", n => { Workspace = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("page_id", PageId);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>("workspace", Workspace);
+            writer.WriteBoolValue("workspace", Workspace);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

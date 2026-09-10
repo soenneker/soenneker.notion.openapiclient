@@ -15,13 +15,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The is_not_empty property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TrueValueIsNotEmpty? IsNotEmpty { get; set; }
+        public bool? IsNotEmpty { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2"/> and sets the default values.
         /// </summary>
         public ExistencePropertyFilterAnyOf2()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsNotEmpty = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "is_not_empty", n => { IsNotEmpty = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueIsNotEmpty>(); } },
+                { "is_not_empty", n => { IsNotEmpty = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueIsNotEmpty>("is_not_empty", IsNotEmpty);
+            writer.WriteBoolValue("is_not_empty", IsNotEmpty);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

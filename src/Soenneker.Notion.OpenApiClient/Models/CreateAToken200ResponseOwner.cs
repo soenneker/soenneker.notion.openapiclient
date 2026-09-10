@@ -24,14 +24,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser User { get; set; }
 #endif
-        /// <summary>Always true for workspace parent.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace? Workspace { get; set; }
+        /// <summary>The workspace property</summary>
+        public bool? Workspace { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner"/> and sets the default values.
         /// </summary>
         public CreateAToken200ResponseOwner()
         {
             AdditionalData = new Dictionary<string, object>();
+            Workspace = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,7 +54,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser>(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser.CreateFromDiscriminatorValue); } },
-                { "workspace", n => { Workspace = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>(); } },
+                { "workspace", n => { Workspace = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser>("user", User);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TrueValueWorkspace>("workspace", Workspace);
+            writer.WriteBoolValue("workspace", Workspace);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
