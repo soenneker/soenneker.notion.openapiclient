@@ -90,6 +90,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The instructions_page_id property</summary>
         public Guid? InstructionsPageId { get; set; }
+        /// <summary>Whether this agent is in the caller&apos;s personal favorites, or null when the caller has no personal favorites scope.</summary>
+        public bool? IsFavorited { get; set; }
         /// <summary>Date and time when this agent was last edited.</summary>
         public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>ISO 8601 timestamp of the agent&apos;s most recent run, null if it has never run, or &quot;hidden&quot; when the caller lacks edit access to the agent.</summary>
@@ -176,6 +178,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId.CreateFromDiscriminatorValue); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "instructions_page_id", n => { InstructionsPageId = n.GetGuidValue(); } },
+                { "is_favorited", n => { IsFavorited = n.GetBoolValue(); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "last_run_at", n => { LastRunAt = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt.CreateFromDiscriminatorValue); } },
                 { "last_run_time", n => { LastRunTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime.CreateFromDiscriminatorValue); } },
@@ -207,6 +210,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId>("id", Id);
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteGuidValue("instructions_page_id", InstructionsPageId);
+            writer.WriteBoolValue("is_favorited", IsFavorited);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt>("last_run_at", LastRunAt);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime>("last_run_time", LastRunTime);

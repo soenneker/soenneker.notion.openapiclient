@@ -39057,6 +39057,17 @@
 											"maxItems": 100,
 											"description": "The agent's configured triggers, each with a machine type, an enabled flag, and (for recurrence triggers) a structured schedule."
 										},
+										"is_favorited": {
+											"oneOf": [
+												{
+													"type": "boolean"
+												},
+												{
+													"type": "null"
+												}
+											],
+											"description": "Whether this agent is in the caller's personal favorites, or null when the caller has no personal favorites scope."
+										},
 										"created_time": {
 											"type": "string",
 											"format": "date-time",
@@ -39099,7 +39110,8 @@
 										"last_run_time",
 										"last_run_at",
 										"credit_limit",
-										"triggers"
+										"triggers",
+										"is_favorited"
 									]
 								}
 							}
@@ -41307,7 +41319,8 @@
 												"properties": {
 													"property": {
 														"type": "string",
-														"enum": ["id"]
+														"enum": ["id"],
+														"description": "Filter sessions by id."
 													},
 													"string": {
 														"type": "object",
@@ -41330,7 +41343,8 @@
 												"properties": {
 													"property": {
 														"type": "string",
-														"enum": ["agent_id"]
+														"enum": ["agent_id"],
+														"description": "Filter sessions by agent_id."
 													},
 													"string": {
 														"type": "object",
@@ -41353,7 +41367,8 @@
 												"properties": {
 													"property": {
 														"type": "string",
-														"enum": ["status"]
+														"enum": ["status"],
+														"description": "Filter sessions by status."
 													},
 													"status": {
 														"type": "object",
@@ -41451,7 +41466,8 @@
 																	"properties": {
 																		"property": {
 																			"type": "string",
-																			"enum": ["id"]
+																			"enum": ["id"],
+																			"description": "Filter sessions by id."
 																		},
 																		"string": {
 																			"type": "object",
@@ -41474,7 +41490,8 @@
 																	"properties": {
 																		"property": {
 																			"type": "string",
-																			"enum": ["agent_id"]
+																			"enum": ["agent_id"],
+																			"description": "Filter sessions by agent_id."
 																		},
 																		"string": {
 																			"type": "object",
@@ -41497,7 +41514,8 @@
 																	"properties": {
 																		"property": {
 																			"type": "string",
-																			"enum": ["status"]
+																			"enum": ["status"],
+																			"description": "Filter sessions by status."
 																		},
 																		"status": {
 																			"type": "object",
@@ -41595,7 +41613,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["id"]
+																								"enum": ["id"],
+																								"description": "Filter sessions by id."
 																							},
 																							"string": {
 																								"type": "object",
@@ -41618,7 +41637,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["agent_id"]
+																								"enum": ["agent_id"],
+																								"description": "Filter sessions by agent_id."
 																							},
 																							"string": {
 																								"type": "object",
@@ -41641,7 +41661,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["status"]
+																								"enum": ["status"],
+																								"description": "Filter sessions by status."
 																							},
 																							"status": {
 																								"type": "object",
@@ -41750,7 +41771,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["id"]
+																								"enum": ["id"],
+																								"description": "Filter sessions by id."
 																							},
 																							"string": {
 																								"type": "object",
@@ -41773,7 +41795,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["agent_id"]
+																								"enum": ["agent_id"],
+																								"description": "Filter sessions by agent_id."
 																							},
 																							"string": {
 																								"type": "object",
@@ -41796,7 +41819,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["status"]
+																								"enum": ["status"],
+																								"description": "Filter sessions by status."
 																							},
 																							"status": {
 																								"type": "object",
@@ -41910,7 +41934,8 @@
 																	"properties": {
 																		"property": {
 																			"type": "string",
-																			"enum": ["id"]
+																			"enum": ["id"],
+																			"description": "Filter sessions by id."
 																		},
 																		"string": {
 																			"type": "object",
@@ -41933,7 +41958,8 @@
 																	"properties": {
 																		"property": {
 																			"type": "string",
-																			"enum": ["agent_id"]
+																			"enum": ["agent_id"],
+																			"description": "Filter sessions by agent_id."
 																		},
 																		"string": {
 																			"type": "object",
@@ -41956,7 +41982,8 @@
 																	"properties": {
 																		"property": {
 																			"type": "string",
-																			"enum": ["status"]
+																			"enum": ["status"],
+																			"description": "Filter sessions by status."
 																		},
 																		"status": {
 																			"type": "object",
@@ -42054,7 +42081,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["id"]
+																								"enum": ["id"],
+																								"description": "Filter sessions by id."
 																							},
 																							"string": {
 																								"type": "object",
@@ -42077,7 +42105,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["agent_id"]
+																								"enum": ["agent_id"],
+																								"description": "Filter sessions by agent_id."
 																							},
 																							"string": {
 																								"type": "object",
@@ -42100,7 +42129,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["status"]
+																								"enum": ["status"],
+																								"description": "Filter sessions by status."
 																							},
 																							"status": {
 																								"type": "object",
@@ -42209,7 +42239,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["id"]
+																								"enum": ["id"],
+																								"description": "Filter sessions by id."
 																							},
 																							"string": {
 																								"type": "object",
@@ -42232,7 +42263,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["agent_id"]
+																								"enum": ["agent_id"],
+																								"description": "Filter sessions by agent_id."
 																							},
 																							"string": {
 																								"type": "object",
@@ -42255,7 +42287,8 @@
 																						"properties": {
 																							"property": {
 																								"type": "string",
-																								"enum": ["status"]
+																								"enum": ["status"],
+																								"description": "Filter sessions by status."
 																							},
 																							"status": {
 																								"type": "object",

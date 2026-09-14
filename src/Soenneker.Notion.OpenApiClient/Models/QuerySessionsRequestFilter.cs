@@ -31,7 +31,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItem> Or { get; set; }
 #endif
-        /// <summary>The property property</summary>
+        /// <summary>Filter sessions by id.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterProperty? Property { get; set; }
         /// <summary>A session status comparison.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

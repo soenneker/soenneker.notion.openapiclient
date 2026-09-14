@@ -39773,7 +39773,8 @@
           "last_run_time",
           "last_run_at",
           "credit_limit",
-          "triggers"
+          "triggers",
+          "is_favorited"
         ],
         "type": "object",
         "properties": {
@@ -39850,6 +39851,13 @@
               "$ref": "#/components/schemas/GetAgent200ResponseTriggersItem"
             },
             "description": "The agent\u0027s configured triggers, each with a machine type, an enabled flag, and (for recurrence triggers) a structured schedule."
+          },
+          "is_favorited": {
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Whether this agent is in the caller\u0027s personal favorites, or null when the caller has no personal favorites scope."
           },
           "created_time": {
             "type": "string",
@@ -60400,6 +60408,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "Filter sessions by id.",
         "x-ms-enum": {
           "name": "QuerySessionsRequestFilterProperty",
           "modelAsString": false,
@@ -61212,6 +61221,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "Filter sessions by id.",
         "x-ms-enum": {
           "name": "QuerySessionsRequestFilterAndItemProperty",
           "modelAsString": false,
@@ -61249,6 +61259,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "Filter sessions by id.",
         "x-ms-enum": {
           "name": "QuerySessionsRequestFilterOrItemProperty",
           "modelAsString": false,
@@ -62065,6 +62076,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "Filter sessions by id.",
         "x-ms-enum": {
           "name": "QuerySessionsRequestFilterAndItemAndItemProperty",
           "modelAsString": false,
@@ -62102,6 +62114,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "Filter sessions by id.",
         "x-ms-enum": {
           "name": "QuerySessionsRequestFilterAndItemOrItemProperty",
           "modelAsString": false,
@@ -62234,6 +62247,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "Filter sessions by id.",
         "x-ms-enum": {
           "name": "QuerySessionsRequestFilterOrItemAndItemProperty",
           "modelAsString": false,
@@ -62271,6 +62285,7 @@
         ],
         "type": "string",
         "additionalProperties": false,
+        "description": "Filter sessions by id.",
         "x-ms-enum": {
           "name": "QuerySessionsRequestFilterOrItemOrItemProperty",
           "modelAsString": false,
