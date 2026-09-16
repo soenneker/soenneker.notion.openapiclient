@@ -17,6 +17,10 @@
 	],
 	"tags": [
 		{
+			"name": "Agent Skills",
+			"description": "Skill and plugin directory endpoints"
+		},
+		{
 			"name": "Databases",
 			"description": "Database endpoints"
 		},
@@ -36786,9 +36790,7 @@
 																"description": "Always `notion_ai`"
 															},
 															"name": {
-																"type": "string",
-																"const": "Notion Agent",
-																"description": "Always `Notion Agent`"
+																"type": "string"
 															},
 															"description": {
 																"type": "null"
@@ -40363,6 +40365,580 @@
 											"minimum": 0
 										}
 									}
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_400"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_401"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_403"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_404"
+								}
+							}
+						}
+					},
+					"406": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_406"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_409"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_429"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_500"
+								}
+							}
+						}
+					},
+					"503": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_503"
+								}
+							}
+						}
+					},
+					"504": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_504"
+								}
+							}
+						}
+					},
+					"529": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_529"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/ai/plugins": {
+			"get": {
+				"summary": "List skills plugins",
+				"operationId": "list-skills-plugins",
+				"tags": ["Agent Skills"],
+				"x-codeSamples": [
+					{
+						"lang": "javascript",
+						"label": "TypeScript SDK",
+						"source": "import { Client } from \"@notionhq/client\"\n\nconst notion = new Client({\n  auth: process.env.NOTION_API_KEY,\n  notionVersion: \"2026-03-11\"\n})\n\nconst response = await notion.request({\n  method: \"get\",\n  path: \"ai/plugins\",\n  query: { page_size: 100 }\n})"
+					}
+				],
+				"x-notion-docs-ref": "https://developers.notion.com/reference/agent-skills/list-skills-plugins",
+				"x-notion-docs-guides": [
+					"https://developers.notion.com/guides/agent-skills/overview"
+				],
+				"parameters": [
+					{
+						"name": "page_size",
+						"in": "query",
+						"schema": {
+							"type": "integer",
+							"minimum": 1,
+							"maximum": 100,
+							"description": "The number of items to return. Maximum: 100."
+						}
+					},
+					{
+						"name": "start_cursor",
+						"in": "query",
+						"schema": {
+							"type": "string",
+							"minLength": 1,
+							"maxLength": 200,
+							"pattern": "^[A-Za-z0-9]+$",
+							"description": "An opaque cursor returned by the previous page of results."
+						}
+					},
+					{
+						"$ref": "#/components/parameters/notionVersion"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"object": {
+											"type": "string",
+											"const": "list",
+											"description": "Always `list`"
+										},
+										"results": {
+											"type": "array",
+											"items": {
+												"type": "object",
+												"properties": {
+													"id": {
+														"type": "string"
+													},
+													"name": {
+														"type": "string"
+													},
+													"description": {
+														"type": "string"
+													},
+													"version_id": {
+														"type": "string",
+														"minLength": 64,
+														"maxLength": 64,
+														"description": "Opaque version identifier for the plugin. Compare this value for equality to determine whether the plugin has changed."
+													}
+												},
+												"additionalProperties": false,
+												"required": ["id", "name", "description", "version_id"]
+											},
+											"maxItems": 100
+										},
+										"next_cursor": {
+											"oneOf": [
+												{
+													"type": "string"
+												},
+												{
+													"type": "null"
+												}
+											]
+										},
+										"has_more": {
+											"type": "boolean"
+										},
+										"type": {
+											"type": "string",
+											"const": "plugin",
+											"description": "Always `plugin`"
+										}
+									},
+									"additionalProperties": false,
+									"required": [
+										"object",
+										"results",
+										"next_cursor",
+										"has_more",
+										"type"
+									]
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_400"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_401"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_403"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_404"
+								}
+							}
+						}
+					},
+					"406": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_406"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_409"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_429"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_500"
+								}
+							}
+						}
+					},
+					"503": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_503"
+								}
+							}
+						}
+					},
+					"504": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_504"
+								}
+							}
+						}
+					},
+					"529": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_529"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/ai/plugins/{id}": {
+			"get": {
+				"summary": "Get a plugin directory",
+				"operationId": "get-plugin-directory",
+				"tags": ["Agent Skills"],
+				"x-codeSamples": [
+					{
+						"lang": "javascript",
+						"label": "TypeScript SDK",
+						"source": "import { Client } from \"@notionhq/client\"\n\nconst notion = new Client({\n  auth: process.env.NOTION_API_KEY,\n  notionVersion: \"2026-03-11\"\n})\n\nconst pluginId = \"b2d0a1f4-9c3e-4c07-9a1d-5f6e7c8b9a01\"\nconst response = await notion.request({\n  method: \"get\",\n  path: \"ai/plugins/\" + encodeURIComponent(pluginId)\n})"
+					}
+				],
+				"x-notion-docs-ref": "https://developers.notion.com/reference/agent-skills/get-plugin-directory",
+				"x-notion-docs-guides": [
+					"https://developers.notion.com/guides/agent-skills/overview"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"minLength": 1,
+							"maxLength": 200,
+							"pattern": "^[^\\u0000-\\u001f\\u007f]+$",
+							"examples": ["9b4a1d3f-1f0a-4c2a-9f0b-6c1f5a3d2e10"]
+						}
+					},
+					{
+						"$ref": "#/components/parameters/notionVersion"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "string"
+										},
+										"version_id": {
+											"type": "string",
+											"minLength": 64,
+											"maxLength": 64,
+											"description": "Opaque version identifier for the plugin directory. Compare this value for equality to determine whether the directory has changed. This matches the version_id in the corresponding plugin summary."
+										},
+										"url": {
+											"type": "string",
+											"description": "Temporary signed URL for downloading the plugin directory as a gzipped tar archive."
+										}
+									},
+									"additionalProperties": false,
+									"required": ["id", "version_id", "url"]
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_400"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_401"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_403"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_404"
+								}
+							}
+						}
+					},
+					"406": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_406"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_409"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_429"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_500"
+								}
+							}
+						}
+					},
+					"503": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_503"
+								}
+							}
+						}
+					},
+					"504": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_504"
+								}
+							}
+						}
+					},
+					"529": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_529"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/ai/skills/{id}": {
+			"get": {
+				"summary": "Get a skill directory",
+				"operationId": "get-skill-directory",
+				"x-notion-sdk-method": "skills.retrieve",
+				"tags": ["Agent Skills"],
+				"x-codeSamples": [
+					{
+						"lang": "javascript",
+						"label": "TypeScript SDK",
+						"source": "import { Client } from \"@notionhq/client\"\n\nconst notion = new Client({\n  auth: process.env.NOTION_API_KEY,\n  notionVersion: \"2026-03-11\"\n})\n\nconst skillId = \"b55c9c91-384d-452b-81db-d1ef79372b75\"\nconst response = await notion.request({\n  method: \"get\",\n  path: \"ai/skills/\" + encodeURIComponent(skillId)\n})"
+					}
+				],
+				"x-notion-docs-ref": "https://developers.notion.com/reference/agent-skills/get-skill-directory",
+				"x-notion-docs-guides": [
+					"https://developers.notion.com/guides/agent-skills/overview"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/idRequest",
+							"description": "Identifier for a Notion skill page."
+						}
+					},
+					{
+						"$ref": "#/components/parameters/notionVersion"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "string",
+											"format": "uuid",
+											"description": "Identifier for the skill page."
+										},
+										"version_id": {
+											"type": "string",
+											"minLength": 64,
+											"maxLength": 64,
+											"description": "Stable content version for the generated skill directory."
+										},
+										"url": {
+											"type": "string",
+											"minLength": 1,
+											"description": "Temporary signed URL for downloading the skill directory archive."
+										}
+									},
+									"additionalProperties": false,
+									"required": ["id", "version_id", "url"]
 								}
 							}
 						}

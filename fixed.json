@@ -8140,6 +8140,460 @@
         }
       }
     },
+    "/v1/ai/plugins": {
+      "get": {
+        "tags": [
+          "Agent Skills"
+        ],
+        "summary": "List skills plugins",
+        "operationId": "ListSkillsPlugins",
+        "parameters": [
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "description": "The number of items to return. Maximum: 100."
+            }
+          },
+          {
+            "name": "start_cursor",
+            "in": "query",
+            "schema": {
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9]\u002B$",
+              "type": "string",
+              "description": "An opaque cursor returned by the previous page of results."
+            }
+          },
+          {
+            "description": "The [API version](/reference/versioning) to use for this request. The latest version is \u00602026-03-11\u0060.",
+            "$ref": "#/components/parameters/notionVersion"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListSkillsPlugins200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi400"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi401"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi403"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi409"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi429"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi500"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi503"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "504 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ai/plugins/{id}": {
+      "get": {
+        "tags": [
+          "Agent Skills"
+        ],
+        "summary": "Get a plugin directory",
+        "operationId": "GetPluginDirectory",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "examples": [
+                "9b4a1d3f-1f0a-4c2a-9f0b-6c1f5a3d2e10"
+              ],
+              "maxLength": 200,
+              "minLength": 1,
+              "pattern": "^[^\\u0000-\\u001f\\u007f]\u002B$",
+              "type": "string"
+            }
+          },
+          {
+            "description": "The [API version](/reference/versioning) to use for this request. The latest version is \u00602026-03-11\u0060.",
+            "$ref": "#/components/parameters/notionVersion"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPluginDirectory200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi400"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi401"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi403"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi409"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi429"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi500"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi503"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "504 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ai/skills/{id}": {
+      "get": {
+        "tags": [
+          "Agent Skills"
+        ],
+        "summary": "Get a skill directory",
+        "operationId": "GetSkillDirectory",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The [API version](/reference/versioning) to use for this request. The latest version is \u00602026-03-11\u0060.",
+            "$ref": "#/components/parameters/notionVersion"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSkillDirectory200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi400"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi401"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi403"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi409"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi429"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi500"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi503"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "504 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/sessions": {
       "post": {
         "tags": [
@@ -40089,6 +40543,92 @@
         },
         "additionalProperties": false
       },
+      "ListSkillsPlugins200Response": {
+        "required": [
+          "object",
+          "results",
+          "next_cursor",
+          "has_more",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/ListObject"
+          },
+          "results": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListSkillsPlugins200ResponseResultsItem"
+            }
+          },
+          "next_cursor": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "has_more": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PluginType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetPluginDirectory200Response": {
+        "required": [
+          "id",
+          "version_id",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "version_id": {
+            "maxLength": 64,
+            "minLength": 64,
+            "type": "string",
+            "description": "Opaque version identifier for the plugin directory. Compare this value for equality to determine whether the directory has changed. This matches the version_id in the corresponding plugin summary."
+          },
+          "url": {
+            "type": "string",
+            "description": "Temporary signed URL for downloading the plugin directory as a gzipped tar archive."
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetSkillDirectory200Response": {
+        "required": [
+          "id",
+          "version_id",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifier for the skill page.",
+            "format": "uuid"
+          },
+          "version_id": {
+            "maxLength": 64,
+            "minLength": 64,
+            "type": "string",
+            "description": "Stable content version for the generated skill directory."
+          },
+          "url": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Temporary signed URL for downloading the skill directory archive."
+          }
+        },
+        "additionalProperties": false
+      },
       "UpdateSessionRequest": {
         "title": "Update session request",
         "type": "object",
@@ -45536,6 +46076,33 @@
           "name": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ListSkillsPlugins200ResponseResultsItem": {
+        "required": [
+          "id",
+          "name",
+          "description",
+          "version_id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "version_id": {
+            "maxLength": 64,
+            "minLength": 64,
+            "type": "string",
+            "description": "Opaque version identifier for the plugin. Compare this value for equality to determine whether the plugin has changed."
           }
         },
         "additionalProperties": false
@@ -58948,6 +59515,24 @@
           ]
         }
       },
+      "PluginType": {
+        "const": null,
+        "enum": [
+          "plugin"
+        ],
+        "type": "string",
+        "description": "Always \u0060plugin\u0060",
+        "x-ms-enum": {
+          "name": "PluginType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "plugin",
+              "name": "Plugin"
+            }
+          ]
+        }
+      },
       "SessionObject": {
         "const": null,
         "enum": [
@@ -64609,6 +65194,10 @@
     }
   ],
   "tags": [
+    {
+      "name": "Agent Skills",
+      "description": "Skill and plugin directory endpoints"
+    },
     {
       "name": "Databases",
       "description": "Database endpoints"

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Notion.OpenApiClient.V1.Agents;
+using Soenneker.Notion.OpenApiClient.V1.Ai;
 using Soenneker.Notion.OpenApiClient.V1.Async_tasks;
 using Soenneker.Notion.OpenApiClient.V1.Blocks;
 using Soenneker.Notion.OpenApiClient.V1.Comments;
@@ -32,6 +33,11 @@ namespace Soenneker.Notion.OpenApiClient.V1
         public global::Soenneker.Notion.OpenApiClient.V1.Agents.AgentsRequestBuilder Agents
         {
             get => new global::Soenneker.Notion.OpenApiClient.V1.Agents.AgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ai property</summary>
+        public global::Soenneker.Notion.OpenApiClient.V1.Ai.AiRequestBuilder Ai
+        {
+            get => new global::Soenneker.Notion.OpenApiClient.V1.Ai.AiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The async_tasks property</summary>
         public global::Soenneker.Notion.OpenApiClient.V1.Async_tasks.Async_tasksRequestBuilder Async_tasks
