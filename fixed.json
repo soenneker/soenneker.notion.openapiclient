@@ -12253,8 +12253,8 @@
             "examples": [
               0.5
             ],
-            "exclusiveMaximum": true,
-            "exclusiveMinimum": false,
+            "exclusiveMaximum": 1,
+            "exclusiveMinimum": 0,
             "type": "number",
             "description": "Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width."
           }
@@ -46886,8 +46886,8 @@
             "examples": [
               0.5
             ],
-            "exclusiveMaximum": true,
-            "exclusiveMinimum": false,
+            "exclusiveMaximum": 1,
+            "exclusiveMinimum": 0,
             "type": "number",
             "description": "Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width."
           }
