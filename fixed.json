@@ -145,7 +145,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.users.me()"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/get-self",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/get-started/overview"
+        ]
       }
     },
     "/v1/users/{userId}": {
@@ -290,7 +301,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.users.retrieve({\n  user_id: \u0022e79a0b74-3aba-4149-9f74-0bb5791a6ee6\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/get-user",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/get-started/overview"
+        ]
       }
     },
     "/v1/users": {
@@ -441,7 +463,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.users.list({\n  start_cursor: undefined,\n  page_size: 10\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/get-users",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/get-started/overview"
+        ]
       }
     },
     "/v1/pages": {
@@ -608,7 +641,19 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.pages.create({\n  parent: {\n    data_source_id: \u0022d9824bdc-8445-4327-be8b-5b47500af6ce\u0022\n  },\n  properties: {\n    Name: {\n      title: [{ text: { content: \u0022New Page Title\u0022 } }]\n    }\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/post-page",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content",
+          "https://developers.notion.com/guides/data-apis/creating-pages-from-templates"
+        ]
       }
     },
     "/v1/pages/{pageId}": {
@@ -765,7 +810,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.pages.retrieve({\n  page_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-a-page",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       },
       "patch": {
         "tags": [
@@ -928,7 +984,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.pages.update({\n  page_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022,\n  properties: {\n    Name: {\n      title: [{ text: { content: \u0022Updated Title\u0022 } }]\n    }\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/patch-page",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       }
     },
     "/v1/pages/{pageId}/move": {
@@ -1083,7 +1150,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.pages.move({\n  page_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022,\n  parent: {\n    page_id: \u00223c357473-a281-49a4-88c0-10d2b245a589\u0022\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/move-page",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       }
     },
     "/v1/pages/{pageId}/properties/{propertyId}": {
@@ -1251,7 +1329,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.pages.properties.retrieve({\n  page_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022,\n  property_id: \u0022aBcD\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-a-page-property",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       }
     },
     "/v1/pages/{pageId}/markdown": {
@@ -1404,7 +1493,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.pages.retrieveMarkdown({\n  page_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022\n})\n\nconsole.log(response.markdown)"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-page-markdown",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-markdown-content"
+        ]
       },
       "patch": {
         "tags": [
@@ -1567,7 +1667,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.pages.updateMarkdown({\n  page_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022,\n  type: \u0022update_content\u0022,\n  update_content: {\n    content_updates: [\n      {\n        old_str: \u0022existing text to find\u0022,\n        new_str: \u0022replacement text\u0022\n      }\n    ]\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/update-page-markdown",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-markdown-content"
+        ]
       }
     },
     "/v1/async_tasks/{taskId}": {
@@ -1717,7 +1828,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "asyncTasks.retrieve",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.asyncTasks.retrieve({\n  task_id: \u0022task_abc123\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-async-task"
       }
     },
     "/v1/blocks/{blockId}": {
@@ -1862,7 +1982,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.blocks.retrieve({\n  block_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-a-block",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       },
       "patch": {
         "tags": [
@@ -2015,7 +2146,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.blocks.update({\n  block_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022,\n  paragraph: {\n    rich_text: [{ text: { content: \u0022Updated paragraph text\u0022 } }]\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/update-a-block",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       },
       "delete": {
         "tags": [
@@ -2158,7 +2300,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.blocks.delete({\n  block_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/delete-a-block",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       }
     },
     "/v1/blocks/{blockId}/children": {
@@ -2318,7 +2471,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.blocks.children.list({\n  block_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022,\n  start_cursor: undefined,\n  page_size: 50\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/get-block-children",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       },
       "patch": {
         "tags": [
@@ -2471,7 +2635,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.blocks.children.append({\n  block_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022,\n  children: [\n    {\n      type: \u0022paragraph\u0022,\n      paragraph: {\n        rich_text: [{ text: { content: \u0022Hello, world!\u0022 } }]\n      }\n    }\n  ]\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/patch-block-children",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-page-content"
+        ]
       }
     },
     "/v1/data_sources/{dataSourceId}": {
@@ -2616,7 +2791,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.dataSources.retrieve({\n  data_source_id: \u0022d9824bdc-8445-4327-be8b-5b47500af6ce\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-a-data-source",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       },
       "patch": {
         "tags": [
@@ -2769,7 +2955,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.dataSources.update({\n  data_source_id: \u0022d9824bdc-8445-4327-be8b-5b47500af6ce\u0022,\n  title: [{ text: { content: \u0022Updated Data Source Name\u0022 } }]\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/update-a-data-source",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       }
     },
     "/v1/data_sources/{dataSourceId}/query": {
@@ -2934,7 +3131,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.dataSources.query({\n  data_source_id: \u0022d9824bdc-8445-4327-be8b-5b47500af6ce\u0022,\n  filter: {\n    property: \u0022Status\u0022,\n    select: { equals: \u0022Done\u0022 }\n  },\n  sorts: [\n    {\n      property: \u0022Created\u0022,\n      direction: \u0022descending\u0022\n    }\n  ]\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/post-database-query",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       }
     },
     "/v1/data_sources": {
@@ -3081,7 +3289,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.dataSources.create({\n  parent: {\n    database_id: \u0022a1b2c3d4-e5f6-7890-abcd-ef1234567890\u0022\n  },\n  title: [{ text: { content: \u0022My Data Source\u0022 } }],\n  properties: {\n    Name: { title: {} },\n    Status: {\n      select: {\n        options: [\n          { name: \u0022To Do\u0022, color: \u0022red\u0022 },\n          { name: \u0022Done\u0022, color: \u0022green\u0022 }\n        ]\n      }\n    }\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-a-database",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       }
     },
     "/v1/data_sources/{dataSourceId}/templates": {
@@ -3252,7 +3471,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.dataSources.listTemplates({\n  data_source_id: \u0022d9824bdc-8445-4327-be8b-5b47500af6ce\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/list-data-source-templates",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       }
     },
     "/v1/databases/{databaseId}": {
@@ -3397,7 +3627,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.databases.retrieve({\n  database_id: \u0022d9824bdc-8445-4327-be8b-5b47500af6ce\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-database",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       },
       "patch": {
         "tags": [
@@ -3550,7 +3791,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.databases.update({\n  database_id: \u0022d9824bdc-8445-4327-be8b-5b47500af6ce\u0022,\n  title: [{ text: { content: \u0022Updated Database Title\u0022 } }]\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/update-database",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       }
     },
     "/v1/databases": {
@@ -3697,7 +3949,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.databases.create({\n  parent: {\n    type: \u0022page_id\u0022,\n    page_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022\n  },\n  title: [{ text: { content: \u0022My Database\u0022 } }]\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-database",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       }
     },
     "/v1/search": {
@@ -3844,7 +4107,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.search({\n  query: \u0022meeting notes\u0022,\n  filter: {\n    property: \u0022object\u0022,\n    value: \u0022page\u0022\n  },\n  sort: {\n    direction: \u0022descending\u0022,\n    timestamp: \u0022last_edited_time\u0022\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/post-search",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-databases"
+        ]
       }
     },
     "/v1/comments": {
@@ -3991,7 +4265,19 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "comments.create",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.comments.create({\n  parent: { page_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022 },\n  rich_text: [{ text: { content: \u0022This is a comment\u0022 } }]\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-a-comment",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-comments"
+        ]
       },
       "get": {
         "tags": [
@@ -4152,7 +4438,19 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "comments.list",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.comments.list({\n  block_id: \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022,\n  start_cursor: undefined,\n  page_size: 50\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/list-comments",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-comments"
+        ]
       }
     },
     "/v1/comments/{commentId}": {
@@ -4297,7 +4595,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.comments.retrieve({\n  comment_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-comment",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-comments"
+        ]
       },
       "patch": {
         "tags": [
@@ -4450,7 +4759,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.comments.update({\n  comment_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022,\n  rich_text: [{ text: { content: \u0022Updated comment text\u0022 } }]\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/update-a-comment"
       },
       "delete": {
         "tags": [
@@ -4593,7 +4910,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.comments.delete({\n  comment_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/delete-a-comment"
       }
     },
     "/v1/file_uploads": {
@@ -4740,7 +5065,19 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.fileUploads.create({\n  mode: \u0022single_part\u0022,\n  filename: \u0022document.pdf\u0022,\n  content_type: \u0022application/pdf\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-file",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-files-and-media",
+          "https://developers.notion.com/guides/data-apis/uploading-small-files"
+        ]
       },
       "get": {
         "tags": [
@@ -4900,7 +5237,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.fileUploads.list({\n  start_cursor: undefined,\n  page_size: 50\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/list-file-uploads",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-files-and-media"
+        ]
       }
     },
     "/v1/file_uploads/{fileUploadId}/send": {
@@ -5055,7 +5403,19 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nimport { readFile } from \u0022fs/promises\u0022\nimport { basename } from \u0022path\u0022\n\nconst filePath = \u0022./document.pdf\u0022\n\nconst response = await notion.fileUploads.send({\n  file_upload_id: \u0022a02fc1d3-db8b-45c5-a222-27595b15aea7\u0022,\n  file: {\n    filename: basename(filePath),\n    data: new Blob([await readFile(filePath)], {\n      type: \u0022application/pdf\u0022\n    })\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/upload-file",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-files-and-media",
+          "https://developers.notion.com/guides/data-apis/sending-larger-files"
+        ]
       }
     },
     "/v1/file_uploads/{fileUploadId}/complete": {
@@ -5200,7 +5560,19 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.fileUploads.complete({\n  file_upload_id: \u0022a02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/complete-file-upload",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-files-and-media",
+          "https://developers.notion.com/guides/data-apis/sending-larger-files"
+        ]
       }
     },
     "/v1/file_uploads/{fileUploadId}": {
@@ -5345,7 +5717,19 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.fileUploads.retrieve({\n  file_upload_id: \u0022a02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-file-upload",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/data-apis/working-with-files-and-media",
+          "https://developers.notion.com/guides/data-apis/retrieving-files"
+        ]
       }
     },
     "/v1/custom_emojis": {
@@ -5508,7 +5892,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\nimport { collectPaginatedAPI } from \u0022@notionhq/client\u0022\n\nconst notion = new Client()\n\n// Single page\nconst response = await notion.customEmojis.list()\n\n// All pages with pagination helper\nconst allEmojis = await collectPaginatedAPI(\n  notion.customEmojis.list,\n  {}\n)"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/list-custom-emojis"
       }
     },
     "/v1/views": {
@@ -5677,7 +6069,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.views.list({\n  database_id: \u0022248104cd-477e-80fd-b757-e945d38000bd\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/list-views"
       },
       "post": {
         "tags": [
@@ -5822,7 +6222,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.views.create({\n  database_id: \u0022248104cd-477e-80fd-b757-e945d38000bd\u0022,\n  data_source_id: \u0022248104cd-477e-80af-bc30-000bd28de8f9\u0022,\n  name: \u0022High priority items\u0022,\n  type: \u0022table\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-view"
       }
     },
     "/v1/views/{viewId}": {
@@ -5967,7 +6375,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.views.retrieve({\n  view_id: \u0022a3f1b2c4-5678-4def-abcd-1234567890ab\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/retrieve-a-view"
       },
       "patch": {
         "tags": [
@@ -6120,7 +6536,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.views.update({\n  view_id: \u0022a3f1b2c4-5678-4def-abcd-1234567890ab\u0022,\n  name: \u0022Updated view name\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/update-a-view"
       },
       "delete": {
         "tags": [
@@ -6263,7 +6687,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.views.delete({\n  view_id: \u0022a3f1b2c4-5678-4def-abcd-1234567890ab\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/delete-view"
       }
     },
     "/v1/views/{viewId}/queries": {
@@ -6418,7 +6850,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.views.queries.create({\n  view_id: \u0022a3f1b2c4-5678-4def-abcd-1234567890ab\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-view-query"
       }
     },
     "/v1/views/{viewId}/queries/{queryId}": {
@@ -6589,7 +7029,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.views.queries.results({\n  view_id: \u0022a3f1b2c4-5678-4def-abcd-1234567890ab\u0022,\n  query_id: \u0022b4e2c3d5-6789-4abc-def0-1234567890cd\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/get-view-query-results"
       },
       "delete": {
         "tags": [
@@ -6740,7 +7188,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.views.queries.delete({\n  view_id: \u0022a3f1b2c4-5678-4def-abcd-1234567890ab\u0022,\n  query_id: \u0022b4e2c3d5-6789-4abc-def0-1234567890cd\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/delete-view-query"
       }
     },
     "/v1/blocks/meeting_notes": {
@@ -6887,7 +7343,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.blocks.meetingNotes.create({\n  source: {\n    type: \u0022file_upload\u0022,\n    file_upload_id: \u0022a02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n  },\n  parent: {\n    type: \u0022page_id\u0022,\n    page_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n  },\n  title: \u0022Weekly sync\u0022,\n  language: \u0022en\u0022,\n  options: {\n    kickoff_summary: true\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-meeting-note"
       }
     },
     "/v1/blocks/meeting_notes/query": {
@@ -7034,7 +7498,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.blocks.meetingNotes.query({\n  filter: {\n    operator: \u0022and\u0022,\n    filters: [\n      {\n        property: \u0022title\u0022,\n        filter: {\n          operator: \u0022string_contains\u0022,\n          value: {\n            type: \u0022exact\u0022,\n            value: \u0022Weekly sync\u0022\n          }\n        }\n      },\n      {\n        property: \u0022attendees\u0022,\n        filter: {\n          operator: \u0022is_not_empty\u0022\n        }\n      }\n    ]\n  },\n  sort: [\n    {\n      property: \u0022created_time\u0022,\n      direction: \u0022descending\u0022\n    }\n  ],\n  limit: 10\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/query-meeting-notes"
       }
     },
     "/v1/agents/query": {
@@ -7181,7 +7653,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "agents.query",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.agents.query({\n  filter: { property: \u0022agent_type\u0022, string: { equals: \u0022custom_agent\u0022 } },\n  sorts: [{ property: \u0022created_time\u0022, direction: \u0022descending\u0022 }],\n  page_size: 10\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/query-agents"
       }
     },
     "/v1/agents/{agentId}": {
@@ -7342,7 +7823,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "agents.retrieve",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.agents.retrieve({\n  agent_id: \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/retrieve-agent"
       },
       "delete": {
         "tags": [
@@ -7493,7 +7983,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "agents.delete",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.agents.delete({\n  agent_id: \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/delete-agent"
       }
     },
     "/v1/agents/{agentId}/insights": {
@@ -7664,7 +8163,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "agents.retrieveInsights",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.agents.retrieveInsights({\n  agent_id: \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/retrieve-agent-insights"
       }
     },
     "/v1/agents/{agentId}/status": {
@@ -7827,7 +8335,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.agents.updateStatus({\n  agent_id: \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022,\n  status: \u0022disabled\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/update-agent-status"
       }
     },
     "/v1/agents/{agentId}/credit_limit": {
@@ -7990,7 +8506,15 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.agents.updateCreditLimit({\n  agent_id: \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022,\n  credit_limit: 500\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/update-agent-credit-limit"
       }
     },
     "/v1/agents/batch": {
@@ -8137,7 +8661,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "agents.batch",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.agents.batch({\n  operations: [\n    {\n      action: \u0022update_status\u0022,\n      agent_id: \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022,\n      fields: { status: \u0022disabled\u0022 }\n    }\n  ]\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/batch-manage-agent"
       }
     },
     "/v1/ai/plugins": {
@@ -8295,7 +8828,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({\n  auth: process.env.NOTION_API_KEY,\n  notionVersion: \u00222026-03-11\u0022\n})\n\nconst response = await notion.request({\n  method: \u0022get\u0022,\n  path: \u0022ai/plugins\u0022,\n  query: { page_size: 100 }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/agent-skills/list-skills-plugins",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/agent-skills/overview"
+        ]
       }
     },
     "/v1/ai/plugins/{id}": {
@@ -8446,7 +8990,18 @@
               }
             }
           }
-        }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({\n  auth: process.env.NOTION_API_KEY,\n  notionVersion: \u00222026-03-11\u0022\n})\n\nconst pluginId = \u0022b2d0a1f4-9c3e-4c07-9a1d-5f6e7c8b9a01\u0022\nconst response = await notion.request({\n  method: \u0022get\u0022,\n  path: \u0022ai/plugins/\u0022 \u002B encodeURIComponent(pluginId)\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/agent-skills/get-plugin-directory",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/agent-skills/overview"
+        ]
       }
     },
     "/v1/ai/skills/{id}": {
@@ -8591,7 +9146,19 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "skills.retrieve",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({\n  auth: process.env.NOTION_API_KEY,\n  notionVersion: \u00222026-03-11\u0022\n})\n\nconst skillId = \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022\nconst response = await notion.request({\n  method: \u0022get\u0022,\n  path: \u0022ai/skills/\u0022 \u002B encodeURIComponent(skillId)\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/agent-skills/get-skill-directory",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/agent-skills/overview"
+        ]
       }
     },
     "/v1/sessions": {
@@ -8738,7 +9305,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "sessions.update",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\n// Start a session by omitting session_id\nconst session = await notion.sessions.update({\n  agent_id: \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022,\n  message: \u0022What can you help me with?\u0022\n})\n\n// Continue it by passing the session_id back\nconst followUp = await notion.sessions.update({\n  session_id: session.id,\n  message: \u0022Summarize that as bullet points.\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/update-session"
       }
     },
     "/v1/sessions/{sessionId}": {
@@ -8883,7 +9459,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "sessions.retrieve",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.sessions.retrieve({\n  session_id: \u00222a1c7c06-781b-4987-9986-5c8dd3028014\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/retrieve-session"
       }
     },
     "/v1/sessions/query": {
@@ -9030,7 +9615,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "sessions.query",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.sessions.query({\n  filter: { property: \u0022agent_id\u0022, string: { equals: \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022 } },\n  sorts: [{ property: \u0022updated_at\u0022, direction: \u0022descending\u0022 }],\n  page_size: 10\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/query-sessions"
       }
     },
     "/v1/sessions/{sessionId}/events/query": {
@@ -9185,7 +9779,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "sessions.queryEvents",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.sessions.queryEvents({\n  session_id: \u00222a1c7c06-781b-4987-9986-5c8dd3028014\u0022,\n  filter: { property: \u0022type\u0022, event_type: { equals: \u0022agent.message\u0022 } }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/query-session-events"
       }
     },
     "/v1/sessions/{sessionId}/cancel": {
@@ -9340,7 +9943,16 @@
               }
             }
           }
-        }
+        },
+        "x-notion-sdk-method": "sessions.cancel",
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.sessions.cancel({\n  session_id: \u00222a1c7c06-781b-4987-9986-5c8dd3028014\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/cancel-session"
       }
     },
     "/v1/oauth/token": {
@@ -9422,6 +10034,17 @@
           {
             "basicAuth": []
           }
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client()\n\nconst response = await notion.oauth.token({\n  client_id: process.env.OAUTH_CLIENT_ID,\n  client_secret: process.env.OAUTH_CLIENT_SECRET,\n  grant_type: \u0022authorization_code\u0022,\n  code: \u0022abc123-authorization-code\u0022,\n  redirect_uri: \u0022https://example.com/callback\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-a-token",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/get-started/authorization"
         ]
       }
     },
@@ -9504,6 +10127,17 @@
           {
             "basicAuth": []
           }
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client()\n\nconst response = await notion.oauth.revoke({\n  client_id: process.env.OAUTH_CLIENT_ID,\n  client_secret: process.env.OAUTH_CLIENT_SECRET,\n  token: \u0022access_token_to_revoke\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/revoke-token",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/get-started/authorization"
         ]
       }
     },
@@ -9586,6 +10220,17 @@
           {
             "basicAuth": []
           }
+        ],
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client()\n\nconst response = await notion.oauth.introspect({\n  client_id: process.env.OAUTH_CLIENT_ID,\n  client_secret: process.env.OAUTH_CLIENT_SECRET,\n  token: \u0022access_token_to_introspect\u0022\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/introspect-token",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/get-started/authorization"
         ]
       }
     }
