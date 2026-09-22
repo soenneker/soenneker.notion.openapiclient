@@ -15890,24 +15890,9 @@
         },
         "additionalProperties": false
       },
-      "BlockObjectRequestCode": {
-        "title": "Code",
-        "required": [
-          "code"
-        ],
-        "type": "object",
-        "properties": {
-          "code": {
-            "$ref": "#/components/schemas/BlockObjectRequestCodeCode"
-          },
-          "type": {
-            "$ref": "#/components/schemas/CodeType"
-          },
-          "object": {
-            "$ref": "#/components/schemas/BlockObject"
-          }
-        },
-        "additionalProperties": false
+      "EmojiRequest": {
+        "type": "string",
+        "example": "\uD83D\uDE00"
       },
       "EmptyObject": {
         "type": "object"
@@ -18351,43 +18336,12 @@
           }
         }
       },
-      "BlockObjectRequestAudio": {
-        "title": "Audio",
-        "required": [
-          "audio"
-        ],
-        "type": "object",
-        "properties": {
-          "audio": {
-            "$ref": "#/components/schemas/MediaContentWithFileAndCaptionRequest"
-          },
-          "type": {
-            "$ref": "#/components/schemas/AudioType"
-          },
-          "object": {
-            "$ref": "#/components/schemas/BlockObject"
-          }
-        },
-        "additionalProperties": false
+      "IdRequest": {
+        "type": "string"
       },
-      "BlockObjectRequestFile": {
-        "title": "File",
-        "required": [
-          "file"
-        ],
-        "type": "object",
-        "properties": {
-          "file": {
-            "$ref": "#/components/schemas/MediaContentWithFileNameAndCaptionRequest"
-          },
-          "type": {
-            "$ref": "#/components/schemas/FileType"
-          },
-          "object": {
-            "$ref": "#/components/schemas/BlockObject"
-          }
-        },
-        "additionalProperties": false
+      "IdResponse": {
+        "type": "string",
+        "format": "uuid"
       },
       "ImageBlockObjectResponse": {
         "title": "Image",
@@ -19931,24 +19885,15 @@
         },
         "additionalProperties": false
       },
-      "BlockObjectRequestPdf": {
-        "title": "Pdf",
-        "required": [
-          "pdf"
+      "NoticonName": {
+        "examples": [
+          "pizza",
+          "meeting",
+          "home",
+          "star",
+          "robot"
         ],
-        "type": "object",
-        "properties": {
-          "pdf": {
-            "$ref": "#/components/schemas/MediaContentWithFileAndCaptionRequest"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PdfType"
-          },
-          "object": {
-            "$ref": "#/components/schemas/BlockObject"
-          }
-        },
-        "additionalProperties": false
+        "type": "string"
       },
       "NumberDatabasePropertyConfigResponse": {
         "title": "Number",
@@ -19966,24 +19911,9 @@
           }
         }
       },
-      "BlockObjectRequestVideo": {
-        "title": "Video",
-        "required": [
-          "video"
-        ],
-        "type": "object",
-        "properties": {
-          "video": {
-            "$ref": "#/components/schemas/MediaContentWithFileAndCaptionRequest"
-          },
-          "type": {
-            "$ref": "#/components/schemas/VideoType"
-          },
-          "object": {
-            "$ref": "#/components/schemas/BlockObject"
-          }
-        },
-        "additionalProperties": false
+      "NumberFormat": {
+        "type": "string",
+        "example": "number"
       },
       "NumberFormulaPropertyResponse": {
         "title": "Number",
@@ -22287,24 +22217,10 @@
           }
         }
       },
-      "BlockObjectRequestImage": {
-        "title": "Image",
-        "required": [
-          "image"
-        ],
-        "type": "object",
-        "properties": {
-          "image": {
-            "$ref": "#/components/schemas/MediaContentWithFileAndCaptionRequest"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ImageType"
-          },
-          "object": {
-            "$ref": "#/components/schemas/BlockObject"
-          }
-        },
-        "additionalProperties": false
+      "PropertyDescriptionRequest": {
+        "maxLength": 280,
+        "minLength": 1,
+        "type": "string"
       },
       "PropertyFilter": {
         "type": "object",
@@ -24505,24 +24421,10 @@
           }
         ]
       },
-      "BlockObjectRequestBookmark": {
-        "title": "Bookmark",
-        "required": [
-          "bookmark"
-        ],
-        "type": "object",
-        "properties": {
-          "bookmark": {
-            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
-          },
-          "type": {
-            "$ref": "#/components/schemas/BookmarkType"
-          },
-          "object": {
-            "$ref": "#/components/schemas/BlockObject"
-          }
-        },
-        "additionalProperties": false
+      "StringRequest": {
+        "maxLength": 100,
+        "minLength": 1,
+        "type": "string"
       },
       "SubtaskConfigRequest": {
         "type": "object",
@@ -25196,24 +25098,14 @@
         },
         "additionalProperties": false
       },
-      "BlockObjectRequestEmbed": {
-        "title": "Embed",
-        "required": [
-          "embed"
+      "TemplateTimezone": {
+        "examples": [
+          "America/New_York",
+          "Europe/London",
+          "Asia/Tokyo"
         ],
-        "type": "object",
-        "properties": {
-          "embed": {
-            "$ref": "#/components/schemas/BlockObjectRequestEmbedEmbed"
-          },
-          "type": {
-            "$ref": "#/components/schemas/EmbedType"
-          },
-          "object": {
-            "$ref": "#/components/schemas/BlockObject"
-          }
-        },
-        "additionalProperties": false
+        "type": "string",
+        "description": "IANA timezone to use when resolving template variables like @now and @today (e.g. \u0027America/New_York\u0027). Defaults to the authorizing user\u0027s timezone for public integrations, or UTC for internal integrations."
       },
       "TextGroupByConfigRequest": {
         "required": [
@@ -25319,22 +25211,10 @@
           }
         }
       },
-      "BaseWebhookPayloadAccessibleByItem": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BaseWebhookPayloadAccessibleByItemOneOf1"
-          },
-          {
-            "$ref": "#/components/schemas/BaseWebhookPayloadAccessibleByItemOneOf2"
-          }
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          }
-        }
+      "TextRequest": {
+        "maxLength": 2000,
+        "minLength": 1,
+        "type": "string"
       },
       "TextRichTextItemRequest": {
         "title": "Text",
@@ -25367,22 +25247,9 @@
           }
         }
       },
-      "BaseWebhookPayloadAuthorsItem": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/BaseWebhookPayloadAuthorsItemOneOf1"
-          },
-          {
-            "$ref": "#/components/schemas/BaseWebhookPayloadAuthorsItemOneOf2"
-          }
-        ],
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          }
-        }
+      "TimeZoneRequest": {
+        "type": "string",
+        "example": "Africa/Abidjan"
       },
       "TimelineArrowsByRequest": {
         "type": "object",
@@ -27822,6 +27689,192 @@
             "type": "boolean",
             "description": "Always true for workspace parent.",
             "default": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseWebhookPayloadAuthorsItem": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BaseWebhookPayloadAuthorsItemOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/BaseWebhookPayloadAuthorsItemOneOf2"
+          }
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "BaseWebhookPayloadAccessibleByItem": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BaseWebhookPayloadAccessibleByItemOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/BaseWebhookPayloadAccessibleByItemOneOf2"
+          }
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "BlockObjectRequestEmbed": {
+        "title": "Embed",
+        "required": [
+          "embed"
+        ],
+        "type": "object",
+        "properties": {
+          "embed": {
+            "$ref": "#/components/schemas/BlockObjectRequestEmbedEmbed"
+          },
+          "type": {
+            "$ref": "#/components/schemas/EmbedType"
+          },
+          "object": {
+            "$ref": "#/components/schemas/BlockObject"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BlockObjectRequestBookmark": {
+        "title": "Bookmark",
+        "required": [
+          "bookmark"
+        ],
+        "type": "object",
+        "properties": {
+          "bookmark": {
+            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
+          },
+          "type": {
+            "$ref": "#/components/schemas/BookmarkType"
+          },
+          "object": {
+            "$ref": "#/components/schemas/BlockObject"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BlockObjectRequestImage": {
+        "title": "Image",
+        "required": [
+          "image"
+        ],
+        "type": "object",
+        "properties": {
+          "image": {
+            "$ref": "#/components/schemas/MediaContentWithFileAndCaptionRequest"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ImageType"
+          },
+          "object": {
+            "$ref": "#/components/schemas/BlockObject"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BlockObjectRequestVideo": {
+        "title": "Video",
+        "required": [
+          "video"
+        ],
+        "type": "object",
+        "properties": {
+          "video": {
+            "$ref": "#/components/schemas/MediaContentWithFileAndCaptionRequest"
+          },
+          "type": {
+            "$ref": "#/components/schemas/VideoType"
+          },
+          "object": {
+            "$ref": "#/components/schemas/BlockObject"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BlockObjectRequestPdf": {
+        "title": "Pdf",
+        "required": [
+          "pdf"
+        ],
+        "type": "object",
+        "properties": {
+          "pdf": {
+            "$ref": "#/components/schemas/MediaContentWithFileAndCaptionRequest"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PdfType"
+          },
+          "object": {
+            "$ref": "#/components/schemas/BlockObject"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BlockObjectRequestFile": {
+        "title": "File",
+        "required": [
+          "file"
+        ],
+        "type": "object",
+        "properties": {
+          "file": {
+            "$ref": "#/components/schemas/MediaContentWithFileNameAndCaptionRequest"
+          },
+          "type": {
+            "$ref": "#/components/schemas/FileType"
+          },
+          "object": {
+            "$ref": "#/components/schemas/BlockObject"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BlockObjectRequestAudio": {
+        "title": "Audio",
+        "required": [
+          "audio"
+        ],
+        "type": "object",
+        "properties": {
+          "audio": {
+            "$ref": "#/components/schemas/MediaContentWithFileAndCaptionRequest"
+          },
+          "type": {
+            "$ref": "#/components/schemas/AudioType"
+          },
+          "object": {
+            "$ref": "#/components/schemas/BlockObject"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BlockObjectRequestCode": {
+        "title": "Code",
+        "required": [
+          "code"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/BlockObjectRequestCodeCode"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CodeType"
+          },
+          "object": {
+            "$ref": "#/components/schemas/BlockObject"
           }
         },
         "additionalProperties": false
@@ -33601,34 +33654,39 @@
           }
         }
       },
-      "BlockObjectRequestEmbedEmbed": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
-          },
-          {
-            "$ref": "#/components/schemas/EmbedFileUploadRequest"
-          }
+      "BaseWebhookPayloadAuthorsItemOneOf1": {
+        "required": [
+          "id",
+          "type"
         ],
+        "type": "object",
         "properties": {
-          "url": {
-            "type": "string"
-          },
-          "caption": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RichTextItemRequest"
-            }
-          },
-          "file_upload": {
-            "$ref": "#/components/schemas/FileUploadIdRequest"
+          "id": {
+            "type": "string",
+            "format": "uuid"
           },
           "type": {
-            "$ref": "#/components/schemas/FileUploadType"
+            "$ref": "#/components/schemas/PersonType"
           }
-        }
+        },
+        "additionalProperties": false
+      },
+      "BaseWebhookPayloadAuthorsItemOneOf2": {
+        "required": [
+          "id",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/BotType"
+          }
+        },
+        "additionalProperties": false
       },
       "BaseWebhookPayloadAccessibleByItemOneOf1": {
         "required": [
@@ -33664,39 +33722,34 @@
         },
         "additionalProperties": false
       },
-      "BaseWebhookPayloadAuthorsItemOneOf1": {
-        "required": [
-          "id",
-          "type"
-        ],
+      "BlockObjectRequestEmbedEmbed": {
         "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/MediaContentWithUrlAndCaptionRequest"
+          },
+          {
+            "$ref": "#/components/schemas/EmbedFileUploadRequest"
+          }
+        ],
         "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
+          "url": {
+            "type": "string"
+          },
+          "caption": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemRequest"
+            }
+          },
+          "file_upload": {
+            "$ref": "#/components/schemas/FileUploadIdRequest"
           },
           "type": {
-            "$ref": "#/components/schemas/PersonType"
+            "$ref": "#/components/schemas/FileUploadType"
           }
-        },
-        "additionalProperties": false
-      },
-      "BaseWebhookPayloadAuthorsItemOneOf2": {
-        "required": [
-          "id",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "type": {
-            "$ref": "#/components/schemas/BotType"
-          }
-        },
-        "additionalProperties": false
+        }
       },
       "BlockObjectRequestLinkToPageLinkToPage": {
         "type": "object",
@@ -35673,33 +35726,6 @@
         },
         "additionalProperties": false
       },
-      "BlockObjectRequestCodeCode": {
-        "required": [
-          "rich_text",
-          "language"
-        ],
-        "type": "object",
-        "properties": {
-          "rich_text": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RichTextItemRequest"
-            }
-          },
-          "language": {
-            "$ref": "#/components/schemas/LanguageRequest"
-          },
-          "caption": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RichTextItemRequest"
-            }
-          }
-        },
-        "additionalProperties": false
-      },
       "EquationRichTextItemRequestEquation": {
         "required": [
           "expression"
@@ -36311,6 +36337,33 @@
           "$ref": "#/components/schemas/UpdateViewRequestQuickFiltersAdditionalProperties"
         },
         "description": "Quick filters for the view\u0027s filter bar. Keys are property names or IDs. Set a key to a filter condition to add/update that quick filter. Set a key to null to remove it. Pass null for the entire field to clear all quick filters. Unmentioned quick filters are preserved."
+      },
+      "BlockObjectRequestCodeCode": {
+        "required": [
+          "rich_text",
+          "language"
+        ],
+        "type": "object",
+        "properties": {
+          "rich_text": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemRequest"
+            }
+          },
+          "language": {
+            "$ref": "#/components/schemas/LanguageRequest"
+          },
+          "caption": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemRequest"
+            }
+          }
+        },
+        "additionalProperties": false
       },
       "BlockObjectRequestTableOfContentsTableOfContents": {
         "type": "object",
@@ -56298,40 +56351,6 @@
           ]
         }
       },
-      "PdfType": {
-        "const": null,
-        "enum": [
-          "pdf"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "PdfType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pdf",
-              "name": "Pdf"
-            }
-          ]
-        }
-      },
-      "VideoType": {
-        "const": null,
-        "enum": [
-          "video"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "VideoType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "video",
-              "name": "Video"
-            }
-          ]
-        }
-      },
       "NumberedListItemType": {
         "const": null,
         "enum": [
@@ -56740,6 +56759,23 @@
             {
               "value": "user",
               "name": "User"
+            }
+          ]
+        }
+      },
+      "PdfType": {
+        "const": null,
+        "enum": [
+          "pdf"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "PdfType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pdf",
+              "name": "Pdf"
             }
           ]
         }
@@ -58067,6 +58103,23 @@
             {
               "value": "unverified",
               "name": "Unverified"
+            }
+          ]
+        }
+      },
+      "VideoType": {
+        "const": null,
+        "enum": [
+          "video"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "VideoType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "video",
+              "name": "Video"
             }
           ]
         }
