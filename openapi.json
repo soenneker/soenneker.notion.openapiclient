@@ -5028,6 +5028,10 @@
 						"type": "boolean",
 						"description": "Whether this comment's original content was deleted."
 					},
+					"has_pending_attachments": {
+						"type": "boolean",
+						"description": "Whether any file attachments on this comment are still uploading. Pending files are not listed in `attachments` yet. A `comment.updated` webhook is sent when each upload finishes."
+					},
 					"attachments": {
 						"type": "array",
 						"items": {
@@ -5060,7 +5064,8 @@
 					"created_by",
 					"rich_text",
 					"display_name",
-					"original_content_deleted"
+					"original_content_deleted",
+					"has_pending_attachments"
 				]
 			},
 			"commentParentResponse": {

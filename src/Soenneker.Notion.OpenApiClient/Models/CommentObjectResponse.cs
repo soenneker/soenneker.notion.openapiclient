@@ -40,6 +40,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName DisplayName { get; set; }
 #endif
+        /// <summary>Whether any file attachments on this comment are still uploading. Pending files are not listed in `attachments` yet. A `comment.updated` webhook is sent when each upload finishes.</summary>
+        public bool? HasPendingAttachments { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The time when the comment was last edited.</summary>
@@ -87,6 +89,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "discussion_id", n => { DiscussionId = n.GetGuidValue(); } },
                 { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName>(global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName.CreateFromDiscriminatorValue); } },
+                { "has_pending_attachments", n => { HasPendingAttachments = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "last_edited_time", n => { LastEditedTime = n.GetDateTimeOffsetValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObject>(); } },
@@ -107,6 +110,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteGuidValue("discussion_id", DiscussionId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponseDisplayName>("display_name", DisplayName);
+            writer.WriteBoolValue("has_pending_attachments", HasPendingAttachments);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_edited_time", LastEditedTime);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObject>("object", Object);

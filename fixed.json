@@ -13067,7 +13067,8 @@
           "created_by",
           "rich_text",
           "display_name",
-          "original_content_deleted"
+          "original_content_deleted",
+          "has_pending_attachments"
         ],
         "type": "object",
         "properties": {
@@ -13112,6 +13113,10 @@
           "original_content_deleted": {
             "type": "boolean",
             "description": "Whether this comment\u0027s original content was deleted."
+          },
+          "has_pending_attachments": {
+            "type": "boolean",
+            "description": "Whether any file attachments on this comment are still uploading. Pending files are not listed in \u0060attachments\u0060 yet. A \u0060comment.updated\u0060 webhook is sent when each upload finishes."
           },
           "attachments": {
             "maxItems": 100,
@@ -40056,6 +40061,10 @@
             "type": "boolean",
             "description": "Whether this comment\u0027s original content was deleted."
           },
+          "has_pending_attachments": {
+            "type": "boolean",
+            "description": "Whether any file attachments on this comment are still uploading. Pending files are not listed in \u0060attachments\u0060 yet. A \u0060comment.updated\u0060 webhook is sent when each upload finishes."
+          },
           "attachments": {
             "maxItems": 100,
             "type": "array",
@@ -40161,6 +40170,10 @@
             "type": "boolean",
             "description": "Whether this comment\u0027s original content was deleted."
           },
+          "has_pending_attachments": {
+            "type": "boolean",
+            "description": "Whether any file attachments on this comment are still uploading. Pending files are not listed in \u0060attachments\u0060 yet. A \u0060comment.updated\u0060 webhook is sent when each upload finishes."
+          },
           "attachments": {
             "maxItems": 100,
             "type": "array",
@@ -40241,6 +40254,10 @@
             "type": "boolean",
             "description": "Whether this comment\u0027s original content was deleted."
           },
+          "has_pending_attachments": {
+            "type": "boolean",
+            "description": "Whether any file attachments on this comment are still uploading. Pending files are not listed in \u0060attachments\u0060 yet. A \u0060comment.updated\u0060 webhook is sent when each upload finishes."
+          },
           "attachments": {
             "maxItems": 100,
             "type": "array",
@@ -40303,6 +40320,10 @@
           "original_content_deleted": {
             "type": "boolean",
             "description": "Whether this comment\u0027s original content was deleted."
+          },
+          "has_pending_attachments": {
+            "type": "boolean",
+            "description": "Whether any file attachments on this comment are still uploading. Pending files are not listed in \u0060attachments\u0060 yet. A \u0060comment.updated\u0060 webhook is sent when each upload finishes."
           },
           "attachments": {
             "maxItems": 100,
