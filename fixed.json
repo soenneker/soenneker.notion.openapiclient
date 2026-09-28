@@ -22741,11 +22741,11 @@
       },
       "QuickFilterConditionRequest": {
         "type": "object",
-        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
+        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }. Pass an empty object to add the property to the filter bar without criteria."
       },
       "QuickFilterConditionResponse": {
         "type": "object",
-        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field. For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
+        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field. For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }. An empty object means the quick filter has no criteria yet."
       },
       "QuoteBlockObjectResponse": {
         "title": "Quote",
@@ -33396,7 +33396,7 @@
           "null",
           "object"
         ],
-        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
+        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }. Pass an empty object to add the property to the filter bar without criteria."
       },
       "VerificationPropertyItemObjectResponseVerification": {
         "type": "object",
@@ -45905,11 +45905,11 @@
       },
       "CreateViewRequestQuickFiltersAdditionalProperties": {
         "type": "object",
-        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
+        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }. Pass an empty object to add the property to the filter bar without criteria."
       },
       "DataSourceViewObjectResponseQuickFiltersAdditionalProperties": {
         "type": "object",
-        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field. For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
+        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field. For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }. An empty object means the quick filter has no criteria yet."
       },
       "ErrorApi403OneOf2AllOf2AdditionalDataToolErrorCode": {
         "const": null,
@@ -48359,11 +48359,11 @@
       },
       "CreateViewRequestQuickFiltersPropertyAdditionalProperties": {
         "type": "object",
-        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
+        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field (the hashmap key identifies the property). For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }. Pass an empty object to add the property to the filter bar without criteria."
       },
       "DataSourceViewObjectResponseQuickFiltersPropertyAdditionalProperties": {
         "type": "object",
-        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field. For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }."
+        "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field. For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }. An empty object means the quick filter has no criteria yet."
       },
       "PostPageRequestPropertiesAdditionalProperties": {
         "type": "object",
