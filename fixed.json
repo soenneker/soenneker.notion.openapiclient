@@ -41774,6 +41774,9 @@
           "external_account": {
             "$ref": "#/components/schemas/CreateATokenRequestExternalAccount"
           },
+          "ema_issuer": {
+            "type": "string"
+          },
           "refresh_token": {
             "type": "string"
           }

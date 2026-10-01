@@ -22,6 +22,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
+        /// <summary>The ema_issuer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmaIssuer { get; set; }
+#nullable restore
+#else
+        public string EmaIssuer { get; set; }
+#endif
         /// <summary>The external_account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +82,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
+                { "ema_issuer", n => { EmaIssuer = n.GetStringValue(); } },
                 { "external_account", n => { ExternalAccount = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestExternalAccount>(global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestExternalAccount.CreateFromDiscriminatorValue); } },
                 { "grant_type", n => { GrantType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeGrantType>(); } },
                 { "redirect_uri", n => { RedirectUri = n.GetStringValue(); } },
@@ -88,6 +97,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
+            writer.WriteStringValue("ema_issuer", EmaIssuer);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestExternalAccount>("external_account", ExternalAccount);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeGrantType>("grant_type", GrantType);
             writer.WriteStringValue("redirect_uri", RedirectUri);
