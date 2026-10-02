@@ -46796,9 +46796,6 @@
 													}
 												},
 												"required": ["key", "name"]
-											},
-											"ema_issuer": {
-												"type": "string"
 											}
 										},
 										"required": ["grant_type", "code"]
