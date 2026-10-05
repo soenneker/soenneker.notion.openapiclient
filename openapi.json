@@ -40494,6 +40494,7 @@
 			"get": {
 				"summary": "List skills plugins",
 				"operationId": "list-skills-plugins",
+				"x-notion-sdk-method": "plugins.list",
 				"tags": ["Agent Skills"],
 				"x-codeSamples": [
 					{
@@ -40719,6 +40720,7 @@
 			"get": {
 				"summary": "Get a plugin directory",
 				"operationId": "get-plugin-directory",
+				"x-notion-sdk-method": "plugins.retrieve",
 				"tags": ["Agent Skills"],
 				"x-codeSamples": [
 					{

@@ -8829,6 +8829,7 @@
             }
           }
         },
+        "x-notion-sdk-method": "plugins.list",
         "x-codeSamples": [
           {
             "lang": "javascript",
@@ -8991,6 +8992,7 @@
             }
           }
         },
+        "x-notion-sdk-method": "plugins.retrieve",
         "x-codeSamples": [
           {
             "lang": "javascript",
