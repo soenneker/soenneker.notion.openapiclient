@@ -24126,6 +24126,44 @@
         },
         "additionalProperties": false
       },
+      "StatusGroupFilter": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/StatusGroupFilterAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/StatusGroupFilterAnyOf2"
+          }
+        ],
+        "properties": {
+          "equals": {
+            "$ref": "#/components/schemas/StatusGroupNames"
+          },
+          "does_not_equal": {
+            "$ref": "#/components/schemas/StatusGroupNames"
+          }
+        },
+        "description": "Matches status groups instead of options. Requires the \u0060Notion-Beta: status-group-filters-2026-10-06\u0060 header."
+      },
+      "StatusGroupNames": {
+        "type": "object",
+        "anyOf": [
+          {
+            "maxLength": 100,
+            "type": "string"
+          },
+          {
+            "maxItems": 100,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "maxLength": 100,
+              "type": "string"
+            }
+          }
+        ]
+      },
       "StatusOptionGroup": {
         "enum": [
           "To-do",
@@ -24284,6 +24322,9 @@
               },
               {
                 "$ref": "#/components/schemas/StatusPropertyFilterAnyOf1AnyOf2"
+              },
+              {
+                "$ref": "#/components/schemas/StatusPropertyFilterAnyOf1AnyOf3"
               }
             ]
           },
@@ -33104,6 +33145,28 @@
           }
         }
       },
+      "StatusGroupFilterAnyOf1": {
+        "required": [
+          "equals"
+        ],
+        "type": "object",
+        "properties": {
+          "equals": {
+            "$ref": "#/components/schemas/StatusGroupNames"
+          }
+        }
+      },
+      "StatusGroupFilterAnyOf2": {
+        "required": [
+          "does_not_equal"
+        ],
+        "type": "object",
+        "properties": {
+          "does_not_equal": {
+            "$ref": "#/components/schemas/StatusGroupNames"
+          }
+        }
+      },
       "StatusOptionUpdateRequestAllOf2OneOf1": {
         "required": [
           "name"
@@ -33151,6 +33214,17 @@
         "properties": {
           "does_not_equal": {
             "$ref": "#/components/schemas/StringOrStringArray"
+          }
+        }
+      },
+      "StatusPropertyFilterAnyOf1AnyOf3": {
+        "required": [
+          "group"
+        ],
+        "type": "object",
+        "properties": {
+          "group": {
+            "$ref": "#/components/schemas/StatusGroupFilter"
           }
         }
       },

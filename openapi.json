@@ -15868,6 +15868,44 @@
 				"additionalProperties": false,
 				"required": ["type", "property_id", "group_by", "sort"]
 			},
+			"statusGroupFilter": {
+				"description": "Matches status groups instead of options. Requires the `Notion-Beta: status-group-filters-2026-10-06` header.",
+				"anyOf": [
+					{
+						"type": "object",
+						"properties": {
+							"equals": {
+								"$ref": "#/components/schemas/statusGroupNames"
+							}
+						},
+						"required": ["equals"]
+					},
+					{
+						"type": "object",
+						"properties": {
+							"does_not_equal": {
+								"$ref": "#/components/schemas/statusGroupNames"
+							}
+						},
+						"required": ["does_not_equal"]
+					}
+				]
+			},
+			"statusGroupNames": {
+				"anyOf": [
+					{
+						"$ref": "#/components/schemas/stringRequest"
+					},
+					{
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/stringRequest"
+						},
+						"maxItems": 100,
+						"minItems": 1
+					}
+				]
+			},
 			"statusOptionGroup": {
 				"type": "string",
 				"enum": ["To-do", "In progress", "Complete"],
@@ -16022,6 +16060,15 @@
 									}
 								},
 								"required": ["does_not_equal"]
+							},
+							{
+								"type": "object",
+								"properties": {
+									"group": {
+										"$ref": "#/components/schemas/statusGroupFilter"
+									}
+								},
+								"required": ["group"]
 							}
 						]
 					},
