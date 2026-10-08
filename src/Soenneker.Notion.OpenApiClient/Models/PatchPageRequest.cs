@@ -36,6 +36,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public bool? IsArchived { get; set; }
         /// <summary>Whether the page should be locked from editing in the Notion app UI. If not provided, the locked state will not be updated.</summary>
         public bool? IsLocked { get; set; }
+        /// <summary>Controls the notifications Notion sends people about this change. Set mode to &quot;silent&quot; to skip page update notifications and @mention notifications, or &quot;default&quot; to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema? Notifications { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema Notifications { get; set; }
+#endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +84,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "in_trash", n => { InTrash = n.GetBoolValue(); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
+                { "notifications", n => { Notifications = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema>(global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestProperties.CreateFromDiscriminatorValue); } },
                 { "template", n => { Template = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplate>(global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplate.CreateFromDiscriminatorValue); } },
             };
@@ -93,6 +102,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("in_trash", InTrash);
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteBoolValue("is_locked", IsLocked);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema>("notifications", Notifications);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestProperties>("properties", Properties);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplate>("template", Template);
         }

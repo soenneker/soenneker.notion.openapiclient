@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
-        /// <summary>The page content rendered as enhanced Markdown.</summary>
+        /// <summary>The page content as Markdown, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Markdown { get; set; }
@@ -33,6 +33,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public List<Guid?> UnknownBlockIds { get; set; }
+#endif
+        /// <summary>Markdown parser warnings for the request&apos;s content. Returned only by the update endpoint with `markdown_version: &quot;v2&quot;`, and only when there is at least one warning.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponseWarningsItem>? Warnings { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponseWarningsItem> Warnings { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownObject>(); } },
                 { "truncated", n => { Truncated = n.GetBoolValue(); } },
                 { "unknown_block_ids", n => { UnknownBlockIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponseWarningsItem>(global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponseWarningsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -71,6 +80,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownObject>("object", Object);
             writer.WriteBoolValue("truncated", Truncated);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("unknown_block_ids", UnknownBlockIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponseWarningsItem>("warnings", Warnings);
         }
     }
 }

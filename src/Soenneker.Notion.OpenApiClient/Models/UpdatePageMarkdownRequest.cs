@@ -14,6 +14,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Set to true to opt into receiving an async_task result when this update operation is accepted for background execution. If omitted or false, the endpoint keeps the existing synchronous response shape.</summary>
         public bool? AllowAsync { get; set; }
+        /// <summary>The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestMarkdownVersion? MarkdownVersion { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,6 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allow_async", n => { AllowAsync = n.GetBoolValue(); } },
+                { "markdown_version", n => { MarkdownVersion = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestMarkdownVersion>(); } },
             };
         }
         /// <summary>
@@ -44,6 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allow_async", AllowAsync);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestMarkdownVersion>("markdown_version", MarkdownVersion);
         }
     }
 }

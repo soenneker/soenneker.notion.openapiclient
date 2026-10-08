@@ -8,39 +8,31 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Replace the entire page content with new markdown.
+    /// Controls the notifications Notion sends people about this change. Set mode to &quot;silent&quot; to skip page update notifications and @mention notifications, or &quot;default&quot; to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdatePageMarkdownRequestAllOf1ReplaceContent : IAdditionalDataHolder, IParsable
+    public partial class PageWriteNotificationsSchema : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set to true to allow the operation to delete child pages or databases. Defaults to false.</summary>
-        public bool? AllowDeletingContent { get; set; }
-        /// <summary>The new Markdown content to replace the entire page content, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NewStr { get; set; }
-#nullable restore
-#else
-        public string NewStr { get; set; }
-#endif
+        /// <summary>The mode property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchemaMode? Mode { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema"/> and sets the default values.
         /// </summary>
-        public UpdatePageMarkdownRequestAllOf1ReplaceContent()
+        public PageWriteNotificationsSchema()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContent();
+            return new global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_deleting_content", n => { AllowDeletingContent = n.GetBoolValue(); } },
-                { "new_str", n => { NewStr = n.GetStringValue(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchemaMode>(); } },
             };
         }
         /// <summary>
@@ -61,8 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("allow_deleting_content", AllowDeletingContent);
-            writer.WriteStringValue("new_str", NewStr);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchemaMode>("mode", Mode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

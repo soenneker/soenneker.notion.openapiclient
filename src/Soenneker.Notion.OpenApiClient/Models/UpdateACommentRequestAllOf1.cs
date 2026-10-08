@@ -7,48 +7,45 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Replace a range of content in the page.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdatePageMarkdownRequestAllOf1ReplaceContentRange : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class UpdateACommentRequestAllOf1 : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set to true to allow the operation to delete child pages or databases. Defaults to false.</summary>
-        public bool? AllowDeletingContent { get; set; }
-        /// <summary>The new Markdown content to replace the matched range, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`).</summary>
+        /// <summary>The updated content of the comment as a Markdown string. Comment Markdown supports inline formatting only (bold, italic, strikethrough, code, links), inline equations ($expression$), and mentions. Block-level Markdown such as fenced code blocks, headings, lists, tables, and blockquotes does not render as structured blocks in comments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? Markdown { get; set; }
 #nullable restore
 #else
-        public string Content { get; set; }
+        public string Markdown { get; set; }
 #endif
-        /// <summary>Selection of existing content to replace, using the ellipsis format (&quot;start text...end text&quot;).</summary>
+        /// <summary>An array of rich text objects that represent the updated content of the comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentRange { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>? RichText { get; set; }
 #nullable restore
 #else
-        public string ContentRange { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest> RichText { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateACommentRequestAllOf1"/> and sets the default values.
         /// </summary>
-        public UpdatePageMarkdownRequestAllOf1ReplaceContentRange()
+        public UpdateACommentRequestAllOf1()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateACommentRequestAllOf1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.UpdateACommentRequestAllOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1ReplaceContentRange();
+            return new global::Soenneker.Notion.OpenApiClient.Models.UpdateACommentRequestAllOf1();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,9 +55,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_deleting_content", n => { AllowDeletingContent = n.GetBoolValue(); } },
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "content_range", n => { ContentRange = n.GetStringValue(); } },
+                { "markdown", n => { Markdown = n.GetStringValue(); } },
+                { "rich_text", n => { RichText = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -70,9 +66,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("allow_deleting_content", AllowDeletingContent);
-            writer.WriteStringValue("content", Content);
-            writer.WriteStringValue("content_range", ContentRange);
+            writer.WriteStringValue("markdown", Markdown);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("rich_text", RichText);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

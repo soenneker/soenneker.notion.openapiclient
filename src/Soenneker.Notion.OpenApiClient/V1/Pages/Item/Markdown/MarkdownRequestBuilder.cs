@@ -22,7 +22,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkdownRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*}", pathParameters)
+        public MarkdownRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*,markdown_version*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MarkdownRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*}", rawUrl)
+        public MarkdownRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/pages/{pageId}/markdown{?include_transcript*,markdown_version*}", rawUrl)
         {
         }
         /// <summary>
@@ -180,6 +180,10 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
             #pragma warning disable CS1591
             [QueryParameter("include_transcript")]
             public bool? IncludeTranscript { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("markdown_version")]
+            public global::Soenneker.Notion.OpenApiClient.Models.RetrievePageMarkdownMarkdownVersionParameter? MarkdownVersion { get; set; }
             #pragma warning restore CS1591
         }
     }

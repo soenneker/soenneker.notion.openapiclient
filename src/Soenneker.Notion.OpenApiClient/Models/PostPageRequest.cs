@@ -46,13 +46,23 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest Icon { get; set; }
 #endif
-        /// <summary>Page content as Notion-flavored Markdown. Mutually exclusive with content/children.</summary>
+        /// <summary>Page content as Markdown, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`). Mutually exclusive with content/children.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Markdown { get; set; }
 #nullable restore
 #else
         public string Markdown { get; set; }
+#endif
+        /// <summary>The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestMarkdownVersion? MarkdownVersion { get; set; }
+        /// <summary>Controls the notifications Notion sends people about this change. Set mode to &quot;silent&quot; to skip page update notifications and @mention notifications, or &quot;default&quot; to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema? Notifications { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema Notifications { get; set; }
 #endif
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,6 +120,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest.CreateFromDiscriminatorValue); } },
                 { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest.CreateFromDiscriminatorValue); } },
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
+                { "markdown_version", n => { MarkdownVersion = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestMarkdownVersion>(); } },
+                { "notifications", n => { Notifications = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema>(global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema.CreateFromDiscriminatorValue); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent>(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent.CreateFromDiscriminatorValue); } },
                 { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema>(global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestProperties>(global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestProperties.CreateFromDiscriminatorValue); } },
@@ -129,6 +141,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest>("cover", Cover);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>("icon", Icon);
             writer.WriteStringValue("markdown", Markdown);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestMarkdownVersion>("markdown_version", MarkdownVersion);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema>("notifications", Notifications);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema>("position", Position);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestProperties>("properties", Properties);

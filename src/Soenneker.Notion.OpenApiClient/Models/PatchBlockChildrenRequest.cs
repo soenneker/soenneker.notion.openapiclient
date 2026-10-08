@@ -20,6 +20,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest> Children { get; set; }
 #endif
+        /// <summary>Controls the notifications Notion sends people about this change. Set mode to &quot;silent&quot; to skip page update notifications and @mention notifications, or &quot;default&quot; to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema? Notifications { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema Notifications { get; set; }
+#endif
         /// <summary>The position property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "notifications", n => { Notifications = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema>(global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema.CreateFromDiscriminatorValue); } },
                 { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchema>(global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchema.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,6 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest>("children", Children);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema>("notifications", Notifications);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentPositionSchema>("position", Position);
         }
     }

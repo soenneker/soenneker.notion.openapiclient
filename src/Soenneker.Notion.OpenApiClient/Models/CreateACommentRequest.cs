@@ -28,6 +28,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName DisplayName { get; set; }
 #endif
+        /// <summary>The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMarkdownVersion? MarkdownVersion { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,6 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem>(global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName>(global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName.CreateFromDiscriminatorValue); } },
+                { "markdown_version", n => { MarkdownVersion = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMarkdownVersion>(); } },
             };
         }
         /// <summary>
@@ -60,6 +63,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem>("attachments", Attachments);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName>("display_name", DisplayName);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMarkdownVersion>("markdown_version", MarkdownVersion);
         }
     }
 }

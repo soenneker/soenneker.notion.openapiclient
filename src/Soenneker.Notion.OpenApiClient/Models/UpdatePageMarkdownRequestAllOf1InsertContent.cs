@@ -23,7 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string After { get; set; }
 #endif
-        /// <summary>The enhanced markdown content to insert into the page.</summary>
+        /// <summary>The Markdown content to insert into the page, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content { get; set; }
