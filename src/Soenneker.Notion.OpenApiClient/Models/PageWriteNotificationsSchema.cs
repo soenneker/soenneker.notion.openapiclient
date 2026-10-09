@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Controls the notifications Notion sends people about this change. Set mode to &quot;silent&quot; to skip page update notifications and @mention notifications, or &quot;default&quot; to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change.
+    /// Controls the notifications Notion sends people about this change. Set mode to &quot;silent&quot; to skip page update notifications, @mention notifications, and notifications to people added to a Person property, or &quot;default&quot; to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PageWriteNotificationsSchema : IAdditionalDataHolder, IParsable

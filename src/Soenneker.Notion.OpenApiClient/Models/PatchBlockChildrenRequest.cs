@@ -20,7 +20,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequest> Children { get; set; }
 #endif
-        /// <summary>Controls the notifications Notion sends people about this change. Set mode to &quot;silent&quot; to skip page update notifications and @mention notifications, or &quot;default&quot; to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change.</summary>
+        /// <summary>Controls the notifications Notion sends people about this change. Set mode to &quot;silent&quot; to skip page update notifications, @mention notifications, and notifications to people added to a Person property, or &quot;default&quot; to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.PageWriteNotificationsSchema? Notifications { get; set; }

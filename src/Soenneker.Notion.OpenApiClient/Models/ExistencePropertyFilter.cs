@@ -7,12 +7,13 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ExistencePropertyFilter : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class ExistencePropertyFilter : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +30,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2 ExistencePropertyFilterAnyOf2 { get; set; }
 #endif
+        /// <summary>The is_empty property</summary>
+        public bool? IsEmpty { get; set; }
+        /// <summary>The is_not_empty property</summary>
+        public bool? IsNotEmpty { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter"/> and sets the default values.
+        /// </summary>
+        public ExistencePropertyFilter()
+        {
+            AdditionalData = new Dictionary<string, object>();
+            IsEmpty = true;
+            IsNotEmpty = true;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,8 +52,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter();
-            result.ExistencePropertyFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1();
-            result.ExistencePropertyFilterAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2();
+            if(parseNode.GetBoolValue() is bool isEmptyValue)
+            {
+                result.IsEmpty = isEmptyValue;
+            }
+            else if(parseNode.GetBoolValue() is bool isNotEmptyValue)
+            {
+                result.IsNotEmpty = isNotEmptyValue;
+            }
+            else {
+                result.ExistencePropertyFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1();
+                result.ExistencePropertyFilterAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2();
+            }
             return result;
         }
         /// <summary>
@@ -61,7 +85,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1>(null, ExistencePropertyFilterAnyOf1, ExistencePropertyFilterAnyOf2);
+            if(IsEmpty != null)
+            {
+                writer.WriteBoolValue(null, IsEmpty);
+            }
+            else if(IsNotEmpty != null)
+            {
+                writer.WriteBoolValue(null, IsNotEmpty);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1>(null, ExistencePropertyFilterAnyOf1, ExistencePropertyFilterAnyOf2);
+            }
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -21272,7 +21272,7 @@
             "$ref": "#/components/schemas/PageWriteNotificationsSchemaMode"
           }
         },
-        "description": "Controls the notifications Notion sends people about this change. Set mode to \u0022silent\u0022 to skip page update notifications and @mention notifications, or \u0022default\u0022 to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change."
+        "description": "Controls the notifications Notion sends people about this change. Set mode to \u0022silent\u0022 to skip page update notifications, @mention notifications, and notifications to people added to a Person property, or \u0022default\u0022 to use the standard behavior. Database automations, reminders, and connection webhooks still work as usual. Page history, page activity, and workspace audit logs still record the change."
       },
       "ParagraphBlockObjectResponse": {
         "title": "Paragraph",
@@ -24153,26 +24153,6 @@
         },
         "additionalProperties": false
       },
-      "StatusGroupFilter": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/StatusGroupFilterAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/StatusGroupFilterAnyOf2"
-          }
-        ],
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/StatusGroupNames"
-          },
-          "does_not_equal": {
-            "$ref": "#/components/schemas/StatusGroupNames"
-          }
-        },
-        "description": "Matches status groups instead of options. Requires the \u0060Notion-Beta: status-group-filters-2026-10-06\u0060 header."
-      },
       "StatusGroupNames": {
         "type": "object",
         "anyOf": [
@@ -24342,18 +24322,7 @@
         "type": "object",
         "anyOf": [
           {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/StatusPropertyFilterAnyOf1AnyOf1"
-              },
-              {
-                "$ref": "#/components/schemas/StatusPropertyFilterAnyOf1AnyOf2"
-              },
-              {
-                "$ref": "#/components/schemas/StatusPropertyFilterAnyOf1AnyOf3"
-              }
-            ]
+            "$ref": "#/components/schemas/StatusValueFilter"
           },
           {
             "$ref": "#/components/schemas/ExistencePropertyFilter"
@@ -24369,6 +24338,18 @@
             "const": null,
             "type": "boolean",
             "default": true
+          },
+          "equals": {
+            "$ref": "#/components/schemas/StringOrStringArray"
+          },
+          "does_not_equal": {
+            "$ref": "#/components/schemas/StringOrStringArray"
+          },
+          "group_equals": {
+            "$ref": "#/components/schemas/StatusGroupNames"
+          },
+          "group_does_not_equal": {
+            "$ref": "#/components/schemas/StatusGroupNames"
           }
         }
       },
@@ -24442,6 +24423,38 @@
           }
         },
         "additionalProperties": false
+      },
+      "StatusValueFilter": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/StatusValueFilterAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/StatusValueFilterAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/StatusValueFilterAnyOf3"
+          },
+          {
+            "$ref": "#/components/schemas/StatusValueFilterAnyOf4"
+          }
+        ],
+        "properties": {
+          "equals": {
+            "$ref": "#/components/schemas/StringOrStringArray"
+          },
+          "does_not_equal": {
+            "$ref": "#/components/schemas/StringOrStringArray"
+          },
+          "group_equals": {
+            "$ref": "#/components/schemas/StatusGroupNames"
+          },
+          "group_does_not_equal": {
+            "$ref": "#/components/schemas/StatusGroupNames"
+          }
+        },
+        "description": "The group operators match status groups instead of options. They require the \u0060Notion-Beta: status-group-filters-2026-10-06\u0060 header."
       },
       "StringFormulaPropertyResponse": {
         "title": "String",
@@ -33172,28 +33185,6 @@
           }
         }
       },
-      "StatusGroupFilterAnyOf1": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/StatusGroupNames"
-          }
-        }
-      },
-      "StatusGroupFilterAnyOf2": {
-        "required": [
-          "does_not_equal"
-        ],
-        "type": "object",
-        "properties": {
-          "does_not_equal": {
-            "$ref": "#/components/schemas/StatusGroupNames"
-          }
-        }
-      },
       "StatusOptionUpdateRequestAllOf2OneOf1": {
         "required": [
           "name"
@@ -33219,39 +33210,6 @@
           },
           "name": {
             "type": "string"
-          }
-        }
-      },
-      "StatusPropertyFilterAnyOf1AnyOf1": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/StringOrStringArray"
-          }
-        }
-      },
-      "StatusPropertyFilterAnyOf1AnyOf2": {
-        "required": [
-          "does_not_equal"
-        ],
-        "type": "object",
-        "properties": {
-          "does_not_equal": {
-            "$ref": "#/components/schemas/StringOrStringArray"
-          }
-        }
-      },
-      "StatusPropertyFilterAnyOf1AnyOf3": {
-        "required": [
-          "group"
-        ],
-        "type": "object",
-        "properties": {
-          "group": {
-            "$ref": "#/components/schemas/StatusGroupFilter"
           }
         }
       },
@@ -33296,6 +33254,50 @@
           },
           "color": {
             "$ref": "#/components/schemas/PartialSelectPropertyValueResponseColor"
+          }
+        }
+      },
+      "StatusValueFilterAnyOf1": {
+        "required": [
+          "equals"
+        ],
+        "type": "object",
+        "properties": {
+          "equals": {
+            "$ref": "#/components/schemas/StringOrStringArray"
+          }
+        }
+      },
+      "StatusValueFilterAnyOf2": {
+        "required": [
+          "does_not_equal"
+        ],
+        "type": "object",
+        "properties": {
+          "does_not_equal": {
+            "$ref": "#/components/schemas/StringOrStringArray"
+          }
+        }
+      },
+      "StatusValueFilterAnyOf3": {
+        "required": [
+          "group_equals"
+        ],
+        "type": "object",
+        "properties": {
+          "group_equals": {
+            "$ref": "#/components/schemas/StatusGroupNames"
+          }
+        }
+      },
+      "StatusValueFilterAnyOf4": {
+        "required": [
+          "group_does_not_equal"
+        ],
+        "type": "object",
+        "properties": {
+          "group_does_not_equal": {
+            "$ref": "#/components/schemas/StatusGroupNames"
           }
         }
       },

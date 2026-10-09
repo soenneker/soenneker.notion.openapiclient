@@ -7,26 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusValueFilter"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class StatusPropertyFilter : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class StatusPropertyFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The is_empty property</summary>
-        public bool? IsEmpty { get; set; }
-        /// <summary>The is_not_empty property</summary>
-        public bool? IsNotEmpty { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter"/> and sets the default values.
-        /// </summary>
-        public StatusPropertyFilter()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            IsEmpty = true;
-            IsNotEmpty = true;
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? ExistencePropertyFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter ExistencePropertyFilter { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusValueFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusValueFilter? StatusValueFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusValueFilter StatusValueFilter { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +37,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyFilter();
+            result.ExistencePropertyFilter = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter();
+            result.StatusValueFilter = new global::Soenneker.Notion.OpenApiClient.Models.StatusValueFilter();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,11 +48,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ExistencePropertyFilter != null || StatusValueFilter != null)
             {
-                { "is_empty", n => { IsEmpty = n.GetBoolValue(); } },
-                { "is_not_empty", n => { IsNotEmpty = n.GetBoolValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ExistencePropertyFilter, StatusValueFilter);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -56,9 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("is_empty", IsEmpty);
-            writer.WriteBoolValue("is_not_empty", IsNotEmpty);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(null, ExistencePropertyFilter, StatusValueFilter);
         }
     }
 }
