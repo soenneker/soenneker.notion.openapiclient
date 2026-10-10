@@ -13,7 +13,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The equals property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItemAndItemOrItemEventTypeEquals? Equals { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItemAndItemOrItemEventTypeEquals? EqualsEscaped { get; set; }
         /// <summary>The in property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "equals", n => { Equals = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItemAndItemOrItemEventTypeEquals>(); } },
+                { "equals", n => { EqualsEscaped = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItemAndItemOrItemEventTypeEquals>(); } },
                 { "in", n => { In = n.GetCollectionOfEnumValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItemAndItemOrItemEventTypeInItem>()?.AsList(); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItemAndItemOrItemEventTypeEquals>("equals", Equals);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItemAndItemOrItemEventTypeEquals>("equals", EqualsEscaped);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItemAndItemOrItemEventTypeInItem>("in", In);
         }
     }

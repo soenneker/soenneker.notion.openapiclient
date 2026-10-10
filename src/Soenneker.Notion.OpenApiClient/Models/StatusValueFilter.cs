@@ -26,10 +26,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The equals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray? Equals { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray? EqualsEscaped { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray Equals { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray EqualsEscaped { get; set; }
 #endif
         /// <summary>The group_does_not_equal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "does_not_equal", n => { DoesNotEqual = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray>(global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray.CreateFromDiscriminatorValue); } },
-                { "equals", n => { Equals = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray>(global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray.CreateFromDiscriminatorValue); } },
+                { "equals", n => { EqualsEscaped = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray>(global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray.CreateFromDiscriminatorValue); } },
                 { "group_does_not_equal", n => { GroupDoesNotEqual = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames>(global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames.CreateFromDiscriminatorValue); } },
                 { "group_equals", n => { GroupEquals = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames>(global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames.CreateFromDiscriminatorValue); } },
             };
@@ -86,7 +86,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray>("does_not_equal", DoesNotEqual);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray>("equals", Equals);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray>("equals", EqualsEscaped);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames>("group_does_not_equal", GroupDoesNotEqual);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames>("group_equals", GroupEquals);
             writer.WriteAdditionalData(AdditionalData);

@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class QuerySessionsRequestFilterAndItemAndItemStatus : IParsable
     {
         /// <summary>Return sessions with this status.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItemAndItemStatusEquals? Equals { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItemAndItemStatusEquals? EqualsEscaped { get; set; }
         /// <summary>Return sessions with any of these statuses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "equals", n => { Equals = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItemAndItemStatusEquals>(); } },
+                { "equals", n => { EqualsEscaped = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItemAndItemStatusEquals>(); } },
                 { "in", n => { In = n.GetCollectionOfEnumValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItemAndItemStatusInItem>()?.AsList(); } },
             };
         }
@@ -52,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItemAndItemStatusEquals>("equals", Equals);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItemAndItemStatusEquals>("equals", EqualsEscaped);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItemAndItemStatusInItem>("in", In);
         }
     }

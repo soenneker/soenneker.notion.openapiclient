@@ -14,7 +14,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class QuerySessionsRequestFilterOrItemStatus : IParsable
     {
         /// <summary>Return sessions with this status.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItemStatusEquals? Equals { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItemStatusEquals? EqualsEscaped { get; set; }
         /// <summary>Return sessions with any of these statuses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "equals", n => { Equals = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItemStatusEquals>(); } },
+                { "equals", n => { EqualsEscaped = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItemStatusEquals>(); } },
                 { "in", n => { In = n.GetCollectionOfEnumValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItemStatusInItem>()?.AsList(); } },
             };
         }
@@ -52,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItemStatusEquals>("equals", Equals);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItemStatusEquals>("equals", EqualsEscaped);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItemStatusInItem>("in", In);
         }
     }

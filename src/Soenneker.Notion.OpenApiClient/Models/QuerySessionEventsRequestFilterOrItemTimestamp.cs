@@ -17,7 +17,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The before property</summary>
         public DateTimeOffset? Before { get; set; }
         /// <summary>The equals property</summary>
-        public DateTimeOffset? Equals { get; set; }
+        public DateTimeOffset? EqualsEscaped { get; set; }
         /// <summary>The on_or_after property</summary>
         public DateTimeOffset? OnOrAfter { get; set; }
         /// <summary>The on_or_before property</summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "after", n => { After = n.GetDateTimeOffsetValue(); } },
                 { "before", n => { Before = n.GetDateTimeOffsetValue(); } },
-                { "equals", n => { Equals = n.GetDateTimeOffsetValue(); } },
+                { "equals", n => { EqualsEscaped = n.GetDateTimeOffsetValue(); } },
                 { "on_or_after", n => { OnOrAfter = n.GetDateTimeOffsetValue(); } },
                 { "on_or_before", n => { OnOrBefore = n.GetDateTimeOffsetValue(); } },
             };
@@ -56,7 +56,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("after", After);
             writer.WriteDateTimeOffsetValue("before", Before);
-            writer.WriteDateTimeOffsetValue("equals", Equals);
+            writer.WriteDateTimeOffsetValue("equals", EqualsEscaped);
             writer.WriteDateTimeOffsetValue("on_or_after", OnOrAfter);
             writer.WriteDateTimeOffsetValue("on_or_before", OnOrBefore);
         }

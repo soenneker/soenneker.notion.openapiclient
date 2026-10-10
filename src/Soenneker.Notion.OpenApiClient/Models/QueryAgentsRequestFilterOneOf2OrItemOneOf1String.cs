@@ -13,7 +13,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The equals property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilterOneOf2OrItemOneOf1StringEquals? Equals { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilterOneOf2OrItemOneOf1StringEquals? EqualsEscaped { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "equals", n => { Equals = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilterOneOf2OrItemOneOf1StringEquals>(); } },
+                { "equals", n => { EqualsEscaped = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilterOneOf2OrItemOneOf1StringEquals>(); } },
             };
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilterOneOf2OrItemOneOf1StringEquals>("equals", Equals);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilterOneOf2OrItemOneOf1StringEquals>("equals", EqualsEscaped);
         }
     }
 }

@@ -15,10 +15,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The equals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Equals { get; set; }
+        public string? EqualsEscaped { get; set; }
 #nullable restore
 #else
-        public string Equals { get; set; }
+        public string EqualsEscaped { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "equals", n => { Equals = n.GetStringValue(); } },
+                { "equals", n => { EqualsEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("equals", Equals);
+            writer.WriteStringValue("equals", EqualsEscaped);
         }
     }
 }
