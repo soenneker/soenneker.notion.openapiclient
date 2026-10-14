@@ -492,7 +492,8 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Property names or IDs to include in each page\u0027s \u0060properties\u0060 object. Other properties are left out. Repeat the parameter to pass more than one value, for example \u0060filter_properties=title\u0026filter_properties=Status\u0060. Pages that aren\u0027t in a data source always return only \u0060title\u0060."
             }
           },
           {
@@ -681,7 +682,7 @@
               "items": {
                 "type": "string"
               },
-              "description": "Supply a list of property IDs to filter properties in the response. Note that if a page doesn\u0027t have a property, it won\u0027t be included in the filtered response."
+              "description": "Property names or IDs to include in each page\u0027s \u0060properties\u0060 object. Other properties are left out. Repeat the parameter to pass more than one value, for example \u0060filter_properties=title\u0026filter_properties=Status\u0060. Pages that aren\u0027t in a data source always return only \u0060title\u0060."
             }
           },
           {
@@ -845,7 +846,8 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Property names or IDs to include in each page\u0027s \u0060properties\u0060 object. Other properties are left out. Repeat the parameter to pass more than one value, for example \u0060filter_properties=title\u0026filter_properties=Status\u0060. Pages that aren\u0027t in a data source always return only \u0060title\u0060."
             }
           },
           {
@@ -2999,7 +3001,8 @@
               "type": "array",
               "items": {
                 "type": "string"
-              }
+              },
+              "description": "Property names or IDs to include in each page\u0027s \u0060properties\u0060 object. Other properties are left out. Repeat the parameter to pass more than one value, for example \u0060filter_properties=title\u0026filter_properties=Status\u0060. Pages that aren\u0027t in a data source always return only \u0060title\u0060."
             }
           },
           {
@@ -3978,6 +3981,17 @@
         "summary": "Search by title",
         "operationId": "PostSearch",
         "parameters": [
+          {
+            "name": "filter_properties",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Property names or IDs to include in each page\u0027s \u0060properties\u0060 object. Other properties are left out. Repeat the parameter to pass more than one value, for example \u0060filter_properties=title\u0026filter_properties=Status\u0060. Pages that aren\u0027t in a data source always return only \u0060title\u0060. Search skips names or IDs that don\u0027t exist on a page."
+            }
+          },
           {
             "description": "The [API version](/reference/versioning) to use for this request. The latest version is \u00602026-03-11\u0060.",
             "$ref": "#/components/parameters/notionVersion"

@@ -19932,6 +19932,7 @@
 						"name": "filter_properties",
 						"in": "query",
 						"schema": {
+							"description": "Property names or IDs to include in each page's `properties` object. Other properties are left out. Repeat the parameter to pass more than one value, for example `filter_properties=title&filter_properties=Status`. Pages that aren't in a data source always return only `title`.",
 							"type": "array",
 							"items": {
 								"type": "string"
@@ -20882,7 +20883,7 @@
 								"type": "string"
 							},
 							"maxItems": 100,
-							"description": "Supply a list of property IDs to filter properties in the response. Note that if a page doesn't have a property, it won't be included in the filtered response."
+							"description": "Property names or IDs to include in each page's `properties` object. Other properties are left out. Repeat the parameter to pass more than one value, for example `filter_properties=title&filter_properties=Status`. Pages that aren't in a data source always return only `title`."
 						}
 					},
 					{
@@ -21047,6 +21048,7 @@
 						"name": "filter_properties",
 						"in": "query",
 						"schema": {
+							"description": "Property names or IDs to include in each page's `properties` object. Other properties are left out. Repeat the parameter to pass more than one value, for example `filter_properties=title&filter_properties=Status`. Pages that aren't in a data source always return only `title`.",
 							"type": "array",
 							"items": {
 								"type": "string"
@@ -26763,6 +26765,7 @@
 						"name": "filter_properties",
 						"in": "query",
 						"schema": {
+							"description": "Property names or IDs to include in each page's `properties` object. Other properties are left out. Repeat the parameter to pass more than one value, for example `filter_properties=title&filter_properties=Status`. Pages that aren't in a data source always return only `title`.",
 							"type": "array",
 							"items": {
 								"type": "string"
@@ -28169,6 +28172,17 @@
 					"https://developers.notion.com/guides/data-apis/working-with-databases"
 				],
 				"parameters": [
+					{
+						"name": "filter_properties",
+						"in": "query",
+						"schema": {
+							"description": "Property names or IDs to include in each page's `properties` object. Other properties are left out. Repeat the parameter to pass more than one value, for example `filter_properties=title&filter_properties=Status`. Pages that aren't in a data source always return only `title`. Search skips names or IDs that don't exist on a page.",
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
 					{
 						"$ref": "#/components/parameters/notionVersion"
 					}
