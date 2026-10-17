@@ -20754,7 +20754,7 @@
             "items": {
               "$ref": "#/components/schemas/PageMarkdownResponseWarningsItem"
             },
-            "description": "Markdown parser warnings for the request\u0027s content. Returned only by the update endpoint with \u0060markdown_version: \u0022v2\u0022\u0060, and only when there is at least one warning."
+            "description": "Content warnings from a synchronous update. Returned only when there is at least one warning."
           }
         },
         "additionalProperties": false
@@ -36133,11 +36133,11 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "The warning category, for example \u0060unsupported_tag\u0060."
+            "description": "The warning category, for example \u0060unsupported_tag\u0060 or \u0060no_match\u0060."
           },
           "message": {
             "type": "string",
-            "description": "What the parser changed or ignored."
+            "description": "What the request changed, ignored, or could not match."
           }
         },
         "additionalProperties": false
@@ -47619,7 +47619,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem"
             },
-            "description": "An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content)."
+            "description": "An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content). Operations that match are applied, and each one that matches nothing is reported in \u0022warnings\u0022. The call fails only when no operation that changes content matches."
           },
           "allow_deleting_content": {
             "type": "boolean",
@@ -60064,6 +60064,7 @@
           "credit_limit",
           "runaway_credit_usage",
           "workspace_credit_limit",
+          "owner_allowance_limit",
           "failure_limit",
           "mark_session_failed_autopause",
           "disabled_from_workspace_settings",
@@ -60102,6 +60103,10 @@
             {
               "value": "workspace_credit_limit",
               "name": "WorkspaceCreditLimit"
+            },
+            {
+              "value": "owner_allowance_limit",
+              "name": "OwnerAllowanceLimit"
             },
             {
               "value": "failure_limit",
@@ -60252,6 +60257,7 @@
           "credit_limit",
           "runaway_credit_usage",
           "workspace_credit_limit",
+          "owner_allowance_limit",
           "failure_limit",
           "mark_session_failed_autopause",
           "disabled_from_workspace_settings",
@@ -60270,7 +60276,7 @@
           "string"
         ],
         "additionalProperties": false,
-        "description": "One of: \u0060run_limit\u0060, \u0060credit_limit\u0060, \u0060runaway_credit_usage\u0060, \u0060workspace_credit_limit\u0060, \u0060failure_limit\u0060, \u0060mark_session_failed_autopause\u0060, \u0060disabled_from_workspace_settings\u0060, \u0060disabled_from_workspace_settings_but_resumable\u0060, \u0060disabled_from_api\u0060, \u0060disabled_from_agent_settings\u0060, \u0060disabled_due_to_no_members_with_access\u0060, \u0060disabled_due_to_lack_of_editors\u0060, \u0060disabled_by_notion\u0060, \u0060internal_error\u0060, \u0060needs_user_review\u0060, \u0060tool_unavailable\u0060",
+        "description": "One of: \u0060run_limit\u0060, \u0060credit_limit\u0060, \u0060runaway_credit_usage\u0060, \u0060workspace_credit_limit\u0060, \u0060owner_allowance_limit\u0060, \u0060failure_limit\u0060, \u0060mark_session_failed_autopause\u0060, \u0060disabled_from_workspace_settings\u0060, \u0060disabled_from_workspace_settings_but_resumable\u0060, \u0060disabled_from_api\u0060, \u0060disabled_from_agent_settings\u0060, \u0060disabled_due_to_no_members_with_access\u0060, \u0060disabled_due_to_lack_of_editors\u0060, \u0060disabled_by_notion\u0060, \u0060internal_error\u0060, \u0060needs_user_review\u0060, \u0060tool_unavailable\u0060",
         "x-ms-enum": {
           "name": "GetAgentInsights200ResponsePauseReason",
           "modelAsString": false,
@@ -60290,6 +60296,10 @@
             {
               "value": "workspace_credit_limit",
               "name": "WorkspaceCreditLimit"
+            },
+            {
+              "value": "owner_allowance_limit",
+              "name": "OwnerAllowanceLimit"
             },
             {
               "value": "failure_limit",
@@ -60399,6 +60409,7 @@
           "credit_limit",
           "runaway_credit_usage",
           "workspace_credit_limit",
+          "owner_allowance_limit",
           "failure_limit",
           "mark_session_failed_autopause",
           "disabled_from_workspace_settings",
@@ -60437,6 +60448,10 @@
             {
               "value": "workspace_credit_limit",
               "name": "WorkspaceCreditLimit"
+            },
+            {
+              "value": "owner_allowance_limit",
+              "name": "OwnerAllowanceLimit"
             },
             {
               "value": "failure_limit",
@@ -61731,6 +61746,7 @@
           "credit_limit",
           "runaway_credit_usage",
           "workspace_credit_limit",
+          "owner_allowance_limit",
           "failure_limit",
           "mark_session_failed_autopause",
           "disabled_from_workspace_settings",
@@ -61769,6 +61785,10 @@
             {
               "value": "workspace_credit_limit",
               "name": "WorkspaceCreditLimit"
+            },
+            {
+              "value": "owner_allowance_limit",
+              "name": "OwnerAllowanceLimit"
             },
             {
               "value": "failure_limit",

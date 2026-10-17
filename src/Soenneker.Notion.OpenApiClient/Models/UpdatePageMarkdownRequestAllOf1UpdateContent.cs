@@ -17,7 +17,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to true to allow the operation to delete child pages or databases. Defaults to false.</summary>
         public bool? AllowDeletingContent { get; set; }
-        /// <summary>An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content).</summary>
+        /// <summary>An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content). Operations that match are applied, and each one that matches nothing is reported in &quot;warnings&quot;. The call fails only when no operation that changes content matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentContentUpdatesItem>? ContentUpdates { get; set; }

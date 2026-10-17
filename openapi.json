@@ -12388,18 +12388,18 @@
 							"properties": {
 								"code": {
 									"type": "string",
-									"description": "The warning category, for example `unsupported_tag`."
+									"description": "The warning category, for example `unsupported_tag` or `no_match`."
 								},
 								"message": {
 									"type": "string",
-									"description": "What the parser changed or ignored."
+									"description": "What the request changed, ignored, or could not match."
 								}
 							},
 							"additionalProperties": false,
 							"required": ["code", "message"]
 						},
 						"maxItems": 100,
-						"description": "Markdown parser warnings for the request's content. Returned only by the update endpoint with `markdown_version: \"v2\"`, and only when there is at least one warning."
+						"description": "Content warnings from a synchronous update. Returned only when there is at least one warning."
 					}
 				},
 				"additionalProperties": false,
@@ -22536,7 +22536,7 @@
 																	"required": ["old_str", "new_str"]
 																},
 																"maxItems": 100,
-																"description": "An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content)."
+																"description": "An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content). Operations that match are applied, and each one that matches nothing is reported in \"warnings\". The call fails only when no operation that changes content matches."
 															},
 															"allow_deleting_content": {
 																"type": "boolean",
@@ -36631,6 +36631,7 @@
 																			"credit_limit",
 																			"runaway_credit_usage",
 																			"workspace_credit_limit",
+																			"owner_allowance_limit",
 																			"failure_limit",
 																			"mark_session_failed_autopause",
 																			"disabled_from_workspace_settings",
@@ -36644,7 +36645,7 @@
 																			"needs_user_review",
 																			"tool_unavailable"
 																		],
-																		"description": "One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`"
+																		"description": "One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `owner_allowance_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`"
 																	},
 																	{
 																		"type": "null"
@@ -38906,6 +38907,7 @@
 														"credit_limit",
 														"runaway_credit_usage",
 														"workspace_credit_limit",
+														"owner_allowance_limit",
 														"failure_limit",
 														"mark_session_failed_autopause",
 														"disabled_from_workspace_settings",
@@ -38919,7 +38921,7 @@
 														"needs_user_review",
 														"tool_unavailable"
 													],
-													"description": "One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`"
+													"description": "One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `owner_allowance_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`"
 												},
 												{
 													"type": "null"
@@ -39650,6 +39652,7 @@
 														"credit_limit",
 														"runaway_credit_usage",
 														"workspace_credit_limit",
+														"owner_allowance_limit",
 														"failure_limit",
 														"mark_session_failed_autopause",
 														"disabled_from_workspace_settings",
@@ -39663,7 +39666,7 @@
 														"needs_user_review",
 														"tool_unavailable"
 													],
-													"description": "One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`"
+													"description": "One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `owner_allowance_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`"
 												},
 												{
 													"type": "null"
@@ -39927,6 +39930,7 @@
 														"credit_limit",
 														"runaway_credit_usage",
 														"workspace_credit_limit",
+														"owner_allowance_limit",
 														"failure_limit",
 														"mark_session_failed_autopause",
 														"disabled_from_workspace_settings",
@@ -39940,7 +39944,7 @@
 														"needs_user_review",
 														"tool_unavailable"
 													],
-													"description": "One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`"
+													"description": "One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `owner_allowance_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`"
 												},
 												{
 													"type": "null"

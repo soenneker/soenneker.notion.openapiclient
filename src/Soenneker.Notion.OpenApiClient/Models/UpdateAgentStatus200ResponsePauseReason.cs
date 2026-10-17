@@ -23,6 +23,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         #pragma warning disable CS1591
         WorkspaceCreditLimit,
         #pragma warning restore CS1591
+        [EnumMember(Value = "owner_allowance_limit")]
+        #pragma warning disable CS1591
+        OwnerAllowanceLimit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "failure_limit")]
         #pragma warning disable CS1591
         FailureLimit,

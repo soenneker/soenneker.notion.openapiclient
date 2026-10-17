@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`</summary>
+    /// <summary>One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `owner_allowance_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetAgentInsights200ResponsePauseReason
     {
@@ -22,6 +22,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         [EnumMember(Value = "workspace_credit_limit")]
         #pragma warning disable CS1591
         WorkspaceCreditLimit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "owner_allowance_limit")]
+        #pragma warning disable CS1591
+        OwnerAllowanceLimit,
         #pragma warning restore CS1591
         [EnumMember(Value = "failure_limit")]
         #pragma warning disable CS1591

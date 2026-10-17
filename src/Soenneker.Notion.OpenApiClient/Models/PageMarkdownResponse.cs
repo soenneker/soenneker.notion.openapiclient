@@ -34,7 +34,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<Guid?> UnknownBlockIds { get; set; }
 #endif
-        /// <summary>Markdown parser warnings for the request&apos;s content. Returned only by the update endpoint with `markdown_version: &quot;v2&quot;`, and only when there is at least one warning.</summary>
+        /// <summary>Content warnings from a synchronous update. Returned only when there is at least one warning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponseWarningsItem>? Warnings { get; set; }

@@ -12,7 +12,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class PageMarkdownResponseWarningsItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The warning category, for example `unsupported_tag`.</summary>
+        /// <summary>The warning category, for example `unsupported_tag` or `no_match`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Code { get; set; }
 #endif
-        /// <summary>What the parser changed or ignored.</summary>
+        /// <summary>What the request changed, ignored, or could not match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
