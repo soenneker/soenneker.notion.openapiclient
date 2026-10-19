@@ -39528,7 +39528,8 @@
             "type": "string"
           },
           "page_size": {
-            "type": "number"
+            "minimum": 1,
+            "type": "integer"
           },
           "is_archived": {
             "type": "boolean",

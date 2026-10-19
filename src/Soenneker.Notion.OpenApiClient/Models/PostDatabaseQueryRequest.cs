@@ -23,7 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Whether to return archived pages. When omitted or false, returns non-archived pages. When true, returns archived pages.</summary>
         public bool? IsArchived { get; set; }
         /// <summary>The page_size property</summary>
-        public double? PageSize { get; set; }
+        public int? PageSize { get; set; }
         /// <summary>Optionally filter the results to only include pages or data sources. Regular, non-wiki databases only support page children. The default behavior is no result type filtering, in other words, returning both pages and data sources for wikis.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestResultType? ResultType { get; set; }
         /// <summary>The sorts property</summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter>(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter.CreateFromDiscriminatorValue); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
-                { "page_size", n => { PageSize = n.GetDoubleValue(); } },
+                { "page_size", n => { PageSize = n.GetIntValue(); } },
                 { "result_type", n => { ResultType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestResultType>(); } },
                 { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem>(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "start_cursor", n => { StartCursor = n.GetStringValue(); } },
@@ -77,7 +77,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter>("filter", Filter);
             writer.WriteBoolValue("is_archived", IsArchived);
-            writer.WriteDoubleValue("page_size", PageSize);
+            writer.WriteIntValue("page_size", PageSize);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestResultType>("result_type", ResultType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem>("sorts", Sorts);
             writer.WriteStringValue("start_cursor", StartCursor);
