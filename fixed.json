@@ -13549,6 +13549,10 @@
           },
           "position": {
             "$ref": "#/components/schemas/CreateDatabaseForViewRequestPosition"
+          },
+          "show_data_source_title": {
+            "type": "boolean",
+            "description": "Whether to show the data source title above the new linked database\u0027s views. Defaults to true."
           }
         }
       },
@@ -14892,6 +14896,7 @@
           "database_type",
           "in_trash",
           "is_locked",
+          "show_data_source_title",
           "created_time",
           "last_edited_time",
           "data_sources",
@@ -14942,6 +14947,10 @@
           "is_locked": {
             "type": "boolean",
             "description": "Whether the database is locked from editing in the Notion app UI."
+          },
+          "show_data_source_title": {
+            "type": "boolean",
+            "description": "Whether the data source title is shown above the database\u0027s views, matching the Show data source title toggle in the Notion app. Full-page databases with one data source don\u0027t show this title even when this is \u0060true\u0060."
           },
           "created_time": {
             "type": "string",
@@ -39777,6 +39786,10 @@
             "type": "boolean",
             "description": "Whether the database is locked from editing in the Notion app UI."
           },
+          "show_data_source_title": {
+            "type": "boolean",
+            "description": "Whether the data source title is shown above the database\u0027s views, matching the Show data source title toggle in the Notion app. Full-page databases with one data source don\u0027t show this title even when this is \u0060true\u0060."
+          },
           "created_time": {
             "type": "string",
             "description": "The time when the database was created.",
@@ -39853,6 +39866,10 @@
           "is_locked": {
             "type": "boolean",
             "description": "Whether the database should be locked from editing in the Notion app UI. If not provided, the locked state will not be updated."
+          },
+          "show_data_source_title": {
+            "type": "boolean",
+            "description": "Whether to show the data source title above the database\u0027s views. Matches the Show data source title toggle in the Notion app. If not provided, the setting will not be updated."
           }
         }
       },
@@ -39907,6 +39924,10 @@
           "is_locked": {
             "type": "boolean",
             "description": "Whether the database is locked from editing in the Notion app UI."
+          },
+          "show_data_source_title": {
+            "type": "boolean",
+            "description": "Whether the data source title is shown above the database\u0027s views, matching the Show data source title toggle in the Notion app. Full-page databases with one data source don\u0027t show this title even when this is \u0060true\u0060."
           },
           "created_time": {
             "type": "string",
@@ -39985,6 +40006,10 @@
           },
           "cover": {
             "$ref": "#/components/schemas/PageCoverRequest"
+          },
+          "show_data_source_title": {
+            "type": "boolean",
+            "description": "Whether to show the data source title above the database\u0027s views. Matches the Show data source title toggle in the Notion app. Defaults to true. Full-page databases with one data source don\u0027t show this title."
           }
         }
       },
@@ -40039,6 +40064,10 @@
           "is_locked": {
             "type": "boolean",
             "description": "Whether the database is locked from editing in the Notion app UI."
+          },
+          "show_data_source_title": {
+            "type": "boolean",
+            "description": "Whether the data source title is shown above the database\u0027s views, matching the Show data source title toggle in the Notion app. Full-page databases with one data source don\u0027t show this title even when this is \u0060true\u0060."
           },
           "created_time": {
             "type": "string",

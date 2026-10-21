@@ -30,6 +30,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition Position { get; set; }
 #endif
+        /// <summary>Whether to show the data source title above the new linked database&apos;s views. Defaults to true.</summary>
+        public bool? ShowDataSourceTitle { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest"/> and sets the default values.
         /// </summary>
@@ -57,6 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent.CreateFromDiscriminatorValue); } },
                 { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition.CreateFromDiscriminatorValue); } },
+                { "show_data_source_title", n => { ShowDataSourceTitle = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -68,6 +71,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent>("parent", Parent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition>("position", Position);
+            writer.WriteBoolValue("show_data_source_title", ShowDataSourceTitle);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

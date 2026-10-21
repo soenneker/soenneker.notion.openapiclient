@@ -52,6 +52,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.UpdateDatabaseRequestParent Parent { get; set; }
 #endif
+        /// <summary>Whether to show the data source title above the database&apos;s views. Matches the Show data source title toggle in the Notion app. If not provided, the setting will not be updated.</summary>
+        public bool? ShowDataSourceTitle { get; set; }
         /// <summary>The updated title of the database, if any. If not provided, the title will not be updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +94,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "is_inline", n => { IsInline = n.GetBoolValue(); } },
                 { "is_locked", n => { IsLocked = n.GetBoolValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateDatabaseRequestParent>(global::Soenneker.Notion.OpenApiClient.Models.UpdateDatabaseRequestParent.CreateFromDiscriminatorValue); } },
+                { "show_data_source_title", n => { ShowDataSourceTitle = n.GetBoolValue(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -109,6 +112,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("is_inline", IsInline);
             writer.WriteBoolValue("is_locked", IsLocked);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateDatabaseRequestParent>("parent", Parent);
+            writer.WriteBoolValue("show_data_source_title", ShowDataSourceTitle);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

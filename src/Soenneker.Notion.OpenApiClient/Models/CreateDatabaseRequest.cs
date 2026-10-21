@@ -58,6 +58,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent Parent { get; set; }
 #endif
+        /// <summary>Whether to show the data source title above the database&apos;s views. Matches the Show data source title toggle in the Notion app. Defaults to true. Full-page databases with one data source don&apos;t show this title.</summary>
+        public bool? ShowDataSourceTitle { get; set; }
         /// <summary>The title of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +100,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "initial_data_source", n => { InitialDataSource = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest>(global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest.CreateFromDiscriminatorValue); } },
                 { "is_inline", n => { IsInline = n.GetBoolValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent.CreateFromDiscriminatorValue); } },
+                { "show_data_source_title", n => { ShowDataSourceTitle = n.GetBoolValue(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -115,6 +118,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest>("initial_data_source", InitialDataSource);
             writer.WriteBoolValue("is_inline", IsInline);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent>("parent", Parent);
+            writer.WriteBoolValue("show_data_source_title", ShowDataSourceTitle);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

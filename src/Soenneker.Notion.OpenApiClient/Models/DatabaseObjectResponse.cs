@@ -76,6 +76,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string PublicUrl { get; set; }
 #endif
+        /// <summary>Whether the data source title is shown above the database&apos;s views, matching the Show data source title toggle in the Notion app. Full-page databases with one data source don&apos;t show this title even when this is `true`.</summary>
+        public bool? ShowDataSourceTitle { get; set; }
         /// <summary>The title of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +126,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObject>(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse.CreateFromDiscriminatorValue); } },
                 { "public_url", n => { PublicUrl = n.GetStringValue(); } },
+                { "show_data_source_title", n => { ShowDataSourceTitle = n.GetBoolValue(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -149,6 +152,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>("parent", Parent);
             writer.WriteStringValue("public_url", PublicUrl);
+            writer.WriteBoolValue("show_data_source_title", ShowDataSourceTitle);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);
             writer.WriteStringValue("url", Url);
         }
