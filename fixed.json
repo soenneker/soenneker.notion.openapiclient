@@ -10256,6 +10256,172 @@
           "https://developers.notion.com/guides/get-started/authorization"
         ]
       }
+    },
+    "/v1/ai/skills/{id}/upload": {
+      "post": {
+        "tags": [
+          "Agent Skills"
+        ],
+        "summary": "Upload a skill",
+        "operationId": "UploadSkill",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The [API version](/reference/versioning) to use for this request. The latest version is \u00602026-03-11\u0060.",
+            "$ref": "#/components/parameters/notionVersion"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadSkillFormDataRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadSkill200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi400"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi401"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi403"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi409"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi429"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi500"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi503"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "504 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({\n  auth: process.env.NOTION_API_KEY,\n  notionVersion: \u00222026-03-11\u0022\n})\n\nimport { readFile } from \u0022fs/promises\u0022\n\nconst skillId = \u0022b55c9c91-384d-452b-81db-d1ef79372b75\u0022\nconst response = await notion.request({\n  method: \u0022post\u0022,\n  path: \u0022ai/skills/\u0022 \u002B encodeURIComponent(skillId) \u002B \u0022/upload\u0022,\n  formDataParams: {\n    file: {\n      filename: \u0022skill.tar.gz\u0022,\n      data: new Blob([await readFile(\u0022./skill.tar.gz\u0022)], {\n        type: \u0022application/gzip\u0022\n      })\n    }\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/agent-skills/upload-skill",
+        "x-notion-docs-guides": [
+          "https://developers.notion.com/guides/agent-skills/overview"
+        ]
+      }
     }
   },
   "components": {
@@ -36298,11 +36464,19 @@
       },
       "StatusDatabasePropertyConfigResponseStatus": {
         "required": [
+          "default_option",
           "options",
           "groups"
         ],
         "type": "object",
         "properties": {
+          "default_option": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The name of the configured default status option, or null when no default is configured. Read-only."
+          },
           "options": {
             "maxItems": 100,
             "type": "array",
@@ -42074,6 +42248,41 @@
           }
         }
       },
+      "UploadSkillFormDataRequest": {
+        "required": [
+          "file"
+        ],
+        "type": "object",
+        "properties": {
+          "file": {
+            "$ref": "#/components/schemas/UploadSkillFormDataRequestFile"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UploadSkill200Response": {
+        "required": [
+          "status",
+          "page_id",
+          "version_id"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/CompletedStatus"
+          },
+          "page_id": {
+            "type": "string",
+            "description": "Updated skill page.",
+            "format": "uuid"
+          },
+          "version_id": {
+            "type": "string",
+            "description": "Content version of the uploaded skill. Matches \u0060version_id\u0060 from GET /v1/ai/skills/{id} until the skill changes."
+          }
+        },
+        "additionalProperties": false
+      },
       "RelativeDateValueWrapper": {
         "required": [
           "value"
@@ -47582,6 +47791,10 @@
             "default": true
           }
         }
+      },
+      "UploadSkillFormDataRequestFile": {
+        "type": "object",
+        "description": "The skill directory as a gzip-compressed tar archive (maximum 20 MiB)."
       },
       "GetBlockChildren200ResponseBlock": {
         "type": "object"
@@ -60807,6 +61020,24 @@
             {
               "value": "bearer",
               "name": "Bearer"
+            }
+          ]
+        }
+      },
+      "CompletedStatus": {
+        "const": null,
+        "enum": [
+          "completed"
+        ],
+        "type": "string",
+        "description": "Import committed.",
+        "x-ms-enum": {
+          "name": "CompletedStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "completed",
+              "name": "Completed"
             }
           ]
         }

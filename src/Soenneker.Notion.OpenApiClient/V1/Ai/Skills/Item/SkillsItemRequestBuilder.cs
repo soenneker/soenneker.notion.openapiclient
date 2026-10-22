@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Notion.OpenApiClient.Models;
+using Soenneker.Notion.OpenApiClient.V1.Ai.Skills.Item.Upload;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Ai.Skills.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SkillsItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The upload property</summary>
+        public global::Soenneker.Notion.OpenApiClient.V1.Ai.Skills.Item.Upload.UploadRequestBuilder Upload
+        {
+            get => new global::Soenneker.Notion.OpenApiClient.V1.Ai.Skills.Item.Upload.UploadRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.V1.Ai.Skills.Item.SkillsItemRequestBuilder"/> and sets the default values.
         /// </summary>

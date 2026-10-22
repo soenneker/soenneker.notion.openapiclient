@@ -15799,6 +15799,17 @@
 					"status": {
 						"type": "object",
 						"properties": {
+							"default_option": {
+								"oneOf": [
+									{
+										"type": "string"
+									},
+									{
+										"type": "null"
+									}
+								],
+								"description": "The name of the configured default status option, or null when no default is configured. Read-only."
+							},
 							"options": {
 								"type": "array",
 								"items": {
@@ -15841,7 +15852,7 @@
 							}
 						},
 						"additionalProperties": false,
-						"required": ["options", "groups"]
+						"required": ["default_option", "options", "groups"]
 					}
 				},
 				"required": ["type", "status"],
@@ -47358,6 +47369,197 @@
 							"application/json": {
 								"schema": {
 									"$ref": "#/components/schemas/error_oauth_500"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/v1/ai/skills/{id}/upload": {
+			"post": {
+				"summary": "Upload a skill",
+				"operationId": "upload-skill",
+				"tags": ["Agent Skills"],
+				"x-codeSamples": [
+					{
+						"lang": "javascript",
+						"label": "TypeScript SDK",
+						"source": "import { Client } from \"@notionhq/client\"\n\nconst notion = new Client({\n  auth: process.env.NOTION_API_KEY,\n  notionVersion: \"2026-03-11\"\n})\n\nimport { readFile } from \"fs/promises\"\n\nconst skillId = \"b55c9c91-384d-452b-81db-d1ef79372b75\"\nconst response = await notion.request({\n  method: \"post\",\n  path: \"ai/skills/\" + encodeURIComponent(skillId) + \"/upload\",\n  formDataParams: {\n    file: {\n      filename: \"skill.tar.gz\",\n      data: new Blob([await readFile(\"./skill.tar.gz\")], {\n        type: \"application/gzip\"\n      })\n    }\n  }\n})"
+					}
+				],
+				"x-notion-docs-ref": "https://developers.notion.com/reference/agent-skills/upload-skill",
+				"x-notion-docs-guides": [
+					"https://developers.notion.com/guides/agent-skills/overview"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/idRequest",
+							"description": "Target page in a Skills database. Create a new page first to import a new skill."
+						}
+					},
+					{
+						"$ref": "#/components/parameters/notionVersion"
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"multipart/form-data": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"file": {
+										"type": "object",
+										"properties": {},
+										"description": "The skill directory as a gzip-compressed tar archive (maximum 20 MiB)."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["file"]
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"status": {
+											"type": "string",
+											"const": "completed",
+											"description": "Import committed."
+										},
+										"page_id": {
+											"type": "string",
+											"format": "uuid",
+											"description": "Updated skill page."
+										},
+										"version_id": {
+											"type": "string",
+											"description": "Content version of the uploaded skill. Matches `version_id` from GET /v1/ai/skills/{id} until the skill changes."
+										}
+									},
+									"additionalProperties": false,
+									"required": ["status", "page_id", "version_id"]
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_400"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_401"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_403"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_404"
+								}
+							}
+						}
+					},
+					"406": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_406"
+								}
+							}
+						}
+					},
+					"409": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_409"
+								}
+							}
+						}
+					},
+					"429": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_429"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_500"
+								}
+							}
+						}
+					},
+					"503": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_503"
+								}
+							}
+						}
+					},
+					"504": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_504"
+								}
+							}
+						}
+					},
+					"529": {
+						"description": "",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error_api_529"
 								}
 							}
 						}
