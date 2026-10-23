@@ -11282,6 +11282,413 @@
 					"in_trash"
 				]
 			},
+			"meetingNotesPropertyFilter": {
+				"type": "object",
+				"properties": {
+					"property": {
+						"type": "string",
+						"enum": [
+							"title",
+							"attendees",
+							"created_time",
+							"created_by",
+							"last_edited_time",
+							"last_edited_by",
+							"notion://meeting_notes/attendees"
+						],
+						"description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility."
+					},
+					"filter": {
+						"oneOf": [
+							{
+								"type": "object",
+								"properties": {
+									"operator": {
+										"type": "string",
+										"enum": [
+											"string_is",
+											"string_is_not",
+											"string_contains",
+											"string_does_not_contain",
+											"string_starts_with",
+											"string_ends_with"
+										],
+										"description": "How to compare the text."
+									},
+									"value": {
+										"type": "object",
+										"properties": {
+											"type": {
+												"type": "string",
+												"const": "exact",
+												"description": "Always `exact`"
+											},
+											"value": {
+												"type": "string",
+												"description": "The literal text the operator compares against."
+											}
+										},
+										"additionalProperties": false,
+										"required": ["type", "value"],
+										"description": "The text to compare against."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["operator", "value"]
+							},
+							{
+								"type": "object",
+								"properties": {
+									"operator": {
+										"type": "string",
+										"enum": ["person_contains", "person_does_not_contain"],
+										"description": "Whether the property must contain the people listed."
+									},
+									"value": {
+										"type": "array",
+										"items": {
+											"oneOf": [
+												{
+													"type": "object",
+													"properties": {
+														"type": {
+															"type": "string",
+															"const": "exact",
+															"description": "Always `exact`"
+														},
+														"value": {
+															"type": "object",
+															"properties": {
+																"table": {
+																	"type": "string",
+																	"const": "notion_user",
+																	"description": "Always `notion_user`"
+																},
+																"id": {
+																	"type": "string",
+																	"examples": [
+																		"3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e",
+																		"user://3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e"
+																	],
+																	"description": "The user's ID, as a UUID or the `user://<uuid>` form returned by user search."
+																}
+															},
+															"additionalProperties": false,
+															"required": ["table", "id"],
+															"description": "Pointer to the Notion user to match."
+														}
+													},
+													"additionalProperties": false,
+													"required": ["type", "value"]
+												},
+												{
+													"type": "object",
+													"properties": {
+														"type": {
+															"type": "string",
+															"const": "relative",
+															"description": "Always `relative`"
+														},
+														"value": {
+															"type": "string",
+															"const": "me",
+															"description": "Always `me`"
+														}
+													},
+													"additionalProperties": false,
+													"required": ["type", "value"]
+												}
+											]
+										},
+										"maxItems": 100,
+										"description": "The people to compare against."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["operator", "value"]
+							},
+							{
+								"type": "object",
+								"properties": {
+									"operator": {
+										"type": "string",
+										"enum": [
+											"date_is",
+											"date_is_before",
+											"date_is_after",
+											"date_is_on_or_before",
+											"date_is_on_or_after"
+										],
+										"description": "How to compare the date."
+									},
+									"value": {
+										"oneOf": [
+											{
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string",
+														"const": "relative",
+														"description": "Always `relative`"
+													},
+													"value": {
+														"type": "string",
+														"enum": [
+															"today",
+															"tomorrow",
+															"yesterday",
+															"one_week_ago",
+															"one_week_from_now",
+															"one_month_ago",
+															"one_month_from_now"
+														],
+														"description": "One of: `today`, `tomorrow`, `yesterday`, `one_week_ago`, `one_week_from_now`, `one_month_ago`, `one_month_from_now`"
+													}
+												},
+												"additionalProperties": false,
+												"required": ["type", "value"]
+											},
+											{
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string",
+														"const": "exact",
+														"description": "Always `exact`"
+													},
+													"value": {
+														"oneOf": [
+															{
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string",
+																		"const": "date",
+																		"description": "Always `date`"
+																	},
+																	"start_date": {
+																		"type": "string",
+																		"examples": ["1990-12-28"],
+																		"format": "date",
+																		"description": "The calendar date as an ISO 8601 date string."
+																	}
+																},
+																"additionalProperties": false,
+																"required": ["type", "start_date"]
+															},
+															{
+																"type": "object",
+																"properties": {
+																	"type": {
+																		"type": "string",
+																		"const": "datetime",
+																		"description": "Always `datetime`"
+																	},
+																	"start_date": {
+																		"type": "string",
+																		"examples": ["1990-12-28"],
+																		"format": "date",
+																		"description": "The calendar date as an ISO 8601 date string."
+																	},
+																	"start_time": {
+																		"type": "string",
+																		"examples": ["09:30"],
+																		"description": "The time of day in 24-hour HH:MM format."
+																	},
+																	"time_zone": {
+																		"type": "string",
+																		"examples": ["America/Los_Angeles"],
+																		"description": "The IANA time zone name the time is interpreted in."
+																	}
+																},
+																"additionalProperties": false,
+																"required": [
+																	"type",
+																	"start_date",
+																	"start_time",
+																	"time_zone"
+																]
+															}
+														],
+														"description": "Use the is_empty operator to match an unset date."
+													}
+												},
+												"additionalProperties": false,
+												"required": ["type", "value"]
+											}
+										],
+										"description": "The date to compare against."
+									},
+									"use_end": {
+										"type": "boolean",
+										"description": "Compare against the end of a date range rather than its start."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["operator", "value"]
+							},
+							{
+								"type": "object",
+								"properties": {
+									"operator": {
+										"type": "string",
+										"enum": ["date_is_within", "date_is_relative_to"],
+										"description": "How to compare the date against the range."
+									},
+									"value": {
+										"oneOf": [
+											{
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string",
+														"const": "relative",
+														"description": "Always `relative`"
+													},
+													"value": {
+														"type": "string",
+														"const": "custom",
+														"description": "Always `custom`"
+													},
+													"direction": {
+														"type": "string",
+														"enum": ["past", "future"],
+														"description": "Whether the window runs backwards or forwards from now."
+													},
+													"unit": {
+														"type": "string",
+														"enum": ["year", "month", "week", "day"],
+														"description": "One of: `year`, `month`, `week`, `day`"
+													},
+													"count": {
+														"type": "integer",
+														"minimum": 1,
+														"description": "How many units wide the window is."
+													}
+												},
+												"additionalProperties": false,
+												"required": [
+													"type",
+													"value",
+													"direction",
+													"unit",
+													"count"
+												]
+											},
+											{
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string",
+														"const": "relative",
+														"description": "Always `relative`"
+													},
+													"value": {
+														"type": "string",
+														"const": "surrounding",
+														"description": "Always `surrounding`"
+													},
+													"unit": {
+														"type": "string",
+														"enum": ["year", "month", "week", "day"],
+														"description": "One of: `year`, `month`, `week`, `day`"
+													}
+												},
+												"additionalProperties": false,
+												"required": ["type", "value", "unit"]
+											},
+											{
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string",
+														"const": "relative",
+														"description": "Always `relative`"
+													},
+													"value": {
+														"type": "string",
+														"enum": [
+															"this_week",
+															"the_past_week",
+															"the_past_month",
+															"the_past_year",
+															"the_next_week",
+															"the_next_month",
+															"the_next_year"
+														],
+														"description": "One of: `this_week`, `the_past_week`, `the_past_month`, `the_past_year`, `the_next_week`, `the_next_month`, `the_next_year`"
+													}
+												},
+												"additionalProperties": false,
+												"required": ["type", "value"]
+											},
+											{
+												"type": "object",
+												"properties": {
+													"type": {
+														"type": "string",
+														"const": "exact",
+														"description": "Always `exact`"
+													},
+													"value": {
+														"type": "object",
+														"properties": {
+															"type": {
+																"type": "string",
+																"const": "daterange",
+																"description": "Always `daterange`"
+															},
+															"start_date": {
+																"type": "string",
+																"examples": ["1990-12-28"],
+																"format": "date",
+																"description": "Inclusive start of the range as an ISO 8601 date string, if any."
+															},
+															"end_date": {
+																"type": "string",
+																"examples": ["1991-01-04"],
+																"format": "date",
+																"description": "Inclusive end of the range as an ISO 8601 date string, if any."
+															}
+														},
+														"additionalProperties": false,
+														"required": ["type"],
+														"description": "Use the is_empty operator to match an unset date."
+													}
+												},
+												"additionalProperties": false,
+												"required": ["type", "value"]
+											}
+										],
+										"description": "The range to compare against."
+									},
+									"use_end": {
+										"type": "boolean",
+										"description": "Compare against the end of a date range rather than its start."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["operator", "value"]
+							},
+							{
+								"type": "object",
+								"properties": {
+									"operator": {
+										"type": "string",
+										"enum": ["is_empty", "is_not_empty"],
+										"description": "Whether the property must be empty or set."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["operator"]
+							}
+						],
+						"description": "The comparison to apply. Use the arm matching the property's type."
+					}
+				},
+				"additionalProperties": false,
+				"required": ["property", "filter"]
+			},
 			"mentionRichTextItemRequest": {
 				"type": "object",
 				"properties": {
@@ -15696,6 +16103,214 @@
 				"additionalProperties": false,
 				"required": ["type", "select"],
 				"title": "Select"
+			},
+			"sessionAgentIdFilter": {
+				"type": "object",
+				"required": ["property", "string"],
+				"additionalProperties": false,
+				"properties": {
+					"property": {
+						"type": "string",
+						"enum": ["agent_id"],
+						"description": "Filter sessions by agent_id."
+					},
+					"string": {
+						"type": "object",
+						"description": "An exact string comparison.",
+						"required": ["equals"],
+						"additionalProperties": false,
+						"properties": {
+							"equals": {
+								"type": "string",
+								"description": "Return sessions with this exact value."
+							}
+						}
+					}
+				}
+			},
+			"sessionIdFilter": {
+				"type": "object",
+				"required": ["property", "string"],
+				"additionalProperties": false,
+				"properties": {
+					"property": {
+						"type": "string",
+						"enum": ["id"],
+						"description": "Filter sessions by id."
+					},
+					"string": {
+						"type": "object",
+						"description": "An exact string comparison.",
+						"required": ["equals"],
+						"additionalProperties": false,
+						"properties": {
+							"equals": {
+								"type": "string",
+								"description": "Return sessions with this exact value."
+							}
+						}
+					}
+				}
+			},
+			"sessionNestedFilter": {
+				"oneOf": [
+					{
+						"$ref": "#/components/schemas/sessionIdFilter"
+					},
+					{
+						"$ref": "#/components/schemas/sessionAgentIdFilter"
+					},
+					{
+						"$ref": "#/components/schemas/sessionStatusFilter"
+					},
+					{
+						"$ref": "#/components/schemas/sessionTimestampFilter"
+					},
+					{
+						"type": "object",
+						"required": ["and"],
+						"additionalProperties": false,
+						"properties": {
+							"and": {
+								"type": "array",
+								"maxItems": 100,
+								"description": "Return sessions that match every child filter.",
+								"items": {
+									"oneOf": [
+										{
+											"$ref": "#/components/schemas/sessionIdFilter"
+										},
+										{
+											"$ref": "#/components/schemas/sessionAgentIdFilter"
+										},
+										{
+											"$ref": "#/components/schemas/sessionStatusFilter"
+										},
+										{
+											"$ref": "#/components/schemas/sessionTimestampFilter"
+										}
+									]
+								}
+							}
+						}
+					},
+					{
+						"type": "object",
+						"required": ["or"],
+						"additionalProperties": false,
+						"properties": {
+							"or": {
+								"type": "array",
+								"maxItems": 100,
+								"description": "Return sessions that match any child filter.",
+								"items": {
+									"oneOf": [
+										{
+											"$ref": "#/components/schemas/sessionIdFilter"
+										},
+										{
+											"$ref": "#/components/schemas/sessionAgentIdFilter"
+										},
+										{
+											"$ref": "#/components/schemas/sessionStatusFilter"
+										},
+										{
+											"$ref": "#/components/schemas/sessionTimestampFilter"
+										}
+									]
+								}
+							}
+						}
+					}
+				]
+			},
+			"sessionStatusFilter": {
+				"type": "object",
+				"required": ["property", "status"],
+				"additionalProperties": false,
+				"properties": {
+					"property": {
+						"type": "string",
+						"enum": ["status"],
+						"description": "Filter sessions by status."
+					},
+					"status": {
+						"type": "object",
+						"description": "A session status comparison.",
+						"additionalProperties": false,
+						"properties": {
+							"equals": {
+								"type": "string",
+								"description": "Return sessions with this status.",
+								"enum": [
+									"queued",
+									"in_progress",
+									"requires_action",
+									"completed",
+									"failed",
+									"canceled",
+									"terminated"
+								]
+							},
+							"in": {
+								"type": "array",
+								"description": "Return sessions with any of these statuses.",
+								"maxItems": 7,
+								"items": {
+									"type": "string",
+									"enum": [
+										"queued",
+										"in_progress",
+										"requires_action",
+										"completed",
+										"failed",
+										"canceled",
+										"terminated"
+									]
+								}
+							}
+						}
+					}
+				}
+			},
+			"sessionTimestampFilter": {
+				"type": "object",
+				"required": ["property", "timestamp"],
+				"additionalProperties": false,
+				"properties": {
+					"property": {
+						"type": "string",
+						"description": "The session timestamp to compare.",
+						"enum": ["created_at", "updated_at"]
+					},
+					"timestamp": {
+						"type": "object",
+						"description": "A timestamp range.",
+						"additionalProperties": false,
+						"properties": {
+							"before": {
+								"type": "string",
+								"format": "date-time",
+								"description": "Return sessions before this time."
+							},
+							"after": {
+								"type": "string",
+								"format": "date-time",
+								"description": "Return sessions after this time."
+							},
+							"on_or_before": {
+								"type": "string",
+								"format": "date-time",
+								"description": "Return sessions at or before this time."
+							},
+							"on_or_after": {
+								"type": "string",
+								"format": "date-time",
+								"description": "Return sessions at or after this time."
+							}
+						}
+					}
+				}
 			},
 			"simpleOrArrayPropertyValueResponse": {
 				"oneOf": [
@@ -32571,444 +33186,7 @@
 												"items": {
 													"oneOf": [
 														{
-															"type": "object",
-															"properties": {
-																"property": {
-																	"type": "string",
-																	"enum": [
-																		"title",
-																		"attendees",
-																		"created_time",
-																		"created_by",
-																		"last_edited_time",
-																		"last_edited_by",
-																		"notion://meeting_notes/attendees"
-																	],
-																	"description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility."
-																},
-																"filter": {
-																	"oneOf": [
-																		{
-																			"type": "object",
-																			"properties": {
-																				"operator": {
-																					"type": "string",
-																					"enum": [
-																						"string_is",
-																						"string_is_not",
-																						"string_contains",
-																						"string_does_not_contain",
-																						"string_starts_with",
-																						"string_ends_with"
-																					],
-																					"description": "How to compare the text."
-																				},
-																				"value": {
-																					"type": "object",
-																					"properties": {
-																						"type": {
-																							"type": "string",
-																							"const": "exact",
-																							"description": "Always `exact`"
-																						},
-																						"value": {
-																							"type": "string",
-																							"description": "The literal text the operator compares against."
-																						}
-																					},
-																					"additionalProperties": false,
-																					"required": ["type", "value"],
-																					"description": "The text to compare against."
-																				}
-																			},
-																			"additionalProperties": false,
-																			"required": ["operator", "value"]
-																		},
-																		{
-																			"type": "object",
-																			"properties": {
-																				"operator": {
-																					"type": "string",
-																					"enum": [
-																						"person_contains",
-																						"person_does_not_contain"
-																					],
-																					"description": "Whether the property must contain the people listed."
-																				},
-																				"value": {
-																					"type": "array",
-																					"items": {
-																						"oneOf": [
-																							{
-																								"type": "object",
-																								"properties": {
-																									"type": {
-																										"type": "string",
-																										"const": "exact",
-																										"description": "Always `exact`"
-																									},
-																									"value": {
-																										"type": "object",
-																										"properties": {
-																											"table": {
-																												"type": "string",
-																												"const": "notion_user",
-																												"description": "Always `notion_user`"
-																											},
-																											"id": {
-																												"type": "string",
-																												"examples": [
-																													"3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e",
-																													"user://3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e"
-																												],
-																												"description": "The user's ID, as a UUID or the `user://<uuid>` form returned by user search."
-																											}
-																										},
-																										"additionalProperties": false,
-																										"required": ["table", "id"],
-																										"description": "Pointer to the Notion user to match."
-																									}
-																								},
-																								"additionalProperties": false,
-																								"required": ["type", "value"]
-																							},
-																							{
-																								"type": "object",
-																								"properties": {
-																									"type": {
-																										"type": "string",
-																										"const": "relative",
-																										"description": "Always `relative`"
-																									},
-																									"value": {
-																										"type": "string",
-																										"const": "me",
-																										"description": "Always `me`"
-																									}
-																								},
-																								"additionalProperties": false,
-																								"required": ["type", "value"]
-																							}
-																						]
-																					},
-																					"maxItems": 100,
-																					"description": "The people to compare against."
-																				}
-																			},
-																			"additionalProperties": false,
-																			"required": ["operator", "value"]
-																		},
-																		{
-																			"type": "object",
-																			"properties": {
-																				"operator": {
-																					"type": "string",
-																					"enum": [
-																						"date_is",
-																						"date_is_before",
-																						"date_is_after",
-																						"date_is_on_or_before",
-																						"date_is_on_or_after"
-																					],
-																					"description": "How to compare the date."
-																				},
-																				"value": {
-																					"oneOf": [
-																						{
-																							"type": "object",
-																							"properties": {
-																								"type": {
-																									"type": "string",
-																									"const": "relative",
-																									"description": "Always `relative`"
-																								},
-																								"value": {
-																									"type": "string",
-																									"enum": [
-																										"today",
-																										"tomorrow",
-																										"yesterday",
-																										"one_week_ago",
-																										"one_week_from_now",
-																										"one_month_ago",
-																										"one_month_from_now"
-																									],
-																									"description": "One of: `today`, `tomorrow`, `yesterday`, `one_week_ago`, `one_week_from_now`, `one_month_ago`, `one_month_from_now`"
-																								}
-																							},
-																							"additionalProperties": false,
-																							"required": ["type", "value"]
-																						},
-																						{
-																							"type": "object",
-																							"properties": {
-																								"type": {
-																									"type": "string",
-																									"const": "exact",
-																									"description": "Always `exact`"
-																								},
-																								"value": {
-																									"oneOf": [
-																										{
-																											"type": "object",
-																											"properties": {
-																												"type": {
-																													"type": "string",
-																													"const": "date",
-																													"description": "Always `date`"
-																												},
-																												"start_date": {
-																													"type": "string",
-																													"examples": [
-																														"1990-12-28"
-																													],
-																													"format": "date",
-																													"description": "The calendar date as an ISO 8601 date string."
-																												}
-																											},
-																											"additionalProperties": false,
-																											"required": [
-																												"type",
-																												"start_date"
-																											]
-																										},
-																										{
-																											"type": "object",
-																											"properties": {
-																												"type": {
-																													"type": "string",
-																													"const": "datetime",
-																													"description": "Always `datetime`"
-																												},
-																												"start_date": {
-																													"type": "string",
-																													"examples": [
-																														"1990-12-28"
-																													],
-																													"format": "date",
-																													"description": "The calendar date as an ISO 8601 date string."
-																												},
-																												"start_time": {
-																													"type": "string",
-																													"examples": ["09:30"],
-																													"description": "The time of day in 24-hour HH:MM format."
-																												},
-																												"time_zone": {
-																													"type": "string",
-																													"examples": [
-																														"America/Los_Angeles"
-																													],
-																													"description": "The IANA time zone name the time is interpreted in."
-																												}
-																											},
-																											"additionalProperties": false,
-																											"required": [
-																												"type",
-																												"start_date",
-																												"start_time",
-																												"time_zone"
-																											]
-																										}
-																									],
-																									"description": "Use the is_empty operator to match an unset date."
-																								}
-																							},
-																							"additionalProperties": false,
-																							"required": ["type", "value"]
-																						}
-																					],
-																					"description": "The date to compare against."
-																				},
-																				"use_end": {
-																					"type": "boolean",
-																					"description": "Compare against the end of a date range rather than its start."
-																				}
-																			},
-																			"additionalProperties": false,
-																			"required": ["operator", "value"]
-																		},
-																		{
-																			"type": "object",
-																			"properties": {
-																				"operator": {
-																					"type": "string",
-																					"enum": [
-																						"date_is_within",
-																						"date_is_relative_to"
-																					],
-																					"description": "How to compare the date against the range."
-																				},
-																				"value": {
-																					"oneOf": [
-																						{
-																							"type": "object",
-																							"properties": {
-																								"type": {
-																									"type": "string",
-																									"const": "relative",
-																									"description": "Always `relative`"
-																								},
-																								"value": {
-																									"type": "string",
-																									"const": "custom",
-																									"description": "Always `custom`"
-																								},
-																								"direction": {
-																									"type": "string",
-																									"enum": ["past", "future"],
-																									"description": "Whether the window runs backwards or forwards from now."
-																								},
-																								"unit": {
-																									"type": "string",
-																									"enum": [
-																										"year",
-																										"month",
-																										"week",
-																										"day"
-																									],
-																									"description": "One of: `year`, `month`, `week`, `day`"
-																								},
-																								"count": {
-																									"type": "integer",
-																									"minimum": 1,
-																									"description": "How many units wide the window is."
-																								}
-																							},
-																							"additionalProperties": false,
-																							"required": [
-																								"type",
-																								"value",
-																								"direction",
-																								"unit",
-																								"count"
-																							]
-																						},
-																						{
-																							"type": "object",
-																							"properties": {
-																								"type": {
-																									"type": "string",
-																									"const": "relative",
-																									"description": "Always `relative`"
-																								},
-																								"value": {
-																									"type": "string",
-																									"const": "surrounding",
-																									"description": "Always `surrounding`"
-																								},
-																								"unit": {
-																									"type": "string",
-																									"enum": [
-																										"year",
-																										"month",
-																										"week",
-																										"day"
-																									],
-																									"description": "One of: `year`, `month`, `week`, `day`"
-																								}
-																							},
-																							"additionalProperties": false,
-																							"required": [
-																								"type",
-																								"value",
-																								"unit"
-																							]
-																						},
-																						{
-																							"type": "object",
-																							"properties": {
-																								"type": {
-																									"type": "string",
-																									"const": "relative",
-																									"description": "Always `relative`"
-																								},
-																								"value": {
-																									"type": "string",
-																									"enum": [
-																										"this_week",
-																										"the_past_week",
-																										"the_past_month",
-																										"the_past_year",
-																										"the_next_week",
-																										"the_next_month",
-																										"the_next_year"
-																									],
-																									"description": "One of: `this_week`, `the_past_week`, `the_past_month`, `the_past_year`, `the_next_week`, `the_next_month`, `the_next_year`"
-																								}
-																							},
-																							"additionalProperties": false,
-																							"required": ["type", "value"]
-																						},
-																						{
-																							"type": "object",
-																							"properties": {
-																								"type": {
-																									"type": "string",
-																									"const": "exact",
-																									"description": "Always `exact`"
-																								},
-																								"value": {
-																									"type": "object",
-																									"properties": {
-																										"type": {
-																											"type": "string",
-																											"const": "daterange",
-																											"description": "Always `daterange`"
-																										},
-																										"start_date": {
-																											"type": "string",
-																											"examples": [
-																												"1990-12-28"
-																											],
-																											"format": "date",
-																											"description": "Inclusive start of the range as an ISO 8601 date string, if any."
-																										},
-																										"end_date": {
-																											"type": "string",
-																											"examples": [
-																												"1991-01-04"
-																											],
-																											"format": "date",
-																											"description": "Inclusive end of the range as an ISO 8601 date string, if any."
-																										}
-																									},
-																									"additionalProperties": false,
-																									"required": ["type"],
-																									"description": "Use the is_empty operator to match an unset date."
-																								}
-																							},
-																							"additionalProperties": false,
-																							"required": ["type", "value"]
-																						}
-																					],
-																					"description": "The range to compare against."
-																				},
-																				"use_end": {
-																					"type": "boolean",
-																					"description": "Compare against the end of a date range rather than its start."
-																				}
-																			},
-																			"additionalProperties": false,
-																			"required": ["operator", "value"]
-																		},
-																		{
-																			"type": "object",
-																			"properties": {
-																				"operator": {
-																					"type": "string",
-																					"enum": ["is_empty", "is_not_empty"],
-																					"description": "Whether the property must be empty or set."
-																				}
-																			},
-																			"additionalProperties": false,
-																			"required": ["operator"]
-																		}
-																	],
-																	"description": "The comparison to apply. Use the arm matching the property's type."
-																}
-															},
-															"additionalProperties": false,
-															"required": ["property", "filter"]
+															"$ref": "#/components/schemas/meetingNotesPropertyFilter"
 														},
 														{
 															"type": "object",
@@ -33021,473 +33199,7 @@
 																"filters": {
 																	"type": "array",
 																	"items": {
-																		"type": "object",
-																		"properties": {
-																			"property": {
-																				"type": "string",
-																				"enum": [
-																					"title",
-																					"attendees",
-																					"created_time",
-																					"created_by",
-																					"last_edited_time",
-																					"last_edited_by",
-																					"notion://meeting_notes/attendees"
-																				],
-																				"description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility."
-																			},
-																			"filter": {
-																				"oneOf": [
-																					{
-																						"type": "object",
-																						"properties": {
-																							"operator": {
-																								"type": "string",
-																								"enum": [
-																									"string_is",
-																									"string_is_not",
-																									"string_contains",
-																									"string_does_not_contain",
-																									"string_starts_with",
-																									"string_ends_with"
-																								],
-																								"description": "How to compare the text."
-																							},
-																							"value": {
-																								"type": "object",
-																								"properties": {
-																									"type": {
-																										"type": "string",
-																										"const": "exact",
-																										"description": "Always `exact`"
-																									},
-																									"value": {
-																										"type": "string",
-																										"description": "The literal text the operator compares against."
-																									}
-																								},
-																								"additionalProperties": false,
-																								"required": ["type", "value"],
-																								"description": "The text to compare against."
-																							}
-																						},
-																						"additionalProperties": false,
-																						"required": ["operator", "value"]
-																					},
-																					{
-																						"type": "object",
-																						"properties": {
-																							"operator": {
-																								"type": "string",
-																								"enum": [
-																									"person_contains",
-																									"person_does_not_contain"
-																								],
-																								"description": "Whether the property must contain the people listed."
-																							},
-																							"value": {
-																								"type": "array",
-																								"items": {
-																									"oneOf": [
-																										{
-																											"type": "object",
-																											"properties": {
-																												"type": {
-																													"type": "string",
-																													"const": "exact",
-																													"description": "Always `exact`"
-																												},
-																												"value": {
-																													"type": "object",
-																													"properties": {
-																														"table": {
-																															"type": "string",
-																															"const": "notion_user",
-																															"description": "Always `notion_user`"
-																														},
-																														"id": {
-																															"type": "string",
-																															"examples": [
-																																"3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e",
-																																"user://3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e"
-																															],
-																															"description": "The user's ID, as a UUID or the `user://<uuid>` form returned by user search."
-																														}
-																													},
-																													"additionalProperties": false,
-																													"required": [
-																														"table",
-																														"id"
-																													],
-																													"description": "Pointer to the Notion user to match."
-																												}
-																											},
-																											"additionalProperties": false,
-																											"required": [
-																												"type",
-																												"value"
-																											]
-																										},
-																										{
-																											"type": "object",
-																											"properties": {
-																												"type": {
-																													"type": "string",
-																													"const": "relative",
-																													"description": "Always `relative`"
-																												},
-																												"value": {
-																													"type": "string",
-																													"const": "me",
-																													"description": "Always `me`"
-																												}
-																											},
-																											"additionalProperties": false,
-																											"required": [
-																												"type",
-																												"value"
-																											]
-																										}
-																									]
-																								},
-																								"maxItems": 100,
-																								"description": "The people to compare against."
-																							}
-																						},
-																						"additionalProperties": false,
-																						"required": ["operator", "value"]
-																					},
-																					{
-																						"type": "object",
-																						"properties": {
-																							"operator": {
-																								"type": "string",
-																								"enum": [
-																									"date_is",
-																									"date_is_before",
-																									"date_is_after",
-																									"date_is_on_or_before",
-																									"date_is_on_or_after"
-																								],
-																								"description": "How to compare the date."
-																							},
-																							"value": {
-																								"oneOf": [
-																									{
-																										"type": "object",
-																										"properties": {
-																											"type": {
-																												"type": "string",
-																												"const": "relative",
-																												"description": "Always `relative`"
-																											},
-																											"value": {
-																												"type": "string",
-																												"enum": [
-																													"today",
-																													"tomorrow",
-																													"yesterday",
-																													"one_week_ago",
-																													"one_week_from_now",
-																													"one_month_ago",
-																													"one_month_from_now"
-																												],
-																												"description": "One of: `today`, `tomorrow`, `yesterday`, `one_week_ago`, `one_week_from_now`, `one_month_ago`, `one_month_from_now`"
-																											}
-																										},
-																										"additionalProperties": false,
-																										"required": [
-																											"type",
-																											"value"
-																										]
-																									},
-																									{
-																										"type": "object",
-																										"properties": {
-																											"type": {
-																												"type": "string",
-																												"const": "exact",
-																												"description": "Always `exact`"
-																											},
-																											"value": {
-																												"oneOf": [
-																													{
-																														"type": "object",
-																														"properties": {
-																															"type": {
-																																"type": "string",
-																																"const": "date",
-																																"description": "Always `date`"
-																															},
-																															"start_date": {
-																																"type": "string",
-																																"examples": [
-																																	"1990-12-28"
-																																],
-																																"format": "date",
-																																"description": "The calendar date as an ISO 8601 date string."
-																															}
-																														},
-																														"additionalProperties": false,
-																														"required": [
-																															"type",
-																															"start_date"
-																														]
-																													},
-																													{
-																														"type": "object",
-																														"properties": {
-																															"type": {
-																																"type": "string",
-																																"const": "datetime",
-																																"description": "Always `datetime`"
-																															},
-																															"start_date": {
-																																"type": "string",
-																																"examples": [
-																																	"1990-12-28"
-																																],
-																																"format": "date",
-																																"description": "The calendar date as an ISO 8601 date string."
-																															},
-																															"start_time": {
-																																"type": "string",
-																																"examples": [
-																																	"09:30"
-																																],
-																																"description": "The time of day in 24-hour HH:MM format."
-																															},
-																															"time_zone": {
-																																"type": "string",
-																																"examples": [
-																																	"America/Los_Angeles"
-																																],
-																																"description": "The IANA time zone name the time is interpreted in."
-																															}
-																														},
-																														"additionalProperties": false,
-																														"required": [
-																															"type",
-																															"start_date",
-																															"start_time",
-																															"time_zone"
-																														]
-																													}
-																												],
-																												"description": "Use the is_empty operator to match an unset date."
-																											}
-																										},
-																										"additionalProperties": false,
-																										"required": [
-																											"type",
-																											"value"
-																										]
-																									}
-																								],
-																								"description": "The date to compare against."
-																							},
-																							"use_end": {
-																								"type": "boolean",
-																								"description": "Compare against the end of a date range rather than its start."
-																							}
-																						},
-																						"additionalProperties": false,
-																						"required": ["operator", "value"]
-																					},
-																					{
-																						"type": "object",
-																						"properties": {
-																							"operator": {
-																								"type": "string",
-																								"enum": [
-																									"date_is_within",
-																									"date_is_relative_to"
-																								],
-																								"description": "How to compare the date against the range."
-																							},
-																							"value": {
-																								"oneOf": [
-																									{
-																										"type": "object",
-																										"properties": {
-																											"type": {
-																												"type": "string",
-																												"const": "relative",
-																												"description": "Always `relative`"
-																											},
-																											"value": {
-																												"type": "string",
-																												"const": "custom",
-																												"description": "Always `custom`"
-																											},
-																											"direction": {
-																												"type": "string",
-																												"enum": [
-																													"past",
-																													"future"
-																												],
-																												"description": "Whether the window runs backwards or forwards from now."
-																											},
-																											"unit": {
-																												"type": "string",
-																												"enum": [
-																													"year",
-																													"month",
-																													"week",
-																													"day"
-																												],
-																												"description": "One of: `year`, `month`, `week`, `day`"
-																											},
-																											"count": {
-																												"type": "integer",
-																												"minimum": 1,
-																												"description": "How many units wide the window is."
-																											}
-																										},
-																										"additionalProperties": false,
-																										"required": [
-																											"type",
-																											"value",
-																											"direction",
-																											"unit",
-																											"count"
-																										]
-																									},
-																									{
-																										"type": "object",
-																										"properties": {
-																											"type": {
-																												"type": "string",
-																												"const": "relative",
-																												"description": "Always `relative`"
-																											},
-																											"value": {
-																												"type": "string",
-																												"const": "surrounding",
-																												"description": "Always `surrounding`"
-																											},
-																											"unit": {
-																												"type": "string",
-																												"enum": [
-																													"year",
-																													"month",
-																													"week",
-																													"day"
-																												],
-																												"description": "One of: `year`, `month`, `week`, `day`"
-																											}
-																										},
-																										"additionalProperties": false,
-																										"required": [
-																											"type",
-																											"value",
-																											"unit"
-																										]
-																									},
-																									{
-																										"type": "object",
-																										"properties": {
-																											"type": {
-																												"type": "string",
-																												"const": "relative",
-																												"description": "Always `relative`"
-																											},
-																											"value": {
-																												"type": "string",
-																												"enum": [
-																													"this_week",
-																													"the_past_week",
-																													"the_past_month",
-																													"the_past_year",
-																													"the_next_week",
-																													"the_next_month",
-																													"the_next_year"
-																												],
-																												"description": "One of: `this_week`, `the_past_week`, `the_past_month`, `the_past_year`, `the_next_week`, `the_next_month`, `the_next_year`"
-																											}
-																										},
-																										"additionalProperties": false,
-																										"required": [
-																											"type",
-																											"value"
-																										]
-																									},
-																									{
-																										"type": "object",
-																										"properties": {
-																											"type": {
-																												"type": "string",
-																												"const": "exact",
-																												"description": "Always `exact`"
-																											},
-																											"value": {
-																												"type": "object",
-																												"properties": {
-																													"type": {
-																														"type": "string",
-																														"const": "daterange",
-																														"description": "Always `daterange`"
-																													},
-																													"start_date": {
-																														"type": "string",
-																														"examples": [
-																															"1990-12-28"
-																														],
-																														"format": "date",
-																														"description": "Inclusive start of the range as an ISO 8601 date string, if any."
-																													},
-																													"end_date": {
-																														"type": "string",
-																														"examples": [
-																															"1991-01-04"
-																														],
-																														"format": "date",
-																														"description": "Inclusive end of the range as an ISO 8601 date string, if any."
-																													}
-																												},
-																												"additionalProperties": false,
-																												"required": ["type"],
-																												"description": "Use the is_empty operator to match an unset date."
-																											}
-																										},
-																										"additionalProperties": false,
-																										"required": [
-																											"type",
-																											"value"
-																										]
-																									}
-																								],
-																								"description": "The range to compare against."
-																							},
-																							"use_end": {
-																								"type": "boolean",
-																								"description": "Compare against the end of a date range rather than its start."
-																							}
-																						},
-																						"additionalProperties": false,
-																						"required": ["operator", "value"]
-																					},
-																					{
-																						"type": "object",
-																						"properties": {
-																							"operator": {
-																								"type": "string",
-																								"enum": [
-																									"is_empty",
-																									"is_not_empty"
-																								],
-																								"description": "Whether the property must be empty or set."
-																							}
-																						},
-																						"additionalProperties": false,
-																						"required": ["operator"]
-																					}
-																				],
-																				"description": "The comparison to apply. Use the arm matching the property's type."
-																			}
-																		},
-																		"additionalProperties": false,
-																		"required": ["property", "filter"]
+																		"$ref": "#/components/schemas/meetingNotesPropertyFilter"
 																	},
 																	"maxItems": 100,
 																	"description": "The conditions in this group. A group with no conditions matches nothing, so send at least one."
@@ -42061,140 +41773,16 @@
 									"filter": {
 										"oneOf": [
 											{
-												"type": "object",
-												"required": ["property", "string"],
-												"additionalProperties": false,
-												"properties": {
-													"property": {
-														"type": "string",
-														"enum": ["id"],
-														"description": "Filter sessions by id."
-													},
-													"string": {
-														"type": "object",
-														"description": "An exact string comparison.",
-														"required": ["equals"],
-														"additionalProperties": false,
-														"properties": {
-															"equals": {
-																"type": "string",
-																"description": "Return sessions with this exact value."
-															}
-														}
-													}
-												}
+												"$ref": "#/components/schemas/sessionIdFilter"
 											},
 											{
-												"type": "object",
-												"required": ["property", "string"],
-												"additionalProperties": false,
-												"properties": {
-													"property": {
-														"type": "string",
-														"enum": ["agent_id"],
-														"description": "Filter sessions by agent_id."
-													},
-													"string": {
-														"type": "object",
-														"description": "An exact string comparison.",
-														"required": ["equals"],
-														"additionalProperties": false,
-														"properties": {
-															"equals": {
-																"type": "string",
-																"description": "Return sessions with this exact value."
-															}
-														}
-													}
-												}
+												"$ref": "#/components/schemas/sessionAgentIdFilter"
 											},
 											{
-												"type": "object",
-												"required": ["property", "status"],
-												"additionalProperties": false,
-												"properties": {
-													"property": {
-														"type": "string",
-														"enum": ["status"],
-														"description": "Filter sessions by status."
-													},
-													"status": {
-														"type": "object",
-														"description": "A session status comparison.",
-														"additionalProperties": false,
-														"properties": {
-															"equals": {
-																"type": "string",
-																"description": "Return sessions with this status.",
-																"enum": [
-																	"queued",
-																	"in_progress",
-																	"requires_action",
-																	"completed",
-																	"failed",
-																	"canceled",
-																	"terminated"
-																]
-															},
-															"in": {
-																"type": "array",
-																"description": "Return sessions with any of these statuses.",
-																"maxItems": 7,
-																"items": {
-																	"type": "string",
-																	"enum": [
-																		"queued",
-																		"in_progress",
-																		"requires_action",
-																		"completed",
-																		"failed",
-																		"canceled",
-																		"terminated"
-																	]
-																}
-															}
-														}
-													}
-												}
+												"$ref": "#/components/schemas/sessionStatusFilter"
 											},
 											{
-												"type": "object",
-												"required": ["property", "timestamp"],
-												"additionalProperties": false,
-												"properties": {
-													"property": {
-														"type": "string",
-														"description": "The session timestamp to compare.",
-														"enum": ["created_at", "updated_at"]
-													},
-													"timestamp": {
-														"type": "object",
-														"description": "A timestamp range.",
-														"additionalProperties": false,
-														"properties": {
-															"before": {
-																"type": "string",
-																"format": "date-time",
-																"description": "Return sessions before this time."
-															},
-															"after": {
-																"type": "string",
-																"format": "date-time",
-																"description": "Return sessions after this time."
-															},
-															"on_or_before": {
-																"type": "string",
-																"format": "date-time",
-																"description": "Return sessions at or before this time."
-															},
-															"on_or_after": {
-																"type": "string",
-																"format": "date-time",
-																"description": "Return sessions at or after this time."
-															}
-														}
-													}
-												}
+												"$ref": "#/components/schemas/sessionTimestampFilter"
 											},
 											{
 												"type": "object",
@@ -42206,460 +41794,7 @@
 														"maxItems": 100,
 														"description": "Return sessions that match every child filter.",
 														"items": {
-															"oneOf": [
-																{
-																	"type": "object",
-																	"required": ["property", "string"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"property": {
-																			"type": "string",
-																			"enum": ["id"],
-																			"description": "Filter sessions by id."
-																		},
-																		"string": {
-																			"type": "object",
-																			"description": "An exact string comparison.",
-																			"required": ["equals"],
-																			"additionalProperties": false,
-																			"properties": {
-																				"equals": {
-																					"type": "string",
-																					"description": "Return sessions with this exact value."
-																				}
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["property", "string"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"property": {
-																			"type": "string",
-																			"enum": ["agent_id"],
-																			"description": "Filter sessions by agent_id."
-																		},
-																		"string": {
-																			"type": "object",
-																			"description": "An exact string comparison.",
-																			"required": ["equals"],
-																			"additionalProperties": false,
-																			"properties": {
-																				"equals": {
-																					"type": "string",
-																					"description": "Return sessions with this exact value."
-																				}
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["property", "status"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"property": {
-																			"type": "string",
-																			"enum": ["status"],
-																			"description": "Filter sessions by status."
-																		},
-																		"status": {
-																			"type": "object",
-																			"description": "A session status comparison.",
-																			"additionalProperties": false,
-																			"properties": {
-																				"equals": {
-																					"type": "string",
-																					"description": "Return sessions with this status.",
-																					"enum": [
-																						"queued",
-																						"in_progress",
-																						"requires_action",
-																						"completed",
-																						"failed",
-																						"canceled",
-																						"terminated"
-																					]
-																				},
-																				"in": {
-																					"type": "array",
-																					"description": "Return sessions with any of these statuses.",
-																					"maxItems": 7,
-																					"items": {
-																						"type": "string",
-																						"enum": [
-																							"queued",
-																							"in_progress",
-																							"requires_action",
-																							"completed",
-																							"failed",
-																							"canceled",
-																							"terminated"
-																						]
-																					}
-																				}
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["property", "timestamp"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"property": {
-																			"type": "string",
-																			"description": "The session timestamp to compare.",
-																			"enum": ["created_at", "updated_at"]
-																		},
-																		"timestamp": {
-																			"type": "object",
-																			"description": "A timestamp range.",
-																			"additionalProperties": false,
-																			"properties": {
-																				"before": {
-																					"type": "string",
-																					"format": "date-time",
-																					"description": "Return sessions before this time."
-																				},
-																				"after": {
-																					"type": "string",
-																					"format": "date-time",
-																					"description": "Return sessions after this time."
-																				},
-																				"on_or_before": {
-																					"type": "string",
-																					"format": "date-time",
-																					"description": "Return sessions at or before this time."
-																				},
-																				"on_or_after": {
-																					"type": "string",
-																					"format": "date-time",
-																					"description": "Return sessions at or after this time."
-																				}
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["and"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"and": {
-																			"type": "array",
-																			"maxItems": 100,
-																			"description": "Return sessions that match every child filter.",
-																			"items": {
-																				"oneOf": [
-																					{
-																						"type": "object",
-																						"required": ["property", "string"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["id"],
-																								"description": "Filter sessions by id."
-																							},
-																							"string": {
-																								"type": "object",
-																								"description": "An exact string comparison.",
-																								"required": ["equals"],
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this exact value."
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": ["property", "string"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["agent_id"],
-																								"description": "Filter sessions by agent_id."
-																							},
-																							"string": {
-																								"type": "object",
-																								"description": "An exact string comparison.",
-																								"required": ["equals"],
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this exact value."
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": ["property", "status"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["status"],
-																								"description": "Filter sessions by status."
-																							},
-																							"status": {
-																								"type": "object",
-																								"description": "A session status comparison.",
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this status.",
-																										"enum": [
-																											"queued",
-																											"in_progress",
-																											"requires_action",
-																											"completed",
-																											"failed",
-																											"canceled",
-																											"terminated"
-																										]
-																									},
-																									"in": {
-																										"type": "array",
-																										"description": "Return sessions with any of these statuses.",
-																										"maxItems": 7,
-																										"items": {
-																											"type": "string",
-																											"enum": [
-																												"queued",
-																												"in_progress",
-																												"requires_action",
-																												"completed",
-																												"failed",
-																												"canceled",
-																												"terminated"
-																											]
-																										}
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": [
-																							"property",
-																							"timestamp"
-																						],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"description": "The session timestamp to compare.",
-																								"enum": [
-																									"created_at",
-																									"updated_at"
-																								]
-																							},
-																							"timestamp": {
-																								"type": "object",
-																								"description": "A timestamp range.",
-																								"additionalProperties": false,
-																								"properties": {
-																									"before": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions before this time."
-																									},
-																									"after": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions after this time."
-																									},
-																									"on_or_before": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions at or before this time."
-																									},
-																									"on_or_after": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions at or after this time."
-																									}
-																								}
-																							}
-																						}
-																					}
-																				]
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["or"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"or": {
-																			"type": "array",
-																			"maxItems": 100,
-																			"description": "Return sessions that match any child filter.",
-																			"items": {
-																				"oneOf": [
-																					{
-																						"type": "object",
-																						"required": ["property", "string"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["id"],
-																								"description": "Filter sessions by id."
-																							},
-																							"string": {
-																								"type": "object",
-																								"description": "An exact string comparison.",
-																								"required": ["equals"],
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this exact value."
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": ["property", "string"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["agent_id"],
-																								"description": "Filter sessions by agent_id."
-																							},
-																							"string": {
-																								"type": "object",
-																								"description": "An exact string comparison.",
-																								"required": ["equals"],
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this exact value."
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": ["property", "status"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["status"],
-																								"description": "Filter sessions by status."
-																							},
-																							"status": {
-																								"type": "object",
-																								"description": "A session status comparison.",
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this status.",
-																										"enum": [
-																											"queued",
-																											"in_progress",
-																											"requires_action",
-																											"completed",
-																											"failed",
-																											"canceled",
-																											"terminated"
-																										]
-																									},
-																									"in": {
-																										"type": "array",
-																										"description": "Return sessions with any of these statuses.",
-																										"maxItems": 7,
-																										"items": {
-																											"type": "string",
-																											"enum": [
-																												"queued",
-																												"in_progress",
-																												"requires_action",
-																												"completed",
-																												"failed",
-																												"canceled",
-																												"terminated"
-																											]
-																										}
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": [
-																							"property",
-																							"timestamp"
-																						],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"description": "The session timestamp to compare.",
-																								"enum": [
-																									"created_at",
-																									"updated_at"
-																								]
-																							},
-																							"timestamp": {
-																								"type": "object",
-																								"description": "A timestamp range.",
-																								"additionalProperties": false,
-																								"properties": {
-																									"before": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions before this time."
-																									},
-																									"after": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions after this time."
-																									},
-																									"on_or_before": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions at or before this time."
-																									},
-																									"on_or_after": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions at or after this time."
-																									}
-																								}
-																							}
-																						}
-																					}
-																				]
-																			}
-																		}
-																	}
-																}
-															]
+															"$ref": "#/components/schemas/sessionNestedFilter"
 														}
 													}
 												}
@@ -42674,460 +41809,7 @@
 														"maxItems": 100,
 														"description": "Return sessions that match any child filter.",
 														"items": {
-															"oneOf": [
-																{
-																	"type": "object",
-																	"required": ["property", "string"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"property": {
-																			"type": "string",
-																			"enum": ["id"],
-																			"description": "Filter sessions by id."
-																		},
-																		"string": {
-																			"type": "object",
-																			"description": "An exact string comparison.",
-																			"required": ["equals"],
-																			"additionalProperties": false,
-																			"properties": {
-																				"equals": {
-																					"type": "string",
-																					"description": "Return sessions with this exact value."
-																				}
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["property", "string"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"property": {
-																			"type": "string",
-																			"enum": ["agent_id"],
-																			"description": "Filter sessions by agent_id."
-																		},
-																		"string": {
-																			"type": "object",
-																			"description": "An exact string comparison.",
-																			"required": ["equals"],
-																			"additionalProperties": false,
-																			"properties": {
-																				"equals": {
-																					"type": "string",
-																					"description": "Return sessions with this exact value."
-																				}
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["property", "status"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"property": {
-																			"type": "string",
-																			"enum": ["status"],
-																			"description": "Filter sessions by status."
-																		},
-																		"status": {
-																			"type": "object",
-																			"description": "A session status comparison.",
-																			"additionalProperties": false,
-																			"properties": {
-																				"equals": {
-																					"type": "string",
-																					"description": "Return sessions with this status.",
-																					"enum": [
-																						"queued",
-																						"in_progress",
-																						"requires_action",
-																						"completed",
-																						"failed",
-																						"canceled",
-																						"terminated"
-																					]
-																				},
-																				"in": {
-																					"type": "array",
-																					"description": "Return sessions with any of these statuses.",
-																					"maxItems": 7,
-																					"items": {
-																						"type": "string",
-																						"enum": [
-																							"queued",
-																							"in_progress",
-																							"requires_action",
-																							"completed",
-																							"failed",
-																							"canceled",
-																							"terminated"
-																						]
-																					}
-																				}
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["property", "timestamp"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"property": {
-																			"type": "string",
-																			"description": "The session timestamp to compare.",
-																			"enum": ["created_at", "updated_at"]
-																		},
-																		"timestamp": {
-																			"type": "object",
-																			"description": "A timestamp range.",
-																			"additionalProperties": false,
-																			"properties": {
-																				"before": {
-																					"type": "string",
-																					"format": "date-time",
-																					"description": "Return sessions before this time."
-																				},
-																				"after": {
-																					"type": "string",
-																					"format": "date-time",
-																					"description": "Return sessions after this time."
-																				},
-																				"on_or_before": {
-																					"type": "string",
-																					"format": "date-time",
-																					"description": "Return sessions at or before this time."
-																				},
-																				"on_or_after": {
-																					"type": "string",
-																					"format": "date-time",
-																					"description": "Return sessions at or after this time."
-																				}
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["and"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"and": {
-																			"type": "array",
-																			"maxItems": 100,
-																			"description": "Return sessions that match every child filter.",
-																			"items": {
-																				"oneOf": [
-																					{
-																						"type": "object",
-																						"required": ["property", "string"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["id"],
-																								"description": "Filter sessions by id."
-																							},
-																							"string": {
-																								"type": "object",
-																								"description": "An exact string comparison.",
-																								"required": ["equals"],
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this exact value."
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": ["property", "string"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["agent_id"],
-																								"description": "Filter sessions by agent_id."
-																							},
-																							"string": {
-																								"type": "object",
-																								"description": "An exact string comparison.",
-																								"required": ["equals"],
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this exact value."
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": ["property", "status"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["status"],
-																								"description": "Filter sessions by status."
-																							},
-																							"status": {
-																								"type": "object",
-																								"description": "A session status comparison.",
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this status.",
-																										"enum": [
-																											"queued",
-																											"in_progress",
-																											"requires_action",
-																											"completed",
-																											"failed",
-																											"canceled",
-																											"terminated"
-																										]
-																									},
-																									"in": {
-																										"type": "array",
-																										"description": "Return sessions with any of these statuses.",
-																										"maxItems": 7,
-																										"items": {
-																											"type": "string",
-																											"enum": [
-																												"queued",
-																												"in_progress",
-																												"requires_action",
-																												"completed",
-																												"failed",
-																												"canceled",
-																												"terminated"
-																											]
-																										}
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": [
-																							"property",
-																							"timestamp"
-																						],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"description": "The session timestamp to compare.",
-																								"enum": [
-																									"created_at",
-																									"updated_at"
-																								]
-																							},
-																							"timestamp": {
-																								"type": "object",
-																								"description": "A timestamp range.",
-																								"additionalProperties": false,
-																								"properties": {
-																									"before": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions before this time."
-																									},
-																									"after": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions after this time."
-																									},
-																									"on_or_before": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions at or before this time."
-																									},
-																									"on_or_after": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions at or after this time."
-																									}
-																								}
-																							}
-																						}
-																					}
-																				]
-																			}
-																		}
-																	}
-																},
-																{
-																	"type": "object",
-																	"required": ["or"],
-																	"additionalProperties": false,
-																	"properties": {
-																		"or": {
-																			"type": "array",
-																			"maxItems": 100,
-																			"description": "Return sessions that match any child filter.",
-																			"items": {
-																				"oneOf": [
-																					{
-																						"type": "object",
-																						"required": ["property", "string"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["id"],
-																								"description": "Filter sessions by id."
-																							},
-																							"string": {
-																								"type": "object",
-																								"description": "An exact string comparison.",
-																								"required": ["equals"],
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this exact value."
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": ["property", "string"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["agent_id"],
-																								"description": "Filter sessions by agent_id."
-																							},
-																							"string": {
-																								"type": "object",
-																								"description": "An exact string comparison.",
-																								"required": ["equals"],
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this exact value."
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": ["property", "status"],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"enum": ["status"],
-																								"description": "Filter sessions by status."
-																							},
-																							"status": {
-																								"type": "object",
-																								"description": "A session status comparison.",
-																								"additionalProperties": false,
-																								"properties": {
-																									"equals": {
-																										"type": "string",
-																										"description": "Return sessions with this status.",
-																										"enum": [
-																											"queued",
-																											"in_progress",
-																											"requires_action",
-																											"completed",
-																											"failed",
-																											"canceled",
-																											"terminated"
-																										]
-																									},
-																									"in": {
-																										"type": "array",
-																										"description": "Return sessions with any of these statuses.",
-																										"maxItems": 7,
-																										"items": {
-																											"type": "string",
-																											"enum": [
-																												"queued",
-																												"in_progress",
-																												"requires_action",
-																												"completed",
-																												"failed",
-																												"canceled",
-																												"terminated"
-																											]
-																										}
-																									}
-																								}
-																							}
-																						}
-																					},
-																					{
-																						"type": "object",
-																						"required": [
-																							"property",
-																							"timestamp"
-																						],
-																						"additionalProperties": false,
-																						"properties": {
-																							"property": {
-																								"type": "string",
-																								"description": "The session timestamp to compare.",
-																								"enum": [
-																									"created_at",
-																									"updated_at"
-																								]
-																							},
-																							"timestamp": {
-																								"type": "object",
-																								"description": "A timestamp range.",
-																								"additionalProperties": false,
-																								"properties": {
-																									"before": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions before this time."
-																									},
-																									"after": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions after this time."
-																									},
-																									"on_or_before": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions at or before this time."
-																									},
-																									"on_or_after": {
-																										"type": "string",
-																										"format": "date-time",
-																										"description": "Return sessions at or after this time."
-																									}
-																								}
-																							}
-																						}
-																					}
-																				]
-																			}
-																		}
-																	}
-																}
-															]
+															"$ref": "#/components/schemas/sessionNestedFilter"
 														}
 													}
 												}

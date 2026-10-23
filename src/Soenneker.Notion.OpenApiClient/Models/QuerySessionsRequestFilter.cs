@@ -8,62 +8,59 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// A session property filter, or an and/or compound filter nested up to two levels deep.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf5"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf6"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.SessionAgentIdFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.SessionIdFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.SessionStatusFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilter"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class QuerySessionsRequestFilter : IAdditionalDataHolder, IParsable
+    public partial class QuerySessionsRequestFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Return sessions that match every child filter.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItem>? And { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf5? QuerySessionsRequestFilterOneOf5 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItem> And { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf5 QuerySessionsRequestFilterOneOf5 { get; set; }
 #endif
-        /// <summary>Return sessions that match any child filter.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItem>? Or { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf6? QuerySessionsRequestFilterOneOf6 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItem> Or { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf6 QuerySessionsRequestFilterOneOf6 { get; set; }
 #endif
-        /// <summary>Filter sessions by id.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterProperty? Property { get; set; }
-        /// <summary>A session status comparison.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.SessionAgentIdFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterStatus? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SessionAgentIdFilter? SessionAgentIdFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterStatus Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SessionAgentIdFilter SessionAgentIdFilter { get; set; }
 #endif
-        /// <summary>An exact string comparison.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.SessionIdFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterString? String { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SessionIdFilter? SessionIdFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterString String { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SessionIdFilter SessionIdFilter { get; set; }
 #endif
-        /// <summary>A timestamp range.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.SessionStatusFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterTimestamp? Timestamp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SessionStatusFilter? SessionStatusFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterTimestamp Timestamp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SessionStatusFilter SessionStatusFilter { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilter"/> and sets the default values.
-        /// </summary>
-        public QuerySessionsRequestFilter()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilter? SessionTimestampFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilter SessionTimestampFilter { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -72,7 +69,33 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilter();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilter();
+            if("QuerySessionsRequestFilterOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessionsRequestFilterOneOf5 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf5();
+            }
+            else if("QuerySessionsRequestFilterOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessionsRequestFilterOneOf6 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf6();
+            }
+            else if("SessionAgentIdFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SessionAgentIdFilter = new global::Soenneker.Notion.OpenApiClient.Models.SessionAgentIdFilter();
+            }
+            else if("SessionIdFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SessionIdFilter = new global::Soenneker.Notion.OpenApiClient.Models.SessionIdFilter();
+            }
+            else if("SessionStatusFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SessionStatusFilter = new global::Soenneker.Notion.OpenApiClient.Models.SessionStatusFilter();
+            }
+            else if("SessionTimestampFilter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SessionTimestampFilter = new global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilter();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,15 +103,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(QuerySessionsRequestFilterOneOf5 != null)
             {
-                { "and", n => { And = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItem>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "or", n => { Or = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItem>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterProperty>(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterStatus>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterStatus.CreateFromDiscriminatorValue); } },
-                { "string", n => { String = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterString>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterString.CreateFromDiscriminatorValue); } },
-                { "timestamp", n => { Timestamp = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterTimestamp>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterTimestamp.CreateFromDiscriminatorValue); } },
-            };
+                return QuerySessionsRequestFilterOneOf5.GetFieldDeserializers();
+            }
+            else if(QuerySessionsRequestFilterOneOf6 != null)
+            {
+                return QuerySessionsRequestFilterOneOf6.GetFieldDeserializers();
+            }
+            else if(SessionAgentIdFilter != null)
+            {
+                return SessionAgentIdFilter.GetFieldDeserializers();
+            }
+            else if(SessionIdFilter != null)
+            {
+                return SessionIdFilter.GetFieldDeserializers();
+            }
+            else if(SessionStatusFilter != null)
+            {
+                return SessionStatusFilter.GetFieldDeserializers();
+            }
+            else if(SessionTimestampFilter != null)
+            {
+                return SessionTimestampFilter.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -97,13 +136,30 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterAndItem>("and", And);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOrItem>("or", Or);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterProperty>("property", Property);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterString>("string", String);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterTimestamp>("timestamp", Timestamp);
-            writer.WriteAdditionalData(AdditionalData);
+            if(QuerySessionsRequestFilterOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf5>(null, QuerySessionsRequestFilterOneOf5);
+            }
+            else if(QuerySessionsRequestFilterOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionsRequestFilterOneOf6>(null, QuerySessionsRequestFilterOneOf6);
+            }
+            else if(SessionAgentIdFilter != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SessionAgentIdFilter>(null, SessionAgentIdFilter);
+            }
+            else if(SessionIdFilter != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SessionIdFilter>(null, SessionIdFilter);
+            }
+            else if(SessionStatusFilter != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SessionStatusFilter>(null, SessionStatusFilter);
+            }
+            else if(SessionTimestampFilter != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilter>(null, SessionTimestampFilter);
+            }
         }
     }
 }

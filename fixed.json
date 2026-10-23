@@ -19840,6 +19840,22 @@
           }
         }
       },
+      "MeetingNotesPropertyFilter": {
+        "required": [
+          "property",
+          "filter"
+        ],
+        "type": "object",
+        "properties": {
+          "property": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterProperty"
+          },
+          "filter": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilter"
+          }
+        },
+        "additionalProperties": false
+      },
       "MentionRichTextItemRequest": {
         "title": "Mention",
         "required": [
@@ -23959,6 +23975,117 @@
           },
           "select": {
             "$ref": "#/components/schemas/SelectSimplePropertyValueResponseSelect"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SessionAgentIdFilter": {
+        "required": [
+          "property",
+          "string"
+        ],
+        "type": "object",
+        "properties": {
+          "property": {
+            "$ref": "#/components/schemas/AgentIdProperty"
+          },
+          "string": {
+            "$ref": "#/components/schemas/SessionAgentIdFilterString"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SessionIdFilter": {
+        "required": [
+          "property",
+          "string"
+        ],
+        "type": "object",
+        "properties": {
+          "property": {
+            "$ref": "#/components/schemas/IdProperty"
+          },
+          "string": {
+            "$ref": "#/components/schemas/SessionIdFilterString"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SessionNestedFilter": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SessionIdFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionAgentIdFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionStatusFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionTimestampFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionNestedFilterOneOf5"
+          },
+          {
+            "$ref": "#/components/schemas/SessionNestedFilterOneOf6"
+          }
+        ],
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/SessionStatusFilterStatus"
+          },
+          "timestamp": {
+            "$ref": "#/components/schemas/SessionTimestampFilterTimestamp"
+          },
+          "and": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNestedFilterOneOf5AndItem"
+            },
+            "description": "Return sessions that match every child filter."
+          },
+          "or": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNestedFilterOneOf6OrItem"
+            },
+            "description": "Return sessions that match any child filter."
+          }
+        }
+      },
+      "SessionStatusFilter": {
+        "required": [
+          "property",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "property": {
+            "$ref": "#/components/schemas/StatusProperty"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SessionStatusFilterStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SessionTimestampFilter": {
+        "required": [
+          "property",
+          "timestamp"
+        ],
+        "type": "object",
+        "properties": {
+          "property": {
+            "$ref": "#/components/schemas/SessionTimestampFilterProperty"
+          },
+          "timestamp": {
+            "$ref": "#/components/schemas/SessionTimestampFilterTimestamp"
           }
         },
         "additionalProperties": false
@@ -31945,6 +32072,33 @@
         },
         "additionalProperties": false
       },
+      "MeetingNotesPropertyFilterFilter": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf2"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf5"
+          }
+        ],
+        "properties": {
+          "use_end": {
+            "type": "boolean",
+            "description": "Compare against the end of a date range rather than its start."
+          }
+        },
+        "description": "The comparison to apply. Use the arm matching the property\u0027s type."
+      },
       "MentionRichTextItemRequestMention": {
         "type": "object",
         "oneOf": [
@@ -33374,6 +33528,40 @@
           }
         }
       },
+      "SessionNestedFilterOneOf5": {
+        "required": [
+          "and"
+        ],
+        "type": "object",
+        "properties": {
+          "and": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNestedFilterOneOf5AndItem"
+            },
+            "description": "Return sessions that match every child filter."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SessionNestedFilterOneOf6": {
+        "required": [
+          "or"
+        ],
+        "type": "object",
+        "properties": {
+          "or": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNestedFilterOneOf6OrItem"
+            },
+            "description": "Return sessions that match any child filter."
+          }
+        },
+        "additionalProperties": false
+      },
       "StatusOptionUpdateRequestAllOf2OneOf1": {
         "required": [
           "name"
@@ -34396,6 +34584,95 @@
           }
         }
       },
+      "MeetingNotesPropertyFilterFilterOneOf1": {
+        "required": [
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf1Operator"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf1Value"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf2": {
+        "required": [
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf2Operator"
+          },
+          "value": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf2ValueItem"
+            },
+            "description": "The people to compare against."
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf3": {
+        "required": [
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3Operator"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3Value"
+          },
+          "use_end": {
+            "type": "boolean",
+            "description": "Compare against the end of a date range rather than its start."
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4": {
+        "required": [
+          "operator",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4Operator"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4Value"
+          },
+          "use_end": {
+            "type": "boolean",
+            "description": "Compare against the end of a date range rather than its start."
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf5": {
+        "required": [
+          "operator"
+        ],
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf5Operator"
+          }
+        },
+        "additionalProperties": false
+      },
       "MentionRichTextItemRequestMentionUser": {
         "title": "User",
         "required": [
@@ -34995,6 +35272,56 @@
           }
         }
       },
+      "SessionNestedFilterOneOf5AndItem": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SessionIdFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionAgentIdFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionStatusFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionTimestampFilter"
+          }
+        ],
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/SessionStatusFilterStatus"
+          },
+          "timestamp": {
+            "$ref": "#/components/schemas/SessionTimestampFilterTimestamp"
+          }
+        }
+      },
+      "SessionNestedFilterOneOf6OrItem": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SessionIdFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionAgentIdFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionStatusFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionTimestampFilter"
+          }
+        ],
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/SessionStatusFilterStatus"
+          },
+          "timestamp": {
+            "$ref": "#/components/schemas/SessionTimestampFilterTimestamp"
+          }
+        }
+      },
       "ViewFilterResponseOneOf3OrItem": {
         "type": "object",
         "oneOf": [
@@ -35298,6 +35625,57 @@
         },
         "additionalProperties": false
       },
+      "MeetingNotesPropertyFilterFilterOneOf2ValueItem": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf2"
+          }
+        ]
+      },
+      "MeetingNotesPropertyFilterFilterOneOf3Value": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2"
+          }
+        ],
+        "description": "The date to compare against."
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4Value": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf3"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4"
+          }
+        ],
+        "properties": {
+          "direction": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Direction"
+          },
+          "count": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "How many units wide the window is."
+          }
+        },
+        "description": "The range to compare against."
+      },
       "PropertyItemPropertyItemListResponsePropertyItemRollupRollup": {
         "type": "object",
         "anyOf": [
@@ -35509,6 +35887,152 @@
         },
         "additionalProperties": false
       },
+      "MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf1": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ExactType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf1Value"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf2": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/RelativeType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeValue"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/RelativeType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Value"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ExactType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2Value"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1": {
+        "required": [
+          "type",
+          "value",
+          "direction",
+          "unit",
+          "count"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/RelativeType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/CustomValue"
+          },
+          "direction": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Direction"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Unit"
+          },
+          "count": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "How many units wide the window is."
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2": {
+        "required": [
+          "type",
+          "value",
+          "unit"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/RelativeType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/SurroundingValue"
+          },
+          "unit": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Unit"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf3": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/RelativeType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf3Value"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ExactType"
+          },
+          "value": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Value"
+          }
+        },
+        "additionalProperties": false
+      },
       "PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber": {
         "title": "Number",
         "required": [
@@ -35700,6 +36224,42 @@
         },
         "description": "A property filter or timestamp filter."
       },
+      "MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2Value": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2ValueOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2ValueOneOf2"
+          }
+        ],
+        "properties": {
+          "start_date": {
+            "examples": [
+              "1990-12-28"
+            ],
+            "type": "string",
+            "description": "The calendar date as an ISO 8601 date string.",
+            "format": "date"
+          },
+          "start_time": {
+            "examples": [
+              "09:30"
+            ],
+            "type": "string",
+            "description": "The time of day in 24-hour HH:MM format."
+          },
+          "time_zone": {
+            "examples": [
+              "America/Los_Angeles"
+            ],
+            "type": "string",
+            "description": "The IANA time zone name the time is interpreted in."
+          }
+        },
+        "description": "Use the is_empty operator to match an unset date."
+      },
       "PropertyItemPropertyItemListResponsePropertyItemRollupRollupDateDate": {
         "type": "object",
         "anyOf": [
@@ -35832,6 +36392,64 @@
           }
         },
         "description": "A filter condition on a timestamp (created_time or last_edited_time). The timestamp field specifies which timestamp, and a matching field contains the date filter condition."
+      },
+      "MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2ValueOneOf1": {
+        "required": [
+          "type",
+          "start_date"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/DateType"
+          },
+          "start_date": {
+            "examples": [
+              "1990-12-28"
+            ],
+            "type": "string",
+            "description": "The calendar date as an ISO 8601 date string.",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2ValueOneOf2": {
+        "required": [
+          "type",
+          "start_date",
+          "start_time",
+          "time_zone"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/DatetimeType"
+          },
+          "start_date": {
+            "examples": [
+              "1990-12-28"
+            ],
+            "type": "string",
+            "description": "The calendar date as an ISO 8601 date string.",
+            "format": "date"
+          },
+          "start_time": {
+            "examples": [
+              "09:30"
+            ],
+            "type": "string",
+            "description": "The time of day in 24-hour HH:MM format."
+          },
+          "time_zone": {
+            "examples": [
+              "America/Los_Angeles"
+            ],
+            "type": "string",
+            "description": "The IANA time zone name the time is interpreted in."
+          }
+        },
+        "additionalProperties": false
       },
       "BotInfoResponseWorkspaceLimits": {
         "required": [
@@ -36461,6 +37079,79 @@
             }
           }
         }
+      },
+      "SessionAgentIdFilterString": {
+        "required": [
+          "equals"
+        ],
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "string",
+            "description": "Return sessions with this exact value."
+          }
+        },
+        "additionalProperties": false,
+        "description": "An exact string comparison."
+      },
+      "SessionIdFilterString": {
+        "required": [
+          "equals"
+        ],
+        "type": "object",
+        "properties": {
+          "equals": {
+            "type": "string",
+            "description": "Return sessions with this exact value."
+          }
+        },
+        "additionalProperties": false,
+        "description": "An exact string comparison."
+      },
+      "SessionStatusFilterStatus": {
+        "type": "object",
+        "properties": {
+          "equals": {
+            "$ref": "#/components/schemas/SessionStatusFilterStatusEquals"
+          },
+          "in": {
+            "maxItems": 7,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionStatusFilterStatusInItem"
+            },
+            "description": "Return sessions with any of these statuses."
+          }
+        },
+        "additionalProperties": false,
+        "description": "A session status comparison."
+      },
+      "SessionTimestampFilterTimestamp": {
+        "type": "object",
+        "properties": {
+          "before": {
+            "type": "string",
+            "description": "Return sessions before this time.",
+            "format": "date-time"
+          },
+          "after": {
+            "type": "string",
+            "description": "Return sessions after this time.",
+            "format": "date-time"
+          },
+          "on_or_before": {
+            "type": "string",
+            "description": "Return sessions at or before this time.",
+            "format": "date-time"
+          },
+          "on_or_after": {
+            "type": "string",
+            "description": "Return sessions at or after this time.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "A timestamp range."
       },
       "StatusDatabasePropertyConfigResponseStatus": {
         "required": [
@@ -37866,6 +38557,24 @@
         "additionalProperties": false,
         "description": "Details about the error that occurred during file import."
       },
+      "MeetingNotesPropertyFilterFilterOneOf1Value": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ExactType"
+          },
+          "value": {
+            "type": "string",
+            "description": "The literal text the operator compares against."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The text to compare against."
+      },
       "MentionRichTextItemRequestMentionPagePage": {
         "required": [
           "id"
@@ -38002,6 +38711,57 @@
         },
         "additionalProperties": false,
         "description": "The person info of the user."
+      },
+      "MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf1Value": {
+        "required": [
+          "table",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "table": {
+            "$ref": "#/components/schemas/NotionUserTable"
+          },
+          "id": {
+            "examples": [
+              "3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e",
+              "user://3f2b25f3-0a52-4a90-8f0d-5a3f0e6c1d2e"
+            ],
+            "type": "string",
+            "description": "The user\u0027s ID, as a UUID or the \u0060user://\u003Cuuid\u003E\u0060 form returned by user search."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Pointer to the Notion user to match."
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Value": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/DaterangeType"
+          },
+          "start_date": {
+            "examples": [
+              "1990-12-28"
+            ],
+            "type": "string",
+            "description": "Inclusive start of the range as an ISO 8601 date string, if any.",
+            "format": "date"
+          },
+          "end_date": {
+            "examples": [
+              "1991-01-04"
+            ],
+            "type": "string",
+            "description": "Inclusive end of the range as an ISO 8601 date string, if any.",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Use the is_empty operator to match an unset date."
       },
       "MultiSelectPropertyConfigurationRequestMultiSelectOptionsItem": {
         "required": [
@@ -42283,6 +43043,102 @@
         },
         "additionalProperties": false
       },
+      "MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Value": {
+        "title": "MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1_value",
+        "enum": [
+          "today",
+          "tomorrow",
+          "yesterday",
+          "one_week_ago",
+          "one_week_from_now",
+          "one_month_ago",
+          "one_month_from_now"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Value",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "today",
+              "name": "Today"
+            },
+            {
+              "value": "tomorrow",
+              "name": "Tomorrow"
+            },
+            {
+              "value": "yesterday",
+              "name": "Yesterday"
+            },
+            {
+              "value": "one_week_ago",
+              "name": "OneWeekAgo"
+            },
+            {
+              "value": "one_week_from_now",
+              "name": "OneWeekFromNow"
+            },
+            {
+              "value": "one_month_ago",
+              "name": "OneMonthAgo"
+            },
+            {
+              "value": "one_month_from_now",
+              "name": "OneMonthFromNow"
+            }
+          ]
+        }
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf3Value": {
+        "title": "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf3_value",
+        "enum": [
+          "this_week",
+          "the_past_week",
+          "the_past_month",
+          "the_past_year",
+          "the_next_week",
+          "the_next_month",
+          "the_next_year"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf3Value",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "this_week",
+              "name": "ThisWeek"
+            },
+            {
+              "value": "the_past_week",
+              "name": "ThePastWeek"
+            },
+            {
+              "value": "the_past_month",
+              "name": "ThePastMonth"
+            },
+            {
+              "value": "the_past_year",
+              "name": "ThePastYear"
+            },
+            {
+              "value": "the_next_week",
+              "name": "TheNextWeek"
+            },
+            {
+              "value": "the_next_month",
+              "name": "TheNextMonth"
+            },
+            {
+              "value": "the_next_year",
+              "name": "TheNextYear"
+            }
+          ]
+        }
+      },
       "RelativeDateValueWrapper": {
         "required": [
           "value"
@@ -43545,6 +44401,36 @@
           }
         }
       },
+      "QueryMeetingNotesRequestFilterFiltersItem": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilter"
+          },
+          {
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemOneOf2"
+          }
+        ],
+        "properties": {
+          "property": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterProperty"
+          },
+          "filter": {
+            "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilter"
+          },
+          "operator": {
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemOneOf2Operator"
+          },
+          "filters": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingNotesPropertyFilter"
+            },
+            "description": "The conditions in this group. A group with no conditions matches nothing, so send at least one."
+          }
+        }
+      },
       "QueryAgentsRequestFilter": {
         "type": "object",
         "oneOf": [
@@ -43863,6 +44749,54 @@
             "$ref": "#/components/schemas/UpdateSessionRequestAgentIdOneOf2"
           }
         ]
+      },
+      "QuerySessionsRequestFilter": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/SessionIdFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionAgentIdFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionStatusFilter"
+          },
+          {
+            "$ref": "#/components/schemas/SessionTimestampFilter"
+          },
+          {
+            "$ref": "#/components/schemas/QuerySessionsRequestFilterOneOf5"
+          },
+          {
+            "$ref": "#/components/schemas/QuerySessionsRequestFilterOneOf6"
+          }
+        ],
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/SessionStatusFilterStatus"
+          },
+          "timestamp": {
+            "$ref": "#/components/schemas/SessionTimestampFilterTimestamp"
+          },
+          "and": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNestedFilter"
+            },
+            "description": "Return sessions that match every child filter."
+          },
+          "or": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNestedFilter"
+            },
+            "description": "Return sessions that match any child filter."
+          }
+        },
+        "description": "A session property filter, or an and/or compound filter nested up to two levels deep."
       },
       "CreateAToken200ResponseOwnerUser": {
         "type": "object",
@@ -44533,6 +45467,27 @@
           }
         }
       },
+      "QueryMeetingNotesRequestFilterFiltersItemOneOf2": {
+        "required": [
+          "operator",
+          "filters"
+        ],
+        "type": "object",
+        "properties": {
+          "operator": {
+            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemOneOf2Operator"
+          },
+          "filters": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeetingNotesPropertyFilter"
+            },
+            "description": "The conditions in this group. A group with no conditions matches nothing, so send at least one."
+          }
+        },
+        "additionalProperties": false
+      },
       "QueryAgentsRequestFilterOneOf1": {
         "required": [
           "property"
@@ -44635,6 +45590,40 @@
         "items": {
           "$ref": "#/components/schemas/GetAgent200ResponseConnectionsItemEnabledToolsOneOf1Item"
         }
+      },
+      "QuerySessionsRequestFilterOneOf5": {
+        "required": [
+          "and"
+        ],
+        "type": "object",
+        "properties": {
+          "and": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNestedFilter"
+            },
+            "description": "Return sessions that match every child filter."
+          }
+        },
+        "additionalProperties": false
+      },
+      "QuerySessionsRequestFilterOneOf6": {
+        "required": [
+          "or"
+        ],
+        "type": "object",
+        "properties": {
+          "or": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SessionNestedFilter"
+            },
+            "description": "Return sessions that match any child filter."
+          }
+        },
+        "additionalProperties": false
       },
       "CreateAToken200ResponseOwnerUserPerson": {
         "title": "Person",
@@ -47425,40 +48414,6 @@
         },
         "additionalProperties": false
       },
-      "QuerySessionsRequestFilter": {
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterProperty"
-          },
-          "string": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterString"
-          },
-          "status": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterStatus"
-          },
-          "timestamp": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterTimestamp"
-          },
-          "and": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItem"
-            },
-            "description": "Return sessions that match every child filter."
-          },
-          "or": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItem"
-            },
-            "description": "Return sessions that match any child filter."
-          }
-        },
-        "description": "A session property filter, or an and/or compound filter nested up to two levels deep."
-      },
       "QuerySessionsRequestSortsItem": {
         "required": [
           "property",
@@ -49047,28 +50002,6 @@
         "additionalProperties": false,
         "description": "Start and end times of the actual recording."
       },
-      "QueryMeetingNotesRequestFilterFiltersItem": {
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemProperty"
-          },
-          "filter": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilter"
-          },
-          "operator": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemOperator"
-          },
-          "filters": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItem"
-            },
-            "description": "The conditions in this group. A group with no conditions matches nothing, so send at least one."
-          }
-        }
-      },
       "QueryMeetingNotes200ResponseResultsItemMeetingNotes": {
         "type": "object",
         "properties": {
@@ -49387,131 +50320,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "QuerySessionsRequestFilterString": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "type": "string",
-            "description": "Return sessions with this exact value."
-          }
-        },
-        "additionalProperties": false,
-        "description": "An exact string comparison."
-      },
-      "QuerySessionsRequestFilterStatus": {
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterStatusEquals"
-          },
-          "in": {
-            "maxItems": 7,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterStatusInItem"
-            },
-            "description": "Return sessions with any of these statuses."
-          }
-        },
-        "additionalProperties": false,
-        "description": "A session status comparison."
-      },
-      "QuerySessionsRequestFilterTimestamp": {
-        "type": "object",
-        "properties": {
-          "before": {
-            "type": "string",
-            "description": "Return sessions before this time.",
-            "format": "date-time"
-          },
-          "after": {
-            "type": "string",
-            "description": "Return sessions after this time.",
-            "format": "date-time"
-          },
-          "on_or_before": {
-            "type": "string",
-            "description": "Return sessions at or before this time.",
-            "format": "date-time"
-          },
-          "on_or_after": {
-            "type": "string",
-            "description": "Return sessions at or after this time.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A timestamp range."
-      },
-      "QuerySessionsRequestFilterAndItem": {
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemProperty"
-          },
-          "string": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemString"
-          },
-          "status": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemStatus"
-          },
-          "timestamp": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemTimestamp"
-          },
-          "and": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemAndItem"
-            },
-            "description": "Return sessions that match every child filter."
-          },
-          "or": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemOrItem"
-            },
-            "description": "Return sessions that match any child filter."
-          }
-        }
-      },
-      "QuerySessionsRequestFilterOrItem": {
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemProperty"
-          },
-          "string": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemString"
-          },
-          "status": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemStatus"
-          },
-          "timestamp": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemTimestamp"
-          },
-          "and": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemAndItem"
-            },
-            "description": "Return sessions that match every child filter."
-          },
-          "or": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemOrItem"
-            },
-            "description": "Return sessions that match any child filter."
-          }
-        }
       },
       "QuerySessions200ResponseResultsItemCreatedBy": {
         "required": [
@@ -50539,41 +51347,6 @@
           }
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFilter": {
-        "required": [
-          "operator"
-        ],
-        "type": "object",
-        "properties": {
-          "operator": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterOperator"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFilterValue"
-          },
-          "use_end": {
-            "type": "boolean",
-            "description": "Compare against the end of a date range rather than its start."
-          }
-        },
-        "description": "The comparison to apply. Use the arm matching the property\u0027s type."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItem": {
-        "required": [
-          "property",
-          "filter"
-        ],
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemProperty"
-          },
-          "filter": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilter"
-          }
-        },
-        "additionalProperties": false
-      },
       "QueryMeetingNotes200ResponseResultsItemMeetingNotesChildren": {
         "type": "object",
         "properties": {
@@ -50803,204 +51576,6 @@
       },
       "GetAgent200ResponseTriggersItemConfigAdditionalProperties": {
         "type": "object"
-      },
-      "QuerySessionsRequestFilterAndItemString": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "type": "string",
-            "description": "Return sessions with this exact value."
-          }
-        },
-        "additionalProperties": false,
-        "description": "An exact string comparison."
-      },
-      "QuerySessionsRequestFilterAndItemStatus": {
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemStatusEquals"
-          },
-          "in": {
-            "maxItems": 7,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemStatusInItem"
-            },
-            "description": "Return sessions with any of these statuses."
-          }
-        },
-        "additionalProperties": false,
-        "description": "A session status comparison."
-      },
-      "QuerySessionsRequestFilterAndItemTimestamp": {
-        "type": "object",
-        "properties": {
-          "before": {
-            "type": "string",
-            "description": "Return sessions before this time.",
-            "format": "date-time"
-          },
-          "after": {
-            "type": "string",
-            "description": "Return sessions after this time.",
-            "format": "date-time"
-          },
-          "on_or_before": {
-            "type": "string",
-            "description": "Return sessions at or before this time.",
-            "format": "date-time"
-          },
-          "on_or_after": {
-            "type": "string",
-            "description": "Return sessions at or after this time.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A timestamp range."
-      },
-      "QuerySessionsRequestFilterAndItemAndItem": {
-        "required": [
-          "property"
-        ],
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemAndItemProperty"
-          },
-          "string": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemAndItemString"
-          },
-          "status": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemAndItemStatus"
-          },
-          "timestamp": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemAndItemTimestamp"
-          }
-        }
-      },
-      "QuerySessionsRequestFilterAndItemOrItem": {
-        "required": [
-          "property"
-        ],
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemOrItemProperty"
-          },
-          "string": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemOrItemString"
-          },
-          "status": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemOrItemStatus"
-          },
-          "timestamp": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemOrItemTimestamp"
-          }
-        }
-      },
-      "QuerySessionsRequestFilterOrItemString": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "type": "string",
-            "description": "Return sessions with this exact value."
-          }
-        },
-        "additionalProperties": false,
-        "description": "An exact string comparison."
-      },
-      "QuerySessionsRequestFilterOrItemStatus": {
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemStatusEquals"
-          },
-          "in": {
-            "maxItems": 7,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemStatusInItem"
-            },
-            "description": "Return sessions with any of these statuses."
-          }
-        },
-        "additionalProperties": false,
-        "description": "A session status comparison."
-      },
-      "QuerySessionsRequestFilterOrItemTimestamp": {
-        "type": "object",
-        "properties": {
-          "before": {
-            "type": "string",
-            "description": "Return sessions before this time.",
-            "format": "date-time"
-          },
-          "after": {
-            "type": "string",
-            "description": "Return sessions after this time.",
-            "format": "date-time"
-          },
-          "on_or_before": {
-            "type": "string",
-            "description": "Return sessions at or before this time.",
-            "format": "date-time"
-          },
-          "on_or_after": {
-            "type": "string",
-            "description": "Return sessions at or after this time.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A timestamp range."
-      },
-      "QuerySessionsRequestFilterOrItemAndItem": {
-        "required": [
-          "property"
-        ],
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemAndItemProperty"
-          },
-          "string": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemAndItemString"
-          },
-          "status": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemAndItemStatus"
-          },
-          "timestamp": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemAndItemTimestamp"
-          }
-        }
-      },
-      "QuerySessionsRequestFilterOrItemOrItem": {
-        "required": [
-          "property"
-        ],
-        "type": "object",
-        "properties": {
-          "property": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemOrItemProperty"
-          },
-          "string": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemOrItemString"
-          },
-          "status": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemOrItemStatus"
-          },
-          "timestamp": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemOrItemTimestamp"
-          }
-        }
       },
       "QuerySessions200ResponseResultsItemRequiredActionsItemOptionsItem": {
         "required": [
@@ -51304,43 +51879,6 @@
         },
         "additionalProperties": false
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterValue": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/ExactType"
-          },
-          "value": {
-            "type": "string",
-            "description": "The literal text the operator compares against."
-          }
-        },
-        "additionalProperties": false,
-        "description": "The text to compare against."
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilter": {
-        "required": [
-          "operator"
-        ],
-        "type": "object",
-        "properties": {
-          "operator": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator"
-          },
-          "value": {
-            "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue"
-          },
-          "use_end": {
-            "type": "boolean",
-            "description": "Compare against the end of a date range rather than its start."
-          }
-        },
-        "description": "The comparison to apply. Use the arm matching the property\u0027s type."
-      },
       "QueryAgents200ResponseResultsItemConnectionsItemPermissionsItemTarget": {
         "required": [
           "type"
@@ -51395,242 +51933,6 @@
       },
       "QueryAgents200ResponseResultsItemTriggersItemConfigAdditionalProperties": {
         "type": "object"
-      },
-      "QuerySessionsRequestFilterAndItemAndItemString": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "type": "string",
-            "description": "Return sessions with this exact value."
-          }
-        },
-        "additionalProperties": false,
-        "description": "An exact string comparison."
-      },
-      "QuerySessionsRequestFilterAndItemAndItemStatus": {
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemAndItemStatusEquals"
-          },
-          "in": {
-            "maxItems": 7,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemAndItemStatusInItem"
-            },
-            "description": "Return sessions with any of these statuses."
-          }
-        },
-        "additionalProperties": false,
-        "description": "A session status comparison."
-      },
-      "QuerySessionsRequestFilterAndItemAndItemTimestamp": {
-        "type": "object",
-        "properties": {
-          "before": {
-            "type": "string",
-            "description": "Return sessions before this time.",
-            "format": "date-time"
-          },
-          "after": {
-            "type": "string",
-            "description": "Return sessions after this time.",
-            "format": "date-time"
-          },
-          "on_or_before": {
-            "type": "string",
-            "description": "Return sessions at or before this time.",
-            "format": "date-time"
-          },
-          "on_or_after": {
-            "type": "string",
-            "description": "Return sessions at or after this time.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A timestamp range."
-      },
-      "QuerySessionsRequestFilterAndItemOrItemString": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "type": "string",
-            "description": "Return sessions with this exact value."
-          }
-        },
-        "additionalProperties": false,
-        "description": "An exact string comparison."
-      },
-      "QuerySessionsRequestFilterAndItemOrItemStatus": {
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemOrItemStatusEquals"
-          },
-          "in": {
-            "maxItems": 7,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterAndItemOrItemStatusInItem"
-            },
-            "description": "Return sessions with any of these statuses."
-          }
-        },
-        "additionalProperties": false,
-        "description": "A session status comparison."
-      },
-      "QuerySessionsRequestFilterAndItemOrItemTimestamp": {
-        "type": "object",
-        "properties": {
-          "before": {
-            "type": "string",
-            "description": "Return sessions before this time.",
-            "format": "date-time"
-          },
-          "after": {
-            "type": "string",
-            "description": "Return sessions after this time.",
-            "format": "date-time"
-          },
-          "on_or_before": {
-            "type": "string",
-            "description": "Return sessions at or before this time.",
-            "format": "date-time"
-          },
-          "on_or_after": {
-            "type": "string",
-            "description": "Return sessions at or after this time.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A timestamp range."
-      },
-      "QuerySessionsRequestFilterOrItemAndItemString": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "type": "string",
-            "description": "Return sessions with this exact value."
-          }
-        },
-        "additionalProperties": false,
-        "description": "An exact string comparison."
-      },
-      "QuerySessionsRequestFilterOrItemAndItemStatus": {
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemAndItemStatusEquals"
-          },
-          "in": {
-            "maxItems": 7,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemAndItemStatusInItem"
-            },
-            "description": "Return sessions with any of these statuses."
-          }
-        },
-        "additionalProperties": false,
-        "description": "A session status comparison."
-      },
-      "QuerySessionsRequestFilterOrItemAndItemTimestamp": {
-        "type": "object",
-        "properties": {
-          "before": {
-            "type": "string",
-            "description": "Return sessions before this time.",
-            "format": "date-time"
-          },
-          "after": {
-            "type": "string",
-            "description": "Return sessions after this time.",
-            "format": "date-time"
-          },
-          "on_or_before": {
-            "type": "string",
-            "description": "Return sessions at or before this time.",
-            "format": "date-time"
-          },
-          "on_or_after": {
-            "type": "string",
-            "description": "Return sessions at or after this time.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A timestamp range."
-      },
-      "QuerySessionsRequestFilterOrItemOrItemString": {
-        "required": [
-          "equals"
-        ],
-        "type": "object",
-        "properties": {
-          "equals": {
-            "type": "string",
-            "description": "Return sessions with this exact value."
-          }
-        },
-        "additionalProperties": false,
-        "description": "An exact string comparison."
-      },
-      "QuerySessionsRequestFilterOrItemOrItemStatus": {
-        "type": "object",
-        "properties": {
-          "equals": {
-            "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemOrItemStatusEquals"
-          },
-          "in": {
-            "maxItems": 7,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuerySessionsRequestFilterOrItemOrItemStatusInItem"
-            },
-            "description": "Return sessions with any of these statuses."
-          }
-        },
-        "additionalProperties": false,
-        "description": "A session status comparison."
-      },
-      "QuerySessionsRequestFilterOrItemOrItemTimestamp": {
-        "type": "object",
-        "properties": {
-          "before": {
-            "type": "string",
-            "description": "Return sessions before this time.",
-            "format": "date-time"
-          },
-          "after": {
-            "type": "string",
-            "description": "Return sessions after this time.",
-            "format": "date-time"
-          },
-          "on_or_before": {
-            "type": "string",
-            "description": "Return sessions at or before this time.",
-            "format": "date-time"
-          },
-          "on_or_after": {
-            "type": "string",
-            "description": "Return sessions at or after this time.",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false,
-        "description": "A timestamp range."
       },
       "QuerySessionEventsRequestFilterAndItemAndItemString": {
         "required": [
@@ -52099,24 +52401,6 @@
             "$ref": "#/components/schemas/QuerySessionEventsRequestFilterOrItemOrItemOrItemTimestamp"
           }
         }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterValue": {
-        "required": [
-          "type",
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/ExactType"
-          },
-          "value": {
-            "type": "string",
-            "description": "The literal text the operator compares against."
-          }
-        },
-        "additionalProperties": false,
-        "description": "The text to compare against."
       },
       "QuerySessionEventsRequestFilterAndItemAndItemAndItemString": {
         "required": [
@@ -56747,6 +57031,54 @@
           ]
         }
       },
+      "MeetingNotesPropertyFilterProperty": {
+        "enum": [
+          "title",
+          "attendees",
+          "created_time",
+          "created_by",
+          "last_edited_time",
+          "last_edited_by",
+          "notion://meeting_notes/attendees"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility.",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterProperty",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "title",
+              "name": "Title"
+            },
+            {
+              "value": "attendees",
+              "name": "Attendees"
+            },
+            {
+              "value": "created_time",
+              "name": "CreatedTime"
+            },
+            {
+              "value": "created_by",
+              "name": "CreatedBy"
+            },
+            {
+              "value": "last_edited_time",
+              "name": "LastEditedTime"
+            },
+            {
+              "value": "last_edited_by",
+              "name": "LastEditedBy"
+            },
+            {
+              "value": "notion://meeting_notes/attendees",
+              "name": "NotionColonSlashSlashMeetingNotesAttendees"
+            }
+          ]
+        }
+      },
       "MentionType": {
         "const": null,
         "enum": [
@@ -57590,6 +57922,83 @@
             {
               "value": "multi_select",
               "name": "MultiSelect"
+            }
+          ]
+        }
+      },
+      "AgentIdProperty": {
+        "enum": [
+          "agent_id"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Filter sessions by agent_id.",
+        "x-ms-enum": {
+          "name": "AgentIdProperty",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "agent_id",
+              "name": "AgentId"
+            }
+          ]
+        }
+      },
+      "IdProperty": {
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Filter sessions by id.",
+        "x-ms-enum": {
+          "name": "IdProperty",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
+      },
+      "StatusProperty": {
+        "enum": [
+          "status"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Filter sessions by status.",
+        "x-ms-enum": {
+          "name": "StatusProperty",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "status",
+              "name": "Status"
+            }
+          ]
+        }
+      },
+      "SessionTimestampFilterProperty": {
+        "enum": [
+          "created_at",
+          "updated_at"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The session timestamp to compare.",
+        "x-ms-enum": {
+          "name": "SessionTimestampFilterProperty",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created_at",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "updated_at",
+              "name": "UpdatedAt"
             }
           ]
         }
@@ -59298,6 +59707,156 @@
           ]
         }
       },
+      "MeetingNotesPropertyFilterFilterOneOf1Operator": {
+        "enum": [
+          "string_is",
+          "string_is_not",
+          "string_contains",
+          "string_does_not_contain",
+          "string_starts_with",
+          "string_ends_with"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How to compare the text.",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf1Operator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "string_is",
+              "name": "StringIs"
+            },
+            {
+              "value": "string_is_not",
+              "name": "StringIsNot"
+            },
+            {
+              "value": "string_contains",
+              "name": "StringContains"
+            },
+            {
+              "value": "string_does_not_contain",
+              "name": "StringDoesNotContain"
+            },
+            {
+              "value": "string_starts_with",
+              "name": "StringStartsWith"
+            },
+            {
+              "value": "string_ends_with",
+              "name": "StringEndsWith"
+            }
+          ]
+        }
+      },
+      "MeetingNotesPropertyFilterFilterOneOf2Operator": {
+        "enum": [
+          "person_contains",
+          "person_does_not_contain"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the property must contain the people listed.",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf2Operator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "person_contains",
+              "name": "PersonContains"
+            },
+            {
+              "value": "person_does_not_contain",
+              "name": "PersonDoesNotContain"
+            }
+          ]
+        }
+      },
+      "MeetingNotesPropertyFilterFilterOneOf3Operator": {
+        "enum": [
+          "date_is",
+          "date_is_before",
+          "date_is_after",
+          "date_is_on_or_before",
+          "date_is_on_or_after"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How to compare the date.",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf3Operator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date_is",
+              "name": "DateIs"
+            },
+            {
+              "value": "date_is_before",
+              "name": "DateIsBefore"
+            },
+            {
+              "value": "date_is_after",
+              "name": "DateIsAfter"
+            },
+            {
+              "value": "date_is_on_or_before",
+              "name": "DateIsOnOrBefore"
+            },
+            {
+              "value": "date_is_on_or_after",
+              "name": "DateIsOnOrAfter"
+            }
+          ]
+        }
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4Operator": {
+        "enum": [
+          "date_is_within",
+          "date_is_relative_to"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How to compare the date against the range.",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf4Operator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date_is_within",
+              "name": "DateIsWithin"
+            },
+            {
+              "value": "date_is_relative_to",
+              "name": "DateIsRelativeTo"
+            }
+          ]
+        }
+      },
+      "MeetingNotesPropertyFilterFilterOneOf5Operator": {
+        "enum": [
+          "is_empty",
+          "is_not_empty"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the property must be empty or set.",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf5Operator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "is_empty",
+              "name": "IsEmpty"
+            },
+            {
+              "value": "is_not_empty",
+              "name": "IsNotEmpty"
+            }
+          ]
+        }
+      },
       "DatabaseType": {
         "const": null,
         "enum": [
@@ -59415,6 +59974,185 @@
           ]
         }
       },
+      "ExactType": {
+        "const": null,
+        "enum": [
+          "exact"
+        ],
+        "type": "string",
+        "description": "Always \u0060exact\u0060",
+        "x-ms-enum": {
+          "name": "ExactType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "exact",
+              "name": "Exact"
+            }
+          ]
+        }
+      },
+      "RelativeType": {
+        "const": null,
+        "enum": [
+          "relative"
+        ],
+        "type": "string",
+        "description": "Always \u0060relative\u0060",
+        "x-ms-enum": {
+          "name": "RelativeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "relative",
+              "name": "Relative"
+            }
+          ]
+        }
+      },
+      "MeValue": {
+        "const": null,
+        "enum": [
+          "me"
+        ],
+        "type": "string",
+        "description": "Always \u0060me\u0060",
+        "x-ms-enum": {
+          "name": "MeValue",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "me",
+              "name": "Me"
+            }
+          ]
+        }
+      },
+      "CustomValue": {
+        "const": null,
+        "enum": [
+          "custom"
+        ],
+        "type": "string",
+        "description": "Always \u0060custom\u0060",
+        "x-ms-enum": {
+          "name": "CustomValue",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "custom",
+              "name": "Custom"
+            }
+          ]
+        }
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Direction": {
+        "enum": [
+          "past",
+          "future"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the window runs backwards or forwards from now.",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Direction",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "past",
+              "name": "Past"
+            },
+            {
+              "value": "future",
+              "name": "Future"
+            }
+          ]
+        }
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Unit": {
+        "enum": [
+          "year",
+          "month",
+          "week",
+          "day"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "One of: \u0060year\u0060, \u0060month\u0060, \u0060week\u0060, \u0060day\u0060",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Unit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "year",
+              "name": "Year"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            }
+          ]
+        }
+      },
+      "SurroundingValue": {
+        "const": null,
+        "enum": [
+          "surrounding"
+        ],
+        "type": "string",
+        "description": "Always \u0060surrounding\u0060",
+        "x-ms-enum": {
+          "name": "SurroundingValue",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "surrounding",
+              "name": "Surrounding"
+            }
+          ]
+        }
+      },
+      "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Unit": {
+        "enum": [
+          "year",
+          "month",
+          "week",
+          "day"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "One of: \u0060year\u0060, \u0060month\u0060, \u0060week\u0060, \u0060day\u0060",
+        "x-ms-enum": {
+          "name": "MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Unit",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "year",
+              "name": "Year"
+            },
+            {
+              "value": "month",
+              "name": "Month"
+            },
+            {
+              "value": "week",
+              "name": "Week"
+            },
+            {
+              "value": "day",
+              "name": "Day"
+            }
+          ]
+        }
+      },
       "ViewFilterResponseOneOf3OrItemOneOf3OrItemOneOf2Timestamp": {
         "enum": [
           "created_time",
@@ -59503,6 +60241,24 @@
             {
               "value": "last_edited_time",
               "name": "LastEditedTime"
+            }
+          ]
+        }
+      },
+      "DatetimeType": {
+        "const": null,
+        "enum": [
+          "datetime"
+        ],
+        "type": "string",
+        "description": "Always \u0060datetime\u0060",
+        "x-ms-enum": {
+          "name": "DatetimeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "datetime",
+              "name": "Datetime"
             }
           ]
         }
@@ -59597,6 +60353,101 @@
             {
               "value": "agent",
               "name": "Agent"
+            }
+          ]
+        }
+      },
+      "SessionStatusFilterStatusEquals": {
+        "enum": [
+          "queued",
+          "in_progress",
+          "requires_action",
+          "completed",
+          "failed",
+          "canceled",
+          "terminated"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Return sessions with this status.",
+        "x-ms-enum": {
+          "name": "SessionStatusFilterStatusEquals",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "queued",
+              "name": "Queued"
+            },
+            {
+              "value": "in_progress",
+              "name": "InProgress"
+            },
+            {
+              "value": "requires_action",
+              "name": "RequiresAction"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "canceled",
+              "name": "Canceled"
+            },
+            {
+              "value": "terminated",
+              "name": "Terminated"
+            }
+          ]
+        }
+      },
+      "SessionStatusFilterStatusInItem": {
+        "enum": [
+          "queued",
+          "in_progress",
+          "requires_action",
+          "completed",
+          "failed",
+          "canceled",
+          "terminated"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SessionStatusFilterStatusInItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "queued",
+              "name": "Queued"
+            },
+            {
+              "value": "in_progress",
+              "name": "InProgress"
+            },
+            {
+              "value": "requires_action",
+              "name": "RequiresAction"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            },
+            {
+              "value": "canceled",
+              "name": "Canceled"
+            },
+            {
+              "value": "terminated",
+              "name": "Terminated"
             }
           ]
         }
@@ -59757,6 +60608,42 @@
             {
               "value": "upload_error",
               "name": "UploadError"
+            }
+          ]
+        }
+      },
+      "NotionUserTable": {
+        "const": null,
+        "enum": [
+          "notion_user"
+        ],
+        "type": "string",
+        "description": "Always \u0060notion_user\u0060",
+        "x-ms-enum": {
+          "name": "NotionUserTable",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "notion_user",
+              "name": "NotionUser"
+            }
+          ]
+        }
+      },
+      "DaterangeType": {
+        "const": null,
+        "enum": [
+          "daterange"
+        ],
+        "type": "string",
+        "description": "Always \u0060daterange\u0060",
+        "x-ms-enum": {
+          "name": "DaterangeType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "daterange",
+              "name": "Daterange"
             }
           ]
         }
@@ -61385,19 +62272,25 @@
           ]
         }
       },
-      "IdProperty": {
-        "const": null,
+      "QueryMeetingNotesRequestFilterFiltersItemOneOf2Operator": {
         "enum": [
-          "id"
+          "and",
+          "or"
         ],
         "type": "string",
+        "additionalProperties": false,
+        "description": "Whether every child must match, or any of them.",
         "x-ms-enum": {
-          "name": "IdProperty",
+          "name": "QueryMeetingNotesRequestFilterFiltersItemOneOf2Operator",
           "modelAsString": false,
           "values": [
             {
-              "value": "id",
-              "name": "Id"
+              "value": "and",
+              "name": "And"
+            },
+            {
+              "value": "or",
+              "name": "Or"
             }
           ]
         }
@@ -62265,44 +63158,6 @@
           ]
         }
       },
-      "QuerySessionsRequestFilterProperty": {
-        "enum": [
-          "id",
-          "agent_id",
-          "status",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Filter sessions by id.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "agent_id",
-              "name": "AgentId"
-            },
-            {
-              "value": "status",
-              "name": "Status"
-            },
-            {
-              "value": "created_at",
-              "name": "CreatedAt"
-            },
-            {
-              "value": "updated_at",
-              "name": "UpdatedAt"
-            }
-          ]
-        }
-      },
       "QuerySessionsRequestSortsItemProperty": {
         "enum": [
           "created_at",
@@ -62777,77 +63632,6 @@
           ]
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemProperty": {
-        "enum": [
-          "title",
-          "attendees",
-          "created_time",
-          "created_by",
-          "last_edited_time",
-          "last_edited_by",
-          "notion://meeting_notes/attendees"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility.",
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "title",
-              "name": "Title"
-            },
-            {
-              "value": "attendees",
-              "name": "Attendees"
-            },
-            {
-              "value": "created_time",
-              "name": "CreatedTime"
-            },
-            {
-              "value": "created_by",
-              "name": "CreatedBy"
-            },
-            {
-              "value": "last_edited_time",
-              "name": "LastEditedTime"
-            },
-            {
-              "value": "last_edited_by",
-              "name": "LastEditedBy"
-            },
-            {
-              "value": "notion://meeting_notes/attendees",
-              "name": "NotionColonSlashSlashMeetingNotesAttendees"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemOperator": {
-        "enum": [
-          "and",
-          "or"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Whether every child must match, or any of them.",
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemOperator",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "and",
-              "name": "And"
-            },
-            {
-              "value": "or",
-              "name": "Or"
-            }
-          ]
-        }
-      },
       "QueryMeetingNotes200ResponseResultsItemMeetingNotesStatus": {
         "enum": [
           "transcription_not_started",
@@ -62979,177 +63763,6 @@
             {
               "value": "reject",
               "name": "Reject"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterStatusEquals": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Return sessions with this status.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterStatusEquals",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterStatusInItem": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterStatusInItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemProperty": {
-        "enum": [
-          "id",
-          "agent_id",
-          "status",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Filter sessions by id.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "agent_id",
-              "name": "AgentId"
-            },
-            {
-              "value": "status",
-              "name": "Status"
-            },
-            {
-              "value": "created_at",
-              "name": "CreatedAt"
-            },
-            {
-              "value": "updated_at",
-              "name": "UpdatedAt"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemProperty": {
-        "enum": [
-          "id",
-          "agent_id",
-          "status",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Filter sessions by id.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "agent_id",
-              "name": "AgentId"
-            },
-            {
-              "value": "status",
-              "name": "Status"
-            },
-            {
-              "value": "created_at",
-              "name": "CreatedAt"
-            },
-            {
-              "value": "updated_at",
-              "name": "UpdatedAt"
             }
           ]
         }
@@ -63692,494 +64305,6 @@
           ]
         }
       },
-      "QueryMeetingNotesRequestFilterFiltersItemFilterOperator": {
-        "enum": [
-          "string_is",
-          "string_is_not",
-          "string_contains",
-          "string_does_not_contain",
-          "string_starts_with",
-          "string_ends_with",
-          "person_contains",
-          "person_does_not_contain",
-          "date_is",
-          "date_is_before",
-          "date_is_after",
-          "date_is_on_or_before",
-          "date_is_on_or_after",
-          "date_is_within",
-          "date_is_relative_to",
-          "is_empty",
-          "is_not_empty"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "How to compare the text.",
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFilterOperator",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "string_is",
-              "name": "StringIs"
-            },
-            {
-              "value": "string_is_not",
-              "name": "StringIsNot"
-            },
-            {
-              "value": "string_contains",
-              "name": "StringContains"
-            },
-            {
-              "value": "string_does_not_contain",
-              "name": "StringDoesNotContain"
-            },
-            {
-              "value": "string_starts_with",
-              "name": "StringStartsWith"
-            },
-            {
-              "value": "string_ends_with",
-              "name": "StringEndsWith"
-            },
-            {
-              "value": "person_contains",
-              "name": "PersonContains"
-            },
-            {
-              "value": "person_does_not_contain",
-              "name": "PersonDoesNotContain"
-            },
-            {
-              "value": "date_is",
-              "name": "DateIs"
-            },
-            {
-              "value": "date_is_before",
-              "name": "DateIsBefore"
-            },
-            {
-              "value": "date_is_after",
-              "name": "DateIsAfter"
-            },
-            {
-              "value": "date_is_on_or_before",
-              "name": "DateIsOnOrBefore"
-            },
-            {
-              "value": "date_is_on_or_after",
-              "name": "DateIsOnOrAfter"
-            },
-            {
-              "value": "date_is_within",
-              "name": "DateIsWithin"
-            },
-            {
-              "value": "date_is_relative_to",
-              "name": "DateIsRelativeTo"
-            },
-            {
-              "value": "is_empty",
-              "name": "IsEmpty"
-            },
-            {
-              "value": "is_not_empty",
-              "name": "IsNotEmpty"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemProperty": {
-        "enum": [
-          "title",
-          "attendees",
-          "created_time",
-          "created_by",
-          "last_edited_time",
-          "last_edited_by",
-          "notion://meeting_notes/attendees"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Which meeting-note property to filter on. Prefer the short names; the schema URI form is accepted for compatibility.",
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "title",
-              "name": "Title"
-            },
-            {
-              "value": "attendees",
-              "name": "Attendees"
-            },
-            {
-              "value": "created_time",
-              "name": "CreatedTime"
-            },
-            {
-              "value": "created_by",
-              "name": "CreatedBy"
-            },
-            {
-              "value": "last_edited_time",
-              "name": "LastEditedTime"
-            },
-            {
-              "value": "last_edited_by",
-              "name": "LastEditedBy"
-            },
-            {
-              "value": "notion://meeting_notes/attendees",
-              "name": "NotionColonSlashSlashMeetingNotesAttendees"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemStatusEquals": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Return sessions with this status.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemStatusEquals",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemStatusInItem": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemStatusInItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemAndItemProperty": {
-        "enum": [
-          "id",
-          "agent_id",
-          "status",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Filter sessions by id.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemAndItemProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "agent_id",
-              "name": "AgentId"
-            },
-            {
-              "value": "status",
-              "name": "Status"
-            },
-            {
-              "value": "created_at",
-              "name": "CreatedAt"
-            },
-            {
-              "value": "updated_at",
-              "name": "UpdatedAt"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemOrItemProperty": {
-        "enum": [
-          "id",
-          "agent_id",
-          "status",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Filter sessions by id.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemOrItemProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "agent_id",
-              "name": "AgentId"
-            },
-            {
-              "value": "status",
-              "name": "Status"
-            },
-            {
-              "value": "created_at",
-              "name": "CreatedAt"
-            },
-            {
-              "value": "updated_at",
-              "name": "UpdatedAt"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemStatusEquals": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Return sessions with this status.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemStatusEquals",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemStatusInItem": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemStatusInItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemAndItemProperty": {
-        "enum": [
-          "id",
-          "agent_id",
-          "status",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Filter sessions by id.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemAndItemProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "agent_id",
-              "name": "AgentId"
-            },
-            {
-              "value": "status",
-              "name": "Status"
-            },
-            {
-              "value": "created_at",
-              "name": "CreatedAt"
-            },
-            {
-              "value": "updated_at",
-              "name": "UpdatedAt"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemOrItemProperty": {
-        "enum": [
-          "id",
-          "agent_id",
-          "status",
-          "created_at",
-          "updated_at"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Filter sessions by id.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemOrItemProperty",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "id",
-              "name": "Id"
-            },
-            {
-              "value": "agent_id",
-              "name": "AgentId"
-            },
-            {
-              "value": "status",
-              "name": "Status"
-            },
-            {
-              "value": "created_at",
-              "name": "CreatedAt"
-            },
-            {
-              "value": "updated_at",
-              "name": "UpdatedAt"
-            }
-          ]
-        }
-      },
       "QuerySessions200ResponseResultsItemRequiredActionsItemOptionsItemId": {
         "enum": [
           "approve",
@@ -64518,502 +64643,6 @@
             {
               "value": "reject",
               "name": "Reject"
-            }
-          ]
-        }
-      },
-      "ExactType": {
-        "const": null,
-        "enum": [
-          "exact"
-        ],
-        "type": "string",
-        "description": "Always \u0060exact\u0060",
-        "x-ms-enum": {
-          "name": "ExactType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "exact",
-              "name": "Exact"
-            }
-          ]
-        }
-      },
-      "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator": {
-        "enum": [
-          "string_is",
-          "string_is_not",
-          "string_contains",
-          "string_does_not_contain",
-          "string_starts_with",
-          "string_ends_with",
-          "person_contains",
-          "person_does_not_contain",
-          "date_is",
-          "date_is_before",
-          "date_is_after",
-          "date_is_on_or_before",
-          "date_is_on_or_after",
-          "date_is_within",
-          "date_is_relative_to",
-          "is_empty",
-          "is_not_empty"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "How to compare the text.",
-        "x-ms-enum": {
-          "name": "QueryMeetingNotesRequestFilterFiltersItemFiltersItemFilterOperator",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "string_is",
-              "name": "StringIs"
-            },
-            {
-              "value": "string_is_not",
-              "name": "StringIsNot"
-            },
-            {
-              "value": "string_contains",
-              "name": "StringContains"
-            },
-            {
-              "value": "string_does_not_contain",
-              "name": "StringDoesNotContain"
-            },
-            {
-              "value": "string_starts_with",
-              "name": "StringStartsWith"
-            },
-            {
-              "value": "string_ends_with",
-              "name": "StringEndsWith"
-            },
-            {
-              "value": "person_contains",
-              "name": "PersonContains"
-            },
-            {
-              "value": "person_does_not_contain",
-              "name": "PersonDoesNotContain"
-            },
-            {
-              "value": "date_is",
-              "name": "DateIs"
-            },
-            {
-              "value": "date_is_before",
-              "name": "DateIsBefore"
-            },
-            {
-              "value": "date_is_after",
-              "name": "DateIsAfter"
-            },
-            {
-              "value": "date_is_on_or_before",
-              "name": "DateIsOnOrBefore"
-            },
-            {
-              "value": "date_is_on_or_after",
-              "name": "DateIsOnOrAfter"
-            },
-            {
-              "value": "date_is_within",
-              "name": "DateIsWithin"
-            },
-            {
-              "value": "date_is_relative_to",
-              "name": "DateIsRelativeTo"
-            },
-            {
-              "value": "is_empty",
-              "name": "IsEmpty"
-            },
-            {
-              "value": "is_not_empty",
-              "name": "IsNotEmpty"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemAndItemStatusEquals": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Return sessions with this status.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemAndItemStatusEquals",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemAndItemStatusInItem": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemAndItemStatusInItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemOrItemStatusEquals": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Return sessions with this status.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemOrItemStatusEquals",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterAndItemOrItemStatusInItem": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterAndItemOrItemStatusInItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemAndItemStatusEquals": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Return sessions with this status.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemAndItemStatusEquals",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemAndItemStatusInItem": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemAndItemStatusInItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemOrItemStatusEquals": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Return sessions with this status.",
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemOrItemStatusEquals",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
-            }
-          ]
-        }
-      },
-      "QuerySessionsRequestFilterOrItemOrItemStatusInItem": {
-        "enum": [
-          "queued",
-          "in_progress",
-          "requires_action",
-          "completed",
-          "failed",
-          "canceled",
-          "terminated"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "QuerySessionsRequestFilterOrItemOrItemStatusInItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "queued",
-              "name": "Queued"
-            },
-            {
-              "value": "in_progress",
-              "name": "InProgress"
-            },
-            {
-              "value": "requires_action",
-              "name": "RequiresAction"
-            },
-            {
-              "value": "completed",
-              "name": "Completed"
-            },
-            {
-              "value": "failed",
-              "name": "Failed"
-            },
-            {
-              "value": "canceled",
-              "name": "Canceled"
-            },
-            {
-              "value": "terminated",
-              "name": "Terminated"
             }
           ]
         }

@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilterOneOf2AndItemOneOf2OrItemPeople People { get; set; }
 #endif
-        /// <summary>The property property</summary>
+        /// <summary>Filter sessions by id.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.IdProperty? Property { get; set; }
         /// <summary>The select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
