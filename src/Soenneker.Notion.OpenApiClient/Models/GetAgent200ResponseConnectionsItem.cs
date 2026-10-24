@@ -7,62 +7,60 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf6"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetAgent200ResponseConnectionsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetAgent200ResponseConnectionsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The account property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Account { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1? GetAgent200ResponseConnectionsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public UntypedNode Account { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1 GetAgent200ResponseConnectionsItemOneOf1 { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The tools the agent may call, null when all tools are enabled (including any the server adds later), or &quot;hidden&quot; when the caller lacks edit access to the agent.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemEnabledTools? EnabledTools { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2? GetAgent200ResponseConnectionsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemEnabledTools EnabledTools { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2 GetAgent200ResponseConnectionsItemOneOf2 { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3? GetAgent200ResponseConnectionsItemOneOf3 { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3 GetAgent200ResponseConnectionsItemOneOf3 { get; set; }
 #endif
-        /// <summary>The permissions property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemPermissionsItem>? Permissions { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf4? GetAgent200ResponseConnectionsItemOneOf4 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemPermissionsItem> Permissions { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf4 GetAgent200ResponseConnectionsItemOneOf4 { get; set; }
 #endif
-        /// <summary>Whether read / write tool calls run without a confirmation step.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemRunToolsAutomatically? RunToolsAutomatically { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5? GetAgent200ResponseConnectionsItemOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemRunToolsAutomatically RunToolsAutomatically { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5 GetAgent200ResponseConnectionsItemOneOf5 { get; set; }
 #endif
-        /// <summary>Always `notion`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.NotionType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem"/> and sets the default values.
-        /// </summary>
-        public GetAgent200ResponseConnectionsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf6"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf6? GetAgent200ResponseConnectionsItemOneOf6 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf6 GetAgent200ResponseConnectionsItemOneOf6 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +69,33 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem();
+            if("GetAgent200ResponseConnectionsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetAgent200ResponseConnectionsItemOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1();
+            }
+            else if("GetAgent200ResponseConnectionsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetAgent200ResponseConnectionsItemOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2();
+            }
+            else if("GetAgent200ResponseConnectionsItemOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetAgent200ResponseConnectionsItemOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3();
+            }
+            else if("GetAgent200ResponseConnectionsItemOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetAgent200ResponseConnectionsItemOneOf4 = new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf4();
+            }
+            else if("GetAgent200ResponseConnectionsItemOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetAgent200ResponseConnectionsItemOneOf5 = new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5();
+            }
+            else if("GetAgent200ResponseConnectionsItemOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GetAgent200ResponseConnectionsItemOneOf6 = new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf6();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,15 +103,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetAgent200ResponseConnectionsItemOneOf1 != null)
             {
-                { "account", n => { Account = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "enabled_tools", n => { EnabledTools = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemEnabledTools>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemEnabledTools.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemPermissionsItem>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemPermissionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "run_tools_automatically", n => { RunToolsAutomatically = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemRunToolsAutomatically>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemRunToolsAutomatically.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NotionType>(); } },
-            };
+                return GetAgent200ResponseConnectionsItemOneOf1.GetFieldDeserializers();
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf2 != null)
+            {
+                return GetAgent200ResponseConnectionsItemOneOf2.GetFieldDeserializers();
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf3 != null)
+            {
+                return GetAgent200ResponseConnectionsItemOneOf3.GetFieldDeserializers();
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf4 != null)
+            {
+                return GetAgent200ResponseConnectionsItemOneOf4.GetFieldDeserializers();
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf5 != null)
+            {
+                return GetAgent200ResponseConnectionsItemOneOf5.GetFieldDeserializers();
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf6 != null)
+            {
+                return GetAgent200ResponseConnectionsItemOneOf6.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -96,13 +136,30 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("account", Account);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemEnabledTools>("enabled_tools", EnabledTools);
-            writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemPermissionsItem>("permissions", Permissions);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemRunToolsAutomatically>("run_tools_automatically", RunToolsAutomatically);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NotionType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GetAgent200ResponseConnectionsItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1>(null, GetAgent200ResponseConnectionsItemOneOf1);
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2>(null, GetAgent200ResponseConnectionsItemOneOf2);
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3>(null, GetAgent200ResponseConnectionsItemOneOf3);
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf4>(null, GetAgent200ResponseConnectionsItemOneOf4);
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5>(null, GetAgent200ResponseConnectionsItemOneOf5);
+            }
+            else if(GetAgent200ResponseConnectionsItemOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf6>(null, GetAgent200ResponseConnectionsItemOneOf6);
+            }
         }
     }
 }

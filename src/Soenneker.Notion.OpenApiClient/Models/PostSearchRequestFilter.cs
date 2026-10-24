@@ -7,26 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PostSearchRequestFilter : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PostSearchRequestFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The in_trash property</summary>
-        public bool? InTrash { get; set; }
-        /// <summary>The property property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ObjectValueProperty? Property { get; set; }
-        /// <summary>The value property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilter"/> and sets the default values.
-        /// </summary>
-        public PostSearchRequestFilter()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf1? PostSearchRequestFilterAnyOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf1 PostSearchRequestFilterAnyOf1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf2? PostSearchRequestFilterAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf2 PostSearchRequestFilterAnyOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +37,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilter();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilter();
+            result.PostSearchRequestFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf1();
+            result.PostSearchRequestFilterAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,12 +48,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostSearchRequestFilterAnyOf1 != null || PostSearchRequestFilterAnyOf2 != null)
             {
-                { "in_trash", n => { InTrash = n.GetBoolValue(); } },
-                { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ObjectValueProperty>(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue>(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostSearchRequestFilterAnyOf1, PostSearchRequestFilterAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,10 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("in_trash", InTrash);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ObjectValueProperty>("property", Property);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterValue>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearchRequestFilterAnyOf1>(null, PostSearchRequestFilterAnyOf1, PostSearchRequestFilterAnyOf2);
         }
     }
 }

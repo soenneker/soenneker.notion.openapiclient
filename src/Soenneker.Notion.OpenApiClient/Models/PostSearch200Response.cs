@@ -25,14 +25,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string NextCursor { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseObject? Object { get; set; }
         /// <summary>The page_or_data_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponsePageOrDataSource? PageOrDataSource { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? PageOrDataSource { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponsePageOrDataSource PageOrDataSource { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject PageOrDataSource { get; set; }
 #endif
         /// <summary>The request_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,13 +45,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem>? Results { get; set; }
+        public List<UntypedNode>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem> Results { get; set; }
+        public List<UntypedNode> Results { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearch200Response"/> and sets the default values.
         /// </summary>
@@ -79,11 +79,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>(); } },
-                { "page_or_data_source", n => { PageOrDataSource = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponsePageOrDataSource>(global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponsePageOrDataSource.CreateFromDiscriminatorValue); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseObject>(); } },
+                { "page_or_data_source", n => { PageOrDataSource = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
                 { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus>(global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus.CreateFromDiscriminatorValue); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem>(global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType>(); } },
+                { "results", n => { Results = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseType>(); } },
             };
         }
         /// <summary>
@@ -95,11 +95,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponsePageOrDataSource>("page_or_data_source", PageOrDataSource);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseObject>("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("page_or_data_source", PageOrDataSource);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus>("request_status", RequestStatus);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseResultsItem>("results", Results);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType>("type", Type);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("results", Results);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

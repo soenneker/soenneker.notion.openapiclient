@@ -7,22 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultError"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultSuccess"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class FileUploadObjectResponseFileImportResult : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class FileUploadObjectResponseFileImportResult : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The time the file was imported into Notion. ISO 8601 format.</summary>
-        public DateTimeOffset? ImportedTime { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult"/> and sets the default values.
-        /// </summary>
-        public FileUploadObjectResponseFileImportResult()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultError"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultError? FileUploadObjectResponseFileImportResultError { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultError FileUploadObjectResponseFileImportResultError { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultSuccess"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultSuccess? FileUploadObjectResponseFileImportResultSuccess { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultSuccess FileUploadObjectResponseFileImportResultSuccess { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +37,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult();
+            if("error".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FileUploadObjectResponseFileImportResultError = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultError();
+            }
+            else if("success".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FileUploadObjectResponseFileImportResultSuccess = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultSuccess();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,10 +55,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(FileUploadObjectResponseFileImportResultError != null)
             {
-                { "imported_time", n => { ImportedTime = n.GetDateTimeOffsetValue(); } },
-            };
+                return FileUploadObjectResponseFileImportResultError.GetFieldDeserializers();
+            }
+            else if(FileUploadObjectResponseFileImportResultSuccess != null)
+            {
+                return FileUploadObjectResponseFileImportResultSuccess.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -51,8 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("imported_time", ImportedTime);
-            writer.WriteAdditionalData(AdditionalData);
+            if(FileUploadObjectResponseFileImportResultError != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultError>(null, FileUploadObjectResponseFileImportResultError);
+            }
+            else if(FileUploadObjectResponseFileImportResultSuccess != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResultSuccess>(null, FileUploadObjectResponseFileImportResultSuccess);
+            }
         }
     }
 }

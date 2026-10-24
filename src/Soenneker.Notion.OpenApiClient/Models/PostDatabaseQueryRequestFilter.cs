@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostDatabaseQueryRequestFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1? PostDatabaseQueryRequestFilterAnyOf1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2? PostDatabaseQueryRequestFilterAnyOf1AnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1 PostDatabaseQueryRequestFilterAnyOf1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2 PostDatabaseQueryRequestFilterAnyOf1AnyOf2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter();
-            result.PostDatabaseQueryRequestFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1();
+            result.PostDatabaseQueryRequestFilterAnyOf1AnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2();
             result.PropertyFilter = new global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter();
             result.TimestampFilter = new global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter();
             return result;
@@ -57,9 +57,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PostDatabaseQueryRequestFilterAnyOf1 != null || PropertyFilter != null || TimestampFilter != null)
+            if(PostDatabaseQueryRequestFilterAnyOf1AnyOf2 != null || PropertyFilter != null || TimestampFilter != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostDatabaseQueryRequestFilterAnyOf1, PropertyFilter, TimestampFilter);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostDatabaseQueryRequestFilterAnyOf1AnyOf2, PropertyFilter, TimestampFilter);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1>(null, PostDatabaseQueryRequestFilterAnyOf1, PropertyFilter, TimestampFilter);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2>(null, PostDatabaseQueryRequestFilterAnyOf1AnyOf2, PropertyFilter, TimestampFilter);
         }
     }
 }

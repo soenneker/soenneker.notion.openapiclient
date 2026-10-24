@@ -38,8 +38,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest Sort { get; set; }
 #endif
-        /// <summary>The formula result type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.NumberType? Type { get; set; }
+        /// <summary>The property type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigRequest"/> and sets the default values.
         /// </summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "range_size", n => { RangeSize = n.GetIntValue(); } },
                 { "range_start", n => { RangeStart = n.GetIntValue(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigRequestType>(); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteIntValue("range_size", RangeSize);
             writer.WriteIntValue("range_start", RangeStart);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortRequest>("sort", Sort);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

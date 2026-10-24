@@ -53,21 +53,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.FormulaSubGroupByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.FormulaSubGroupByResponse();
-            if("FormulaCheckboxSubGroupByResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("checkbox".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaCheckboxSubGroupByResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByResponse();
             }
-            else if("FormulaDateSubGroupByResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaDateSubGroupByResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponse();
             }
-            else if("FormulaNumberSubGroupByResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaNumberSubGroupByResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByResponse();
             }
-            else if("FormulaTextSubGroupByResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaTextSubGroupByResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponse();
             }

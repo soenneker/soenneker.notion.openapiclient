@@ -61,12 +61,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse();
-            result.BooleanFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse();
-            result.DateFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse();
-            result.NumberFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse();
-            result.StringFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse();
-            result.UnsupportedFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse();
+            if("boolean".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.BooleanFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse();
+            }
+            else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DateFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse();
+            }
+            else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.NumberFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse();
+            }
+            else if("string".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.StringFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse();
+            }
+            else if("unsupported".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UnsupportedFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +91,25 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(BooleanFormulaPropertyResponse != null || DateFormulaPropertyResponse != null || NumberFormulaPropertyResponse != null || StringFormulaPropertyResponse != null || UnsupportedFormulaPropertyResponse != null)
+            if(BooleanFormulaPropertyResponse != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BooleanFormulaPropertyResponse, DateFormulaPropertyResponse, NumberFormulaPropertyResponse, StringFormulaPropertyResponse, UnsupportedFormulaPropertyResponse);
+                return BooleanFormulaPropertyResponse.GetFieldDeserializers();
+            }
+            else if(DateFormulaPropertyResponse != null)
+            {
+                return DateFormulaPropertyResponse.GetFieldDeserializers();
+            }
+            else if(NumberFormulaPropertyResponse != null)
+            {
+                return NumberFormulaPropertyResponse.GetFieldDeserializers();
+            }
+            else if(StringFormulaPropertyResponse != null)
+            {
+                return StringFormulaPropertyResponse.GetFieldDeserializers();
+            }
+            else if(UnsupportedFormulaPropertyResponse != null)
+            {
+                return UnsupportedFormulaPropertyResponse.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +120,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse>(null, BooleanFormulaPropertyResponse, DateFormulaPropertyResponse, NumberFormulaPropertyResponse, StringFormulaPropertyResponse, UnsupportedFormulaPropertyResponse);
+            if(BooleanFormulaPropertyResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse>(null, BooleanFormulaPropertyResponse);
+            }
+            else if(DateFormulaPropertyResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse>(null, DateFormulaPropertyResponse);
+            }
+            else if(NumberFormulaPropertyResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse>(null, NumberFormulaPropertyResponse);
+            }
+            else if(StringFormulaPropertyResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse>(null, StringFormulaPropertyResponse);
+            }
+            else if(UnsupportedFormulaPropertyResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse>(null, UnsupportedFormulaPropertyResponse);
+            }
         }
     }
 }

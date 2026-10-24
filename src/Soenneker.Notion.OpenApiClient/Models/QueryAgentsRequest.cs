@@ -15,10 +15,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Filter agents by public properties, optionally combined with and/or.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilter? Filter { get; set; }
+        public UntypedNode? Filter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilter Filter { get; set; }
+        public UntypedNode Filter { get; set; }
 #endif
         /// <summary>Whether to include soft-deleted agents. Defaults to false.</summary>
         public bool? IncludeDeleted { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilter>(global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilter.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "include_deleted", n => { IncludeDeleted = n.GetBoolValue(); } },
                 { "page_size", n => { PageSize = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestFilter>("filter", Filter);
+            writer.WriteObjectValue<UntypedNode>("filter", Filter);
             writer.WriteBoolValue("include_deleted", IncludeDeleted);
             writer.WriteIntValue("page_size", PageSize);
             writer.WriteStringValue("query", Query);

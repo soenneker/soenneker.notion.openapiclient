@@ -21,9 +21,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ColumnWithChildrenRequest Column { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnObject? Object { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ColumnType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "column", n => { Column = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnWithChildrenRequest>(global::Soenneker.Notion.OpenApiClient.Models.ColumnWithChildrenRequest.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnType>(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnWithChildrenRequest>("column", Column);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ColumnType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestColumnType>("type", Type);
         }
     }
 }

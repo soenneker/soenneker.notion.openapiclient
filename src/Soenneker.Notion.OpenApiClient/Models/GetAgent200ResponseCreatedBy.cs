@@ -14,10 +14,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
-        /// <summary>The user object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UserObject? Object { get; set; }
         /// <summary>Always `user`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UserType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedByObject? Object { get; set; }
+        /// <summary>Always `user`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedByType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,8 +37,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedByObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedByType>(); } },
             };
         }
         /// <summary>
@@ -49,8 +49,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedByObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedByType>("type", Type);
         }
     }
 }

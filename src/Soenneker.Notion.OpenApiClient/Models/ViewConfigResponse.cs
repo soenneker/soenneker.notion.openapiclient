@@ -213,8 +213,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse> TableProperties { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TableType? Type { get; set; }
+        /// <summary>The view configuration type.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigResponseType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -333,7 +333,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "submission_permissions", n => { SubmissionPermissions = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions>(); } },
                 { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse.CreateFromDiscriminatorValue); } },
                 { "table_properties", n => { TableProperties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigResponseType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse>(global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse.CreateFromDiscriminatorValue); } },
                 { "view_range", n => { ViewRange = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange>(); } },
                 { "wrap_cells", n => { WrapCells = n.GetBoolValue(); } },
@@ -397,7 +397,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions>("submission_permissions", SubmissionPermissions);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse>("subtasks", Subtasks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>("table_properties", TableProperties);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigResponseType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse>("value", Value);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange>("view_range", ViewRange);
             writer.WriteBoolValue("wrap_cells", WrapCells);

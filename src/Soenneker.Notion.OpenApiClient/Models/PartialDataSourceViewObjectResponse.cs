@@ -15,7 +15,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponseObject? Object { get; set; }
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,7 +45,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponseObject>(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponseType>(); } },
             };
@@ -58,7 +58,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponseObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse>("parent", Parent);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponseType>("type", Type);
         }

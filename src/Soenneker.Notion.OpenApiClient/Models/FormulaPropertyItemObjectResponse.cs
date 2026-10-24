@@ -31,9 +31,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
-        /// <summary>Always `formula`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponseObject? Object { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "formula", n => { Formula = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse>(global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponseObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponseType>(); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse>("formula", Formula);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponseObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

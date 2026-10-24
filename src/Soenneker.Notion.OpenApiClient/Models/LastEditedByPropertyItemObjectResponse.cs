@@ -31,9 +31,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy LastEditedBy { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
-        /// <summary>Always `last_edited_by`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseObject? Object { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_edited_by", n => { LastEditedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy>(global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseType>(); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy>("last_edited_by", LastEditedBy);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,84 +8,35 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Exactly one mode: append a message, answer pending actions, or replay from an event.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class UpdateSessionRequest : IAdditionalDataHolder, IParsable
+    public partial class UpdateSessionRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The actions property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestActionsItem>? Actions { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1? UpdateSessionRequestOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestActionsItem> Actions { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1 UpdateSessionRequestOneOf1 { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The agent_id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAgentId? AgentId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2? UpdateSessionRequestOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAgentId AgentId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2 UpdateSessionRequestOneOf2 { get; set; }
 #endif
-        /// <summary>The attachments property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAttachmentsItem>? Attachments { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3? UpdateSessionRequestOneOf3 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAttachmentsItem> Attachments { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3 UpdateSessionRequestOneOf3 { get; set; }
 #endif
-        /// <summary>The continue_from property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContinueFrom { get; set; }
-#nullable restore
-#else
-        public string ContinueFrom { get; set; }
-#endif
-        /// <summary>The message property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Message { get; set; }
-#nullable restore
-#else
-        public string Message { get; set; }
-#endif
-        /// <summary>The metadata property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestMetadata? Metadata { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestMetadata Metadata { get; set; }
-#endif
-        /// <summary>The prompt_context property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PromptContext { get; set; }
-#nullable restore
-#else
-        public string PromptContext { get; set; }
-#endif
-        /// <summary>The session_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SessionId { get; set; }
-#nullable restore
-#else
-        public string SessionId { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequest"/> and sets the default values.
-        /// </summary>
-        public UpdateSessionRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,7 +45,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequest();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequest();
+            if("UpdateSessionRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateSessionRequestOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1();
+            }
+            else if("UpdateSessionRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateSessionRequestOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2();
+            }
+            else if("UpdateSessionRequestOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UpdateSessionRequestOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,17 +67,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(UpdateSessionRequestOneOf1 != null)
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestActionsItem>(global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAgentId>(global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAgentId.CreateFromDiscriminatorValue); } },
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAttachmentsItem>(global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAttachmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "continue_from", n => { ContinueFrom = n.GetStringValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestMetadata>(global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestMetadata.CreateFromDiscriminatorValue); } },
-                { "prompt_context", n => { PromptContext = n.GetStringValue(); } },
-                { "session_id", n => { SessionId = n.GetStringValue(); } },
-            };
+                return UpdateSessionRequestOneOf1.GetFieldDeserializers();
+            }
+            else if(UpdateSessionRequestOneOf2 != null)
+            {
+                return UpdateSessionRequestOneOf2.GetFieldDeserializers();
+            }
+            else if(UpdateSessionRequestOneOf3 != null)
+            {
+                return UpdateSessionRequestOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -121,15 +88,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestActionsItem>("actions", Actions);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAgentId>("agent_id", AgentId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestAttachmentsItem>("attachments", Attachments);
-            writer.WriteStringValue("continue_from", ContinueFrom);
-            writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestMetadata>("metadata", Metadata);
-            writer.WriteStringValue("prompt_context", PromptContext);
-            writer.WriteStringValue("session_id", SessionId);
-            writer.WriteAdditionalData(AdditionalData);
+            if(UpdateSessionRequestOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1>(null, UpdateSessionRequestOneOf1);
+            }
+            else if(UpdateSessionRequestOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2>(null, UpdateSessionRequestOneOf2);
+            }
+            else if(UpdateSessionRequestOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3>(null, UpdateSessionRequestOneOf3);
+            }
         }
     }
 }

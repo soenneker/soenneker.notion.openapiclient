@@ -17,7 +17,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Whether the window runs backwards or forwards from now.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Direction? Direction { get; set; }
         /// <summary>Always `relative`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RelativeType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Type? Type { get; set; }
         /// <summary>One of: `year`, `month`, `week`, `day`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Unit? Unit { get; set; }
         /// <summary>Always `custom`</summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Direction>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelativeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Type>(); } },
                 { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Unit>(); } },
                 { "value", n => { Value = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CustomValue>(); } },
             };
@@ -56,7 +56,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Direction>("direction", Direction);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelativeType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Type>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf1Unit>("unit", Unit);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CustomValue>("value", Value);
         }

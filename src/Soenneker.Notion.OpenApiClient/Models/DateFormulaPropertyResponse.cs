@@ -22,8 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.DateResponse Date { get; set; }
 #endif
-        /// <summary>Always `date`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DateType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>(global::Soenneker.Notion.OpenApiClient.Models.DateResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponseType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>("date", Date);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

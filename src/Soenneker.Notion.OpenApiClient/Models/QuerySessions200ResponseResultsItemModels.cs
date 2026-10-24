@@ -7,30 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class QuerySessions200ResponseResultsItemModels : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class QuerySessions200ResponseResultsItemModels : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ids property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf1? QuerySessions200ResponseResultsItemModelsOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<string> Ids { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf1 QuerySessions200ResponseResultsItemModelsOneOf1 { get; set; }
 #endif
-        /// <summary>Always `auto`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.AutoType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModels"/> and sets the default values.
-        /// </summary>
-        public QuerySessions200ResponseResultsItemModels()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf2? QuerySessions200ResponseResultsItemModelsOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf2 QuerySessions200ResponseResultsItemModelsOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +37,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModels CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModels();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModels();
+            if("auto".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessions200ResponseResultsItemModelsOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf1();
+            }
+            else if("pinned".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessions200ResponseResultsItemModelsOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,11 +55,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(QuerySessions200ResponseResultsItemModelsOneOf1 != null)
             {
-                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AutoType>(); } },
-            };
+                return QuerySessions200ResponseResultsItemModelsOneOf1.GetFieldDeserializers();
+            }
+            else if(QuerySessions200ResponseResultsItemModelsOneOf2 != null)
+            {
+                return QuerySessions200ResponseResultsItemModelsOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -60,9 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AutoType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(QuerySessions200ResponseResultsItemModelsOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf1>(null, QuerySessions200ResponseResultsItemModelsOneOf1);
+            }
+            else if(QuerySessions200ResponseResultsItemModelsOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModelsOneOf2>(null, QuerySessions200ResponseResultsItemModelsOneOf2);
+            }
         }
     }
 }

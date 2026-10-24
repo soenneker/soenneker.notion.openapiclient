@@ -16,8 +16,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number property</summary>
         public double? Number { get; set; }
-        /// <summary>The formula result type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.NumberType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse"/> and sets the default values.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "number", n => { Number = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponseType>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("number", Number);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

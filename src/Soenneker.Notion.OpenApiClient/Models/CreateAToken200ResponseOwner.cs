@@ -7,33 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspace"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateAToken200ResponseOwner : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateAToken200ResponseOwner : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Always `user`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UserType? Type { get; set; }
-        /// <summary>The user property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser? User { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser? CreateAToken200ResponseOwnerUser { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser User { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser CreateAToken200ResponseOwnerUser { get; set; }
 #endif
-        /// <summary>The workspace property</summary>
-        public bool? Workspace { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner"/> and sets the default values.
-        /// </summary>
-        public CreateAToken200ResponseOwner()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            Workspace = true;
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspace"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspace? CreateAToken200ResponseOwnerWorkspace { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspace CreateAToken200ResponseOwnerWorkspace { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +37,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner();
+            if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateAToken200ResponseOwnerUser = new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser();
+            }
+            else if("workspace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateAToken200ResponseOwnerWorkspace = new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspace();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,12 +55,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateAToken200ResponseOwnerUser != null)
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser>(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser.CreateFromDiscriminatorValue); } },
-                { "workspace", n => { Workspace = n.GetBoolValue(); } },
-            };
+                return CreateAToken200ResponseOwnerUser.GetFieldDeserializers();
+            }
+            else if(CreateAToken200ResponseOwnerWorkspace != null)
+            {
+                return CreateAToken200ResponseOwnerWorkspace.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -64,10 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser>("user", User);
-            writer.WriteBoolValue("workspace", Workspace);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateAToken200ResponseOwnerUser != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser>(null, CreateAToken200ResponseOwnerUser);
+            }
+            else if(CreateAToken200ResponseOwnerWorkspace != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspace>(null, CreateAToken200ResponseOwnerWorkspace);
+            }
         }
     }
 }

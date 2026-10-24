@@ -31,9 +31,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
-        /// <summary>Always `files`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FilesType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponseObject? Object { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse>(global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FilesType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponseObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponseType>(); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse>("files", Files);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FilesType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponseObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

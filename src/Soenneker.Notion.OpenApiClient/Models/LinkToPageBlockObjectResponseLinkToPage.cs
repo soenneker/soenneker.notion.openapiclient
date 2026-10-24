@@ -45,10 +45,20 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage();
-            result.LinkToPageBlockObjectResponseLinkToPageCommentId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId();
-            result.LinkToPageBlockObjectResponseLinkToPageDatabaseId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId();
-            result.LinkToPageBlockObjectResponseLinkToPagePageId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId();
+            if("comment_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LinkToPageBlockObjectResponseLinkToPageCommentId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId();
+            }
+            else if("database_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LinkToPageBlockObjectResponseLinkToPageDatabaseId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId();
+            }
+            else if("page_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LinkToPageBlockObjectResponseLinkToPagePageId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId();
+            }
             return result;
         }
         /// <summary>
@@ -57,9 +67,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LinkToPageBlockObjectResponseLinkToPageCommentId != null || LinkToPageBlockObjectResponseLinkToPageDatabaseId != null || LinkToPageBlockObjectResponseLinkToPagePageId != null)
+            if(LinkToPageBlockObjectResponseLinkToPageCommentId != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(LinkToPageBlockObjectResponseLinkToPageCommentId, LinkToPageBlockObjectResponseLinkToPageDatabaseId, LinkToPageBlockObjectResponseLinkToPagePageId);
+                return LinkToPageBlockObjectResponseLinkToPageCommentId.GetFieldDeserializers();
+            }
+            else if(LinkToPageBlockObjectResponseLinkToPageDatabaseId != null)
+            {
+                return LinkToPageBlockObjectResponseLinkToPageDatabaseId.GetFieldDeserializers();
+            }
+            else if(LinkToPageBlockObjectResponseLinkToPagePageId != null)
+            {
+                return LinkToPageBlockObjectResponseLinkToPagePageId.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +88,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId>(null, LinkToPageBlockObjectResponseLinkToPageCommentId, LinkToPageBlockObjectResponseLinkToPageDatabaseId, LinkToPageBlockObjectResponseLinkToPagePageId);
+            if(LinkToPageBlockObjectResponseLinkToPageCommentId != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId>(null, LinkToPageBlockObjectResponseLinkToPageCommentId);
+            }
+            else if(LinkToPageBlockObjectResponseLinkToPageDatabaseId != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId>(null, LinkToPageBlockObjectResponseLinkToPageDatabaseId);
+            }
+            else if(LinkToPageBlockObjectResponseLinkToPagePageId != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId>(null, LinkToPageBlockObjectResponseLinkToPagePageId);
+            }
         }
     }
 }

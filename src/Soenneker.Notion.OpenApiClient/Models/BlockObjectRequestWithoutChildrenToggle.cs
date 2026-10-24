@@ -13,7 +13,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggleObject? Object { get; set; }
         /// <summary>The toggle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest Toggle { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ToggleType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggleType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,9 +42,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggleObject>(); } },
                 { "toggle", n => { Toggle = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest>(global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ToggleType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggleType>(); } },
             };
         }
         /// <summary>
@@ -54,9 +54,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggleObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ContentWithRichTextAndColorRequest>("toggle", Toggle);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ToggleType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenToggleType>("type", Type);
         }
     }
 }

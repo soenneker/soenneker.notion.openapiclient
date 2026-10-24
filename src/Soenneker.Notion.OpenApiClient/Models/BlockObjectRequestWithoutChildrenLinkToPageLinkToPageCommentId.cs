@@ -21,7 +21,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string CommentId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CommentIdType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenLinkToPageLinkToPageCommentIdType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comment_id", n => { CommentId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentIdType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenLinkToPageLinkToPageCommentIdType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment_id", CommentId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentIdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenLinkToPageLinkToPageCommentIdType>("type", Type);
         }
     }
 }

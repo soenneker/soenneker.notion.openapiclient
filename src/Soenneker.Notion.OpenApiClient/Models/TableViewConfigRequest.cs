@@ -42,8 +42,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest Subtasks { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TableType? Type { get; set; }
+        /// <summary>The view type. Must be &quot;table&quot;.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType? Type { get; set; }
         /// <summary>Whether to wrap cell content in the table.</summary>
         public bool? WrapCells { get; set; }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_vertical_lines", n => { ShowVerticalLines = n.GetBoolValue(); } },
                 { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType>(); } },
                 { "wrap_cells", n => { WrapCells = n.GetBoolValue(); } },
             };
         }
@@ -92,7 +92,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);
             writer.WriteBoolValue("show_vertical_lines", ShowVerticalLines);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest>("subtasks", Subtasks);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType>("type", Type);
             writer.WriteBoolValue("wrap_cells", WrapCells);
             writer.WriteAdditionalData(AdditionalData);
         }

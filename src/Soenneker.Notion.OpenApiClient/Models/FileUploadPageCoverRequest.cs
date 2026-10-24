@@ -22,8 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestFileUpload FileUpload { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadType? Type { get; set; }
+        /// <summary>Always `file_upload`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequest"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "file_upload", n => { FileUpload = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestFileUpload>(global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestFileUpload.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestFileUpload>("file_upload", FileUpload);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

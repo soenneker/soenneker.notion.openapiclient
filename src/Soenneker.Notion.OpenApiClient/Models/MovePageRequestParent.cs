@@ -8,38 +8,27 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// The new parent of the page.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MovePageRequestParent : IAdditionalDataHolder, IParsable
+    public partial class MovePageRequestParent : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The data_source_id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataSourceId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf1? MovePageRequestParentOneOf1 { get; set; }
 #nullable restore
 #else
-        public string DataSourceId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf1 MovePageRequestParentOneOf1 { get; set; }
 #endif
-        /// <summary>The page_id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PageId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf2? MovePageRequestParentOneOf2 { get; set; }
 #nullable restore
 #else
-        public string PageId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf2 MovePageRequestParentOneOf2 { get; set; }
 #endif
-        /// <summary>Always `page_id`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIdType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParent"/> and sets the default values.
-        /// </summary>
-        public MovePageRequestParent()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +37,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParent();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParent();
+            if("page_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MovePageRequestParentOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf1();
+            }
+            else if("data_source_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MovePageRequestParentOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,12 +55,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(MovePageRequestParentOneOf1 != null)
             {
-                { "data_source_id", n => { DataSourceId = n.GetStringValue(); } },
-                { "page_id", n => { PageId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>(); } },
-            };
+                return MovePageRequestParentOneOf1.GetFieldDeserializers();
+            }
+            else if(MovePageRequestParentOneOf2 != null)
+            {
+                return MovePageRequestParentOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -70,10 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("data_source_id", DataSourceId);
-            writer.WriteStringValue("page_id", PageId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(MovePageRequestParentOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf1>(null, MovePageRequestParentOneOf1);
+            }
+            else if(MovePageRequestParentOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MovePageRequestParentOneOf2>(null, MovePageRequestParentOneOf2);
+            }
         }
     }
 }

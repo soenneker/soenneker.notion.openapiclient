@@ -75,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModels Models { get; set; }
 #endif
         /// <summary>Always `session`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.SessionObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemObject? Object { get; set; }
         /// <summary>The required_actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,7 +152,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message_count", n => { MessageCount = n.GetIntValue(); } },
                 { "models", n => { Models = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModels>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModels.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SessionObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemObject>(); } },
                 { "required_actions", n => { RequiredActions = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemRequiredActionsItem>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemRequiredActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "runs_completed", n => { RunsCompleted = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemStatus>(); } },
@@ -181,7 +181,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("message_count", MessageCount);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemModels>("models", Models);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SessionObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemObject>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemRequiredActionsItem>("required_actions", RequiredActions);
             writer.WriteIntValue("runs_completed", RunsCompleted);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemStatus>("status", Status);

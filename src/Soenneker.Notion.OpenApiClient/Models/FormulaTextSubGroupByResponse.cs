@@ -23,7 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse Sort { get; set; }
 #endif
         /// <summary>The formula result type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TextType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponseGroupBy>(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponseType>(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponseGroupBy>("group_by", GroupBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>("sort", Sort);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TextType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponseType>("type", Type);
         }
     }
 }

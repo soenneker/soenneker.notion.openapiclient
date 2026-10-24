@@ -13,8 +13,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Always `relative`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RelativeType? Type { get; set; }
-        /// <summary>The value property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Type? Type { get; set; }
+        /// <summary>One of: `today`, `tomorrow`, `yesterday`, `one_week_ago`, `one_week_from_now`, `one_month_ago`, `one_month_from_now`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Value? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -34,7 +34,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelativeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Type>(); } },
                 { "value", n => { Value = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Value>(); } },
             };
         }
@@ -45,7 +45,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelativeType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Type>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1Value>("value", Value);
         }
     }

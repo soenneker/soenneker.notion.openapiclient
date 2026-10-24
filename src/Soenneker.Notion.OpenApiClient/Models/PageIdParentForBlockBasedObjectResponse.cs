@@ -14,8 +14,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>The page_id property</summary>
         public Guid? PageId { get; set; }
-        /// <summary>Always `page_id`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIdType? Type { get; set; }
+        /// <summary>The parent type.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIdParentForBlockBasedObjectResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "page_id", n => { PageId = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdParentForBlockBasedObjectResponseType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("page_id", PageId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdParentForBlockBasedObjectResponseType>("type", Type);
         }
     }
 }

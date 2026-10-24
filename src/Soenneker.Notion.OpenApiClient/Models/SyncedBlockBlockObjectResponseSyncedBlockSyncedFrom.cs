@@ -22,8 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string BlockId { get; set; }
 #endif
-        /// <summary>Always `block_id`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockIdType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFromType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "block_id", n => { BlockId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockIdType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFromType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("block_id", BlockId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockIdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFromType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

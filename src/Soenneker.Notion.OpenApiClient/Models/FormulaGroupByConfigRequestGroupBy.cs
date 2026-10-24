@@ -53,21 +53,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy();
-            if("FormulaCheckboxSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("checkbox".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaCheckboxSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByRequest();
             }
-            else if("FormulaDateSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaDateSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByRequest();
             }
-            else if("FormulaNumberSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaNumberSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByRequest();
             }
-            else if("FormulaTextSubGroupByRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormulaTextSubGroupByRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByRequest();
             }

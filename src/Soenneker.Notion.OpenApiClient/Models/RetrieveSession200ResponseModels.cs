@@ -7,30 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class RetrieveSession200ResponseModels : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class RetrieveSession200ResponseModels : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ids property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf1? RetrieveSession200ResponseModelsOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<string> Ids { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf1 RetrieveSession200ResponseModelsOneOf1 { get; set; }
 #endif
-        /// <summary>Always `auto`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.AutoType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModels"/> and sets the default values.
-        /// </summary>
-        public RetrieveSession200ResponseModels()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf2? RetrieveSession200ResponseModelsOneOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf2 RetrieveSession200ResponseModelsOneOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +37,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModels CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModels();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModels();
+            if("auto".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RetrieveSession200ResponseModelsOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf1();
+            }
+            else if("pinned".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RetrieveSession200ResponseModelsOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,11 +55,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(RetrieveSession200ResponseModelsOneOf1 != null)
             {
-                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AutoType>(); } },
-            };
+                return RetrieveSession200ResponseModelsOneOf1.GetFieldDeserializers();
+            }
+            else if(RetrieveSession200ResponseModelsOneOf2 != null)
+            {
+                return RetrieveSession200ResponseModelsOneOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -60,9 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AutoType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(RetrieveSession200ResponseModelsOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf1>(null, RetrieveSession200ResponseModelsOneOf1);
+            }
+            else if(RetrieveSession200ResponseModelsOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf2>(null, RetrieveSession200ResponseModelsOneOf2);
+            }
         }
     }
 }

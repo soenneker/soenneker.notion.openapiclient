@@ -21,9 +21,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequest File { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFileObject? Object { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFileType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,8 +43,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "file", n => { File = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequest>(global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequest.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFileObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFileType>(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequest>("file", File);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFileObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestFileType>("type", Type);
         }
     }
 }

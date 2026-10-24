@@ -37,9 +37,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileAndCaptionResponse();
-            result.ExternalMediaContentWithFileAndCaptionResponse = new global::Soenneker.Notion.OpenApiClient.Models.ExternalMediaContentWithFileAndCaptionResponse();
-            result.FileMediaContentWithFileAndCaptionResponse = new global::Soenneker.Notion.OpenApiClient.Models.FileMediaContentWithFileAndCaptionResponse();
+            if("external".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ExternalMediaContentWithFileAndCaptionResponse = new global::Soenneker.Notion.OpenApiClient.Models.ExternalMediaContentWithFileAndCaptionResponse();
+            }
+            else if("file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FileMediaContentWithFileAndCaptionResponse = new global::Soenneker.Notion.OpenApiClient.Models.FileMediaContentWithFileAndCaptionResponse();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +55,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ExternalMediaContentWithFileAndCaptionResponse != null || FileMediaContentWithFileAndCaptionResponse != null)
+            if(ExternalMediaContentWithFileAndCaptionResponse != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ExternalMediaContentWithFileAndCaptionResponse, FileMediaContentWithFileAndCaptionResponse);
+                return ExternalMediaContentWithFileAndCaptionResponse.GetFieldDeserializers();
+            }
+            else if(FileMediaContentWithFileAndCaptionResponse != null)
+            {
+                return FileMediaContentWithFileAndCaptionResponse.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalMediaContentWithFileAndCaptionResponse>(null, ExternalMediaContentWithFileAndCaptionResponse, FileMediaContentWithFileAndCaptionResponse);
+            if(ExternalMediaContentWithFileAndCaptionResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalMediaContentWithFileAndCaptionResponse>(null, ExternalMediaContentWithFileAndCaptionResponse);
+            }
+            else if(FileMediaContentWithFileAndCaptionResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileMediaContentWithFileAndCaptionResponse>(null, FileMediaContentWithFileAndCaptionResponse);
+            }
         }
     }
 }

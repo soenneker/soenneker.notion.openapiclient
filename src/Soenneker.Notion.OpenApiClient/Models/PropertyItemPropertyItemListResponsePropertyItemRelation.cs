@@ -33,13 +33,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The relation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation? Relation { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Relation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation Relation { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Relation { get; set; }
 #endif
-        /// <summary>Always `relation`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RelationType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelation"/> and sets the default values.
         /// </summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "next_url", n => { NextUrl = n.GetStringValue(); } },
-                { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation>(global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationType>(); } },
+                { "relation", n => { Relation = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationType>(); } },
             };
         }
         /// <summary>
@@ -80,8 +80,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("next_url", NextUrl);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationRelation>("relation", Relation);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelationType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("relation", Relation);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

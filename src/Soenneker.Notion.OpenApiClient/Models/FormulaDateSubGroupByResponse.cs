@@ -24,8 +24,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>Start day of week for week grouping (0 = Sunday, 1 = Monday).</summary>
         public double? StartDayOfWeek { get; set; }
-        /// <summary>Always `date`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DateType? Type { get; set; }
+        /// <summary>The formula result type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "group_by", n => { GroupBy = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponseGroupBy>(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse.CreateFromDiscriminatorValue); } },
                 { "start_day_of_week", n => { StartDayOfWeek = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponseType>(); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponseGroupBy>("group_by", GroupBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>("sort", Sort);
             writer.WriteDoubleValue("start_day_of_week", StartDayOfWeek);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponseType>("type", Type);
         }
     }
 }

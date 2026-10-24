@@ -33,13 +33,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The rich_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextRichText? RichText { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? RichText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextRichText RichText { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject RichText { get; set; }
 #endif
-        /// <summary>Always `rich_text`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RichTextType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichText"/> and sets the default values.
         /// </summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "next_url", n => { NextUrl = n.GetStringValue(); } },
-                { "rich_text", n => { RichText = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextRichText>(global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextRichText.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RichTextType>(); } },
+                { "rich_text", n => { RichText = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextType>(); } },
             };
         }
         /// <summary>
@@ -80,8 +80,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("next_url", NextUrl);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextRichText>("rich_text", RichText);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RichTextType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("rich_text", RichText);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

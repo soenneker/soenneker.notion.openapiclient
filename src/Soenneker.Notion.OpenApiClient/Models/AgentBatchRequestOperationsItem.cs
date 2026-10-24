@@ -8,38 +8,35 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// One action to apply to one agent. Each operation is authorized and applied on its own.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AgentBatchRequestOperationsItem : IAdditionalDataHolder, IParsable
+    public partial class AgentBatchRequestOperationsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Enable or disable one agent, equivalent to `PATCH /v1/agents/:agent_id/status`.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateStatusAction? Action { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The agent ID (a UUID), or `notion_ai` for the personal agent. Endpoint-specific restrictions still apply.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemAgentId? AgentId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1? AgentBatchRequestOperationsItemOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemAgentId AgentId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1 AgentBatchRequestOperationsItemOneOf1 { get; set; }
 #endif
-        /// <summary>The status to apply to this agent.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemFields? Fields { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2? AgentBatchRequestOperationsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemFields Fields { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2 AgentBatchRequestOperationsItemOneOf2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItem"/> and sets the default values.
-        /// </summary>
-        public AgentBatchRequestOperationsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3? AgentBatchRequestOperationsItemOneOf3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3 AgentBatchRequestOperationsItemOneOf3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +45,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItem();
+            var mappingValue = parseNode.GetChildNode("action")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItem();
+            if("update_status".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AgentBatchRequestOperationsItemOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1();
+            }
+            else if("update_credit_limit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AgentBatchRequestOperationsItemOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2();
+            }
+            else if("delete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AgentBatchRequestOperationsItemOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,12 +67,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AgentBatchRequestOperationsItemOneOf1 != null)
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateStatusAction>(); } },
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemAgentId>(global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemAgentId.CreateFromDiscriminatorValue); } },
-                { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemFields>(global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemFields.CreateFromDiscriminatorValue); } },
-            };
+                return AgentBatchRequestOperationsItemOneOf1.GetFieldDeserializers();
+            }
+            else if(AgentBatchRequestOperationsItemOneOf2 != null)
+            {
+                return AgentBatchRequestOperationsItemOneOf2.GetFieldDeserializers();
+            }
+            else if(AgentBatchRequestOperationsItemOneOf3 != null)
+            {
+                return AgentBatchRequestOperationsItemOneOf3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -70,10 +88,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateStatusAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemAgentId>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemFields>("fields", Fields);
-            writer.WriteAdditionalData(AdditionalData);
+            if(AgentBatchRequestOperationsItemOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1>(null, AgentBatchRequestOperationsItemOneOf1);
+            }
+            else if(AgentBatchRequestOperationsItemOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2>(null, AgentBatchRequestOperationsItemOneOf2);
+            }
+            else if(AgentBatchRequestOperationsItemOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3>(null, AgentBatchRequestOperationsItemOneOf3);
+            }
         }
     }
 }

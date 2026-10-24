@@ -13,17 +13,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabObject? Object { get; set; }
         /// <summary>The tab property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabTab? Tab { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Tab { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabTab Tab { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Tab { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TabType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,9 +42,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>(); } },
-                { "tab", n => { Tab = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabTab>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabTab.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TabType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabObject>(); } },
+                { "tab", n => { Tab = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabType>(); } },
             };
         }
         /// <summary>
@@ -54,9 +54,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObject>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabTab>("tab", Tab);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TabType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabObject>("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("tab", Tab);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenTabType>("type", Type);
         }
     }
 }

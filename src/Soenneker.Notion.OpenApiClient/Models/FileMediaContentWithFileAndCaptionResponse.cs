@@ -31,7 +31,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse File { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileMediaContentWithFileAndCaptionResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FileMediaContentWithFileAndCaptionResponse"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "caption", n => { Caption = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "file", n => { File = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse>(global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileMediaContentWithFileAndCaptionResponseType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("caption", Caption);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse>("file", File);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileMediaContentWithFileAndCaptionResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

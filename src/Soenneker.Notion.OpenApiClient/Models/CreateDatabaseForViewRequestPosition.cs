@@ -23,8 +23,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string BlockId { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.AfterBlockType? Type { get; set; }
+        /// <summary>Position type. &quot;after_block&quot; places the new database after the specified block in the page.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPositionType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPosition"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "block_id", n => { BlockId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AfterBlockType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPositionType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("block_id", BlockId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AfterBlockType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestPositionType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

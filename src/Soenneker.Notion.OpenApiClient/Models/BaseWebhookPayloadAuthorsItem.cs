@@ -37,13 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItem();
-            if("BaseWebhookPayloadAuthorsItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("person".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BaseWebhookPayloadAuthorsItemOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemOneOf1();
             }
-            else if("BaseWebhookPayloadAuthorsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("bot".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BaseWebhookPayloadAuthorsItemOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemOneOf2();
             }

@@ -36,9 +36,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string MessageEscaped { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529Object? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ErrorObject? Object { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529Status? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.Value529Status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529"/> and sets the default values.
         /// </summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "additional_data", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529AdditionalData>(global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529AdditionalData.CreateFromDiscriminatorValue); } },
                 { "code", n => { Code = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ServiceOverloadCode>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529Object>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529Status>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorObject>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.Value529Status>(); } },
             };
         }
         /// <summary>
@@ -81,8 +81,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529AdditionalData>("additional_data", AdditionalDataProperty);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ServiceOverloadCode>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529Object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.Value529Status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

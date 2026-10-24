@@ -22,8 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string DatabaseId { get; set; }
 #endif
-        /// <summary>The parent type.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseIdType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseIdType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseIdType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseIdType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("database_id", DatabaseId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DatabaseIdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseIdType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -33,13 +33,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The people property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople? People { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? People { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople People { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject People { get; set; }
 #endif
-        /// <summary>Always `people`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PeopleType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeopleType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeople"/> and sets the default values.
         /// </summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "next_url", n => { NextUrl = n.GetStringValue(); } },
-                { "people", n => { People = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople>(global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PeopleType>(); } },
+                { "people", n => { People = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeopleType>(); } },
             };
         }
         /// <summary>
@@ -80,8 +80,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("next_url", NextUrl);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeoplePeople>("people", People);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PeopleType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("people", People);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeopleType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

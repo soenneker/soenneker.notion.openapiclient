@@ -8,70 +8,59 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// A session event property filter, or an and/or compound filter nested up to three levels deep.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf4"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class QuerySessionEventsRequestFilter : IAdditionalDataHolder, IParsable
+    public partial class QuerySessionEventsRequestFilter : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The and property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterAndItem>? And { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf1? QuerySessionEventsRequestFilterOneOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterAndItem> And { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf1 QuerySessionEventsRequestFilterOneOf1 { get; set; }
 #endif
-        /// <summary>The event_type property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterEventType? EventType { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf2? QuerySessionEventsRequestFilterOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterEventType EventType { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf2 QuerySessionEventsRequestFilterOneOf2 { get; set; }
 #endif
-        /// <summary>The number property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterNumber? Number { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf3? QuerySessionEventsRequestFilterOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterNumber Number { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf3 QuerySessionEventsRequestFilterOneOf3 { get; set; }
 #endif
-        /// <summary>The or property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItem>? Or { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf4? QuerySessionEventsRequestFilterOneOf4 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItem> Or { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf4 QuerySessionEventsRequestFilterOneOf4 { get; set; }
 #endif
-        /// <summary>The property property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterProperty? Property { get; set; }
-        /// <summary>The string property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterString? String { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5? QuerySessionEventsRequestFilterOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterString String { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5 QuerySessionEventsRequestFilterOneOf5 { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterTimestamp? Timestamp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6? QuerySessionEventsRequestFilterOneOf6 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterTimestamp Timestamp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6 QuerySessionEventsRequestFilterOneOf6 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilter"/> and sets the default values.
-        /// </summary>
-        public QuerySessionEventsRequestFilter()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -80,7 +69,33 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilter();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilter();
+            if("QuerySessionEventsRequestFilterOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessionEventsRequestFilterOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf1();
+            }
+            else if("QuerySessionEventsRequestFilterOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessionEventsRequestFilterOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf2();
+            }
+            else if("QuerySessionEventsRequestFilterOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessionEventsRequestFilterOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf3();
+            }
+            else if("QuerySessionEventsRequestFilterOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessionEventsRequestFilterOneOf4 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf4();
+            }
+            else if("QuerySessionEventsRequestFilterOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessionEventsRequestFilterOneOf5 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5();
+            }
+            else if("QuerySessionEventsRequestFilterOneOf6".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.QuerySessionEventsRequestFilterOneOf6 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,16 +103,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(QuerySessionEventsRequestFilterOneOf1 != null)
             {
-                { "and", n => { And = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterAndItem>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterAndItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "event_type", n => { EventType = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterEventType>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterEventType.CreateFromDiscriminatorValue); } },
-                { "number", n => { Number = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterNumber>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterNumber.CreateFromDiscriminatorValue); } },
-                { "or", n => { Or = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItem>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "property", n => { Property = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterProperty>(); } },
-                { "string", n => { String = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterString>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterString.CreateFromDiscriminatorValue); } },
-                { "timestamp", n => { Timestamp = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterTimestamp>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterTimestamp.CreateFromDiscriminatorValue); } },
-            };
+                return QuerySessionEventsRequestFilterOneOf1.GetFieldDeserializers();
+            }
+            else if(QuerySessionEventsRequestFilterOneOf2 != null)
+            {
+                return QuerySessionEventsRequestFilterOneOf2.GetFieldDeserializers();
+            }
+            else if(QuerySessionEventsRequestFilterOneOf3 != null)
+            {
+                return QuerySessionEventsRequestFilterOneOf3.GetFieldDeserializers();
+            }
+            else if(QuerySessionEventsRequestFilterOneOf4 != null)
+            {
+                return QuerySessionEventsRequestFilterOneOf4.GetFieldDeserializers();
+            }
+            else if(QuerySessionEventsRequestFilterOneOf5 != null)
+            {
+                return QuerySessionEventsRequestFilterOneOf5.GetFieldDeserializers();
+            }
+            else if(QuerySessionEventsRequestFilterOneOf6 != null)
+            {
+                return QuerySessionEventsRequestFilterOneOf6.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -106,14 +136,30 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterAndItem>("and", And);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterEventType>("event_type", EventType);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterNumber>("number", Number);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOrItem>("or", Or);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterProperty>("property", Property);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterString>("string", String);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterTimestamp>("timestamp", Timestamp);
-            writer.WriteAdditionalData(AdditionalData);
+            if(QuerySessionEventsRequestFilterOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf1>(null, QuerySessionEventsRequestFilterOneOf1);
+            }
+            else if(QuerySessionEventsRequestFilterOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf2>(null, QuerySessionEventsRequestFilterOneOf2);
+            }
+            else if(QuerySessionEventsRequestFilterOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf3>(null, QuerySessionEventsRequestFilterOneOf3);
+            }
+            else if(QuerySessionEventsRequestFilterOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf4>(null, QuerySessionEventsRequestFilterOneOf4);
+            }
+            else if(QuerySessionEventsRequestFilterOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5>(null, QuerySessionEventsRequestFilterOneOf5);
+            }
+            else if(QuerySessionEventsRequestFilterOneOf6 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6>(null, QuerySessionEventsRequestFilterOneOf6);
+            }
         }
     }
 }

@@ -14,8 +14,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
-        /// <summary>The user object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UserObject? Object { get; set; }
+        /// <summary>Always `user`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponseObject? Object { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponseObject>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponseObject>("object", Object);
         }
     }
 }

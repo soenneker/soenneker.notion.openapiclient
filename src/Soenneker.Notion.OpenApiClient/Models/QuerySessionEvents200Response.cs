@@ -22,8 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string NextCursor { get; set; }
 #endif
-        /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get; set; }
+        /// <summary>Always `list`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseObject? Object { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseObject>(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItem>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "session_event", n => { SessionEvent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseSessionEvent>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseSessionEvent.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SessionEventType>(); } },
@@ -77,7 +77,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseObject>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItem>("results", Results);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseSessionEvent>("session_event", SessionEvent);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SessionEventType>("type", Type);

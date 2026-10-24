@@ -37,13 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3Value CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3Value();
-            if("MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("relative".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf1();
             }
-            else if("MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("exact".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2();
             }

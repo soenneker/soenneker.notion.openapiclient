@@ -23,7 +23,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1AfterBlock AfterBlock { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.AfterBlockType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1Type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "after_block", n => { AfterBlock = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1AfterBlock>(global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1AfterBlock.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AfterBlockType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1Type>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1AfterBlock>("after_block", AfterBlock);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AfterBlockType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1Type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -37,13 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResult();
-            if("FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("success".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1();
             }
-            else if("FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("error".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2();
             }

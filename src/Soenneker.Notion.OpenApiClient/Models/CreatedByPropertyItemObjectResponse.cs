@@ -31,9 +31,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
-        /// <summary>Always `created_by`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreatedByType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseObject? Object { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy>(global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseType>(); } },
             };
         }
         /// <summary>
@@ -74,8 +74,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy>("created_by", CreatedBy);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

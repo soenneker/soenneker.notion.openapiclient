@@ -15,17 +15,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseComment? Comment { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseComment Comment { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Comment { get; set; }
 #endif
         /// <summary>The has_more property</summary>
         public bool? HasMore { get; set; }
         /// <summary>The next_cursor property</summary>
         public Guid? NextCursor { get; set; }
-        /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get; set; }
+        /// <summary>Always `list`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseObject? Object { get; set; }
         /// <summary>The request_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,7 +43,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public List<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse> Results { get; set; }
 #endif
         /// <summary>Always `comment`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CommentType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,13 +62,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseComment>(global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseComment.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseObject>(); } },
                 { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>(global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseType>(); } },
             };
         }
         /// <summary>
@@ -78,13 +78,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseComment>("comment", Comment);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("comment", Comment);
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteGuidValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>("request_status", RequestStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CommentObjectResponse>("results", Results);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListComments200ResponseType>("type", Type);
         }
     }
 }

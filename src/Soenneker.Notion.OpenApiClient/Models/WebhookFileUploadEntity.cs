@@ -14,8 +14,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadType? Type { get; set; }
+        /// <summary>Always `file_upload`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.WebhookFileUploadEntityType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WebhookFileUploadEntityType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.WebhookFileUploadEntityType>("type", Type);
         }
     }
 }

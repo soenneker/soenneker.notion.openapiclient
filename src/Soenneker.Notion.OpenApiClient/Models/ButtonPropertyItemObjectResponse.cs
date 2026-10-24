@@ -17,10 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The button property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton? Button { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Button { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton Button { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Button { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,8 +32,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
-        /// <summary>Always `button`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ButtonType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponse"/> and sets the default values.
         /// </summary>
@@ -59,10 +59,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "button", n => { Button = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton>(global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton.CreateFromDiscriminatorValue); } },
+                { "button", n => { Button = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseType>(); } },
             };
         }
         /// <summary>
@@ -72,10 +72,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton>("button", Button);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("button", Button);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

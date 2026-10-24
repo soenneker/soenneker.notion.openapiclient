@@ -19,10 +19,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The incomplete property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncompleteIncomplete? Incomplete { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Incomplete { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncompleteIncomplete Incomplete { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Incomplete { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.IncompleteType? Type { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
-                { "incomplete", n => { Incomplete = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncompleteIncomplete>(global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncompleteIncomplete.CreateFromDiscriminatorValue); } },
+                { "incomplete", n => { Incomplete = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.IncompleteType>(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncompleteIncomplete>("incomplete", Incomplete);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("incomplete", Incomplete);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.IncompleteType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

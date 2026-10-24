@@ -39,7 +39,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>Always `session`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.SessionObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseObject? Object { get; set; }
         /// <summary>The required_actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,7 +82,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseError>(global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseError.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SessionObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseObject>(); } },
                 { "required_actions", n => { RequiredActions = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseRequiredActionsItem>(global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseRequiredActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseStatus>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -100,7 +100,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseError>("error", Error);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SessionObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseObject>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseRequiredActionsItem>("required_actions", RequiredActions);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CancelSession200ResponseStatus>("status", Status);
             writer.WriteStringValue("title", Title);

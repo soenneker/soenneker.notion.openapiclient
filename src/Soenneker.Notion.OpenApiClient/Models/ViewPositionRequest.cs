@@ -45,17 +45,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest();
-            if("ViewPositionRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("start".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ViewPositionRequestOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf1();
             }
-            else if("ViewPositionRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("end".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ViewPositionRequestOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf2();
             }
-            else if("ViewPositionRequestOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("after_view".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ViewPositionRequestOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf3();
             }

@@ -22,8 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string NextCursor { get; set; }
 #endif
-        /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get; set; }
+        /// <summary>Always `list`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseObject? Object { get; set; }
         /// <summary>Sessions found in this bounded scan. Access filtering can leave this array empty while has_more is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseObject>(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItem>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "session", n => { Session = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseSession>(global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseSession.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SessionType>(); } },
@@ -77,7 +77,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseObject>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItem>("results", Results);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseSession>("session", Session);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SessionType>("type", Type);

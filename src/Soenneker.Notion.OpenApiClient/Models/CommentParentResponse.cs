@@ -37,13 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse();
-            if("BlockIdCommentParentResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("block_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BlockIdCommentParentResponse = new global::Soenneker.Notion.OpenApiClient.Models.BlockIdCommentParentResponse();
             }
-            else if("PageIdCommentParentResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("page_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PageIdCommentParentResponse = new global::Soenneker.Notion.OpenApiClient.Models.PageIdCommentParentResponse();
             }

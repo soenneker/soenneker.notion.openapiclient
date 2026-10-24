@@ -7,63 +7,103 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember3"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember4"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CreateACommentRequest : global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAllOf1, IParsable
-    #pragma warning restore CS1591
+    public partial class CreateACommentRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>An array of files to attach to the comment. Maximum of 3 allowed.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem>? Attachments { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember1? CreateACommentRequestMember1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem> Attachments { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember1 CreateACommentRequestMember1 { get; set; }
 #endif
-        /// <summary>Display name for the comment.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName? DisplayName { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember2? CreateACommentRequestMember2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName DisplayName { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember2 CreateACommentRequestMember2 { get; set; }
 #endif
-        /// <summary>The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMarkdownVersion? MarkdownVersion { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember3? CreateACommentRequestMember3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember3 CreateACommentRequestMember3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember4"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember4? CreateACommentRequestMember4 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember4 CreateACommentRequestMember4 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequest();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequest();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            if(CreateACommentRequestMember1 != null)
             {
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem>(global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName>(global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName.CreateFromDiscriminatorValue); } },
-                { "markdown_version", n => { MarkdownVersion = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMarkdownVersion>(); } },
-            };
+                return CreateACommentRequestMember1.GetFieldDeserializers();
+            }
+            else if(CreateACommentRequestMember2 != null)
+            {
+                return CreateACommentRequestMember2.GetFieldDeserializers();
+            }
+            else if(CreateACommentRequestMember3 != null)
+            {
+                return CreateACommentRequestMember3.GetFieldDeserializers();
+            }
+            else if(CreateACommentRequestMember4 != null)
+            {
+                return CreateACommentRequestMember4.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestAttachmentsItem>("attachments", Attachments);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName>("display_name", DisplayName);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMarkdownVersion>("markdown_version", MarkdownVersion);
+            if(CreateACommentRequestMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember1>(null, CreateACommentRequestMember1);
+            }
+            else if(CreateACommentRequestMember2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember2>(null, CreateACommentRequestMember2);
+            }
+            else if(CreateACommentRequestMember3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember3>(null, CreateACommentRequestMember3);
+            }
+            else if(CreateACommentRequestMember4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestMember4>(null, CreateACommentRequestMember4);
+            }
         }
     }
 }

@@ -28,8 +28,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string ImportedTime { get; set; }
 #endif
-        /// <summary>Indicates an error occurred during import.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorType? Type { get; set; }
+        /// <summary>Always `error`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2Error>(global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2Error.CreateFromDiscriminatorValue); } },
                 { "imported_time", n => { ImportedTime = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2Type>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2Error>("error", Error);
             writer.WriteStringValue("imported_time", ImportedTime);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf2Type>("type", Type);
         }
     }
 }

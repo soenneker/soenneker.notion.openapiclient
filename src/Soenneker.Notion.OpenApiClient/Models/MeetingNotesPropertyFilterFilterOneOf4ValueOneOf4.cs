@@ -13,7 +13,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Always `exact`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ExactType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Type? Type { get; set; }
         /// <summary>Use the is_empty operator to match an unset date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +40,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExactType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Type>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Value>(global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Value.CreateFromDiscriminatorValue); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExactType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Type>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Value>("value", Value);
         }
     }

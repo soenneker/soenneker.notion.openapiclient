@@ -17,23 +17,23 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The created_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter? CreatedTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? CreatedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter CreatedTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter CreatedTime { get; set; }
 #endif
         /// <summary>The last_edited_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter? LastEditedTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? LastEditedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter LastEditedTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter LastEditedTime { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeTimestamp? Timestamp { get; set; }
-        /// <summary>Always `created_time`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.TimestampCreatedTimeFilterType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter"/> and sets the default values.
         /// </summary>
@@ -59,10 +59,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
-                { "last_edited_time", n => { LastEditedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
+                { "last_edited_time", n => { LastEditedTime = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>(global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter.CreateFromDiscriminatorValue); } },
                 { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeTimestamp>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimestampCreatedTimeFilterType>(); } },
             };
         }
         /// <summary>
@@ -72,10 +72,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyFilter>("last_edited_time", LastEditedTime);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("created_time", CreatedTime);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter>("last_edited_time", LastEditedTime);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeTimestamp>("timestamp", Timestamp);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimeType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimestampCreatedTimeFilterType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

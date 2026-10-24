@@ -23,9 +23,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
-        /// <summary>Always `unique_id`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseObject? Object { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseType? Type { get; set; }
         /// <summary>The unique_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,8 +60,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdType>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseType>(); } },
                 { "unique_id", n => { UniqueId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId>(global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId.CreateFromDiscriminatorValue); } },
             };
         }
@@ -73,8 +73,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId>("unique_id", UniqueId);
             writer.WriteAdditionalData(AdditionalData);
         }

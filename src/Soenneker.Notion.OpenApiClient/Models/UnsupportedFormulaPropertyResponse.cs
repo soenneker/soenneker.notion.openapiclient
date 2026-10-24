@@ -15,14 +15,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseType? Type { get; set; }
         /// <summary>The unsupported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported? Unsupported { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Unsupported { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported Unsupported { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Unsupported { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse"/> and sets the default values.
@@ -49,8 +49,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType>(); } },
-                { "unsupported", n => { Unsupported = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported>(global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseType>(); } },
+                { "unsupported", n => { Unsupported = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,8 +60,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseUnsupported>("unsupported", Unsupported);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponseType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("unsupported", Unsupported);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

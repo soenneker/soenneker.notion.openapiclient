@@ -14,14 +14,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The custom display name to use</summary>
+        /// <summary>The custom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustomCustom? Custom { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustomCustom Custom { get; set; }
 #endif
+        /// <summary>Always `custom`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CustomType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom"/> and sets the default values.
         /// </summary>
@@ -47,7 +49,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "custom", n => { Custom = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustomCustom>(global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustomCustom.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CustomType>(); } },
             };
         }
         /// <summary>
@@ -57,7 +60,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustomCustom>("custom", Custom);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CustomType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

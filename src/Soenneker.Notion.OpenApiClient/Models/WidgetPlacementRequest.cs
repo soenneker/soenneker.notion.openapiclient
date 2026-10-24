@@ -37,13 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest();
-            if("WidgetPlacementRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("new_row".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WidgetPlacementRequestOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf1();
             }
-            else if("WidgetPlacementRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("existing_row".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WidgetPlacementRequestOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequestOneOf2();
             }

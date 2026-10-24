@@ -7,21 +7,12 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreatedTimePropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.EmailPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimePropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TitlePropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.UrlPropertyItemObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PropertyItemObjectResponse : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
-    #pragma warning restore CS1591
+    public partial class PropertyItemObjectResponse : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The button property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton? Button { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton Button { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,8 +21,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponse ButtonPropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The checkbox property</summary>
-        public bool? Checkbox { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,14 +28,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyItemObjectResponse CheckboxPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The created_by property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy? CreatedBy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,8 +37,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse CreatedByPropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The created_time property</summary>
-        public DateTimeOffset? CreatedTime { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreatedTimePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,14 +44,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreatedTimePropertyItemObjectResponse CreatedTimePropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The date property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse? Date { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.DateResponse Date { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,14 +53,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse DatePropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The email property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email { get; set; }
-#nullable restore
-#else
-        public string Email { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.EmailPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,14 +60,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.EmailPropertyItemObjectResponse EmailPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The files property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse>? Files { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse> Files { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,14 +69,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponse FilesPropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The formula property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse? Formula { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse Formula { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,22 +76,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponse FormulaPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The last_edited_by property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy? LastEditedBy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy LastEditedBy { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,8 +85,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponse LastEditedByPropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The last_edited_time property</summary>
-        public DateTimeOffset? LastEditedTime { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,14 +92,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimePropertyItemObjectResponse LastEditedTimePropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The multi_select property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>? MultiSelect { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse> MultiSelect { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -180,8 +101,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyItemObjectResponse MultiSelectPropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The number property</summary>
-        public double? Number { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -189,16 +108,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse NumberPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject? Object { get; set; }
-        /// <summary>The people property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponsePeople? People { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponsePeople People { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -208,14 +117,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponse PeoplePropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The phone_number property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PhoneNumber { get; set; }
-#nullable restore
-#else
-        public string PhoneNumber { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,14 +124,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberPropertyItemObjectResponse PhoneNumberPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The place property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponsePlace? Place { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponsePlace Place { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -240,14 +133,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponse PlacePropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The relation property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation? Relation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation Relation { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -255,14 +140,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse RelationPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The rich_text property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse? RichText { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse RichText { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -272,14 +149,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.RichTextPropertyItemObjectResponse RichTextPropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The rollup property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup? Rollup { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup Rollup { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -287,14 +156,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse RollupPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The select property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Select { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Select { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -304,14 +165,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse SelectPropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Status { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -319,14 +172,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse StatusPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The title property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse? Title { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse Title { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TitlePropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -336,16 +181,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.TitlePropertyItemObjectResponse TitlePropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The formula result type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.NumberType? Type { get; set; }
-        /// <summary>The unique_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId? UniqueId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId UniqueId { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -354,14 +189,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse UniqueIdPropertyItemObjectResponse { get; set; }
 #endif
-        /// <summary>The url property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url { get; set; }
-#nullable restore
-#else
-        public string Url { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UrlPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -369,14 +196,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.UrlPropertyItemObjectResponse UrlPropertyItemObjectResponse { get; set; }
-#endif
-        /// <summary>The verification property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse? Verification { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse Verification { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -387,13 +206,6 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse VerificationPropertyItemObjectResponse { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse"/> and sets the default values.
-        /// </summary>
-        public PropertyItemObjectResponse()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse"/></returns>
@@ -401,94 +213,102 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObjectResponse();
-            if(parseNode.GetBoolValue() is bool checkboxValue)
+            if("button".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.Checkbox = checkboxValue;
-            }
-            else if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset createdTimeValue)
-            {
-                result.CreatedTime = createdTimeValue;
-            }
-            else if(parseNode.GetStringValue() is string emailValue)
-            {
-                result.Email = emailValue;
-            }
-            else if(parseNode.GetStringValue() is string idValue)
-            {
-                result.Id = idValue;
-            }
-            else if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset lastEditedTimeValue)
-            {
-                result.LastEditedTime = lastEditedTimeValue;
-            }
-            else if(parseNode.GetDoubleValue() is double numberValue)
-            {
-                result.Number = numberValue;
-            }
-            else if(parseNode.GetStringValue() is string phoneNumberValue)
-            {
-                result.PhoneNumber = phoneNumberValue;
-            }
-            else if(parseNode.GetStringValue() is string urlValue)
-            {
-                result.Url = urlValue;
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>() is global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject objectValue)
-            {
-                result.Object = objectValue;
-            }
-            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>() is global::Soenneker.Notion.OpenApiClient.Models.NumberType typeValue)
-            {
-                result.Type = typeValue;
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse>(global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse> filesValue)
-            {
-                result.Files = filesValue;
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse> multiSelectValue)
-            {
-                result.MultiSelect = multiSelectValue;
-            }
-            else {
-                result.Button = new global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton();
                 result.ButtonPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponse();
+            }
+            else if("checkbox".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.CheckboxPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyItemObjectResponse();
-                result.CreatedBy = new global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponseCreatedBy();
+            }
+            else if("created_by".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.CreatedByPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse();
+            }
+            else if("created_time".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.CreatedTimePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.CreatedTimePropertyItemObjectResponse();
-                result.Date = new global::Soenneker.Notion.OpenApiClient.Models.DateResponse();
+            }
+            else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.DatePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse();
+            }
+            else if("email".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.EmailPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.EmailPropertyItemObjectResponse();
+            }
+            else if("files".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.FilesPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponse();
-                result.Formula = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse();
+            }
+            else if("formula".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.FormulaPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponse();
-                result.LastEditedBy = new global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponseLastEditedBy();
+            }
+            else if("last_edited_by".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.LastEditedByPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponse();
+            }
+            else if("last_edited_time".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.LastEditedTimePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimePropertyItemObjectResponse();
+            }
+            else if("multi_select".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.MultiSelectPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyItemObjectResponse();
+            }
+            else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.NumberPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse();
-                result.People = new global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponsePeople();
+            }
+            else if("people".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.PeoplePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponse();
+            }
+            else if("phone_number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.PhoneNumberPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberPropertyItemObjectResponse();
-                result.Place = new global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponsePlace();
+            }
+            else if("place".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.PlacePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponse();
-                result.Relation = new global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponseRelation();
+            }
+            else if("relation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RelationPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse();
-                result.RichText = new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse();
+            }
+            else if("rich_text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RichTextPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.RichTextPropertyItemObjectResponse();
-                result.Rollup = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup();
+            }
+            else if("rollup".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RollupPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse();
-                result.Select = new global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse();
+            }
+            else if("select".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.SelectPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse();
-                result.Status = new global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse();
+            }
+            else if("status".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.StatusPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse();
-                result.Title = new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse();
+            }
+            else if("title".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.TitlePropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.TitlePropertyItemObjectResponse();
-                result.UniqueId = new global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponseUniqueId();
+            }
+            else if("unique_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.UniqueIdPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse();
+            }
+            else if("url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.UrlPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.UrlPropertyItemObjectResponse();
-                result.Verification = new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse();
+            }
+            else if("verification".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.VerificationPropertyItemObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse();
             }
             return result;
@@ -499,9 +319,101 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(Button != null || ButtonPropertyItemObjectResponse != null || CheckboxPropertyItemObjectResponse != null || CreatedBy != null || CreatedByPropertyItemObjectResponse != null || CreatedTimePropertyItemObjectResponse != null || Date != null || DatePropertyItemObjectResponse != null || EmailPropertyItemObjectResponse != null || FilesPropertyItemObjectResponse != null || Formula != null || FormulaPropertyItemObjectResponse != null || LastEditedBy != null || LastEditedByPropertyItemObjectResponse != null || LastEditedTimePropertyItemObjectResponse != null || MultiSelectPropertyItemObjectResponse != null || NumberPropertyItemObjectResponse != null || People != null || PeoplePropertyItemObjectResponse != null || PhoneNumberPropertyItemObjectResponse != null || Place != null || PlacePropertyItemObjectResponse != null || Relation != null || RelationPropertyItemObjectResponse != null || RichText != null || RichTextPropertyItemObjectResponse != null || Rollup != null || RollupPropertyItemObjectResponse != null || Select != null || SelectPropertyItemObjectResponse != null || Status != null || StatusPropertyItemObjectResponse != null || Title != null || TitlePropertyItemObjectResponse != null || UniqueId != null || UniqueIdPropertyItemObjectResponse != null || UrlPropertyItemObjectResponse != null || Verification != null || VerificationPropertyItemObjectResponse != null)
+            if(ButtonPropertyItemObjectResponse != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(Button, ButtonPropertyItemObjectResponse, CheckboxPropertyItemObjectResponse, CreatedBy, CreatedByPropertyItemObjectResponse, CreatedTimePropertyItemObjectResponse, Date, DatePropertyItemObjectResponse, EmailPropertyItemObjectResponse, FilesPropertyItemObjectResponse, Formula, FormulaPropertyItemObjectResponse, LastEditedBy, LastEditedByPropertyItemObjectResponse, LastEditedTimePropertyItemObjectResponse, MultiSelectPropertyItemObjectResponse, NumberPropertyItemObjectResponse, People, PeoplePropertyItemObjectResponse, PhoneNumberPropertyItemObjectResponse, Place, PlacePropertyItemObjectResponse, Relation, RelationPropertyItemObjectResponse, RichText, RichTextPropertyItemObjectResponse, Rollup, RollupPropertyItemObjectResponse, Select, SelectPropertyItemObjectResponse, Status, StatusPropertyItemObjectResponse, Title, TitlePropertyItemObjectResponse, UniqueId, UniqueIdPropertyItemObjectResponse, UrlPropertyItemObjectResponse, Verification, VerificationPropertyItemObjectResponse);
+                return ButtonPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(CheckboxPropertyItemObjectResponse != null)
+            {
+                return CheckboxPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(CreatedByPropertyItemObjectResponse != null)
+            {
+                return CreatedByPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(CreatedTimePropertyItemObjectResponse != null)
+            {
+                return CreatedTimePropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(DatePropertyItemObjectResponse != null)
+            {
+                return DatePropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(EmailPropertyItemObjectResponse != null)
+            {
+                return EmailPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(FilesPropertyItemObjectResponse != null)
+            {
+                return FilesPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(FormulaPropertyItemObjectResponse != null)
+            {
+                return FormulaPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(LastEditedByPropertyItemObjectResponse != null)
+            {
+                return LastEditedByPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(LastEditedTimePropertyItemObjectResponse != null)
+            {
+                return LastEditedTimePropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(MultiSelectPropertyItemObjectResponse != null)
+            {
+                return MultiSelectPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(NumberPropertyItemObjectResponse != null)
+            {
+                return NumberPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(PeoplePropertyItemObjectResponse != null)
+            {
+                return PeoplePropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(PhoneNumberPropertyItemObjectResponse != null)
+            {
+                return PhoneNumberPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(PlacePropertyItemObjectResponse != null)
+            {
+                return PlacePropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(RelationPropertyItemObjectResponse != null)
+            {
+                return RelationPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(RichTextPropertyItemObjectResponse != null)
+            {
+                return RichTextPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(RollupPropertyItemObjectResponse != null)
+            {
+                return RollupPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(SelectPropertyItemObjectResponse != null)
+            {
+                return SelectPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(StatusPropertyItemObjectResponse != null)
+            {
+                return StatusPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(TitlePropertyItemObjectResponse != null)
+            {
+                return TitlePropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(UniqueIdPropertyItemObjectResponse != null)
+            {
+                return UniqueIdPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(UrlPropertyItemObjectResponse != null)
+            {
+                return UrlPropertyItemObjectResponse.GetFieldDeserializers();
+            }
+            else if(VerificationPropertyItemObjectResponse != null)
+            {
+                return VerificationPropertyItemObjectResponse.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -512,58 +424,102 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(Checkbox != null)
+            if(ButtonPropertyItemObjectResponse != null)
             {
-                writer.WriteBoolValue(null, Checkbox);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponse>(null, ButtonPropertyItemObjectResponse);
             }
-            else if(CreatedTime != null)
+            else if(CheckboxPropertyItemObjectResponse != null)
             {
-                writer.WriteDateTimeOffsetValue(null, CreatedTime);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyItemObjectResponse>(null, CheckboxPropertyItemObjectResponse);
             }
-            else if(Email != null)
+            else if(CreatedByPropertyItemObjectResponse != null)
             {
-                writer.WriteStringValue(null, Email);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedByPropertyItemObjectResponse>(null, CreatedByPropertyItemObjectResponse);
             }
-            else if(Id != null)
+            else if(CreatedTimePropertyItemObjectResponse != null)
             {
-                writer.WriteStringValue(null, Id);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreatedTimePropertyItemObjectResponse>(null, CreatedTimePropertyItemObjectResponse);
             }
-            else if(LastEditedTime != null)
+            else if(DatePropertyItemObjectResponse != null)
             {
-                writer.WriteDateTimeOffsetValue(null, LastEditedTime);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DatePropertyItemObjectResponse>(null, DatePropertyItemObjectResponse);
             }
-            else if(Number != null)
+            else if(EmailPropertyItemObjectResponse != null)
             {
-                writer.WriteDoubleValue(null, Number);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmailPropertyItemObjectResponse>(null, EmailPropertyItemObjectResponse);
             }
-            else if(PhoneNumber != null)
+            else if(FilesPropertyItemObjectResponse != null)
             {
-                writer.WriteStringValue(null, PhoneNumber);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FilesPropertyItemObjectResponse>(null, FilesPropertyItemObjectResponse);
             }
-            else if(Url != null)
+            else if(FormulaPropertyItemObjectResponse != null)
             {
-                writer.WriteStringValue(null, Url);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyItemObjectResponse>(null, FormulaPropertyItemObjectResponse);
             }
-            else if(Object != null)
+            else if(LastEditedByPropertyItemObjectResponse != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemObject>(null, Object);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedByPropertyItemObjectResponse>(null, LastEditedByPropertyItemObjectResponse);
             }
-            else if(Type != null)
+            else if(LastEditedTimePropertyItemObjectResponse != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>(null, Type);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LastEditedTimePropertyItemObjectResponse>(null, LastEditedTimePropertyItemObjectResponse);
             }
-            else if(Files != null)
+            else if(MultiSelectPropertyItemObjectResponse != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse>(null, Files);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MultiSelectPropertyItemObjectResponse>(null, MultiSelectPropertyItemObjectResponse);
             }
-            else if(MultiSelect != null)
+            else if(NumberPropertyItemObjectResponse != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>(null, MultiSelect);
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberPropertyItemObjectResponse>(null, NumberPropertyItemObjectResponse);
             }
-            else {
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ButtonPropertyItemObjectResponseButton>(null, Button, ButtonPropertyItemObjectResponse, CheckboxPropertyItemObjectResponse, CreatedBy, CreatedByPropertyItemObjectResponse, CreatedTimePropertyItemObjectResponse, Date, DatePropertyItemObjectResponse, EmailPropertyItemObjectResponse, FilesPropertyItemObjectResponse, Formula, FormulaPropertyItemObjectResponse, LastEditedBy, LastEditedByPropertyItemObjectResponse, LastEditedTimePropertyItemObjectResponse, MultiSelectPropertyItemObjectResponse, NumberPropertyItemObjectResponse, People, PeoplePropertyItemObjectResponse, PhoneNumberPropertyItemObjectResponse, Place, PlacePropertyItemObjectResponse, Relation, RelationPropertyItemObjectResponse, RichText, RichTextPropertyItemObjectResponse, Rollup, RollupPropertyItemObjectResponse, Select, SelectPropertyItemObjectResponse, Status, StatusPropertyItemObjectResponse, Title, TitlePropertyItemObjectResponse, UniqueId, UniqueIdPropertyItemObjectResponse, UrlPropertyItemObjectResponse, Verification, VerificationPropertyItemObjectResponse);
+            else if(PeoplePropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PeoplePropertyItemObjectResponse>(null, PeoplePropertyItemObjectResponse);
             }
-            writer.WriteAdditionalData(AdditionalData);
+            else if(PhoneNumberPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PhoneNumberPropertyItemObjectResponse>(null, PhoneNumberPropertyItemObjectResponse);
+            }
+            else if(PlacePropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PlacePropertyItemObjectResponse>(null, PlacePropertyItemObjectResponse);
+            }
+            else if(RelationPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RelationPropertyItemObjectResponse>(null, RelationPropertyItemObjectResponse);
+            }
+            else if(RichTextPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RichTextPropertyItemObjectResponse>(null, RichTextPropertyItemObjectResponse);
+            }
+            else if(RollupPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponse>(null, RollupPropertyItemObjectResponse);
+            }
+            else if(SelectPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponse>(null, SelectPropertyItemObjectResponse);
+            }
+            else if(StatusPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponse>(null, StatusPropertyItemObjectResponse);
+            }
+            else if(TitlePropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TitlePropertyItemObjectResponse>(null, TitlePropertyItemObjectResponse);
+            }
+            else if(UniqueIdPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UniqueIdPropertyItemObjectResponse>(null, UniqueIdPropertyItemObjectResponse);
+            }
+            else if(UrlPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UrlPropertyItemObjectResponse>(null, UrlPropertyItemObjectResponse);
+            }
+            else if(VerificationPropertyItemObjectResponse != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyItemObjectResponse>(null, VerificationPropertyItemObjectResponse);
+            }
         }
     }
 }

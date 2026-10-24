@@ -8,30 +8,35 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Display name for the comment.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameIntegration"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameUser"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateACommentRequestDisplayName : IAdditionalDataHolder, IParsable
+    public partial class CreateACommentRequestDisplayName : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The custom property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom? Custom { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom? CreateACommentRequestDisplayNameCustom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom Custom { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom CreateACommentRequestDisplayNameCustom { get; set; }
 #endif
-        /// <summary>Always `integration`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.IntegrationType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName"/> and sets the default values.
-        /// </summary>
-        public CreateACommentRequestDisplayName()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameIntegration"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameIntegration? CreateACommentRequestDisplayNameIntegration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameIntegration CreateACommentRequestDisplayNameIntegration { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameUser"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameUser? CreateACommentRequestDisplayNameUser { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameUser CreateACommentRequestDisplayNameUser { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,7 +45,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayName();
+            if("custom".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateACommentRequestDisplayNameCustom = new global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom();
+            }
+            else if("integration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateACommentRequestDisplayNameIntegration = new global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameIntegration();
+            }
+            else if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CreateACommentRequestDisplayNameUser = new global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameUser();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +67,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CreateACommentRequestDisplayNameCustom != null)
             {
-                { "custom", n => { Custom = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom>(global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.IntegrationType>(); } },
-            };
+                return CreateACommentRequestDisplayNameCustom.GetFieldDeserializers();
+            }
+            else if(CreateACommentRequestDisplayNameIntegration != null)
+            {
+                return CreateACommentRequestDisplayNameIntegration.GetFieldDeserializers();
+            }
+            else if(CreateACommentRequestDisplayNameUser != null)
+            {
+                return CreateACommentRequestDisplayNameUser.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,9 +88,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom>("custom", Custom);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.IntegrationType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CreateACommentRequestDisplayNameCustom != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameCustom>(null, CreateACommentRequestDisplayNameCustom);
+            }
+            else if(CreateACommentRequestDisplayNameIntegration != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameIntegration>(null, CreateACommentRequestDisplayNameIntegration);
+            }
+            else if(CreateACommentRequestDisplayNameUser != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateACommentRequestDisplayNameUser>(null, CreateACommentRequestDisplayNameUser);
+            }
         }
     }
 }

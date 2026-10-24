@@ -22,8 +22,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequestExternal External { get; set; }
 #endif
-        /// <summary>Type of attachment. In this case, an external URL.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ExternalType? Type { get; set; }
+        /// <summary>Always `external`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequest"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "external", n => { External = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequestExternal>(global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequestExternal.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequestType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequestExternal>("external", External);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

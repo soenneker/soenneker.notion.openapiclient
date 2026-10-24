@@ -9,31 +9,45 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UserObjectResponse : IAdditionalDataHolder, IParsable
+    public partial class UserObjectResponse : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatar URL of the user.</summary>
+        /// <summary>Details about the bot, when the `type` of the user is `bot`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvatarUrl { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot? Bot { get; set; }
 #nullable restore
 #else
-        public string AvatarUrl { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot Bot { get; set; }
 #endif
-        /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
-        /// <summary>The name of the user.</summary>
+        /// <summary>Details about the person, when the `type` of the user is `person`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PersonUserObjectResponsePerson? Person { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PersonUserObjectResponsePerson Person { get; set; }
 #endif
-        /// <summary>The user object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UserObject? Object { get; set; }
+        /// <summary>Indicates this user is a person.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PersonType? Type { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot? UserObjectResponseBot { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot UserObjectResponseBot { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponsePerson"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponsePerson? UserObjectResponsePerson { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponsePerson UserObjectResponsePerson { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse"/> and sets the default values.
         /// </summary>
@@ -49,7 +63,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse();
+            if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PersonType>() is global::Soenneker.Notion.OpenApiClient.Models.PersonType typeValue)
+            {
+                result.Type = typeValue;
+            }
+            else if("bot".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserObjectResponseBot = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot();
+            }
+            else if("person".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.UserObjectResponsePerson = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponsePerson();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,13 +85,23 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(Bot != null)
             {
-                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetGuidValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObject>(); } },
-            };
+                return Bot.GetFieldDeserializers();
+            }
+            else if(Person != null)
+            {
+                return Person.GetFieldDeserializers();
+            }
+            else if(UserObjectResponseBot != null)
+            {
+                return UserObjectResponseBot.GetFieldDeserializers();
+            }
+            else if(UserObjectResponsePerson != null)
+            {
+                return UserObjectResponsePerson.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,10 +110,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("avatar_url", AvatarUrl);
-            writer.WriteGuidValue("id", Id);
-            writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObject>("object", Object);
+            if(Bot != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot>(null, Bot);
+            }
+            else if(Person != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PersonUserObjectResponsePerson>(null, Person);
+            }
+            else if(Type != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PersonType>(null, Type);
+            }
+            else if(UserObjectResponseBot != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot>(null, UserObjectResponseBot);
+            }
+            else if(UserObjectResponsePerson != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponsePerson>(null, UserObjectResponsePerson);
+            }
             writer.WriteAdditionalData(AdditionalData);
         }
     }

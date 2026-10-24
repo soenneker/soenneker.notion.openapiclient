@@ -44,8 +44,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse Sort { get; set; }
 #endif
-        /// <summary>The formula result type for grouping.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.NumberType? Type { get; set; }
+        /// <summary>The property type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "range_size", n => { RangeSize = n.GetIntValue(); } },
                 { "range_start", n => { RangeStart = n.GetIntValue(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigResponseType>(); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteIntValue("range_size", RangeSize);
             writer.WriteIntValue("range_start", RangeStart);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>("sort", Sort);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberGroupByConfigResponseType>("type", Type);
         }
     }
 }

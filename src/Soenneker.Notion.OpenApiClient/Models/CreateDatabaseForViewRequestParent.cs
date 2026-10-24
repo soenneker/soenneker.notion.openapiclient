@@ -23,8 +23,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string PageId { get; set; }
 #endif
-        /// <summary>Always `page_id`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIdType? Type { get; set; }
+        /// <summary>The parent type. Must be &quot;page_id&quot;.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParentType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParent"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "page_id", n => { PageId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParentType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("page_id", PageId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageIdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequestParentType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

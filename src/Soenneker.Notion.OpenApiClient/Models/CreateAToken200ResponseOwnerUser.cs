@@ -7,28 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPerson"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateAToken200ResponseOwnerUser : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class CreateAToken200ResponseOwnerUser : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPerson"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserType? Type { get; set; }
+        /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPerson? CreateAToken200ResponseOwnerUserPerson { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPerson CreateAToken200ResponseOwnerUserPerson { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUser User { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? PartialUserObjectResponse { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse PartialUserObjectResponse { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser"/> and sets the default values.
+        /// </summary>
+        public CreateAToken200ResponseOwnerUser()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,10 +39,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser();
-            result.CreateAToken200ResponseOwnerUserPerson = new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPerson();
-            result.PartialUserObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse();
-            return result;
+            return new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUser();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +47,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateAToken200ResponseOwnerUserPerson != null || PartialUserObjectResponse != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateAToken200ResponseOwnerUserPerson, PartialUserObjectResponse);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserType>(); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUser>(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUser.CreateFromDiscriminatorValue); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,7 +60,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserPerson>(null, CreateAToken200ResponseOwnerUserPerson, PartialUserObjectResponse);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUser>("user", User);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -93,41 +93,41 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ViewConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewConfigRequest();
-            if("BoardViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("board".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BoardViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest();
             }
-            else if("CalendarViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("calendar".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CalendarViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequest();
             }
-            else if("ChartViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("chart".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ChartViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest();
             }
-            else if("FormViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("form".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FormViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest();
             }
-            else if("GalleryViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("gallery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.GalleryViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest();
             }
-            else if("ListViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("list".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ListViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest();
             }
-            else if("MapViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("map".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MapViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest();
             }
-            else if("TableViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("table".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TableViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest();
             }
-            else if("TimelineViewConfigRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("timeline".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TimelineViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest();
             }

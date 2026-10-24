@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseExternal"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class InternalOrExternalFileWithNameResponse : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class InternalOrExternalFileWithNameResponse : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name of the file.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseExternal"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseExternal? InternalOrExternalFileWithNameResponseExternal { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseExternal InternalOrExternalFileWithNameResponseExternal { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse"/> and sets the default values.
-        /// </summary>
-        public InternalOrExternalFileWithNameResponse()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile? InternalOrExternalFileWithNameResponseFile { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile InternalOrExternalFileWithNameResponseFile { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponse();
+            if("external".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.InternalOrExternalFileWithNameResponseExternal = new global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseExternal();
+            }
+            else if("file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.InternalOrExternalFileWithNameResponseFile = new global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +55,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(InternalOrExternalFileWithNameResponseExternal != null)
             {
-                { "name", n => { Name = n.GetStringValue(); } },
-            };
+                return InternalOrExternalFileWithNameResponseExternal.GetFieldDeserializers();
+            }
+            else if(InternalOrExternalFileWithNameResponseFile != null)
+            {
+                return InternalOrExternalFileWithNameResponseFile.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("name", Name);
-            writer.WriteAdditionalData(AdditionalData);
+            if(InternalOrExternalFileWithNameResponseExternal != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseExternal>(null, InternalOrExternalFileWithNameResponseExternal);
+            }
+            else if(InternalOrExternalFileWithNameResponseFile != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile>(null, InternalOrExternalFileWithNameResponseFile);
+            }
         }
     }
 }

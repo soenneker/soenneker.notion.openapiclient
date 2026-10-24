@@ -16,7 +16,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The calendar date as an ISO 8601 date string.</summary>
         public Date? StartDate { get; set; }
         /// <summary>Always `date`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DateType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2ValueOneOf1Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "start_date", n => { StartDate = n.GetDateValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2ValueOneOf1Type>(); } },
             };
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("start_date", StartDate);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf3ValueOneOf2ValueOneOf1Type>("type", Type);
         }
     }
 }

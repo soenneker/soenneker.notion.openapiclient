@@ -14,8 +14,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
-        /// <summary>Indicates this user is a person.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PersonType? Type { get; set; }
+        /// <summary>Always `person`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemOneOf1Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PersonType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemOneOf1Type>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PersonType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemOneOf1Type>("type", Type);
         }
     }
 }

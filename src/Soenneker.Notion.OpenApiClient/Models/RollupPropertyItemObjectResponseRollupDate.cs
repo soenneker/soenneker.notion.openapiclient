@@ -24,8 +24,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The function property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.RollupFunction? Function { get; set; }
-        /// <summary>Always `date`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DateType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDate"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "date", n => { Date = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>(global::Soenneker.Notion.OpenApiClient.Models.DateResponse.CreateFromDiscriminatorValue); } },
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateType>(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateResponse>("date", Date);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

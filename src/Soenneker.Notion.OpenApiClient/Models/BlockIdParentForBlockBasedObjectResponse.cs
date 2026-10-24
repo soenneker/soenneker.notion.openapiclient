@@ -14,8 +14,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
     {
         /// <summary>The block_id property</summary>
         public Guid? BlockId { get; set; }
-        /// <summary>Always `block_id`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockIdType? Type { get; set; }
+        /// <summary>The parent type.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "block_id", n => { BlockId = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockIdType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponseType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("block_id", BlockId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockIdType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponseType>("type", Type);
         }
     }
 }

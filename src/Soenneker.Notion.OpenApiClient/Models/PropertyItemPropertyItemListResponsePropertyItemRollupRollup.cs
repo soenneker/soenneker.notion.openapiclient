@@ -61,12 +61,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollup();
-            result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray();
-            result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate();
-            result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete();
-            result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber();
-            result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported();
+            if("array".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray();
+            }
+            else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate();
+            }
+            else if("incomplete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete();
+            }
+            else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber();
+            }
+            else if("unsupported".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported = new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +91,25 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray != null || PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate != null || PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete != null || PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber != null || PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported != null)
+            if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray, PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate, PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete, PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber, PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported);
+                return PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray.GetFieldDeserializers();
+            }
+            else if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate != null)
+            {
+                return PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate.GetFieldDeserializers();
+            }
+            else if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete != null)
+            {
+                return PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete.GetFieldDeserializers();
+            }
+            else if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber != null)
+            {
+                return PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber.GetFieldDeserializers();
+            }
+            else if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported != null)
+            {
+                return PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +120,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray>(null, PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray, PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate, PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete, PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber, PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported);
+            if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray>(null, PropertyItemPropertyItemListResponsePropertyItemRollupRollupArray);
+            }
+            else if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate>(null, PropertyItemPropertyItemListResponsePropertyItemRollupRollupDate);
+            }
+            else if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete>(null, PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete);
+            }
+            else if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber>(null, PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber);
+            }
+            else if(PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported>(null, PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported);
+            }
         }
     }
 }

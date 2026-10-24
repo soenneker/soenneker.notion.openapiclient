@@ -7,38 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PatchPageRequestTemplate : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PatchPageRequestTemplate : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The template_id property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf1? PatchPageRequestTemplateAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string TemplateId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf1 PatchPageRequestTemplateAnyOf1 { get; set; }
 #endif
-        /// <summary>IANA timezone to use when resolving template variables like @now and @today (e.g. &apos;America/New_York&apos;). Defaults to the authorizing user&apos;s timezone for public integrations, or UTC for internal integrations.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf2? PatchPageRequestTemplateAnyOf2 { get; set; }
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf2 PatchPageRequestTemplateAnyOf2 { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DefaultValueType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplate"/> and sets the default values.
-        /// </summary>
-        public PatchPageRequestTemplate()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +37,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplate();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplate();
+            if("default".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PatchPageRequestTemplateAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf1();
+            }
+            else if("template_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PatchPageRequestTemplateAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,12 +55,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PatchPageRequestTemplateAnyOf1 != null)
             {
-                { "template_id", n => { TemplateId = n.GetStringValue(); } },
-                { "timezone", n => { Timezone = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DefaultValueType>(); } },
-            };
+                return PatchPageRequestTemplateAnyOf1.GetFieldDeserializers();
+            }
+            else if(PatchPageRequestTemplateAnyOf2 != null)
+            {
+                return PatchPageRequestTemplateAnyOf2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -69,10 +72,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("template_id", TemplateId);
-            writer.WriteStringValue("timezone", Timezone);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DefaultValueType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(PatchPageRequestTemplateAnyOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf1>(null, PatchPageRequestTemplateAnyOf1);
+            }
+            else if(PatchPageRequestTemplateAnyOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PatchPageRequestTemplateAnyOf2>(null, PatchPageRequestTemplateAnyOf2);
+            }
         }
     }
 }

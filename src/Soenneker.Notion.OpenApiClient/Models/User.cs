@@ -25,7 +25,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string NextCursor { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UserObjectEnum? Object { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,15 +34,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public List<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse> Results { get; set; }
 #endif
-        /// <summary>Always `user`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UserType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.UserTypeEnum? Type { get; set; }
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UserUser? UserProp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? UserProp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UserUser UserProp { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject UserProp { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.User"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObjectEnum>(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>(); } },
-                { "user", n => { UserProp = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UserUser>(global::Soenneker.Notion.OpenApiClient.Models.UserUser.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserTypeEnum>(); } },
+                { "user", n => { UserProp = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,10 +86,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserObjectEnum>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse>("results", Results);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UserUser>("user", UserProp);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UserTypeEnum>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("user", UserProp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

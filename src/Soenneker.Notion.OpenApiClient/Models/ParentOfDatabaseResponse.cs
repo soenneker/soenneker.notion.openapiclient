@@ -53,21 +53,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse();
-            if("BlockIdParentForBlockBasedObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("block_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.BlockIdParentForBlockBasedObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.BlockIdParentForBlockBasedObjectResponse();
             }
-            else if("DatabaseParentResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("database_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DatabaseParentResponse = new global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse();
             }
-            else if("PageIdParentForBlockBasedObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("page_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PageIdParentForBlockBasedObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PageIdParentForBlockBasedObjectResponse();
             }
-            else if("WorkspaceParentForBlockBasedObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("workspace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkspaceParentForBlockBasedObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.WorkspaceParentForBlockBasedObjectResponse();
             }

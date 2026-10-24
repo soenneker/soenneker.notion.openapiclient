@@ -45,10 +45,20 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchema();
-            result.PagePositionSchemaAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1();
-            result.PagePositionSchemaAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf2();
-            result.PagePositionSchemaAnyOf3 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf3();
+            if("after_block".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PagePositionSchemaAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1();
+            }
+            else if("page_start".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PagePositionSchemaAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf2();
+            }
+            else if("page_end".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PagePositionSchemaAnyOf3 = new global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf3();
+            }
             return result;
         }
         /// <summary>
@@ -57,9 +67,17 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PagePositionSchemaAnyOf1 != null || PagePositionSchemaAnyOf2 != null || PagePositionSchemaAnyOf3 != null)
+            if(PagePositionSchemaAnyOf1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PagePositionSchemaAnyOf1, PagePositionSchemaAnyOf2, PagePositionSchemaAnyOf3);
+                return PagePositionSchemaAnyOf1.GetFieldDeserializers();
+            }
+            else if(PagePositionSchemaAnyOf2 != null)
+            {
+                return PagePositionSchemaAnyOf2.GetFieldDeserializers();
+            }
+            else if(PagePositionSchemaAnyOf3 != null)
+            {
+                return PagePositionSchemaAnyOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +88,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1>(null, PagePositionSchemaAnyOf1, PagePositionSchemaAnyOf2, PagePositionSchemaAnyOf3);
+            if(PagePositionSchemaAnyOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf1>(null, PagePositionSchemaAnyOf1);
+            }
+            else if(PagePositionSchemaAnyOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf2>(null, PagePositionSchemaAnyOf2);
+            }
+            else if(PagePositionSchemaAnyOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PagePositionSchemaAnyOf3>(null, PagePositionSchemaAnyOf3);
+            }
         }
     }
 }

@@ -17,15 +17,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The array property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayArrayItem>? Array { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>? Array { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayArrayItem> Array { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject> Array { get; set; }
 #endif
         /// <summary>The function property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.RollupFunction? Function { get; set; }
-        /// <summary>Always `array`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ArrayType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArray"/> and sets the default values.
         /// </summary>
@@ -51,9 +51,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "array", n => { Array = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayArrayItem>(global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayArrayItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "array", n => { Array = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ArrayType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayType>(); } },
             };
         }
         /// <summary>
@@ -63,9 +63,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayArrayItem>("array", Array);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("array", Array);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ArrayType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

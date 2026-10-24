@@ -16,8 +16,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public bool? HasMore { get; set; }
         /// <summary>The cursor to use for the next page of results, or null if there are no more results.</summary>
         public Guid? NextCursor { get; set; }
-        /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get; set; }
+        /// <summary>Always `list`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.ListCustomEmojis200ResponseObject? Object { get; set; }
         /// <summary>The list of custom emojis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,7 +27,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public List<global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiResponse> Results { get; set; }
 #endif
         /// <summary>Always `custom_emoji`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ListCustomEmojis200ResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,9 +48,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListCustomEmojis200ResponseObject>(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiResponse>(global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListCustomEmojis200ResponseType>(); } },
             };
         }
         /// <summary>
@@ -62,9 +62,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteGuidValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListCustomEmojis200ResponseObject>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiResponse>("results", Results);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListCustomEmojis200ResponseType>("type", Type);
         }
     }
 }

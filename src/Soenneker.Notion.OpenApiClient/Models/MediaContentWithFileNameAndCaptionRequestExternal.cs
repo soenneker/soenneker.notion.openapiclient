@@ -36,8 +36,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Type of attachment. In this case, an external URL.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ExternalType? Type { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequestExternalType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "caption", n => { Caption = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "external", n => { External = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalFileRequest>(global::Soenneker.Notion.OpenApiClient.Models.ExternalFileRequest.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequestExternalType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("caption", Caption);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalFileRequest>("external", External);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MediaContentWithFileNameAndCaptionRequestExternalType>("type", Type);
         }
     }
 }

@@ -37,13 +37,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf2ValueItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf2ValueItem();
-            if("MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("exact".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf1();
             }
-            else if("MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("relative".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf2ValueItemOneOf2();
             }

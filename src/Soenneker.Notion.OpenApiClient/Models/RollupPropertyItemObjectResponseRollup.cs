@@ -61,12 +61,28 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup();
-            result.RollupPropertyItemObjectResponseRollupArray = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArray();
-            result.RollupPropertyItemObjectResponseRollupDate = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDate();
-            result.RollupPropertyItemObjectResponseRollupIncomplete = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncomplete();
-            result.RollupPropertyItemObjectResponseRollupNumber = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupNumber();
-            result.RollupPropertyItemObjectResponseRollupUnsupported = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupUnsupported();
+            if("array".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RollupPropertyItemObjectResponseRollupArray = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArray();
+            }
+            else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RollupPropertyItemObjectResponseRollupDate = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDate();
+            }
+            else if("incomplete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RollupPropertyItemObjectResponseRollupIncomplete = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncomplete();
+            }
+            else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RollupPropertyItemObjectResponseRollupNumber = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupNumber();
+            }
+            else if("unsupported".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RollupPropertyItemObjectResponseRollupUnsupported = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupUnsupported();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +91,25 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RollupPropertyItemObjectResponseRollupArray != null || RollupPropertyItemObjectResponseRollupDate != null || RollupPropertyItemObjectResponseRollupIncomplete != null || RollupPropertyItemObjectResponseRollupNumber != null || RollupPropertyItemObjectResponseRollupUnsupported != null)
+            if(RollupPropertyItemObjectResponseRollupArray != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RollupPropertyItemObjectResponseRollupArray, RollupPropertyItemObjectResponseRollupDate, RollupPropertyItemObjectResponseRollupIncomplete, RollupPropertyItemObjectResponseRollupNumber, RollupPropertyItemObjectResponseRollupUnsupported);
+                return RollupPropertyItemObjectResponseRollupArray.GetFieldDeserializers();
+            }
+            else if(RollupPropertyItemObjectResponseRollupDate != null)
+            {
+                return RollupPropertyItemObjectResponseRollupDate.GetFieldDeserializers();
+            }
+            else if(RollupPropertyItemObjectResponseRollupIncomplete != null)
+            {
+                return RollupPropertyItemObjectResponseRollupIncomplete.GetFieldDeserializers();
+            }
+            else if(RollupPropertyItemObjectResponseRollupNumber != null)
+            {
+                return RollupPropertyItemObjectResponseRollupNumber.GetFieldDeserializers();
+            }
+            else if(RollupPropertyItemObjectResponseRollupUnsupported != null)
+            {
+                return RollupPropertyItemObjectResponseRollupUnsupported.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +120,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArray>(null, RollupPropertyItemObjectResponseRollupArray, RollupPropertyItemObjectResponseRollupDate, RollupPropertyItemObjectResponseRollupIncomplete, RollupPropertyItemObjectResponseRollupNumber, RollupPropertyItemObjectResponseRollupUnsupported);
+            if(RollupPropertyItemObjectResponseRollupArray != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArray>(null, RollupPropertyItemObjectResponseRollupArray);
+            }
+            else if(RollupPropertyItemObjectResponseRollupDate != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDate>(null, RollupPropertyItemObjectResponseRollupDate);
+            }
+            else if(RollupPropertyItemObjectResponseRollupIncomplete != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncomplete>(null, RollupPropertyItemObjectResponseRollupIncomplete);
+            }
+            else if(RollupPropertyItemObjectResponseRollupNumber != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupNumber>(null, RollupPropertyItemObjectResponseRollupNumber);
+            }
+            else if(RollupPropertyItemObjectResponseRollupUnsupported != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupUnsupported>(null, RollupPropertyItemObjectResponseRollupUnsupported);
+            }
         }
     }
 }

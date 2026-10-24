@@ -7,32 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class PostDatabaseQueryRequestSortsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class PostDatabaseQueryRequestSortsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The direction property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemDirection? Direction { get; set; }
-        /// <summary>The property property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Property { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1? PostDatabaseQueryRequestSortsItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public string Property { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1 PostDatabaseQueryRequestSortsItemAnyOf1 { get; set; }
 #endif
-        /// <summary>The timestamp property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemTimestamp? Timestamp { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem"/> and sets the default values.
-        /// </summary>
-        public PostDatabaseQueryRequestSortsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2? PostDatabaseQueryRequestSortsItemAnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2 PostDatabaseQueryRequestSortsItemAnyOf2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +37,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem();
+            result.PostDatabaseQueryRequestSortsItemAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1();
+            result.PostDatabaseQueryRequestSortsItemAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,12 +48,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(PostDatabaseQueryRequestSortsItemAnyOf1 != null || PostDatabaseQueryRequestSortsItemAnyOf2 != null)
             {
-                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemDirection>(); } },
-                { "property", n => { Property = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemTimestamp>(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostDatabaseQueryRequestSortsItemAnyOf1, PostDatabaseQueryRequestSortsItemAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -63,10 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemDirection>("direction", Direction);
-            writer.WriteStringValue("property", Property);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemTimestamp>("timestamp", Timestamp);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1>(null, PostDatabaseQueryRequestSortsItemAnyOf1, PostDatabaseQueryRequestSortsItemAnyOf2);
         }
     }
 }

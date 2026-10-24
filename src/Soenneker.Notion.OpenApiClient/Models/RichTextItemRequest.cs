@@ -7,28 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestEquation"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestMention"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestText"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class RichTextItemRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class RichTextItemRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The annotations property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestEquation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.AnnotationRequest? Annotations { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestEquation? RichTextItemRequestEquation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.AnnotationRequest Annotations { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestEquation RichTextItemRequestEquation { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest"/> and sets the default values.
-        /// </summary>
-        public RichTextItemRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestMention"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestMention? RichTextItemRequestMention { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestMention RichTextItemRequestMention { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestText"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestText? RichTextItemRequestText { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestText RichTextItemRequestText { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +45,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest();
+            if("equation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RichTextItemRequestEquation = new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestEquation();
+            }
+            else if("mention".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RichTextItemRequestMention = new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestMention();
+            }
+            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RichTextItemRequestText = new global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestText();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +67,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(RichTextItemRequestEquation != null)
             {
-                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AnnotationRequest>(global::Soenneker.Notion.OpenApiClient.Models.AnnotationRequest.CreateFromDiscriminatorValue); } },
-            };
+                return RichTextItemRequestEquation.GetFieldDeserializers();
+            }
+            else if(RichTextItemRequestMention != null)
+            {
+                return RichTextItemRequestMention.GetFieldDeserializers();
+            }
+            else if(RichTextItemRequestText != null)
+            {
+                return RichTextItemRequestText.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +88,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AnnotationRequest>("annotations", Annotations);
-            writer.WriteAdditionalData(AdditionalData);
+            if(RichTextItemRequestEquation != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestEquation>(null, RichTextItemRequestEquation);
+            }
+            else if(RichTextItemRequestMention != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestMention>(null, RichTextItemRequestMention);
+            }
+            else if(RichTextItemRequestText != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequestText>(null, RichTextItemRequestText);
+            }
         }
     }
 }

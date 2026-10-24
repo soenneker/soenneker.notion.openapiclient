@@ -17,14 +17,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The function property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.RollupFunction? Function { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedType? Type { get; set; }
         /// <summary>The unsupported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedUnsupported? Unsupported { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Unsupported { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedUnsupported Unsupported { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Unsupported { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported"/> and sets the default values.
@@ -52,8 +52,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "function", n => { Function = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType>(); } },
-                { "unsupported", n => { Unsupported = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedUnsupported>(global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedUnsupported.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedType>(); } },
+                { "unsupported", n => { Unsupported = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RollupFunction>("function", Function);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedUnsupported>("unsupported", Unsupported);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("unsupported", Unsupported);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

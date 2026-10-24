@@ -41,13 +41,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Date and time when this agent was created.</summary>
         public DateTimeOffset? CreatedTime { get; set; }
         /// <summary>The per-agent credit limit that applies to this agent, null when uncapped, or &quot;hidden&quot; when the caller lacks full access to the agent. This is the effective limit computed at runtime, folding in both the agent&apos;s own limit and any workspace-admin default.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreditLimit? CreditLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreditLimit CreditLimit { get; set; }
-#endif
+        public int? CreditLimit { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,7 +165,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "connections", n => { Connections = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "credit_limit", n => { CreditLimit = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreditLimit>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreditLimit.CreateFromDiscriminatorValue); } },
+                { "credit_limit", n => { CreditLimit = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "has_unpublished_changes", n => { HasUnpublishedChanges = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges.CreateFromDiscriminatorValue); } },
                 { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon.CreateFromDiscriminatorValue); } },
@@ -203,7 +197,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem>("connections", Connections);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreditLimit>("credit_limit", CreditLimit);
+            writer.WriteIntValue("credit_limit", CreditLimit);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges>("has_unpublished_changes", HasUnpublishedChanges);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon>("icon", Icon);

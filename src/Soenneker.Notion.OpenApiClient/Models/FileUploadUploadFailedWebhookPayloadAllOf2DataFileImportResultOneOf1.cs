@@ -23,13 +23,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The success property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1Success? Success { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject? Success { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1Success Success { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.EmptyObject Success { get; set; }
 #endif
-        /// <summary>Indicates a successful import.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.SuccessType? Type { get; set; }
+        /// <summary>Always `success`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1Type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,8 +49,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "imported_time", n => { ImportedTime = n.GetStringValue(); } },
-                { "success", n => { Success = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1Success>(global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1Success.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SuccessType>(); } },
+                { "success", n => { Success = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1Type>(); } },
             };
         }
         /// <summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("imported_time", ImportedTime);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1Success>("success", Success);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SuccessType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("success", Success);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadUploadFailedWebhookPayloadAllOf2DataFileImportResultOneOf1Type>("type", Type);
         }
     }
 }

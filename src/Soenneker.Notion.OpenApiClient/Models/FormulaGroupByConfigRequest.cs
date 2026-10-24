@@ -32,8 +32,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string PropertyId { get; set; }
 #endif
-        /// <summary>Always `formula`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaType? Type { get; set; }
+        /// <summary>The property type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequest"/> and sets the default values.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy>(global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy.CreateFromDiscriminatorValue); } },
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestType>(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestGroupBy>("group_by", GroupBy);
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteStringValue("property_id", PropertyId);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

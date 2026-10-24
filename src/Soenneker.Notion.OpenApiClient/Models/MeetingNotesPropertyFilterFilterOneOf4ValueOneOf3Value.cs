@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
+    /// <summary>One of: `this_week`, `the_past_week`, `the_past_month`, `the_past_year`, `the_next_week`, `the_next_month`, `the_next_year`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum MeetingNotesPropertyFilterFilterOneOf4ValueOneOf3Value
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "this_week")]
         #pragma warning disable CS1591

@@ -13,7 +13,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Always `relative`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.RelativeType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Type? Type { get; set; }
         /// <summary>One of: `year`, `month`, `week`, `day`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Unit? Unit { get; set; }
         /// <summary>Always `surrounding`</summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelativeType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Type>(); } },
                 { "unit", n => { Unit = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Unit>(); } },
                 { "value", n => { Value = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SurroundingValue>(); } },
             };
@@ -48,7 +48,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.RelativeType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Type>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeetingNotesPropertyFilterFilterOneOf4ValueOneOf2Unit>("unit", Unit);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SurroundingValue>("value", Value);
         }

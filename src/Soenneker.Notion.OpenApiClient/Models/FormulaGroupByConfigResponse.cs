@@ -38,8 +38,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string PropertyName { get; set; }
 #endif
-        /// <summary>Always `formula`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormulaType? Type { get; set; }
+        /// <summary>The property type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "hide_empty_groups", n => { HideEmptyGroups = n.GetBoolValue(); } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
                 { "property_name", n => { PropertyName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigResponseType>(); } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("hide_empty_groups", HideEmptyGroups);
             writer.WriteStringValue("property_id", PropertyId);
             writer.WriteStringValue("property_name", PropertyName);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaGroupByConfigResponseType>("type", Type);
         }
     }
 }

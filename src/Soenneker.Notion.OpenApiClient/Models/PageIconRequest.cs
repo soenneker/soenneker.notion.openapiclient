@@ -94,8 +94,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest IconPageIconRequest { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadType? Type { get; set; }
+        /// <summary>Always `file_upload`</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest"/> and sets the default values.
         /// </summary>
@@ -111,29 +111,29 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest();
-            if("CustomEmojiPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("custom_emoji".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomEmojiPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconRequest();
             }
-            else if("EmojiPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("emoji".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.EmojiPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconRequest();
             }
-            else if("ExternalPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("external".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ExternalPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconRequest();
             }
-            else if("FileUploadPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("file_upload".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FileUploadPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequest();
             }
-            else if("IconPageIconRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("icon".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.IconPageIconRequest = new global::Soenneker.Notion.OpenApiClient.Models.IconPageIconRequest();
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>() is global::Soenneker.Notion.OpenApiClient.Models.FileUploadType typeValue)
+            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestType>() is global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestType typeValue)
             {
                 result.Type = typeValue;
             }
@@ -232,7 +232,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             }
             else if(Type != null)
             {
-                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadType>(null, Type);
+                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageIconRequestType>(null, Type);
             }
             else if(Emoji != null)
             {

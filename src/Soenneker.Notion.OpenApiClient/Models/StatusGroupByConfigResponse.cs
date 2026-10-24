@@ -40,8 +40,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse Sort { get; set; }
 #endif
-        /// <summary>Always `status`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.StatusType? Type { get; set; }
+        /// <summary>The property type for grouping.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigResponseType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
                 { "property_name", n => { PropertyName = n.GetStringValue(); } },
                 { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigResponseType>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("property_id", PropertyId);
             writer.WriteStringValue("property_name", PropertyName);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupSortResponse>("sort", Sort);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusGroupByConfigResponseType>("type", Type);
         }
     }
 }

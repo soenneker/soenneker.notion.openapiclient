@@ -54,8 +54,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.NoticonIconResponse Icon { get; set; }
 #endif
-        /// <summary>Always `emoji`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.EmojiType? Type { get; set; }
+        /// <summary>Type of icon. In this case, an emoji.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconResponseType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse"/> and sets the default values.
         /// </summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "external", n => { External = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconResponseExternal>(global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconResponseExternal.CreateFromDiscriminatorValue); } },
                 { "file", n => { File = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse>(global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse.CreateFromDiscriminatorValue); } },
                 { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NoticonIconResponse>(global::Soenneker.Notion.OpenApiClient.Models.NoticonIconResponse.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.EmojiType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconResponseType>(); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconResponseExternal>("external", External);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse>("file", File);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NoticonIconResponse>("icon", Icon);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.EmojiType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconResponseType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

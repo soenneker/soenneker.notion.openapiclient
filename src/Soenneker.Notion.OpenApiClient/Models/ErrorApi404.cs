@@ -24,7 +24,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404AdditionalData AdditionalDataProperty { get; set; }
 #endif
         /// <summary>The code property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Code? Code { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404AllOf2Code? Code { get; set; }
         /// <summary>The primary error message.</summary>
         public override string Message { get => MessageEscaped ?? string.Empty; }
         /// <summary>The message property</summary>
@@ -36,9 +36,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string MessageEscaped { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Object? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ErrorObject? Object { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Status? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.Value404Status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404"/> and sets the default values.
         /// </summary>
@@ -65,10 +65,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additional_data", n => { AdditionalDataProperty = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404AdditionalData>(global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404AdditionalData.CreateFromDiscriminatorValue); } },
-                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Code>(); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404AllOf2Code>(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Object>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Status>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorObject>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.Value404Status>(); } },
             };
         }
         /// <summary>
@@ -79,10 +79,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404AdditionalData>("additional_data", AdditionalDataProperty);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Code>("code", Code);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404AllOf2Code>("code", Code);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ErrorObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.Value404Status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

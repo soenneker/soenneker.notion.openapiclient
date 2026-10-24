@@ -21,7 +21,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Cursor for the next page of results.</summary>
         public Guid? NextCursor { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewQueryObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponseObject? Object { get; set; }
         /// <summary>The request_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +64,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetGuidValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryObject>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponseObject>(); } },
                 { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>(global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse>(global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "total_count", n => { TotalCount = n.GetDoubleValue(); } },
@@ -82,7 +82,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteGuidValue("id", Id);
             writer.WriteGuidValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewQueryResponseObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RequestStatusResponse>("request_status", RequestStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PageReferenceResponse>("results", Results);
             writer.WriteDoubleValue("total_count", TotalCount);
