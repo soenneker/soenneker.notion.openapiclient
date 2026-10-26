@@ -14895,7 +14895,8 @@
       "DatabasePropertyRelationConfigResponseCommon": {
         "required": [
           "database_id",
-          "data_source_id"
+          "data_source_id",
+          "limit"
         ],
         "type": "object",
         "properties": {
@@ -14906,6 +14907,14 @@
           "data_source_id": {
             "type": "string",
             "format": "uuid"
+          },
+          "limit": {
+            "minimum": 1,
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "The maximum number of pages each page can relate to, or null when there is no limit. Read-only."
           }
         },
         "additionalProperties": false

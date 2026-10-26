@@ -6834,10 +6834,22 @@
 					},
 					"data_source_id": {
 						"$ref": "#/components/schemas/idResponse"
+					},
+					"limit": {
+						"oneOf": [
+							{
+								"type": "integer",
+								"minimum": 1
+							},
+							{
+								"type": "null"
+							}
+						],
+						"description": "The maximum number of pages each page can relate to, or null when there is no limit. Read-only."
 					}
 				},
 				"additionalProperties": false,
-				"required": ["database_id", "data_source_id"]
+				"required": ["database_id", "data_source_id", "limit"]
 			},
 			"databaseSchemaUpdatedWebhookPayload": {
 				"allOf": [
