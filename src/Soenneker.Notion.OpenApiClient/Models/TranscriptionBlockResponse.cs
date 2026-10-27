@@ -30,6 +30,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse Children { get; set; }
 #endif
+        /// <summary>The is_full_page property</summary>
+        public bool? IsFullPage { get; set; }
         /// <summary>The recording property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +77,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "calendar_event", n => { CalendarEvent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse.CreateFromDiscriminatorValue); } },
                 { "children", n => { Children = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse.CreateFromDiscriminatorValue); } },
+                { "is_full_page", n => { IsFullPage = n.GetBoolValue(); } },
                 { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ApiTranscriptionStatus>(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -89,6 +92,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse>("calendar_event", CalendarEvent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse>("children", Children);
+            writer.WriteBoolValue("is_full_page", IsFullPage);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse>("recording", Recording);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ApiTranscriptionStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);

@@ -24863,8 +24863,14 @@
         }
       },
       "TranscriptionBlockResponse": {
+        "required": [
+          "is_full_page"
+        ],
         "type": "object",
         "properties": {
+          "is_full_page": {
+            "type": "boolean"
+          },
           "title": {
             "maxItems": 100,
             "type": "array",
@@ -24900,6 +24906,9 @@
           "end_time": {
             "type": "string",
             "format": "date-time"
+          },
+          "event_id": {
+            "type": "string"
           },
           "attendees": {
             "maxItems": 100,
@@ -51660,8 +51669,15 @@
         "description": "Audio or video source for the meeting note."
       },
       "CreateMeetingNote200ResponseOneOf2MeetingNotes": {
+        "required": [
+          "is_full_page"
+        ],
         "type": "object",
         "properties": {
+          "is_full_page": {
+            "type": "boolean",
+            "description": "Whether this is a full-page meeting note."
+          },
           "title": {
             "maxItems": 100,
             "type": "array",
@@ -54826,8 +54842,15 @@
         "description": "A property filter condition. Same shape as a property filter but without the \u0022property\u0022 field. For example: { \u0022select\u0022: { \u0022equals\u0022: \u0022High\u0022 } }. An empty object means the quick filter has no criteria yet."
       },
       "QueryMeetingNotes200ResponseResultsItemMeetingNotes": {
+        "required": [
+          "is_full_page"
+        ],
         "type": "object",
         "properties": {
+          "is_full_page": {
+            "type": "boolean",
+            "description": "Whether this is a full-page meeting note."
+          },
           "title": {
             "maxItems": 100,
             "type": "array",
@@ -55131,6 +55154,10 @@
             "type": "string",
             "description": "ISO-8601 end time of the calendar event."
           },
+          "event_id": {
+            "type": "string",
+            "description": "ID of the calendar event, as returned by the calendar tools."
+          },
           "attendees": {
             "maxItems": 100,
             "type": "array",
@@ -55411,6 +55438,10 @@
           "end_time": {
             "type": "string",
             "description": "ISO-8601 end time of the calendar event."
+          },
+          "event_id": {
+            "type": "string",
+            "description": "ID of the calendar event, as returned by the calendar tools."
           },
           "attendees": {
             "maxItems": 100,

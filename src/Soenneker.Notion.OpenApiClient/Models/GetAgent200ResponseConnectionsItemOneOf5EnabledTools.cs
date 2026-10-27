@@ -45,7 +45,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 result.GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf2 = getAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf2Value;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item> getAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1ItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item> getAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1ItemValue)
             {
                 result.GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item = getAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1ItemValue;
             }

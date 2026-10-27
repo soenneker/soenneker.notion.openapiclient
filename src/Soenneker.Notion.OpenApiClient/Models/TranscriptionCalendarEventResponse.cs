@@ -24,6 +24,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #endif
         /// <summary>The end_time property</summary>
         public DateTimeOffset? EndTime { get; set; }
+        /// <summary>The event_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventId { get; set; }
+#nullable restore
+#else
+        public string EventId { get; set; }
+#endif
         /// <summary>The start_time property</summary>
         public DateTimeOffset? StartTime { get; set; }
         /// <summary>
@@ -53,6 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "attendees", n => { Attendees = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "end_time", n => { EndTime = n.GetDateTimeOffsetValue(); } },
+                { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -65,6 +74,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("attendees", Attendees);
             writer.WriteDateTimeOffsetValue("end_time", EndTime);
+            writer.WriteStringValue("event_id", EventId);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }

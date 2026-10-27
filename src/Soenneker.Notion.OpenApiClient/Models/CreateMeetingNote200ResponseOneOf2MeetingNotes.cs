@@ -29,6 +29,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren Children { get; set; }
 #endif
+        /// <summary>Whether this is a full-page meeting note.</summary>
+        public bool? IsFullPage { get; set; }
         /// <summary>Start and end times of the actual recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +69,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "calendar_event", n => { CalendarEvent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent>(global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent.CreateFromDiscriminatorValue); } },
                 { "children", n => { Children = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren>(global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren.CreateFromDiscriminatorValue); } },
+                { "is_full_page", n => { IsFullPage = n.GetBoolValue(); } },
                 { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording>(global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesStatus>(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -81,6 +84,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent>("calendar_event", CalendarEvent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren>("children", Children);
+            writer.WriteBoolValue("is_full_page", IsFullPage);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording>("recording", Recording);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);

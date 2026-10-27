@@ -29,6 +29,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public string EndTime { get; set; }
 #endif
+        /// <summary>ID of the calendar event, as returned by the calendar tools.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventId { get; set; }
+#nullable restore
+#else
+        public string EventId { get; set; }
+#endif
         /// <summary>ISO-8601 start time of the calendar event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "attendees", n => { Attendees = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "end_time", n => { EndTime = n.GetStringValue(); } },
+                { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "start_time", n => { StartTime = n.GetStringValue(); } },
             };
         }
@@ -69,6 +78,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("attendees", Attendees);
             writer.WriteStringValue("end_time", EndTime);
+            writer.WriteStringValue("event_id", EventId);
             writer.WriteStringValue("start_time", StartTime);
         }
     }

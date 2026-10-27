@@ -29,6 +29,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesChildren Children { get; set; }
 #endif
+        /// <summary>Whether this is a full-page meeting note.</summary>
+        public bool? IsFullPage { get; set; }
         /// <summary>Start and end times of the actual recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +69,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "calendar_event", n => { CalendarEvent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesCalendarEvent>(global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesCalendarEvent.CreateFromDiscriminatorValue); } },
                 { "children", n => { Children = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesChildren>(global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesChildren.CreateFromDiscriminatorValue); } },
+                { "is_full_page", n => { IsFullPage = n.GetBoolValue(); } },
                 { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesRecording>(global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesRecording.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesStatus>(); } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -81,6 +84,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesCalendarEvent>("calendar_event", CalendarEvent);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesChildren>("children", Children);
+            writer.WriteBoolValue("is_full_page", IsFullPage);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesRecording>("recording", Recording);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryMeetingNotes200ResponseResultsItemMeetingNotesStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);
