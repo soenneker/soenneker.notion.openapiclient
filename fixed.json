@@ -12897,6 +12897,10 @@
               "$ref": "#/components/schemas/CommentObjectResponseAttachmentsItem"
             },
             "description": "Any file attachments associated with the comment."
+          },
+          "property_id": {
+            "type": "string",
+            "description": "The ID of the database property the comment is on, for comments on a page property. Matches the property\u0027s \u0060id\u0060 in the page object. Omitted for other comments."
           }
         },
         "additionalProperties": false
@@ -34793,6 +34797,10 @@
           "discussion_id": {
             "type": "string",
             "format": "uuid"
+          },
+          "property_id": {
+            "type": "string",
+            "description": "The ID of the database property the comment is on, for comments on a page property. Matches the property\u0027s \u0060id\u0060 in the page object. Omitted for other comments."
           }
         },
         "additionalProperties": false,
@@ -34816,6 +34824,10 @@
           "discussion_id": {
             "type": "string",
             "format": "uuid"
+          },
+          "property_id": {
+            "type": "string",
+            "description": "The ID of the database property the comment is on, for comments on a page property. Matches the property\u0027s \u0060id\u0060 in the page object. Omitted for other comments."
           }
         },
         "additionalProperties": false,
@@ -34839,6 +34851,10 @@
           "discussion_id": {
             "type": "string",
             "format": "uuid"
+          },
+          "property_id": {
+            "type": "string",
+            "description": "The ID of the database property the comment is on, for comments on a page property. Matches the property\u0027s \u0060id\u0060 in the page object. Omitted for other comments."
           }
         },
         "additionalProperties": false,

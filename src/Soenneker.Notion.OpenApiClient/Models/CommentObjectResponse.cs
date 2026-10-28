@@ -58,6 +58,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse Parent { get; set; }
 #endif
+        /// <summary>The ID of the database property the comment is on, for comments on a page property. Matches the property&apos;s `id` in the page object. Omitted for other comments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PropertyId { get; set; }
+#nullable restore
+#else
+        public string PropertyId { get; set; }
+#endif
         /// <summary>The rich text content of the comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +103,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObject>(); } },
                 { "original_content_deleted", n => { OriginalContentDeleted = n.GetBoolValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse>(global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse.CreateFromDiscriminatorValue); } },
+                { "property_id", n => { PropertyId = n.GetStringValue(); } },
                 { "rich_text", n => { RichText = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -116,6 +125,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CommentObject>("object", Object);
             writer.WriteBoolValue("original_content_deleted", OriginalContentDeleted);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CommentParentResponse>("parent", Parent);
+            writer.WriteStringValue("property_id", PropertyId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("rich_text", RichText);
         }
     }

@@ -25,6 +25,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.WebhookExternalBlock Parent { get; set; }
 #endif
+        /// <summary>The ID of the database property the comment is on, for comments on a page property. Matches the property&apos;s `id` in the page object. Omitted for other comments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PropertyId { get; set; }
+#nullable restore
+#else
+        public string PropertyId { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,6 +54,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "discussion_id", n => { DiscussionId = n.GetGuidValue(); } },
                 { "page_id", n => { PageId = n.GetGuidValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WebhookExternalBlock>(global::Soenneker.Notion.OpenApiClient.Models.WebhookExternalBlock.CreateFromDiscriminatorValue); } },
+                { "property_id", n => { PropertyId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteGuidValue("discussion_id", DiscussionId);
             writer.WriteGuidValue("page_id", PageId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WebhookExternalBlock>("parent", Parent);
+            writer.WriteStringValue("property_id", PropertyId);
         }
     }
 }

@@ -4906,6 +4906,10 @@
 									"discussion_id": {
 										"$ref": "#/components/schemas/idResponse",
 										"description": "The ID of the discussion containing the comment."
+									},
+									"property_id": {
+										"type": "string",
+										"description": "The ID of the database property the comment is on, for comments on a page property. Matches the property's `id` in the page object. Omitted for other comments."
 									}
 								},
 								"additionalProperties": false,
@@ -4948,6 +4952,10 @@
 									"discussion_id": {
 										"$ref": "#/components/schemas/idResponse",
 										"description": "The ID of the discussion containing the comment."
+									},
+									"property_id": {
+										"type": "string",
+										"description": "The ID of the database property the comment is on, for comments on a page property. Matches the property's `id` in the page object. Omitted for other comments."
 									}
 								},
 								"additionalProperties": false,
@@ -5051,6 +5059,10 @@
 						},
 						"maxItems": 100,
 						"description": "Any file attachments associated with the comment."
+					},
+					"property_id": {
+						"type": "string",
+						"description": "The ID of the database property the comment is on, for comments on a page property. Matches the property's `id` in the page object. Omitted for other comments."
 					}
 				},
 				"additionalProperties": false,
@@ -5109,6 +5121,10 @@
 									"discussion_id": {
 										"$ref": "#/components/schemas/idResponse",
 										"description": "The ID of the discussion containing the comment."
+									},
+									"property_id": {
+										"type": "string",
+										"description": "The ID of the database property the comment is on, for comments on a page property. Matches the property's `id` in the page object. Omitted for other comments."
 									}
 								},
 								"additionalProperties": false,
