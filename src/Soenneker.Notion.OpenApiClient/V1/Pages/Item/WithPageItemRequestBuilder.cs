@@ -54,7 +54,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         /// <summary>
         /// Retrieve a page
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.RetrieveAPage200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.MovePage200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi400">When receiving a 400 status code</exception>
@@ -69,11 +69,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAPage200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.MovePage200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAPage200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.MovePage200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -92,7 +92,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.RetrieveAPage200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.RetrieveAPage200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.MovePage200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.MovePage200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update page
@@ -153,7 +153,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Pages.Item.WithPageItemRequestBuilder.WithPageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.notion.com", "/v1/pages/{pageId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -174,7 +174,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.notion.com", "/v1/pages/{pageId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

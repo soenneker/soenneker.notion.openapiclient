@@ -17,13 +17,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("equals") is { } nullNodeEqualsEscaped && nullNodeEqualsEscaped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EqualsEscaped = null;
+            if (parseNode.GetChildNode("equals") is null) { _explicitNullValueEqualsEscaped = default!; _explicitNullProperties?.Remove("equals"); }
+            else if (parseNode.GetChildNode("equals") is { } nullNodeEqualsEscaped && nullNodeEqualsEscaped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EqualsEscaped = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The equals property</summary>
-        public bool? EqualsEscaped { get => _explicitNullValueEqualsEscaped; set { _explicitNullValueEqualsEscaped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equals"); else _explicitNullProperties?.Remove("equals"); } }
+        public bool? EqualsEscaped { get => _explicitNullValueEqualsEscaped; set { _explicitNullValueEqualsEscaped = value; AdditionalData?.Remove("equals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equals"); else _explicitNullProperties?.Remove("equals"); } }
         private bool? _explicitNullValueEqualsEscaped = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilterAnyOf1"/> and sets the default values.

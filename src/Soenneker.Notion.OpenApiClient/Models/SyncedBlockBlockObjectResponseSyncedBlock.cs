@@ -17,7 +17,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("synced_from") is { } nullNodeSyncedFrom && nullNodeSyncedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncedFrom = null;
+            if (parseNode.GetChildNode("synced_from") is null) { _explicitNullValueSyncedFrom = default!; _explicitNullProperties?.Remove("synced_from"); }
+            else if (parseNode.GetChildNode("synced_from") is { } nullNodeSyncedFrom && nullNodeSyncedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncedFrom = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The synced_from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom? SyncedFrom { get => _explicitNullValueSyncedFrom; set { _explicitNullValueSyncedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synced_from"); else _explicitNullProperties?.Remove("synced_from"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom? SyncedFrom { get => _explicitNullValueSyncedFrom; set { _explicitNullValueSyncedFrom = value; AdditionalData?.Remove("synced_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synced_from"); else _explicitNullProperties?.Remove("synced_from"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom? _explicitNullValueSyncedFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom SyncedFrom { get => _explicitNullValueSyncedFrom; set { _explicitNullValueSyncedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synced_from"); else _explicitNullProperties?.Remove("synced_from"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom SyncedFrom { get => _explicitNullValueSyncedFrom; set { _explicitNullValueSyncedFrom = value; AdditionalData?.Remove("synced_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("synced_from"); else _explicitNullProperties?.Remove("synced_from"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.SyncedBlockBlockObjectResponseSyncedBlockSyncedFrom _explicitNullValueSyncedFrom = default!;
 #endif
         /// <summary>

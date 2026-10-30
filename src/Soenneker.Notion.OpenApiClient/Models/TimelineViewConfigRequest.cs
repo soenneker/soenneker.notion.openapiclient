@@ -17,15 +17,24 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("arrows_by") is { } nullNodeArrowsBy && nullNodeArrowsBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArrowsBy = null;
-            if (parseNode.GetChildNode("color_by") is { } nullNodeColorBy && nullNodeColorBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColorBy = null;
-            if (parseNode.GetChildNode("date_property_id") is { } nullNodeDatePropertyId && nullNodeDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatePropertyId = null;
-            if (parseNode.GetChildNode("end_date_property_id") is { } nullNodeEndDatePropertyId && nullNodeEndDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDatePropertyId = null;
-            if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
-            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
-            if (parseNode.GetChildNode("show_table") is { } nullNodeShowTable && nullNodeShowTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowTable = null;
-            if (parseNode.GetChildNode("table_properties") is { } nullNodeTableProperties && nullNodeTableProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableProperties = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("arrows_by") is null) { _explicitNullValueArrowsBy = default!; _explicitNullProperties?.Remove("arrows_by"); }
+            else if (parseNode.GetChildNode("arrows_by") is { } nullNodeArrowsBy && nullNodeArrowsBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArrowsBy = null;
+            if (parseNode.GetChildNode("color_by") is null) { _explicitNullValueColorBy = default!; _explicitNullProperties?.Remove("color_by"); }
+            else if (parseNode.GetChildNode("color_by") is { } nullNodeColorBy && nullNodeColorBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColorBy = null;
+            if (parseNode.GetChildNode("date_property_id") is null) { _explicitNullValueDatePropertyId = default!; _explicitNullProperties?.Remove("date_property_id"); }
+            else if (parseNode.GetChildNode("date_property_id") is { } nullNodeDatePropertyId && nullNodeDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatePropertyId = null;
+            if (parseNode.GetChildNode("end_date_property_id") is null) { _explicitNullValueEndDatePropertyId = default!; _explicitNullProperties?.Remove("end_date_property_id"); }
+            else if (parseNode.GetChildNode("end_date_property_id") is { } nullNodeEndDatePropertyId && nullNodeEndDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDatePropertyId = null;
+            if (parseNode.GetChildNode("preference") is null) { _explicitNullValuePreference = default!; _explicitNullProperties?.Remove("preference"); }
+            else if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
+            if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
+            else if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("show_table") is null) { _explicitNullValueShowTable = default!; _explicitNullProperties?.Remove("show_table"); }
+            else if (parseNode.GetChildNode("show_table") is { } nullNodeShowTable && nullNodeShowTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowTable = null;
+            if (parseNode.GetChildNode("table_properties") is null) { _explicitNullValueTableProperties = default!; _explicitNullProperties?.Remove("table_properties"); }
+            else if (parseNode.GetChildNode("table_properties") is { } nullNodeTableProperties && nullNodeTableProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableProperties = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,71 +42,71 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Configuration for dependency arrows between timeline items. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest? ArrowsBy { get => _explicitNullValueArrowsBy; set { _explicitNullValueArrowsBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arrows_by"); else _explicitNullProperties?.Remove("arrows_by"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest? ArrowsBy { get => _explicitNullValueArrowsBy; set { _explicitNullValueArrowsBy = value; AdditionalData?.Remove("arrows_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arrows_by"); else _explicitNullProperties?.Remove("arrows_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest? _explicitNullValueArrowsBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest ArrowsBy { get => _explicitNullValueArrowsBy; set { _explicitNullValueArrowsBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arrows_by"); else _explicitNullProperties?.Remove("arrows_by"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest ArrowsBy { get => _explicitNullValueArrowsBy; set { _explicitNullValueArrowsBy = value; AdditionalData?.Remove("arrows_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arrows_by"); else _explicitNullProperties?.Remove("arrows_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByRequest _explicitNullValueArrowsBy = default!;
 #endif
         /// <summary>Whether to color timeline items by a property. Pass null to clear.</summary>
-        public bool? ColorBy { get => _explicitNullValueColorBy; set { _explicitNullValueColorBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_by"); else _explicitNullProperties?.Remove("color_by"); } }
+        public bool? ColorBy { get => _explicitNullValueColorBy; set { _explicitNullValueColorBy = value; AdditionalData?.Remove("color_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_by"); else _explicitNullProperties?.Remove("color_by"); } }
         private bool? _explicitNullValueColorBy = default!;
         /// <summary>Property ID of the date property used for the start of timeline items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
+        public string? DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; AdditionalData?.Remove("date_property_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
         private string? _explicitNullValueDatePropertyId = default!;
 #nullable restore
 #else
-        public string DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
+        public string DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; AdditionalData?.Remove("date_property_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
         private string _explicitNullValueDatePropertyId = default!;
 #endif
         /// <summary>Property ID of the date property used for the end of timeline items. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndDatePropertyId { get => _explicitNullValueEndDatePropertyId; set { _explicitNullValueEndDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_id"); else _explicitNullProperties?.Remove("end_date_property_id"); } }
+        public string? EndDatePropertyId { get => _explicitNullValueEndDatePropertyId; set { _explicitNullValueEndDatePropertyId = value; AdditionalData?.Remove("end_date_property_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_id"); else _explicitNullProperties?.Remove("end_date_property_id"); } }
         private string? _explicitNullValueEndDatePropertyId = default!;
 #nullable restore
 #else
-        public string EndDatePropertyId { get => _explicitNullValueEndDatePropertyId; set { _explicitNullValueEndDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_id"); else _explicitNullProperties?.Remove("end_date_property_id"); } }
+        public string EndDatePropertyId { get => _explicitNullValueEndDatePropertyId; set { _explicitNullValueEndDatePropertyId = value; AdditionalData?.Remove("end_date_property_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_id"); else _explicitNullProperties?.Remove("end_date_property_id"); } }
         private string _explicitNullValueEndDatePropertyId = default!;
 #endif
         /// <summary>Timeline display preferences (zoom level and center position). Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; AdditionalData?.Remove("preference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest? _explicitNullValuePreference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; AdditionalData?.Remove("preference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest _explicitNullValuePreference = default!;
 #endif
         /// <summary>Property visibility and display configuration on timeline items. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> _explicitNullValueProperties = default!;
 #endif
         /// <summary>Whether to show the table panel alongside the timeline. Pass null to clear.</summary>
-        public bool? ShowTable { get => _explicitNullValueShowTable; set { _explicitNullValueShowTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_table"); else _explicitNullProperties?.Remove("show_table"); } }
+        public bool? ShowTable { get => _explicitNullValueShowTable; set { _explicitNullValueShowTable = value; AdditionalData?.Remove("show_table"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_table"); else _explicitNullProperties?.Remove("show_table"); } }
         private bool? _explicitNullValueShowTable = default!;
         /// <summary>Property configuration for the table panel (when show_table is true). Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? TableProperties { get => _explicitNullValueTableProperties; set { _explicitNullValueTableProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_properties"); else _explicitNullProperties?.Remove("table_properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? TableProperties { get => _explicitNullValueTableProperties; set { _explicitNullValueTableProperties = value; AdditionalData?.Remove("table_properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_properties"); else _explicitNullProperties?.Remove("table_properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? _explicitNullValueTableProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> TableProperties { get => _explicitNullValueTableProperties; set { _explicitNullValueTableProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_properties"); else _explicitNullProperties?.Remove("table_properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> TableProperties { get => _explicitNullValueTableProperties; set { _explicitNullValueTableProperties = value; AdditionalData?.Remove("table_properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_properties"); else _explicitNullProperties?.Remove("table_properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> _explicitNullValueTableProperties = default!;
 #endif
         /// <summary>The view type. Must be &quot;timeline&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TimelineType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest"/> and sets the default values.
@@ -132,7 +141,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_table", n => { ShowTable = n.GetBoolValue(); } },
                 { "table_properties", n => { TableProperties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

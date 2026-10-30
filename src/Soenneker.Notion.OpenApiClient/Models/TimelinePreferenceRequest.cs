@@ -17,17 +17,19 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("center_timestamp") is { } nullNodeCenterTimestamp && nullNodeCenterTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CenterTimestamp = null;
-            if (parseNode.GetChildNode("zoom_level") is { } nullNodeZoomLevel && nullNodeZoomLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoomLevel = null;
+            if (parseNode.GetChildNode("center_timestamp") is null) { _explicitNullValueCenterTimestamp = default!; _explicitNullProperties?.Remove("center_timestamp"); }
+            else if (parseNode.GetChildNode("center_timestamp") is { } nullNodeCenterTimestamp && nullNodeCenterTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CenterTimestamp = null;
+            if (parseNode.GetChildNode("zoom_level") is null) { _explicitNullValueZoomLevel = default!; _explicitNullProperties?.Remove("zoom_level"); }
+            else if (parseNode.GetChildNode("zoom_level") is { } nullNodeZoomLevel && nullNodeZoomLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoomLevel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp (ms) to center the timeline view on.</summary>
-        public int? CenterTimestamp { get => _explicitNullValueCenterTimestamp; set { _explicitNullValueCenterTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("center_timestamp"); else _explicitNullProperties?.Remove("center_timestamp"); } }
+        public int? CenterTimestamp { get => _explicitNullValueCenterTimestamp; set { _explicitNullValueCenterTimestamp = value; AdditionalData?.Remove("center_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("center_timestamp"); else _explicitNullProperties?.Remove("center_timestamp"); } }
         private int? _explicitNullValueCenterTimestamp = default!;
         /// <summary>Zoom level for the timeline.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel? ZoomLevel { get => _explicitNullValueZoomLevel; set { _explicitNullValueZoomLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zoom_level"); else _explicitNullProperties?.Remove("zoom_level"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel? ZoomLevel { get => _explicitNullValueZoomLevel; set { _explicitNullValueZoomLevel = value; AdditionalData?.Remove("zoom_level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zoom_level"); else _explicitNullProperties?.Remove("zoom_level"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel? _explicitNullValueZoomLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest"/> and sets the default values.
@@ -55,7 +57,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "center_timestamp", n => { CenterTimestamp = n.GetIntValue(); } },
-                { "zoom_level", n => { ZoomLevel = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel>(); } },
+                { "zoom_level", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueZoomLevel = default; _explicitNullProperties?.Remove("zoom_level"); AdditionalData["zoom_level"] = unknown; } else { ZoomLevel = parsed; AdditionalData.Remove("zoom_level"); } } },
             };
         }
         /// <summary>

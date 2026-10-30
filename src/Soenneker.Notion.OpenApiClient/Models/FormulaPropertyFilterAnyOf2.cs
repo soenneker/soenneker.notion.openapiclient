@@ -17,7 +17,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("checkbox") is { } nullNodeCheckbox && nullNodeCheckbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checkbox = null;
+            if (parseNode.GetChildNode("checkbox") is null) { _explicitNullValueCheckbox = default!; _explicitNullProperties?.Remove("checkbox"); }
+            else if (parseNode.GetChildNode("checkbox") is { } nullNodeCheckbox && nullNodeCheckbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checkbox = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The checkbox property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter? Checkbox { get => _explicitNullValueCheckbox; set { _explicitNullValueCheckbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkbox"); else _explicitNullProperties?.Remove("checkbox"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter? Checkbox { get => _explicitNullValueCheckbox; set { _explicitNullValueCheckbox = value; AdditionalData?.Remove("checkbox"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkbox"); else _explicitNullProperties?.Remove("checkbox"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter? _explicitNullValueCheckbox = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter Checkbox { get => _explicitNullValueCheckbox; set { _explicitNullValueCheckbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkbox"); else _explicitNullProperties?.Remove("checkbox"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter Checkbox { get => _explicitNullValueCheckbox; set { _explicitNullValueCheckbox = value; AdditionalData?.Remove("checkbox"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkbox"); else _explicitNullProperties?.Remove("checkbox"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.CheckboxPropertyFilter _explicitNullValueCheckbox = default!;
 #endif
         /// <summary>

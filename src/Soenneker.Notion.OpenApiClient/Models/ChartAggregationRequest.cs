@@ -17,23 +17,25 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aggregator") is { } nullNodeAggregator && nullNodeAggregator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregator = null;
-            if (parseNode.GetChildNode("property_id") is { } nullNodePropertyId && nullNodePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyId = null;
+            if (parseNode.GetChildNode("aggregator") is null) { _explicitNullValueAggregator = default!; _explicitNullProperties?.Remove("aggregator"); }
+            else if (parseNode.GetChildNode("aggregator") is { } nullNodeAggregator && nullNodeAggregator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregator = null;
+            if (parseNode.GetChildNode("property_id") is null) { _explicitNullValuePropertyId = default!; _explicitNullProperties?.Remove("property_id"); }
+            else if (parseNode.GetChildNode("property_id") is { } nullNodePropertyId && nullNodePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aggregation operator. &quot;count&quot; counts all rows and does not require a property_id. All other operators require a property_id.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequestAggregator? Aggregator { get => _explicitNullValueAggregator; set { _explicitNullValueAggregator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregator"); else _explicitNullProperties?.Remove("aggregator"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequestAggregator? Aggregator { get => _explicitNullValueAggregator; set { _explicitNullValueAggregator = value; AdditionalData?.Remove("aggregator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregator"); else _explicitNullProperties?.Remove("aggregator"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequestAggregator? _explicitNullValueAggregator = default!;
         /// <summary>The property to aggregate on. Required for all operators except &quot;count&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyId { get => _explicitNullValuePropertyId; set { _explicitNullValuePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_id"); else _explicitNullProperties?.Remove("property_id"); } }
+        public string? PropertyId { get => _explicitNullValuePropertyId; set { _explicitNullValuePropertyId = value; AdditionalData?.Remove("property_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_id"); else _explicitNullProperties?.Remove("property_id"); } }
         private string? _explicitNullValuePropertyId = default!;
 #nullable restore
 #else
-        public string PropertyId { get => _explicitNullValuePropertyId; set { _explicitNullValuePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_id"); else _explicitNullProperties?.Remove("property_id"); } }
+        public string PropertyId { get => _explicitNullValuePropertyId; set { _explicitNullValuePropertyId = value; AdditionalData?.Remove("property_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_id"); else _explicitNullProperties?.Remove("property_id"); } }
         private string _explicitNullValuePropertyId = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregator", n => { Aggregator = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequestAggregator>(); } },
+                { "aggregator", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationRequestAggregator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAggregator = default; _explicitNullProperties?.Remove("aggregator"); AdditionalData["aggregator"] = unknown; } else { Aggregator = parsed; AdditionalData.Remove("aggregator"); } } },
                 { "property_id", n => { PropertyId = n.GetStringValue(); } },
             };
         }

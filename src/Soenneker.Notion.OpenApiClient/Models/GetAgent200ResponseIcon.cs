@@ -58,9 +58,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("custom_agent_avatar".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("custom_agent_avatar") != null))();
-            if (result.GetAgent200ResponseIconMember1 == null && result.GetAgent200ResponseIconOneOf2 == null && result.PageIconResponse == null && matchesUnionBranch0) result.GetAgent200ResponseIconOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2(), parseNode);
-            if (result.GetAgent200ResponseIconMember1 == null && result.GetAgent200ResponseIconOneOf2 == null && result.PageIconResponse == null && unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) result.GetAgent200ResponseIconOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && shapeMembers1.ContainsKey("custom_agent_avatar") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "custom_agent_avatar".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "custom_agent_avatar".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("custom_agent_avatar") || (((shapeMembers1["custom_agent_avatar"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["custom_agent_avatar"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject6 || (shapeObject6.GetValue() is var shapeMembers7 && (shapeMembers7.ContainsKey("static_url") && shapeMembers7.ContainsKey("animated_url") && (!shapeMembers7.ContainsKey("static_url") || (((shapeMembers7["static_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers7.ContainsKey("animated_url") || (((shapeMembers7["animated_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers7.Keys, key => key == "static_url" || key == "animated_url")))))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "type" || key == "custom_agent_avatar"))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.GetAgent200ResponseIconMember1 == null && result.GetAgent200ResponseIconOneOf2 == null && result.PageIconResponse == null;
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.GetAgent200ResponseIconOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2(), parseNode);
             if (result.GetAgent200ResponseIconMember1 == null && result.GetAgent200ResponseIconOneOf2 == null && result.PageIconResponse == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -70,6 +74,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(GetAgent200ResponseIconMember1 != null)
             {
                 return GetAgent200ResponseIconMember1.GetFieldDeserializers();
@@ -92,7 +98,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (GetAgent200ResponseIconMember1 == null && GetAgent200ResponseIconOneOf2 == null && PageIconResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (GetAgent200ResponseIconOneOf2 != null && GetAgent200ResponseIconMember1 == null && PageIconResponse == null) { if (GetAgent200ResponseIconOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetAgent200ResponseIconOneOf2); return; }
+            int selectedUnionBranches = 0;
+            if (GetAgent200ResponseIconMember1 != null) selectedUnionBranches++;
+            if (GetAgent200ResponseIconOneOf2 != null) selectedUnionBranches++;
+            if (PageIconResponse != null) selectedUnionBranches++;
+            if (GetAgent200ResponseIconOneOf2 != null && selectedUnionBranches == 1) { if (GetAgent200ResponseIconOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetAgent200ResponseIconOneOf2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(GetAgent200ResponseIconMember1 != null)

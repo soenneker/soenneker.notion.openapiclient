@@ -18,23 +18,25 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_deleting_content") is { } nullNodeAllowDeletingContent && nullNodeAllowDeletingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDeletingContent = null;
-            if (parseNode.GetChildNode("new_str") is { } nullNodeNewStr && nullNodeNewStr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewStr = null;
+            if (parseNode.GetChildNode("allow_deleting_content") is null) { _explicitNullValueAllowDeletingContent = default!; _explicitNullProperties?.Remove("allow_deleting_content"); }
+            else if (parseNode.GetChildNode("allow_deleting_content") is { } nullNodeAllowDeletingContent && nullNodeAllowDeletingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDeletingContent = null;
+            if (parseNode.GetChildNode("new_str") is null) { _explicitNullValueNewStr = default!; _explicitNullProperties?.Remove("new_str"); }
+            else if (parseNode.GetChildNode("new_str") is { } nullNodeNewStr && nullNodeNewStr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewStr = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to true to allow the operation to delete child pages or databases. Defaults to false.</summary>
-        public bool? AllowDeletingContent { get => _explicitNullValueAllowDeletingContent; set { _explicitNullValueAllowDeletingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_deleting_content"); else _explicitNullProperties?.Remove("allow_deleting_content"); } }
+        public bool? AllowDeletingContent { get => _explicitNullValueAllowDeletingContent; set { _explicitNullValueAllowDeletingContent = value; AdditionalData?.Remove("allow_deleting_content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_deleting_content"); else _explicitNullProperties?.Remove("allow_deleting_content"); } }
         private bool? _explicitNullValueAllowDeletingContent = default!;
         /// <summary>The new Markdown content to replace the entire page content, in the syntax set by `markdown_version`: Notion-flavored Markdown (`v2`, recommended) or enhanced markdown (`v1`, deprecated, the default on current Notion-Versions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
+        public string? NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; AdditionalData?.Remove("new_str"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
         private string? _explicitNullValueNewStr = default!;
 #nullable restore
 #else
-        public string NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
+        public string NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; AdditionalData?.Remove("new_str"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
         private string _explicitNullValueNewStr = default!;
 #endif
         /// <summary>

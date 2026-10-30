@@ -18,10 +18,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("does_not_equal") is { } nullNodeDoesNotEqual && nullNodeDoesNotEqual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoesNotEqual = null;
-            if (parseNode.GetChildNode("equals") is { } nullNodeEqualsEscaped && nullNodeEqualsEscaped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EqualsEscaped = null;
-            if (parseNode.GetChildNode("group_does_not_equal") is { } nullNodeGroupDoesNotEqual && nullNodeGroupDoesNotEqual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupDoesNotEqual = null;
-            if (parseNode.GetChildNode("group_equals") is { } nullNodeGroupEquals && nullNodeGroupEquals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupEquals = null;
+            if (parseNode.GetChildNode("does_not_equal") is null) { _explicitNullValueDoesNotEqual = default!; _explicitNullProperties?.Remove("does_not_equal"); }
+            else if (parseNode.GetChildNode("does_not_equal") is { } nullNodeDoesNotEqual && nullNodeDoesNotEqual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoesNotEqual = null;
+            if (parseNode.GetChildNode("equals") is null) { _explicitNullValueEqualsEscaped = default!; _explicitNullProperties?.Remove("equals"); }
+            else if (parseNode.GetChildNode("equals") is { } nullNodeEqualsEscaped && nullNodeEqualsEscaped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EqualsEscaped = null;
+            if (parseNode.GetChildNode("group_does_not_equal") is null) { _explicitNullValueGroupDoesNotEqual = default!; _explicitNullProperties?.Remove("group_does_not_equal"); }
+            else if (parseNode.GetChildNode("group_does_not_equal") is { } nullNodeGroupDoesNotEqual && nullNodeGroupDoesNotEqual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupDoesNotEqual = null;
+            if (parseNode.GetChildNode("group_equals") is null) { _explicitNullValueGroupEquals = default!; _explicitNullProperties?.Remove("group_equals"); }
+            else if (parseNode.GetChildNode("group_equals") is { } nullNodeGroupEquals && nullNodeGroupEquals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupEquals = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The does_not_equal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray? DoesNotEqual { get => _explicitNullValueDoesNotEqual; set { _explicitNullValueDoesNotEqual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("does_not_equal"); else _explicitNullProperties?.Remove("does_not_equal"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray? DoesNotEqual { get => _explicitNullValueDoesNotEqual; set { _explicitNullValueDoesNotEqual = value; AdditionalData?.Remove("does_not_equal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("does_not_equal"); else _explicitNullProperties?.Remove("does_not_equal"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray? _explicitNullValueDoesNotEqual = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray DoesNotEqual { get => _explicitNullValueDoesNotEqual; set { _explicitNullValueDoesNotEqual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("does_not_equal"); else _explicitNullProperties?.Remove("does_not_equal"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray DoesNotEqual { get => _explicitNullValueDoesNotEqual; set { _explicitNullValueDoesNotEqual = value; AdditionalData?.Remove("does_not_equal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("does_not_equal"); else _explicitNullProperties?.Remove("does_not_equal"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray _explicitNullValueDoesNotEqual = default!;
 #endif
         /// <summary>The equals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray? EqualsEscaped { get => _explicitNullValueEqualsEscaped; set { _explicitNullValueEqualsEscaped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equals"); else _explicitNullProperties?.Remove("equals"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray? EqualsEscaped { get => _explicitNullValueEqualsEscaped; set { _explicitNullValueEqualsEscaped = value; AdditionalData?.Remove("equals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equals"); else _explicitNullProperties?.Remove("equals"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray? _explicitNullValueEqualsEscaped = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray EqualsEscaped { get => _explicitNullValueEqualsEscaped; set { _explicitNullValueEqualsEscaped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equals"); else _explicitNullProperties?.Remove("equals"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray EqualsEscaped { get => _explicitNullValueEqualsEscaped; set { _explicitNullValueEqualsEscaped = value; AdditionalData?.Remove("equals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equals"); else _explicitNullProperties?.Remove("equals"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray _explicitNullValueEqualsEscaped = default!;
 #endif
         /// <summary>The group_does_not_equal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames? GroupDoesNotEqual { get => _explicitNullValueGroupDoesNotEqual; set { _explicitNullValueGroupDoesNotEqual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_does_not_equal"); else _explicitNullProperties?.Remove("group_does_not_equal"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames? GroupDoesNotEqual { get => _explicitNullValueGroupDoesNotEqual; set { _explicitNullValueGroupDoesNotEqual = value; AdditionalData?.Remove("group_does_not_equal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_does_not_equal"); else _explicitNullProperties?.Remove("group_does_not_equal"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames? _explicitNullValueGroupDoesNotEqual = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames GroupDoesNotEqual { get => _explicitNullValueGroupDoesNotEqual; set { _explicitNullValueGroupDoesNotEqual = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_does_not_equal"); else _explicitNullProperties?.Remove("group_does_not_equal"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames GroupDoesNotEqual { get => _explicitNullValueGroupDoesNotEqual; set { _explicitNullValueGroupDoesNotEqual = value; AdditionalData?.Remove("group_does_not_equal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_does_not_equal"); else _explicitNullProperties?.Remove("group_does_not_equal"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames _explicitNullValueGroupDoesNotEqual = default!;
 #endif
         /// <summary>The group_equals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames? GroupEquals { get => _explicitNullValueGroupEquals; set { _explicitNullValueGroupEquals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_equals"); else _explicitNullProperties?.Remove("group_equals"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames? GroupEquals { get => _explicitNullValueGroupEquals; set { _explicitNullValueGroupEquals = value; AdditionalData?.Remove("group_equals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_equals"); else _explicitNullProperties?.Remove("group_equals"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames? _explicitNullValueGroupEquals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames GroupEquals { get => _explicitNullValueGroupEquals; set { _explicitNullValueGroupEquals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_equals"); else _explicitNullProperties?.Remove("group_equals"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames GroupEquals { get => _explicitNullValueGroupEquals; set { _explicitNullValueGroupEquals = value; AdditionalData?.Remove("group_equals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_equals"); else _explicitNullProperties?.Remove("group_equals"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.StatusGroupNames _explicitNullValueGroupEquals = default!;
 #endif
         /// <summary>

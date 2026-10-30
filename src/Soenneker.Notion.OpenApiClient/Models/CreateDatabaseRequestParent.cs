@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentPageId"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentWorkspace"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateDatabaseRequestParent : IComposedTypeWrapper, IParsable
@@ -18,21 +18,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentPageId"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember1? CreateDatabaseRequestParentMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentPageId? CreateDatabaseRequestParentPageId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember1 CreateDatabaseRequestParentMember1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentPageId CreateDatabaseRequestParentPageId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentWorkspace"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember2? CreateDatabaseRequestParentMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentWorkspace? CreateDatabaseRequestParentWorkspace { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember2 CreateDatabaseRequestParentMember2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentWorkspace CreateDatabaseRequestParentWorkspace { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,11 +42,27 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent();
+            if("page_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("workspace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.CreateDatabaseRequestParentMember1 == null && result.CreateDatabaseRequestParentMember2 == null) result.UnrecognizedValue = unionPayload;
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && shapeMembers1.ContainsKey("page_id") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "page_id".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "page_id".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("page_id") || (((shapeMembers1["page_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && shapeMembers1.ContainsKey("workspace") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "workspace".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "workspace".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("workspace") || (((shapeMembers1["workspace"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)) && (shapeMembers1["workspace"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean literal6 && literal6.GetValue() == true))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.CreateDatabaseRequestParentPageId == null && result.CreateDatabaseRequestParentWorkspace == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.CreateDatabaseRequestParentPageId = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentPageId(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.CreateDatabaseRequestParentWorkspace = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentWorkspace(), parseNode);
+            if (result.CreateDatabaseRequestParentPageId == null && result.CreateDatabaseRequestParentWorkspace == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -55,13 +71,15 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CreateDatabaseRequestParentMember1 != null)
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(CreateDatabaseRequestParentPageId != null)
             {
-                return CreateDatabaseRequestParentMember1.GetFieldDeserializers();
+                return CreateDatabaseRequestParentPageId.GetFieldDeserializers();
             }
-            else if(CreateDatabaseRequestParentMember2 != null)
+            else if(CreateDatabaseRequestParentWorkspace != null)
             {
-                return CreateDatabaseRequestParentMember2.GetFieldDeserializers();
+                return CreateDatabaseRequestParentWorkspace.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,18 +90,23 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (CreateDatabaseRequestParentMember1 == null && CreateDatabaseRequestParentMember2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CreateDatabaseRequestParentPageId == null && CreateDatabaseRequestParentWorkspace == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (CreateDatabaseRequestParentPageId != null) selectedUnionBranches++;
+            if (CreateDatabaseRequestParentWorkspace != null) selectedUnionBranches++;
+            if (CreateDatabaseRequestParentPageId != null && selectedUnionBranches == 1) { if (CreateDatabaseRequestParentPageId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateDatabaseRequestParentPageId); return; }
+            if (CreateDatabaseRequestParentWorkspace != null && selectedUnionBranches == 1) { if (CreateDatabaseRequestParentWorkspace is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateDatabaseRequestParentWorkspace); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CreateDatabaseRequestParentMember1 != null)
+            if(CreateDatabaseRequestParentPageId != null)
             {
-                if (CreateDatabaseRequestParentMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember1>(null, CreateDatabaseRequestParentMember1);
+                if (CreateDatabaseRequestParentPageId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentPageId>(null, CreateDatabaseRequestParentPageId);
             }
-            else if(CreateDatabaseRequestParentMember2 != null)
+            else if(CreateDatabaseRequestParentWorkspace != null)
             {
-                if (CreateDatabaseRequestParentMember2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentMember2>(null, CreateDatabaseRequestParentMember2);
+                if (CreateDatabaseRequestParentWorkspace is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParentWorkspace>(null, CreateDatabaseRequestParentWorkspace);
             }
         }
     }

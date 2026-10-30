@@ -17,13 +17,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("is_not_empty") is { } nullNodeIsNotEmpty && nullNodeIsNotEmpty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNotEmpty = null;
+            if (parseNode.GetChildNode("is_not_empty") is null) { _explicitNullValueIsNotEmpty = default!; _explicitNullProperties?.Remove("is_not_empty"); }
+            else if (parseNode.GetChildNode("is_not_empty") is { } nullNodeIsNotEmpty && nullNodeIsNotEmpty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNotEmpty = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The is_not_empty property</summary>
-        public bool? IsNotEmpty { get => _explicitNullValueIsNotEmpty; set { _explicitNullValueIsNotEmpty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_not_empty"); else _explicitNullProperties?.Remove("is_not_empty"); } }
+        public bool? IsNotEmpty { get => _explicitNullValueIsNotEmpty; set { _explicitNullValueIsNotEmpty = value; AdditionalData?.Remove("is_not_empty"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_not_empty"); else _explicitNullProperties?.Remove("is_not_empty"); } }
         private bool? _explicitNullValueIsNotEmpty = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2"/> and sets the default values.

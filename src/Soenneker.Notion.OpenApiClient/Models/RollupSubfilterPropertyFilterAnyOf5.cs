@@ -17,7 +17,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("multi_select") is { } nullNodeMultiSelect && nullNodeMultiSelect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiSelect = null;
+            if (parseNode.GetChildNode("multi_select") is null) { _explicitNullValueMultiSelect = default!; _explicitNullProperties?.Remove("multi_select"); }
+            else if (parseNode.GetChildNode("multi_select") is { } nullNodeMultiSelect && nullNodeMultiSelect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiSelect = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The multi_select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? MultiSelect { get => _explicitNullValueMultiSelect; set { _explicitNullValueMultiSelect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multi_select"); else _explicitNullProperties?.Remove("multi_select"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? MultiSelect { get => _explicitNullValueMultiSelect; set { _explicitNullValueMultiSelect = value; AdditionalData?.Remove("multi_select"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multi_select"); else _explicitNullProperties?.Remove("multi_select"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter? _explicitNullValueMultiSelect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter MultiSelect { get => _explicitNullValueMultiSelect; set { _explicitNullValueMultiSelect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multi_select"); else _explicitNullProperties?.Remove("multi_select"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter MultiSelect { get => _explicitNullValueMultiSelect; set { _explicitNullValueMultiSelect = value; AdditionalData?.Remove("multi_select"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multi_select"); else _explicitNullProperties?.Remove("multi_select"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter _explicitNullValueMultiSelect = default!;
 #endif
         /// <summary>

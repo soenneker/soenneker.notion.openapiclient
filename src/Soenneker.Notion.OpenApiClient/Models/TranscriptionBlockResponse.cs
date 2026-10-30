@@ -17,12 +17,18 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("calendar_event") is { } nullNodeCalendarEvent && nullNodeCalendarEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalendarEvent = null;
-            if (parseNode.GetChildNode("children") is { } nullNodeChildren && nullNodeChildren.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Children = null;
-            if (parseNode.GetChildNode("is_full_page") is { } nullNodeIsFullPage && nullNodeIsFullPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFullPage = null;
-            if (parseNode.GetChildNode("recording") is { } nullNodeRecording && nullNodeRecording.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recording = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("calendar_event") is null) { _explicitNullValueCalendarEvent = default!; _explicitNullProperties?.Remove("calendar_event"); }
+            else if (parseNode.GetChildNode("calendar_event") is { } nullNodeCalendarEvent && nullNodeCalendarEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalendarEvent = null;
+            if (parseNode.GetChildNode("children") is null) { _explicitNullValueChildren = default!; _explicitNullProperties?.Remove("children"); }
+            else if (parseNode.GetChildNode("children") is { } nullNodeChildren && nullNodeChildren.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Children = null;
+            if (parseNode.GetChildNode("is_full_page") is null) { _explicitNullValueIsFullPage = default!; _explicitNullProperties?.Remove("is_full_page"); }
+            else if (parseNode.GetChildNode("is_full_page") is { } nullNodeIsFullPage && nullNodeIsFullPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFullPage = null;
+            if (parseNode.GetChildNode("recording") is null) { _explicitNullValueRecording = default!; _explicitNullProperties?.Remove("recording"); }
+            else if (parseNode.GetChildNode("recording") is { } nullNodeRecording && nullNodeRecording.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recording = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,47 +36,47 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The calendar_event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse? CalendarEvent { get => _explicitNullValueCalendarEvent; set { _explicitNullValueCalendarEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_event"); else _explicitNullProperties?.Remove("calendar_event"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse? CalendarEvent { get => _explicitNullValueCalendarEvent; set { _explicitNullValueCalendarEvent = value; AdditionalData?.Remove("calendar_event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_event"); else _explicitNullProperties?.Remove("calendar_event"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse? _explicitNullValueCalendarEvent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse CalendarEvent { get => _explicitNullValueCalendarEvent; set { _explicitNullValueCalendarEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_event"); else _explicitNullProperties?.Remove("calendar_event"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse CalendarEvent { get => _explicitNullValueCalendarEvent; set { _explicitNullValueCalendarEvent = value; AdditionalData?.Remove("calendar_event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_event"); else _explicitNullProperties?.Remove("calendar_event"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TranscriptionCalendarEventResponse _explicitNullValueCalendarEvent = default!;
 #endif
         /// <summary>The children property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse? Children { get => _explicitNullValueChildren; set { _explicitNullValueChildren = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children"); else _explicitNullProperties?.Remove("children"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse? Children { get => _explicitNullValueChildren; set { _explicitNullValueChildren = value; AdditionalData?.Remove("children"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children"); else _explicitNullProperties?.Remove("children"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse? _explicitNullValueChildren = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse Children { get => _explicitNullValueChildren; set { _explicitNullValueChildren = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children"); else _explicitNullProperties?.Remove("children"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse Children { get => _explicitNullValueChildren; set { _explicitNullValueChildren = value; AdditionalData?.Remove("children"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children"); else _explicitNullProperties?.Remove("children"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse _explicitNullValueChildren = default!;
 #endif
         /// <summary>The is_full_page property</summary>
-        public bool? IsFullPage { get => _explicitNullValueIsFullPage; set { _explicitNullValueIsFullPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_full_page"); else _explicitNullProperties?.Remove("is_full_page"); } }
+        public bool? IsFullPage { get => _explicitNullValueIsFullPage; set { _explicitNullValueIsFullPage = value; AdditionalData?.Remove("is_full_page"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_full_page"); else _explicitNullProperties?.Remove("is_full_page"); } }
         private bool? _explicitNullValueIsFullPage = default!;
         /// <summary>The recording property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse? Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse? Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; AdditionalData?.Remove("recording"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse? _explicitNullValueRecording = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; AdditionalData?.Remove("recording"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse _explicitNullValueRecording = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ApiTranscriptionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.ApiTranscriptionStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.ApiTranscriptionStatus? _explicitNullValueStatus = default!;
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse> Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse> Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse> _explicitNullValueTitle = default!;
 #endif
         /// <summary>
@@ -102,7 +108,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "children", n => { Children = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse.CreateFromDiscriminatorValue); } },
                 { "is_full_page", n => { IsFullPage = n.GetBoolValue(); } },
                 { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse>(global::Soenneker.Notion.OpenApiClient.Models.TranscriptionRecordingResponse.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ApiTranscriptionStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ApiTranscriptionStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "title", n => { Title = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

@@ -17,21 +17,24 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("has_column_header") is { } nullNodeHasColumnHeader && nullNodeHasColumnHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasColumnHeader = null;
-            if (parseNode.GetChildNode("has_row_header") is { } nullNodeHasRowHeader && nullNodeHasRowHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRowHeader = null;
-            if (parseNode.GetChildNode("table_width") is { } nullNodeTableWidth && nullNodeTableWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableWidth = null;
+            if (parseNode.GetChildNode("has_column_header") is null) { _explicitNullValueHasColumnHeader = default!; _explicitNullProperties?.Remove("has_column_header"); }
+            else if (parseNode.GetChildNode("has_column_header") is { } nullNodeHasColumnHeader && nullNodeHasColumnHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasColumnHeader = null;
+            if (parseNode.GetChildNode("has_row_header") is null) { _explicitNullValueHasRowHeader = default!; _explicitNullProperties?.Remove("has_row_header"); }
+            else if (parseNode.GetChildNode("has_row_header") is { } nullNodeHasRowHeader && nullNodeHasRowHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRowHeader = null;
+            if (parseNode.GetChildNode("table_width") is null) { _explicitNullValueTableWidth = default!; _explicitNullProperties?.Remove("table_width"); }
+            else if (parseNode.GetChildNode("table_width") is { } nullNodeTableWidth && nullNodeTableWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableWidth = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The has_column_header property</summary>
-        public bool? HasColumnHeader { get => _explicitNullValueHasColumnHeader; set { _explicitNullValueHasColumnHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_column_header"); else _explicitNullProperties?.Remove("has_column_header"); } }
+        public bool? HasColumnHeader { get => _explicitNullValueHasColumnHeader; set { _explicitNullValueHasColumnHeader = value; AdditionalData?.Remove("has_column_header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_column_header"); else _explicitNullProperties?.Remove("has_column_header"); } }
         private bool? _explicitNullValueHasColumnHeader = default!;
         /// <summary>The has_row_header property</summary>
-        public bool? HasRowHeader { get => _explicitNullValueHasRowHeader; set { _explicitNullValueHasRowHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_row_header"); else _explicitNullProperties?.Remove("has_row_header"); } }
+        public bool? HasRowHeader { get => _explicitNullValueHasRowHeader; set { _explicitNullValueHasRowHeader = value; AdditionalData?.Remove("has_row_header"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_row_header"); else _explicitNullProperties?.Remove("has_row_header"); } }
         private bool? _explicitNullValueHasRowHeader = default!;
         /// <summary>The table_width property</summary>
-        public int? TableWidth { get => _explicitNullValueTableWidth; set { _explicitNullValueTableWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_width"); else _explicitNullProperties?.Remove("table_width"); } }
+        public int? TableWidth { get => _explicitNullValueTableWidth; set { _explicitNullValueTableWidth = value; AdditionalData?.Remove("table_width"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_width"); else _explicitNullProperties?.Remove("table_width"); } }
         private int? _explicitNullValueTableWidth = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ContentWithTableResponse"/> and sets the default values.

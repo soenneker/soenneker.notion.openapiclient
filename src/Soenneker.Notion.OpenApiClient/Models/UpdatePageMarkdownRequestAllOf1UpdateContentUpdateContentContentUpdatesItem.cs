@@ -17,9 +17,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("new_str") is { } nullNodeNewStr && nullNodeNewStr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewStr = null;
-            if (parseNode.GetChildNode("old_str") is { } nullNodeOldStr && nullNodeOldStr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldStr = null;
-            if (parseNode.GetChildNode("replace_all_matches") is { } nullNodeReplaceAllMatches && nullNodeReplaceAllMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplaceAllMatches = null;
+            if (parseNode.GetChildNode("new_str") is null) { _explicitNullValueNewStr = default!; _explicitNullProperties?.Remove("new_str"); }
+            else if (parseNode.GetChildNode("new_str") is { } nullNodeNewStr && nullNodeNewStr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewStr = null;
+            if (parseNode.GetChildNode("old_str") is null) { _explicitNullValueOldStr = default!; _explicitNullProperties?.Remove("old_str"); }
+            else if (parseNode.GetChildNode("old_str") is { } nullNodeOldStr && nullNodeOldStr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldStr = null;
+            if (parseNode.GetChildNode("replace_all_matches") is null) { _explicitNullValueReplaceAllMatches = default!; _explicitNullProperties?.Remove("replace_all_matches"); }
+            else if (parseNode.GetChildNode("replace_all_matches") is { } nullNodeReplaceAllMatches && nullNodeReplaceAllMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplaceAllMatches = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The new content string to replace old_str with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
+        public string? NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; AdditionalData?.Remove("new_str"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
         private string? _explicitNullValueNewStr = default!;
 #nullable restore
 #else
-        public string NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
+        public string NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; AdditionalData?.Remove("new_str"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
         private string _explicitNullValueNewStr = default!;
 #endif
         /// <summary>The existing content string to find and replace. Must exactly match the page content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldStr { get => _explicitNullValueOldStr; set { _explicitNullValueOldStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_str"); else _explicitNullProperties?.Remove("old_str"); } }
+        public string? OldStr { get => _explicitNullValueOldStr; set { _explicitNullValueOldStr = value; AdditionalData?.Remove("old_str"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_str"); else _explicitNullProperties?.Remove("old_str"); } }
         private string? _explicitNullValueOldStr = default!;
 #nullable restore
 #else
-        public string OldStr { get => _explicitNullValueOldStr; set { _explicitNullValueOldStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_str"); else _explicitNullProperties?.Remove("old_str"); } }
+        public string OldStr { get => _explicitNullValueOldStr; set { _explicitNullValueOldStr = value; AdditionalData?.Remove("old_str"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_str"); else _explicitNullProperties?.Remove("old_str"); } }
         private string _explicitNullValueOldStr = default!;
 #endif
         /// <summary>If true, replaces all occurrences of old_str. If false (default), the operation fails if there are multiple matches.</summary>
-        public bool? ReplaceAllMatches { get => _explicitNullValueReplaceAllMatches; set { _explicitNullValueReplaceAllMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace_all_matches"); else _explicitNullProperties?.Remove("replace_all_matches"); } }
+        public bool? ReplaceAllMatches { get => _explicitNullValueReplaceAllMatches; set { _explicitNullValueReplaceAllMatches = value; AdditionalData?.Remove("replace_all_matches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace_all_matches"); else _explicitNullProperties?.Remove("replace_all_matches"); } }
         private bool? _explicitNullValueReplaceAllMatches = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem"/> and sets the default values.

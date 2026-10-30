@@ -18,13 +18,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp to filter on.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3AndItemOneOf2Timestamp? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3AndItemOneOf2Timestamp? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3AndItemOneOf2Timestamp? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3AndItemOneOf2"/> and sets the default values.
@@ -51,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "timestamp", n => { Timestamp = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3AndItemOneOf2Timestamp>(); } },
+                { "timestamp", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponseOneOf3AndItemOneOf2Timestamp>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTimestamp = default; _explicitNullProperties?.Remove("timestamp"); AdditionalData["timestamp"] = unknown; } else { Timestamp = parsed; AdditionalData.Remove("timestamp"); } } },
             };
         }
         /// <summary>

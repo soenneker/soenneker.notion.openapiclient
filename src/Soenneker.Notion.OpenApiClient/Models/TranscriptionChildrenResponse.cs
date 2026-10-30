@@ -17,9 +17,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notes_block_id") is { } nullNodeNotesBlockId && nullNodeNotesBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotesBlockId = null;
-            if (parseNode.GetChildNode("summary_block_id") is { } nullNodeSummaryBlockId && nullNodeSummaryBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryBlockId = null;
-            if (parseNode.GetChildNode("transcript_block_id") is { } nullNodeTranscriptBlockId && nullNodeTranscriptBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptBlockId = null;
+            if (parseNode.GetChildNode("notes_block_id") is null) { _explicitNullValueNotesBlockId = default!; _explicitNullProperties?.Remove("notes_block_id"); }
+            else if (parseNode.GetChildNode("notes_block_id") is { } nullNodeNotesBlockId && nullNodeNotesBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotesBlockId = null;
+            if (parseNode.GetChildNode("summary_block_id") is null) { _explicitNullValueSummaryBlockId = default!; _explicitNullProperties?.Remove("summary_block_id"); }
+            else if (parseNode.GetChildNode("summary_block_id") is { } nullNodeSummaryBlockId && nullNodeSummaryBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryBlockId = null;
+            if (parseNode.GetChildNode("transcript_block_id") is null) { _explicitNullValueTranscriptBlockId = default!; _explicitNullProperties?.Remove("transcript_block_id"); }
+            else if (parseNode.GetChildNode("transcript_block_id") is { } nullNodeTranscriptBlockId && nullNodeTranscriptBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptBlockId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The notes_block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotesBlockId { get => _explicitNullValueNotesBlockId; set { _explicitNullValueNotesBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_block_id"); else _explicitNullProperties?.Remove("notes_block_id"); } }
+        public string? NotesBlockId { get => _explicitNullValueNotesBlockId; set { _explicitNullValueNotesBlockId = value; AdditionalData?.Remove("notes_block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_block_id"); else _explicitNullProperties?.Remove("notes_block_id"); } }
         private string? _explicitNullValueNotesBlockId = default!;
 #nullable restore
 #else
-        public string NotesBlockId { get => _explicitNullValueNotesBlockId; set { _explicitNullValueNotesBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_block_id"); else _explicitNullProperties?.Remove("notes_block_id"); } }
+        public string NotesBlockId { get => _explicitNullValueNotesBlockId; set { _explicitNullValueNotesBlockId = value; AdditionalData?.Remove("notes_block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_block_id"); else _explicitNullProperties?.Remove("notes_block_id"); } }
         private string _explicitNullValueNotesBlockId = default!;
 #endif
         /// <summary>The summary_block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SummaryBlockId { get => _explicitNullValueSummaryBlockId; set { _explicitNullValueSummaryBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_block_id"); else _explicitNullProperties?.Remove("summary_block_id"); } }
+        public string? SummaryBlockId { get => _explicitNullValueSummaryBlockId; set { _explicitNullValueSummaryBlockId = value; AdditionalData?.Remove("summary_block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_block_id"); else _explicitNullProperties?.Remove("summary_block_id"); } }
         private string? _explicitNullValueSummaryBlockId = default!;
 #nullable restore
 #else
-        public string SummaryBlockId { get => _explicitNullValueSummaryBlockId; set { _explicitNullValueSummaryBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_block_id"); else _explicitNullProperties?.Remove("summary_block_id"); } }
+        public string SummaryBlockId { get => _explicitNullValueSummaryBlockId; set { _explicitNullValueSummaryBlockId = value; AdditionalData?.Remove("summary_block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_block_id"); else _explicitNullProperties?.Remove("summary_block_id"); } }
         private string _explicitNullValueSummaryBlockId = default!;
 #endif
         /// <summary>The transcript_block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TranscriptBlockId { get => _explicitNullValueTranscriptBlockId; set { _explicitNullValueTranscriptBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_block_id"); else _explicitNullProperties?.Remove("transcript_block_id"); } }
+        public string? TranscriptBlockId { get => _explicitNullValueTranscriptBlockId; set { _explicitNullValueTranscriptBlockId = value; AdditionalData?.Remove("transcript_block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_block_id"); else _explicitNullProperties?.Remove("transcript_block_id"); } }
         private string? _explicitNullValueTranscriptBlockId = default!;
 #nullable restore
 #else
-        public string TranscriptBlockId { get => _explicitNullValueTranscriptBlockId; set { _explicitNullValueTranscriptBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_block_id"); else _explicitNullProperties?.Remove("transcript_block_id"); } }
+        public string TranscriptBlockId { get => _explicitNullValueTranscriptBlockId; set { _explicitNullValueTranscriptBlockId = value; AdditionalData?.Remove("transcript_block_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_block_id"); else _explicitNullProperties?.Remove("transcript_block_id"); } }
         private string _explicitNullValueTranscriptBlockId = default!;
 #endif
         /// <summary>

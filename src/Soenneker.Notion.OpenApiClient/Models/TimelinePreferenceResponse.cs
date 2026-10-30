@@ -17,8 +17,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("center_timestamp") is { } nullNodeCenterTimestamp && nullNodeCenterTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CenterTimestamp = null;
-            if (parseNode.GetChildNode("zoom_level") is { } nullNodeZoomLevel && nullNodeZoomLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoomLevel = null;
+            if (parseNode.GetChildNode("center_timestamp") is null) { _explicitNullValueCenterTimestamp = default!; _explicitNullProperties?.Remove("center_timestamp"); }
+            else if (parseNode.GetChildNode("center_timestamp") is { } nullNodeCenterTimestamp && nullNodeCenterTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CenterTimestamp = null;
+            if (parseNode.GetChildNode("zoom_level") is null) { _explicitNullValueZoomLevel = default!; _explicitNullProperties?.Remove("zoom_level"); }
+            else if (parseNode.GetChildNode("zoom_level") is { } nullNodeZoomLevel && nullNodeZoomLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoomLevel = null;
         }
 
         /// <summary>Center timestamp for the timeline view (Unix timestamp in ms).</summary>

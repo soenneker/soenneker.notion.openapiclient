@@ -18,7 +18,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("kickoff_summary") is { } nullNodeKickoffSummary && nullNodeKickoffSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KickoffSummary = null;
+            if (parseNode.GetChildNode("kickoff_summary") is null) { _explicitNullValueKickoffSummary = default!; _explicitNullProperties?.Remove("kickoff_summary"); }
+            else if (parseNode.GetChildNode("kickoff_summary") is { } nullNodeKickoffSummary && nullNodeKickoffSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KickoffSummary = null;
         }
 
         /// <summary>Whether to start summary generation after transcription.</summary>

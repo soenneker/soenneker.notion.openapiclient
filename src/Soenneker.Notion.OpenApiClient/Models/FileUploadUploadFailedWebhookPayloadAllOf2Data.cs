@@ -18,7 +18,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("file_import_result") is { } nullNodeFileImportResult && nullNodeFileImportResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileImportResult = null;
+            if (parseNode.GetChildNode("file_import_result") is null) { _explicitNullValueFileImportResult = default!; _explicitNullProperties?.Remove("file_import_result"); }
+            else if (parseNode.GetChildNode("file_import_result") is { } nullNodeFileImportResult && nullNodeFileImportResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileImportResult = null;
         }
 
         /// <summary>The result of the file import attempt.</summary>

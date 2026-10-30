@@ -39637,7 +39637,7 @@
 										},
 										"total_credits_used": {
 											"type": "number",
-											"description": "Premium AI credits consumed by this agent within the window."
+											"description": "Premium AI credits consumed by this agent within the window. Values of 1 or more are whole credits, and values below 1 have at most two significant figures. Both round down."
 										},
 										"credit_limit": {
 											"oneOf": [
@@ -41783,7 +41783,8 @@
 												{
 													"type": "null"
 												}
-											]
+											],
+											"description": "Premium AI credits this session consumed. Reported with at most two decimal places, rounded down."
 										},
 										"runs_completed": {
 											"oneOf": [
@@ -42312,7 +42313,8 @@
 															{
 																"type": "null"
 															}
-														]
+														],
+														"description": "Premium AI credits this session consumed. Reported with at most two decimal places, rounded down."
 													},
 													"runs_completed": {
 														"oneOf": [

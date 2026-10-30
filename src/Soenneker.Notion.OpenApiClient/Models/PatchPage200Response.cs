@@ -7,17 +7,63 @@ using System.IO;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PatchPage200Response : IComposedTypeWrapper, IParsable
-    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+    #pragma warning disable CS1591
+    public partial class PatchPage200Response : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    #pragma warning restore CS1591
+    {
         // Preserve ambiguous union payloads without inventing a discriminator.
         /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Page cover image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse? Cover { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse Cover { get; set; }
+#endif
+        /// <summary>The created_by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? CreatedBy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse CreatedBy { get; set; }
+#endif
+        /// <summary>Date and time when this page was created.</summary>
+        public DateTimeOffset? CreatedTime { get; set; }
+        /// <summary>Page icon.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse? Icon { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse Icon { get; set; }
+#endif
+        /// <summary>The id property</summary>
+        public Guid? Id { get; set; }
+        /// <summary>Whether the page is in trash.</summary>
+        public bool? InTrash { get; set; }
+        /// <summary>Whether the page has been archived.</summary>
+        public bool? IsArchived { get; set; }
+        /// <summary>Whether the page is locked from editing in the Notion app UI.</summary>
+        public bool? IsLocked { get; set; }
+        /// <summary>The last_edited_by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? LastEditedBy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse LastEditedBy { get; set; }
+#endif
+        /// <summary>Date and time when this page was last edited.</summary>
+        public DateTimeOffset? LastEditedTime { get; set; }
+        /// <summary>The page object type name.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PageObject? Object { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,6 +71,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse PageObjectResponse { get; set; }
+#endif
+        /// <summary>The parent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse? Parent { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.ParentForBlockBasedObjectResponse Parent { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,6 +88,37 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse PartialPageObjectResponse { get; set; }
 #endif
+        /// <summary>Property values of this page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponsePropertiesProperty? Properties { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponsePropertiesProperty Properties { get; set; }
+#endif
+        /// <summary>The public URL of the Notion page, if it has been published to the web.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublicUrl { get; set; }
+#nullable restore
+#else
+        public string PublicUrl { get; set; }
+#endif
+        /// <summary>The URL of the Notion page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PatchPage200Response"/> and sets the default values.
+        /// </summary>
+        public PatchPage200Response()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,15 +128,63 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PatchPage200Response();
-            
-            
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetDateTimeOffsetValue() is DateTimeOffset createdTimeValue)
+            {
+                result.CreatedTime = createdTimeValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetGuidValue() is Guid idValue)
+            {
+                result.Id = idValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool inTrashValue)
+            {
+                result.InTrash = inTrashValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool isArchivedValue)
+            {
+                result.IsArchived = isArchivedValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool isLockedValue)
+            {
+                result.IsLocked = isLockedValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetDateTimeOffsetValue() is DateTimeOffset lastEditedTimeValue)
+            {
+                result.LastEditedTime = lastEditedTimeValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string publicUrlValue)
+            {
+                result.PublicUrl = publicUrlValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string urlValue)
+            {
+                result.Url = urlValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("page".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageObject>() is global::Soenneker.Notion.OpenApiClient.Models.PageObject objectValue)
+            {
+                result.Object = objectValue;
+            }
+            else {
+                
+                
+                
+                
+                
+                
+                
+                
+            }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("object") != null && (parseNode.GetChildNode("object")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("page".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("created_time") != null && parseNode.GetChildNode("last_edited_time") != null && parseNode.GetChildNode("in_trash") != null && parseNode.GetChildNode("is_archived") != null && parseNode.GetChildNode("is_locked") != null && parseNode.GetChildNode("url") != null && parseNode.GetChildNode("public_url") != null && parseNode.GetChildNode("parent") != null && parseNode.GetChildNode("properties") != null && parseNode.GetChildNode("icon") != null && parseNode.GetChildNode("cover") != null && parseNode.GetChildNode("created_by") != null && parseNode.GetChildNode("last_edited_by") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("object") != null && (parseNode.GetChildNode("object")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("page".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null))();
-            if (result.PageObjectResponse == null && result.PartialPageObjectResponse == null && matchesUnionBranch0 && !matchesUnionBranch1) result.PageObjectResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse(), parseNode);
-            if (result.PageObjectResponse == null && result.PartialPageObjectResponse == null && matchesUnionBranch1 && !matchesUnionBranch0) result.PartialPageObjectResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse(), parseNode);
-            if (result.PageObjectResponse == null && result.PartialPageObjectResponse == null) result.UnrecognizedValue = unionPayload;
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("object") && shapeMembers1.ContainsKey("id") && shapeMembers1.ContainsKey("created_time") && shapeMembers1.ContainsKey("last_edited_time") && shapeMembers1.ContainsKey("in_trash") && shapeMembers1.ContainsKey("is_archived") && shapeMembers1.ContainsKey("is_locked") && shapeMembers1.ContainsKey("url") && shapeMembers1.ContainsKey("public_url") && shapeMembers1.ContainsKey("parent") && shapeMembers1.ContainsKey("properties") && shapeMembers1.ContainsKey("icon") && shapeMembers1.ContainsKey("cover") && shapeMembers1.ContainsKey("created_by") && shapeMembers1.ContainsKey("last_edited_by") && (!shapeMembers1.ContainsKey("object") || (((shapeMembers1["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "page".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "page".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("id") || (((shapeMembers1["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("created_time") || (((shapeMembers1["created_time"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("last_edited_time") || (((shapeMembers1["last_edited_time"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("in_trash") || (((shapeMembers1["in_trash"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)))) && (!shapeMembers1.ContainsKey("is_archived") || (((shapeMembers1["is_archived"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)))) && (!shapeMembers1.ContainsKey("is_locked") || (((shapeMembers1["is_locked"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)))) && (!shapeMembers1.ContainsKey("url") || (((shapeMembers1["url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("public_url") || ((((shapeMembers1["public_url"] == null || shapeMembers1["public_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["public_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("properties") || (((shapeMembers1["properties"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)))) && (!shapeMembers1.ContainsKey("created_by") || (((shapeMembers1["created_by"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["created_by"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject73 || (shapeObject73.GetValue() is var shapeMembers74 && (shapeMembers74.ContainsKey("id") && shapeMembers74.ContainsKey("object") && (!shapeMembers74.ContainsKey("id") || (((shapeMembers74["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers74.ContainsKey("object") || (((shapeMembers74["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers74["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal77 && "user".Equals(literal77.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers74["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal78 && "user".Equals(literal78.GetValue(), global::System.StringComparison.Ordinal))))) && global::System.Linq.Enumerable.All(shapeMembers74.Keys, key => key == "id" || key == "object")))))) && (!shapeMembers1.ContainsKey("last_edited_by") || (((shapeMembers1["last_edited_by"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["last_edited_by"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject81 || (shapeObject81.GetValue() is var shapeMembers82 && (shapeMembers82.ContainsKey("id") && shapeMembers82.ContainsKey("object") && (!shapeMembers82.ContainsKey("id") || (((shapeMembers82["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers82.ContainsKey("object") || (((shapeMembers82["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers82["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal85 && "user".Equals(literal85.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers82["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal86 && "user".Equals(literal86.GetValue(), global::System.StringComparison.Ordinal))))) && global::System.Linq.Enumerable.All(shapeMembers82.Keys, key => key == "id" || key == "object")))))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "object" || key == "id" || key == "created_time" || key == "last_edited_time" || key == "in_trash" || key == "is_archived" || key == "is_locked" || key == "url" || key == "public_url" || key == "parent" || key == "properties" || key == "icon" || key == "cover" || key == "created_by" || key == "last_edited_by"))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("object") && shapeMembers1.ContainsKey("id") && (!shapeMembers1.ContainsKey("object") || (((shapeMembers1["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "page".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["object"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "page".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("id") || (((shapeMembers1["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "object" || key == "id"))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.Cover == null && result.CreatedBy == null && result.CreatedTime == null && result.Icon == null && result.Id == null && result.InTrash == null && result.IsArchived == null && result.IsLocked == null && result.LastEditedBy == null && result.LastEditedTime == null && result.Object == null && result.PageObjectResponse == null && result.Parent == null && result.PartialPageObjectResponse == null && result.Properties == null && result.PublicUrl == null && result.Url == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.PageObjectResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.PartialPageObjectResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PartialPageObjectResponse(), parseNode);
+            if (result.Cover == null && result.CreatedBy == null && result.CreatedTime == null && result.Icon == null && result.Id == null && result.InTrash == null && result.IsArchived == null && result.IsLocked == null && result.LastEditedBy == null && result.LastEditedTime == null && result.Object == null && result.PageObjectResponse == null && result.Parent == null && result.PartialPageObjectResponse == null && result.Properties == null && result.PublicUrl == null && result.Url == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -60,9 +193,11 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PageObjectResponse != null || PartialPageObjectResponse != null)
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(Cover != null || CreatedBy != null || Icon != null || LastEditedBy != null || PageObjectResponse != null || Parent != null || PartialPageObjectResponse != null || Properties != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PageObjectResponse, PartialPageObjectResponse);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(Cover, CreatedBy, Icon, LastEditedBy, PageObjectResponse, Parent, PartialPageObjectResponse, Properties);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -73,12 +208,75 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (PageObjectResponse == null && PartialPageObjectResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (PageObjectResponse != null && PartialPageObjectResponse == null) { if (PageObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PageObjectResponse); return; }
-            if (PartialPageObjectResponse != null && PageObjectResponse == null) { if (PartialPageObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PartialPageObjectResponse); return; }
+            if (Cover == null && CreatedBy == null && CreatedTime == null && Icon == null && Id == null && InTrash == null && IsArchived == null && IsLocked == null && LastEditedBy == null && LastEditedTime == null && Object == null && PageObjectResponse == null && Parent == null && PartialPageObjectResponse == null && Properties == null && PublicUrl == null && Url == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (Cover != null) selectedUnionBranches++;
+            if (CreatedBy != null) selectedUnionBranches++;
+            if (CreatedTime != null) selectedUnionBranches++;
+            if (Icon != null) selectedUnionBranches++;
+            if (Id != null) selectedUnionBranches++;
+            if (InTrash != null) selectedUnionBranches++;
+            if (IsArchived != null) selectedUnionBranches++;
+            if (IsLocked != null) selectedUnionBranches++;
+            if (LastEditedBy != null) selectedUnionBranches++;
+            if (LastEditedTime != null) selectedUnionBranches++;
+            if (Object != null) selectedUnionBranches++;
+            if (PageObjectResponse != null) selectedUnionBranches++;
+            if (Parent != null) selectedUnionBranches++;
+            if (PartialPageObjectResponse != null) selectedUnionBranches++;
+            if (Properties != null) selectedUnionBranches++;
+            if (PublicUrl != null) selectedUnionBranches++;
+            if (Url != null) selectedUnionBranches++;
+            if (Cover != null && selectedUnionBranches == 1) { if (Cover is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Cover); return; }
+            if (CreatedBy != null && selectedUnionBranches == 1) { if (CreatedBy is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreatedBy); return; }
+            if (Icon != null && selectedUnionBranches == 1) { if (Icon is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Icon); return; }
+            if (LastEditedBy != null && selectedUnionBranches == 1) { if (LastEditedBy is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LastEditedBy); return; }
+            if (PageObjectResponse != null && selectedUnionBranches == 1) { if (PageObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PageObjectResponse); return; }
+            if (Parent != null && selectedUnionBranches == 1) { if (Parent is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Parent); return; }
+            if (PartialPageObjectResponse != null && selectedUnionBranches == 1) { if (PartialPageObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PartialPageObjectResponse); return; }
+            if (Properties != null && selectedUnionBranches == 1) { if (Properties is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Properties); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageObjectResponse>(null, PageObjectResponse, PartialPageObjectResponse);
+            if(CreatedTime != null)
+            {
+                writer.WriteDateTimeOffsetValue(null, CreatedTime);
+            }
+            else if(Id != null)
+            {
+                writer.WriteGuidValue(null, Id);
+            }
+            else if(InTrash != null)
+            {
+                writer.WriteBoolValue(null, InTrash);
+            }
+            else if(IsArchived != null)
+            {
+                writer.WriteBoolValue(null, IsArchived);
+            }
+            else if(IsLocked != null)
+            {
+                writer.WriteBoolValue(null, IsLocked);
+            }
+            else if(LastEditedTime != null)
+            {
+                writer.WriteDateTimeOffsetValue(null, LastEditedTime);
+            }
+            else if(PublicUrl != null)
+            {
+                writer.WriteStringValue(null, PublicUrl);
+            }
+            else if(Url != null)
+            {
+                writer.WriteStringValue(null, Url);
+            }
+            else if(Object != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageObject>(null, Object);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse>(null, Cover, CreatedBy, Icon, LastEditedBy, PageObjectResponse, Parent, PartialPageObjectResponse, Properties);
+            }
+            
         }
     }
 }

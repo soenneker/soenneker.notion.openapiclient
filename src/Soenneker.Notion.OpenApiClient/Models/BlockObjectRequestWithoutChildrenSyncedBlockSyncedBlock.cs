@@ -17,7 +17,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("synced_from") is { } nullNodeSyncedFrom && nullNodeSyncedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncedFrom = null;
+            if (parseNode.GetChildNode("synced_from") is null) { _explicitNullValueSyncedFrom = default!; _explicitNullProperties?.Remove("synced_from"); }
+            else if (parseNode.GetChildNode("synced_from") is { } nullNodeSyncedFrom && nullNodeSyncedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncedFrom = null;
         }
 
         /// <summary>The synced_from property</summary>

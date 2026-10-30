@@ -17,69 +17,77 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("card_layout") is { } nullNodeCardLayout && nullNodeCardLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardLayout = null;
-            if (parseNode.GetChildNode("cover") is { } nullNodeCover && nullNodeCover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cover = null;
-            if (parseNode.GetChildNode("cover_aspect") is { } nullNodeCoverAspect && nullNodeCoverAspect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverAspect = null;
-            if (parseNode.GetChildNode("cover_size") is { } nullNodeCoverSize && nullNodeCoverSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverSize = null;
-            if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
-            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
-            if (parseNode.GetChildNode("sub_group_by") is { } nullNodeSubGroupBy && nullNodeSubGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubGroupBy = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("card_layout") is null) { _explicitNullValueCardLayout = default!; _explicitNullProperties?.Remove("card_layout"); }
+            else if (parseNode.GetChildNode("card_layout") is { } nullNodeCardLayout && nullNodeCardLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardLayout = null;
+            if (parseNode.GetChildNode("cover") is null) { _explicitNullValueCover = default!; _explicitNullProperties?.Remove("cover"); }
+            else if (parseNode.GetChildNode("cover") is { } nullNodeCover && nullNodeCover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cover = null;
+            if (parseNode.GetChildNode("cover_aspect") is null) { _explicitNullValueCoverAspect = default!; _explicitNullProperties?.Remove("cover_aspect"); }
+            else if (parseNode.GetChildNode("cover_aspect") is { } nullNodeCoverAspect && nullNodeCoverAspect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverAspect = null;
+            if (parseNode.GetChildNode("cover_size") is null) { _explicitNullValueCoverSize = default!; _explicitNullProperties?.Remove("cover_size"); }
+            else if (parseNode.GetChildNode("cover_size") is { } nullNodeCoverSize && nullNodeCoverSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverSize = null;
+            if (parseNode.GetChildNode("group_by") is null) { _explicitNullValueGroupBy = default!; _explicitNullProperties?.Remove("group_by"); }
+            else if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
+            else if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("sub_group_by") is null) { _explicitNullValueSubGroupBy = default!; _explicitNullProperties?.Remove("sub_group_by"); }
+            else if (parseNode.GetChildNode("sub_group_by") is { } nullNodeSubGroupBy && nullNodeSubGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubGroupBy = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Card layout mode. &quot;list&quot; shows full cards, &quot;compact&quot; shows condensed cards. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCardLayout? CardLayout { get => _explicitNullValueCardLayout; set { _explicitNullValueCardLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_layout"); else _explicitNullProperties?.Remove("card_layout"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCardLayout? CardLayout { get => _explicitNullValueCardLayout; set { _explicitNullValueCardLayout = value; AdditionalData?.Remove("card_layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_layout"); else _explicitNullProperties?.Remove("card_layout"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCardLayout? _explicitNullValueCardLayout = default!;
         /// <summary>Cover image configuration for cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest? Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest? Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; AdditionalData?.Remove("cover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest? _explicitNullValueCover = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; AdditionalData?.Remove("cover"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest _explicitNullValueCover = default!;
 #endif
         /// <summary>Aspect ratio mode for cover images. &quot;contain&quot; fits the image, &quot;cover&quot; fills the area. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect? CoverAspect { get => _explicitNullValueCoverAspect; set { _explicitNullValueCoverAspect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover_aspect"); else _explicitNullProperties?.Remove("cover_aspect"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect? CoverAspect { get => _explicitNullValueCoverAspect; set { _explicitNullValueCoverAspect = value; AdditionalData?.Remove("cover_aspect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover_aspect"); else _explicitNullProperties?.Remove("cover_aspect"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect? _explicitNullValueCoverAspect = default!;
         /// <summary>Size of the cover image on cards. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize? CoverSize { get => _explicitNullValueCoverSize; set { _explicitNullValueCoverSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover_size"); else _explicitNullProperties?.Remove("cover_size"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize? CoverSize { get => _explicitNullValueCoverSize; set { _explicitNullValueCoverSize = value; AdditionalData?.Remove("cover_size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover_size"); else _explicitNullProperties?.Remove("cover_size"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize? _explicitNullValueCoverSize = default!;
         /// <summary>Group-by configuration based on property type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; AdditionalData?.Remove("group_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; AdditionalData?.Remove("group_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>Property visibility and display configuration on cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> _explicitNullValueProperties = default!;
 #endif
         /// <summary>Secondary group-by configuration for sub-grouping within columns. Pass null to remove sub-grouping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? SubGroupBy { get => _explicitNullValueSubGroupBy; set { _explicitNullValueSubGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_group_by"); else _explicitNullProperties?.Remove("sub_group_by"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? SubGroupBy { get => _explicitNullValueSubGroupBy; set { _explicitNullValueSubGroupBy = value; AdditionalData?.Remove("sub_group_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_group_by"); else _explicitNullProperties?.Remove("sub_group_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? _explicitNullValueSubGroupBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest SubGroupBy { get => _explicitNullValueSubGroupBy; set { _explicitNullValueSubGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_group_by"); else _explicitNullProperties?.Remove("sub_group_by"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest SubGroupBy { get => _explicitNullValueSubGroupBy; set { _explicitNullValueSubGroupBy = value; AdditionalData?.Remove("sub_group_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_group_by"); else _explicitNullProperties?.Remove("sub_group_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest _explicitNullValueSubGroupBy = default!;
 #endif
         /// <summary>The view type. Must be &quot;board&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.BoardType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest"/> and sets the default values.
@@ -106,14 +114,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "card_layout", n => { CardLayout = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCardLayout>(); } },
+                { "card_layout", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCardLayout>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCardLayout = default; _explicitNullProperties?.Remove("card_layout"); AdditionalData["card_layout"] = unknown; } else { CardLayout = parsed; AdditionalData.Remove("card_layout"); } } },
                 { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest.CreateFromDiscriminatorValue); } },
-                { "cover_aspect", n => { CoverAspect = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect>(); } },
-                { "cover_size", n => { CoverSize = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize>(); } },
+                { "cover_aspect", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverAspect>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCoverAspect = default; _explicitNullProperties?.Remove("cover_aspect"); AdditionalData["cover_aspect"] = unknown; } else { CoverAspect = parsed; AdditionalData.Remove("cover_aspect"); } } },
+                { "cover_size", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequestCoverSize>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCoverSize = default; _explicitNullProperties?.Remove("cover_size"); AdditionalData["cover_size"] = unknown; } else { CoverSize = parsed; AdditionalData.Remove("cover_size"); } } },
                 { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sub_group_by", n => { SubGroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BoardType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

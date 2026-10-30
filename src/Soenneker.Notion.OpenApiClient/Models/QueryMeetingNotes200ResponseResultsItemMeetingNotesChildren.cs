@@ -18,9 +18,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("notes_block_id") is { } nullNodeNotesBlockId && nullNodeNotesBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotesBlockId = null;
-            if (parseNode.GetChildNode("summary_block_id") is { } nullNodeSummaryBlockId && nullNodeSummaryBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryBlockId = null;
-            if (parseNode.GetChildNode("transcript_block_id") is { } nullNodeTranscriptBlockId && nullNodeTranscriptBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptBlockId = null;
+            if (parseNode.GetChildNode("notes_block_id") is null) { _explicitNullValueNotesBlockId = default!; _explicitNullProperties?.Remove("notes_block_id"); }
+            else if (parseNode.GetChildNode("notes_block_id") is { } nullNodeNotesBlockId && nullNodeNotesBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotesBlockId = null;
+            if (parseNode.GetChildNode("summary_block_id") is null) { _explicitNullValueSummaryBlockId = default!; _explicitNullProperties?.Remove("summary_block_id"); }
+            else if (parseNode.GetChildNode("summary_block_id") is { } nullNodeSummaryBlockId && nullNodeSummaryBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryBlockId = null;
+            if (parseNode.GetChildNode("transcript_block_id") is null) { _explicitNullValueTranscriptBlockId = default!; _explicitNullProperties?.Remove("transcript_block_id"); }
+            else if (parseNode.GetChildNode("transcript_block_id") is { } nullNodeTranscriptBlockId && nullNodeTranscriptBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptBlockId = null;
         }
 
         /// <summary>The notes_block_id property</summary>

@@ -17,7 +17,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("does_not_equal") is { } nullNodeDoesNotEqual && nullNodeDoesNotEqual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoesNotEqual = null;
+            if (parseNode.GetChildNode("does_not_equal") is null) { _explicitNullValueDoesNotEqual = default!; _explicitNullProperties?.Remove("does_not_equal"); }
+            else if (parseNode.GetChildNode("does_not_equal") is { } nullNodeDoesNotEqual && nullNodeDoesNotEqual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoesNotEqual = null;
         }
 
         /// <summary>The does_not_equal property</summary>

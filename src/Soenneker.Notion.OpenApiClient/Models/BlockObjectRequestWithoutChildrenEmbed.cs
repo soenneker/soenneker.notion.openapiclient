@@ -17,20 +17,23 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("embed") is { } nullNodeEmbed && nullNodeEmbed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Embed = null;
-            if (parseNode.GetChildNode("object") is { } nullNodeObject && nullNodeObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Object = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("embed") is null) { _explicitNullValueEmbed = default!; _explicitNullProperties?.Remove("embed"); }
+            else if (parseNode.GetChildNode("embed") is { } nullNodeEmbed && nullNodeEmbed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Embed = null;
+            if (parseNode.GetChildNode("object") is null) { _explicitNullValueObject = default!; _explicitNullProperties?.Remove("object"); }
+            else if (parseNode.GetChildNode("object") is { } nullNodeObject && nullNodeObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Object = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>The embed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed? Embed { get => _explicitNullValueEmbed; set { _explicitNullValueEmbed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embed"); else _explicitNullProperties?.Remove("embed"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed? _explicitNullValueEmbed = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbedEmbed? Embed { get => _explicitNullValueEmbed; set { _explicitNullValueEmbed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embed"); else _explicitNullProperties?.Remove("embed"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbedEmbed? _explicitNullValueEmbed = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed Embed { get => _explicitNullValueEmbed; set { _explicitNullValueEmbed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embed"); else _explicitNullProperties?.Remove("embed"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed _explicitNullValueEmbed = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbedEmbed Embed { get => _explicitNullValueEmbed; set { _explicitNullValueEmbed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embed"); else _explicitNullProperties?.Remove("embed"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbedEmbed _explicitNullValueEmbed = default!;
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
@@ -56,7 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "embed", n => { Embed = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed.CreateFromDiscriminatorValue); } },
+                { "embed", n => { Embed = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbedEmbed>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbedEmbed.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedObject>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedType>(); } },
             };
@@ -68,7 +71,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedEmbed>("embed", Embed);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestEmbedEmbed>("embed", Embed);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedObject>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildrenEmbedType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

@@ -18,23 +18,25 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_deleting_content") is { } nullNodeAllowDeletingContent && nullNodeAllowDeletingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDeletingContent = null;
-            if (parseNode.GetChildNode("content_updates") is { } nullNodeContentUpdates && nullNodeContentUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentUpdates = null;
+            if (parseNode.GetChildNode("allow_deleting_content") is null) { _explicitNullValueAllowDeletingContent = default!; _explicitNullProperties?.Remove("allow_deleting_content"); }
+            else if (parseNode.GetChildNode("allow_deleting_content") is { } nullNodeAllowDeletingContent && nullNodeAllowDeletingContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDeletingContent = null;
+            if (parseNode.GetChildNode("content_updates") is null) { _explicitNullValueContentUpdates = default!; _explicitNullProperties?.Remove("content_updates"); }
+            else if (parseNode.GetChildNode("content_updates") is { } nullNodeContentUpdates && nullNodeContentUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentUpdates = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to true to allow the operation to delete child pages or databases. Defaults to false.</summary>
-        public bool? AllowDeletingContent { get => _explicitNullValueAllowDeletingContent; set { _explicitNullValueAllowDeletingContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_deleting_content"); else _explicitNullProperties?.Remove("allow_deleting_content"); } }
+        public bool? AllowDeletingContent { get => _explicitNullValueAllowDeletingContent; set { _explicitNullValueAllowDeletingContent = value; AdditionalData?.Remove("allow_deleting_content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_deleting_content"); else _explicitNullProperties?.Remove("allow_deleting_content"); } }
         private bool? _explicitNullValueAllowDeletingContent = default!;
         /// <summary>An array of search-and-replace operations, each with old_str (content to find) and new_str (replacement content). Operations that match are applied, and each one that matches nothing is reported in &quot;warnings&quot;. The call fails only when no operation that changes content matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem>? ContentUpdates { get => _explicitNullValueContentUpdates; set { _explicitNullValueContentUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_updates"); else _explicitNullProperties?.Remove("content_updates"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem>? ContentUpdates { get => _explicitNullValueContentUpdates; set { _explicitNullValueContentUpdates = value; AdditionalData?.Remove("content_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_updates"); else _explicitNullProperties?.Remove("content_updates"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem>? _explicitNullValueContentUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem> ContentUpdates { get => _explicitNullValueContentUpdates; set { _explicitNullValueContentUpdates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_updates"); else _explicitNullProperties?.Remove("content_updates"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem> ContentUpdates { get => _explicitNullValueContentUpdates; set { _explicitNullValueContentUpdates = value; AdditionalData?.Remove("content_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_updates"); else _explicitNullProperties?.Remove("content_updates"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem> _explicitNullValueContentUpdates = default!;
 #endif
         /// <summary>

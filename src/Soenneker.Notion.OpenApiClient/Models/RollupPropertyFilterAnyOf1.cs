@@ -17,7 +17,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("any") is { } nullNodeAny && nullNodeAny.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Any = null;
+            if (parseNode.GetChildNode("any") is null) { _explicitNullValueAny = default!; _explicitNullProperties?.Remove("any"); }
+            else if (parseNode.GetChildNode("any") is { } nullNodeAny && nullNodeAny.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Any = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The any property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilter? Any { get => _explicitNullValueAny; set { _explicitNullValueAny = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any"); else _explicitNullProperties?.Remove("any"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilter? Any { get => _explicitNullValueAny; set { _explicitNullValueAny = value; AdditionalData?.Remove("any"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any"); else _explicitNullProperties?.Remove("any"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilter? _explicitNullValueAny = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilter Any { get => _explicitNullValueAny; set { _explicitNullValueAny = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any"); else _explicitNullProperties?.Remove("any"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilter Any { get => _explicitNullValueAny; set { _explicitNullValueAny = value; AdditionalData?.Remove("any"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("any"); else _explicitNullProperties?.Remove("any"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.RollupSubfilterPropertyFilter _explicitNullValueAny = default!;
 #endif
         /// <summary>

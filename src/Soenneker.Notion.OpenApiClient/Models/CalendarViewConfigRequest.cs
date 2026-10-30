@@ -17,11 +17,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("date_property_id") is { } nullNodeDatePropertyId && nullNodeDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatePropertyId = null;
-            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
-            if (parseNode.GetChildNode("show_weekends") is { } nullNodeShowWeekends && nullNodeShowWeekends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowWeekends = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("view_range") is { } nullNodeViewRange && nullNodeViewRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewRange = null;
+            if (parseNode.GetChildNode("date_property_id") is null) { _explicitNullValueDatePropertyId = default!; _explicitNullProperties?.Remove("date_property_id"); }
+            else if (parseNode.GetChildNode("date_property_id") is { } nullNodeDatePropertyId && nullNodeDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatePropertyId = null;
+            if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
+            else if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("show_weekends") is null) { _explicitNullValueShowWeekends = default!; _explicitNullProperties?.Remove("show_weekends"); }
+            else if (parseNode.GetChildNode("show_weekends") is { } nullNodeShowWeekends && nullNodeShowWeekends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowWeekends = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("view_range") is null) { _explicitNullValueViewRange = default!; _explicitNullProperties?.Remove("view_range"); }
+            else if (parseNode.GetChildNode("view_range") is { } nullNodeViewRange && nullNodeViewRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewRange = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,31 +34,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Property ID of the date property used to position items on the calendar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
+        public string? DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; AdditionalData?.Remove("date_property_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
         private string? _explicitNullValueDatePropertyId = default!;
 #nullable restore
 #else
-        public string DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
+        public string DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; AdditionalData?.Remove("date_property_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
         private string _explicitNullValueDatePropertyId = default!;
 #endif
         /// <summary>Property visibility and display configuration on calendar cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> _explicitNullValueProperties = default!;
 #endif
         /// <summary>Whether to show weekend days. Pass null to clear.</summary>
-        public bool? ShowWeekends { get => _explicitNullValueShowWeekends; set { _explicitNullValueShowWeekends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_weekends"); else _explicitNullProperties?.Remove("show_weekends"); } }
+        public bool? ShowWeekends { get => _explicitNullValueShowWeekends; set { _explicitNullValueShowWeekends = value; AdditionalData?.Remove("show_weekends"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_weekends"); else _explicitNullProperties?.Remove("show_weekends"); } }
         private bool? _explicitNullValueShowWeekends = default!;
         /// <summary>The view type. Must be &quot;calendar&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CalendarType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.CalendarType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.CalendarType? _explicitNullValueType = default!;
         /// <summary>Default calendar range. &quot;week&quot; shows a week view, &quot;month&quot; shows a month view. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange? ViewRange { get => _explicitNullValueViewRange; set { _explicitNullValueViewRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_range"); else _explicitNullProperties?.Remove("view_range"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange? ViewRange { get => _explicitNullValueViewRange; set { _explicitNullValueViewRange = value; AdditionalData?.Remove("view_range"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_range"); else _explicitNullProperties?.Remove("view_range"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange? _explicitNullValueViewRange = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequest"/> and sets the default values.
@@ -83,8 +88,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "date_property_id", n => { DatePropertyId = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_weekends", n => { ShowWeekends = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarType>(); } },
-                { "view_range", n => { ViewRange = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "view_range", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequestViewRange>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueViewRange = default; _explicitNullProperties?.Remove("view_range"); AdditionalData["view_range"] = unknown; } else { ViewRange = parsed; AdditionalData.Remove("view_range"); } } },
             };
         }
         /// <summary>

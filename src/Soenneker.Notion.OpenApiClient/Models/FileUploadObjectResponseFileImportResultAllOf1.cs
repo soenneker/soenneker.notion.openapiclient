@@ -17,7 +17,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("imported_time") is { } nullNodeImportedTime && nullNodeImportedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportedTime = null;
+            if (parseNode.GetChildNode("imported_time") is null) { _explicitNullValueImportedTime = default!; _explicitNullProperties?.Remove("imported_time"); }
+            else if (parseNode.GetChildNode("imported_time") is { } nullNodeImportedTime && nullNodeImportedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportedTime = null;
         }
 
         /// <summary>The time the file was imported into Notion. ISO 8601 format.</summary>

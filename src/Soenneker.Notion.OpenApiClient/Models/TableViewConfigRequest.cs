@@ -17,58 +17,65 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("frozen_column_index") is { } nullNodeFrozenColumnIndex && nullNodeFrozenColumnIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrozenColumnIndex = null;
-            if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
-            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
-            if (parseNode.GetChildNode("show_vertical_lines") is { } nullNodeShowVerticalLines && nullNodeShowVerticalLines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowVerticalLines = null;
-            if (parseNode.GetChildNode("subtasks") is { } nullNodeSubtasks && nullNodeSubtasks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtasks = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("wrap_cells") is { } nullNodeWrapCells && nullNodeWrapCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrapCells = null;
+            if (parseNode.GetChildNode("frozen_column_index") is null) { _explicitNullValueFrozenColumnIndex = default!; _explicitNullProperties?.Remove("frozen_column_index"); }
+            else if (parseNode.GetChildNode("frozen_column_index") is { } nullNodeFrozenColumnIndex && nullNodeFrozenColumnIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrozenColumnIndex = null;
+            if (parseNode.GetChildNode("group_by") is null) { _explicitNullValueGroupBy = default!; _explicitNullProperties?.Remove("group_by"); }
+            else if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
+            else if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("show_vertical_lines") is null) { _explicitNullValueShowVerticalLines = default!; _explicitNullProperties?.Remove("show_vertical_lines"); }
+            else if (parseNode.GetChildNode("show_vertical_lines") is { } nullNodeShowVerticalLines && nullNodeShowVerticalLines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowVerticalLines = null;
+            if (parseNode.GetChildNode("subtasks") is null) { _explicitNullValueSubtasks = default!; _explicitNullProperties?.Remove("subtasks"); }
+            else if (parseNode.GetChildNode("subtasks") is { } nullNodeSubtasks && nullNodeSubtasks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtasks = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("wrap_cells") is null) { _explicitNullValueWrapCells = default!; _explicitNullProperties?.Remove("wrap_cells"); }
+            else if (parseNode.GetChildNode("wrap_cells") is { } nullNodeWrapCells && nullNodeWrapCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrapCells = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of columns frozen from the left side of the table.</summary>
-        public int? FrozenColumnIndex { get => _explicitNullValueFrozenColumnIndex; set { _explicitNullValueFrozenColumnIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frozen_column_index"); else _explicitNullProperties?.Remove("frozen_column_index"); } }
+        public int? FrozenColumnIndex { get => _explicitNullValueFrozenColumnIndex; set { _explicitNullValueFrozenColumnIndex = value; AdditionalData?.Remove("frozen_column_index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frozen_column_index"); else _explicitNullProperties?.Remove("frozen_column_index"); } }
         private int? _explicitNullValueFrozenColumnIndex = default!;
         /// <summary>Group-by configuration for the table. Pass null to remove grouping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; AdditionalData?.Remove("group_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; AdditionalData?.Remove("group_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>Property visibility and display configuration. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
         private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> _explicitNullValueProperties = default!;
 #endif
         /// <summary>Whether to show vertical grid lines between columns.</summary>
-        public bool? ShowVerticalLines { get => _explicitNullValueShowVerticalLines; set { _explicitNullValueShowVerticalLines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_vertical_lines"); else _explicitNullProperties?.Remove("show_vertical_lines"); } }
+        public bool? ShowVerticalLines { get => _explicitNullValueShowVerticalLines; set { _explicitNullValueShowVerticalLines = value; AdditionalData?.Remove("show_vertical_lines"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_vertical_lines"); else _explicitNullProperties?.Remove("show_vertical_lines"); } }
         private bool? _explicitNullValueShowVerticalLines = default!;
         /// <summary>Subtask (sub-item) configuration. Pass null to reset subtask config to defaults (which may show subtasks). Use `{ &quot;display_mode&quot;: &quot;disabled&quot; }` to explicitly disable subtasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest? Subtasks { get => _explicitNullValueSubtasks; set { _explicitNullValueSubtasks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtasks"); else _explicitNullProperties?.Remove("subtasks"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest? Subtasks { get => _explicitNullValueSubtasks; set { _explicitNullValueSubtasks = value; AdditionalData?.Remove("subtasks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtasks"); else _explicitNullProperties?.Remove("subtasks"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest? _explicitNullValueSubtasks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest Subtasks { get => _explicitNullValueSubtasks; set { _explicitNullValueSubtasks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtasks"); else _explicitNullProperties?.Remove("subtasks"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest Subtasks { get => _explicitNullValueSubtasks; set { _explicitNullValueSubtasks = value; AdditionalData?.Remove("subtasks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtasks"); else _explicitNullProperties?.Remove("subtasks"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest _explicitNullValueSubtasks = default!;
 #endif
         /// <summary>The view type. Must be &quot;table&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType? _explicitNullValueType = default!;
         /// <summary>Whether to wrap cell content in the table.</summary>
-        public bool? WrapCells { get => _explicitNullValueWrapCells; set { _explicitNullValueWrapCells = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrap_cells"); else _explicitNullProperties?.Remove("wrap_cells"); } }
+        public bool? WrapCells { get => _explicitNullValueWrapCells; set { _explicitNullValueWrapCells = value; AdditionalData?.Remove("wrap_cells"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrap_cells"); else _explicitNullProperties?.Remove("wrap_cells"); } }
         private bool? _explicitNullValueWrapCells = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest"/> and sets the default values.
@@ -100,7 +107,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_vertical_lines", n => { ShowVerticalLines = n.GetBoolValue(); } },
                 { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "wrap_cells", n => { WrapCells = n.GetBoolValue(); } },
             };
         }

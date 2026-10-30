@@ -17,13 +17,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("width_ratio") is { } nullNodeWidthRatio && nullNodeWidthRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WidthRatio = null;
+            if (parseNode.GetChildNode("width_ratio") is null) { _explicitNullValueWidthRatio = default!; _explicitNullProperties?.Remove("width_ratio"); }
+            else if (parseNode.GetChildNode("width_ratio") is { } nullNodeWidthRatio && nullNodeWidthRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WidthRatio = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Ratio between 0 and 1 of the width of this column relative to all columns in the list. If not provided, uses an equal width.</summary>
-        public double? WidthRatio { get => _explicitNullValueWidthRatio; set { _explicitNullValueWidthRatio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width_ratio"); else _explicitNullProperties?.Remove("width_ratio"); } }
+        public double? WidthRatio { get => _explicitNullValueWidthRatio; set { _explicitNullValueWidthRatio = value; AdditionalData?.Remove("width_ratio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width_ratio"); else _explicitNullProperties?.Remove("width_ratio"); } }
         private double? _explicitNullValueWidthRatio = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ColumnResponse"/> and sets the default values.
