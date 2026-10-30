@@ -11,62 +11,93 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateDatabaseRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cover") is { } nullNodeCover && nullNodeCover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cover = null;
+            if (parseNode.GetChildNode("database_type") is { } nullNodeDatabaseType && nullNodeDatabaseType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatabaseType = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("icon") is { } nullNodeIcon && nullNodeIcon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Icon = null;
+            if (parseNode.GetChildNode("initial_data_source") is { } nullNodeInitialDataSource && nullNodeInitialDataSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InitialDataSource = null;
+            if (parseNode.GetChildNode("is_inline") is { } nullNodeIsInline && nullNodeIsInline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsInline = null;
+            if (parseNode.GetChildNode("parent") is { } nullNodeParent && nullNodeParent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parent = null;
+            if (parseNode.GetChildNode("show_data_source_title") is { } nullNodeShowDataSourceTitle && nullNodeShowDataSourceTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowDataSourceTitle = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cover property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest? Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest? _explicitNullValueCover = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest _explicitNullValueCover = default!;
 #endif
         /// <summary>Create a typed database with Notion&apos;s canonical schema. One of `tasks`, `projects`, or `skills`. Cannot be combined with `initial_data_source`. When `title` is omitted, the database is named after the type.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestDatabaseType? DatabaseType { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestDatabaseType? DatabaseType { get => _explicitNullValueDatabaseType; set { _explicitNullValueDatabaseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_type"); else _explicitNullProperties?.Remove("database_type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestDatabaseType? _explicitNullValueDatabaseType = default!;
         /// <summary>The description of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>? Description { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest> Description { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest> Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest> _explicitNullValueDescription = default!;
 #endif
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest? Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest? _explicitNullValueIcon = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest _explicitNullValueIcon = default!;
 #endif
         /// <summary>The initial_data_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest? InitialDataSource { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest? InitialDataSource { get => _explicitNullValueInitialDataSource; set { _explicitNullValueInitialDataSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initial_data_source"); else _explicitNullProperties?.Remove("initial_data_source"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest? _explicitNullValueInitialDataSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest InitialDataSource { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest InitialDataSource { get => _explicitNullValueInitialDataSource; set { _explicitNullValueInitialDataSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("initial_data_source"); else _explicitNullProperties?.Remove("initial_data_source"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.InitialDataSourceRequest _explicitNullValueInitialDataSource = default!;
 #endif
         /// <summary>Whether the database should be displayed inline in the parent page. Defaults to false.</summary>
-        public bool? IsInline { get; set; }
+        public bool? IsInline { get => _explicitNullValueIsInline; set { _explicitNullValueIsInline = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_inline"); else _explicitNullProperties?.Remove("is_inline"); } }
+        private bool? _explicitNullValueIsInline = default!;
         /// <summary>The parent page or workspace where the database will be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent? Parent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent? Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent? _explicitNullValueParent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent Parent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent _explicitNullValueParent = default!;
 #endif
         /// <summary>Whether to show the data source title above the database&apos;s views. Matches the Show data source title toggle in the Notion app. Defaults to true. Full-page databases with one data source don&apos;t show this title.</summary>
-        public bool? ShowDataSourceTitle { get; set; }
+        public bool? ShowDataSourceTitle { get => _explicitNullValueShowDataSourceTitle; set { _explicitNullValueShowDataSourceTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_data_source_title"); else _explicitNullProperties?.Remove("show_data_source_title"); } }
+        private bool? _explicitNullValueShowDataSourceTitle = default!;
         /// <summary>The title of the database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>? Title { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest> Title { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest> Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest> _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequest"/> and sets the default values.
@@ -83,7 +114,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,6 +151,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseRequestParent>("parent", Parent);
             writer.WriteBoolValue("show_data_source_title", ShowDataSourceTitle);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

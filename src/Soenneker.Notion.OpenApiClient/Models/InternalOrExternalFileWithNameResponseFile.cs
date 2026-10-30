@@ -12,18 +12,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class InternalOrExternalFileWithNameResponseFile : global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseCommon, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("file") is { } nullNodeFile && nullNodeFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) File = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse? File { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse? File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse? _explicitNullValueFile = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse File { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse File { get => _explicitNullValueFile; set { _explicitNullValueFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file"); else _explicitNullProperties?.Remove("file"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse _explicitNullValueFile = default!;
 #endif
         /// <summary>Type of attachment. In this case, a file uploaded to a Notion workspace.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileInternalOrExternalFileWithNameResponseType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileInternalOrExternalFileWithNameResponseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileInternalOrExternalFileWithNameResponseType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile"/> and sets the default values.
         /// </summary>
@@ -39,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static new global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.InternalOrExternalFileWithNameResponseFile(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.InternalFileResponse>("file", File);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileInternalOrExternalFileWithNameResponseType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,6 +12,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class ExistencePropertyFilter : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1"/></summary>
@@ -52,19 +56,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilter();
-            if(parseNode.GetBoolValue() is bool isEmptyValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool isEmptyValue)
             {
                 result.IsEmpty = isEmptyValue;
             }
-            else if(parseNode.GetBoolValue() is bool isNotEmptyValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean && parseNode.GetBoolValue() is bool isNotEmptyValue)
             {
                 result.IsNotEmpty = isNotEmptyValue;
             }
             else {
-                result.ExistencePropertyFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1();
-                result.ExistencePropertyFilterAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2();
+                
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("is_empty") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("is_not_empty") != null))();
+            if (result.ExistencePropertyFilterAnyOf1 == null && result.ExistencePropertyFilterAnyOf2 == null && result.IsEmpty == null && result.IsNotEmpty == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ExistencePropertyFilterAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1(), parseNode);
+            if (result.ExistencePropertyFilterAnyOf1 == null && result.ExistencePropertyFilterAnyOf2 == null && result.IsEmpty == null && result.IsNotEmpty == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ExistencePropertyFilterAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf2(), parseNode);
+            if (result.ExistencePropertyFilterAnyOf1 == null && result.ExistencePropertyFilterAnyOf2 == null && result.IsEmpty == null && result.IsNotEmpty == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +95,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ExistencePropertyFilterAnyOf1 == null && ExistencePropertyFilterAnyOf2 == null && IsEmpty == null && IsNotEmpty == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ExistencePropertyFilterAnyOf1 != null && ExistencePropertyFilterAnyOf2 == null && IsEmpty == null && IsNotEmpty == null) { if (ExistencePropertyFilterAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ExistencePropertyFilterAnyOf1); return; }
+            if (ExistencePropertyFilterAnyOf2 != null && ExistencePropertyFilterAnyOf1 == null && IsEmpty == null && IsNotEmpty == null) { if (ExistencePropertyFilterAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ExistencePropertyFilterAnyOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(IsEmpty != null)
             {
@@ -96,7 +112,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else {
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExistencePropertyFilterAnyOf1>(null, ExistencePropertyFilterAnyOf1, ExistencePropertyFilterAnyOf2);
             }
-            writer.WriteAdditionalData(AdditionalData);
+            
         }
     }
 }

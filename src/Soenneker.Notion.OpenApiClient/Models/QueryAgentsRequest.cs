@@ -11,45 +11,70 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class QueryAgentsRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("include_deleted") is { } nullNodeIncludeDeleted && nullNodeIncludeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeDeleted = null;
+            if (parseNode.GetChildNode("page_size") is { } nullNodePageSize && nullNodePageSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PageSize = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("sorts") is { } nullNodeSorts && nullNodeSorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sorts = null;
+            if (parseNode.GetChildNode("start_cursor") is { } nullNodeStartCursor && nullNodeStartCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCursor = null;
+            if (parseNode.GetChildNode("verbose") is { } nullNodeVerbose && nullNodeVerbose.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Verbose = null;
+        }
+
         /// <summary>Filter agents by public properties, optionally combined with and/or.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Filter { get; set; }
+        public UntypedNode? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private UntypedNode? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public UntypedNode Filter { get; set; }
+        public UntypedNode Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private UntypedNode _explicitNullValueFilter = default!;
 #endif
         /// <summary>Whether to include soft-deleted agents. Defaults to false.</summary>
-        public bool? IncludeDeleted { get; set; }
+        public bool? IncludeDeleted { get => _explicitNullValueIncludeDeleted; set { _explicitNullValueIncludeDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_deleted"); else _explicitNullProperties?.Remove("include_deleted"); } }
+        private bool? _explicitNullValueIncludeDeleted = default!;
         /// <summary>Number of agents to return. Maximum: 100.</summary>
-        public int? PageSize { get; set; }
+        public int? PageSize { get => _explicitNullValuePageSize; set { _explicitNullValuePageSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("page_size"); else _explicitNullProperties?.Remove("page_size"); } }
+        private int? _explicitNullValuePageSize = default!;
         /// <summary>Search agent names and descriptions using a case-insensitive substring match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>Ordered sort precedence. Defaults to created_time descending.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestSortsItem>? Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestSortsItem>? Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestSortsItem>? _explicitNullValueSorts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestSortsItem> Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestSortsItem> Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestSortsItem> _explicitNullValueSorts = default!;
 #endif
         /// <summary>Opaque continuation cursor from the previous page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartCursor { get; set; }
+        public string? StartCursor { get => _explicitNullValueStartCursor; set { _explicitNullValueStartCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_cursor"); else _explicitNullProperties?.Remove("start_cursor"); } }
+        private string? _explicitNullValueStartCursor = default!;
 #nullable restore
 #else
-        public string StartCursor { get; set; }
+        public string StartCursor { get => _explicitNullValueStartCursor; set { _explicitNullValueStartCursor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_cursor"); else _explicitNullProperties?.Remove("start_cursor"); } }
+        private string _explicitNullValueStartCursor = default!;
 #endif
         /// <summary>Whether to include inline instructions for each agent. Defaults to false.</summary>
-        public bool? Verbose { get; set; }
+        public bool? Verbose { get => _explicitNullValueVerbose; set { _explicitNullValueVerbose = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verbose"); else _explicitNullProperties?.Remove("verbose"); } }
+        private bool? _explicitNullValueVerbose = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +83,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,7 +115,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("query", Query);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QueryAgentsRequestSortsItem>("sorts", Sorts);
             writer.WriteStringValue("start_cursor", StartCursor);
-            writer.WriteBoolValue("verbose", Verbose);
+            writer.WriteBoolValue("verbose", Verbose);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

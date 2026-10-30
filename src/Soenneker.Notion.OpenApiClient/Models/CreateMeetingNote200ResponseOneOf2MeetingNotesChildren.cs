@@ -12,13 +12,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateMeetingNote200ResponseOneOf2MeetingNotesChildren : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("notes_block_id") is { } nullNodeNotesBlockId && nullNodeNotesBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotesBlockId = null;
+            if (parseNode.GetChildNode("summary_block_id") is { } nullNodeSummaryBlockId && nullNodeSummaryBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryBlockId = null;
+            if (parseNode.GetChildNode("transcript_block_id") is { } nullNodeTranscriptBlockId && nullNodeTranscriptBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptBlockId = null;
+        }
+
         /// <summary>The notes_block_id property</summary>
-        public Guid? NotesBlockId { get; set; }
+        public Guid? NotesBlockId { get => _explicitNullValueNotesBlockId; set { _explicitNullValueNotesBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_block_id"); else _explicitNullProperties?.Remove("notes_block_id"); } }
+        private Guid? _explicitNullValueNotesBlockId = default!;
         /// <summary>The summary_block_id property</summary>
-        public Guid? SummaryBlockId { get; set; }
+        public Guid? SummaryBlockId { get => _explicitNullValueSummaryBlockId; set { _explicitNullValueSummaryBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_block_id"); else _explicitNullProperties?.Remove("summary_block_id"); } }
+        private Guid? _explicitNullValueSummaryBlockId = default!;
         /// <summary>The transcript_block_id property</summary>
-        public Guid? TranscriptBlockId { get; set; }
+        public Guid? TranscriptBlockId { get => _explicitNullValueTranscriptBlockId; set { _explicitNullValueTranscriptBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_block_id"); else _explicitNullProperties?.Remove("transcript_block_id"); } }
+        private Guid? _explicitNullValueTranscriptBlockId = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -27,7 +40,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +64,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("notes_block_id", NotesBlockId);
             writer.WriteGuidValue("summary_block_id", SummaryBlockId);
-            writer.WriteGuidValue("transcript_block_id", TranscriptBlockId);
+            writer.WriteGuidValue("transcript_block_id", TranscriptBlockId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

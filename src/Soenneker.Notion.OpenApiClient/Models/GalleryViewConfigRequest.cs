@@ -11,33 +11,54 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GalleryViewConfigRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("card_layout") is { } nullNodeCardLayout && nullNodeCardLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardLayout = null;
+            if (parseNode.GetChildNode("cover") is { } nullNodeCover && nullNodeCover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cover = null;
+            if (parseNode.GetChildNode("cover_aspect") is { } nullNodeCoverAspect && nullNodeCoverAspect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverAspect = null;
+            if (parseNode.GetChildNode("cover_size") is { } nullNodeCoverSize && nullNodeCoverSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverSize = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Card layout mode. &quot;list&quot; shows full cards, &quot;compact&quot; shows condensed cards. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCardLayout? CardLayout { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCardLayout? CardLayout { get => _explicitNullValueCardLayout; set { _explicitNullValueCardLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_layout"); else _explicitNullProperties?.Remove("card_layout"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCardLayout? _explicitNullValueCardLayout = default!;
         /// <summary>Cover image configuration for cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest? Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest? _explicitNullValueCover = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CoverConfigRequest _explicitNullValueCover = default!;
 #endif
         /// <summary>Aspect ratio mode for cover images. &quot;contain&quot; fits the image, &quot;cover&quot; fills the area. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect? CoverAspect { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect? CoverAspect { get => _explicitNullValueCoverAspect; set { _explicitNullValueCoverAspect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover_aspect"); else _explicitNullProperties?.Remove("cover_aspect"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverAspect? _explicitNullValueCoverAspect = default!;
         /// <summary>Size of the cover image on cards. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize? CoverSize { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize? CoverSize { get => _explicitNullValueCoverSize; set { _explicitNullValueCoverSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover_size"); else _explicitNullProperties?.Remove("cover_size"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize? _explicitNullValueCoverSize = default!;
         /// <summary>Property visibility and display configuration on gallery cards. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> _explicitNullValueProperties = default!;
 #endif
         /// <summary>The view type. Must be &quot;gallery&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GalleryType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GalleryType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GalleryType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -53,7 +74,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +105,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequestCoverSize>("cover_size", CoverSize);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>("properties", Properties);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,21 +11,37 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TableRequestWithTableRowChildren : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("children") is { } nullNodeChildren && nullNodeChildren.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Children = null;
+            if (parseNode.GetChildNode("has_column_header") is { } nullNodeHasColumnHeader && nullNodeHasColumnHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasColumnHeader = null;
+            if (parseNode.GetChildNode("has_row_header") is { } nullNodeHasRowHeader && nullNodeHasRowHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRowHeader = null;
+            if (parseNode.GetChildNode("table_width") is { } nullNodeTableWidth && nullNodeTableWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableWidth = null;
+        }
+
         /// <summary>The children property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest>? Children { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest>? Children { get => _explicitNullValueChildren; set { _explicitNullValueChildren = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children"); else _explicitNullProperties?.Remove("children"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest>? _explicitNullValueChildren = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest> Children { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest> Children { get => _explicitNullValueChildren; set { _explicitNullValueChildren = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children"); else _explicitNullProperties?.Remove("children"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest> _explicitNullValueChildren = default!;
 #endif
         /// <summary>The has_column_header property</summary>
-        public bool? HasColumnHeader { get; set; }
+        public bool? HasColumnHeader { get => _explicitNullValueHasColumnHeader; set { _explicitNullValueHasColumnHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_column_header"); else _explicitNullProperties?.Remove("has_column_header"); } }
+        private bool? _explicitNullValueHasColumnHeader = default!;
         /// <summary>The has_row_header property</summary>
-        public bool? HasRowHeader { get; set; }
+        public bool? HasRowHeader { get => _explicitNullValueHasRowHeader; set { _explicitNullValueHasRowHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_row_header"); else _explicitNullProperties?.Remove("has_row_header"); } }
+        private bool? _explicitNullValueHasRowHeader = default!;
         /// <summary>The table_width property</summary>
-        public int? TableWidth { get; set; }
+        public int? TableWidth { get => _explicitNullValueTableWidth; set { _explicitNullValueTableWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_width"); else _explicitNullProperties?.Remove("table_width"); } }
+        private int? _explicitNullValueTableWidth = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -34,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TableRequestWithTableRowChildren(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +76,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest>("children", Children);
             writer.WriteBoolValue("has_column_header", HasColumnHeader);
             writer.WriteBoolValue("has_row_header", HasRowHeader);
-            writer.WriteIntValue("table_width", TableWidth);
+            writer.WriteIntValue("table_width", TableWidth);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

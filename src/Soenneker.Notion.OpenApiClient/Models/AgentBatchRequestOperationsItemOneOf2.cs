@@ -11,24 +11,39 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentBatchRequestOperationsItemOneOf2 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+        }
+
         /// <summary>Set or clear one agent&apos;s credit limit, equivalent to `PATCH /v1/agents/:agent_id/credit_limit`. Requires full access to the agent.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateCreditLimitAction? Action { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateCreditLimitAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.UpdateCreditLimitAction? _explicitNullValueAction = default!;
         /// <summary>The agent ID (a UUID), or `notion_ai` for the personal agent. Endpoint-specific restrictions still apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2AgentId? AgentId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2AgentId? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2AgentId? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2AgentId AgentId { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2AgentId AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2AgentId _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The credit limit to apply to this agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2Fields? Fields { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2Fields? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2Fields? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2Fields Fields { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2Fields Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2Fields _explicitNullValueFields = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +53,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +77,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateCreditLimitAction>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2AgentId>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2Fields>("fields", Fields);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2Fields>("fields", Fields);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

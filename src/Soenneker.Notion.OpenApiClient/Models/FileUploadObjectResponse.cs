@@ -11,78 +11,122 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FileUploadObjectResponse : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("complete_url") is { } nullNodeCompleteUrl && nullNodeCompleteUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompleteUrl = null;
+            if (parseNode.GetChildNode("content_length") is { } nullNodeContentLength && nullNodeContentLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentLength = null;
+            if (parseNode.GetChildNode("content_type") is { } nullNodeContentType && nullNodeContentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentType = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("expiry_time") is { } nullNodeExpiryTime && nullNodeExpiryTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryTime = null;
+            if (parseNode.GetChildNode("file_import_result") is { } nullNodeFileImportResult && nullNodeFileImportResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileImportResult = null;
+            if (parseNode.GetChildNode("filename") is { } nullNodeFilename && nullNodeFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filename = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("in_trash") is { } nullNodeInTrash && nullNodeInTrash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InTrash = null;
+            if (parseNode.GetChildNode("last_edited_time") is { } nullNodeLastEditedTime && nullNodeLastEditedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEditedTime = null;
+            if (parseNode.GetChildNode("number_of_parts") is { } nullNodeNumberOfParts && nullNodeNumberOfParts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NumberOfParts = null;
+            if (parseNode.GetChildNode("object") is { } nullNodeObject && nullNodeObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Object = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("upload_url") is { } nullNodeUploadUrl && nullNodeUploadUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadUrl = null;
+        }
+
         /// <summary>The complete_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompleteUrl { get; set; }
+        public string? CompleteUrl { get => _explicitNullValueCompleteUrl; set { _explicitNullValueCompleteUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete_url"); else _explicitNullProperties?.Remove("complete_url"); } }
+        private string? _explicitNullValueCompleteUrl = default!;
 #nullable restore
 #else
-        public string CompleteUrl { get; set; }
+        public string CompleteUrl { get => _explicitNullValueCompleteUrl; set { _explicitNullValueCompleteUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete_url"); else _explicitNullProperties?.Remove("complete_url"); } }
+        private string _explicitNullValueCompleteUrl = default!;
 #endif
         /// <summary>The content_length property</summary>
-        public int? ContentLength { get; set; }
+        public int? ContentLength { get => _explicitNullValueContentLength; set { _explicitNullValueContentLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_length"); else _explicitNullProperties?.Remove("content_length"); } }
+        private int? _explicitNullValueContentLength = default!;
         /// <summary>The content_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType { get; set; }
+        public string? ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private string? _explicitNullValueContentType = default!;
 #nullable restore
 #else
-        public string ContentType { get; set; }
+        public string ContentType { get => _explicitNullValueContentType; set { _explicitNullValueContentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content_type"); else _explicitNullProperties?.Remove("content_type"); } }
+        private string _explicitNullValueContentType = default!;
 #endif
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The created_time property</summary>
-        public DateTimeOffset? CreatedTime { get; set; }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>The expiry_time property</summary>
-        public DateTimeOffset? ExpiryTime { get; set; }
+        public DateTimeOffset? ExpiryTime { get => _explicitNullValueExpiryTime; set { _explicitNullValueExpiryTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_time"); else _explicitNullProperties?.Remove("expiry_time"); } }
+        private DateTimeOffset? _explicitNullValueExpiryTime = default!;
         /// <summary>The file_import_result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult? FileImportResult { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult? FileImportResult { get => _explicitNullValueFileImportResult; set { _explicitNullValueFileImportResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_import_result"); else _explicitNullProperties?.Remove("file_import_result"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult? _explicitNullValueFileImportResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult FileImportResult { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult FileImportResult { get => _explicitNullValueFileImportResult; set { _explicitNullValueFileImportResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_import_result"); else _explicitNullProperties?.Remove("file_import_result"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseFileImportResult _explicitNullValueFileImportResult = default!;
 #endif
         /// <summary>The filename property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filename { get; set; }
+        public string? Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
+        private string? _explicitNullValueFilename = default!;
 #nullable restore
 #else
-        public string Filename { get; set; }
+        public string Filename { get => _explicitNullValueFilename; set { _explicitNullValueFilename = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filename"); else _explicitNullProperties?.Remove("filename"); } }
+        private string _explicitNullValueFilename = default!;
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The in_trash property</summary>
-        public bool? InTrash { get; set; }
+        public bool? InTrash { get => _explicitNullValueInTrash; set { _explicitNullValueInTrash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_trash"); else _explicitNullProperties?.Remove("in_trash"); } }
+        private bool? _explicitNullValueInTrash = default!;
         /// <summary>The last_edited_time property</summary>
-        public DateTimeOffset? LastEditedTime { get; set; }
+        public DateTimeOffset? LastEditedTime { get => _explicitNullValueLastEditedTime; set { _explicitNullValueLastEditedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_time"); else _explicitNullProperties?.Remove("last_edited_time"); } }
+        private DateTimeOffset? _explicitNullValueLastEditedTime = default!;
         /// <summary>The number_of_parts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts? NumberOfParts { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts? NumberOfParts { get => _explicitNullValueNumberOfParts; set { _explicitNullValueNumberOfParts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_parts"); else _explicitNullProperties?.Remove("number_of_parts"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts? _explicitNullValueNumberOfParts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts NumberOfParts { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts NumberOfParts { get => _explicitNullValueNumberOfParts; set { _explicitNullValueNumberOfParts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("number_of_parts"); else _explicitNullProperties?.Remove("number_of_parts"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts _explicitNullValueNumberOfParts = default!;
 #endif
         /// <summary>Always `file_upload`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileUploadObject? _explicitNullValueObject = default!;
         /// <summary>One of: `pending`, `uploaded`, `expired`, `failed`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>The upload_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadUrl { get; set; }
+        public string? UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
+        private string? _explicitNullValueUploadUrl = default!;
 #nullable restore
 #else
-        public string UploadUrl { get; set; }
+        public string UploadUrl { get => _explicitNullValueUploadUrl; set { _explicitNullValueUploadUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_url"); else _explicitNullProperties?.Remove("upload_url"); } }
+        private string _explicitNullValueUploadUrl = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -92,7 +136,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,7 +184,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseNumberOfParts>("number_of_parts", NumberOfParts);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObject>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadObjectResponseStatus>("status", Status);
-            writer.WriteStringValue("upload_url", UploadUrl);
+            writer.WriteStringValue("upload_url", UploadUrl);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

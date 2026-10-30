@@ -11,15 +11,30 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf3Number : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("greater_than") is { } nullNodeGreaterThan && nullNodeGreaterThan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GreaterThan = null;
+            if (parseNode.GetChildNode("greater_than_or_equal_to") is { } nullNodeGreaterThanOrEqualTo && nullNodeGreaterThanOrEqualTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GreaterThanOrEqualTo = null;
+            if (parseNode.GetChildNode("less_than") is { } nullNodeLessThan && nullNodeLessThan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LessThan = null;
+            if (parseNode.GetChildNode("less_than_or_equal_to") is { } nullNodeLessThanOrEqualTo && nullNodeLessThanOrEqualTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LessThanOrEqualTo = null;
+        }
+
         /// <summary>The greater_than property</summary>
-        public double? GreaterThan { get; set; }
+        public double? GreaterThan { get => _explicitNullValueGreaterThan; set { _explicitNullValueGreaterThan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("greater_than"); else _explicitNullProperties?.Remove("greater_than"); } }
+        private double? _explicitNullValueGreaterThan = default!;
         /// <summary>The greater_than_or_equal_to property</summary>
-        public double? GreaterThanOrEqualTo { get; set; }
+        public double? GreaterThanOrEqualTo { get => _explicitNullValueGreaterThanOrEqualTo; set { _explicitNullValueGreaterThanOrEqualTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("greater_than_or_equal_to"); else _explicitNullProperties?.Remove("greater_than_or_equal_to"); } }
+        private double? _explicitNullValueGreaterThanOrEqualTo = default!;
         /// <summary>The less_than property</summary>
-        public double? LessThan { get; set; }
+        public double? LessThan { get => _explicitNullValueLessThan; set { _explicitNullValueLessThan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("less_than"); else _explicitNullProperties?.Remove("less_than"); } }
+        private double? _explicitNullValueLessThan = default!;
         /// <summary>The less_than_or_equal_to property</summary>
-        public double? LessThanOrEqualTo { get; set; }
+        public double? LessThanOrEqualTo { get => _explicitNullValueLessThanOrEqualTo; set { _explicitNullValueLessThanOrEqualTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("less_than_or_equal_to"); else _explicitNullProperties?.Remove("less_than_or_equal_to"); } }
+        private double? _explicitNullValueLessThanOrEqualTo = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -28,7 +43,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf3Number CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf3Number();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf3Number(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +69,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDoubleValue("greater_than", GreaterThan);
             writer.WriteDoubleValue("greater_than_or_equal_to", GreaterThanOrEqualTo);
             writer.WriteDoubleValue("less_than", LessThan);
-            writer.WriteDoubleValue("less_than_or_equal_to", LessThanOrEqualTo);
+            writer.WriteDoubleValue("less_than_or_equal_to", LessThanOrEqualTo);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

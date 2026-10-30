@@ -12,22 +12,35 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PageContentUpdatedWebhookPayloadAllOf2Data : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("parent") is { } nullNodeParent && nullNodeParent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parent = null;
+            if (parseNode.GetChildNode("updated_blocks") is { } nullNodeUpdatedBlocks && nullNodeUpdatedBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedBlocks = null;
+        }
+
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.WebhookParentBlock? Parent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.WebhookParentBlock? Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.WebhookParentBlock? _explicitNullValueParent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.WebhookParentBlock Parent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.WebhookParentBlock Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.WebhookParentBlock _explicitNullValueParent = default!;
 #endif
         /// <summary>The blocks that were updated in this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.WebhookUpdatedBlock>? UpdatedBlocks { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.WebhookUpdatedBlock>? UpdatedBlocks { get => _explicitNullValueUpdatedBlocks; set { _explicitNullValueUpdatedBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_blocks"); else _explicitNullProperties?.Remove("updated_blocks"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.WebhookUpdatedBlock>? _explicitNullValueUpdatedBlocks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.WebhookUpdatedBlock> UpdatedBlocks { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.WebhookUpdatedBlock> UpdatedBlocks { get => _explicitNullValueUpdatedBlocks; set { _explicitNullValueUpdatedBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_blocks"); else _explicitNullProperties?.Remove("updated_blocks"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.WebhookUpdatedBlock> _explicitNullValueUpdatedBlocks = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PageContentUpdatedWebhookPayloadAllOf2Data CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.PageContentUpdatedWebhookPayloadAllOf2Data();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PageContentUpdatedWebhookPayloadAllOf2Data(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WebhookParentBlock>("parent", Parent);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.WebhookUpdatedBlock>("updated_blocks", UpdatedBlocks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.WebhookUpdatedBlock>("updated_blocks", UpdatedBlocks);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

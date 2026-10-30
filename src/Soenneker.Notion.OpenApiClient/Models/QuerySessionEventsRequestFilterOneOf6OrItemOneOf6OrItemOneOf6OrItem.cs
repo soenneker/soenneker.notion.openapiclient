@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItem();
             if("id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1();
+                
             }
             else if("type".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2();
+                
             }
             else if("sequence".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3();
+                
             }
             else if("created_at".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 = new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("property") != null && (parseNode.GetChildNode("property")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("id".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("string") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("property") != null && (parseNode.GetChildNode("property")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("type".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("event_type") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("property") != null && (parseNode.GetChildNode("property")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("sequence".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("number") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("property") != null && (parseNode.GetChildNode("property")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("created_at".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("timestamp") != null))();
+            if (result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1(), parseNode);
+            if (result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2(), parseNode);
+            if (result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3(), parseNode);
+            if (result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4(), parseNode);
+            if (result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null && result.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 != null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null) { if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1); return; }
+            if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 != null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null) { if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2); return; }
+            if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 != null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 == null) { if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3); return; }
+            if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 != null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 == null && QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 == null) { if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 != null)
             {
+                if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1>(null, QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf1);
             }
             else if(QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 != null)
             {
+                if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2>(null, QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf2);
             }
             else if(QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 != null)
             {
+                if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3>(null, QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf3);
             }
             else if(QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 != null)
             {
+                if (QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4>(null, QuerySessionEventsRequestFilterOneOf6OrItemOneOf6OrItemOneOf6OrItemOneOf4);
             }
         }

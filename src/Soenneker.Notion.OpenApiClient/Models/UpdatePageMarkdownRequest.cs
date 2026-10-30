@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdatePageMarkdownRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest();
             if("insert_content".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdatePageMarkdownRequestInsertContent = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent();
+                
             }
             else if("replace_content".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdatePageMarkdownRequestReplaceContent = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent();
+                
             }
             else if("replace_content_range".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdatePageMarkdownRequestReplaceContentRange = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange();
+                
             }
             else if("update_content".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdatePageMarkdownRequestUpdateContent = new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("insert_content".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("insert_content") != null && (parseNode.GetChildNode("markdown_version") == null || (parseNode.GetChildNode("markdown_version")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("v1".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "v2".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("replace_content_range".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("replace_content_range") != null && (parseNode.GetChildNode("markdown_version") == null || (parseNode.GetChildNode("markdown_version")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("v1".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "v2".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("update_content".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("update_content") != null && (parseNode.GetChildNode("markdown_version") == null || (parseNode.GetChildNode("markdown_version")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("v1".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "v2".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("replace_content".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("replace_content") != null && (parseNode.GetChildNode("markdown_version") == null || (parseNode.GetChildNode("markdown_version")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag3 && ("v1".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal) || "v2".Equals(optionalTag3.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.UpdatePageMarkdownRequestInsertContent == null && result.UpdatePageMarkdownRequestReplaceContent == null && result.UpdatePageMarkdownRequestReplaceContentRange == null && result.UpdatePageMarkdownRequestUpdateContent == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.UpdatePageMarkdownRequestInsertContent = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent(), parseNode);
+            if (result.UpdatePageMarkdownRequestInsertContent == null && result.UpdatePageMarkdownRequestReplaceContent == null && result.UpdatePageMarkdownRequestReplaceContentRange == null && result.UpdatePageMarkdownRequestUpdateContent == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.UpdatePageMarkdownRequestReplaceContentRange = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange(), parseNode);
+            if (result.UpdatePageMarkdownRequestInsertContent == null && result.UpdatePageMarkdownRequestReplaceContent == null && result.UpdatePageMarkdownRequestReplaceContentRange == null && result.UpdatePageMarkdownRequestUpdateContent == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.UpdatePageMarkdownRequestUpdateContent = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent(), parseNode);
+            if (result.UpdatePageMarkdownRequestInsertContent == null && result.UpdatePageMarkdownRequestReplaceContent == null && result.UpdatePageMarkdownRequestReplaceContentRange == null && result.UpdatePageMarkdownRequestUpdateContent == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.UpdatePageMarkdownRequestReplaceContent = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent(), parseNode);
+            if (result.UpdatePageMarkdownRequestInsertContent == null && result.UpdatePageMarkdownRequestReplaceContent == null && result.UpdatePageMarkdownRequestReplaceContentRange == null && result.UpdatePageMarkdownRequestUpdateContent == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (UpdatePageMarkdownRequestInsertContent == null && UpdatePageMarkdownRequestReplaceContent == null && UpdatePageMarkdownRequestReplaceContentRange == null && UpdatePageMarkdownRequestUpdateContent == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (UpdatePageMarkdownRequestInsertContent != null && UpdatePageMarkdownRequestReplaceContent == null && UpdatePageMarkdownRequestReplaceContentRange == null && UpdatePageMarkdownRequestUpdateContent == null) { if (UpdatePageMarkdownRequestInsertContent is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdatePageMarkdownRequestInsertContent); return; }
+            if (UpdatePageMarkdownRequestReplaceContent != null && UpdatePageMarkdownRequestInsertContent == null && UpdatePageMarkdownRequestReplaceContentRange == null && UpdatePageMarkdownRequestUpdateContent == null) { if (UpdatePageMarkdownRequestReplaceContent is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdatePageMarkdownRequestReplaceContent); return; }
+            if (UpdatePageMarkdownRequestReplaceContentRange != null && UpdatePageMarkdownRequestInsertContent == null && UpdatePageMarkdownRequestReplaceContent == null && UpdatePageMarkdownRequestUpdateContent == null) { if (UpdatePageMarkdownRequestReplaceContentRange is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdatePageMarkdownRequestReplaceContentRange); return; }
+            if (UpdatePageMarkdownRequestUpdateContent != null && UpdatePageMarkdownRequestInsertContent == null && UpdatePageMarkdownRequestReplaceContent == null && UpdatePageMarkdownRequestReplaceContentRange == null) { if (UpdatePageMarkdownRequestUpdateContent is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdatePageMarkdownRequestUpdateContent); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(UpdatePageMarkdownRequestInsertContent != null)
             {
+                if (UpdatePageMarkdownRequestInsertContent is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestInsertContent>(null, UpdatePageMarkdownRequestInsertContent);
             }
             else if(UpdatePageMarkdownRequestReplaceContent != null)
             {
+                if (UpdatePageMarkdownRequestReplaceContent is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContent>(null, UpdatePageMarkdownRequestReplaceContent);
             }
             else if(UpdatePageMarkdownRequestReplaceContentRange != null)
             {
+                if (UpdatePageMarkdownRequestReplaceContentRange is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestReplaceContentRange>(null, UpdatePageMarkdownRequestReplaceContentRange);
             }
             else if(UpdatePageMarkdownRequestUpdateContent != null)
             {
+                if (UpdatePageMarkdownRequestUpdateContent is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent>(null, UpdatePageMarkdownRequestUpdateContent);
             }
         }

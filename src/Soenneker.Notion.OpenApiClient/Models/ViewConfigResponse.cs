@@ -12,256 +12,398 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ViewConfigResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("anonymous_submissions") is { } nullNodeAnonymousSubmissions && nullNodeAnonymousSubmissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnonymousSubmissions = null;
+            if (parseNode.GetChildNode("arrows_by") is { } nullNodeArrowsBy && nullNodeArrowsBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArrowsBy = null;
+            if (parseNode.GetChildNode("axis_labels") is { } nullNodeAxisLabels && nullNodeAxisLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AxisLabels = null;
+            if (parseNode.GetChildNode("caption") is { } nullNodeCaption && nullNodeCaption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Caption = null;
+            if (parseNode.GetChildNode("card_layout") is { } nullNodeCardLayout && nullNodeCardLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardLayout = null;
+            if (parseNode.GetChildNode("chart_type") is { } nullNodeChartType && nullNodeChartType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChartType = null;
+            if (parseNode.GetChildNode("color_by") is { } nullNodeColorBy && nullNodeColorBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColorBy = null;
+            if (parseNode.GetChildNode("color_by_value") is { } nullNodeColorByValue && nullNodeColorByValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColorByValue = null;
+            if (parseNode.GetChildNode("color_theme") is { } nullNodeColorTheme && nullNodeColorTheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ColorTheme = null;
+            if (parseNode.GetChildNode("cover") is { } nullNodeCover && nullNodeCover.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cover = null;
+            if (parseNode.GetChildNode("cover_aspect") is { } nullNodeCoverAspect && nullNodeCoverAspect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverAspect = null;
+            if (parseNode.GetChildNode("cover_size") is { } nullNodeCoverSize && nullNodeCoverSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CoverSize = null;
+            if (parseNode.GetChildNode("cumulative") is { } nullNodeCumulative && nullNodeCumulative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cumulative = null;
+            if (parseNode.GetChildNode("date_property_id") is { } nullNodeDatePropertyId && nullNodeDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatePropertyId = null;
+            if (parseNode.GetChildNode("date_property_name") is { } nullNodeDatePropertyName && nullNodeDatePropertyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatePropertyName = null;
+            if (parseNode.GetChildNode("donut_labels") is { } nullNodeDonutLabels && nullNodeDonutLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DonutLabels = null;
+            if (parseNode.GetChildNode("end_date_property_id") is { } nullNodeEndDatePropertyId && nullNodeEndDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDatePropertyId = null;
+            if (parseNode.GetChildNode("end_date_property_name") is { } nullNodeEndDatePropertyName && nullNodeEndDatePropertyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDatePropertyName = null;
+            if (parseNode.GetChildNode("frozen_column_index") is { } nullNodeFrozenColumnIndex && nullNodeFrozenColumnIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrozenColumnIndex = null;
+            if (parseNode.GetChildNode("grid_lines") is { } nullNodeGridLines && nullNodeGridLines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GridLines = null;
+            if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("group_style") is { } nullNodeGroupStyle && nullNodeGroupStyle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupStyle = null;
+            if (parseNode.GetChildNode("height") is { } nullNodeHeight && nullNodeHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Height = null;
+            if (parseNode.GetChildNode("hide_empty_groups") is { } nullNodeHideEmptyGroups && nullNodeHideEmptyGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideEmptyGroups = null;
+            if (parseNode.GetChildNode("hide_line_fill_area") is { } nullNodeHideLineFillArea && nullNodeHideLineFillArea.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideLineFillArea = null;
+            if (parseNode.GetChildNode("hide_title") is { } nullNodeHideTitle && nullNodeHideTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideTitle = null;
+            if (parseNode.GetChildNode("is_form_closed") is { } nullNodeIsFormClosed && nullNodeIsFormClosed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFormClosed = null;
+            if (parseNode.GetChildNode("legend_position") is { } nullNodeLegendPosition && nullNodeLegendPosition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegendPosition = null;
+            if (parseNode.GetChildNode("map_by") is { } nullNodeMapBy && nullNodeMapBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MapBy = null;
+            if (parseNode.GetChildNode("map_by_property_name") is { } nullNodeMapByPropertyName && nullNodeMapByPropertyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MapByPropertyName = null;
+            if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("reference_lines") is { } nullNodeReferenceLines && nullNodeReferenceLines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferenceLines = null;
+            if (parseNode.GetChildNode("rows") is { } nullNodeRows && nullNodeRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rows = null;
+            if (parseNode.GetChildNode("show_data_labels") is { } nullNodeShowDataLabels && nullNodeShowDataLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowDataLabels = null;
+            if (parseNode.GetChildNode("show_table") is { } nullNodeShowTable && nullNodeShowTable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowTable = null;
+            if (parseNode.GetChildNode("show_vertical_lines") is { } nullNodeShowVerticalLines && nullNodeShowVerticalLines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowVerticalLines = null;
+            if (parseNode.GetChildNode("show_weekends") is { } nullNodeShowWeekends && nullNodeShowWeekends.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowWeekends = null;
+            if (parseNode.GetChildNode("smooth_line") is { } nullNodeSmoothLine && nullNodeSmoothLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SmoothLine = null;
+            if (parseNode.GetChildNode("sort") is { } nullNodeSort && nullNodeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sort = null;
+            if (parseNode.GetChildNode("stack_by") is { } nullNodeStackBy && nullNodeStackBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StackBy = null;
+            if (parseNode.GetChildNode("sub_group_by") is { } nullNodeSubGroupBy && nullNodeSubGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubGroupBy = null;
+            if (parseNode.GetChildNode("submission_permissions") is { } nullNodeSubmissionPermissions && nullNodeSubmissionPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionPermissions = null;
+            if (parseNode.GetChildNode("subtasks") is { } nullNodeSubtasks && nullNodeSubtasks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtasks = null;
+            if (parseNode.GetChildNode("table_properties") is { } nullNodeTableProperties && nullNodeTableProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableProperties = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("view_range") is { } nullNodeViewRange && nullNodeViewRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewRange = null;
+            if (parseNode.GetChildNode("wrap_cells") is { } nullNodeWrapCells && nullNodeWrapCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrapCells = null;
+            if (parseNode.GetChildNode("x_axis") is { } nullNodeXAxis && nullNodeXAxis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XAxis = null;
+            if (parseNode.GetChildNode("x_axis_property_id") is { } nullNodeXAxisPropertyId && nullNodeXAxisPropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XAxisPropertyId = null;
+            if (parseNode.GetChildNode("y_axis") is { } nullNodeYAxis && nullNodeYAxis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YAxis = null;
+            if (parseNode.GetChildNode("y_axis_max") is { } nullNodeYAxisMax && nullNodeYAxisMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YAxisMax = null;
+            if (parseNode.GetChildNode("y_axis_min") is { } nullNodeYAxisMin && nullNodeYAxisMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YAxisMin = null;
+            if (parseNode.GetChildNode("y_axis_property_id") is { } nullNodeYAxisPropertyId && nullNodeYAxisPropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YAxisPropertyId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether anonymous (non-logged-in) submissions are allowed.</summary>
-        public bool? AnonymousSubmissions { get; set; }
+        public bool? AnonymousSubmissions { get => _explicitNullValueAnonymousSubmissions; set { _explicitNullValueAnonymousSubmissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_submissions"); else _explicitNullProperties?.Remove("anonymous_submissions"); } }
+        private bool? _explicitNullValueAnonymousSubmissions = default!;
         /// <summary>The arrows_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByResponse? ArrowsBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByResponse? ArrowsBy { get => _explicitNullValueArrowsBy; set { _explicitNullValueArrowsBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arrows_by"); else _explicitNullProperties?.Remove("arrows_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByResponse? _explicitNullValueArrowsBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByResponse ArrowsBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByResponse ArrowsBy { get => _explicitNullValueArrowsBy; set { _explicitNullValueArrowsBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("arrows_by"); else _explicitNullProperties?.Remove("arrows_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TimelineArrowsByResponse _explicitNullValueArrowsBy = default!;
 #endif
         /// <summary>Which axis labels to display.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseAxisLabels? AxisLabels { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseAxisLabels? AxisLabels { get => _explicitNullValueAxisLabels; set { _explicitNullValueAxisLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("axis_labels"); else _explicitNullProperties?.Remove("axis_labels"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseAxisLabels? _explicitNullValueAxisLabels = default!;
         /// <summary>Text caption displayed below the chart. Null when no caption is shown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Caption { get; set; }
+        public string? Caption { get => _explicitNullValueCaption; set { _explicitNullValueCaption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caption"); else _explicitNullProperties?.Remove("caption"); } }
+        private string? _explicitNullValueCaption = default!;
 #nullable restore
 #else
-        public string Caption { get; set; }
+        public string Caption { get => _explicitNullValueCaption; set { _explicitNullValueCaption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caption"); else _explicitNullProperties?.Remove("caption"); } }
+        private string _explicitNullValueCaption = default!;
 #endif
         /// <summary>Card layout mode (list shows all properties, compact shows inline).</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCardLayout? CardLayout { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCardLayout? CardLayout { get => _explicitNullValueCardLayout; set { _explicitNullValueCardLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_layout"); else _explicitNullProperties?.Remove("card_layout"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCardLayout? _explicitNullValueCardLayout = default!;
         /// <summary>The chart type: column (vertical bars), bar (horizontal bars), line, donut, or number (single value display).</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseChartType? ChartType { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseChartType? ChartType { get => _explicitNullValueChartType; set { _explicitNullValueChartType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chart_type"); else _explicitNullProperties?.Remove("chart_type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseChartType? _explicitNullValueChartType = default!;
         /// <summary>Whether to color-code items by property.</summary>
-        public bool? ColorBy { get; set; }
+        public bool? ColorBy { get => _explicitNullValueColorBy; set { _explicitNullValueColorBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_by"); else _explicitNullProperties?.Remove("color_by"); } }
+        private bool? _explicitNullValueColorBy = default!;
         /// <summary>Whether chart elements are colored by their numeric value (gradient coloring).</summary>
-        public bool? ColorByValue { get; set; }
+        public bool? ColorByValue { get => _explicitNullValueColorByValue; set { _explicitNullValueColorByValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_by_value"); else _explicitNullProperties?.Remove("color_by_value"); } }
+        private bool? _explicitNullValueColorByValue = default!;
         /// <summary>Color theme for the chart.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseColorTheme? ColorTheme { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseColorTheme? ColorTheme { get => _explicitNullValueColorTheme; set { _explicitNullValueColorTheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color_theme"); else _explicitNullProperties?.Remove("color_theme"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseColorTheme? _explicitNullValueColorTheme = default!;
         /// <summary>The cover property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigResponse? Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigResponse? Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CoverConfigResponse? _explicitNullValueCover = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigResponse Cover { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CoverConfigResponse Cover { get => _explicitNullValueCover; set { _explicitNullValueCover = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover"); else _explicitNullProperties?.Remove("cover"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CoverConfigResponse _explicitNullValueCover = default!;
 #endif
         /// <summary>Cover image aspect ratio.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCoverAspect? CoverAspect { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCoverAspect? CoverAspect { get => _explicitNullValueCoverAspect; set { _explicitNullValueCoverAspect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover_aspect"); else _explicitNullProperties?.Remove("cover_aspect"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCoverAspect? _explicitNullValueCoverAspect = default!;
         /// <summary>Cover image size.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCoverSize? CoverSize { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCoverSize? CoverSize { get => _explicitNullValueCoverSize; set { _explicitNullValueCoverSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cover_size"); else _explicitNullProperties?.Remove("cover_size"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigResponseCoverSize? _explicitNullValueCoverSize = default!;
         /// <summary>Whether to show cumulative values (line charts only).</summary>
-        public bool? Cumulative { get; set; }
+        public bool? Cumulative { get => _explicitNullValueCumulative; set { _explicitNullValueCumulative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cumulative"); else _explicitNullProperties?.Remove("cumulative"); } }
+        private bool? _explicitNullValueCumulative = default!;
         /// <summary>Date property used to position items on the calendar - required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatePropertyId { get; set; }
+        public string? DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
+        private string? _explicitNullValueDatePropertyId = default!;
 #nullable restore
 #else
-        public string DatePropertyId { get; set; }
+        public string DatePropertyId { get => _explicitNullValueDatePropertyId; set { _explicitNullValueDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_id"); else _explicitNullProperties?.Remove("date_property_id"); } }
+        private string _explicitNullValueDatePropertyId = default!;
 #endif
         /// <summary>Date property name (convenience field).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatePropertyName { get; set; }
+        public string? DatePropertyName { get => _explicitNullValueDatePropertyName; set { _explicitNullValueDatePropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_name"); else _explicitNullProperties?.Remove("date_property_name"); } }
+        private string? _explicitNullValueDatePropertyName = default!;
 #nullable restore
 #else
-        public string DatePropertyName { get; set; }
+        public string DatePropertyName { get => _explicitNullValueDatePropertyName; set { _explicitNullValueDatePropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_property_name"); else _explicitNullProperties?.Remove("date_property_name"); } }
+        private string _explicitNullValueDatePropertyName = default!;
 #endif
         /// <summary>What to display on donut chart slices.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseDonutLabels? DonutLabels { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseDonutLabels? DonutLabels { get => _explicitNullValueDonutLabels; set { _explicitNullValueDonutLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("donut_labels"); else _explicitNullProperties?.Remove("donut_labels"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseDonutLabels? _explicitNullValueDonutLabels = default!;
         /// <summary>End date property (optional, for items that span a range).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndDatePropertyId { get; set; }
+        public string? EndDatePropertyId { get => _explicitNullValueEndDatePropertyId; set { _explicitNullValueEndDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_id"); else _explicitNullProperties?.Remove("end_date_property_id"); } }
+        private string? _explicitNullValueEndDatePropertyId = default!;
 #nullable restore
 #else
-        public string EndDatePropertyId { get; set; }
+        public string EndDatePropertyId { get => _explicitNullValueEndDatePropertyId; set { _explicitNullValueEndDatePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_id"); else _explicitNullProperties?.Remove("end_date_property_id"); } }
+        private string _explicitNullValueEndDatePropertyId = default!;
 #endif
         /// <summary>End date property name (convenience field).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndDatePropertyName { get; set; }
+        public string? EndDatePropertyName { get => _explicitNullValueEndDatePropertyName; set { _explicitNullValueEndDatePropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_name"); else _explicitNullProperties?.Remove("end_date_property_name"); } }
+        private string? _explicitNullValueEndDatePropertyName = default!;
 #nullable restore
 #else
-        public string EndDatePropertyName { get; set; }
+        public string EndDatePropertyName { get => _explicitNullValueEndDatePropertyName; set { _explicitNullValueEndDatePropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_name"); else _explicitNullProperties?.Remove("end_date_property_name"); } }
+        private string _explicitNullValueEndDatePropertyName = default!;
 #endif
         /// <summary>Index of the last frozen column. Columns up to and including this index are frozen.</summary>
-        public int? FrozenColumnIndex { get; set; }
+        public int? FrozenColumnIndex { get => _explicitNullValueFrozenColumnIndex; set { _explicitNullValueFrozenColumnIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frozen_column_index"); else _explicitNullProperties?.Remove("frozen_column_index"); } }
+        private int? _explicitNullValueFrozenColumnIndex = default!;
         /// <summary>Which grid lines to display.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseGridLines? GridLines { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseGridLines? GridLines { get => _explicitNullValueGridLines; set { _explicitNullValueGridLines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grid_lines"); else _explicitNullProperties?.Remove("grid_lines"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseGridLines? _explicitNullValueGridLines = default!;
         /// <summary>Group-by configuration based on property type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>How grouped/stacked bars are displayed. &quot;normal&quot; stacks values, &quot;percent&quot; normalizes to 100%, &quot;side_by_side&quot; places bars next to each other.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseGroupStyle? GroupStyle { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseGroupStyle? GroupStyle { get => _explicitNullValueGroupStyle; set { _explicitNullValueGroupStyle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_style"); else _explicitNullProperties?.Remove("group_style"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseGroupStyle? _explicitNullValueGroupStyle = default!;
         /// <summary>Map display height.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigResponseHeight? Height { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigResponseHeight? Height { get => _explicitNullValueHeight; set { _explicitNullValueHeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("height"); else _explicitNullProperties?.Remove("height"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigResponseHeight? _explicitNullValueHeight = default!;
         /// <summary>Whether to hide groups with no data on the x-axis.</summary>
-        public bool? HideEmptyGroups { get; set; }
+        public bool? HideEmptyGroups { get => _explicitNullValueHideEmptyGroups; set { _explicitNullValueHideEmptyGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide_empty_groups"); else _explicitNullProperties?.Remove("hide_empty_groups"); } }
+        private bool? _explicitNullValueHideEmptyGroups = default!;
         /// <summary>Whether to hide the shaded area under the line (line charts only).</summary>
-        public bool? HideLineFillArea { get; set; }
+        public bool? HideLineFillArea { get => _explicitNullValueHideLineFillArea; set { _explicitNullValueHideLineFillArea = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide_line_fill_area"); else _explicitNullProperties?.Remove("hide_line_fill_area"); } }
+        private bool? _explicitNullValueHideLineFillArea = default!;
         /// <summary>Whether to hide the title label (number charts only).</summary>
-        public bool? HideTitle { get; set; }
+        public bool? HideTitle { get => _explicitNullValueHideTitle; set { _explicitNullValueHideTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hide_title"); else _explicitNullProperties?.Remove("hide_title"); } }
+        private bool? _explicitNullValueHideTitle = default!;
         /// <summary>Whether the form is closed for submissions.</summary>
-        public bool? IsFormClosed { get; set; }
+        public bool? IsFormClosed { get => _explicitNullValueIsFormClosed; set { _explicitNullValueIsFormClosed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_form_closed"); else _explicitNullProperties?.Remove("is_form_closed"); } }
+        private bool? _explicitNullValueIsFormClosed = default!;
         /// <summary>Legend display position. &quot;off&quot; hides the legend.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseLegendPosition? LegendPosition { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseLegendPosition? LegendPosition { get => _explicitNullValueLegendPosition; set { _explicitNullValueLegendPosition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legend_position"); else _explicitNullProperties?.Remove("legend_position"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseLegendPosition? _explicitNullValueLegendPosition = default!;
         /// <summary>Property ID of the location property used to position items on the map.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MapBy { get; set; }
+        public string? MapBy { get => _explicitNullValueMapBy; set { _explicitNullValueMapBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_by"); else _explicitNullProperties?.Remove("map_by"); } }
+        private string? _explicitNullValueMapBy = default!;
 #nullable restore
 #else
-        public string MapBy { get; set; }
+        public string MapBy { get => _explicitNullValueMapBy; set { _explicitNullValueMapBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_by"); else _explicitNullProperties?.Remove("map_by"); } }
+        private string _explicitNullValueMapBy = default!;
 #endif
         /// <summary>Map-by property name (convenience field).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MapByPropertyName { get; set; }
+        public string? MapByPropertyName { get => _explicitNullValueMapByPropertyName; set { _explicitNullValueMapByPropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_by_property_name"); else _explicitNullProperties?.Remove("map_by_property_name"); } }
+        private string? _explicitNullValueMapByPropertyName = default!;
 #nullable restore
 #else
-        public string MapByPropertyName { get; set; }
+        public string MapByPropertyName { get => _explicitNullValueMapByPropertyName; set { _explicitNullValueMapByPropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("map_by_property_name"); else _explicitNullProperties?.Remove("map_by_property_name"); } }
+        private string _explicitNullValueMapByPropertyName = default!;
 #endif
         /// <summary>The preference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse? Preference { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse? Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse? _explicitNullValuePreference = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse Preference { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse Preference { get => _explicitNullValuePreference; set { _explicitNullValuePreference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preference"); else _explicitNullProperties?.Remove("preference"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse _explicitNullValuePreference = default!;
 #endif
         /// <summary>Columns/properties visible in the table view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse> Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse> _explicitNullValueProperties = default!;
 #endif
         /// <summary>Reference lines drawn on the chart. Null when no reference lines are configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse>? ReferenceLines { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse>? ReferenceLines { get => _explicitNullValueReferenceLines; set { _explicitNullValueReferenceLines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_lines"); else _explicitNullProperties?.Remove("reference_lines"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse>? _explicitNullValueReferenceLines = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse> ReferenceLines { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse> ReferenceLines { get => _explicitNullValueReferenceLines; set { _explicitNullValueReferenceLines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference_lines"); else _explicitNullProperties?.Remove("reference_lines"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineResponse> _explicitNullValueReferenceLines = default!;
 #endif
         /// <summary>The rows that make up the dashboard layout. Each row contains one or more widget modules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse>? Rows { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse>? Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse>? _explicitNullValueRows = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse> Rows { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse> Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.DashboardRowResponse> _explicitNullValueRows = default!;
 #endif
         /// <summary>Whether to show data value labels on chart elements.</summary>
-        public bool? ShowDataLabels { get; set; }
+        public bool? ShowDataLabels { get => _explicitNullValueShowDataLabels; set { _explicitNullValueShowDataLabels = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_data_labels"); else _explicitNullProperties?.Remove("show_data_labels"); } }
+        private bool? _explicitNullValueShowDataLabels = default!;
         /// <summary>Whether to show the table panel alongside the timeline.</summary>
-        public bool? ShowTable { get; set; }
+        public bool? ShowTable { get => _explicitNullValueShowTable; set { _explicitNullValueShowTable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_table"); else _explicitNullProperties?.Remove("show_table"); } }
+        private bool? _explicitNullValueShowTable = default!;
         /// <summary>Whether to show vertical lines between columns.</summary>
-        public bool? ShowVerticalLines { get; set; }
+        public bool? ShowVerticalLines { get => _explicitNullValueShowVerticalLines; set { _explicitNullValueShowVerticalLines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_vertical_lines"); else _explicitNullProperties?.Remove("show_vertical_lines"); } }
+        private bool? _explicitNullValueShowVerticalLines = default!;
         /// <summary>Whether to show weekend days.</summary>
-        public bool? ShowWeekends { get; set; }
+        public bool? ShowWeekends { get => _explicitNullValueShowWeekends; set { _explicitNullValueShowWeekends = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_weekends"); else _explicitNullProperties?.Remove("show_weekends"); } }
+        private bool? _explicitNullValueShowWeekends = default!;
         /// <summary>Whether to use smooth curves (line charts only).</summary>
-        public bool? SmoothLine { get; set; }
+        public bool? SmoothLine { get => _explicitNullValueSmoothLine; set { _explicitNullValueSmoothLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smooth_line"); else _explicitNullProperties?.Remove("smooth_line"); } }
+        private bool? _explicitNullValueSmoothLine = default!;
         /// <summary>Sort order for chart data.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseSort? Sort { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseSort? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigResponseSort? _explicitNullValueSort = default!;
         /// <summary>Stack-by grouping configuration for stacked/grouped bar charts (column/bar/line only). Null when not stacked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? StackBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? StackBy { get => _explicitNullValueStackBy; set { _explicitNullValueStackBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stack_by"); else _explicitNullProperties?.Remove("stack_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? _explicitNullValueStackBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse StackBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse StackBy { get => _explicitNullValueStackBy; set { _explicitNullValueStackBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stack_by"); else _explicitNullProperties?.Remove("stack_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse _explicitNullValueStackBy = default!;
 #endif
         /// <summary>Group-by configuration based on property type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? SubGroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? SubGroupBy { get => _explicitNullValueSubGroupBy; set { _explicitNullValueSubGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_group_by"); else _explicitNullProperties?.Remove("sub_group_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? _explicitNullValueSubGroupBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse SubGroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse SubGroupBy { get => _explicitNullValueSubGroupBy; set { _explicitNullValueSubGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_group_by"); else _explicitNullProperties?.Remove("sub_group_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse _explicitNullValueSubGroupBy = default!;
 #endif
         /// <summary>Permission level granted to the submitter on the created page after form submission.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions? SubmissionPermissions { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions? SubmissionPermissions { get => _explicitNullValueSubmissionPermissions; set { _explicitNullValueSubmissionPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_permissions"); else _explicitNullProperties?.Remove("submission_permissions"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions? _explicitNullValueSubmissionPermissions = default!;
         /// <summary>The subtasks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse? Subtasks { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse? Subtasks { get => _explicitNullValueSubtasks; set { _explicitNullValueSubtasks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtasks"); else _explicitNullProperties?.Remove("subtasks"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse? _explicitNullValueSubtasks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse Subtasks { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse Subtasks { get => _explicitNullValueSubtasks; set { _explicitNullValueSubtasks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtasks"); else _explicitNullProperties?.Remove("subtasks"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse _explicitNullValueSubtasks = default!;
 #endif
         /// <summary>Properties to display in the table panel (when show_table is true).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>? TableProperties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>? TableProperties { get => _explicitNullValueTableProperties; set { _explicitNullValueTableProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_properties"); else _explicitNullProperties?.Remove("table_properties"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>? _explicitNullValueTableProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse> TableProperties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse> TableProperties { get => _explicitNullValueTableProperties; set { _explicitNullValueTableProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_properties"); else _explicitNullProperties?.Remove("table_properties"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse> _explicitNullValueTableProperties = default!;
 #endif
         /// <summary>The view configuration type.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigResponseType? Type { get; set; }
+#nullable enable
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
+#nullable restore
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse? Value { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse Value { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse _explicitNullValueValue = default!;
 #endif
         /// <summary>Calendar view range.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange? ViewRange { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange? ViewRange { get => _explicitNullValueViewRange; set { _explicitNullValueViewRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_range"); else _explicitNullProperties?.Remove("view_range"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange? _explicitNullValueViewRange = default!;
         /// <summary>Whether to wrap cell content by default.</summary>
-        public bool? WrapCells { get; set; }
+        public bool? WrapCells { get => _explicitNullValueWrapCells; set { _explicitNullValueWrapCells = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrap_cells"); else _explicitNullProperties?.Remove("wrap_cells"); } }
+        private bool? _explicitNullValueWrapCells = default!;
         /// <summary>X-axis grouping configuration for column/bar/line/donut charts using grouped data. Null when using results (raw property values) mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? XAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? XAxis { get => _explicitNullValueXAxis; set { _explicitNullValueXAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_axis"); else _explicitNullProperties?.Remove("x_axis"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? _explicitNullValueXAxis = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse XAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse XAxis { get => _explicitNullValueXAxis; set { _explicitNullValueXAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_axis"); else _explicitNullProperties?.Remove("x_axis"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse _explicitNullValueXAxis = default!;
 #endif
         /// <summary>Property ID for the x-axis name values when using results (raw property values) mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XAxisPropertyId { get; set; }
+        public string? XAxisPropertyId { get => _explicitNullValueXAxisPropertyId; set { _explicitNullValueXAxisPropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_axis_property_id"); else _explicitNullProperties?.Remove("x_axis_property_id"); } }
+        private string? _explicitNullValueXAxisPropertyId = default!;
 #nullable restore
 #else
-        public string XAxisPropertyId { get; set; }
+        public string XAxisPropertyId { get => _explicitNullValueXAxisPropertyId; set { _explicitNullValueXAxisPropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_axis_property_id"); else _explicitNullProperties?.Remove("x_axis_property_id"); } }
+        private string _explicitNullValueXAxisPropertyId = default!;
 #endif
         /// <summary>Y-axis aggregation for column/bar/line/donut charts using grouped data. Null when using results mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse? YAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse? YAxis { get => _explicitNullValueYAxis; set { _explicitNullValueYAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y_axis"); else _explicitNullProperties?.Remove("y_axis"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse? _explicitNullValueYAxis = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse YAxis { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse YAxis { get => _explicitNullValueYAxis; set { _explicitNullValueYAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y_axis"); else _explicitNullProperties?.Remove("y_axis"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse _explicitNullValueYAxis = default!;
 #endif
         /// <summary>Custom maximum value for the y-axis. Null clears the override.</summary>
-        public double? YAxisMax { get; set; }
+        public double? YAxisMax { get => _explicitNullValueYAxisMax; set { _explicitNullValueYAxisMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y_axis_max"); else _explicitNullProperties?.Remove("y_axis_max"); } }
+        private double? _explicitNullValueYAxisMax = default!;
         /// <summary>Custom minimum value for the y-axis. Null clears the override.</summary>
-        public double? YAxisMin { get; set; }
+        public double? YAxisMin { get => _explicitNullValueYAxisMin; set { _explicitNullValueYAxisMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y_axis_min"); else _explicitNullProperties?.Remove("y_axis_min"); } }
+        private double? _explicitNullValueYAxisMin = default!;
         /// <summary>Property ID for the y-axis numeric values when using results (raw property values) mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YAxisPropertyId { get; set; }
+        public string? YAxisPropertyId { get => _explicitNullValueYAxisPropertyId; set { _explicitNullValueYAxisPropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y_axis_property_id"); else _explicitNullProperties?.Remove("y_axis_property_id"); } }
+        private string? _explicitNullValueYAxisPropertyId = default!;
 #nullable restore
 #else
-        public string YAxisPropertyId { get; set; }
+        public string YAxisPropertyId { get => _explicitNullValueYAxisPropertyId; set { _explicitNullValueYAxisPropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("y_axis_property_id"); else _explicitNullProperties?.Remove("y_axis_property_id"); } }
+        private string _explicitNullValueYAxisPropertyId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse"/> and sets the default values.
@@ -278,7 +420,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -333,7 +475,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "submission_permissions", n => { SubmissionPermissions = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions>(); } },
                 { "subtasks", n => { Subtasks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse.CreateFromDiscriminatorValue); } },
                 { "table_properties", n => { TableProperties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigResponseType>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse>(global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse.CreateFromDiscriminatorValue); } },
                 { "view_range", n => { ViewRange = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange>(); } },
                 { "wrap_cells", n => { WrapCells = n.GetBoolValue(); } },
@@ -397,7 +539,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigResponseSubmissionPermissions>("submission_permissions", SubmissionPermissions);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigResponse>("subtasks", Subtasks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>("table_properties", TableProperties);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigResponseType>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartAggregationResponse>("value", Value);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigResponseViewRange>("view_range", ViewRange);
             writer.WriteBoolValue("wrap_cells", WrapCells);
@@ -407,6 +549,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDoubleValue("y_axis_max", YAxisMax);
             writer.WriteDoubleValue("y_axis_min", YAxisMin);
             writer.WriteStringValue("y_axis_property_id", YAxisPropertyId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

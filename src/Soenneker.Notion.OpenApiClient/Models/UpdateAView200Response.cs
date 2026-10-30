@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateAView200Response : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +46,20 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.UpdateAView200Response();
             if("DataSourceViewObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DataSourceViewObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse();
+                
             }
             else if("PartialDataSourceViewObjectResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PartialDataSourceViewObjectResponse = new global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponse();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("object") != null && (parseNode.GetChildNode("object")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("view".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("parent") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag5 && ("table".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "board".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "list".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "calendar".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "timeline".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "gallery".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "form".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "chart".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "map".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal) || "dashboard".Equals(tag5.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("object") != null && (parseNode.GetChildNode("object")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("view".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("parent") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag6 && ("table".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "board".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "list".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "calendar".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "timeline".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "gallery".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "form".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "chart".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "map".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal) || "dashboard".Equals(tag6.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("created_time") != null && parseNode.GetChildNode("last_edited_time") != null && parseNode.GetChildNode("url") != null))();
+            if (result.DataSourceViewObjectResponse == null && result.PartialDataSourceViewObjectResponse == null && matchesUnionBranch0 && !matchesUnionBranch1) result.PartialDataSourceViewObjectResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponse(), parseNode);
+            if (result.DataSourceViewObjectResponse == null && result.PartialDataSourceViewObjectResponse == null && matchesUnionBranch1 && !matchesUnionBranch0) result.DataSourceViewObjectResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse(), parseNode);
+            if (result.DataSourceViewObjectResponse == null && result.PartialDataSourceViewObjectResponse == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,13 +83,20 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (DataSourceViewObjectResponse == null && PartialDataSourceViewObjectResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (DataSourceViewObjectResponse != null && PartialDataSourceViewObjectResponse == null) { if (DataSourceViewObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DataSourceViewObjectResponse); return; }
+            if (PartialDataSourceViewObjectResponse != null && DataSourceViewObjectResponse == null) { if (PartialDataSourceViewObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PartialDataSourceViewObjectResponse); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(DataSourceViewObjectResponse != null)
             {
+                if (DataSourceViewObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse>(null, DataSourceViewObjectResponse);
             }
             else if(PartialDataSourceViewObjectResponse != null)
             {
+                if (PartialDataSourceViewObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialDataSourceViewObjectResponse>(null, PartialDataSourceViewObjectResponse);
             }
         }

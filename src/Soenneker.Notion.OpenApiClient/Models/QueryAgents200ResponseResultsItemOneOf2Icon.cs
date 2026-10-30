@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueryAgents200ResponseResultsItemOneOf2Icon : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,29 +78,44 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2Icon();
             if("custom_emoji".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CustomEmojiPageIconResponse = new global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconResponse();
+                
             }
             else if("emoji".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EmojiPageIconResponse = new global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconResponse();
+                
             }
             else if("external".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExternalPageIconResponse = new global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconResponse();
+                
             }
             else if("file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FilePageIconResponse = new global::Soenneker.Notion.OpenApiClient.Models.FilePageIconResponse();
+                
             }
             else if("icon".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IconPageIconResponse = new global::Soenneker.Notion.OpenApiClient.Models.IconPageIconResponse();
+                
             }
             else if("custom_agent_avatar".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar = new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("emoji".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("emoji") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("file".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("file") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("external".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("external") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("custom_emoji".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("custom_emoji") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("icon".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("icon") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("custom_agent_avatar".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("custom_agent_avatar") != null))();
+            if (result.CustomEmojiPageIconResponse == null && result.EmojiPageIconResponse == null && result.ExternalPageIconResponse == null && result.FilePageIconResponse == null && result.IconPageIconResponse == null && result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.EmojiPageIconResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconResponse(), parseNode);
+            if (result.CustomEmojiPageIconResponse == null && result.EmojiPageIconResponse == null && result.ExternalPageIconResponse == null && result.FilePageIconResponse == null && result.IconPageIconResponse == null && result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.FilePageIconResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FilePageIconResponse(), parseNode);
+            if (result.CustomEmojiPageIconResponse == null && result.EmojiPageIconResponse == null && result.ExternalPageIconResponse == null && result.FilePageIconResponse == null && result.IconPageIconResponse == null && result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.ExternalPageIconResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconResponse(), parseNode);
+            if (result.CustomEmojiPageIconResponse == null && result.EmojiPageIconResponse == null && result.ExternalPageIconResponse == null && result.FilePageIconResponse == null && result.IconPageIconResponse == null && result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5) result.CustomEmojiPageIconResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconResponse(), parseNode);
+            if (result.CustomEmojiPageIconResponse == null && result.EmojiPageIconResponse == null && result.ExternalPageIconResponse == null && result.FilePageIconResponse == null && result.IconPageIconResponse == null && result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5) result.IconPageIconResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.IconPageIconResponse(), parseNode);
+            if (result.CustomEmojiPageIconResponse == null && result.EmojiPageIconResponse == null && result.ExternalPageIconResponse == null && result.FilePageIconResponse == null && result.IconPageIconResponse == null && result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar(), parseNode);
+            if (result.CustomEmojiPageIconResponse == null && result.EmojiPageIconResponse == null && result.ExternalPageIconResponse == null && result.FilePageIconResponse == null && result.IconPageIconResponse == null && result.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -135,29 +155,44 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CustomEmojiPageIconResponse == null && EmojiPageIconResponse == null && ExternalPageIconResponse == null && FilePageIconResponse == null && IconPageIconResponse == null && QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CustomEmojiPageIconResponse != null && EmojiPageIconResponse == null && ExternalPageIconResponse == null && FilePageIconResponse == null && IconPageIconResponse == null && QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null) { if (CustomEmojiPageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CustomEmojiPageIconResponse); return; }
+            if (EmojiPageIconResponse != null && CustomEmojiPageIconResponse == null && ExternalPageIconResponse == null && FilePageIconResponse == null && IconPageIconResponse == null && QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null) { if (EmojiPageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EmojiPageIconResponse); return; }
+            if (ExternalPageIconResponse != null && CustomEmojiPageIconResponse == null && EmojiPageIconResponse == null && FilePageIconResponse == null && IconPageIconResponse == null && QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null) { if (ExternalPageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ExternalPageIconResponse); return; }
+            if (FilePageIconResponse != null && CustomEmojiPageIconResponse == null && EmojiPageIconResponse == null && ExternalPageIconResponse == null && IconPageIconResponse == null && QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null) { if (FilePageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FilePageIconResponse); return; }
+            if (IconPageIconResponse != null && CustomEmojiPageIconResponse == null && EmojiPageIconResponse == null && ExternalPageIconResponse == null && FilePageIconResponse == null && QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar == null) { if (IconPageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, IconPageIconResponse); return; }
+            if (QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar != null && CustomEmojiPageIconResponse == null && EmojiPageIconResponse == null && ExternalPageIconResponse == null && FilePageIconResponse == null && IconPageIconResponse == null) { if (QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(CustomEmojiPageIconResponse != null)
             {
+                if (CustomEmojiPageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CustomEmojiPageIconResponse>(null, CustomEmojiPageIconResponse);
             }
             else if(EmojiPageIconResponse != null)
             {
+                if (EmojiPageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmojiPageIconResponse>(null, EmojiPageIconResponse);
             }
             else if(ExternalPageIconResponse != null)
             {
+                if (ExternalPageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageIconResponse>(null, ExternalPageIconResponse);
             }
             else if(FilePageIconResponse != null)
             {
+                if (FilePageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FilePageIconResponse>(null, FilePageIconResponse);
             }
             else if(IconPageIconResponse != null)
             {
+                if (IconPageIconResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.IconPageIconResponse>(null, IconPageIconResponse);
             }
             else if(QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar != null)
             {
+                if (QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar>(null, QueryAgents200ResponseResultsItemOneOf2IconCustomAgentAvatar);
             }
         }

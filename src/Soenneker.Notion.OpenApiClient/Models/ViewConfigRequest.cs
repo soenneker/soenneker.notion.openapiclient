@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ViewConfigRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,41 +102,62 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewConfigRequest();
             if("board".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BoardViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest();
+                
             }
             else if("calendar".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CalendarViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequest();
+                
             }
             else if("chart".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ChartViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest();
+                
             }
             else if("form".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FormViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest();
+                
             }
             else if("gallery".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GalleryViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest();
+                
             }
             else if("list".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest();
+                
             }
             else if("map".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MapViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest();
+                
             }
             else if("table".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TableViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest();
+                
             }
             else if("timeline".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TimelineViewConfigRequest = new global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("table".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("board".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("group_by") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("calendar".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("date_property_id") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("timeline".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("date_property_id") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("gallery".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("list".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("map".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("form".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("chart".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("chart_type") != null && (parseNode.GetChildNode("chart_type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("column".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "bar".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "line".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "donut".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "number".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.TableViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.BoardViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.CalendarViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.TimelineViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.GalleryViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.ListViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8) result.MapViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8) result.FormViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.ChartViewConfigRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest(), parseNode);
+            if (result.BoardViewConfigRequest == null && result.CalendarViewConfigRequest == null && result.ChartViewConfigRequest == null && result.FormViewConfigRequest == null && result.GalleryViewConfigRequest == null && result.ListViewConfigRequest == null && result.MapViewConfigRequest == null && result.TableViewConfigRequest == null && result.TimelineViewConfigRequest == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,41 +209,62 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (BoardViewConfigRequest == null && CalendarViewConfigRequest == null && ChartViewConfigRequest == null && FormViewConfigRequest == null && GalleryViewConfigRequest == null && ListViewConfigRequest == null && MapViewConfigRequest == null && TableViewConfigRequest == null && TimelineViewConfigRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (BoardViewConfigRequest != null && CalendarViewConfigRequest == null && ChartViewConfigRequest == null && FormViewConfigRequest == null && GalleryViewConfigRequest == null && ListViewConfigRequest == null && MapViewConfigRequest == null && TableViewConfigRequest == null && TimelineViewConfigRequest == null) { if (BoardViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BoardViewConfigRequest); return; }
+            if (CalendarViewConfigRequest != null && BoardViewConfigRequest == null && ChartViewConfigRequest == null && FormViewConfigRequest == null && GalleryViewConfigRequest == null && ListViewConfigRequest == null && MapViewConfigRequest == null && TableViewConfigRequest == null && TimelineViewConfigRequest == null) { if (CalendarViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CalendarViewConfigRequest); return; }
+            if (ChartViewConfigRequest != null && BoardViewConfigRequest == null && CalendarViewConfigRequest == null && FormViewConfigRequest == null && GalleryViewConfigRequest == null && ListViewConfigRequest == null && MapViewConfigRequest == null && TableViewConfigRequest == null && TimelineViewConfigRequest == null) { if (ChartViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ChartViewConfigRequest); return; }
+            if (FormViewConfigRequest != null && BoardViewConfigRequest == null && CalendarViewConfigRequest == null && ChartViewConfigRequest == null && GalleryViewConfigRequest == null && ListViewConfigRequest == null && MapViewConfigRequest == null && TableViewConfigRequest == null && TimelineViewConfigRequest == null) { if (FormViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FormViewConfigRequest); return; }
+            if (GalleryViewConfigRequest != null && BoardViewConfigRequest == null && CalendarViewConfigRequest == null && ChartViewConfigRequest == null && FormViewConfigRequest == null && ListViewConfigRequest == null && MapViewConfigRequest == null && TableViewConfigRequest == null && TimelineViewConfigRequest == null) { if (GalleryViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GalleryViewConfigRequest); return; }
+            if (ListViewConfigRequest != null && BoardViewConfigRequest == null && CalendarViewConfigRequest == null && ChartViewConfigRequest == null && FormViewConfigRequest == null && GalleryViewConfigRequest == null && MapViewConfigRequest == null && TableViewConfigRequest == null && TimelineViewConfigRequest == null) { if (ListViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListViewConfigRequest); return; }
+            if (MapViewConfigRequest != null && BoardViewConfigRequest == null && CalendarViewConfigRequest == null && ChartViewConfigRequest == null && FormViewConfigRequest == null && GalleryViewConfigRequest == null && ListViewConfigRequest == null && TableViewConfigRequest == null && TimelineViewConfigRequest == null) { if (MapViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MapViewConfigRequest); return; }
+            if (TableViewConfigRequest != null && BoardViewConfigRequest == null && CalendarViewConfigRequest == null && ChartViewConfigRequest == null && FormViewConfigRequest == null && GalleryViewConfigRequest == null && ListViewConfigRequest == null && MapViewConfigRequest == null && TimelineViewConfigRequest == null) { if (TableViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TableViewConfigRequest); return; }
+            if (TimelineViewConfigRequest != null && BoardViewConfigRequest == null && CalendarViewConfigRequest == null && ChartViewConfigRequest == null && FormViewConfigRequest == null && GalleryViewConfigRequest == null && ListViewConfigRequest == null && MapViewConfigRequest == null && TableViewConfigRequest == null) { if (TimelineViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TimelineViewConfigRequest); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(BoardViewConfigRequest != null)
             {
+                if (BoardViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BoardViewConfigRequest>(null, BoardViewConfigRequest);
             }
             else if(CalendarViewConfigRequest != null)
             {
+                if (CalendarViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CalendarViewConfigRequest>(null, CalendarViewConfigRequest);
             }
             else if(ChartViewConfigRequest != null)
             {
+                if (ChartViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ChartViewConfigRequest>(null, ChartViewConfigRequest);
             }
             else if(FormViewConfigRequest != null)
             {
+                if (FormViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest>(null, FormViewConfigRequest);
             }
             else if(GalleryViewConfigRequest != null)
             {
+                if (GalleryViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GalleryViewConfigRequest>(null, GalleryViewConfigRequest);
             }
             else if(ListViewConfigRequest != null)
             {
+                if (ListViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ListViewConfigRequest>(null, ListViewConfigRequest);
             }
             else if(MapViewConfigRequest != null)
             {
+                if (MapViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MapViewConfigRequest>(null, MapViewConfigRequest);
             }
             else if(TableViewConfigRequest != null)
             {
+                if (TableViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest>(null, TableViewConfigRequest);
             }
             else if(TimelineViewConfigRequest != null)
             {
+                if (TimelineViewConfigRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelineViewConfigRequest>(null, TimelineViewConfigRequest);
             }
         }

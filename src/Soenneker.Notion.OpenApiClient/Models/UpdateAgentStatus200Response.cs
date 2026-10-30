@@ -11,21 +11,37 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateAgentStatus200Response : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("last_edited_time") is { } nullNodeLastEditedTime && nullNodeLastEditedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEditedTime = null;
+            if (parseNode.GetChildNode("pause_reason") is { } nullNodePauseReason && nullNodePauseReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PauseReason = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>The agent_id property</summary>
-        public Guid? AgentId { get; set; }
+        public Guid? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private Guid? _explicitNullValueAgentId = default!;
         /// <summary>ISO 8601 timestamp of when the agent was last edited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastEditedTime { get; set; }
+        public string? LastEditedTime { get => _explicitNullValueLastEditedTime; set { _explicitNullValueLastEditedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_time"); else _explicitNullProperties?.Remove("last_edited_time"); } }
+        private string? _explicitNullValueLastEditedTime = default!;
 #nullable restore
 #else
-        public string LastEditedTime { get; set; }
+        public string LastEditedTime { get => _explicitNullValueLastEditedTime; set { _explicitNullValueLastEditedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_time"); else _explicitNullProperties?.Remove("last_edited_time"); } }
+        private string _explicitNullValueLastEditedTime = default!;
 #endif
         /// <summary>Why the agent is paused when status is &quot;disabled&quot; (e.g. &quot;disabled_from_api&quot;, &quot;credit_limit&quot;); null when active or deleted.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponsePauseReason? PauseReason { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponsePauseReason? PauseReason { get => _explicitNullValuePauseReason; set { _explicitNullValuePauseReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_reason"); else _explicitNullProperties?.Remove("pause_reason"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponsePauseReason? _explicitNullValuePauseReason = default!;
         /// <summary>&quot;active&quot; when the agent can run; &quot;disabled&quot; when it is paused (see pause_reason); &quot;deleted&quot; when it has been removed.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponseStatus? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -34,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,7 +76,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteGuidValue("agent_id", AgentId);
             writer.WriteStringValue("last_edited_time", LastEditedTime);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponsePauseReason>("pause_reason", PauseReason);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponseStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatus200ResponseStatus>("status", Status);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

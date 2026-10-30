@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostPageRequestParent : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentDatabaseId"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,11 +59,22 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParent();
-            result.PostPageRequestParentDatabaseId = new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentDatabaseId();
-            result.PostPageRequestParentDataSourceId = new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentDataSourceId();
-            result.PostPageRequestParentPageId = new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentPageId();
-            result.PostPageRequestParentWorkspace = new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentWorkspace();
-            return result;
+            
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("page_id") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("page_id".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("database_id") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("database_id".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("data_source_id") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("data_source_id".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("workspace") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("workspace".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.PostPageRequestParentDatabaseId == null && result.PostPageRequestParentDataSourceId == null && result.PostPageRequestParentPageId == null && result.PostPageRequestParentWorkspace == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.PostPageRequestParentPageId = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentPageId(), parseNode);
+            if (result.PostPageRequestParentDatabaseId == null && result.PostPageRequestParentDataSourceId == null && result.PostPageRequestParentPageId == null && result.PostPageRequestParentWorkspace == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.PostPageRequestParentDatabaseId = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentDatabaseId(), parseNode);
+            if (result.PostPageRequestParentDatabaseId == null && result.PostPageRequestParentDataSourceId == null && result.PostPageRequestParentPageId == null && result.PostPageRequestParentWorkspace == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.PostPageRequestParentDataSourceId = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentDataSourceId(), parseNode);
+            if (result.PostPageRequestParentDatabaseId == null && result.PostPageRequestParentDataSourceId == null && result.PostPageRequestParentPageId == null && result.PostPageRequestParentWorkspace == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.PostPageRequestParentWorkspace = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentWorkspace(), parseNode);
+            if (result.PostPageRequestParentDatabaseId == null && result.PostPageRequestParentDataSourceId == null && result.PostPageRequestParentPageId == null && result.PostPageRequestParentWorkspace == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (PostPageRequestParentDatabaseId == null && PostPageRequestParentDataSourceId == null && PostPageRequestParentPageId == null && PostPageRequestParentWorkspace == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (PostPageRequestParentDatabaseId != null && PostPageRequestParentDataSourceId == null && PostPageRequestParentPageId == null && PostPageRequestParentWorkspace == null) { if (PostPageRequestParentDatabaseId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostPageRequestParentDatabaseId); return; }
+            if (PostPageRequestParentDataSourceId != null && PostPageRequestParentDatabaseId == null && PostPageRequestParentPageId == null && PostPageRequestParentWorkspace == null) { if (PostPageRequestParentDataSourceId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostPageRequestParentDataSourceId); return; }
+            if (PostPageRequestParentPageId != null && PostPageRequestParentDatabaseId == null && PostPageRequestParentDataSourceId == null && PostPageRequestParentWorkspace == null) { if (PostPageRequestParentPageId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostPageRequestParentPageId); return; }
+            if (PostPageRequestParentWorkspace != null && PostPageRequestParentDatabaseId == null && PostPageRequestParentDataSourceId == null && PostPageRequestParentPageId == null) { if (PostPageRequestParentWorkspace is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostPageRequestParentWorkspace); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostPageRequestParentDatabaseId>(null, PostPageRequestParentDatabaseId, PostPageRequestParentDataSourceId, PostPageRequestParentPageId, PostPageRequestParentWorkspace);
         }

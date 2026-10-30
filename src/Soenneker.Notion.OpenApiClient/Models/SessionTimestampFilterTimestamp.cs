@@ -12,15 +12,30 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SessionTimestampFilterTimestamp : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("after") is { } nullNodeAfter && nullNodeAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) After = null;
+            if (parseNode.GetChildNode("before") is { } nullNodeBefore && nullNodeBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Before = null;
+            if (parseNode.GetChildNode("on_or_after") is { } nullNodeOnOrAfter && nullNodeOnOrAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnOrAfter = null;
+            if (parseNode.GetChildNode("on_or_before") is { } nullNodeOnOrBefore && nullNodeOnOrBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnOrBefore = null;
+        }
+
         /// <summary>Return sessions after this time.</summary>
-        public DateTimeOffset? After { get; set; }
+        public DateTimeOffset? After { get => _explicitNullValueAfter; set { _explicitNullValueAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after"); else _explicitNullProperties?.Remove("after"); } }
+        private DateTimeOffset? _explicitNullValueAfter = default!;
         /// <summary>Return sessions before this time.</summary>
-        public DateTimeOffset? Before { get; set; }
+        public DateTimeOffset? Before { get => _explicitNullValueBefore; set { _explicitNullValueBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before"); else _explicitNullProperties?.Remove("before"); } }
+        private DateTimeOffset? _explicitNullValueBefore = default!;
         /// <summary>Return sessions at or after this time.</summary>
-        public DateTimeOffset? OnOrAfter { get; set; }
+        public DateTimeOffset? OnOrAfter { get => _explicitNullValueOnOrAfter; set { _explicitNullValueOnOrAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_or_after"); else _explicitNullProperties?.Remove("on_or_after"); } }
+        private DateTimeOffset? _explicitNullValueOnOrAfter = default!;
         /// <summary>Return sessions at or before this time.</summary>
-        public DateTimeOffset? OnOrBefore { get; set; }
+        public DateTimeOffset? OnOrBefore { get => _explicitNullValueOnOrBefore; set { _explicitNullValueOnOrBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_or_before"); else _explicitNullProperties?.Remove("on_or_before"); } }
+        private DateTimeOffset? _explicitNullValueOnOrBefore = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -29,7 +44,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilterTimestamp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilterTimestamp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.SessionTimestampFilterTimestamp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,7 +70,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("after", After);
             writer.WriteDateTimeOffsetValue("before", Before);
             writer.WriteDateTimeOffsetValue("on_or_after", OnOrAfter);
-            writer.WriteDateTimeOffsetValue("on_or_before", OnOrBefore);
+            writer.WriteDateTimeOffsetValue("on_or_before", OnOrBefore);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

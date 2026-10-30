@@ -71,13 +71,15 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
                 { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a page&apos;s content as markdown
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownSuccessResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,11 +95,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownSuccessResponse?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownSuccessResponse> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -114,8 +116,10 @@ namespace Soenneker.Notion.OpenApiClient.V1.Pages.Item.Markdown
                 { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
                 { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
                 { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.PageMarkdownResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownSuccessResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a page as markdown

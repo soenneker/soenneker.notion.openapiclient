@@ -11,104 +11,154 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DataSourceViewObjectResponse : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("configuration") is { } nullNodeConfiguration && nullNodeConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Configuration = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("dashboard_view_id") is { } nullNodeDashboardViewId && nullNodeDashboardViewId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DashboardViewId = null;
+            if (parseNode.GetChildNode("data_source_id") is { } nullNodeDataSourceId && nullNodeDataSourceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSourceId = null;
+            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_edited_by") is { } nullNodeLastEditedBy && nullNodeLastEditedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEditedBy = null;
+            if (parseNode.GetChildNode("last_edited_time") is { } nullNodeLastEditedTime && nullNodeLastEditedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEditedTime = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("object") is { } nullNodeObject && nullNodeObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Object = null;
+            if (parseNode.GetChildNode("parent") is { } nullNodeParent && nullNodeParent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parent = null;
+            if (parseNode.GetChildNode("quick_filters") is { } nullNodeQuickFilters && nullNodeQuickFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuickFilters = null;
+            if (parseNode.GetChildNode("sorts") is { } nullNodeSorts && nullNodeSorts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sorts = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>View presentation configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse? Configuration { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse? Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse? _explicitNullValueConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse Configuration { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse Configuration { get => _explicitNullValueConfiguration; set { _explicitNullValueConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configuration"); else _explicitNullProperties?.Remove("configuration"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewConfigResponse _explicitNullValueConfiguration = default!;
 #endif
         /// <summary>The user who created the view, or null if not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The time when the view was created.</summary>
-        public DateTimeOffset? CreatedTime { get; set; }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>For dashboard widget views, the ID of the parent dashboard view. Only present when this view is a widget inside a dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DashboardViewId { get; set; }
+        public string? DashboardViewId { get => _explicitNullValueDashboardViewId; set { _explicitNullValueDashboardViewId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_view_id"); else _explicitNullProperties?.Remove("dashboard_view_id"); } }
+        private string? _explicitNullValueDashboardViewId = default!;
 #nullable restore
 #else
-        public string DashboardViewId { get; set; }
+        public string DashboardViewId { get => _explicitNullValueDashboardViewId; set { _explicitNullValueDashboardViewId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_view_id"); else _explicitNullProperties?.Remove("dashboard_view_id"); } }
+        private string _explicitNullValueDashboardViewId = default!;
 #endif
         /// <summary>The ID of the data source this view is scoped to, or null for dashboard views.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataSourceId { get; set; }
+        public string? DataSourceId { get => _explicitNullValueDataSourceId; set { _explicitNullValueDataSourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source_id"); else _explicitNullProperties?.Remove("data_source_id"); } }
+        private string? _explicitNullValueDataSourceId = default!;
 #nullable restore
 #else
-        public string DataSourceId { get; set; }
+        public string DataSourceId { get => _explicitNullValueDataSourceId; set { _explicitNullValueDataSourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source_id"); else _explicitNullProperties?.Remove("data_source_id"); } }
+        private string _explicitNullValueDataSourceId = default!;
 #endif
         /// <summary>The filter applied to this view (same shape as data source query filter).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse? Filter { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse Filter { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterResponse _explicitNullValueFilter = default!;
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The user who last edited the view, or null if not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? LastEditedBy { get => _explicitNullValueLastEditedBy; set { _explicitNullValueLastEditedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_by"); else _explicitNullProperties?.Remove("last_edited_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? _explicitNullValueLastEditedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse LastEditedBy { get => _explicitNullValueLastEditedBy; set { _explicitNullValueLastEditedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_by"); else _explicitNullProperties?.Remove("last_edited_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse _explicitNullValueLastEditedBy = default!;
 #endif
         /// <summary>The time when the view was last edited.</summary>
-        public DateTimeOffset? LastEditedTime { get; set; }
+        public DateTimeOffset? LastEditedTime { get => _explicitNullValueLastEditedTime; set { _explicitNullValueLastEditedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_time"); else _explicitNullProperties?.Remove("last_edited_time"); } }
+        private DateTimeOffset? _explicitNullValueLastEditedTime = default!;
         /// <summary>The name of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The object type name.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewObject? _explicitNullValueObject = default!;
         /// <summary>The parent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse? Parent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse? Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse? _explicitNullValueParent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse Parent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse Parent { get => _explicitNullValueParent; set { _explicitNullValueParent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent"); else _explicitNullProperties?.Remove("parent"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.DatabaseParentResponse _explicitNullValueParent = default!;
 #endif
         /// <summary>Quick filters pinned to the view&apos;s filter bar. Keys are property IDs. Values are filter conditions (same shape as a property filter without the property field). Null when no quick filters are set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty? QuickFilters { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty? QuickFilters { get => _explicitNullValueQuickFilters; set { _explicitNullValueQuickFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quick_filters"); else _explicitNullProperties?.Remove("quick_filters"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty? _explicitNullValueQuickFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty QuickFilters { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty QuickFilters { get => _explicitNullValueQuickFilters; set { _explicitNullValueQuickFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quick_filters"); else _explicitNullProperties?.Remove("quick_filters"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty _explicitNullValueQuickFilters = default!;
 #endif
         /// <summary>The sorts applied to this view (same shape as data source query sorts).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>? Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>? Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>? _explicitNullValueSorts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse> Sorts { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse> Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse> _explicitNullValueSorts = default!;
 #endif
         /// <summary>The view type.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType? _explicitNullValueType = default!;
         /// <summary>Canonical deep link to the view in Notion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -118,7 +168,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -168,7 +218,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseQuickFiltersProperty>("quick_filters", QuickFilters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortResponse>("sorts", Sorts);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceViewObjectResponseType>("type", Type);
-            writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("url", Url);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,31 +11,55 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ViewPropertyConfigRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("card_property_width_mode") is { } nullNodeCardPropertyWidthMode && nullNodeCardPropertyWidthMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardPropertyWidthMode = null;
+            if (parseNode.GetChildNode("date_format") is { } nullNodeDateFormat && nullNodeDateFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateFormat = null;
+            if (parseNode.GetChildNode("property_id") is { } nullNodePropertyId && nullNodePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyId = null;
+            if (parseNode.GetChildNode("status_show_as") is { } nullNodeStatusShowAs && nullNodeStatusShowAs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusShowAs = null;
+            if (parseNode.GetChildNode("time_format") is { } nullNodeTimeFormat && nullNodeTimeFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeFormat = null;
+            if (parseNode.GetChildNode("visible") is { } nullNodeVisible && nullNodeVisible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visible = null;
+            if (parseNode.GetChildNode("width") is { } nullNodeWidth && nullNodeWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Width = null;
+            if (parseNode.GetChildNode("wrap") is { } nullNodeWrap && nullNodeWrap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Wrap = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Property width mode in compact card layouts (board/gallery).</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestCardPropertyWidthMode? CardPropertyWidthMode { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestCardPropertyWidthMode? CardPropertyWidthMode { get => _explicitNullValueCardPropertyWidthMode; set { _explicitNullValueCardPropertyWidthMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_property_width_mode"); else _explicitNullProperties?.Remove("card_property_width_mode"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestCardPropertyWidthMode? _explicitNullValueCardPropertyWidthMode = default!;
         /// <summary>Date display format (date properties only).</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestDateFormat? DateFormat { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestDateFormat? DateFormat { get => _explicitNullValueDateFormat; set { _explicitNullValueDateFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_format"); else _explicitNullProperties?.Remove("date_format"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestDateFormat? _explicitNullValueDateFormat = default!;
         /// <summary>Property ID (stable identifier).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyId { get; set; }
+        public string? PropertyId { get => _explicitNullValuePropertyId; set { _explicitNullValuePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_id"); else _explicitNullProperties?.Remove("property_id"); } }
+        private string? _explicitNullValuePropertyId = default!;
 #nullable restore
 #else
-        public string PropertyId { get; set; }
+        public string PropertyId { get => _explicitNullValuePropertyId; set { _explicitNullValuePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_id"); else _explicitNullProperties?.Remove("property_id"); } }
+        private string _explicitNullValuePropertyId = default!;
 #endif
         /// <summary>How to display status properties (select dropdown or checkbox).</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestStatusShowAs? StatusShowAs { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestStatusShowAs? StatusShowAs { get => _explicitNullValueStatusShowAs; set { _explicitNullValueStatusShowAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_show_as"); else _explicitNullProperties?.Remove("status_show_as"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestStatusShowAs? _explicitNullValueStatusShowAs = default!;
         /// <summary>Time display format (date properties only).</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestTimeFormat? TimeFormat { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestTimeFormat? TimeFormat { get => _explicitNullValueTimeFormat; set { _explicitNullValueTimeFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_format"); else _explicitNullProperties?.Remove("time_format"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestTimeFormat? _explicitNullValueTimeFormat = default!;
         /// <summary>Whether this property is visible in the view.</summary>
-        public bool? Visible { get; set; }
+        public bool? Visible { get => _explicitNullValueVisible; set { _explicitNullValueVisible = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visible"); else _explicitNullProperties?.Remove("visible"); } }
+        private bool? _explicitNullValueVisible = default!;
         /// <summary>Width of the property column in pixels (table view only).</summary>
-        public int? Width { get; set; }
+        public int? Width { get => _explicitNullValueWidth; set { _explicitNullValueWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width"); else _explicitNullProperties?.Remove("width"); } }
+        private int? _explicitNullValueWidth = default!;
         /// <summary>Whether to wrap content in this property cell/card.</summary>
-        public bool? Wrap { get; set; }
+        public bool? Wrap { get => _explicitNullValueWrap; set { _explicitNullValueWrap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrap"); else _explicitNullProperties?.Remove("wrap"); } }
+        private bool? _explicitNullValueWrap = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest"/> and sets the default values.
         /// </summary>
@@ -51,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +110,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("visible", Visible);
             writer.WriteIntValue("width", Width);
             writer.WriteBoolValue("wrap", Wrap);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

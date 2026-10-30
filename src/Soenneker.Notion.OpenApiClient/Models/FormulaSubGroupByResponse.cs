@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FormulaSubGroupByResponse : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,21 +62,32 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.FormulaSubGroupByResponse();
             if("checkbox".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FormulaCheckboxSubGroupByResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByResponse();
+                
             }
             else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FormulaDateSubGroupByResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponse();
+                
             }
             else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FormulaNumberSubGroupByResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByResponse();
+                
             }
             else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FormulaTextSubGroupByResponse = new global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponse();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("date".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("group_by") != null && (parseNode.GetChildNode("group_by")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("relative".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "day".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "week".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "month".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "year".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("sort") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("text".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("group_by") != null && (parseNode.GetChildNode("group_by")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag3 && ("exact".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal) || "alphabet_prefix".Equals(tag3.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("sort") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("number".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("sort") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("checkbox".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("sort") != null))();
+            if (result.FormulaCheckboxSubGroupByResponse == null && result.FormulaDateSubGroupByResponse == null && result.FormulaNumberSubGroupByResponse == null && result.FormulaTextSubGroupByResponse == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.FormulaDateSubGroupByResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponse(), parseNode);
+            if (result.FormulaCheckboxSubGroupByResponse == null && result.FormulaDateSubGroupByResponse == null && result.FormulaNumberSubGroupByResponse == null && result.FormulaTextSubGroupByResponse == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.FormulaTextSubGroupByResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponse(), parseNode);
+            if (result.FormulaCheckboxSubGroupByResponse == null && result.FormulaDateSubGroupByResponse == null && result.FormulaNumberSubGroupByResponse == null && result.FormulaTextSubGroupByResponse == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.FormulaNumberSubGroupByResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByResponse(), parseNode);
+            if (result.FormulaCheckboxSubGroupByResponse == null && result.FormulaDateSubGroupByResponse == null && result.FormulaNumberSubGroupByResponse == null && result.FormulaTextSubGroupByResponse == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.FormulaCheckboxSubGroupByResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByResponse(), parseNode);
+            if (result.FormulaCheckboxSubGroupByResponse == null && result.FormulaDateSubGroupByResponse == null && result.FormulaNumberSubGroupByResponse == null && result.FormulaTextSubGroupByResponse == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,21 +119,32 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (FormulaCheckboxSubGroupByResponse == null && FormulaDateSubGroupByResponse == null && FormulaNumberSubGroupByResponse == null && FormulaTextSubGroupByResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (FormulaCheckboxSubGroupByResponse != null && FormulaDateSubGroupByResponse == null && FormulaNumberSubGroupByResponse == null && FormulaTextSubGroupByResponse == null) { if (FormulaCheckboxSubGroupByResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FormulaCheckboxSubGroupByResponse); return; }
+            if (FormulaDateSubGroupByResponse != null && FormulaCheckboxSubGroupByResponse == null && FormulaNumberSubGroupByResponse == null && FormulaTextSubGroupByResponse == null) { if (FormulaDateSubGroupByResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FormulaDateSubGroupByResponse); return; }
+            if (FormulaNumberSubGroupByResponse != null && FormulaCheckboxSubGroupByResponse == null && FormulaDateSubGroupByResponse == null && FormulaTextSubGroupByResponse == null) { if (FormulaNumberSubGroupByResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FormulaNumberSubGroupByResponse); return; }
+            if (FormulaTextSubGroupByResponse != null && FormulaCheckboxSubGroupByResponse == null && FormulaDateSubGroupByResponse == null && FormulaNumberSubGroupByResponse == null) { if (FormulaTextSubGroupByResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FormulaTextSubGroupByResponse); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(FormulaCheckboxSubGroupByResponse != null)
             {
+                if (FormulaCheckboxSubGroupByResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaCheckboxSubGroupByResponse>(null, FormulaCheckboxSubGroupByResponse);
             }
             else if(FormulaDateSubGroupByResponse != null)
             {
+                if (FormulaDateSubGroupByResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaDateSubGroupByResponse>(null, FormulaDateSubGroupByResponse);
             }
             else if(FormulaNumberSubGroupByResponse != null)
             {
+                if (FormulaNumberSubGroupByResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaNumberSubGroupByResponse>(null, FormulaNumberSubGroupByResponse);
             }
             else if(FormulaTextSubGroupByResponse != null)
             {
+                if (FormulaTextSubGroupByResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FormulaTextSubGroupByResponse>(null, FormulaTextSubGroupByResponse);
             }
         }

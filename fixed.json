@@ -517,6 +517,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/PostPageSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PostPage200Response"
                 }
               }
@@ -527,6 +530,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/PostPageSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PostPage202Response"
                 }
               }
@@ -1551,6 +1557,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/UpdatePageMarkdownSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/PageMarkdownResponse"
                 }
               }
@@ -1561,6 +1570,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/UpdatePageMarkdownSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/UpdatePageMarkdown202Response"
                 }
               }
@@ -14041,6 +14053,9 @@
               "string"
             ],
             "description": "The public URL of the data source if it is publicly accessible."
+          },
+          "sync_metadata": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadata"
           }
         },
         "additionalProperties": false
@@ -14081,6 +14096,9 @@
           "name": {
             "type": "string",
             "description": "The name of the data source."
+          },
+          "sync_metadata": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadata"
           }
         },
         "additionalProperties": false
@@ -20180,7 +20198,7 @@
           },
           "markdown": {
             "type": "string",
-            "description": "The page content as Markdown, in the syntax set by \u0060markdown_version\u0060: enhanced markdown (\u0060v1\u0060, the default) or Notion-flavored Markdown (\u0060v2\u0060)."
+            "description": "The page content as Markdown, in the syntax set by \u0060markdown_version\u0060: Notion-flavored Markdown (\u0060v2\u0060, recommended) or enhanced markdown (\u0060v1\u0060, deprecated, the default on current Notion-Versions)."
           },
           "truncated": {
             "type": "boolean",
@@ -28433,6 +28451,28 @@
         ],
         "description": "The cover of the data source."
       },
+      "DataSourceObjectResponseSyncMetadataSyncStateSyncing": {
+        "oneOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataSyncStateSyncingOneOf2"
+          }
+        ],
+        "description": "Stored legacy sync state: true means syncing, false means not syncing, and row_limit_exceeded means the row limit stopped syncing. False does not guarantee a successful sync."
+      },
+      "DataSourceReferenceResponseSyncMetadataSyncStateSyncing": {
+        "oneOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataSyncStateSyncingOneOf2"
+          }
+        ],
+        "description": "Stored legacy sync state: true means syncing, false means not syncing, and row_limit_exceeded means the row limit stopped syncing. False does not guarantee a successful sync."
+      },
       "DataSourceSchemaUpdatedWebhookPayloadAllOf2": {
         "required": [
           "type",
@@ -33418,6 +33458,54 @@
         },
         "description": "The properties schema of the data source."
       },
+      "DataSourceObjectResponseSyncMetadata": {
+        "type": "object",
+        "properties": {
+          "external_database_sync": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataExternalDatabaseSync"
+          },
+          "external_collection_type": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataExternalCollectionType"
+          },
+          "sync_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sync_state": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataSyncState"
+          },
+          "synced_collection_key": {
+            "type": "string",
+            "description": "Opaque, developer-defined collection key for a worker sync. It is not a globally unique ID or a credential. Worker status is not included."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Stored sync metadata, included when listing or retrieving data sources."
+      },
+      "DataSourceReferenceResponseSyncMetadata": {
+        "type": "object",
+        "properties": {
+          "external_database_sync": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataExternalDatabaseSync"
+          },
+          "external_collection_type": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataExternalCollectionType"
+          },
+          "sync_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sync_state": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataSyncState"
+          },
+          "synced_collection_key": {
+            "type": "string",
+            "description": "Opaque, developer-defined collection key for a worker sync. It is not a globally unique ID or a credential. Worker status is not included."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Stored sync metadata, included when retrieving a database."
+      },
       "DataSourceViewObjectResponseQuickFilters": {
         "type": [
           "null",
@@ -35587,6 +35675,98 @@
         "additionalProperties": false,
         "description": "Use the is_empty operator to match an unset date."
       },
+      "DataSourceObjectResponseSyncMetadataExternalDatabaseSync": {
+        "required": [
+          "sync_id",
+          "provider"
+        ],
+        "type": "object",
+        "properties": {
+          "sync_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataExternalDatabaseSyncProvider"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Stored identity of an external database sync."
+      },
+      "DataSourceObjectResponseSyncMetadataSyncState": {
+        "required": [
+          "syncing"
+        ],
+        "type": "object",
+        "properties": {
+          "syncing": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataSyncStateSyncing"
+          },
+          "last_synced_at": {
+            "type": "string",
+            "description": "Stored legacy sync update time in UTC ISO 8601 format. This does not guarantee that all source changes have been imported.",
+            "format": "date-time"
+          },
+          "last_sync_checkpoint_at": {
+            "type": "string",
+            "description": "Stored legacy sync checkpoint time in UTC ISO 8601 format.",
+            "format": "date-time"
+          },
+          "last_sync_heartbeat_at": {
+            "type": "string",
+            "description": "Stored legacy sync heartbeat time in UTC ISO 8601 format.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Stored state for a legacy synced data source. Missing or invalid timestamps are omitted. This is not a live health check."
+      },
+      "DataSourceReferenceResponseSyncMetadataExternalDatabaseSync": {
+        "required": [
+          "sync_id",
+          "provider"
+        ],
+        "type": "object",
+        "properties": {
+          "sync_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataExternalDatabaseSyncProvider"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Stored identity of an external database sync."
+      },
+      "DataSourceReferenceResponseSyncMetadataSyncState": {
+        "required": [
+          "syncing"
+        ],
+        "type": "object",
+        "properties": {
+          "syncing": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataSyncStateSyncing"
+          },
+          "last_synced_at": {
+            "type": "string",
+            "description": "Stored legacy sync update time in UTC ISO 8601 format. This does not guarantee that all source changes have been imported.",
+            "format": "date-time"
+          },
+          "last_sync_checkpoint_at": {
+            "type": "string",
+            "description": "Stored legacy sync checkpoint time in UTC ISO 8601 format.",
+            "format": "date-time"
+          },
+          "last_sync_heartbeat_at": {
+            "type": "string",
+            "description": "Stored legacy sync heartbeat time in UTC ISO 8601 format.",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Stored state for a legacy synced data source. Missing or invalid timestamps are omitted. This is not a live health check."
+      },
       "MultiSelectPropertyConfigurationRequestMultiSelectOptionsItem": {
         "required": [
           "name"
@@ -35892,7 +36072,7 @@
           },
           "markdown": {
             "type": "string",
-            "description": "Page content as Markdown, in the syntax set by \u0060markdown_version\u0060: enhanced markdown (\u0060v1\u0060, the default) or Notion-flavored Markdown (\u0060v2\u0060). Mutually exclusive with content/children."
+            "description": "Page content as Markdown, in the syntax set by \u0060markdown_version\u0060: Notion-flavored Markdown (\u0060v2\u0060, recommended) or enhanced markdown (\u0060v1\u0060, deprecated, the default on current Notion-Versions). Mutually exclusive with content/children."
           },
           "allow_async": {
             "type": "boolean",
@@ -37633,7 +37813,7 @@
           "credit_limit": {
             "type": [
               "null",
-              "number"
+              "integer"
             ],
             "description": "The per-agent credit limit as a non-negative integer, or null to clear the limit."
           }
@@ -40355,7 +40535,7 @@
       "GetAgentInsights200ResponseCreditLimit": {
         "oneOf": [
           {
-            "type": "number"
+            "type": "integer"
           },
           {
             "$ref": "#/components/schemas/GetAgentInsights200ResponseCreditLimitOneOf2"
@@ -51391,7 +51571,7 @@
               "## New Section\n\nInserted content here."
             ],
             "type": "string",
-            "description": "The Markdown content to insert into the page, in the syntax set by \u0060markdown_version\u0060: enhanced markdown (\u0060v1\u0060, the default) or Notion-flavored Markdown (\u0060v2\u0060)."
+            "description": "The Markdown content to insert into the page, in the syntax set by \u0060markdown_version\u0060: Notion-flavored Markdown (\u0060v2\u0060, recommended) or enhanced markdown (\u0060v1\u0060, deprecated, the default on current Notion-Versions)."
           },
           "after": {
             "type": "string",
@@ -51415,7 +51595,7 @@
               "## Updated Section\n\nNew content replaces the old."
             ],
             "type": "string",
-            "description": "The new Markdown content to replace the matched range, in the syntax set by \u0060markdown_version\u0060: enhanced markdown (\u0060v1\u0060, the default) or Notion-flavored Markdown (\u0060v2\u0060)."
+            "description": "The new Markdown content to replace the matched range, in the syntax set by \u0060markdown_version\u0060: Notion-flavored Markdown (\u0060v2\u0060, recommended) or enhanced markdown (\u0060v1\u0060, deprecated, the default on current Notion-Versions)."
           },
           "content_range": {
             "type": "string",
@@ -51460,7 +51640,7 @@
               "# Updated Page\n\nCompletely new page content."
             ],
             "type": "string",
-            "description": "The new Markdown content to replace the entire page content, in the syntax set by \u0060markdown_version\u0060: enhanced markdown (\u0060v1\u0060, the default) or Notion-flavored Markdown (\u0060v2\u0060)."
+            "description": "The new Markdown content to replace the entire page content, in the syntax set by \u0060markdown_version\u0060: Notion-flavored Markdown (\u0060v2\u0060, recommended) or enhanced markdown (\u0060v1\u0060, deprecated, the default on current Notion-Versions)."
           },
           "allow_deleting_content": {
             "type": "boolean",
@@ -52267,7 +52447,7 @@
           "credit_limit": {
             "type": [
               "null",
-              "number"
+              "integer"
             ],
             "description": "The per-agent credit limit as a non-negative integer, or null to clear the limit."
           }
@@ -68438,6 +68618,42 @@
           ]
         }
       },
+      "DataSourceObjectResponseSyncMetadataSyncStateSyncingOneOf2": {
+        "const": null,
+        "enum": [
+          "row_limit_exceeded"
+        ],
+        "type": "string",
+        "description": "Always \u0060row_limit_exceeded\u0060",
+        "x-ms-enum": {
+          "name": "DataSourceObjectResponseSyncMetadataSyncStateSyncingOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "row_limit_exceeded",
+              "name": "RowLimitExceeded"
+            }
+          ]
+        }
+      },
+      "DataSourceReferenceResponseSyncMetadataSyncStateSyncingOneOf2": {
+        "const": null,
+        "enum": [
+          "row_limit_exceeded"
+        ],
+        "type": "string",
+        "description": "Always \u0060row_limit_exceeded\u0060",
+        "x-ms-enum": {
+          "name": "DataSourceReferenceResponseSyncMetadataSyncStateSyncingOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "row_limit_exceeded",
+              "name": "RowLimitExceeded"
+            }
+          ]
+        }
+      },
       "ErrorApi400AllOf2Code": {
         "enum": [
           "invalid_json",
@@ -71335,6 +71551,22 @@
           ]
         }
       },
+      "DataSourceObjectResponseSyncMetadataExternalCollectionType": {
+        "enum": [
+          "Jira",
+          "Salesforce"
+        ],
+        "type": "string",
+        "description": "The provider of a legacy synced data source: Jira or Salesforce. Values are case-sensitive."
+      },
+      "DataSourceReferenceResponseSyncMetadataExternalCollectionType": {
+        "enum": [
+          "Jira",
+          "Salesforce"
+        ],
+        "type": "string",
+        "description": "The provider of a legacy synced data source: Jira or Salesforce. Values are case-sensitive."
+      },
       "FileUploadObjectResponseCreatedByType": {
         "enum": [
           "person",
@@ -71760,6 +71992,60 @@
           ]
         }
       },
+      "DataSourceObjectResponseSyncMetadataExternalDatabaseSyncProvider": {
+        "enum": [
+          "github",
+          "jira",
+          "salesforce"
+        ],
+        "type": "string",
+        "description": "The sync provider: github (GitHub), jira (Jira), or salesforce (Salesforce).",
+        "x-ms-enum": {
+          "name": "DataSourceObjectResponseSyncMetadataExternalDatabaseSyncProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "jira",
+              "name": "Jira"
+            },
+            {
+              "value": "salesforce",
+              "name": "Salesforce"
+            }
+          ]
+        }
+      },
+      "DataSourceReferenceResponseSyncMetadataExternalDatabaseSyncProvider": {
+        "enum": [
+          "github",
+          "jira",
+          "salesforce"
+        ],
+        "type": "string",
+        "description": "The sync provider: github (GitHub), jira (Jira), or salesforce (Salesforce).",
+        "x-ms-enum": {
+          "name": "DataSourceReferenceResponseSyncMetadataExternalDatabaseSyncProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "jira",
+              "name": "Jira"
+            },
+            {
+              "value": "salesforce",
+              "name": "Salesforce"
+            }
+          ]
+        }
+      },
       "SyncedBlockBlockObjectResponseSyncedBlockSyncedFromType": {
         "const": null,
         "enum": [
@@ -71922,7 +72208,7 @@
           "v2"
         ],
         "type": "string",
-        "description": "The Markdown syntax to use. \u0060v1\u0060 (the default) is enhanced markdown. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.",
+        "description": "The Markdown syntax to use. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. \u0060v1\u0060 is enhanced markdown. It\u0027s deprecated. It\u0027s the default on current Notion-Versions. The next Notion-Version rejects \u0060v1\u0060 with a \u0060400\u0060 \u0060validation_error\u0060.",
         "x-ms-enum": {
           "name": "PostPageRequestMarkdownVersion",
           "modelAsString": false,
@@ -71961,7 +72247,7 @@
           "v2"
         ],
         "type": "string",
-        "description": "The Markdown syntax to use. \u0060v1\u0060 (the default) is enhanced markdown. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.",
+        "description": "The Markdown syntax to use. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. \u0060v1\u0060 is enhanced markdown. It\u0027s deprecated. It\u0027s the default on current Notion-Versions. The next Notion-Version rejects \u0060v1\u0060 with a \u0060400\u0060 \u0060validation_error\u0060.",
         "x-ms-enum": {
           "name": "UpdatePageMarkdownRequestMarkdownVersion",
           "modelAsString": false,
@@ -72142,7 +72428,7 @@
           "v2"
         ],
         "type": "string",
-        "description": "The Markdown syntax to use. \u0060v1\u0060 (the default) is enhanced markdown. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.",
+        "description": "The Markdown syntax to use. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. \u0060v1\u0060 is enhanced markdown. It\u0027s deprecated. It\u0027s the default on current Notion-Versions. The next Notion-Version rejects \u0060v1\u0060 with a \u0060400\u0060 \u0060validation_error\u0060.",
         "x-ms-enum": {
           "name": "CreateACommentRequestMarkdownVersion",
           "modelAsString": false,
@@ -72200,7 +72486,7 @@
           "v2"
         ],
         "type": "string",
-        "description": "The Markdown syntax to use. \u0060v1\u0060 (the default) is enhanced markdown. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.",
+        "description": "The Markdown syntax to use. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. \u0060v1\u0060 is enhanced markdown. It\u0027s deprecated. It\u0027s the default on current Notion-Versions. The next Notion-Version rejects \u0060v1\u0060 with a \u0060400\u0060 \u0060validation_error\u0060.",
         "x-ms-enum": {
           "name": "UpdateACommentRequestMarkdownVersion",
           "modelAsString": false,
@@ -84383,7 +84669,7 @@
           "v2"
         ],
         "type": "string",
-        "description": "The Markdown syntax to use. \u0060v1\u0060 (the default) is enhanced markdown. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.",
+        "description": "The Markdown syntax to use. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. \u0060v1\u0060 is enhanced markdown. It\u0027s deprecated. It\u0027s the default on current Notion-Versions. The next Notion-Version rejects \u0060v1\u0060 with a \u0060400\u0060 \u0060validation_error\u0060.",
         "x-ms-enum": {
           "name": "RetrievePageMarkdownMarkdownVersionParameter",
           "modelAsString": false,
@@ -86728,6 +87014,26 @@
         "required": [
           "dual_property",
           "data_source_id"
+        ]
+      },
+      "PostPageSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PostPage200Response"
+          },
+          {
+            "$ref": "#/components/schemas/PostPage202Response"
+          }
+        ]
+      },
+      "UpdatePageMarkdownSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PageMarkdownResponse"
+          },
+          {
+            "$ref": "#/components/schemas/UpdatePageMarkdown202Response"
+          }
         ]
       }
     },

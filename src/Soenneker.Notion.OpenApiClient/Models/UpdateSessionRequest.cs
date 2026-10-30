@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateSessionRequest : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequest();
             if("UpdateSessionRequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdateSessionRequestOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1();
+                
             }
             else if("UpdateSessionRequestOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdateSessionRequestOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2();
+                
             }
             else if("UpdateSessionRequestOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UpdateSessionRequestOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("message") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("session_id") != null && parseNode.GetChildNode("actions") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("session_id") != null && parseNode.GetChildNode("continue_from") != null))();
+            if (result.UpdateSessionRequestOneOf1 == null && result.UpdateSessionRequestOneOf2 == null && result.UpdateSessionRequestOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.UpdateSessionRequestOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1(), parseNode);
+            if (result.UpdateSessionRequestOneOf1 == null && result.UpdateSessionRequestOneOf2 == null && result.UpdateSessionRequestOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.UpdateSessionRequestOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2(), parseNode);
+            if (result.UpdateSessionRequestOneOf1 == null && result.UpdateSessionRequestOneOf2 == null && result.UpdateSessionRequestOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.UpdateSessionRequestOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3(), parseNode);
+            if (result.UpdateSessionRequestOneOf1 == null && result.UpdateSessionRequestOneOf2 == null && result.UpdateSessionRequestOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (UpdateSessionRequestOneOf1 == null && UpdateSessionRequestOneOf2 == null && UpdateSessionRequestOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (UpdateSessionRequestOneOf1 != null && UpdateSessionRequestOneOf2 == null && UpdateSessionRequestOneOf3 == null) { if (UpdateSessionRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateSessionRequestOneOf1); return; }
+            if (UpdateSessionRequestOneOf2 != null && UpdateSessionRequestOneOf1 == null && UpdateSessionRequestOneOf3 == null) { if (UpdateSessionRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateSessionRequestOneOf2); return; }
+            if (UpdateSessionRequestOneOf3 != null && UpdateSessionRequestOneOf1 == null && UpdateSessionRequestOneOf2 == null) { if (UpdateSessionRequestOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateSessionRequestOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(UpdateSessionRequestOneOf1 != null)
             {
+                if (UpdateSessionRequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1>(null, UpdateSessionRequestOneOf1);
             }
             else if(UpdateSessionRequestOneOf2 != null)
             {
+                if (UpdateSessionRequestOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf2>(null, UpdateSessionRequestOneOf2);
             }
             else if(UpdateSessionRequestOneOf3 != null)
             {
+                if (UpdateSessionRequestOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf3>(null, UpdateSessionRequestOneOf3);
             }
         }

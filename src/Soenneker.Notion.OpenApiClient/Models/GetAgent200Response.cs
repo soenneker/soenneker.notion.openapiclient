@@ -11,136 +11,203 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAgent200Response : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_type") is { } nullNodeAgentType && nullNodeAgentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentType = null;
+            if (parseNode.GetChildNode("agent_version") is { } nullNodeAgentVersion && nullNodeAgentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentVersion = null;
+            if (parseNode.GetChildNode("connections") is { } nullNodeConnections && nullNodeConnections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connections = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("credit_limit") is { } nullNodeCreditLimit && nullNodeCreditLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditLimit = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("has_unpublished_changes") is { } nullNodeHasUnpublishedChanges && nullNodeHasUnpublishedChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasUnpublishedChanges = null;
+            if (parseNode.GetChildNode("icon") is { } nullNodeIcon && nullNodeIcon.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Icon = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("instructions") is { } nullNodeInstructions && nullNodeInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instructions = null;
+            if (parseNode.GetChildNode("instructions_page_id") is { } nullNodeInstructionsPageId && nullNodeInstructionsPageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstructionsPageId = null;
+            if (parseNode.GetChildNode("is_favorited") is { } nullNodeIsFavorited && nullNodeIsFavorited.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFavorited = null;
+            if (parseNode.GetChildNode("last_edited_time") is { } nullNodeLastEditedTime && nullNodeLastEditedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEditedTime = null;
+            if (parseNode.GetChildNode("last_run_at") is { } nullNodeLastRunAt && nullNodeLastRunAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRunAt = null;
+            if (parseNode.GetChildNode("last_run_time") is { } nullNodeLastRunTime && nullNodeLastRunTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRunTime = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("object") is { } nullNodeObject && nullNodeObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Object = null;
+            if (parseNode.GetChildNode("pause_reason") is { } nullNodePauseReason && nullNodePauseReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PauseReason = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("triggers") is { } nullNodeTriggers && nullNodeTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Triggers = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>What kind of agent this is: &quot;notion_ai&quot; is the personal agent; &quot;custom_agent&quot; is a standalone agent you chat with; &quot;autofill_custom_agent&quot; fills a database property; &quot;external&quot; runs through an external provider.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentType? AgentType { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentType? AgentType { get => _explicitNullValueAgentType; set { _explicitNullValueAgentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_type"); else _explicitNullProperties?.Remove("agent_type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentType? _explicitNullValueAgentType = default!;
         /// <summary>The agent_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentVersion? AgentVersion { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentVersion? AgentVersion { get => _explicitNullValueAgentVersion; set { _explicitNullValueAgentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_version"); else _explicitNullProperties?.Remove("agent_version"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentVersion? _explicitNullValueAgentVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentVersion AgentVersion { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentVersion AgentVersion { get => _explicitNullValueAgentVersion; set { _explicitNullValueAgentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_version"); else _explicitNullProperties?.Remove("agent_version"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentVersion _explicitNullValueAgentVersion = default!;
 #endif
         /// <summary>Integrations the agent is connected to (Notion, Slack, Discord, MCP servers, and other connectors), each with an account and per-target permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem>? Connections { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem>? Connections { get => _explicitNullValueConnections; set { _explicitNullValueConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connections"); else _explicitNullProperties?.Remove("connections"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem>? _explicitNullValueConnections = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem> Connections { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem> Connections { get => _explicitNullValueConnections; set { _explicitNullValueConnections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connections"); else _explicitNullProperties?.Remove("connections"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItem> _explicitNullValueConnections = default!;
 #endif
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Date and time when this agent was created.</summary>
-        public DateTimeOffset? CreatedTime { get; set; }
+        public DateTimeOffset? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private DateTimeOffset? _explicitNullValueCreatedTime = default!;
         /// <summary>The per-agent credit limit that applies to this agent, null when uncapped, or &quot;hidden&quot; when the caller lacks full access to the agent. This is the effective limit computed at runtime, folding in both the agent&apos;s own limit and any workspace-admin default.</summary>
-        public int? CreditLimit { get; set; }
+        public int? CreditLimit { get => _explicitNullValueCreditLimit; set { _explicitNullValueCreditLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_limit"); else _explicitNullProperties?.Remove("credit_limit"); } }
+        private int? _explicitNullValueCreditLimit = default!;
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether the draft has edits not yet in the published version, or &quot;hidden&quot; when the caller lacks edit access to the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges? HasUnpublishedChanges { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges? HasUnpublishedChanges { get => _explicitNullValueHasUnpublishedChanges; set { _explicitNullValueHasUnpublishedChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_unpublished_changes"); else _explicitNullProperties?.Remove("has_unpublished_changes"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges? _explicitNullValueHasUnpublishedChanges = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges HasUnpublishedChanges { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges HasUnpublishedChanges { get => _explicitNullValueHasUnpublishedChanges; set { _explicitNullValueHasUnpublishedChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_unpublished_changes"); else _explicitNullProperties?.Remove("has_unpublished_changes"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseHasUnpublishedChanges _explicitNullValueHasUnpublishedChanges = default!;
 #endif
         /// <summary>The icon property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon? Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon? Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon? _explicitNullValueIcon = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon Icon { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIcon _explicitNullValueIcon = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId? Id { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId Id { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseId _explicitNullValueId = default!;
 #endif
         /// <summary>The agent&apos;s inline instructions when verbose=true, or null when its instructions are stored on a page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Instructions { get; set; }
+        public string? Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private string? _explicitNullValueInstructions = default!;
 #nullable restore
 #else
-        public string Instructions { get; set; }
+        public string Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private string _explicitNullValueInstructions = default!;
 #endif
         /// <summary>The instructions_page_id property</summary>
-        public Guid? InstructionsPageId { get; set; }
+        public Guid? InstructionsPageId { get => _explicitNullValueInstructionsPageId; set { _explicitNullValueInstructionsPageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions_page_id"); else _explicitNullProperties?.Remove("instructions_page_id"); } }
+        private Guid? _explicitNullValueInstructionsPageId = default!;
         /// <summary>Whether this agent is in the caller&apos;s personal favorites, or null when the caller has no personal favorites scope.</summary>
-        public bool? IsFavorited { get; set; }
+        public bool? IsFavorited { get => _explicitNullValueIsFavorited; set { _explicitNullValueIsFavorited = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_favorited"); else _explicitNullProperties?.Remove("is_favorited"); } }
+        private bool? _explicitNullValueIsFavorited = default!;
         /// <summary>Date and time when this agent was last edited.</summary>
-        public DateTimeOffset? LastEditedTime { get; set; }
+        public DateTimeOffset? LastEditedTime { get => _explicitNullValueLastEditedTime; set { _explicitNullValueLastEditedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_time"); else _explicitNullProperties?.Remove("last_edited_time"); } }
+        private DateTimeOffset? _explicitNullValueLastEditedTime = default!;
         /// <summary>ISO 8601 timestamp of the agent&apos;s most recent run, null if it has never run, or &quot;hidden&quot; when the caller lacks edit access to the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt? LastRunAt { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt? LastRunAt { get => _explicitNullValueLastRunAt; set { _explicitNullValueLastRunAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run_at"); else _explicitNullProperties?.Remove("last_run_at"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt? _explicitNullValueLastRunAt = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt LastRunAt { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt LastRunAt { get => _explicitNullValueLastRunAt; set { _explicitNullValueLastRunAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run_at"); else _explicitNullProperties?.Remove("last_run_at"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunAt _explicitNullValueLastRunAt = default!;
 #endif
         /// <summary>ISO 8601 timestamp of the agent&apos;s most recent run, null if it has never run, or &quot;hidden&quot; when the caller lacks edit access to the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime? LastRunTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime? LastRunTime { get => _explicitNullValueLastRunTime; set { _explicitNullValueLastRunTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run_time"); else _explicitNullProperties?.Remove("last_run_time"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime? _explicitNullValueLastRunTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime LastRunTime { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime LastRunTime { get => _explicitNullValueLastRunTime; set { _explicitNullValueLastRunTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run_time"); else _explicitNullProperties?.Remove("last_run_time"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseLastRunTime _explicitNullValueLastRunTime = default!;
 #endif
         /// <summary>The model the agent runs on: auto (Notion selects) or a pinned model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel? Model { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel Model { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel _explicitNullValueModel = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Always `agent`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.AgentObject? _explicitNullValueObject = default!;
         /// <summary>Why the agent is paused when status is &quot;disabled&quot; (e.g. &quot;credit_limit&quot;, &quot;disabled_from_workspace_settings&quot;); null when active.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason? PauseReason { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason? PauseReason { get => _explicitNullValuePauseReason; set { _explicitNullValuePauseReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_reason"); else _explicitNullProperties?.Remove("pause_reason"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason? _explicitNullValuePauseReason = default!;
         /// <summary>&quot;active&quot; when the agent can run; &quot;disabled&quot; when it is paused (see pause_reason); &quot;deleted&quot; when it has been removed.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseStatus? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>The agent&apos;s configured triggers, each with a machine type, an enabled flag, and (for recurrence triggers) a structured schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem>? Triggers { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem>? Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem>? _explicitNullValueTriggers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem> Triggers { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem> Triggers { get => _explicitNullValueTriggers; set { _explicitNullValueTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggers"); else _explicitNullProperties?.Remove("triggers"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem> _explicitNullValueTriggers = default!;
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion? Version { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion Version { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion _explicitNullValueVersion = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -150,7 +217,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.GetAgent200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -214,7 +281,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason>("pause_reason", PauseReason);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem>("triggers", Triggers);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion>("version", Version);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion>("version", Version);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

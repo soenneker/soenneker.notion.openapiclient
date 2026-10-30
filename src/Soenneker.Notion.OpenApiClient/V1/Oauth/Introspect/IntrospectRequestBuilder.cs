@@ -61,6 +61,8 @@ namespace Soenneker.Notion.OpenApiClient.V1.Oauth.Introspect
                 { "401", global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth401.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth403.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorOAuth500.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.IntrospectToken200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.IntrospectToken200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

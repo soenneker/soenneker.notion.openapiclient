@@ -6091,6 +6091,79 @@
 							}
 						],
 						"description": "The public URL of the data source if it is publicly accessible."
+					},
+					"sync_metadata": {
+						"type": "object",
+						"properties": {
+							"external_database_sync": {
+								"type": "object",
+								"properties": {
+									"sync_id": {
+										"$ref": "#/components/schemas/idResponse",
+										"description": "The stored sync ID. This is not a credential."
+									},
+									"provider": {
+										"type": "string",
+										"enum": ["github", "jira", "salesforce"],
+										"description": "The sync provider: github (GitHub), jira (Jira), or salesforce (Salesforce)."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["sync_id", "provider"],
+								"description": "Stored identity of an external database sync."
+							},
+							"external_collection_type": {
+								"type": "string",
+								"enum": ["Jira", "Salesforce"],
+								"description": "The provider of a legacy synced data source: Jira or Salesforce. Values are case-sensitive."
+							},
+							"sync_id": {
+								"$ref": "#/components/schemas/idResponse",
+								"description": "The stored sync ID when provider details are unavailable. This is not a credential."
+							},
+							"sync_state": {
+								"type": "object",
+								"properties": {
+									"syncing": {
+										"oneOf": [
+											{
+												"type": "boolean"
+											},
+											{
+												"type": "string",
+												"const": "row_limit_exceeded",
+												"description": "Always `row_limit_exceeded`"
+											}
+										],
+										"description": "Stored legacy sync state: true means syncing, false means not syncing, and row_limit_exceeded means the row limit stopped syncing. False does not guarantee a successful sync."
+									},
+									"last_synced_at": {
+										"type": "string",
+										"format": "date-time",
+										"description": "Stored legacy sync update time in UTC ISO 8601 format. This does not guarantee that all source changes have been imported."
+									},
+									"last_sync_checkpoint_at": {
+										"type": "string",
+										"format": "date-time",
+										"description": "Stored legacy sync checkpoint time in UTC ISO 8601 format."
+									},
+									"last_sync_heartbeat_at": {
+										"type": "string",
+										"format": "date-time",
+										"description": "Stored legacy sync heartbeat time in UTC ISO 8601 format."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["syncing"],
+								"description": "Stored state for a legacy synced data source. Missing or invalid timestamps are omitted. This is not a live health check."
+							},
+							"synced_collection_key": {
+								"type": "string",
+								"description": "Opaque, developer-defined collection key for a worker sync. It is not a globally unique ID or a credential. Worker status is not included."
+							}
+						},
+						"additionalProperties": false,
+						"description": "Stored sync metadata, included when listing or retrieving data sources."
 					}
 				},
 				"additionalProperties": false,
@@ -6145,6 +6218,79 @@
 					"name": {
 						"type": "string",
 						"description": "The name of the data source."
+					},
+					"sync_metadata": {
+						"type": "object",
+						"properties": {
+							"external_database_sync": {
+								"type": "object",
+								"properties": {
+									"sync_id": {
+										"$ref": "#/components/schemas/idResponse",
+										"description": "The stored sync ID. This is not a credential."
+									},
+									"provider": {
+										"type": "string",
+										"enum": ["github", "jira", "salesforce"],
+										"description": "The sync provider: github (GitHub), jira (Jira), or salesforce (Salesforce)."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["sync_id", "provider"],
+								"description": "Stored identity of an external database sync."
+							},
+							"external_collection_type": {
+								"type": "string",
+								"enum": ["Jira", "Salesforce"],
+								"description": "The provider of a legacy synced data source: Jira or Salesforce. Values are case-sensitive."
+							},
+							"sync_id": {
+								"$ref": "#/components/schemas/idResponse",
+								"description": "The stored sync ID when provider details are unavailable. This is not a credential."
+							},
+							"sync_state": {
+								"type": "object",
+								"properties": {
+									"syncing": {
+										"oneOf": [
+											{
+												"type": "boolean"
+											},
+											{
+												"type": "string",
+												"const": "row_limit_exceeded",
+												"description": "Always `row_limit_exceeded`"
+											}
+										],
+										"description": "Stored legacy sync state: true means syncing, false means not syncing, and row_limit_exceeded means the row limit stopped syncing. False does not guarantee a successful sync."
+									},
+									"last_synced_at": {
+										"type": "string",
+										"format": "date-time",
+										"description": "Stored legacy sync update time in UTC ISO 8601 format. This does not guarantee that all source changes have been imported."
+									},
+									"last_sync_checkpoint_at": {
+										"type": "string",
+										"format": "date-time",
+										"description": "Stored legacy sync checkpoint time in UTC ISO 8601 format."
+									},
+									"last_sync_heartbeat_at": {
+										"type": "string",
+										"format": "date-time",
+										"description": "Stored legacy sync heartbeat time in UTC ISO 8601 format."
+									}
+								},
+								"additionalProperties": false,
+								"required": ["syncing"],
+								"description": "Stored state for a legacy synced data source. Missing or invalid timestamps are omitted. This is not a live health check."
+							},
+							"synced_collection_key": {
+								"type": "string",
+								"description": "Opaque, developer-defined collection key for a worker sync. It is not a globally unique ID or a credential. Worker status is not included."
+							}
+						},
+						"additionalProperties": false,
+						"description": "Stored sync metadata, included when retrieving a database."
 					}
 				},
 				"additionalProperties": false,
@@ -12811,7 +12957,7 @@
 					},
 					"markdown": {
 						"type": "string",
-						"description": "The page content as Markdown, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`)."
+						"description": "The page content as Markdown, in the syntax set by `markdown_version`: Notion-flavored Markdown (`v2`, recommended) or enhanced markdown (`v1`, deprecated, the default on current Notion-Versions)."
 					},
 					"truncated": {
 						"type": "boolean",
@@ -21243,7 +21389,7 @@
 										"maxItems": 100
 									},
 									"markdown": {
-										"description": "Page content as Markdown, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`). Mutually exclusive with content/children.",
+										"description": "Page content as Markdown, in the syntax set by `markdown_version`: Notion-flavored Markdown (`v2`, recommended) or enhanced markdown (`v1`, deprecated, the default on current Notion-Versions). Mutually exclusive with content/children.",
 										"type": "string"
 									},
 									"allow_async": {
@@ -21251,7 +21397,7 @@
 										"type": "boolean"
 									},
 									"markdown_version": {
-										"description": "The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.",
+										"description": "The Markdown syntax to use. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. `v1` is enhanced markdown. It's deprecated. It's the default on current Notion-Versions. The next Notion-Version rejects `v1` with a `400` `validation_error`.",
 										"type": "string",
 										"enum": ["v1", "v2"]
 									},
@@ -22899,7 +23045,7 @@
 						"schema": {
 							"type": "string",
 							"enum": ["v1", "v2"],
-							"description": "The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview."
+							"description": "The Markdown syntax to use. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. `v1` is enhanced markdown. It's deprecated. It's the default on current Notion-Versions. The next Notion-Version rejects `v1` with a `400` `validation_error`."
 						}
 					},
 					{
@@ -23074,7 +23220,7 @@
 											"markdown_version": {
 												"type": "string",
 												"enum": ["v1", "v2"],
-												"description": "The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview."
+												"description": "The Markdown syntax to use. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. `v1` is enhanced markdown. It's deprecated. It's the default on current Notion-Versions. The next Notion-Version rejects `v1` with a `400` `validation_error`."
 											}
 										}
 									},
@@ -23096,7 +23242,7 @@
 																"examples": [
 																	"## New Section\n\nInserted content here."
 																],
-																"description": "The Markdown content to insert into the page, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`)."
+																"description": "The Markdown content to insert into the page, in the syntax set by `markdown_version`: Notion-flavored Markdown (`v2`, recommended) or enhanced markdown (`v1`, deprecated, the default on current Notion-Versions)."
 															},
 															"after": {
 																"type": "string",
@@ -23154,7 +23300,7 @@
 																"examples": [
 																	"## Updated Section\n\nNew content replaces the old."
 																],
-																"description": "The new Markdown content to replace the matched range, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`)."
+																"description": "The new Markdown content to replace the matched range, in the syntax set by `markdown_version`: Notion-flavored Markdown (`v2`, recommended) or enhanced markdown (`v1`, deprecated, the default on current Notion-Versions)."
 															},
 															"content_range": {
 																"type": "string",
@@ -23236,7 +23382,7 @@
 																"examples": [
 																	"# Updated Page\n\nCompletely new page content."
 																],
-																"description": "The new Markdown content to replace the entire page content, in the syntax set by `markdown_version`: enhanced markdown (`v1`, the default) or Notion-flavored Markdown (`v2`)."
+																"description": "The new Markdown content to replace the entire page content, in the syntax set by `markdown_version`: Notion-flavored Markdown (`v2`, recommended) or enhanced markdown (`v1`, deprecated, the default on current Notion-Versions)."
 															},
 															"allow_deleting_content": {
 																"type": "boolean",
@@ -29250,7 +29396,7 @@
 											"markdown_version": {
 												"type": "string",
 												"enum": ["v1", "v2"],
-												"description": "The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview."
+												"description": "The Markdown syntax to use. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. `v1` is enhanced markdown. It's deprecated. It's the default on current Notion-Versions. The next Notion-Version rejects `v1` with a `400` `validation_error`."
 											}
 										}
 									},
@@ -29935,7 +30081,7 @@
 											"markdown_version": {
 												"type": "string",
 												"enum": ["v1", "v2"],
-												"description": "The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview."
+												"description": "The Markdown syntax to use. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. `v1` is enhanced markdown. It's deprecated. It's the default on current Notion-Versions. The next Notion-Version rejects `v1` with a `400` `validation_error`."
 											}
 										}
 									},
@@ -39496,7 +39642,7 @@
 										"credit_limit": {
 											"oneOf": [
 												{
-													"type": "number"
+													"type": "integer"
 												},
 												{
 													"type": "string",
@@ -39921,7 +40067,7 @@
 									"credit_limit": {
 										"oneOf": [
 											{
-												"type": "number"
+												"type": "integer"
 											},
 											{
 												"type": "null"
@@ -40183,7 +40329,7 @@
 																"credit_limit": {
 																	"oneOf": [
 																		{
-																			"type": "number"
+																			"type": "integer"
 																		},
 																		{
 																			"type": "null"

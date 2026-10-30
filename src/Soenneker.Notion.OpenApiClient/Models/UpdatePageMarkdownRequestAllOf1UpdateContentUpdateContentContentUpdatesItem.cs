@@ -11,27 +11,42 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("new_str") is { } nullNodeNewStr && nullNodeNewStr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewStr = null;
+            if (parseNode.GetChildNode("old_str") is { } nullNodeOldStr && nullNodeOldStr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldStr = null;
+            if (parseNode.GetChildNode("replace_all_matches") is { } nullNodeReplaceAllMatches && nullNodeReplaceAllMatches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplaceAllMatches = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The new content string to replace old_str with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewStr { get; set; }
+        public string? NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
+        private string? _explicitNullValueNewStr = default!;
 #nullable restore
 #else
-        public string NewStr { get; set; }
+        public string NewStr { get => _explicitNullValueNewStr; set { _explicitNullValueNewStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("new_str"); else _explicitNullProperties?.Remove("new_str"); } }
+        private string _explicitNullValueNewStr = default!;
 #endif
         /// <summary>The existing content string to find and replace. Must exactly match the page content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OldStr { get; set; }
+        public string? OldStr { get => _explicitNullValueOldStr; set { _explicitNullValueOldStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_str"); else _explicitNullProperties?.Remove("old_str"); } }
+        private string? _explicitNullValueOldStr = default!;
 #nullable restore
 #else
-        public string OldStr { get; set; }
+        public string OldStr { get => _explicitNullValueOldStr; set { _explicitNullValueOldStr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("old_str"); else _explicitNullProperties?.Remove("old_str"); } }
+        private string _explicitNullValueOldStr = default!;
 #endif
         /// <summary>If true, replaces all occurrences of old_str. If false (default), the operation fails if there are multiple matches.</summary>
-        public bool? ReplaceAllMatches { get; set; }
+        public bool? ReplaceAllMatches { get => _explicitNullValueReplaceAllMatches; set { _explicitNullValueReplaceAllMatches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replace_all_matches"); else _explicitNullProperties?.Remove("replace_all_matches"); } }
+        private bool? _explicitNullValueReplaceAllMatches = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContentContentUpdatesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("new_str", NewStr);
             writer.WriteStringValue("old_str", OldStr);
             writer.WriteBoolValue("replace_all_matches", ReplaceAllMatches);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

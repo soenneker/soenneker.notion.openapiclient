@@ -11,45 +11,75 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAgentInsights200Response : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_type") is { } nullNodeAgentType && nullNodeAgentType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentType = null;
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("credit_limit") is { } nullNodeCreditLimit && nullNodeCreditLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreditLimit = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("object") is { } nullNodeObject && nullNodeObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Object = null;
+            if (parseNode.GetChildNode("pause_reason") is { } nullNodePauseReason && nullNodePauseReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PauseReason = null;
+            if (parseNode.GetChildNode("runs_completed") is { } nullNodeRunsCompleted && nullNodeRunsCompleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunsCompleted = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("total_credits_used") is { } nullNodeTotalCreditsUsed && nullNodeTotalCreditsUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCreditsUsed = null;
+        }
+
         /// <summary>One of: `notion_ai`, `custom_agent`, `autofill_custom_agent`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseAgentType? AgentType { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseAgentType? AgentType { get => _explicitNullValueAgentType; set { _explicitNullValueAgentType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_type"); else _explicitNullProperties?.Remove("agent_type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseAgentType? _explicitNullValueAgentType = default!;
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>Enforced per-agent credit limit; null when none is configured, and &quot;hidden&quot; when the caller lacks full access to the agent.</summary>
-        public double? CreditLimit { get; set; }
+        public int? CreditLimit { get => _explicitNullValueCreditLimit; set { _explicitNullValueCreditLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit_limit"); else _explicitNullProperties?.Remove("credit_limit"); } }
+        private int? _explicitNullValueCreditLimit = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId? Id { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId Id { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId _explicitNullValueId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Always `agent_insights`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject? _explicitNullValueObject = default!;
         /// <summary>One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `owner_allowance_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason? PauseReason { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason? PauseReason { get => _explicitNullValuePauseReason; set { _explicitNullValuePauseReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_reason"); else _explicitNullProperties?.Remove("pause_reason"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason? _explicitNullValuePauseReason = default!;
         /// <summary>Number of runs recorded for this agent within the window.</summary>
-        public double? RunsCompleted { get; set; }
+        public double? RunsCompleted { get => _explicitNullValueRunsCompleted; set { _explicitNullValueRunsCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runs_completed"); else _explicitNullProperties?.Remove("runs_completed"); } }
+        private double? _explicitNullValueRunsCompleted = default!;
         /// <summary>One of: `active`, `disabled`, `deleted`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseStatus? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseStatus? _explicitNullValueStatus = default!;
         /// <summary>Premium AI credits consumed by this agent within the window.</summary>
-        public double? TotalCreditsUsed { get; set; }
+        public double? TotalCreditsUsed { get => _explicitNullValueTotalCreditsUsed; set { _explicitNullValueTotalCreditsUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_credits_used"); else _explicitNullProperties?.Remove("total_credits_used"); } }
+        private double? _explicitNullValueTotalCreditsUsed = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +88,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,7 +100,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "agent_type", n => { AgentType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseAgentType>(); } },
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy>(global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy.CreateFromDiscriminatorValue); } },
-                { "credit_limit", n => { CreditLimit = n.GetDoubleValue(); } },
+                { "credit_limit", n => { CreditLimit = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId>(global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject>(); } },
@@ -89,14 +119,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseAgentType>("agent_type", AgentType);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseCreatedBy>("created_by", CreatedBy);
-            writer.WriteDoubleValue("credit_limit", CreditLimit);
+            writer.WriteIntValue("credit_limit", CreditLimit);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId>("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason>("pause_reason", PauseReason);
             writer.WriteDoubleValue("runs_completed", RunsCompleted);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseStatus>("status", Status);
-            writer.WriteDoubleValue("total_credits_used", TotalCreditsUsed);
+            writer.WriteDoubleValue("total_credits_used", TotalCreditsUsed);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

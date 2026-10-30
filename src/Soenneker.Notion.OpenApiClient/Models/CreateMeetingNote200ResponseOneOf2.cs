@@ -11,57 +11,89 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateMeetingNote200ResponseOneOf2 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("created_time") is { } nullNodeCreatedTime && nullNodeCreatedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedTime = null;
+            if (parseNode.GetChildNode("has_children") is { } nullNodeHasChildren && nullNodeHasChildren.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasChildren = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("in_trash") is { } nullNodeInTrash && nullNodeInTrash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InTrash = null;
+            if (parseNode.GetChildNode("last_edited_by") is { } nullNodeLastEditedBy && nullNodeLastEditedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEditedBy = null;
+            if (parseNode.GetChildNode("last_edited_time") is { } nullNodeLastEditedTime && nullNodeLastEditedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastEditedTime = null;
+            if (parseNode.GetChildNode("meeting_notes") is { } nullNodeMeetingNotes && nullNodeMeetingNotes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MeetingNotes = null;
+            if (parseNode.GetChildNode("object") is { } nullNodeObject && nullNodeObject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Object = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse CreatedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>ISO-8601 timestamp when this meeting note was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedTime { get; set; }
+        public string? CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private string? _explicitNullValueCreatedTime = default!;
 #nullable restore
 #else
-        public string CreatedTime { get; set; }
+        public string CreatedTime { get => _explicitNullValueCreatedTime; set { _explicitNullValueCreatedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_time"); else _explicitNullProperties?.Remove("created_time"); } }
+        private string _explicitNullValueCreatedTime = default!;
 #endif
         /// <summary>Whether this block has child blocks.</summary>
-        public bool? HasChildren { get; set; }
+        public bool? HasChildren { get => _explicitNullValueHasChildren; set { _explicitNullValueHasChildren = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_children"); else _explicitNullProperties?.Remove("has_children"); } }
+        private bool? _explicitNullValueHasChildren = default!;
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>Whether this meeting note is in the trash.</summary>
-        public bool? InTrash { get; set; }
+        public bool? InTrash { get => _explicitNullValueInTrash; set { _explicitNullValueInTrash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_trash"); else _explicitNullProperties?.Remove("in_trash"); } }
+        private bool? _explicitNullValueInTrash = default!;
         /// <summary>The last_edited_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? LastEditedBy { get => _explicitNullValueLastEditedBy; set { _explicitNullValueLastEditedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_by"); else _explicitNullProperties?.Remove("last_edited_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse? _explicitNullValueLastEditedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse LastEditedBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse LastEditedBy { get => _explicitNullValueLastEditedBy; set { _explicitNullValueLastEditedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_by"); else _explicitNullProperties?.Remove("last_edited_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse _explicitNullValueLastEditedBy = default!;
 #endif
         /// <summary>ISO-8601 timestamp when this meeting note was last edited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastEditedTime { get; set; }
+        public string? LastEditedTime { get => _explicitNullValueLastEditedTime; set { _explicitNullValueLastEditedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_time"); else _explicitNullProperties?.Remove("last_edited_time"); } }
+        private string? _explicitNullValueLastEditedTime = default!;
 #nullable restore
 #else
-        public string LastEditedTime { get; set; }
+        public string LastEditedTime { get => _explicitNullValueLastEditedTime; set { _explicitNullValueLastEditedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_edited_time"); else _explicitNullProperties?.Remove("last_edited_time"); } }
+        private string _explicitNullValueLastEditedTime = default!;
 #endif
         /// <summary>Meeting note content fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes? MeetingNotes { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes? MeetingNotes { get => _explicitNullValueMeetingNotes; set { _explicitNullValueMeetingNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_notes"); else _explicitNullProperties?.Remove("meeting_notes"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes? _explicitNullValueMeetingNotes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes MeetingNotes { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes MeetingNotes { get => _explicitNullValueMeetingNotes; set { _explicitNullValueMeetingNotes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meeting_notes"); else _explicitNullProperties?.Remove("meeting_notes"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes _explicitNullValueMeetingNotes = default!;
 #endif
         /// <summary>Always &quot;block&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Object? Object { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Object? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Object? _explicitNullValueObject = default!;
         /// <summary>Always &quot;meeting_notes&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Type? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -70,7 +102,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,7 +140,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("last_edited_time", LastEditedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes>("meeting_notes", MeetingNotes);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2Type>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

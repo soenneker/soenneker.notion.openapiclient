@@ -12,42 +12,65 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateMeetingNote200ResponseOneOf2MeetingNotes : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("calendar_event") is { } nullNodeCalendarEvent && nullNodeCalendarEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CalendarEvent = null;
+            if (parseNode.GetChildNode("children") is { } nullNodeChildren && nullNodeChildren.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Children = null;
+            if (parseNode.GetChildNode("is_full_page") is { } nullNodeIsFullPage && nullNodeIsFullPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFullPage = null;
+            if (parseNode.GetChildNode("recording") is { } nullNodeRecording && nullNodeRecording.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recording = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Calendar event metadata associated with this meeting note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent? CalendarEvent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent? CalendarEvent { get => _explicitNullValueCalendarEvent; set { _explicitNullValueCalendarEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_event"); else _explicitNullProperties?.Remove("calendar_event"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent? _explicitNullValueCalendarEvent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent CalendarEvent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent CalendarEvent { get => _explicitNullValueCalendarEvent; set { _explicitNullValueCalendarEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendar_event"); else _explicitNullProperties?.Remove("calendar_event"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent _explicitNullValueCalendarEvent = default!;
 #endif
         /// <summary>Block IDs for each tab (summary, notes, transcript).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren? Children { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren? Children { get => _explicitNullValueChildren; set { _explicitNullValueChildren = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children"); else _explicitNullProperties?.Remove("children"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren? _explicitNullValueChildren = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren Children { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren Children { get => _explicitNullValueChildren; set { _explicitNullValueChildren = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("children"); else _explicitNullProperties?.Remove("children"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren _explicitNullValueChildren = default!;
 #endif
         /// <summary>Whether this is a full-page meeting note.</summary>
-        public bool? IsFullPage { get; set; }
+        public bool? IsFullPage { get => _explicitNullValueIsFullPage; set { _explicitNullValueIsFullPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_full_page"); else _explicitNullProperties?.Remove("is_full_page"); } }
+        private bool? _explicitNullValueIsFullPage = default!;
         /// <summary>Start and end times of the actual recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording? Recording { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording? Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording? _explicitNullValueRecording = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording Recording { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording Recording { get => _explicitNullValueRecording; set { _explicitNullValueRecording = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recording"); else _explicitNullProperties?.Remove("recording"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording _explicitNullValueRecording = default!;
 #endif
         /// <summary>Current processing status of the meeting note transcription.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesStatus? Status { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesStatus? _explicitNullValueStatus = default!;
         /// <summary>Title of the meeting note as rich text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>? Title { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse> Title { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse> Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse> _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +80,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,7 +110,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("is_full_page", IsFullPage);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesRecording>("recording", Recording);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("title", Title);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

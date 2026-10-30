@@ -11,17 +11,32 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FormViewConfigRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("anonymous_submissions") is { } nullNodeAnonymousSubmissions && nullNodeAnonymousSubmissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnonymousSubmissions = null;
+            if (parseNode.GetChildNode("is_form_closed") is { } nullNodeIsFormClosed && nullNodeIsFormClosed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsFormClosed = null;
+            if (parseNode.GetChildNode("submission_permissions") is { } nullNodeSubmissionPermissions && nullNodeSubmissionPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubmissionPermissions = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether anonymous (non-logged-in) submissions are allowed. Pass null to clear.</summary>
-        public bool? AnonymousSubmissions { get; set; }
+        public bool? AnonymousSubmissions { get => _explicitNullValueAnonymousSubmissions; set { _explicitNullValueAnonymousSubmissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("anonymous_submissions"); else _explicitNullProperties?.Remove("anonymous_submissions"); } }
+        private bool? _explicitNullValueAnonymousSubmissions = default!;
         /// <summary>Whether the form is closed for submissions. Pass null to clear.</summary>
-        public bool? IsFormClosed { get; set; }
+        public bool? IsFormClosed { get => _explicitNullValueIsFormClosed; set { _explicitNullValueIsFormClosed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_form_closed"); else _explicitNullProperties?.Remove("is_form_closed"); } }
+        private bool? _explicitNullValueIsFormClosed = default!;
         /// <summary>Permission level granted to the submitter on the created page after form submission. Pass null to clear.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions? SubmissionPermissions { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions? SubmissionPermissions { get => _explicitNullValueSubmissionPermissions; set { _explicitNullValueSubmissionPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("submission_permissions"); else _explicitNullProperties?.Remove("submission_permissions"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions? _explicitNullValueSubmissionPermissions = default!;
         /// <summary>The view type. Must be &quot;form&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.FormType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.FormType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.FormType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteBoolValue("is_form_closed", IsFormClosed);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormViewConfigRequestSubmissionPermissions>("submission_permissions", SubmissionPermissions);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FormType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

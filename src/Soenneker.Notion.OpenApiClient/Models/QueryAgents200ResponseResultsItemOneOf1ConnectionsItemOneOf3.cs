@@ -11,33 +11,51 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The linked Discord server, null when none is linked, or &quot;hidden&quot; when the caller lacks edit access to the agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Account? Account { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Account? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Account? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Account Account { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Account Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Account _explicitNullValueAccount = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3PermissionsItem>? Permissions { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3PermissionsItem>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3PermissionsItem>? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3PermissionsItem> Permissions { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3PermissionsItem> Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3PermissionsItem> _explicitNullValuePermissions = default!;
 #endif
         /// <summary>Always `discord`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Type? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Type? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +64,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,7 +90,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Account>("account", Account);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3PermissionsItem>("permissions", Permissions);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1ConnectionsItemOneOf3Type>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

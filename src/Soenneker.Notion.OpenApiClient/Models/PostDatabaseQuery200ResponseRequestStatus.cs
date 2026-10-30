@@ -11,13 +11,24 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostDatabaseQuery200ResponseRequestStatus : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("incomplete_reason") is { } nullNodeIncompleteReason && nullNodeIncompleteReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncompleteReason = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The incomplete_reason property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatusIncompleteReason? IncompleteReason { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatusIncompleteReason? IncompleteReason { get => _explicitNullValueIncompleteReason; set { _explicitNullValueIncompleteReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete_reason"); else _explicitNullProperties?.Remove("incomplete_reason"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatusIncompleteReason? _explicitNullValueIncompleteReason = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatusType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatusType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatusType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatusIncompleteReason>("incomplete_reason", IncompleteReason);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatusType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

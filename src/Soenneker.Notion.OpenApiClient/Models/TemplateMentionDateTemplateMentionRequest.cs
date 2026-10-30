@@ -11,11 +11,22 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TemplateMentionDateTemplateMentionRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("template_mention_date") is { } nullNodeTemplateMentionDate && nullNodeTemplateMentionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateMentionDate = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The date of the template mention.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateTemplateMentionRequestTemplateMentionDate? TemplateMentionDate { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateTemplateMentionRequestTemplateMentionDate? TemplateMentionDate { get => _explicitNullValueTemplateMentionDate; set { _explicitNullValueTemplateMentionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_mention_date"); else _explicitNullProperties?.Remove("template_mention_date"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateTemplateMentionRequestTemplateMentionDate? _explicitNullValueTemplateMentionDate = default!;
         /// <summary>Always `template_mention_date`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -24,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateTemplateMentionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateTemplateMentionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateTemplateMentionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +57,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateTemplateMentionRequestTemplateMentionDate>("template_mention_date", TemplateMentionDate);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionDateType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

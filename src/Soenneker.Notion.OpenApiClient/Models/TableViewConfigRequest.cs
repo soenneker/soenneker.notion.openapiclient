@@ -11,41 +11,65 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TableViewConfigRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frozen_column_index") is { } nullNodeFrozenColumnIndex && nullNodeFrozenColumnIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrozenColumnIndex = null;
+            if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("show_vertical_lines") is { } nullNodeShowVerticalLines && nullNodeShowVerticalLines.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShowVerticalLines = null;
+            if (parseNode.GetChildNode("subtasks") is { } nullNodeSubtasks && nullNodeSubtasks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtasks = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("wrap_cells") is { } nullNodeWrapCells && nullNodeWrapCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrapCells = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of columns frozen from the left side of the table.</summary>
-        public int? FrozenColumnIndex { get; set; }
+        public int? FrozenColumnIndex { get => _explicitNullValueFrozenColumnIndex; set { _explicitNullValueFrozenColumnIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frozen_column_index"); else _explicitNullProperties?.Remove("frozen_column_index"); } }
+        private int? _explicitNullValueFrozenColumnIndex = default!;
         /// <summary>Group-by configuration for the table. Pass null to remove grouping.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest? _explicitNullValueGroupBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest GroupBy { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigRequest _explicitNullValueGroupBy = default!;
 #endif
         /// <summary>Property visibility and display configuration. Pass null to clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest>? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get; set; }
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequest> _explicitNullValueProperties = default!;
 #endif
         /// <summary>Whether to show vertical grid lines between columns.</summary>
-        public bool? ShowVerticalLines { get; set; }
+        public bool? ShowVerticalLines { get => _explicitNullValueShowVerticalLines; set { _explicitNullValueShowVerticalLines = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("show_vertical_lines"); else _explicitNullProperties?.Remove("show_vertical_lines"); } }
+        private bool? _explicitNullValueShowVerticalLines = default!;
         /// <summary>Subtask (sub-item) configuration. Pass null to reset subtask config to defaults (which may show subtasks). Use `{ &quot;display_mode&quot;: &quot;disabled&quot; }` to explicitly disable subtasks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest? Subtasks { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest? Subtasks { get => _explicitNullValueSubtasks; set { _explicitNullValueSubtasks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtasks"); else _explicitNullProperties?.Remove("subtasks"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest? _explicitNullValueSubtasks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest Subtasks { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest Subtasks { get => _explicitNullValueSubtasks; set { _explicitNullValueSubtasks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtasks"); else _explicitNullProperties?.Remove("subtasks"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest _explicitNullValueSubtasks = default!;
 #endif
         /// <summary>The view type. Must be &quot;table&quot;.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType? _explicitNullValueType = default!;
         /// <summary>Whether to wrap cell content in the table.</summary>
-        public bool? WrapCells { get; set; }
+        public bool? WrapCells { get => _explicitNullValueWrapCells; set { _explicitNullValueWrapCells = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wrap_cells"); else _explicitNullProperties?.Remove("wrap_cells"); } }
+        private bool? _explicitNullValueWrapCells = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest"/> and sets the default values.
         /// </summary>
@@ -61,7 +85,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +118,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest>("subtasks", Subtasks);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TableViewConfigRequestType>("type", Type);
             writer.WriteBoolValue("wrap_cells", WrapCells);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

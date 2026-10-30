@@ -11,28 +11,45 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SubtaskConfigRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("display_mode") is { } nullNodeDisplayMode && nullNodeDisplayMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayMode = null;
+            if (parseNode.GetChildNode("filter_scope") is { } nullNodeFilterScope && nullNodeFilterScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterScope = null;
+            if (parseNode.GetChildNode("property_id") is { } nullNodePropertyId && nullNodePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PropertyId = null;
+            if (parseNode.GetChildNode("toggle_column_id") is { } nullNodeToggleColumnId && nullNodeToggleColumnId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToggleColumnId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How sub-items are displayed. &quot;show&quot; renders hierarchically with toggles, &quot;hidden&quot; shows parents with a count, &quot;flattened&quot; shows sub-items with a parent indicator, &quot;disabled&quot; turns off sub-item rendering.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestDisplayMode? DisplayMode { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestDisplayMode? DisplayMode { get => _explicitNullValueDisplayMode; set { _explicitNullValueDisplayMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_mode"); else _explicitNullProperties?.Remove("display_mode"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestDisplayMode? _explicitNullValueDisplayMode = default!;
         /// <summary>Which items are included when filtering. &quot;parents&quot; includes parent items only, &quot;parents_and_subitems&quot; includes both, &quot;subitems&quot; includes sub-items only.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestFilterScope? FilterScope { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestFilterScope? FilterScope { get => _explicitNullValueFilterScope; set { _explicitNullValueFilterScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_scope"); else _explicitNullProperties?.Remove("filter_scope"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestFilterScope? _explicitNullValueFilterScope = default!;
         /// <summary>Relation property ID used for parent-child nesting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyId { get; set; }
+        public string? PropertyId { get => _explicitNullValuePropertyId; set { _explicitNullValuePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_id"); else _explicitNullProperties?.Remove("property_id"); } }
+        private string? _explicitNullValuePropertyId = default!;
 #nullable restore
 #else
-        public string PropertyId { get; set; }
+        public string PropertyId { get => _explicitNullValuePropertyId; set { _explicitNullValuePropertyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("property_id"); else _explicitNullProperties?.Remove("property_id"); } }
+        private string _explicitNullValuePropertyId = default!;
 #endif
         /// <summary>Property ID of the column showing the sub-item expand/collapse toggle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToggleColumnId { get; set; }
+        public string? ToggleColumnId { get => _explicitNullValueToggleColumnId; set { _explicitNullValueToggleColumnId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toggle_column_id"); else _explicitNullProperties?.Remove("toggle_column_id"); } }
+        private string? _explicitNullValueToggleColumnId = default!;
 #nullable restore
 #else
-        public string ToggleColumnId { get; set; }
+        public string ToggleColumnId { get => _explicitNullValueToggleColumnId; set { _explicitNullValueToggleColumnId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toggle_column_id"); else _explicitNullProperties?.Remove("toggle_column_id"); } }
+        private string _explicitNullValueToggleColumnId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestFilterScope>("filter_scope", FilterScope);
             writer.WriteStringValue("property_id", PropertyId);
             writer.WriteStringValue("toggle_column_id", ToggleColumnId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

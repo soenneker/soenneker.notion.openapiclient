@@ -11,17 +11,34 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class QuerySessionEventsRequestFilterOneOf5AndItemOneOf5AndItemOneOf4Timestamp : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("after") is { } nullNodeAfter && nullNodeAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) After = null;
+            if (parseNode.GetChildNode("before") is { } nullNodeBefore && nullNodeBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Before = null;
+            if (parseNode.GetChildNode("equals") is { } nullNodeEqualsEscaped && nullNodeEqualsEscaped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EqualsEscaped = null;
+            if (parseNode.GetChildNode("on_or_after") is { } nullNodeOnOrAfter && nullNodeOnOrAfter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnOrAfter = null;
+            if (parseNode.GetChildNode("on_or_before") is { } nullNodeOnOrBefore && nullNodeOnOrBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnOrBefore = null;
+        }
+
         /// <summary>The after property</summary>
-        public DateTimeOffset? After { get; set; }
+        public DateTimeOffset? After { get => _explicitNullValueAfter; set { _explicitNullValueAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after"); else _explicitNullProperties?.Remove("after"); } }
+        private DateTimeOffset? _explicitNullValueAfter = default!;
         /// <summary>The before property</summary>
-        public DateTimeOffset? Before { get; set; }
+        public DateTimeOffset? Before { get => _explicitNullValueBefore; set { _explicitNullValueBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("before"); else _explicitNullProperties?.Remove("before"); } }
+        private DateTimeOffset? _explicitNullValueBefore = default!;
         /// <summary>The equals property</summary>
-        public DateTimeOffset? EqualsEscaped { get; set; }
+        public DateTimeOffset? EqualsEscaped { get => _explicitNullValueEqualsEscaped; set { _explicitNullValueEqualsEscaped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equals"); else _explicitNullProperties?.Remove("equals"); } }
+        private DateTimeOffset? _explicitNullValueEqualsEscaped = default!;
         /// <summary>The on_or_after property</summary>
-        public DateTimeOffset? OnOrAfter { get; set; }
+        public DateTimeOffset? OnOrAfter { get => _explicitNullValueOnOrAfter; set { _explicitNullValueOnOrAfter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_or_after"); else _explicitNullProperties?.Remove("on_or_after"); } }
+        private DateTimeOffset? _explicitNullValueOnOrAfter = default!;
         /// <summary>The on_or_before property</summary>
-        public DateTimeOffset? OnOrBefore { get; set; }
+        public DateTimeOffset? OnOrBefore { get => _explicitNullValueOnOrBefore; set { _explicitNullValueOnOrBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_or_before"); else _explicitNullProperties?.Remove("on_or_before"); } }
+        private DateTimeOffset? _explicitNullValueOnOrBefore = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +47,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf5AndItemOneOf4Timestamp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf5AndItemOneOf4Timestamp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf5AndItemOneOf4Timestamp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +75,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("before", Before);
             writer.WriteDateTimeOffsetValue("equals", EqualsEscaped);
             writer.WriteDateTimeOffsetValue("on_or_after", OnOrAfter);
-            writer.WriteDateTimeOffsetValue("on_or_before", OnOrBefore);
+            writer.WriteDateTimeOffsetValue("on_or_before", OnOrBefore);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -11,32 +11,48 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TranscriptionChildrenResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("notes_block_id") is { } nullNodeNotesBlockId && nullNodeNotesBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotesBlockId = null;
+            if (parseNode.GetChildNode("summary_block_id") is { } nullNodeSummaryBlockId && nullNodeSummaryBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SummaryBlockId = null;
+            if (parseNode.GetChildNode("transcript_block_id") is { } nullNodeTranscriptBlockId && nullNodeTranscriptBlockId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TranscriptBlockId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The notes_block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotesBlockId { get; set; }
+        public string? NotesBlockId { get => _explicitNullValueNotesBlockId; set { _explicitNullValueNotesBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_block_id"); else _explicitNullProperties?.Remove("notes_block_id"); } }
+        private string? _explicitNullValueNotesBlockId = default!;
 #nullable restore
 #else
-        public string NotesBlockId { get; set; }
+        public string NotesBlockId { get => _explicitNullValueNotesBlockId; set { _explicitNullValueNotesBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notes_block_id"); else _explicitNullProperties?.Remove("notes_block_id"); } }
+        private string _explicitNullValueNotesBlockId = default!;
 #endif
         /// <summary>The summary_block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SummaryBlockId { get; set; }
+        public string? SummaryBlockId { get => _explicitNullValueSummaryBlockId; set { _explicitNullValueSummaryBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_block_id"); else _explicitNullProperties?.Remove("summary_block_id"); } }
+        private string? _explicitNullValueSummaryBlockId = default!;
 #nullable restore
 #else
-        public string SummaryBlockId { get; set; }
+        public string SummaryBlockId { get => _explicitNullValueSummaryBlockId; set { _explicitNullValueSummaryBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary_block_id"); else _explicitNullProperties?.Remove("summary_block_id"); } }
+        private string _explicitNullValueSummaryBlockId = default!;
 #endif
         /// <summary>The transcript_block_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TranscriptBlockId { get; set; }
+        public string? TranscriptBlockId { get => _explicitNullValueTranscriptBlockId; set { _explicitNullValueTranscriptBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_block_id"); else _explicitNullProperties?.Remove("transcript_block_id"); } }
+        private string? _explicitNullValueTranscriptBlockId = default!;
 #nullable restore
 #else
-        public string TranscriptBlockId { get; set; }
+        public string TranscriptBlockId { get => _explicitNullValueTranscriptBlockId; set { _explicitNullValueTranscriptBlockId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transcript_block_id"); else _explicitNullProperties?.Remove("transcript_block_id"); } }
+        private string _explicitNullValueTranscriptBlockId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TranscriptionChildrenResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("notes_block_id", NotesBlockId);
             writer.WriteStringValue("summary_block_id", SummaryBlockId);
             writer.WriteStringValue("transcript_block_id", TranscriptBlockId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

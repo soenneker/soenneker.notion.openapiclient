@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LinkToPageBlockObjectResponseLinkToPage : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPage();
             if("comment_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LinkToPageBlockObjectResponseLinkToPageCommentId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId();
+                
             }
             else if("database_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LinkToPageBlockObjectResponseLinkToPageDatabaseId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId();
+                
             }
             else if("page_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LinkToPageBlockObjectResponseLinkToPagePageId = new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("page_id".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("page_id") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("database_id".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("database_id") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("comment_id".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("comment_id") != null))();
+            if (result.LinkToPageBlockObjectResponseLinkToPageCommentId == null && result.LinkToPageBlockObjectResponseLinkToPageDatabaseId == null && result.LinkToPageBlockObjectResponseLinkToPagePageId == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.LinkToPageBlockObjectResponseLinkToPagePageId = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId(), parseNode);
+            if (result.LinkToPageBlockObjectResponseLinkToPageCommentId == null && result.LinkToPageBlockObjectResponseLinkToPageDatabaseId == null && result.LinkToPageBlockObjectResponseLinkToPagePageId == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.LinkToPageBlockObjectResponseLinkToPageDatabaseId = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId(), parseNode);
+            if (result.LinkToPageBlockObjectResponseLinkToPageCommentId == null && result.LinkToPageBlockObjectResponseLinkToPageDatabaseId == null && result.LinkToPageBlockObjectResponseLinkToPagePageId == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.LinkToPageBlockObjectResponseLinkToPageCommentId = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId(), parseNode);
+            if (result.LinkToPageBlockObjectResponseLinkToPageCommentId == null && result.LinkToPageBlockObjectResponseLinkToPageDatabaseId == null && result.LinkToPageBlockObjectResponseLinkToPagePageId == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (LinkToPageBlockObjectResponseLinkToPageCommentId == null && LinkToPageBlockObjectResponseLinkToPageDatabaseId == null && LinkToPageBlockObjectResponseLinkToPagePageId == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (LinkToPageBlockObjectResponseLinkToPageCommentId != null && LinkToPageBlockObjectResponseLinkToPageDatabaseId == null && LinkToPageBlockObjectResponseLinkToPagePageId == null) { if (LinkToPageBlockObjectResponseLinkToPageCommentId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LinkToPageBlockObjectResponseLinkToPageCommentId); return; }
+            if (LinkToPageBlockObjectResponseLinkToPageDatabaseId != null && LinkToPageBlockObjectResponseLinkToPageCommentId == null && LinkToPageBlockObjectResponseLinkToPagePageId == null) { if (LinkToPageBlockObjectResponseLinkToPageDatabaseId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LinkToPageBlockObjectResponseLinkToPageDatabaseId); return; }
+            if (LinkToPageBlockObjectResponseLinkToPagePageId != null && LinkToPageBlockObjectResponseLinkToPageCommentId == null && LinkToPageBlockObjectResponseLinkToPageDatabaseId == null) { if (LinkToPageBlockObjectResponseLinkToPagePageId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LinkToPageBlockObjectResponseLinkToPagePageId); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(LinkToPageBlockObjectResponseLinkToPageCommentId != null)
             {
+                if (LinkToPageBlockObjectResponseLinkToPageCommentId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageCommentId>(null, LinkToPageBlockObjectResponseLinkToPageCommentId);
             }
             else if(LinkToPageBlockObjectResponseLinkToPageDatabaseId != null)
             {
+                if (LinkToPageBlockObjectResponseLinkToPageDatabaseId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPageDatabaseId>(null, LinkToPageBlockObjectResponseLinkToPageDatabaseId);
             }
             else if(LinkToPageBlockObjectResponseLinkToPagePageId != null)
             {
+                if (LinkToPageBlockObjectResponseLinkToPagePageId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.LinkToPageBlockObjectResponseLinkToPagePageId>(null, LinkToPageBlockObjectResponseLinkToPagePageId);
             }
         }

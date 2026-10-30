@@ -11,11 +11,22 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TemplateMentionUserTemplateMentionRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("template_mention_user") is { } nullNodeTemplateMentionUser && nullNodeTemplateMentionUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateMentionUser = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The user of the template mention.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.MeTemplateMentionUser? TemplateMentionUser { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.MeTemplateMentionUser? TemplateMentionUser { get => _explicitNullValueTemplateMentionUser; set { _explicitNullValueTemplateMentionUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("template_mention_user"); else _explicitNullProperties?.Remove("template_mention_user"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.MeTemplateMentionUser? _explicitNullValueTemplateMentionUser = default!;
         /// <summary>Always `template_mention_user`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionUserType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionUserType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionUserType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -24,7 +35,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionUserTemplateMentionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionUserTemplateMentionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionUserTemplateMentionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +57,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.MeTemplateMentionUser>("template_mention_user", TemplateMentionUser);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionUserType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TemplateMentionUserType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

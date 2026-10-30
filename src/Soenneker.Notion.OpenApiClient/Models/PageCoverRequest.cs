@@ -12,6 +12,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class PageCoverRequest : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>External URL for the cover.</summary>
@@ -67,17 +71,24 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.PageCoverRequest();
             if("external".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ExternalPageCoverRequest = new global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest();
+                
             }
             else if("file_upload".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FileUploadPageCoverRequest = new global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequest();
+                
             }
-            else if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestType>() is global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestType typeValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("file_upload".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestType>() is global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestType typeValue)
             {
                 result.Type = typeValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("file_upload") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("file_upload".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("external") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("external".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.External == null && result.ExternalPageCoverRequest == null && result.FileUpload == null && result.FileUploadPageCoverRequest == null && result.Type == null && matchesUnionBranch0 && !matchesUnionBranch1) result.FileUploadPageCoverRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequest(), parseNode);
+            if (result.External == null && result.ExternalPageCoverRequest == null && result.FileUpload == null && result.FileUploadPageCoverRequest == null && result.Type == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ExternalPageCoverRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest(), parseNode);
+            if (result.External == null && result.ExternalPageCoverRequest == null && result.FileUpload == null && result.FileUploadPageCoverRequest == null && result.Type == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,28 +120,37 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (External == null && ExternalPageCoverRequest == null && FileUpload == null && FileUploadPageCoverRequest == null && Type == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ExternalPageCoverRequest != null && External == null && FileUpload == null && FileUploadPageCoverRequest == null && Type == null) { if (ExternalPageCoverRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ExternalPageCoverRequest); return; }
+            if (FileUploadPageCoverRequest != null && External == null && ExternalPageCoverRequest == null && FileUpload == null && Type == null) { if (FileUploadPageCoverRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FileUploadPageCoverRequest); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(External != null)
             {
+                if (External is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequestExternal>(null, External);
             }
             else if(ExternalPageCoverRequest != null)
             {
+                if (ExternalPageCoverRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalPageCoverRequest>(null, ExternalPageCoverRequest);
             }
             else if(FileUpload != null)
             {
+                if (FileUpload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestFileUpload>(null, FileUpload);
             }
             else if(FileUploadPageCoverRequest != null)
             {
+                if (FileUploadPageCoverRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequest>(null, FileUploadPageCoverRequest);
             }
             else if(Type != null)
             {
                 writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.FileUploadPageCoverRequestType>(null, Type);
             }
-            writer.WriteAdditionalData(AdditionalData);
+            
         }
     }
 }

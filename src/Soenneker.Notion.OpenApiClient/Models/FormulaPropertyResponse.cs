@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FormulaPropertyResponse : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,25 +70,38 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.FormulaPropertyResponse();
             if("boolean".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BooleanFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse();
+                
             }
             else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.DateFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse();
+                
             }
             else if("number".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NumberFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse();
+                
             }
             else if("string".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.StringFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse();
+                
             }
             else if("unsupported".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UnsupportedFormulaPropertyResponse = new global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("string".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("string") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("date".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("date") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("number".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("number") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("boolean".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("boolean") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("unsupported".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("unsupported") != null))();
+            if (result.BooleanFormulaPropertyResponse == null && result.DateFormulaPropertyResponse == null && result.NumberFormulaPropertyResponse == null && result.StringFormulaPropertyResponse == null && result.UnsupportedFormulaPropertyResponse == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.StringFormulaPropertyResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse(), parseNode);
+            if (result.BooleanFormulaPropertyResponse == null && result.DateFormulaPropertyResponse == null && result.NumberFormulaPropertyResponse == null && result.StringFormulaPropertyResponse == null && result.UnsupportedFormulaPropertyResponse == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.DateFormulaPropertyResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse(), parseNode);
+            if (result.BooleanFormulaPropertyResponse == null && result.DateFormulaPropertyResponse == null && result.NumberFormulaPropertyResponse == null && result.StringFormulaPropertyResponse == null && result.UnsupportedFormulaPropertyResponse == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4) result.NumberFormulaPropertyResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse(), parseNode);
+            if (result.BooleanFormulaPropertyResponse == null && result.DateFormulaPropertyResponse == null && result.NumberFormulaPropertyResponse == null && result.StringFormulaPropertyResponse == null && result.UnsupportedFormulaPropertyResponse == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4) result.BooleanFormulaPropertyResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse(), parseNode);
+            if (result.BooleanFormulaPropertyResponse == null && result.DateFormulaPropertyResponse == null && result.NumberFormulaPropertyResponse == null && result.StringFormulaPropertyResponse == null && result.UnsupportedFormulaPropertyResponse == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.UnsupportedFormulaPropertyResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse(), parseNode);
+            if (result.BooleanFormulaPropertyResponse == null && result.DateFormulaPropertyResponse == null && result.NumberFormulaPropertyResponse == null && result.StringFormulaPropertyResponse == null && result.UnsupportedFormulaPropertyResponse == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,25 +137,38 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (BooleanFormulaPropertyResponse == null && DateFormulaPropertyResponse == null && NumberFormulaPropertyResponse == null && StringFormulaPropertyResponse == null && UnsupportedFormulaPropertyResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (BooleanFormulaPropertyResponse != null && DateFormulaPropertyResponse == null && NumberFormulaPropertyResponse == null && StringFormulaPropertyResponse == null && UnsupportedFormulaPropertyResponse == null) { if (BooleanFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BooleanFormulaPropertyResponse); return; }
+            if (DateFormulaPropertyResponse != null && BooleanFormulaPropertyResponse == null && NumberFormulaPropertyResponse == null && StringFormulaPropertyResponse == null && UnsupportedFormulaPropertyResponse == null) { if (DateFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DateFormulaPropertyResponse); return; }
+            if (NumberFormulaPropertyResponse != null && BooleanFormulaPropertyResponse == null && DateFormulaPropertyResponse == null && StringFormulaPropertyResponse == null && UnsupportedFormulaPropertyResponse == null) { if (NumberFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NumberFormulaPropertyResponse); return; }
+            if (StringFormulaPropertyResponse != null && BooleanFormulaPropertyResponse == null && DateFormulaPropertyResponse == null && NumberFormulaPropertyResponse == null && UnsupportedFormulaPropertyResponse == null) { if (StringFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, StringFormulaPropertyResponse); return; }
+            if (UnsupportedFormulaPropertyResponse != null && BooleanFormulaPropertyResponse == null && DateFormulaPropertyResponse == null && NumberFormulaPropertyResponse == null && StringFormulaPropertyResponse == null) { if (UnsupportedFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UnsupportedFormulaPropertyResponse); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(BooleanFormulaPropertyResponse != null)
             {
+                if (BooleanFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BooleanFormulaPropertyResponse>(null, BooleanFormulaPropertyResponse);
             }
             else if(DateFormulaPropertyResponse != null)
             {
+                if (DateFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DateFormulaPropertyResponse>(null, DateFormulaPropertyResponse);
             }
             else if(NumberFormulaPropertyResponse != null)
             {
+                if (NumberFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.NumberFormulaPropertyResponse>(null, NumberFormulaPropertyResponse);
             }
             else if(StringFormulaPropertyResponse != null)
             {
+                if (StringFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringFormulaPropertyResponse>(null, StringFormulaPropertyResponse);
             }
             else if(UnsupportedFormulaPropertyResponse != null)
             {
+                if (UnsupportedFormulaPropertyResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UnsupportedFormulaPropertyResponse>(null, UnsupportedFormulaPropertyResponse);
             }
         }

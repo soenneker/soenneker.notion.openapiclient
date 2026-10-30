@@ -12,18 +12,31 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class UserObjectResponseBot : global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseCommon, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            base.CaptureExplicitNulls(parseNode);
+            if (parseNode.GetChildNode("bot") is { } nullNodeBot && nullNodeBot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bot = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Details about the bot, when the `type` of the user is `bot`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot? Bot { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot? Bot { get => _explicitNullValueBot; set { _explicitNullValueBot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot"); else _explicitNullProperties?.Remove("bot"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot? _explicitNullValueBot = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot Bot { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot Bot { get => _explicitNullValueBot; set { _explicitNullValueBot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bot"); else _explicitNullProperties?.Remove("bot"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot _explicitNullValueBot = default!;
 #endif
         /// <summary>Indicates this user is a bot.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.BotType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.BotType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.BotType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot"/> and sets the default values.
         /// </summary>
@@ -39,7 +52,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot>("bot", Bot);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BotType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

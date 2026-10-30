@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MentionRichTextItemRequestMention : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionCustomEmoji"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,29 +78,44 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMention();
             if("custom_emoji".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MentionRichTextItemRequestMentionCustomEmoji = new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionCustomEmoji();
+                
             }
             else if("database".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MentionRichTextItemRequestMentionDatabase = new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionDatabase();
+                
             }
             else if("date".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MentionRichTextItemRequestMentionDate = new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionDate();
+                
             }
             else if("page".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MentionRichTextItemRequestMentionPage = new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionPage();
+                
             }
             else if("template_mention".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MentionRichTextItemRequestMentionTemplateMention = new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionTemplateMention();
+                
             }
             else if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MentionRichTextItemRequestMentionUser = new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionUser();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("user".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("date") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("date".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("page") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("page".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("database") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("database".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("template_mention") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("template_mention".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("custom_emoji") != null && (parseNode.GetChildNode("type") == null || (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("custom_emoji".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.MentionRichTextItemRequestMentionCustomEmoji == null && result.MentionRichTextItemRequestMentionDatabase == null && result.MentionRichTextItemRequestMentionDate == null && result.MentionRichTextItemRequestMentionPage == null && result.MentionRichTextItemRequestMentionTemplateMention == null && result.MentionRichTextItemRequestMentionUser == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.MentionRichTextItemRequestMentionUser = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionUser(), parseNode);
+            if (result.MentionRichTextItemRequestMentionCustomEmoji == null && result.MentionRichTextItemRequestMentionDatabase == null && result.MentionRichTextItemRequestMentionDate == null && result.MentionRichTextItemRequestMentionPage == null && result.MentionRichTextItemRequestMentionTemplateMention == null && result.MentionRichTextItemRequestMentionUser == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.MentionRichTextItemRequestMentionDate = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionDate(), parseNode);
+            if (result.MentionRichTextItemRequestMentionCustomEmoji == null && result.MentionRichTextItemRequestMentionDatabase == null && result.MentionRichTextItemRequestMentionDate == null && result.MentionRichTextItemRequestMentionPage == null && result.MentionRichTextItemRequestMentionTemplateMention == null && result.MentionRichTextItemRequestMentionUser == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5) result.MentionRichTextItemRequestMentionPage = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionPage(), parseNode);
+            if (result.MentionRichTextItemRequestMentionCustomEmoji == null && result.MentionRichTextItemRequestMentionDatabase == null && result.MentionRichTextItemRequestMentionDate == null && result.MentionRichTextItemRequestMentionPage == null && result.MentionRichTextItemRequestMentionTemplateMention == null && result.MentionRichTextItemRequestMentionUser == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5) result.MentionRichTextItemRequestMentionDatabase = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionDatabase(), parseNode);
+            if (result.MentionRichTextItemRequestMentionCustomEmoji == null && result.MentionRichTextItemRequestMentionDatabase == null && result.MentionRichTextItemRequestMentionDate == null && result.MentionRichTextItemRequestMentionPage == null && result.MentionRichTextItemRequestMentionTemplateMention == null && result.MentionRichTextItemRequestMentionUser == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5) result.MentionRichTextItemRequestMentionTemplateMention = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionTemplateMention(), parseNode);
+            if (result.MentionRichTextItemRequestMentionCustomEmoji == null && result.MentionRichTextItemRequestMentionDatabase == null && result.MentionRichTextItemRequestMentionDate == null && result.MentionRichTextItemRequestMentionPage == null && result.MentionRichTextItemRequestMentionTemplateMention == null && result.MentionRichTextItemRequestMentionUser == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.MentionRichTextItemRequestMentionCustomEmoji = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionCustomEmoji(), parseNode);
+            if (result.MentionRichTextItemRequestMentionCustomEmoji == null && result.MentionRichTextItemRequestMentionDatabase == null && result.MentionRichTextItemRequestMentionDate == null && result.MentionRichTextItemRequestMentionPage == null && result.MentionRichTextItemRequestMentionTemplateMention == null && result.MentionRichTextItemRequestMentionUser == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -135,29 +155,44 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (MentionRichTextItemRequestMentionCustomEmoji == null && MentionRichTextItemRequestMentionDatabase == null && MentionRichTextItemRequestMentionDate == null && MentionRichTextItemRequestMentionPage == null && MentionRichTextItemRequestMentionTemplateMention == null && MentionRichTextItemRequestMentionUser == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (MentionRichTextItemRequestMentionCustomEmoji != null && MentionRichTextItemRequestMentionDatabase == null && MentionRichTextItemRequestMentionDate == null && MentionRichTextItemRequestMentionPage == null && MentionRichTextItemRequestMentionTemplateMention == null && MentionRichTextItemRequestMentionUser == null) { if (MentionRichTextItemRequestMentionCustomEmoji is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MentionRichTextItemRequestMentionCustomEmoji); return; }
+            if (MentionRichTextItemRequestMentionDatabase != null && MentionRichTextItemRequestMentionCustomEmoji == null && MentionRichTextItemRequestMentionDate == null && MentionRichTextItemRequestMentionPage == null && MentionRichTextItemRequestMentionTemplateMention == null && MentionRichTextItemRequestMentionUser == null) { if (MentionRichTextItemRequestMentionDatabase is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MentionRichTextItemRequestMentionDatabase); return; }
+            if (MentionRichTextItemRequestMentionDate != null && MentionRichTextItemRequestMentionCustomEmoji == null && MentionRichTextItemRequestMentionDatabase == null && MentionRichTextItemRequestMentionPage == null && MentionRichTextItemRequestMentionTemplateMention == null && MentionRichTextItemRequestMentionUser == null) { if (MentionRichTextItemRequestMentionDate is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MentionRichTextItemRequestMentionDate); return; }
+            if (MentionRichTextItemRequestMentionPage != null && MentionRichTextItemRequestMentionCustomEmoji == null && MentionRichTextItemRequestMentionDatabase == null && MentionRichTextItemRequestMentionDate == null && MentionRichTextItemRequestMentionTemplateMention == null && MentionRichTextItemRequestMentionUser == null) { if (MentionRichTextItemRequestMentionPage is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MentionRichTextItemRequestMentionPage); return; }
+            if (MentionRichTextItemRequestMentionTemplateMention != null && MentionRichTextItemRequestMentionCustomEmoji == null && MentionRichTextItemRequestMentionDatabase == null && MentionRichTextItemRequestMentionDate == null && MentionRichTextItemRequestMentionPage == null && MentionRichTextItemRequestMentionUser == null) { if (MentionRichTextItemRequestMentionTemplateMention is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MentionRichTextItemRequestMentionTemplateMention); return; }
+            if (MentionRichTextItemRequestMentionUser != null && MentionRichTextItemRequestMentionCustomEmoji == null && MentionRichTextItemRequestMentionDatabase == null && MentionRichTextItemRequestMentionDate == null && MentionRichTextItemRequestMentionPage == null && MentionRichTextItemRequestMentionTemplateMention == null) { if (MentionRichTextItemRequestMentionUser is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MentionRichTextItemRequestMentionUser); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(MentionRichTextItemRequestMentionCustomEmoji != null)
             {
+                if (MentionRichTextItemRequestMentionCustomEmoji is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionCustomEmoji>(null, MentionRichTextItemRequestMentionCustomEmoji);
             }
             else if(MentionRichTextItemRequestMentionDatabase != null)
             {
+                if (MentionRichTextItemRequestMentionDatabase is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionDatabase>(null, MentionRichTextItemRequestMentionDatabase);
             }
             else if(MentionRichTextItemRequestMentionDate != null)
             {
+                if (MentionRichTextItemRequestMentionDate is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionDate>(null, MentionRichTextItemRequestMentionDate);
             }
             else if(MentionRichTextItemRequestMentionPage != null)
             {
+                if (MentionRichTextItemRequestMentionPage is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionPage>(null, MentionRichTextItemRequestMentionPage);
             }
             else if(MentionRichTextItemRequestMentionTemplateMention != null)
             {
+                if (MentionRichTextItemRequestMentionTemplateMention is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionTemplateMention>(null, MentionRichTextItemRequestMentionTemplateMention);
             }
             else if(MentionRichTextItemRequestMentionUser != null)
             {
+                if (MentionRichTextItemRequestMentionUser is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemRequestMentionUser>(null, MentionRichTextItemRequestMentionUser);
             }
         }

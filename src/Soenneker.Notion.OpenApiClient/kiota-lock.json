@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "071257F378A8C067FEF35389F4009214928562957964D6AEF6D27741EEFFA3EEEA25DD7E3DD1CE6BE78BB7F6BDA859C49C49D69C588F73DE666C67734B1FC310",
+  "descriptionHash": "87B561BF617C8023655694C095DC816DA0995CC0F3799ED374B5DF20AF5D20465F444542CEB1865FCA2C658E07C2284568306DD61CF88E25094A35FA34A6B642",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "NotionOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Notion.OpenApiClient",

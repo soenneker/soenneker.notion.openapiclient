@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentBatchRequestOperationsItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var result = new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItem();
             if("update_status".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AgentBatchRequestOperationsItemOneOf1 = new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1();
+                
             }
             else if("update_credit_limit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AgentBatchRequestOperationsItemOneOf2 = new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2();
+                
             }
             else if("delete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AgentBatchRequestOperationsItemOneOf3 = new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("action") != null && (parseNode.GetChildNode("action")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("update_status".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("agent_id") != null && parseNode.GetChildNode("fields") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("action") != null && (parseNode.GetChildNode("action")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("update_credit_limit".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("agent_id") != null && parseNode.GetChildNode("fields") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("action") != null && (parseNode.GetChildNode("action")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("delete".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("agent_id") != null))();
+            if (result.AgentBatchRequestOperationsItemOneOf1 == null && result.AgentBatchRequestOperationsItemOneOf2 == null && result.AgentBatchRequestOperationsItemOneOf3 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.AgentBatchRequestOperationsItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1(), parseNode);
+            if (result.AgentBatchRequestOperationsItemOneOf1 == null && result.AgentBatchRequestOperationsItemOneOf2 == null && result.AgentBatchRequestOperationsItemOneOf3 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.AgentBatchRequestOperationsItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2(), parseNode);
+            if (result.AgentBatchRequestOperationsItemOneOf1 == null && result.AgentBatchRequestOperationsItemOneOf2 == null && result.AgentBatchRequestOperationsItemOneOf3 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.AgentBatchRequestOperationsItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3(), parseNode);
+            if (result.AgentBatchRequestOperationsItemOneOf1 == null && result.AgentBatchRequestOperationsItemOneOf2 == null && result.AgentBatchRequestOperationsItemOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AgentBatchRequestOperationsItemOneOf1 == null && AgentBatchRequestOperationsItemOneOf2 == null && AgentBatchRequestOperationsItemOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AgentBatchRequestOperationsItemOneOf1 != null && AgentBatchRequestOperationsItemOneOf2 == null && AgentBatchRequestOperationsItemOneOf3 == null) { if (AgentBatchRequestOperationsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AgentBatchRequestOperationsItemOneOf1); return; }
+            if (AgentBatchRequestOperationsItemOneOf2 != null && AgentBatchRequestOperationsItemOneOf1 == null && AgentBatchRequestOperationsItemOneOf3 == null) { if (AgentBatchRequestOperationsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AgentBatchRequestOperationsItemOneOf2); return; }
+            if (AgentBatchRequestOperationsItemOneOf3 != null && AgentBatchRequestOperationsItemOneOf1 == null && AgentBatchRequestOperationsItemOneOf2 == null) { if (AgentBatchRequestOperationsItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AgentBatchRequestOperationsItemOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(AgentBatchRequestOperationsItemOneOf1 != null)
             {
+                if (AgentBatchRequestOperationsItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf1>(null, AgentBatchRequestOperationsItemOneOf1);
             }
             else if(AgentBatchRequestOperationsItemOneOf2 != null)
             {
+                if (AgentBatchRequestOperationsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf2>(null, AgentBatchRequestOperationsItemOneOf2);
             }
             else if(AgentBatchRequestOperationsItemOneOf3 != null)
             {
+                if (AgentBatchRequestOperationsItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3>(null, AgentBatchRequestOperationsItemOneOf3);
             }
         }

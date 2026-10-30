@@ -12,22 +12,35 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetAgent200ResponseIconOneOf2CustomAgentAvatar : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("animated_url") is { } nullNodeAnimatedUrl && nullNodeAnimatedUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnimatedUrl = null;
+            if (parseNode.GetChildNode("static_url") is { } nullNodeStaticUrl && nullNodeStaticUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StaticUrl = null;
+        }
+
         /// <summary>The URL of the animated custom agent avatar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnimatedUrl { get; set; }
+        public string? AnimatedUrl { get => _explicitNullValueAnimatedUrl; set { _explicitNullValueAnimatedUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("animated_url"); else _explicitNullProperties?.Remove("animated_url"); } }
+        private string? _explicitNullValueAnimatedUrl = default!;
 #nullable restore
 #else
-        public string AnimatedUrl { get; set; }
+        public string AnimatedUrl { get => _explicitNullValueAnimatedUrl; set { _explicitNullValueAnimatedUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("animated_url"); else _explicitNullProperties?.Remove("animated_url"); } }
+        private string _explicitNullValueAnimatedUrl = default!;
 #endif
         /// <summary>The URL of the static custom agent avatar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StaticUrl { get; set; }
+        public string? StaticUrl { get => _explicitNullValueStaticUrl; set { _explicitNullValueStaticUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_url"); else _explicitNullProperties?.Remove("static_url"); } }
+        private string? _explicitNullValueStaticUrl = default!;
 #nullable restore
 #else
-        public string StaticUrl { get; set; }
+        public string StaticUrl { get => _explicitNullValueStaticUrl; set { _explicitNullValueStaticUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("static_url"); else _explicitNullProperties?.Remove("static_url"); } }
+        private string _explicitNullValueStaticUrl = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("animated_url", AnimatedUrl);
-            writer.WriteStringValue("static_url", StaticUrl);
+            writer.WriteStringValue("static_url", StaticUrl);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

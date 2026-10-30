@@ -11,22 +11,38 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdatePageMarkdownRequestUpdateContent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_async") is { } nullNodeAllowAsync && nullNodeAllowAsync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowAsync = null;
+            if (parseNode.GetChildNode("markdown_version") is { } nullNodeMarkdownVersion && nullNodeMarkdownVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MarkdownVersion = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("update_content") is { } nullNodeUpdateContent && nullNodeUpdateContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateContent = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Set to true to opt into receiving an async_task result when this update operation is accepted for background execution. If omitted or false, the endpoint keeps the existing synchronous response shape.</summary>
-        public bool? AllowAsync { get; set; }
-        /// <summary>The Markdown syntax to use. `v1` (the default) is enhanced markdown. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown), an opt-in preview.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestMarkdownVersion? MarkdownVersion { get; set; }
+        public bool? AllowAsync { get => _explicitNullValueAllowAsync; set { _explicitNullValueAllowAsync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_async"); else _explicitNullProperties?.Remove("allow_async"); } }
+        private bool? _explicitNullValueAllowAsync = default!;
+        /// <summary>The Markdown syntax to use. `v2` is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. `v1` is enhanced markdown. It&apos;s deprecated. It&apos;s the default on current Notion-Versions. The next Notion-Version rejects `v1` with a `400` `validation_error`.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestMarkdownVersion? MarkdownVersion { get => _explicitNullValueMarkdownVersion; set { _explicitNullValueMarkdownVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("markdown_version"); else _explicitNullProperties?.Remove("markdown_version"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestMarkdownVersion? _explicitNullValueMarkdownVersion = default!;
         /// <summary>Always `update_content`</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateContentType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdateContentType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.UpdateContentType? _explicitNullValueType = default!;
         /// <summary>Update specific content using search-and-replace operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContent? UpdateContent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContent? UpdateContent { get => _explicitNullValueUpdateContent; set { _explicitNullValueUpdateContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_content"); else _explicitNullProperties?.Remove("update_content"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContent? _explicitNullValueUpdateContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContent UpdateContent { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContent UpdateContent { get => _explicitNullValueUpdateContent; set { _explicitNullValueUpdateContent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_content"); else _explicitNullProperties?.Remove("update_content"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContent _explicitNullValueUpdateContent = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent"/> and sets the default values.
@@ -43,7 +59,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestUpdateContent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestMarkdownVersion>("markdown_version", MarkdownVersion);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateContentType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1UpdateContentUpdateContent>("update_content", UpdateContent);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,17 +11,29 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAgent200ResponseIconOneOf2 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_agent_avatar") is { } nullNodeCustomAgentAvatar && nullNodeCustomAgentAvatar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomAgentAvatar = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The static and animated URLs for the agent avatar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar? CustomAgentAvatar { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar? CustomAgentAvatar { get => _explicitNullValueCustomAgentAvatar; set { _explicitNullValueCustomAgentAvatar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_agent_avatar"); else _explicitNullProperties?.Remove("custom_agent_avatar"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar? _explicitNullValueCustomAgentAvatar = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar CustomAgentAvatar { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar CustomAgentAvatar { get => _explicitNullValueCustomAgentAvatar; set { _explicitNullValueCustomAgentAvatar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_agent_avatar"); else _explicitNullProperties?.Remove("custom_agent_avatar"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar _explicitNullValueCustomAgentAvatar = default!;
 #endif
         /// <summary>Type of icon. In this case, a custom agent avatar.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.CustomAgentAvatarType? Type { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.CustomAgentAvatarType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CustomAgentAvatarType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +42,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseIconOneOf2CustomAgentAvatar>("custom_agent_avatar", CustomAgentAvatar);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CustomAgentAvatarType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CustomAgentAvatarType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

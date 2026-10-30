@@ -12,6 +12,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
     public partial class UserObjectResponse : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Details about the bot, when the `type` of the user is `bot`.</summary>
@@ -65,19 +69,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponse();
-            if(parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PersonType>() is global::Soenneker.Notion.OpenApiClient.Models.PersonType typeValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString unionEnumValue0 && ("person".Equals(unionEnumValue0.GetValue(), global::System.StringComparison.OrdinalIgnoreCase)) && parseNode.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PersonType>() is global::Soenneker.Notion.OpenApiClient.Models.PersonType typeValue)
             {
                 result.Type = typeValue;
             }
             else if("bot".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserObjectResponseBot = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot();
+                
             }
             else if("person".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserObjectResponsePerson = new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponsePerson();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("person".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("person") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("bot".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("bot") != null))();
+            if (result.Bot == null && result.Person == null && result.Type == null && result.UserObjectResponseBot == null && result.UserObjectResponsePerson == null && matchesUnionBranch0 && !matchesUnionBranch1) result.UserObjectResponsePerson = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponsePerson(), parseNode);
+            if (result.Bot == null && result.Person == null && result.Type == null && result.UserObjectResponseBot == null && result.UserObjectResponsePerson == null && matchesUnionBranch1 && !matchesUnionBranch0) result.UserObjectResponseBot = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot(), parseNode);
+            if (result.Bot == null && result.Person == null && result.Type == null && result.UserObjectResponseBot == null && result.UserObjectResponsePerson == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,13 +120,20 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Bot == null && Person == null && Type == null && UserObjectResponseBot == null && UserObjectResponsePerson == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (UserObjectResponseBot != null && Bot == null && Person == null && Type == null && UserObjectResponsePerson == null) { if (UserObjectResponseBot is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserObjectResponseBot); return; }
+            if (UserObjectResponsePerson != null && Bot == null && Person == null && Type == null && UserObjectResponseBot == null) { if (UserObjectResponsePerson is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserObjectResponsePerson); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Bot != null)
             {
+                if (Bot is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.BotUserObjectResponseBot>(null, Bot);
             }
             else if(Person != null)
             {
+                if (Person is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PersonUserObjectResponsePerson>(null, Person);
             }
             else if(Type != null)
@@ -124,13 +142,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
             }
             else if(UserObjectResponseBot != null)
             {
+                if (UserObjectResponseBot is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponseBot>(null, UserObjectResponseBot);
             }
             else if(UserObjectResponsePerson != null)
             {
+                if (UserObjectResponsePerson is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UserObjectResponsePerson>(null, UserObjectResponsePerson);
             }
-            writer.WriteAdditionalData(AdditionalData);
+            
         }
     }
 }

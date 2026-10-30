@@ -11,13 +11,24 @@ namespace Soenneker.Notion.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TimelinePreferenceRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("center_timestamp") is { } nullNodeCenterTimestamp && nullNodeCenterTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CenterTimestamp = null;
+            if (parseNode.GetChildNode("zoom_level") is { } nullNodeZoomLevel && nullNodeZoomLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ZoomLevel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp (ms) to center the timeline view on.</summary>
-        public int? CenterTimestamp { get; set; }
+        public int? CenterTimestamp { get => _explicitNullValueCenterTimestamp; set { _explicitNullValueCenterTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("center_timestamp"); else _explicitNullProperties?.Remove("center_timestamp"); } }
+        private int? _explicitNullValueCenterTimestamp = default!;
         /// <summary>Zoom level for the timeline.</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel? ZoomLevel { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel? ZoomLevel { get => _explicitNullValueZoomLevel; set { _explicitNullValueZoomLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("zoom_level"); else _explicitNullProperties?.Remove("zoom_level"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel? _explicitNullValueZoomLevel = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("center_timestamp", CenterTimestamp);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceRequestZoomLevel>("zoom_level", ZoomLevel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

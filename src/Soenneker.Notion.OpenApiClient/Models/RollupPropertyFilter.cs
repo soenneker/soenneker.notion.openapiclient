@@ -12,7 +12,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RollupPropertyFilter : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,12 +67,25 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilter();
-            result.RollupPropertyFilterAnyOf1 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf1();
-            result.RollupPropertyFilterAnyOf2 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf2();
-            result.RollupPropertyFilterAnyOf3 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf3();
-            result.RollupPropertyFilterAnyOf4 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf4();
-            result.RollupPropertyFilterAnyOf5 = new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf5();
-            return result;
+            
+            
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("any") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("none") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("every") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("date") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("number") != null))();
+            if (result.RollupPropertyFilterAnyOf1 == null && result.RollupPropertyFilterAnyOf2 == null && result.RollupPropertyFilterAnyOf3 == null && result.RollupPropertyFilterAnyOf4 == null && result.RollupPropertyFilterAnyOf5 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.RollupPropertyFilterAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf1(), parseNode);
+            if (result.RollupPropertyFilterAnyOf1 == null && result.RollupPropertyFilterAnyOf2 == null && result.RollupPropertyFilterAnyOf3 == null && result.RollupPropertyFilterAnyOf4 == null && result.RollupPropertyFilterAnyOf5 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.RollupPropertyFilterAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf2(), parseNode);
+            if (result.RollupPropertyFilterAnyOf1 == null && result.RollupPropertyFilterAnyOf2 == null && result.RollupPropertyFilterAnyOf3 == null && result.RollupPropertyFilterAnyOf4 == null && result.RollupPropertyFilterAnyOf5 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4) result.RollupPropertyFilterAnyOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf3(), parseNode);
+            if (result.RollupPropertyFilterAnyOf1 == null && result.RollupPropertyFilterAnyOf2 == null && result.RollupPropertyFilterAnyOf3 == null && result.RollupPropertyFilterAnyOf4 == null && result.RollupPropertyFilterAnyOf5 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4) result.RollupPropertyFilterAnyOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf4(), parseNode);
+            if (result.RollupPropertyFilterAnyOf1 == null && result.RollupPropertyFilterAnyOf2 == null && result.RollupPropertyFilterAnyOf3 == null && result.RollupPropertyFilterAnyOf4 == null && result.RollupPropertyFilterAnyOf5 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.RollupPropertyFilterAnyOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf5(), parseNode);
+            if (result.RollupPropertyFilterAnyOf1 == null && result.RollupPropertyFilterAnyOf2 == null && result.RollupPropertyFilterAnyOf3 == null && result.RollupPropertyFilterAnyOf4 == null && result.RollupPropertyFilterAnyOf5 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +105,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (RollupPropertyFilterAnyOf1 == null && RollupPropertyFilterAnyOf2 == null && RollupPropertyFilterAnyOf3 == null && RollupPropertyFilterAnyOf4 == null && RollupPropertyFilterAnyOf5 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (RollupPropertyFilterAnyOf1 != null && RollupPropertyFilterAnyOf2 == null && RollupPropertyFilterAnyOf3 == null && RollupPropertyFilterAnyOf4 == null && RollupPropertyFilterAnyOf5 == null) { if (RollupPropertyFilterAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RollupPropertyFilterAnyOf1); return; }
+            if (RollupPropertyFilterAnyOf2 != null && RollupPropertyFilterAnyOf1 == null && RollupPropertyFilterAnyOf3 == null && RollupPropertyFilterAnyOf4 == null && RollupPropertyFilterAnyOf5 == null) { if (RollupPropertyFilterAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RollupPropertyFilterAnyOf2); return; }
+            if (RollupPropertyFilterAnyOf3 != null && RollupPropertyFilterAnyOf1 == null && RollupPropertyFilterAnyOf2 == null && RollupPropertyFilterAnyOf4 == null && RollupPropertyFilterAnyOf5 == null) { if (RollupPropertyFilterAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RollupPropertyFilterAnyOf3); return; }
+            if (RollupPropertyFilterAnyOf4 != null && RollupPropertyFilterAnyOf1 == null && RollupPropertyFilterAnyOf2 == null && RollupPropertyFilterAnyOf3 == null && RollupPropertyFilterAnyOf5 == null) { if (RollupPropertyFilterAnyOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RollupPropertyFilterAnyOf4); return; }
+            if (RollupPropertyFilterAnyOf5 != null && RollupPropertyFilterAnyOf1 == null && RollupPropertyFilterAnyOf2 == null && RollupPropertyFilterAnyOf3 == null && RollupPropertyFilterAnyOf4 == null) { if (RollupPropertyFilterAnyOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, RollupPropertyFilterAnyOf5); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyFilterAnyOf1>(null, RollupPropertyFilterAnyOf1, RollupPropertyFilterAnyOf2, RollupPropertyFilterAnyOf3, RollupPropertyFilterAnyOf4, RollupPropertyFilterAnyOf5);
         }
