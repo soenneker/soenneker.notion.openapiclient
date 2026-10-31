@@ -148,7 +148,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Comments.CommentsRequestBuilder.CommentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/v1/comments?block_id={block_id}{&page_size*,start_cursor*}", RequestAdapter.BaseUrl, "https://api.notion.com", "/v1/comments", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/comments?block_id={block_id}{&page_size*,start_cursor*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -169,7 +169,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Comments
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.notion.com", "/v1/comments", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
