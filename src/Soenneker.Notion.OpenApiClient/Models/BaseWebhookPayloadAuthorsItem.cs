@@ -51,8 +51,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "bot" => new global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemBaseWebhookPayloadAuthorsItemOneOf2(),
-                "person" => new global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemBaseWebhookPayloadAuthorsItemOneOf1(),
+                "bot" => new global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemOneOf2Variant(),
+                "person" => new global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItemOneOf1Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAuthorsItem(),
             };
         }

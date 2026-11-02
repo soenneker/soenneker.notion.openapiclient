@@ -51,9 +51,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("agent_type")?.GetStringValue();
             return mappingValue switch
             {
-                "autofill_custom_agent" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemQueryAgents200ResponseResultsItemOneOf1(),
-                "custom_agent" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemQueryAgents200ResponseResultsItemOneOf1(),
-                "notion_ai" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemQueryAgents200ResponseResultsItemOneOf2(),
+                "autofill_custom_agent" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1Variant(),
+                "custom_agent" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf1Variant(),
+                "notion_ai" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItem(),
             };
         }

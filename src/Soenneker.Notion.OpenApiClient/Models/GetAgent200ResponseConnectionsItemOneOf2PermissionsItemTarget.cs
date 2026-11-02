@@ -51,9 +51,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "slack_all_channels" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3(),
-                "slack_all_public_channels" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2(),
-                "slack_channel" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1(),
+                "slack_all_channels" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3Variant(),
+                "slack_all_public_channels" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2Variant(),
+                "slack_channel" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf2PermissionsItemTarget(),
             };
         }

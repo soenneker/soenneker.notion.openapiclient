@@ -51,11 +51,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "array" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupRollupPropertyItemObjectResponseRollupArray(),
-                "date" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupRollupPropertyItemObjectResponseRollupDate(),
-                "incomplete" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupRollupPropertyItemObjectResponseRollupIncomplete(),
-                "number" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupRollupPropertyItemObjectResponseRollupNumber(),
-                "unsupported" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupRollupPropertyItemObjectResponseRollupUnsupported(),
+                "array" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupArrayVariant(),
+                "date" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupDateVariant(),
+                "incomplete" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupIncompleteVariant(),
+                "number" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupNumberVariant(),
+                "unsupported" => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollupUnsupportedVariant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.RollupPropertyItemObjectResponseRollup(),
             };
         }

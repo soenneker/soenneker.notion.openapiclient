@@ -51,8 +51,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "auto" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsRetrieveSession200ResponseModelsOneOf1(),
-                "pinned" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsRetrieveSession200ResponseModelsOneOf2(),
+                "auto" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf1Variant(),
+                "pinned" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModelsOneOf2Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveSession200ResponseModels(),
             };
         }

@@ -51,13 +51,13 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "agent" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3(),
-                "database_property" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2(),
-                "notion_help_docs_search" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7(),
-                "owner_private_pages" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5(),
-                "page" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1(),
-                "web_search" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6(),
-                "workspace" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4(),
+                "agent" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3Variant(),
+                "database_property" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2Variant(),
+                "notion_help_docs_search" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7Variant(),
+                "owner_private_pages" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5Variant(),
+                "page" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1Variant(),
+                "web_search" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6Variant(),
+                "workspace" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget(),
             };
         }

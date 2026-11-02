@@ -51,12 +51,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "agent.message" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemQuerySessionEvents200ResponseResultsItemOneOf2(),
-                "agent.thinking" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemQuerySessionEvents200ResponseResultsItemOneOf3(),
-                "agent.tool_result" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemQuerySessionEvents200ResponseResultsItemOneOf5(),
-                "agent.tool_use" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemQuerySessionEvents200ResponseResultsItemOneOf4(),
-                "session.status" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemQuerySessionEvents200ResponseResultsItemOneOf6(),
-                "user.message" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemQuerySessionEvents200ResponseResultsItemOneOf1(),
+                "agent.message" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemOneOf2Variant(),
+                "agent.thinking" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemOneOf3Variant(),
+                "agent.tool_result" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemOneOf5Variant(),
+                "agent.tool_use" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemOneOf4Variant(),
+                "session.status" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemOneOf6Variant(),
+                "user.message" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItemOneOf1Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEvents200ResponseResultsItem(),
             };
         }

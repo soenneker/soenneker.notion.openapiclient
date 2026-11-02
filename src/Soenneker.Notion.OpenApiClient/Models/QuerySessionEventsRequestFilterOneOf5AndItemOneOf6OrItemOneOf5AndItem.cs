@@ -51,10 +51,10 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("property")?.GetStringValue();
             return mappingValue switch
             {
-                "created_at" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemQuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf4(),
-                "id" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemQuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf1(),
-                "sequence" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemQuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf3(),
-                "type" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemQuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf2(),
+                "created_at" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf4Variant(),
+                "id" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf1Variant(),
+                "sequence" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf3Variant(),
+                "type" => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItemOneOf2Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.QuerySessionEventsRequestFilterOneOf5AndItemOneOf6OrItemOneOf5AndItem(),
             };
         }

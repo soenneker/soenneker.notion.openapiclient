@@ -52,8 +52,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "count" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEndQueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEndOneOf2(),
-                "date" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEndQueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEndOneOf1(),
+                "count" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEndOneOf2Variant(),
+                "date" => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEndOneOf1Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEnd(),
             };
         }

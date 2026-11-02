@@ -51,11 +51,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "failed" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseRetrieveAsyncTask200ResponseOneOf3(),
-                "queued" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseRetrieveAsyncTask200ResponseOneOf1(),
-                "retrying" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseRetrieveAsyncTask200ResponseOneOf1(),
-                "running" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseRetrieveAsyncTask200ResponseOneOf1(),
-                "succeeded" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseRetrieveAsyncTask200ResponseOneOf2(),
+                "failed" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf3Variant(),
+                "queued" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1Variant(),
+                "retrying" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1Variant(),
+                "running" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf1Variant(),
+                "succeeded" => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200ResponseOneOf2Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.RetrieveAsyncTask200Response(),
             };
         }

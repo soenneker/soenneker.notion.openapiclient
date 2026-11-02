@@ -52,9 +52,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "after_view" => new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestViewPositionRequestOneOf3(),
-                "end" => new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestViewPositionRequestOneOf2(),
-                "start" => new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestViewPositionRequestOneOf1(),
+                "after_view" => new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf3Variant(),
+                "end" => new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf2Variant(),
+                "start" => new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequestOneOf1Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest(),
             };
         }

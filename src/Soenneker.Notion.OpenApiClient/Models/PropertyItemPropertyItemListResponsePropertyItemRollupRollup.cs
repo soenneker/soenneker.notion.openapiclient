@@ -51,11 +51,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "array" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupPropertyItemPropertyItemListResponsePropertyItemRollupRollupArray(),
-                "date" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupPropertyItemPropertyItemListResponsePropertyItemRollupRollupDate(),
-                "incomplete" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupPropertyItemPropertyItemListResponsePropertyItemRollupRollupIncomplete(),
-                "number" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupPropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber(),
-                "unsupported" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupPropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupported(),
+                "array" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupArrayVariant(),
+                "date" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupDateVariant(),
+                "incomplete" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupIncompleteVariant(),
+                "number" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumberVariant(),
+                "unsupported" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollupUnsupportedVariant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupRollup(),
             };
         }

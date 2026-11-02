@@ -51,8 +51,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "discord_all_channels" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2(),
-                "discord_channel" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetGetAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1(),
+                "discord_all_channels" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2Variant(),
+                "discord_channel" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseConnectionsItemOneOf3PermissionsItemTarget(),
             };
         }

@@ -51,8 +51,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("surface")?.GetStringValue();
             return mappingValue switch
             {
-                "mcp" => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown202ResponseOperationUpdatePageMarkdown202ResponseOperationOneOf2(),
-                "rest" => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown202ResponseOperationUpdatePageMarkdown202ResponseOperationOneOf1(),
+                "mcp" => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown202ResponseOperationOneOf2Variant(),
+                "rest" => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown202ResponseOperationOneOf1Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdown202ResponseOperation(),
             };
         }

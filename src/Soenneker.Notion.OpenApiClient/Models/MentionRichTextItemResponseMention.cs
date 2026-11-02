@@ -52,14 +52,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "custom_emoji" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionMentionRichTextItemResponseMentionCustomEmoji(),
-                "database" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionMentionRichTextItemResponseMentionDatabase(),
-                "date" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionMentionRichTextItemResponseMentionDate(),
-                "link_mention" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionMentionRichTextItemResponseMentionLinkMention(),
-                "link_preview" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionMentionRichTextItemResponseMentionLinkPreview(),
-                "page" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionMentionRichTextItemResponseMentionPage(),
-                "template_mention" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionMentionRichTextItemResponseMentionTemplateMention(),
-                "user" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionMentionRichTextItemResponseMentionUser(),
+                "custom_emoji" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionCustomEmojiVariant(),
+                "database" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionDatabaseVariant(),
+                "date" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionDateVariant(),
+                "link_mention" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionLinkMentionVariant(),
+                "link_preview" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionLinkPreviewVariant(),
+                "page" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionPageVariant(),
+                "template_mention" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionTemplateMentionVariant(),
+                "user" => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMentionUserVariant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.MentionRichTextItemResponseMention(),
             };
         }

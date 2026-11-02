@@ -52,8 +52,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("mode")?.GetStringValue();
             return mappingValue switch
             {
-                "auto" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModelGetAgent200ResponseModelOneOf1(),
-                "pinned" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModelGetAgent200ResponseModelOneOf2(),
+                "auto" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModelOneOf1Variant(),
+                "pinned" => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModelOneOf2Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel(),
             };
         }

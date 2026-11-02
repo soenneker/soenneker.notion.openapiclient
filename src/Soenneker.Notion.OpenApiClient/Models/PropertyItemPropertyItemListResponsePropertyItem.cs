@@ -51,11 +51,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "people" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPropertyItemPropertyItemListResponsePropertyItemPeople(),
-                "relation" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPropertyItemPropertyItemListResponsePropertyItemRelation(),
-                "rich_text" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPropertyItemPropertyItemListResponsePropertyItemRichText(),
-                "rollup" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPropertyItemPropertyItemListResponsePropertyItemRollup(),
-                "title" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPropertyItemPropertyItemListResponsePropertyItemTitle(),
+                "people" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemPeopleVariant(),
+                "relation" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRelationVariant(),
+                "rich_text" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRichTextVariant(),
+                "rollup" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemRollupVariant(),
+                "title" => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItemTitleVariant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.PropertyItemPropertyItemListResponsePropertyItem(),
             };
         }
