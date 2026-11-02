@@ -91,8 +91,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         private global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse _explicitNullValueDatabaseParent = default!;
 #endif
         /// <summary>The type of typed database this data source belongs to, or `null` for a regular data source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType? DatabaseType { get => _explicitNullValueDatabaseType; set { _explicitNullValueDatabaseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_type"); else _explicitNullProperties?.Remove("database_type"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType? _explicitNullValueDatabaseType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType DatabaseType { get => _explicitNullValueDatabaseType; set { _explicitNullValueDatabaseType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("database_type"); else _explicitNullProperties?.Remove("database_type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType _explicitNullValueDatabaseType = default!;
+#endif
         /// <summary>The description of the data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -220,7 +227,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
                 { "database_parent", n => { DatabaseParent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse.CreateFromDiscriminatorValue); } },
-                { "database_type", n => { DatabaseType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType>(); } },
+                { "database_type", n => { DatabaseType = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse>(global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -248,7 +255,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse>("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("created_time", CreatedTime);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDatabaseResponse>("database_parent", DatabaseParent);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType>("database_type", DatabaseType);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseDatabaseType>("database_type", DatabaseType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemResponse>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconResponse>("icon", Icon);
             writer.WriteGuidValue("id", Id);

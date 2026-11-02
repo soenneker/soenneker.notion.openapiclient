@@ -17,40 +17,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("date") is null) { _explicitNullValueDate = default!; _explicitNullProperties?.Remove("date"); }
-            else if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
             if (parseNode.GetChildNode("state") is null) { _explicitNullValueState = default!; _explicitNullProperties?.Remove("state"); }
             else if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
-            if (parseNode.GetChildNode("verified_by") is null) { _explicitNullValueVerifiedBy = default!; _explicitNullProperties?.Remove("verified_by"); }
-            else if (parseNode.GetChildNode("verified_by") is { } nullNodeVerifiedBy && nullNodeVerifiedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifiedBy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date property</summary>
+        /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
-        private UntypedNode? _explicitNullValueDate = default!;
-#nullable restore
-#else
-        public UntypedNode Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
-        private UntypedNode _explicitNullValueDate = default!;
-#endif
-        /// <summary>Always `unverified`</summary>
 #nullable enable
         public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private string? _explicitNullValueState = default!;
 #nullable restore
-        /// <summary>The verified_by property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? VerifiedBy { get => _explicitNullValueVerifiedBy; set { _explicitNullValueVerifiedBy = value; AdditionalData?.Remove("verified_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_by"); else _explicitNullProperties?.Remove("verified_by"); } }
-        private UntypedNode? _explicitNullValueVerifiedBy = default!;
-#nullable restore
 #else
-        public UntypedNode VerifiedBy { get => _explicitNullValueVerifiedBy; set { _explicitNullValueVerifiedBy = value; AdditionalData?.Remove("verified_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verified_by"); else _explicitNullProperties?.Remove("verified_by"); } }
-        private UntypedNode _explicitNullValueVerifiedBy = default!;
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse"/> and sets the default values.
@@ -67,7 +48,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public static global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse(), parseNode);
+            var mappingValue = parseNode.GetChildNode("state")?.GetStringValue();
+            return mappingValue switch
+            {
+                "expired" => new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponseVerificationPropertyResponse(),
+                "unverified" => new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponseVerificationPropertyUnverifiedResponse(),
+                "verified" => new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponseVerificationPropertyResponse(),
+                _ => new global::Soenneker.Notion.OpenApiClient.Models.VerificationPropertyValueResponse(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,9 +65,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "verified_by", n => { VerifiedBy = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("date", Date);
             writer.WriteStringValue("state", State);
-            writer.WriteObjectValue<UntypedNode>("verified_by", VerifiedBy);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

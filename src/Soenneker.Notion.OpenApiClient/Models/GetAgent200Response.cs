@@ -207,8 +207,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.AgentObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.AgentObject? _explicitNullValueObject = default!;
         /// <summary>Why the agent is paused when status is &quot;disabled&quot; (e.g. &quot;credit_limit&quot;, &quot;disabled_from_workspace_settings&quot;); null when active.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason? PauseReason { get => _explicitNullValuePauseReason; set { _explicitNullValuePauseReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_reason"); else _explicitNullProperties?.Remove("pause_reason"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason? _explicitNullValuePauseReason = default!;
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason PauseReason { get => _explicitNullValuePauseReason; set { _explicitNullValuePauseReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_reason"); else _explicitNullProperties?.Remove("pause_reason"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason _explicitNullValuePauseReason = default!;
+#endif
         /// <summary>&quot;active&quot; when the agent can run; &quot;disabled&quot; when it is paused (see pause_reason); &quot;deleted&quot; when it has been removed.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseStatus? _explicitNullValueStatus = default!;
@@ -269,7 +276,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "model", n => { Model = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentObject>(); } },
-                { "pause_reason", n => { PauseReason = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason>(); } },
+                { "pause_reason", n => { PauseReason = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseStatus>(); } },
                 { "triggers", n => { Triggers = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "version", n => { Version = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion.CreateFromDiscriminatorValue); } },
@@ -301,7 +308,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseModel>("model", Model);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason>("pause_reason", PauseReason);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponsePauseReason>("pause_reason", PauseReason);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseTriggersItem>("triggers", Triggers);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseVersion>("version", Version);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

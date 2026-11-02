@@ -45,12 +45,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? _explicitNullValueStatus = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse _explicitNullValueStatus = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect _explicitNullValueStatus = default!;
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -82,7 +82,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseObject>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueObject = default; _explicitNullProperties?.Remove("object"); AdditionalData["object"] = unknown; } else { Object = parsed; AdditionalData.Remove("object"); } } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect>(global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseObject>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.StatusPropertyItemObjectResponseType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

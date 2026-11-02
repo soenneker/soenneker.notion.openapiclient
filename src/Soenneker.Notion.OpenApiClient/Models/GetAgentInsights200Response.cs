@@ -79,8 +79,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject? _explicitNullValueObject = default!;
         /// <summary>One of: `run_limit`, `credit_limit`, `runaway_credit_usage`, `workspace_credit_limit`, `owner_allowance_limit`, `failure_limit`, `mark_session_failed_autopause`, `disabled_from_workspace_settings`, `disabled_from_workspace_settings_but_resumable`, `disabled_from_api`, `disabled_from_agent_settings`, `disabled_due_to_no_members_with_access`, `disabled_due_to_lack_of_editors`, `disabled_by_notion`, `internal_error`, `needs_user_review`, `tool_unavailable`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason? PauseReason { get => _explicitNullValuePauseReason; set { _explicitNullValuePauseReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_reason"); else _explicitNullProperties?.Remove("pause_reason"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason? _explicitNullValuePauseReason = default!;
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason PauseReason { get => _explicitNullValuePauseReason; set { _explicitNullValuePauseReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_reason"); else _explicitNullProperties?.Remove("pause_reason"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason _explicitNullValuePauseReason = default!;
+#endif
         /// <summary>Number of runs recorded for this agent within the window.</summary>
         public double? RunsCompleted { get => _explicitNullValueRunsCompleted; set { _explicitNullValueRunsCompleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runs_completed"); else _explicitNullProperties?.Remove("runs_completed"); } }
         private double? _explicitNullValueRunsCompleted = default!;
@@ -114,7 +121,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId>(global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject>(); } },
-                { "pause_reason", n => { PauseReason = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason>(); } },
+                { "pause_reason", n => { PauseReason = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason>(global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason.CreateFromDiscriminatorValue); } },
                 { "runs_completed", n => { RunsCompleted = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseStatus>(); } },
                 { "total_credits_used", n => { TotalCreditsUsed = n.GetDoubleValue(); } },
@@ -133,7 +140,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseId>("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.AgentInsightsObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason>("pause_reason", PauseReason);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponsePauseReason>("pause_reason", PauseReason);
             writer.WriteDoubleValue("runs_completed", RunsCompleted);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgentInsights200ResponseStatus>("status", Status);
             writer.WriteDoubleValue("total_credits_used", TotalCreditsUsed);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

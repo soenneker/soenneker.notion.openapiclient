@@ -45,12 +45,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The select property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? Select { get => _explicitNullValueSelect; set { _explicitNullValueSelect = value; AdditionalData?.Remove("select"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("select"); else _explicitNullProperties?.Remove("select"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse? _explicitNullValueSelect = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect? Select { get => _explicitNullValueSelect; set { _explicitNullValueSelect = value; AdditionalData?.Remove("select"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("select"); else _explicitNullProperties?.Remove("select"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect? _explicitNullValueSelect = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse Select { get => _explicitNullValueSelect; set { _explicitNullValueSelect = value; AdditionalData?.Remove("select"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("select"); else _explicitNullProperties?.Remove("select"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse _explicitNullValueSelect = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect Select { get => _explicitNullValueSelect; set { _explicitNullValueSelect = value; AdditionalData?.Remove("select"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("select"); else _explicitNullProperties?.Remove("select"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect _explicitNullValueSelect = default!;
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -82,7 +82,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseObject>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueObject = default; _explicitNullProperties?.Remove("object"); AdditionalData["object"] = unknown; } else { Object = parsed; AdditionalData.Remove("object"); } } },
-                { "select", n => { Select = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>(global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse.CreateFromDiscriminatorValue); } },
+                { "select", n => { Select = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect>(global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseObject>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PartialSelectResponse>("select", Select);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseSelect>("select", Select);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SelectPropertyItemObjectResponseType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
