@@ -25,12 +25,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The agent ID (a UUID), or `notion_ai` for the personal agent. Endpoint-specific restrictions still apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3AgentId? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3AgentId? _explicitNullValueAgentId = default!;
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3AgentId AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3AgentId _explicitNullValueAgentId = default!;
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +50,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3AgentId>(global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3AgentId.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AgentBatchRequestOperationsItemOneOf3AgentId>("agent_id", AgentId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteStringValue("agent_id", AgentId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

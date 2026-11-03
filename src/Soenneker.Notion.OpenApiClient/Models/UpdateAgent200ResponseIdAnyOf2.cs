@@ -3,17 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>One of: `notion_ai`, `33333333-3333-3333-3333-333333333333`</summary>
+    /// <summary>Always `notion_ai`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UpdateSessionRequestOneOf1AgentIdOneOf2
+    public enum UpdateAgent200ResponseIdAnyOf2
     {
         [EnumMember(Value = "notion_ai")]
         #pragma warning disable CS1591
         NotionAi,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "33333333-3333-3333-3333-333333333333")]
-        #pragma warning disable CS1591
-        Value33333333333333333333333333333333,
         #pragma warning restore CS1591
     }
 }

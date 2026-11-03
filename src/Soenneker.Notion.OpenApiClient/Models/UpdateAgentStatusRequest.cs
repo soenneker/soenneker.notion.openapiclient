@@ -21,7 +21,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
-        /// <summary>Set to &quot;active&quot; to re-enable an agent that was disabled through this API, or &quot;disabled&quot; to turn off a running agent.</summary>
+        /// <summary>Set to &quot;active&quot; to re-enable an agent that an editor disabled, through this API or in agent settings, or &quot;disabled&quot; to turn off a running agent.</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatusRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentStatusRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>

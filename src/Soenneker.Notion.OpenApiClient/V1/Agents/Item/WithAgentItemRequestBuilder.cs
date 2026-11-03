@@ -31,6 +31,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Agents.Item
             get => new global::Soenneker.Notion.OpenApiClient.V1.Agents.Item.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The status property</summary>
+        [Obsolete("")]
         public global::Soenneker.Notion.OpenApiClient.V1.Agents.Item.Status.StatusRequestBuilder Status
         {
             get => new global::Soenneker.Notion.OpenApiClient.V1.Agents.Item.Status.StatusRequestBuilder(PathParameters, RequestAdapter);
@@ -142,6 +143,53 @@ namespace Soenneker.Notion.OpenApiClient.V1.Agents.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.GetAgent200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Update agent
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.UpdateAgent200Response"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi401">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi406">When receiving a 406 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi409">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi429">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503">When receiving a 503 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504">When receiving a 504 status code</exception>
+        /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.UpdateAgent200Response?> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.UpdateAgent200Response> PatchAsync(global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi400.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi401.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi403Error.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi404.CreateFromDiscriminatorValue },
+                { "406", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi406.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi409.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi429.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi500.CreateFromDiscriminatorValue },
+                { "503", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi503.CreateFromDiscriminatorValue },
+                { "504", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi504.CreateFromDiscriminatorValue },
+                { "529", global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.UpdateAgent200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.UpdateAgent200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Delete agent
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -177,6 +225,28 @@ namespace Soenneker.Notion.OpenApiClient.V1.Agents.Item
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update agent
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Notion.OpenApiClient.Models.UpdateAgentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

@@ -31,15 +31,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if (parseNode.GetChildNode("session_id") is { } nullNodeSessionId && nullNodeSessionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionId = null;
         }
 
-        /// <summary>The agent_id property</summary>
+        /// <summary>The agent to start a session with: a custom agent ID, or `notion_ai` for the personal agent with a personal access token. Required when `session_id` is omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AgentId? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AgentId? _explicitNullValueAgentId = default!;
+        public string? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string? _explicitNullValueAgentId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AgentId AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AgentId _explicitNullValueAgentId = default!;
+        public string AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
+        private string _explicitNullValueAgentId = default!;
 #endif
         /// <summary>The attachments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AgentId>(global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AgentId.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AttachmentsItem>(global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AttachmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1Metadata>(global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1Metadata.CreateFromDiscriminatorValue); } },
@@ -124,7 +124,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AgentId>("agent_id", AgentId);
+            writer.WriteStringValue("agent_id", AgentId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1AttachmentsItem>("attachments", Attachments);
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateSessionRequestOneOf1Metadata>("metadata", Metadata);

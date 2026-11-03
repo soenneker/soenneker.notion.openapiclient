@@ -3,17 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>One of: `notion_ai`, `33333333-3333-3333-3333-333333333333`</summary>
+    /// <summary>Enable or disable the agent. Re-enabling works only for an agent an editor disabled, through the API or in agent settings.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum AgentBatchRequestOperationsItemOneOf1AgentIdOneOf2
+    public enum UpdateAgentRequestStatus
     {
-        [EnumMember(Value = "notion_ai")]
+        [EnumMember(Value = "active")]
         #pragma warning disable CS1591
-        NotionAi,
+        Active,
         #pragma warning restore CS1591
-        [EnumMember(Value = "33333333-3333-3333-3333-333333333333")]
+        [EnumMember(Value = "disabled")]
         #pragma warning disable CS1591
-        Value33333333333333333333333333333333,
+        Disabled,
         #pragma warning restore CS1591
     }
 }

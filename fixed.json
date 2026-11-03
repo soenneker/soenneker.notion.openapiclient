@@ -155,7 +155,7 @@
         ],
         "x-notion-docs-ref": "https://developers.notion.com/reference/get-self",
         "x-notion-docs-guides": [
-          "https://developers.notion.com/guides/get-started/overview"
+          "https://developers.notion.com/guides/connections-and-tokens/overview"
         ]
       }
     },
@@ -311,7 +311,7 @@
         ],
         "x-notion-docs-ref": "https://developers.notion.com/reference/get-user",
         "x-notion-docs-guides": [
-          "https://developers.notion.com/guides/get-started/overview"
+          "https://developers.notion.com/guides/connections-and-tokens/overview"
         ]
       }
     },
@@ -473,7 +473,7 @@
         ],
         "x-notion-docs-ref": "https://developers.notion.com/reference/get-users",
         "x-notion-docs-guides": [
-          "https://developers.notion.com/guides/get-started/overview"
+          "https://developers.notion.com/guides/connections-and-tokens/overview"
         ]
       }
     },
@@ -7711,14 +7711,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/components/schemas/GetAgentAgentIdParameterOneOf2"
-                }
-              ],
+              "type": "string",
+              "x-client-inline-scalar": true,
               "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
             }
           },
@@ -7879,14 +7873,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/components/schemas/DeleteAgentAgentIdParameterOneOf2"
-                }
-              ],
+              "type": "string",
+              "x-client-inline-scalar": true,
               "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. The personal agent cannot be deleted."
             }
           },
@@ -8026,6 +8014,169 @@
           }
         ],
         "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/delete-agent"
+      },
+      "patch": {
+        "tags": [
+          "Agents"
+        ],
+        "summary": "Update agent",
+        "operationId": "UpdateAgent",
+        "parameters": [
+          {
+            "name": "agentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "x-client-inline-scalar": true,
+              "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
+            }
+          },
+          {
+            "description": "The [API version](/reference/versioning) to use for this request. The latest version is \u00602026-03-11\u0060.",
+            "$ref": "#/components/parameters/notionVersion"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAgentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAgent200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi400"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi401"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "403 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi403Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi404"
+                }
+              }
+            }
+          },
+          "406": {
+            "description": "406 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi406"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi409"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "429 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi429"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "500 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi500"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "503 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi503"
+                }
+              }
+            }
+          },
+          "504": {
+            "description": "504 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi504"
+                }
+              }
+            }
+          },
+          "529": {
+            "description": "529 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi529"
+                }
+              }
+            }
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst agentId = \u00221f0c7c06-781b-4987-9986-5c8dd3028013\u0022\nconst response = await notion.request({\n  method: \u0022patch\u0022,\n  path: \u0022agents/\u0022 \u002B encodeURIComponent(agentId),\n  body: { name: \u0022Weekly report writer\u0022, status: \u0022disabled\u0022 }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/notion-agent-apis/update-agent"
       }
     },
     "/v1/agents/{agentId}/insights": {
@@ -8041,14 +8192,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/components/schemas/GetAgentInsightsAgentIdParameterOneOf2"
-                }
-              ],
+              "type": "string",
+              "x-client-inline-scalar": true,
               "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
             }
           },
@@ -8221,14 +8366,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/components/schemas/UpdateAgentStatusAgentIdParameterOneOf2"
-                }
-              ],
+              "type": "string",
+              "x-client-inline-scalar": true,
               "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
             }
           },
@@ -8369,6 +8508,7 @@
             }
           }
         },
+        "deprecated": true,
         "x-codeSamples": [
           {
             "lang": "javascript",
@@ -8392,14 +8532,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "oneOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "$ref": "#/components/schemas/UpdateAgentCreditLimitAgentIdParameterOneOf2"
-                }
-              ],
+              "type": "string",
+              "x-client-inline-scalar": true,
               "description": "The ID of the custom agent (a UUID). The personal agent (Notion AI) is not supported by this endpoint."
             }
           },
@@ -10079,7 +10213,7 @@
         ],
         "x-notion-docs-ref": "https://developers.notion.com/reference/create-a-token",
         "x-notion-docs-guides": [
-          "https://developers.notion.com/guides/get-started/authorization"
+          "https://developers.notion.com/guides/authorization/overview"
         ]
       }
     },
@@ -10172,7 +10306,7 @@
         ],
         "x-notion-docs-ref": "https://developers.notion.com/reference/revoke-token",
         "x-notion-docs-guides": [
-          "https://developers.notion.com/guides/get-started/authorization"
+          "https://developers.notion.com/guides/authorization/overview"
         ]
       }
     },
@@ -10265,7 +10399,7 @@
         ],
         "x-notion-docs-ref": "https://developers.notion.com/reference/introspect-token",
         "x-notion-docs-guides": [
-          "https://developers.notion.com/guides/get-started/authorization"
+          "https://developers.notion.com/guides/authorization/overview"
         ]
       }
     },
@@ -31247,6 +31381,156 @@
         },
         "additionalProperties": false
       },
+      "UpdateAgentRequest": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/UpdateAgentRequestStatus"
+          },
+          "name": {
+            "type": "string",
+            "description": "The agent\u0027s display name."
+          },
+          "description": {
+            "type": "string",
+            "description": "The custom agent\u0027s short description. Use an empty string to clear it."
+          },
+          "is_favorited": {
+            "type": "boolean",
+            "description": "Whether the personal-access-token owner has this agent in their favorites."
+          },
+          "model": {
+            "$ref": "#/components/schemas/UpdateAgentRequestModel"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200Response": {
+        "required": [
+          "object",
+          "id",
+          "agent_type",
+          "name",
+          "description",
+          "instructions_page_id",
+          "icon",
+          "model",
+          "connections",
+          "status",
+          "pause_reason",
+          "created_by",
+          "version",
+          "agent_version",
+          "has_unpublished_changes",
+          "last_run_time",
+          "last_run_at",
+          "credit_limit",
+          "triggers",
+          "is_favorited"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseObject"
+          },
+          "id": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseId"
+          },
+          "agent_type": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseAgentType"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "instructions_page_id": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "icon": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseIcon"
+          },
+          "model": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseModel"
+          },
+          "connections": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItem"
+            },
+            "description": "Integrations the agent is connected to (Notion, Slack, Discord, MCP servers, and other connectors), each with an account and per-target permissions."
+          },
+          "status": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseStatus"
+          },
+          "pause_reason": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponsePauseReason"
+          },
+          "created_by": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseCreatedBy"
+          },
+          "version": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseVersion"
+          },
+          "agent_version": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseAgentVersion"
+          },
+          "has_unpublished_changes": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseHasUnpublishedChanges"
+          },
+          "last_run_time": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseLastRunTime"
+          },
+          "last_run_at": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseLastRunAt"
+          },
+          "credit_limit": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseCreditLimit"
+          },
+          "triggers": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItem"
+            },
+            "description": "The agent\u0027s configured triggers, each with a machine type, an enabled flag, and (for recurrence triggers) a structured schedule."
+          },
+          "is_favorited": {
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "description": "Whether this agent is in the caller\u0027s personal favorites, or null when the caller has no personal favorites scope."
+          },
+          "created_time": {
+            "type": "string",
+            "description": "Date and time when this agent was created.",
+            "format": "date-time"
+          },
+          "last_edited_time": {
+            "type": "string",
+            "description": "Date and time when this agent was last edited.",
+            "format": "date-time"
+          },
+          "instructions": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The agent\u0027s inline instructions when verbose=true, or null when its instructions are stored on a page."
+          }
+        },
+        "additionalProperties": false
+      },
       "GetAgentInsights200Response": {
         "required": [
           "object",
@@ -33944,6 +34228,328 @@
           "type"
         ]
       },
+      "UpdateAgentRequestModel": {
+        "description": "The model selection. Use auto to let Notion choose, or pinned with an available public model ID.",
+        "discriminator": {
+          "propertyName": "mode",
+          "mapping": {
+            "auto": "#/components/schemas/UpdateAgentRequestModelOneOf1Variant",
+            "pinned": "#/components/schemas/UpdateAgentRequestModelOneOf2Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/UpdateAgentRequestModelOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgentRequestModelOneOf2"
+            }
+          ],
+          "description": "The model selection. Use auto to let Notion choose, or pinned with an available public model ID.",
+          "discriminator": {
+            "propertyName": "mode",
+            "mapping": {
+              "auto": "#/components/schemas/UpdateAgentRequestModelOneOf1",
+              "pinned": "#/components/schemas/UpdateAgentRequestModelOneOf2"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "UpdateAgent200ResponseId": {
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseIdAnyOf2"
+          }
+        ]
+      },
+      "UpdateAgent200ResponseIcon": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PageIconResponse"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseIconOneOf2"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "UpdateAgent200ResponseModel": {
+        "description": "The model the agent runs on: auto (Notion selects) or a pinned model.",
+        "discriminator": {
+          "propertyName": "mode",
+          "mapping": {
+            "auto": "#/components/schemas/UpdateAgent200ResponseModelOneOf1Variant",
+            "pinned": "#/components/schemas/UpdateAgent200ResponseModelOneOf2Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseModelOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseModelOneOf2"
+            }
+          ],
+          "description": "The model the agent runs on: auto (Notion selects) or a pinned model.",
+          "discriminator": {
+            "propertyName": "mode",
+            "mapping": {
+              "auto": "#/components/schemas/UpdateAgent200ResponseModelOneOf1",
+              "pinned": "#/components/schemas/UpdateAgent200ResponseModelOneOf2"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItem": {
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "notion": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1Variant",
+            "slack": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2Variant",
+            "discord": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3Variant",
+            "mcp_server": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4Variant",
+            "custom_mcp_server": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5Variant",
+            "asana": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "box": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "calendar": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "computer": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "confluence": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "cursor": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "feedback": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "files": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "fs": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "github": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "gmail": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "google_calendar": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "google_drive": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "google_drive_oauth": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "gtm": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "helpdocs": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "images": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "jira": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "linear": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "mail": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "marketplace": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "memory": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "microsoft_teams": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "microsoft_teams_oauth": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "outlook": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "salesforce": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "search": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "security": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "sharepoint": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "sharepoint_oauth": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "shopify": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "skills": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "system": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "test": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "web": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "webhooks": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "worker": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant",
+            "workers": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6"
+            }
+          ],
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "notion": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1",
+              "slack": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2",
+              "discord": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3",
+              "mcp_server": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4",
+              "custom_mcp_server": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5",
+              "asana": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "box": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "calendar": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "computer": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "confluence": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "cursor": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "feedback": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "files": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "fs": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "github": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "gmail": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "google_calendar": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "google_drive": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "google_drive_oauth": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "gtm": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "helpdocs": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "images": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "jira": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "linear": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "mail": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "marketplace": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "memory": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "microsoft_teams": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "microsoft_teams_oauth": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "outlook": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "salesforce": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "search": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "security": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "sharepoint": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "sharepoint_oauth": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "shopify": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "skills": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "system": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "test": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "web": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "webhooks": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "worker": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6",
+              "workers": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "UpdateAgent200ResponseHasUnpublishedChanges": {
+        "oneOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseHasUnpublishedChangesOneOf2"
+          }
+        ],
+        "description": "Whether the draft has edits not yet in the published version, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+      },
+      "UpdateAgent200ResponseLastRunTime": {
+        "oneOf": [
+          {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseLastRunTimeOneOf2"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "ISO 8601 timestamp of the agent\u0027s most recent run, null if it has never run, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+      },
+      "UpdateAgent200ResponseLastRunAt": {
+        "oneOf": [
+          {
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+            "type": "string",
+            "format": "date-time"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseLastRunAtOneOf2"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "ISO 8601 timestamp of the agent\u0027s most recent run, null if it has never run, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+      },
+      "UpdateAgent200ResponseCreditLimit": {
+        "oneOf": [
+          {
+            "minimum": 0,
+            "type": "integer"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseCreditLimitOneOf2"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The per-agent credit limit that applies to this agent, null when uncapped, or \u0022hidden\u0022 when the caller lacks full access to the agent. This is the effective limit computed at runtime, folding in both the agent\u0027s own limit and any workspace-admin default."
+      },
+      "UpdateAgent200ResponseTriggersItemScheduleEnd": {
+        "description": "When the schedule stops, when it is bounded.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "date": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf1Variant",
+            "count": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf2Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf2"
+            }
+          ],
+          "description": "When the schedule stops, when it is bounded.",
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "date": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf1",
+              "count": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf2"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
       "GetAgentInsights200ResponseId": {
         "oneOf": [
           {
@@ -34022,7 +34628,9 @@
             "type": "string"
           },
           "agent_id": {
-            "$ref": "#/components/schemas/UpdateSessionRequestOneOf1AgentId"
+            "type": "string",
+            "x-client-inline-scalar": true,
+            "description": "The agent to start a session with: a custom agent ID, or \u0060notion_ai\u0060 for the personal agent with a personal access token. Required when \u0060session_id\u0060 is omitted."
           },
           "session_id": {
             "type": "string"
@@ -35701,15 +36309,21 @@
         },
         "additionalProperties": false
       },
-      "UpdateSessionRequestOneOf1AgentId": {
-        "oneOf": [
-          {
-            "type": "string"
+      "UpdateAgent200ResponseIconOneOf2": {
+        "required": [
+          "type",
+          "custom_agent_avatar"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseIconOneOf2Type"
           },
-          {
-            "$ref": "#/components/schemas/UpdateSessionRequestOneOf1AgentIdOneOf2"
+          "custom_agent_avatar": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseIconOneOf2CustomAgentAvatar"
           }
-        ]
+        },
+        "additionalProperties": false
       },
       "QuerySessionsRequestFilterOneOf5": {
         "required": [
@@ -36974,38 +37588,224 @@
         ],
         "description": "The tools the agent may call, null when all tools are enabled (including any the server adds later), or \u0022hidden\u0022 when the caller lacks edit access to the agent."
       },
-      "AgentBatchRequestOperationsItemOneOf1AgentId": {
-        "oneOf": [
-          {
-            "type": "string"
-          },
-          {
-            "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf1AgentIdOneOf2"
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget": {
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "page": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1Variant",
+            "database_property": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2Variant",
+            "agent": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3Variant",
+            "workspace": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4Variant",
+            "owner_private_pages": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5Variant",
+            "web_search": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6Variant",
+            "notion_help_docs_search": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7Variant"
           }
-        ],
-        "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7"
+            }
+          ],
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "page": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1",
+              "database_property": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2",
+              "agent": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3",
+              "workspace": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4",
+              "owner_private_pages": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5",
+              "web_search": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6",
+              "notion_help_docs_search": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
       },
-      "AgentBatchRequestOperationsItemOneOf2AgentId": {
+      "UpdateAgent200ResponseConnectionsItemOneOf2Account": {
         "oneOf": [
           {
-            "type": "string"
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2AccountOneOf1"
           },
           {
-            "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf2AgentIdOneOf2"
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2AccountOneOf2"
+          },
+          {
+            "type": "null"
           }
         ],
-        "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
+        "description": "The linked Slack workspace, null when none is linked, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
       },
-      "AgentBatchRequestOperationsItemOneOf3AgentId": {
+      "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTarget": {
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "slack_channel": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1Variant",
+            "slack_all_public_channels": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2Variant",
+            "slack_all_channels": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3"
+            }
+          ],
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "slack_channel": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1",
+              "slack_all_public_channels": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2",
+              "slack_all_channels": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3Account": {
         "oneOf": [
           {
-            "type": "string"
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3AccountOneOf1"
           },
           {
-            "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf3AgentIdOneOf2"
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3AccountOneOf2"
+          },
+          {
+            "type": "null"
           }
         ],
-        "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
+        "description": "The linked Discord server, null when none is linked, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTarget": {
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "discord_channel": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1Variant",
+            "discord_all_channels": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2"
+            }
+          ],
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "discord_channel": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1",
+              "discord_all_channels": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4Account": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4AccountOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4AccountOneOf2"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The MCP server host, null when none is linked, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4EnabledTools": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4EnabledToolsOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4EnabledToolsOneOf2"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The tools the agent may call, null when all tools are enabled (including any the server adds later), or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5Account": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5AccountOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5AccountOneOf2"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The MCP server host, null when none is linked, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5EnabledTools": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf2"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "The tools the agent may call, null when all tools are enabled (including any the server adds later), or \u0022hidden\u0022 when the caller lacks edit access to the agent."
       },
       "QuerySessionEventsRequestFilterOneOf5AndItem": {
         "oneOf": [
@@ -38036,6 +38836,86 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item"
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2AccountOneOf1": {
+        "required": [
+          "type",
+          "team_id"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2AccountOneOf1Type"
+          },
+          "team_id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3AccountOneOf1": {
+        "required": [
+          "type",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3AccountOneOf1Type"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4AccountOneOf1": {
+        "required": [
+          "type",
+          "server_host"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4AccountOneOf1Type"
+          },
+          "server_host": {
+            "type": "string",
+            "description": "The MCP server host (never the full URL, which can carry credentials or private path components)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4EnabledToolsOneOf1": {
+        "maxItems": 100,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4EnabledToolsOneOf1Item"
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5AccountOneOf1": {
+        "required": [
+          "type",
+          "server_host"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5AccountOneOf1Type"
+          },
+          "server_host": {
+            "type": "string",
+            "description": "The MCP server host (never the full URL, which can carry credentials or private path components)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1": {
+        "maxItems": 100,
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item"
         }
       },
       "QuerySessionEventsRequestFilterOneOf5AndItemOneOf1": {
@@ -40444,6 +41324,106 @@
         },
         "additionalProperties": false
       },
+      "UpdateAgent200ResponseCreatedBy": {
+        "required": [
+          "object",
+          "type",
+          "id"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseCreatedByObject"
+          },
+          "type": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseCreatedByType"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseVersion": {
+        "required": [
+          "id",
+          "number",
+          "published_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "number": {
+            "type": "number",
+            "description": "The version number."
+          },
+          "published_at": {
+            "type": "string",
+            "description": "The ISO 8601 timestamp when this version was published."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseAgentVersion": {
+        "required": [
+          "id",
+          "number",
+          "published_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "number": {
+            "type": "number",
+            "description": "The version number."
+          },
+          "published_at": {
+            "type": "string",
+            "description": "The ISO 8601 timestamp when this version was published."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseTriggersItem": {
+        "required": [
+          "type",
+          "enabled"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Machine trigger type (e.g. \u0022notion.agent.mentioned\u0022, \u0022recurrence\u0022, \u0022slack.reaction.added\u0022)."
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether this trigger is currently enabled."
+          },
+          "schedule": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemSchedule"
+          },
+          "config": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemConfig"
+          }
+        },
+        "additionalProperties": false
+      },
       "GetAgentInsights200ResponseCreatedBy": {
         "required": [
           "id",
@@ -41713,6 +42693,147 @@
         },
         "additionalProperties": false
       },
+      "UpdateAgent200ResponseIconOneOf2CustomAgentAvatar": {
+        "required": [
+          "static_url",
+          "animated_url"
+        ],
+        "type": "object",
+        "properties": {
+          "static_url": {
+            "type": "string",
+            "description": "The URL of the static custom agent avatar."
+          },
+          "animated_url": {
+            "type": "string",
+            "description": "The URL of the animated custom agent avatar."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The static and animated URLs for the agent avatar."
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItem": {
+        "required": [
+          "target",
+          "scopes"
+        ],
+        "type": "object",
+        "properties": {
+          "target": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget"
+          },
+          "scopes": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Content roles (\u0022reader\u0022 | \u0022comment_only\u0022 | \u0022read_and_write\u0022 | \u0022editor\u0022) for scoped targets, or search verbs (\u0022allow\u0022 | \u0022disallow\u0022) for the search targets."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItem": {
+        "required": [
+          "target",
+          "scopes"
+        ],
+        "type": "object",
+        "properties": {
+          "target": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTarget"
+          },
+          "scopes": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Slack verbs granted on this target (\u0022read\u0022 | \u0022write\u0022 | \u0022reply_in_thread\u0022 | \u0022react\u0022)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItem": {
+        "required": [
+          "target",
+          "scopes"
+        ],
+        "type": "object",
+        "properties": {
+          "target": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTarget"
+          },
+          "scopes": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Discord verbs granted on this target (\u0022read\u0022 | \u0022write\u0022 | \u0022reply_in_thread\u0022 | \u0022react\u0022)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4RunToolsAutomatically": {
+        "required": [
+          "read",
+          "write"
+        ],
+        "type": "object",
+        "properties": {
+          "read": {
+            "type": "boolean",
+            "description": "Whether read tool calls run without a confirmation step."
+          },
+          "write": {
+            "type": "boolean",
+            "description": "Whether write tool calls run without a confirmation step."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Whether read / write tool calls run without a confirmation step."
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5RunToolsAutomatically": {
+        "required": [
+          "read",
+          "write"
+        ],
+        "type": "object",
+        "properties": {
+          "read": {
+            "type": "boolean",
+            "description": "Whether read tool calls run without a confirmation step."
+          },
+          "write": {
+            "type": "boolean",
+            "description": "Whether write tool calls run without a confirmation step."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Whether read / write tool calls run without a confirmation step."
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf6PermissionsItem": {
+        "required": [
+          "target",
+          "scopes"
+        ],
+        "type": "object",
+        "properties": {
+          "target": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6PermissionsItemTarget"
+          },
+          "scopes": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The scopes granted on this target."
+          }
+        },
+        "additionalProperties": false
+      },
       "AgentBatchRequestOperationsItemOneOf1Fields": {
         "required": [
           "status"
@@ -42687,6 +43808,44 @@
         "additionalProperties": false
       },
       "GetAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item": {
+        "required": [
+          "name",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4EnabledToolsOneOf1Item": {
+        "required": [
+          "name",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf1Item": {
         "required": [
           "name",
           "title"
@@ -44430,6 +45589,77 @@
         "additionalProperties": {},
         "description": "Remaining per-type trigger configuration (e.g. watched channel ids, reaction config), keys in snake_case. Present only when the trigger carries such state."
       },
+      "UpdateAgent200ResponseTriggersItemSchedule": {
+        "required": [
+          "frequency",
+          "interval"
+        ],
+        "type": "object",
+        "properties": {
+          "frequency": {
+            "type": "string",
+            "description": "Base cadence unit (\u0022hour\u0022 | \u0022day\u0022 | \u0022week\u0022 | \u0022month\u0022 | \u0022year\u0022)."
+          },
+          "interval": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Multiplier on the frequency (e.g. every 2 weeks)."
+          },
+          "weekdays": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Days of the week the schedule runs (e.g. \u0022monday\u0022). Present for weekly cadences and monthly weekday restrictions."
+          },
+          "monthdays": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "description": "Days of the month the schedule runs. Present for monthly monthday restrictions."
+          },
+          "week_numbers": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "Week-of-month ordinals for a monthly weekday restriction (e.g. [2, 3] for the 2nd and 3rd occurrence); -1 means the last week."
+          },
+          "hour": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Hour of day (0\u201323) the schedule runs."
+          },
+          "minute": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Minute of the hour (0\u201359) the schedule runs."
+          },
+          "timezone": {
+            "type": "string",
+            "description": "IANA timezone (e.g. \u0022America/New_York\u0022)."
+          },
+          "start_date": {
+            "type": "string",
+            "description": "ISO 8601 timestamp the schedule starts from."
+          },
+          "end": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEnd"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Structured recurrence cadence. Present only for recurrence triggers."
+      },
+      "UpdateAgent200ResponseTriggersItemConfig": {
+        "type": "object",
+        "additionalProperties": {},
+        "description": "Remaining per-type trigger configuration (e.g. watched channel ids, reaction config), keys in snake_case. Present only when the trigger carries such state."
+      },
       "UpdateSession200ResponseRequiredActionsItemOptionsItem": {
         "required": [
           "id",
@@ -44826,6 +46056,22 @@
         "description": "Remaining per-type trigger configuration (e.g. watched channel ids, reaction config), keys in snake_case. Present only when the trigger carries such state."
       },
       "GetAgent200ResponseConnectionsItemOneOf6PermissionsItemTarget": {
+        "required": [
+          "type",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf6PermissionsItemTarget": {
         "required": [
           "type",
           "id"
@@ -62347,6 +63593,210 @@
           ]
         }
       },
+      "UpdateAgentRequestStatus": {
+        "enum": [
+          "active",
+          "disabled"
+        ],
+        "type": "string",
+        "description": "Enable or disable the agent. Re-enabling works only for an agent an editor disabled, through the API or in agent settings.",
+        "x-ms-enum": {
+          "name": "UpdateAgentRequestStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "disabled",
+              "name": "Disabled"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseObject": {
+        "enum": [
+          "agent"
+        ],
+        "type": "string",
+        "description": "Always \u0060agent\u0060",
+        "x-client-original-const": "agent",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseObject",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "agent",
+              "name": "Agent"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseAgentType": {
+        "enum": [
+          "notion_ai",
+          "custom_agent",
+          "autofill_custom_agent",
+          "external"
+        ],
+        "type": "string",
+        "description": "What kind of agent this is: \u0022notion_ai\u0022 is the personal agent; \u0022custom_agent\u0022 is a standalone agent you chat with; \u0022autofill_custom_agent\u0022 fills a database property; \u0022external\u0022 runs through an external provider.",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseAgentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "notion_ai",
+              "name": "NotionAi"
+            },
+            {
+              "value": "custom_agent",
+              "name": "CustomAgent"
+            },
+            {
+              "value": "autofill_custom_agent",
+              "name": "AutofillCustomAgent"
+            },
+            {
+              "value": "external",
+              "name": "External"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseStatus": {
+        "enum": [
+          "active",
+          "disabled",
+          "deleted"
+        ],
+        "type": "string",
+        "description": "\u0022active\u0022 when the agent can run; \u0022disabled\u0022 when it is paused (see pause_reason); \u0022deleted\u0022 when it has been removed.",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "disabled",
+              "name": "Disabled"
+            },
+            {
+              "value": "deleted",
+              "name": "Deleted"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponsePauseReason": {
+        "description": "Why the agent is paused when status is \u0022disabled\u0022 (e.g. \u0022credit_limit\u0022, \u0022disabled_from_workspace_settings\u0022); null when active.",
+        "anyOf": [
+          {
+            "enum": [
+              "run_limit",
+              "credit_limit",
+              "runaway_credit_usage",
+              "workspace_credit_limit",
+              "owner_allowance_limit",
+              "failure_limit",
+              "mark_session_failed_autopause",
+              "disabled_from_workspace_settings",
+              "disabled_from_workspace_settings_but_resumable",
+              "disabled_from_api",
+              "disabled_from_agent_settings",
+              "disabled_due_to_no_members_with_access",
+              "disabled_due_to_lack_of_editors",
+              "disabled_by_notion",
+              "internal_error",
+              "needs_user_review",
+              "tool_unavailable"
+            ],
+            "type": "string",
+            "description": "Why the agent is paused when status is \u0022disabled\u0022 (e.g. \u0022credit_limit\u0022, \u0022disabled_from_workspace_settings\u0022); null when active.",
+            "x-ms-enum": {
+              "name": "UpdateAgent200ResponsePauseReason",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "run_limit",
+                  "name": "RunLimit"
+                },
+                {
+                  "value": "credit_limit",
+                  "name": "CreditLimit"
+                },
+                {
+                  "value": "runaway_credit_usage",
+                  "name": "RunawayCreditUsage"
+                },
+                {
+                  "value": "workspace_credit_limit",
+                  "name": "WorkspaceCreditLimit"
+                },
+                {
+                  "value": "owner_allowance_limit",
+                  "name": "OwnerAllowanceLimit"
+                },
+                {
+                  "value": "failure_limit",
+                  "name": "FailureLimit"
+                },
+                {
+                  "value": "mark_session_failed_autopause",
+                  "name": "MarkSessionFailedAutopause"
+                },
+                {
+                  "value": "disabled_from_workspace_settings",
+                  "name": "DisabledFromWorkspaceSettings"
+                },
+                {
+                  "value": "disabled_from_workspace_settings_but_resumable",
+                  "name": "DisabledFromWorkspaceSettingsButResumable"
+                },
+                {
+                  "value": "disabled_from_api",
+                  "name": "DisabledFromApi"
+                },
+                {
+                  "value": "disabled_from_agent_settings",
+                  "name": "DisabledFromAgentSettings"
+                },
+                {
+                  "value": "disabled_due_to_no_members_with_access",
+                  "name": "DisabledDueToNoMembersWithAccess"
+                },
+                {
+                  "value": "disabled_due_to_lack_of_editors",
+                  "name": "DisabledDueToLackOfEditors"
+                },
+                {
+                  "value": "disabled_by_notion",
+                  "name": "DisabledByNotion"
+                },
+                {
+                  "value": "internal_error",
+                  "name": "InternalError"
+                },
+                {
+                  "value": "needs_user_review",
+                  "name": "NeedsUserReview"
+                },
+                {
+                  "value": "tool_unavailable",
+                  "name": "ToolUnavailable"
+                }
+              ]
+            }
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
       "AgentInsightsObject": {
         "enum": [
           "agent_insights"
@@ -62530,7 +63980,7 @@
           "disabled"
         ],
         "type": "string",
-        "description": "Set to \u0022active\u0022 to re-enable an agent that was disabled through this API, or \u0022disabled\u0022 to turn off a running agent.",
+        "description": "Set to \u0022active\u0022 to re-enable an agent that an editor disabled, through this API or in agent settings, or \u0022disabled\u0022 to turn off a running agent.",
         "x-ms-enum": {
           "name": "UpdateAgentStatusRequestStatus",
           "modelAsString": false,
@@ -63991,6 +65441,96 @@
         "x-client-original-const": "hidden",
         "x-ms-enum": {
           "name": "GetAgent200ResponseCreditLimitOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "hidden",
+              "name": "Hidden"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseIdAnyOf2": {
+        "enum": [
+          "notion_ai"
+        ],
+        "type": "string",
+        "description": "Always \u0060notion_ai\u0060",
+        "x-client-original-const": "notion_ai",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseIdAnyOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "notion_ai",
+              "name": "NotionAi"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseHasUnpublishedChangesOneOf2": {
+        "enum": [
+          "hidden"
+        ],
+        "type": "string",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseHasUnpublishedChangesOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "hidden",
+              "name": "Hidden"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseLastRunTimeOneOf2": {
+        "enum": [
+          "hidden"
+        ],
+        "type": "string",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseLastRunTimeOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "hidden",
+              "name": "Hidden"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseLastRunAtOneOf2": {
+        "enum": [
+          "hidden"
+        ],
+        "type": "string",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseLastRunAtOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "hidden",
+              "name": "Hidden"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseCreditLimitOneOf2": {
+        "enum": [
+          "hidden"
+        ],
+        "type": "string",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseCreditLimitOneOf2",
           "modelAsString": false,
           "values": [
             {
@@ -65926,6 +67466,424 @@
           ]
         }
       },
+      "UpdateAgentRequestModelOneOf1Mode": {
+        "enum": [
+          "auto"
+        ],
+        "type": "string",
+        "description": "Let Notion select the model for each run.",
+        "x-client-original-const": "auto",
+        "x-ms-enum": {
+          "name": "UpdateAgentRequestModelOneOf1Mode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auto",
+              "name": "Auto"
+            }
+          ]
+        }
+      },
+      "UpdateAgentRequestModelOneOf2Mode": {
+        "enum": [
+          "pinned"
+        ],
+        "type": "string",
+        "description": "Use the selected model for each run after publishing the agent.",
+        "x-client-original-const": "pinned",
+        "x-ms-enum": {
+          "name": "UpdateAgentRequestModelOneOf2Mode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pinned",
+              "name": "Pinned"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseIconOneOf2Type": {
+        "enum": [
+          "custom_agent_avatar"
+        ],
+        "type": "string",
+        "description": "Type of icon. In this case, a custom agent avatar.",
+        "x-client-original-const": "custom_agent_avatar",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseIconOneOf2Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "custom_agent_avatar",
+              "name": "CustomAgentAvatar"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseModelOneOf1Mode": {
+        "enum": [
+          "auto"
+        ],
+        "type": "string",
+        "description": "Always \u0060auto\u0060",
+        "x-client-original-const": "auto",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseModelOneOf1Mode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auto",
+              "name": "Auto"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseModelOneOf2Mode": {
+        "enum": [
+          "pinned"
+        ],
+        "type": "string",
+        "description": "Always \u0060pinned\u0060",
+        "x-client-original-const": "pinned",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseModelOneOf2Mode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pinned",
+              "name": "Pinned"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1Type": {
+        "enum": [
+          "notion"
+        ],
+        "type": "string",
+        "description": "Always \u0060notion\u0060",
+        "x-client-original-const": "notion",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "notion",
+              "name": "Notion"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2Type": {
+        "enum": [
+          "slack"
+        ],
+        "type": "string",
+        "description": "Always \u0060slack\u0060",
+        "x-client-original-const": "slack",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf2Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "slack",
+              "name": "Slack"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3Type": {
+        "enum": [
+          "discord"
+        ],
+        "type": "string",
+        "description": "Always \u0060discord\u0060",
+        "x-client-original-const": "discord",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf3Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "discord",
+              "name": "Discord"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4Type": {
+        "enum": [
+          "mcp_server"
+        ],
+        "type": "string",
+        "description": "Always \u0060mcp_server\u0060",
+        "x-client-original-const": "mcp_server",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf4Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "mcp_server",
+              "name": "McpServer"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5Type": {
+        "enum": [
+          "custom_mcp_server"
+        ],
+        "type": "string",
+        "description": "Always \u0060custom_mcp_server\u0060",
+        "x-client-original-const": "custom_mcp_server",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf5Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "custom_mcp_server",
+              "name": "CustomMcpServer"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf6Type": {
+        "enum": [
+          "asana",
+          "box",
+          "calendar",
+          "computer",
+          "confluence",
+          "cursor",
+          "feedback",
+          "files",
+          "fs",
+          "github",
+          "gmail",
+          "google_calendar",
+          "google_drive",
+          "google_drive_oauth",
+          "gtm",
+          "helpdocs",
+          "images",
+          "jira",
+          "linear",
+          "mail",
+          "marketplace",
+          "memory",
+          "microsoft_teams",
+          "microsoft_teams_oauth",
+          "outlook",
+          "salesforce",
+          "search",
+          "security",
+          "sharepoint",
+          "sharepoint_oauth",
+          "shopify",
+          "skills",
+          "system",
+          "test",
+          "web",
+          "webhooks",
+          "worker",
+          "workers"
+        ],
+        "type": "string",
+        "description": "The connector\u0027s machine name (e.g. \u0022github\u0022, \u0022google_drive\u0022).",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf6Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "asana",
+              "name": "Asana"
+            },
+            {
+              "value": "box",
+              "name": "Box"
+            },
+            {
+              "value": "calendar",
+              "name": "Calendar"
+            },
+            {
+              "value": "computer",
+              "name": "Computer"
+            },
+            {
+              "value": "confluence",
+              "name": "Confluence"
+            },
+            {
+              "value": "cursor",
+              "name": "Cursor"
+            },
+            {
+              "value": "feedback",
+              "name": "Feedback"
+            },
+            {
+              "value": "files",
+              "name": "Files"
+            },
+            {
+              "value": "fs",
+              "name": "Fs"
+            },
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "gmail",
+              "name": "Gmail"
+            },
+            {
+              "value": "google_calendar",
+              "name": "GoogleCalendar"
+            },
+            {
+              "value": "google_drive",
+              "name": "GoogleDrive"
+            },
+            {
+              "value": "google_drive_oauth",
+              "name": "GoogleDriveOAuth"
+            },
+            {
+              "value": "gtm",
+              "name": "Gtm"
+            },
+            {
+              "value": "helpdocs",
+              "name": "Helpdocs"
+            },
+            {
+              "value": "images",
+              "name": "Images"
+            },
+            {
+              "value": "jira",
+              "name": "Jira"
+            },
+            {
+              "value": "linear",
+              "name": "Linear"
+            },
+            {
+              "value": "mail",
+              "name": "Mail"
+            },
+            {
+              "value": "marketplace",
+              "name": "Marketplace"
+            },
+            {
+              "value": "memory",
+              "name": "Memory"
+            },
+            {
+              "value": "microsoft_teams",
+              "name": "MicrosoftTeams"
+            },
+            {
+              "value": "microsoft_teams_oauth",
+              "name": "MicrosoftTeamsOAuth"
+            },
+            {
+              "value": "outlook",
+              "name": "Outlook"
+            },
+            {
+              "value": "salesforce",
+              "name": "Salesforce"
+            },
+            {
+              "value": "search",
+              "name": "Search"
+            },
+            {
+              "value": "security",
+              "name": "Security"
+            },
+            {
+              "value": "sharepoint",
+              "name": "Sharepoint"
+            },
+            {
+              "value": "sharepoint_oauth",
+              "name": "SharepointOAuth"
+            },
+            {
+              "value": "shopify",
+              "name": "Shopify"
+            },
+            {
+              "value": "skills",
+              "name": "Skills"
+            },
+            {
+              "value": "system",
+              "name": "System"
+            },
+            {
+              "value": "test",
+              "name": "Test"
+            },
+            {
+              "value": "web",
+              "name": "Web"
+            },
+            {
+              "value": "webhooks",
+              "name": "Webhooks"
+            },
+            {
+              "value": "worker",
+              "name": "Worker"
+            },
+            {
+              "value": "workers",
+              "name": "Workers"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseTriggersItemScheduleEndOneOf1Type": {
+        "enum": [
+          "date"
+        ],
+        "type": "string",
+        "description": "Always \u0060date\u0060",
+        "x-client-original-const": "date",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseTriggersItemScheduleEndOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date",
+              "name": "Date"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseTriggersItemScheduleEndOneOf2Type": {
+        "enum": [
+          "count"
+        ],
+        "type": "string",
+        "description": "Always \u0060count\u0060",
+        "x-client-original-const": "count",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseTriggersItemScheduleEndOneOf2Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "count",
+              "name": "Count"
+            }
+          ]
+        }
+      },
       "UpdateStatusAction": {
         "enum": [
           "update_status"
@@ -65949,7 +67907,7 @@
           "update_credit_limit"
         ],
         "type": "string",
-        "description": "Set or clear one agent\u0027s credit limit, equivalent to \u0060PATCH /v1/agents/:agent_id/credit_limit\u0060. Requires full access to the agent.",
+        "description": "Set or clear one agent\u0027s credit limit, equivalent to \u0060PATCH /v1/agents/:agent_id/credit_limit\u0060. Requires a personal access token whose user has full access to the agent.",
         "x-client-original-const": "update_credit_limit",
         "x-ms-enum": {
           "name": "UpdateCreditLimitAction",
@@ -65976,28 +67934,6 @@
             {
               "value": "delete",
               "name": "Delete"
-            }
-          ]
-        }
-      },
-      "UpdateSessionRequestOneOf1AgentIdOneOf2": {
-        "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
-        ],
-        "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
-        "x-ms-enum": {
-          "name": "UpdateSessionRequestOneOf1AgentIdOneOf2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
-            {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
             }
           ]
         }
@@ -67890,68 +69826,110 @@
           ]
         }
       },
-      "AgentBatchRequestOperationsItemOneOf1AgentIdOneOf2": {
+      "UpdateAgent200ResponseConnectionsItemOneOf2AccountOneOf2": {
         "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
+          "hidden"
         ],
         "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
         "x-ms-enum": {
-          "name": "AgentBatchRequestOperationsItemOneOf1AgentIdOneOf2",
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf2AccountOneOf2",
           "modelAsString": false,
           "values": [
             {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
-            {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
+              "value": "hidden",
+              "name": "Hidden"
             }
           ]
         }
       },
-      "AgentBatchRequestOperationsItemOneOf2AgentIdOneOf2": {
+      "UpdateAgent200ResponseConnectionsItemOneOf3AccountOneOf2": {
         "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
+          "hidden"
         ],
         "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
         "x-ms-enum": {
-          "name": "AgentBatchRequestOperationsItemOneOf2AgentIdOneOf2",
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf3AccountOneOf2",
           "modelAsString": false,
           "values": [
             {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
-            {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
+              "value": "hidden",
+              "name": "Hidden"
             }
           ]
         }
       },
-      "AgentBatchRequestOperationsItemOneOf3AgentIdOneOf2": {
+      "UpdateAgent200ResponseConnectionsItemOneOf4AccountOneOf2": {
         "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
+          "hidden"
         ],
         "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
         "x-ms-enum": {
-          "name": "AgentBatchRequestOperationsItemOneOf3AgentIdOneOf2",
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf4AccountOneOf2",
           "modelAsString": false,
           "values": [
             {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
+              "value": "hidden",
+              "name": "Hidden"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4EnabledToolsOneOf2": {
+        "enum": [
+          "hidden"
+        ],
+        "type": "string",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf4EnabledToolsOneOf2",
+          "modelAsString": false,
+          "values": [
             {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
+              "value": "hidden",
+              "name": "Hidden"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5AccountOneOf2": {
+        "enum": [
+          "hidden"
+        ],
+        "type": "string",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf5AccountOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "hidden",
+              "name": "Hidden"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf2": {
+        "enum": [
+          "hidden"
+        ],
+        "type": "string",
+        "description": "Always \u0060hidden\u0060",
+        "x-client-original-const": "hidden",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf5EnabledToolsOneOf2",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "hidden",
+              "name": "Hidden"
             }
           ]
         }
@@ -69407,6 +71385,294 @@
         "x-client-original-const": "mcp_server",
         "x-ms-enum": {
           "name": "GetAgent200ResponseConnectionsItemOneOf5AccountOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "mcp_server",
+              "name": "McpServer"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1Type": {
+        "enum": [
+          "page"
+        ],
+        "type": "string",
+        "description": "Always \u0060page\u0060",
+        "x-client-original-const": "page",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "page",
+              "name": "Page"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2Type": {
+        "enum": [
+          "database_property"
+        ],
+        "type": "string",
+        "description": "Always \u0060database_property\u0060",
+        "x-client-original-const": "database_property",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "database_property",
+              "name": "DatabaseProperty"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3Type": {
+        "enum": [
+          "agent"
+        ],
+        "type": "string",
+        "description": "Always \u0060agent\u0060",
+        "x-client-original-const": "agent",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "agent",
+              "name": "Agent"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4Type": {
+        "enum": [
+          "workspace"
+        ],
+        "type": "string",
+        "description": "Always \u0060workspace\u0060",
+        "x-client-original-const": "workspace",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "workspace",
+              "name": "Workspace"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5Type": {
+        "enum": [
+          "owner_private_pages"
+        ],
+        "type": "string",
+        "description": "Always \u0060owner_private_pages\u0060",
+        "x-client-original-const": "owner_private_pages",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "owner_private_pages",
+              "name": "OwnerPrivatePages"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6Type": {
+        "enum": [
+          "web_search"
+        ],
+        "type": "string",
+        "description": "Always \u0060web_search\u0060",
+        "x-client-original-const": "web_search",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "web_search",
+              "name": "WebSearch"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7Type": {
+        "enum": [
+          "notion_help_docs_search"
+        ],
+        "type": "string",
+        "description": "Always \u0060notion_help_docs_search\u0060",
+        "x-client-original-const": "notion_help_docs_search",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "notion_help_docs_search",
+              "name": "NotionHelpDocsSearch"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2AccountOneOf1Type": {
+        "enum": [
+          "slack_workspace"
+        ],
+        "type": "string",
+        "description": "Always \u0060slack_workspace\u0060",
+        "x-client-original-const": "slack_workspace",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf2AccountOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "slack_workspace",
+              "name": "SlackWorkspace"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1Type": {
+        "enum": [
+          "slack_channel"
+        ],
+        "type": "string",
+        "description": "Always \u0060slack_channel\u0060",
+        "x-client-original-const": "slack_channel",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "slack_channel",
+              "name": "SlackChannel"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2Type": {
+        "enum": [
+          "slack_all_public_channels"
+        ],
+        "type": "string",
+        "description": "Always \u0060slack_all_public_channels\u0060",
+        "x-client-original-const": "slack_all_public_channels",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "slack_all_public_channels",
+              "name": "SlackAllPublicChannels"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3Type": {
+        "enum": [
+          "slack_all_channels"
+        ],
+        "type": "string",
+        "description": "Always \u0060slack_all_channels\u0060",
+        "x-client-original-const": "slack_all_channels",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "slack_all_channels",
+              "name": "SlackAllChannels"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3AccountOneOf1Type": {
+        "enum": [
+          "discord_server"
+        ],
+        "type": "string",
+        "description": "Always \u0060discord_server\u0060",
+        "x-client-original-const": "discord_server",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf3AccountOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "discord_server",
+              "name": "DiscordServer"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1Type": {
+        "enum": [
+          "discord_channel"
+        ],
+        "type": "string",
+        "description": "Always \u0060discord_channel\u0060",
+        "x-client-original-const": "discord_channel",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "discord_channel",
+              "name": "DiscordChannel"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2Type": {
+        "enum": [
+          "discord_all_channels"
+        ],
+        "type": "string",
+        "description": "Always \u0060discord_all_channels\u0060",
+        "x-client-original-const": "discord_all_channels",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "discord_all_channels",
+              "name": "DiscordAllChannels"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4AccountOneOf1Type": {
+        "enum": [
+          "mcp_server"
+        ],
+        "type": "string",
+        "description": "Always \u0060mcp_server\u0060",
+        "x-client-original-const": "mcp_server",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf4AccountOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "mcp_server",
+              "name": "McpServer"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5AccountOneOf1Type": {
+        "enum": [
+          "mcp_server"
+        ],
+        "type": "string",
+        "description": "Always \u0060mcp_server\u0060",
+        "x-client-original-const": "mcp_server",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseConnectionsItemOneOf5AccountOneOf1Type",
           "modelAsString": false,
           "values": [
             {
@@ -71315,6 +73581,42 @@
         "x-client-original-const": "user",
         "x-ms-enum": {
           "name": "GetAgent200ResponseCreatedByType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseCreatedByObject": {
+        "enum": [
+          "user"
+        ],
+        "type": "string",
+        "description": "Always \u0060user\u0060",
+        "x-client-original-const": "user",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseCreatedByObject",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "user",
+              "name": "User"
+            }
+          ]
+        }
+      },
+      "UpdateAgent200ResponseCreatedByType": {
+        "enum": [
+          "user"
+        ],
+        "type": "string",
+        "description": "Always \u0060user\u0060",
+        "x-client-original-const": "user",
+        "x-ms-enum": {
+          "name": "UpdateAgent200ResponseCreatedByType",
           "modelAsString": false,
           "values": [
             {
@@ -73845,116 +76147,6 @@
             {
               "value": "failed",
               "name": "Failed"
-            }
-          ]
-        }
-      },
-      "GetAgentAgentIdParameterOneOf2": {
-        "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
-        ],
-        "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
-        "x-ms-enum": {
-          "name": "GetAgentAgentIdParameterOneOf2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
-            {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
-            }
-          ]
-        }
-      },
-      "DeleteAgentAgentIdParameterOneOf2": {
-        "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
-        ],
-        "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
-        "x-ms-enum": {
-          "name": "DeleteAgentAgentIdParameterOneOf2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
-            {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
-            }
-          ]
-        }
-      },
-      "GetAgentInsightsAgentIdParameterOneOf2": {
-        "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
-        ],
-        "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
-        "x-ms-enum": {
-          "name": "GetAgentInsightsAgentIdParameterOneOf2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
-            {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
-            }
-          ]
-        }
-      },
-      "UpdateAgentStatusAgentIdParameterOneOf2": {
-        "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
-        ],
-        "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
-        "x-ms-enum": {
-          "name": "UpdateAgentStatusAgentIdParameterOneOf2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
-            {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
-            }
-          ]
-        }
-      },
-      "UpdateAgentCreditLimitAgentIdParameterOneOf2": {
-        "enum": [
-          "notion_ai",
-          "33333333-3333-3333-3333-333333333333"
-        ],
-        "type": "string",
-        "description": "One of: \u0060notion_ai\u0060, \u006033333333-3333-3333-3333-333333333333\u0060",
-        "x-ms-enum": {
-          "name": "UpdateAgentCreditLimitAgentIdParameterOneOf2",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "notion_ai",
-              "name": "NotionAi"
-            },
-            {
-              "value": "33333333-3333-3333-3333-333333333333",
-              "name": "Value33333333333333333333333333333333"
             }
           ]
         }
@@ -84695,6 +86887,358 @@
           }
         ]
       },
+      "UpdateAgentRequestModelOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgentRequestModel"
+          },
+          {
+            "required": [
+              "mode"
+            ],
+            "type": "object",
+            "properties": {
+              "mode": {
+                "$ref": "#/components/schemas/UpdateAgentRequestModelOneOf1Mode"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgentRequestModelOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgentRequestModel"
+          },
+          {
+            "required": [
+              "mode",
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "mode": {
+                "$ref": "#/components/schemas/UpdateAgentRequestModelOneOf2Mode"
+              },
+              "id": {
+                "type": "string",
+                "description": "A public model ID, such as \u0060claude-sonnet-5\u0060. It must currently be available to the caller in this workspace."
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseModelOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseModel"
+          },
+          {
+            "required": [
+              "mode"
+            ],
+            "type": "object",
+            "properties": {
+              "mode": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseModelOneOf1Mode"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseModelOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseModel"
+          },
+          {
+            "required": [
+              "mode",
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "mode": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseModelOneOf2Mode"
+              },
+              "id": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The public model this agent maps to (e.g. \u0022claude-sonnet-5\u0022), or null for a pre-release / early-access model."
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItem"
+          },
+          {
+            "required": [
+              "type",
+              "name",
+              "account",
+              "permissions"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1Type"
+              },
+              "name": {
+                "type": "string"
+              },
+              "account": {
+                "type": "null"
+              },
+              "permissions": {
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItem"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItem"
+          },
+          {
+            "required": [
+              "type",
+              "name",
+              "account",
+              "permissions"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2Type"
+              },
+              "name": {
+                "type": "string"
+              },
+              "account": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2Account"
+              },
+              "permissions": {
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItem"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItem"
+          },
+          {
+            "required": [
+              "type",
+              "name",
+              "account",
+              "permissions"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3Type"
+              },
+              "name": {
+                "type": "string"
+              },
+              "account": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3Account"
+              },
+              "permissions": {
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItem"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf4Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItem"
+          },
+          {
+            "required": [
+              "type",
+              "name",
+              "account",
+              "enabled_tools",
+              "run_tools_automatically"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4Type"
+              },
+              "name": {
+                "type": "string"
+              },
+              "account": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4Account"
+              },
+              "enabled_tools": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4EnabledTools"
+              },
+              "run_tools_automatically": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4RunToolsAutomatically"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf5Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItem"
+          },
+          {
+            "required": [
+              "type",
+              "name",
+              "account",
+              "enabled_tools",
+              "run_tools_automatically"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5Type"
+              },
+              "name": {
+                "type": "string"
+              },
+              "account": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5Account"
+              },
+              "enabled_tools": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5EnabledTools"
+              },
+              "run_tools_automatically": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5RunToolsAutomatically"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf6Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItem"
+          },
+          {
+            "required": [
+              "type",
+              "name",
+              "account",
+              "permissions"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Type"
+              },
+              "name": {
+                "type": "string"
+              },
+              "account": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The provider-side account identifier, null when none is linked, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+              },
+              "permissions": {
+                "maxItems": 100,
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6PermissionsItem"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseTriggersItemScheduleEndOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEnd"
+          },
+          {
+            "required": [
+              "type",
+              "end_at"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf1Type"
+              },
+              "end_at": {
+                "type": "string",
+                "description": "ISO 8601 timestamp when the schedule stops."
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseTriggersItemScheduleEndOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEnd"
+          },
+          {
+            "required": [
+              "type",
+              "occurrences"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf2Type"
+              },
+              "occurrences": {
+                "minimum": 0,
+                "type": "integer",
+                "description": "Number of occurrences after which the schedule stops."
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
       "AgentBatchRequestOperationsItemOneOf1Variant": {
         "allOf": [
           {
@@ -84712,7 +87256,9 @@
                 "$ref": "#/components/schemas/UpdateStatusAction"
               },
               "agent_id": {
-                "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf1AgentId"
+                "type": "string",
+                "x-client-inline-scalar": true,
+                "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
               },
               "fields": {
                 "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf1Fields"
@@ -84739,7 +87285,9 @@
                 "$ref": "#/components/schemas/UpdateCreditLimitAction"
               },
               "agent_id": {
-                "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf2AgentId"
+                "type": "string",
+                "x-client-inline-scalar": true,
+                "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
               },
               "fields": {
                 "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf2Fields"
@@ -84765,7 +87313,9 @@
                 "$ref": "#/components/schemas/DeleteAction"
               },
               "agent_id": {
-                "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf3AgentId"
+                "type": "string",
+                "x-client-inline-scalar": true,
+                "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
               }
             },
             "additionalProperties": false
@@ -87063,6 +89613,270 @@
             "properties": {
               "type": {
                 "$ref": "#/components/schemas/DiscordAllChannelsType"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type",
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1Type"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type",
+              "data_source_id",
+              "property_id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2Type"
+              },
+              "data_source_id": {
+                "type": "string"
+              },
+              "property_id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type",
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3Type"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4Type"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5Type"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type",
+              "allowed_domains"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6Type"
+              },
+              "allowed_domains": {
+                "maxItems": 100,
+                "type": [
+                  "null",
+                  "array"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "Domains web search is restricted to, or null when unrestricted."
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7Type"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type",
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1Type"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2Type"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3Type"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type",
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1Type"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTarget"
+          },
+          {
+            "required": [
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2Type"
               }
             },
             "additionalProperties": false
@@ -99579,6 +102393,274 @@
       },
       "additionalProperties": false
     },
+    "UpdateAgentRequestModelOneOf1": {
+      "required": [
+        "mode"
+      ],
+      "type": "object",
+      "properties": {
+        "mode": {
+          "$ref": "#/components/schemas/UpdateAgentRequestModelOneOf1Mode"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgentRequestModelOneOf2": {
+      "required": [
+        "mode",
+        "id"
+      ],
+      "type": "object",
+      "properties": {
+        "mode": {
+          "$ref": "#/components/schemas/UpdateAgentRequestModelOneOf2Mode"
+        },
+        "id": {
+          "type": "string",
+          "description": "A public model ID, such as \u0060claude-sonnet-5\u0060. It must currently be available to the caller in this workspace."
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseModelOneOf1": {
+      "required": [
+        "mode"
+      ],
+      "type": "object",
+      "properties": {
+        "mode": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseModelOneOf1Mode"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseModelOneOf2": {
+      "required": [
+        "mode",
+        "id"
+      ],
+      "type": "object",
+      "properties": {
+        "mode": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseModelOneOf2Mode"
+        },
+        "id": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "The public model this agent maps to (e.g. \u0022claude-sonnet-5\u0022), or null for a pre-release / early-access model."
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf1": {
+      "required": [
+        "type",
+        "name",
+        "account",
+        "permissions"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1Type"
+        },
+        "name": {
+          "type": "string"
+        },
+        "account": {
+          "type": "null"
+        },
+        "permissions": {
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItem"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf2": {
+      "required": [
+        "type",
+        "name",
+        "account",
+        "permissions"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2Type"
+        },
+        "name": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2Account"
+        },
+        "permissions": {
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItem"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf3": {
+      "required": [
+        "type",
+        "name",
+        "account",
+        "permissions"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3Type"
+        },
+        "name": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3Account"
+        },
+        "permissions": {
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItem"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf4": {
+      "required": [
+        "type",
+        "name",
+        "account",
+        "enabled_tools",
+        "run_tools_automatically"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4Type"
+        },
+        "name": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4Account"
+        },
+        "enabled_tools": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4EnabledTools"
+        },
+        "run_tools_automatically": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf4RunToolsAutomatically"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf5": {
+      "required": [
+        "type",
+        "name",
+        "account",
+        "enabled_tools",
+        "run_tools_automatically"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5Type"
+        },
+        "name": {
+          "type": "string"
+        },
+        "account": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5Account"
+        },
+        "enabled_tools": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5EnabledTools"
+        },
+        "run_tools_automatically": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf5RunToolsAutomatically"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf6": {
+      "required": [
+        "type",
+        "name",
+        "account",
+        "permissions"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6Type"
+        },
+        "name": {
+          "type": "string"
+        },
+        "account": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "The provider-side account identifier, null when none is linked, or \u0022hidden\u0022 when the caller lacks edit access to the agent."
+        },
+        "permissions": {
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf6PermissionsItem"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseTriggersItemScheduleEndOneOf1": {
+      "required": [
+        "type",
+        "end_at"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf1Type"
+        },
+        "end_at": {
+          "type": "string",
+          "description": "ISO 8601 timestamp when the schedule stops."
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseTriggersItemScheduleEndOneOf2": {
+      "required": [
+        "type",
+        "occurrences"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseTriggersItemScheduleEndOneOf2Type"
+        },
+        "occurrences": {
+          "minimum": 0,
+          "type": "integer",
+          "description": "Number of occurrences after which the schedule stops."
+        }
+      },
+      "additionalProperties": false
+    },
     "AgentBatchRequestOperationsItemOneOf1": {
       "required": [
         "action",
@@ -99591,7 +102673,9 @@
           "$ref": "#/components/schemas/UpdateStatusAction"
         },
         "agent_id": {
-          "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf1AgentId"
+          "type": "string",
+          "x-client-inline-scalar": true,
+          "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
         },
         "fields": {
           "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf1Fields"
@@ -99611,7 +102695,9 @@
           "$ref": "#/components/schemas/UpdateCreditLimitAction"
         },
         "agent_id": {
-          "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf2AgentId"
+          "type": "string",
+          "x-client-inline-scalar": true,
+          "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
         },
         "fields": {
           "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf2Fields"
@@ -99630,10 +102716,17 @@
           "$ref": "#/components/schemas/DeleteAction"
         },
         "agent_id": {
-          "$ref": "#/components/schemas/AgentBatchRequestOperationsItemOneOf3AgentId"
+          "type": "string",
+          "x-client-inline-scalar": true,
+          "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
         }
       },
       "additionalProperties": false
+    },
+    "UpdateSessionRequestOneOf1AgentId": {
+      "type": "string",
+      "x-client-inline-scalar": true,
+      "description": "The agent to start a session with: a custom agent ID, or \u0060notion_ai\u0060 for the personal agent with a personal access token. Required when \u0060session_id\u0060 is omitted."
     },
     "RetrieveSession200ResponseModelsOneOf1": {
       "required": [
@@ -101106,6 +104199,21 @@
         }
       }
     },
+    "AgentBatchRequestOperationsItemOneOf1AgentId": {
+      "type": "string",
+      "x-client-inline-scalar": true,
+      "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
+    },
+    "AgentBatchRequestOperationsItemOneOf2AgentId": {
+      "type": "string",
+      "x-client-inline-scalar": true,
+      "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
+    },
+    "AgentBatchRequestOperationsItemOneOf3AgentId": {
+      "type": "string",
+      "x-client-inline-scalar": true,
+      "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
+    },
     "PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1": {
       "required": [
         "state"
@@ -102255,6 +105363,186 @@
       "properties": {
         "type": {
           "$ref": "#/components/schemas/DiscordAllChannelsType"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1": {
+      "required": [
+        "type",
+        "id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf1Type"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2": {
+      "required": [
+        "type",
+        "data_source_id",
+        "property_id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf2Type"
+        },
+        "data_source_id": {
+          "type": "string"
+        },
+        "property_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3": {
+      "required": [
+        "type",
+        "id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf3Type"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf4Type"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf5Type"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6": {
+      "required": [
+        "type",
+        "allowed_domains"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf6Type"
+        },
+        "allowed_domains": {
+          "maxItems": 100,
+          "type": [
+            "null",
+            "array"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Domains web search is restricted to, or null when unrestricted."
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf1PermissionsItemTargetOneOf7Type"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1": {
+      "required": [
+        "type",
+        "id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf1Type"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf2Type"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf2PermissionsItemTargetOneOf3Type"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1": {
+      "required": [
+        "type",
+        "id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf1Type"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2": {
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/UpdateAgent200ResponseConnectionsItemOneOf3PermissionsItemTargetOneOf2Type"
         }
       },
       "additionalProperties": false
@@ -104150,6 +107438,186 @@
           {
             "value": "workspace",
             "name": "Workspace"
+          }
+        ]
+      }
+    },
+    "UpdateSessionRequestOneOf1AgentIdAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "UpdateSessionRequestOneOf1AgentIdAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "AgentBatchRequestOperationsItemOneOf1AgentIdAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "AgentBatchRequestOperationsItemOneOf1AgentIdAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "AgentBatchRequestOperationsItemOneOf2AgentIdAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "AgentBatchRequestOperationsItemOneOf2AgentIdAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "AgentBatchRequestOperationsItemOneOf3AgentIdAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "AgentBatchRequestOperationsItemOneOf3AgentIdAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "GetAgentAgentIdParameterAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "GetAgentAgentIdParameterAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "DeleteAgentAgentIdParameterAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "DeleteAgentAgentIdParameterAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "UpdateAgentAgentIdParameterAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "UpdateAgentAgentIdParameterAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "GetAgentInsightsAgentIdParameterAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "GetAgentInsightsAgentIdParameterAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "UpdateAgentStatusAgentIdParameterAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "UpdateAgentStatusAgentIdParameterAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
+          }
+        ]
+      }
+    },
+    "UpdateAgentCreditLimitAgentIdParameterAnyOf2": {
+      "enum": [
+        "notion_ai"
+      ],
+      "type": "string",
+      "description": "Always \u0060notion_ai\u0060",
+      "x-client-original-const": "notion_ai",
+      "x-ms-enum": {
+        "name": "UpdateAgentCreditLimitAgentIdParameterAnyOf2",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "notion_ai",
+            "name": "NotionAi"
           }
         ]
       }

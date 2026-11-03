@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>Set or clear one agent&apos;s credit limit, equivalent to `PATCH /v1/agents/:agent_id/credit_limit`. Requires full access to the agent.</summary>
+    /// <summary>Set or clear one agent&apos;s credit limit, equivalent to `PATCH /v1/agents/:agent_id/credit_limit`. Requires a personal access token whose user has full access to the agent.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateCreditLimitAction
     {

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
-    /// <summary>Set to &quot;active&quot; to re-enable an agent that was disabled through this API, or &quot;disabled&quot; to turn off a running agent.</summary>
+    /// <summary>Set to &quot;active&quot; to re-enable an agent that an editor disabled, through this API or in agent settings, or &quot;disabled&quot; to turn off a running agent.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateAgentStatusRequestStatus
     {
