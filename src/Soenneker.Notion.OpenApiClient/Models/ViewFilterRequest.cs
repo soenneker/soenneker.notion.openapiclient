@@ -8,24 +8,17 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter"/>
+    /// A property filter, timestamp filter, or compound and/or filter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostDatabaseQueryRequestFilter : IComposedTypeWrapper, IParsable
-    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+    public partial class ViewFilterRequest : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    {
         // Preserve ambiguous union payloads without inventing a discriminator.
         /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2? PostDatabaseQueryRequestFilterAnyOf1AnyOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2 PostDatabaseQueryRequestFilterAnyOf1AnyOf2 { get; set; }
-#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +26,14 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter PropertyFilter { get; set; }
+#endif
+        /// <summary>The timestamp property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Timestamp { get; set; }
+#nullable restore
+#else
+        public string Timestamp { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,18 +43,39 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter TimestampFilter { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequestAnyOf1AnyOf2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequestAnyOf1AnyOf2? ViewFilterRequestAnyOf1AnyOf2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequestAnyOf1AnyOf2 ViewFilterRequestAnyOf1AnyOf2 { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest"/> and sets the default values.
+        /// </summary>
+        public ViewFilterRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter();
-            
-            
-            
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest();
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string timestampValue)
+            {
+                result.Timestamp = timestampValue;
+            }
+            else {
+                
+                
+                
+            }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
             var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? ((global::System.Func<bool?[]>)(() => { int remaining = 10000;
@@ -1811,11 +1833,11 @@ return matches; }))() : null;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
             if (matchesUnionBranch2 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.PostDatabaseQueryRequestFilterAnyOf1AnyOf2 == null && result.PropertyFilter == null && result.TimestampFilter == null;
+            bool noSelectedUnionBranch = result.PropertyFilter == null && result.Timestamp == null && result.TimestampFilter == null && result.ViewFilterRequestAnyOf1AnyOf2 == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.PropertyFilter = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.TimestampFilter = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.TimestampFilter(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch2 == true && matchingUnionBranches == 1) result.PostDatabaseQueryRequestFilterAnyOf1AnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2(), parseNode);
-            if (result.PostDatabaseQueryRequestFilterAnyOf1AnyOf2 == null && result.PropertyFilter == null && result.TimestampFilter == null) result.UnrecognizedValue = unionPayload;
+            if (noSelectedUnionBranch && matchesUnionBranch2 == true && matchingUnionBranches == 1) result.ViewFilterRequestAnyOf1AnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequestAnyOf1AnyOf2(), parseNode);
+            if (result.PropertyFilter == null && result.Timestamp == null && result.TimestampFilter == null && result.ViewFilterRequestAnyOf1AnyOf2 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -1826,9 +1848,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(PostDatabaseQueryRequestFilterAnyOf1AnyOf2 != null || PropertyFilter != null || TimestampFilter != null)
+            if(PropertyFilter != null || TimestampFilter != null || ViewFilterRequestAnyOf1AnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostDatabaseQueryRequestFilterAnyOf1AnyOf2, PropertyFilter, TimestampFilter);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PropertyFilter, TimestampFilter, ViewFilterRequestAnyOf1AnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -1839,17 +1861,25 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (PostDatabaseQueryRequestFilterAnyOf1AnyOf2 == null && PropertyFilter == null && TimestampFilter == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (PropertyFilter == null && Timestamp == null && TimestampFilter == null && ViewFilterRequestAnyOf1AnyOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (PostDatabaseQueryRequestFilterAnyOf1AnyOf2 != null) selectedUnionBranches++;
             if (PropertyFilter != null) selectedUnionBranches++;
+            if (Timestamp != null) selectedUnionBranches++;
             if (TimestampFilter != null) selectedUnionBranches++;
-            if (PostDatabaseQueryRequestFilterAnyOf1AnyOf2 != null && selectedUnionBranches == 1) { if (PostDatabaseQueryRequestFilterAnyOf1AnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostDatabaseQueryRequestFilterAnyOf1AnyOf2); return; }
+            if (ViewFilterRequestAnyOf1AnyOf2 != null) selectedUnionBranches++;
             if (PropertyFilter != null && selectedUnionBranches == 1) { if (PropertyFilter is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PropertyFilter); return; }
             if (TimestampFilter != null && selectedUnionBranches == 1) { if (TimestampFilter is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TimestampFilter); return; }
+            if (ViewFilterRequestAnyOf1AnyOf2 != null && selectedUnionBranches == 1) { if (ViewFilterRequestAnyOf1AnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ViewFilterRequestAnyOf1AnyOf2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2>(null, PostDatabaseQueryRequestFilterAnyOf1AnyOf2, PropertyFilter, TimestampFilter);
+            if(Timestamp != null)
+            {
+                writer.WriteStringValue(null, Timestamp);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PropertyFilter>(null, PropertyFilter, TimestampFilter, ViewFilterRequestAnyOf1AnyOf2);
+            }
+            
         }
     }
 }

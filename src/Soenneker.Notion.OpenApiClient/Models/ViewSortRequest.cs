@@ -8,41 +8,41 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PostDatabaseQueryRequestSortsItem : IComposedTypeWrapper, IParsable
+    public partial class ViewSortRequest : IComposedTypeWrapper, IParsable
     , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
         // Preserve ambiguous union payloads without inventing a discriminator.
         /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1? PostDatabaseQueryRequestSortsItemAnyOf1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1? ViewSortRequestAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1 PostDatabaseQueryRequestSortsItemAnyOf1 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1 ViewSortRequestAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2? PostDatabaseQueryRequestSortsItemAnyOf2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf2? ViewSortRequestAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2 PostDatabaseQueryRequestSortsItemAnyOf2 { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf2 ViewSortRequestAnyOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest();
             
             
             
@@ -118,10 +118,10 @@ return matches; }))() : null;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.PostDatabaseQueryRequestSortsItemAnyOf1 == null && result.PostDatabaseQueryRequestSortsItemAnyOf2 == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.PostDatabaseQueryRequestSortsItemAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.PostDatabaseQueryRequestSortsItemAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf2(), parseNode);
-            if (result.PostDatabaseQueryRequestSortsItemAnyOf1 == null && result.PostDatabaseQueryRequestSortsItemAnyOf2 == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.ViewSortRequestAnyOf1 == null && result.ViewSortRequestAnyOf2 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.ViewSortRequestAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.ViewSortRequestAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf2(), parseNode);
+            if (result.ViewSortRequestAnyOf1 == null && result.ViewSortRequestAnyOf2 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -132,9 +132,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(PostDatabaseQueryRequestSortsItemAnyOf1 != null || PostDatabaseQueryRequestSortsItemAnyOf2 != null)
+            if(ViewSortRequestAnyOf1 != null || ViewSortRequestAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PostDatabaseQueryRequestSortsItemAnyOf1, PostDatabaseQueryRequestSortsItemAnyOf2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ViewSortRequestAnyOf1, ViewSortRequestAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -145,15 +145,15 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (PostDatabaseQueryRequestSortsItemAnyOf1 == null && PostDatabaseQueryRequestSortsItemAnyOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ViewSortRequestAnyOf1 == null && ViewSortRequestAnyOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (PostDatabaseQueryRequestSortsItemAnyOf1 != null) selectedUnionBranches++;
-            if (PostDatabaseQueryRequestSortsItemAnyOf2 != null) selectedUnionBranches++;
-            if (PostDatabaseQueryRequestSortsItemAnyOf1 != null && selectedUnionBranches == 1) { if (PostDatabaseQueryRequestSortsItemAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostDatabaseQueryRequestSortsItemAnyOf1); return; }
-            if (PostDatabaseQueryRequestSortsItemAnyOf2 != null && selectedUnionBranches == 1) { if (PostDatabaseQueryRequestSortsItemAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostDatabaseQueryRequestSortsItemAnyOf2); return; }
+            if (ViewSortRequestAnyOf1 != null) selectedUnionBranches++;
+            if (ViewSortRequestAnyOf2 != null) selectedUnionBranches++;
+            if (ViewSortRequestAnyOf1 != null && selectedUnionBranches == 1) { if (ViewSortRequestAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ViewSortRequestAnyOf1); return; }
+            if (ViewSortRequestAnyOf2 != null && selectedUnionBranches == 1) { if (ViewSortRequestAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ViewSortRequestAnyOf2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1>(null, PostDatabaseQueryRequestSortsItemAnyOf1, PostDatabaseQueryRequestSortsItemAnyOf2);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1>(null, ViewSortRequestAnyOf1, ViewSortRequestAnyOf2);
         }
     }
 }

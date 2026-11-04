@@ -85,15 +85,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string DataSourceId { get => _explicitNullValueDataSourceId; set { _explicitNullValueDataSourceId = value; AdditionalData?.Remove("data_source_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data_source_id"); else _explicitNullProperties?.Remove("data_source_id"); } }
         private string _explicitNullValueDataSourceId = default!;
 #endif
-        /// <summary>Filter for the view. Uses the same format as the data source query filter (property filters, timestamp filters, or compound and/or filters). Simple property filters appear in the view&apos;s filter bar in the Notion UI. Select, status, and multi_select filter operators accept a single string or an array of strings to filter by multiple values (e.g. { &quot;does_not_equal&quot;: [&quot;Done&quot;, &quot;Archive&quot;] }).</summary>
+        /// <summary>A property filter, timestamp filter, or compound and/or filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter? _explicitNullValueFilter = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter _explicitNullValueFilter = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest _explicitNullValueFilter = default!;
 #endif
         /// <summary>The name of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,12 +138,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The sorts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem>? Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; AdditionalData?.Remove("sorts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
-        private List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem>? _explicitNullValueSorts = default!;
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>? Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; AdditionalData?.Remove("sorts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>? _explicitNullValueSorts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem> Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; AdditionalData?.Remove("sorts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
-        private List<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem> _explicitNullValueSorts = default!;
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest> Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; AdditionalData?.Remove("sorts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest> _explicitNullValueSorts = default!;
 #endif
         /// <summary>One of: `table`, `board`, `list`, `calendar`, `timeline`, `gallery`, `form`, `chart`, `map`, `dashboard`</summary>
         public global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -187,12 +187,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "create_database", n => { CreateDatabase = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest>(global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest.CreateFromDiscriminatorValue); } },
                 { "data_source_id", n => { DataSourceId = n.GetStringValue(); } },
                 { "database_id", n => { DatabaseId = n.GetStringValue(); } },
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest>(global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest.CreateFromDiscriminatorValue); } },
                 { "position", n => { Position = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest.CreateFromDiscriminatorValue); } },
                 { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestQuickFiltersProperty>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestQuickFiltersProperty.CreateFromDiscriminatorValue); } },
-                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem>(global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "view_id", n => { ViewId = n.GetStringValue(); } },
             };
@@ -208,12 +208,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateDatabaseForViewRequest>("create_database", CreateDatabase);
             writer.WriteStringValue("database_id", DatabaseId);
             writer.WriteStringValue("data_source_id", DataSourceId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestFilter>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>("filter", Filter);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.WidgetPlacementRequest>("placement", Placement);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPositionRequest>("position", Position);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestQuickFiltersProperty>("quick_filters", QuickFilters);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.CreateViewRequestSortsItem>("sorts", Sorts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>("sorts", Sorts);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewTypeRequest>("type", Type);
             writer.WriteStringValue("view_id", ViewId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

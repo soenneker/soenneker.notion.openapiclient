@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostDatabaseQueryRequestFilterAnyOf1AnyOf2 : IAdditionalDataHolder, IParsable
+    public partial class ViewFilterRequestAnyOf1AnyOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -34,21 +34,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         private List<global::Soenneker.Notion.OpenApiClient.Models.PropertyOrTimestampFilter> _explicitNullValueAnd = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequestAnyOf1AnyOf2"/> and sets the default values.
         /// </summary>
-        public PostDatabaseQueryRequestFilterAnyOf1AnyOf2()
+        public ViewFilterRequestAnyOf1AnyOf2()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequestAnyOf1AnyOf2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequestAnyOf1AnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilterAnyOf1AnyOf2(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequestAnyOf1AnyOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

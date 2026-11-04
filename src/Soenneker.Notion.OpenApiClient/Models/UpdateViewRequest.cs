@@ -44,12 +44,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Filter to apply to the view. Uses the same format as the data source query filter. Pass null to clear the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter? _explicitNullValueFilter = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter _explicitNullValueFilter = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest _explicitNullValueFilter = default!;
 #endif
         /// <summary>New name for the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewConfigRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewConfigRequest.CreateFromDiscriminatorValue); } },
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter>(global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "quick_filters", n => { QuickFilters = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFiltersProperty>(global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFiltersProperty.CreateFromDiscriminatorValue); } },
                 { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertySortRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertySortRequest.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -121,7 +121,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewConfigRequest>("configuration", Configuration);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestFilter>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>("filter", Filter);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.UpdateViewRequestQuickFiltersProperty>("quick_filters", QuickFilters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertySortRequest>("sorts", Sorts);

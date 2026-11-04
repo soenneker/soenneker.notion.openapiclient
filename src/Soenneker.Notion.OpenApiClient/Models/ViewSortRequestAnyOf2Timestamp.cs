@@ -5,16 +5,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum PostDatabaseQueryRequestSortsItemAnyOf2Direction
+    public enum ViewSortRequestAnyOf2Timestamp
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "ascending")]
+        [EnumMember(Value = "created_time")]
         #pragma warning disable CS1591
-        Ascending,
+        CreatedTime,
         #pragma warning restore CS1591
-        [EnumMember(Value = "descending")]
+        [EnumMember(Value = "last_edited_time")]
         #pragma warning disable CS1591
-        Descending,
+        LastEditedTime,
         #pragma warning restore CS1591
     }
 }

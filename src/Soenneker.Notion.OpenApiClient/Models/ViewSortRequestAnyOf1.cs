@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostDatabaseQueryRequestSortsItemAnyOf1 : IAdditionalDataHolder, IParsable
+    public partial class ViewSortRequestAnyOf1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -26,8 +26,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The direction property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1Direction? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1Direction? _explicitNullValueDirection = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1Direction? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1Direction? _explicitNullValueDirection = default!;
         /// <summary>The property property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,21 +39,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         private string _explicitNullValueProperty = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1"/> and sets the default values.
         /// </summary>
-        public PostDatabaseQueryRequestSortsItemAnyOf1()
+        public ViewSortRequestAnyOf1()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +63,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1Direction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
+                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1Direction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
                 { "property", n => { Property = n.GetStringValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItemAnyOf1Direction>("direction", Direction);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequestAnyOf1Direction>("direction", Direction);
             writer.WriteStringValue("property", Property);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

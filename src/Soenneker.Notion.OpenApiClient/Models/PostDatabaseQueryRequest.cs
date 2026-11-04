@@ -31,15 +31,15 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if (parseNode.GetChildNode("start_cursor") is { } nullNodeStartCursor && nullNodeStartCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCursor = null;
         }
 
-        /// <summary>The filter property</summary>
+        /// <summary>A property filter, timestamp filter, or compound and/or filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter? _explicitNullValueFilter = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter _explicitNullValueFilter = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest _explicitNullValueFilter = default!;
 #endif
         /// <summary>Whether to return archived pages. When omitted or false, returns non-archived pages. When true, returns archived pages.</summary>
         public bool? IsArchived { get => _explicitNullValueIsArchived; set { _explicitNullValueIsArchived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_archived"); else _explicitNullProperties?.Remove("is_archived"); } }
@@ -53,12 +53,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The sorts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem>? Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
-        private List<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem>? _explicitNullValueSorts = default!;
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>? Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>? _explicitNullValueSorts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem> Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
-        private List<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem> _explicitNullValueSorts = default!;
+        public List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest> Sorts { get => _explicitNullValueSorts; set { _explicitNullValueSorts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sorts"); else _explicitNullProperties?.Remove("sorts"); } }
+        private List<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest> _explicitNullValueSorts = default!;
 #endif
         /// <summary>The start_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,11 +88,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter>(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest.CreateFromDiscriminatorValue); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "page_size", n => { PageSize = n.GetIntValue(); } },
                 { "result_type", n => { ResultType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestResultType>(); } },
-                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem>(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sorts", n => { Sorts = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "start_cursor", n => { StartCursor = n.GetStringValue(); } },
             };
         }
@@ -103,11 +103,11 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestFilter>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>("filter", Filter);
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteIntValue("page_size", PageSize);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestResultType>("result_type", ResultType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestSortsItem>("sorts", Sorts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewSortRequest>("sorts", Sorts);
             writer.WriteStringValue("start_cursor", StartCursor);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
