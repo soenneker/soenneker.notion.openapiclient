@@ -1958,7 +1958,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostDatabaseQuery200Response"
+                  "$ref": "#/components/schemas/PageOrDataSourceListResponse"
                 }
               }
             }
@@ -2585,7 +2585,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PostSearch200Response"
+                  "$ref": "#/components/schemas/PageOrDataSourceListResponse"
                 }
               }
             }
@@ -13625,6 +13625,47 @@
         },
         "additionalProperties": false
       },
+      "PageOrDataSourceListResponse": {
+        "title": "Page Or Data Source",
+        "required": [
+          "type",
+          "page_or_data_source",
+          "object",
+          "next_cursor",
+          "has_more",
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PageOrDataSourceType"
+          },
+          "page_or_data_source": {
+            "$ref": "#/components/schemas/EmptyObject"
+          },
+          "object": {
+            "$ref": "#/components/schemas/ListObject"
+          },
+          "next_cursor": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "has_more": {
+            "type": "boolean"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PageOrDataSourceListResponseResultsItem"
+            }
+          },
+          "request_status": {
+            "$ref": "#/components/schemas/PageOrDataSourceListResponseRequestStatus"
+          }
+        }
+      },
       "PagePositionSchema": {
         "discriminator": {
           "propertyName": "type",
@@ -21045,6 +21086,82 @@
         ],
         "description": "Page cover image."
       },
+      "PageOrDataSourceListResponseResultsItem": {
+        "anyOf": [
+          {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PageObjectResponse"
+              },
+              {
+                "$ref": "#/components/schemas/PartialPageObjectResponse"
+              }
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/PartialDataSourceObjectResponse"
+              },
+              {
+                "$ref": "#/components/schemas/DataSourceObjectResponse"
+              }
+            ]
+          }
+        ]
+      },
+      "PagePropertiesRequestAdditionalProperties": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesTitle"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesRichText"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesNumber"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesUrl"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesSelect"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesMultiSelect"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesPeople"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesEmail"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesPhoneNumber"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesDate"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesCheckbox"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesRelation"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesFiles"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesStatus"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesPlace"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerification"
+          }
+        ]
+      },
       "PeopleArrayBasedPropertyValueResponsePeopleItem": {
         "oneOf": [
           {
@@ -23041,6 +23158,304 @@
           }
         }
       },
+      "PagePropertiesRequestAdditionalPropertiesTitle": {
+        "title": "Title",
+        "required": [
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemRequest"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesTitleType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesRichText": {
+        "title": "Rich Text",
+        "required": [
+          "rich_text"
+        ],
+        "type": "object",
+        "properties": {
+          "rich_text": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemRequest"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesRichTextType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesNumber": {
+        "title": "Number",
+        "required": [
+          "number"
+        ],
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesNumberType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesUrl": {
+        "title": "Url",
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesUrlType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesSelect": {
+        "title": "Select",
+        "required": [
+          "select"
+        ],
+        "type": "object",
+        "properties": {
+          "select": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesSelectSelect"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesSelectType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesMultiSelect": {
+        "title": "Multi Select",
+        "required": [
+          "multi_select"
+        ],
+        "type": "object",
+        "properties": {
+          "multi_select": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesMultiSelectMultiSelectItem"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesMultiSelectType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesPeople": {
+        "title": "People",
+        "required": [
+          "people"
+        ],
+        "type": "object",
+        "properties": {
+          "people": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesPeoplePeopleItem"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesPeopleType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesEmail": {
+        "title": "Email",
+        "required": [
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesEmailType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesPhoneNumber": {
+        "title": "Phone Number",
+        "required": [
+          "phone_number"
+        ],
+        "type": "object",
+        "properties": {
+          "phone_number": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesPhoneNumberType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesDate": {
+        "title": "Date",
+        "required": [
+          "date"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesDateDate"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesDateType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesCheckbox": {
+        "title": "Checkbox",
+        "required": [
+          "checkbox"
+        ],
+        "type": "object",
+        "properties": {
+          "checkbox": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesCheckboxType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesRelation": {
+        "title": "Relation",
+        "required": [
+          "relation"
+        ],
+        "type": "object",
+        "properties": {
+          "relation": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RelationItemPropertyValueResponse"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesRelationType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesFiles": {
+        "title": "Files",
+        "required": [
+          "files"
+        ],
+        "type": "object",
+        "properties": {
+          "files": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesFilesFilesItem"
+            }
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesFilesType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesStatus": {
+        "title": "Status",
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesStatusStatus"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesStatusType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesPlace": {
+        "title": "Place",
+        "required": [
+          "place"
+        ],
+        "type": "object",
+        "properties": {
+          "place": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesPlacePlace"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesPlaceType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesVerification": {
+        "title": "Verification",
+        "required": [
+          "verification"
+        ],
+        "type": "object",
+        "properties": {
+          "verification": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerification"
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationType"
+          }
+        },
+        "additionalProperties": false
+      },
       "PropertyFilterVerificationVerification": {
         "anyOf": [
           {
@@ -23370,6 +23785,140 @@
         ],
         "description": "The range to compare against."
       },
+      "PagePropertiesRequestAdditionalPropertiesSelectSelect": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesSelectSelectAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesSelectSelectAnyOf2"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "PagePropertiesRequestAdditionalPropertiesMultiSelectMultiSelectItem": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesMultiSelectMultiSelectItemAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesMultiSelectMultiSelectItemAnyOf2"
+          }
+        ]
+      },
+      "PagePropertiesRequestAdditionalPropertiesPeoplePeopleItem": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PartialUserObjectRequest"
+          },
+          {
+            "$ref": "#/components/schemas/GroupObjectRequest"
+          }
+        ]
+      },
+      "PagePropertiesRequestAdditionalPropertiesDateDate": {
+        "required": [
+          "start"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "The start date of the date object.",
+            "format": "date"
+          },
+          "end": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The end date of the date object, if any.",
+            "format": "date"
+          },
+          "time_zone": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The time zone of the date object, if any. E.g. America/Los_Angeles, Europe/London, etc.",
+            "example": "Africa/Abidjan"
+          }
+        },
+        "additionalProperties": false,
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/DateRequest"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesFilesFilesItem": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/InternalOrExternalFileWithNameRequest"
+          },
+          {
+            "$ref": "#/components/schemas/FileUploadWithOptionalNameRequest"
+          }
+        ]
+      },
+      "PagePropertiesRequestAdditionalPropertiesStatusStatus": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesStatusStatusAnyOf1"
+          },
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesStatusStatusAnyOf2"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "PagePropertiesRequestAdditionalPropertiesVerificationVerification": {
+        "discriminator": {
+          "propertyName": "state",
+          "mapping": {
+            "verified": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf1Variant",
+            "unverified": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf1"
+            },
+            {
+              "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2"
+            }
+          ],
+          "discriminator": {
+            "propertyName": "state",
+            "mapping": {
+              "verified": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf1",
+              "unverified": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "state"
+        ]
+      },
       "PropertyItemPropertyItemListResponsePropertyItemRollupRollup": {
         "discriminator": {
           "propertyName": "type",
@@ -23629,6 +24178,186 @@
           },
           "value": {
             "$ref": "#/components/schemas/MeetingNotesPropertyFilterFilterOneOf4ValueOneOf4Value"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesSelectSelectAnyOf1": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesSelectSelectAnyOf2": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesMultiSelectMultiSelectItemAnyOf1": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesMultiSelectMultiSelectItemAnyOf2": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesStatusStatusAnyOf1": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "PagePropertiesRequestAdditionalPropertiesStatusStatusAnyOf2": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
+          },
+          "color": {
+            "$ref": "#/components/schemas/SelectColor"
+          },
+          "description": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": [
+              "null",
+              "string"
+            ]
           }
         },
         "additionalProperties": false
@@ -24325,6 +25054,20 @@
           }
         },
         "additionalProperties": false
+      },
+      "PageOrDataSourceListResponseRequestStatus": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/PageOrDataSourceListResponseRequestStatusType"
+          },
+          "incomplete_reason": {
+            "$ref": "#/components/schemas/PageOrDataSourceListResponseRequestStatusIncompleteReason"
+          }
+        }
       },
       "PersonUserObjectResponsePerson": {
         "type": "object",
@@ -26020,6 +26763,48 @@
         "additionalProperties": false,
         "description": "Details of the database mention."
       },
+      "PagePropertiesRequestAdditionalPropertiesPlacePlace": {
+        "required": [
+          "lat",
+          "lon"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          },
+          "name": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "address": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "aws_place_id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "google_place_id": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        }
+      },
       "RelationPropertyConfigurationRequestRelationAllOf2DualPropertyDualProperty": {
         "type": "object",
         "properties": {
@@ -27046,47 +27831,6 @@
         },
         "additionalProperties": false
       },
-      "PostDatabaseQuery200Response": {
-        "title": "Page Or Data Source",
-        "required": [
-          "type",
-          "page_or_data_source",
-          "object",
-          "next_cursor",
-          "has_more",
-          "results"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/PageOrDataSourceType"
-          },
-          "page_or_data_source": {
-            "$ref": "#/components/schemas/EmptyObject"
-          },
-          "object": {
-            "$ref": "#/components/schemas/PostDatabaseQuery200ResponseObject"
-          },
-          "next_cursor": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "has_more": {
-            "type": "boolean"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PostDatabaseQuery200ResponseResultsItem"
-            }
-          },
-          "request_status": {
-            "$ref": "#/components/schemas/PostDatabaseQuery200ResponseRequestStatus"
-          }
-        }
-      },
       "CreateADatabaseRequest": {
         "required": [
           "parent",
@@ -27278,47 +28022,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "PostSearch200Response": {
-        "title": "Page Or Data Source",
-        "required": [
-          "type",
-          "page_or_data_source",
-          "object",
-          "next_cursor",
-          "has_more",
-          "results"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/PostSearch200ResponseType"
-          },
-          "page_or_data_source": {
-            "$ref": "#/components/schemas/EmptyObject"
-          },
-          "object": {
-            "$ref": "#/components/schemas/PostSearch200ResponseObject"
-          },
-          "next_cursor": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "has_more": {
-            "type": "boolean"
-          },
-          "results": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PostDatabaseQuery200ResponseResultsItem"
-            }
-          },
-          "request_status": {
-            "$ref": "#/components/schemas/PostSearch200ResponseRequestStatus"
-          }
-        }
       },
       "CreateACommentRequest": {
         "oneOf": [
@@ -29348,58 +30051,6 @@
           }
         ]
       },
-      "PostPageRequestPropertiesAdditionalProperties": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesTitle"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesRichText"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesNumber"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesUrl"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesSelect"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesMultiSelect"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesPeople"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesEmail"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesPhoneNumber"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesDate"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesCheckbox"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesRelation"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesFiles"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesStatus"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesPlace"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerification"
-          }
-        ]
-      },
       "PostPageRequestTemplate": {
         "discriminator": {
           "propertyName": "type",
@@ -29473,58 +30124,6 @@
         },
         "required": [
           "surface"
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalProperties": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesTitle"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesRichText"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesNumber"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesUrl"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesSelect"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesMultiSelect"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPeople"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesEmail"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPhoneNumber"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesDate"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesCheckbox"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesRelation"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesFiles"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesStatus"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPlace"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerification"
-          }
         ]
       },
       "PatchPageRequestIcon": {
@@ -30235,30 +30834,6 @@
           },
           {
             "type": "null"
-          }
-        ]
-      },
-      "PostDatabaseQuery200ResponseResultsItem": {
-        "anyOf": [
-          {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/PageObjectResponse"
-              },
-              {
-                "$ref": "#/components/schemas/PartialPageObjectResponse"
-              }
-            ]
-          },
-          {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/PartialDataSourceObjectResponse"
-              },
-              {
-                "$ref": "#/components/schemas/DataSourceObjectResponse"
-              }
-            ]
           }
         ]
       },
@@ -31639,602 +32214,6 @@
         },
         "additionalProperties": false
       },
-      "PostPageRequestPropertiesAdditionalPropertiesTitle": {
-        "title": "Title",
-        "required": [
-          "title"
-        ],
-        "type": "object",
-        "properties": {
-          "title": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RichTextItemRequest"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesTitleType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesRichText": {
-        "title": "Rich Text",
-        "required": [
-          "rich_text"
-        ],
-        "type": "object",
-        "properties": {
-          "rich_text": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RichTextItemRequest"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesRichTextType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesNumber": {
-        "title": "Number",
-        "required": [
-          "number"
-        ],
-        "type": "object",
-        "properties": {
-          "number": {
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesNumberType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesUrl": {
-        "title": "Url",
-        "required": [
-          "url"
-        ],
-        "type": "object",
-        "properties": {
-          "url": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesUrlType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesSelect": {
-        "title": "Select",
-        "required": [
-          "select"
-        ],
-        "type": "object",
-        "properties": {
-          "select": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesSelectSelect"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesSelectType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesMultiSelect": {
-        "title": "Multi Select",
-        "required": [
-          "multi_select"
-        ],
-        "type": "object",
-        "properties": {
-          "multi_select": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItem"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesMultiSelectType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesPeople": {
-        "title": "People",
-        "required": [
-          "people"
-        ],
-        "type": "object",
-        "properties": {
-          "people": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPeoplePeopleItem"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesPeopleType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesEmail": {
-        "title": "Email",
-        "required": [
-          "email"
-        ],
-        "type": "object",
-        "properties": {
-          "email": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesEmailType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesPhoneNumber": {
-        "title": "Phone Number",
-        "required": [
-          "phone_number"
-        ],
-        "type": "object",
-        "properties": {
-          "phone_number": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesPhoneNumberType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesDate": {
-        "title": "Date",
-        "required": [
-          "date"
-        ],
-        "type": "object",
-        "properties": {
-          "date": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesDateDate"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesDateType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesCheckbox": {
-        "title": "Checkbox",
-        "required": [
-          "checkbox"
-        ],
-        "type": "object",
-        "properties": {
-          "checkbox": {
-            "type": "boolean"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesCheckboxType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesRelation": {
-        "title": "Relation",
-        "required": [
-          "relation"
-        ],
-        "type": "object",
-        "properties": {
-          "relation": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RelationItemPropertyValueResponse"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesRelationType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesFiles": {
-        "title": "Files",
-        "required": [
-          "files"
-        ],
-        "type": "object",
-        "properties": {
-          "files": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesFilesFilesItem"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesFilesType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesStatus": {
-        "title": "Status",
-        "required": [
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesStatusStatus"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesStatusType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesPlace": {
-        "title": "Place",
-        "required": [
-          "place"
-        ],
-        "type": "object",
-        "properties": {
-          "place": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesPlacePlace"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesPlaceType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesVerification": {
-        "title": "Verification",
-        "required": [
-          "verification"
-        ],
-        "type": "object",
-        "properties": {
-          "verification": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerification"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesTitle": {
-        "title": "Title",
-        "required": [
-          "title"
-        ],
-        "type": "object",
-        "properties": {
-          "title": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RichTextItemRequest"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesTitleType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesRichText": {
-        "title": "Rich Text",
-        "required": [
-          "rich_text"
-        ],
-        "type": "object",
-        "properties": {
-          "rich_text": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RichTextItemRequest"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesRichTextType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesNumber": {
-        "title": "Number",
-        "required": [
-          "number"
-        ],
-        "type": "object",
-        "properties": {
-          "number": {
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesNumberType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesUrl": {
-        "title": "Url",
-        "required": [
-          "url"
-        ],
-        "type": "object",
-        "properties": {
-          "url": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesUrlType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesSelect": {
-        "title": "Select",
-        "required": [
-          "select"
-        ],
-        "type": "object",
-        "properties": {
-          "select": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesSelectSelect"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesSelectType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesMultiSelect": {
-        "title": "Multi Select",
-        "required": [
-          "multi_select"
-        ],
-        "type": "object",
-        "properties": {
-          "multi_select": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItem"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesMultiSelectType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesPeople": {
-        "title": "People",
-        "required": [
-          "people"
-        ],
-        "type": "object",
-        "properties": {
-          "people": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPeoplePeopleItem"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPeopleType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesEmail": {
-        "title": "Email",
-        "required": [
-          "email"
-        ],
-        "type": "object",
-        "properties": {
-          "email": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesEmailType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesPhoneNumber": {
-        "title": "Phone Number",
-        "required": [
-          "phone_number"
-        ],
-        "type": "object",
-        "properties": {
-          "phone_number": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPhoneNumberType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesDate": {
-        "title": "Date",
-        "required": [
-          "date"
-        ],
-        "type": "object",
-        "properties": {
-          "date": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesDateDate"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesDateType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesCheckbox": {
-        "title": "Checkbox",
-        "required": [
-          "checkbox"
-        ],
-        "type": "object",
-        "properties": {
-          "checkbox": {
-            "type": "boolean"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesCheckboxType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesRelation": {
-        "title": "Relation",
-        "required": [
-          "relation"
-        ],
-        "type": "object",
-        "properties": {
-          "relation": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/RelationItemPropertyValueResponse"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesRelationType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesFiles": {
-        "title": "Files",
-        "required": [
-          "files"
-        ],
-        "type": "object",
-        "properties": {
-          "files": {
-            "maxItems": 100,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesFilesFilesItem"
-            }
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesFilesType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesStatus": {
-        "title": "Status",
-        "required": [
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "status": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesStatusStatus"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesStatusType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesPlace": {
-        "title": "Place",
-        "required": [
-          "place"
-        ],
-        "type": "object",
-        "properties": {
-          "place": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPlacePlace"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesPlaceType"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesVerification": {
-        "title": "Verification",
-        "required": [
-          "verification"
-        ],
-        "type": "object",
-        "properties": {
-          "verification": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerification"
-          },
-          "type": {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationType"
-          }
-        },
-        "additionalProperties": false
-      },
       "MovePageRequestParentOneOf1": {
         "required": [
           "page_id"
@@ -33039,211 +33018,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesSelectSelect": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesSelectSelectAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesSelectSelectAnyOf2"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItem": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItemAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItemAnyOf2"
-          }
-        ]
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesStatusStatus": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesStatusStatusAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesStatusStatusAnyOf2"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesVerificationVerification": {
-        "discriminator": {
-          "propertyName": "state",
-          "mapping": {
-            "verified": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1Variant",
-            "unverified": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2Variant"
-          }
-        },
-        "x-client-original-tagged-union": {
-          "oneOf": [
-            {
-              "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1"
-            },
-            {
-              "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2"
-            }
-          ],
-          "discriminator": {
-            "propertyName": "state",
-            "mapping": {
-              "verified": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1",
-              "unverified": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2"
-            }
-          }
-        },
-        "type": "object",
-        "properties": {
-          "state": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "state"
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesSelectSelect": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesSelectSelectAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesSelectSelectAnyOf2"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItem": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItemAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItemAnyOf2"
-          }
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesPeoplePeopleItem": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PartialUserObjectRequest"
-          },
-          {
-            "$ref": "#/components/schemas/GroupObjectRequest"
-          }
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesDateDate": {
-        "required": [
-          "start"
-        ],
-        "type": [
-          "object",
-          "null"
-        ],
-        "properties": {
-          "start": {
-            "type": "string",
-            "description": "The start date of the date object.",
-            "format": "date"
-          },
-          "end": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "The end date of the date object, if any.",
-            "format": "date"
-          },
-          "time_zone": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "The time zone of the date object, if any. E.g. America/Los_Angeles, Europe/London, etc.",
-            "example": "Africa/Abidjan"
-          }
-        },
-        "additionalProperties": false,
-        "x-client-original-nullable-union": {
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/DateRequest"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesFilesFilesItem": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/InternalOrExternalFileWithNameRequest"
-          },
-          {
-            "$ref": "#/components/schemas/FileUploadWithOptionalNameRequest"
-          }
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesStatusStatus": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesStatusStatusAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesStatusStatusAnyOf2"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerification": {
-        "discriminator": {
-          "propertyName": "state",
-          "mapping": {
-            "verified": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1Variant",
-            "unverified": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2Variant"
-          }
-        },
-        "x-client-original-tagged-union": {
-          "oneOf": [
-            {
-              "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1"
-            },
-            {
-              "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2"
-            }
-          ],
-          "discriminator": {
-            "propertyName": "state",
-            "mapping": {
-              "verified": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1",
-              "unverified": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2"
-            }
-          }
-        },
-        "type": "object",
-        "properties": {
-          "state": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "state"
-        ]
       },
       "UpdateABlockRequestAnyOf1LinkToPageLinkToPagePageId": {
         "title": "Page Id",
@@ -34517,366 +34291,6 @@
             "$ref": "#/components/schemas/PartialUserObjectResponse"
           }
         ]
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesSelectSelectAnyOf1": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesSelectSelectAnyOf2": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItemAnyOf1": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItemAnyOf2": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesStatusStatusAnyOf1": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesStatusStatusAnyOf2": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesSelectSelectAnyOf1": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesSelectSelectAnyOf2": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItemAnyOf1": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesMultiSelectMultiSelectItemAnyOf2": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesStatusStatusAnyOf1": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesStatusStatusAnyOf2": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "name": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": "string"
-          },
-          "id": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "color": {
-            "$ref": "#/components/schemas/SelectColor"
-          },
-          "description": {
-            "maxLength": 2000,
-            "minLength": 1,
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        },
-        "additionalProperties": false
       },
       "UpdateADataSourceRequestPropertiesAdditionalPropertiesOneOf1AllOf1MultiSelectMultiSelectOptionsItem": {
         "oneOf": [
@@ -37595,13 +37009,13 @@
       "PostPageRequestProperties": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalProperties"
+          "$ref": "#/components/schemas/PagePropertiesRequestAdditionalProperties"
         }
       },
       "PatchPageRequestProperties": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalProperties"
+          "$ref": "#/components/schemas/PagePropertiesRequestAdditionalProperties"
         }
       },
       "UpdateADataSourceRequestProperties": {
@@ -37610,20 +37024,6 @@
           "$ref": "#/components/schemas/UpdateADataSourceRequestPropertiesAdditionalProperties"
         },
         "description": "The property schema of the data source. The keys are property names or IDs, and the values are property configuration objects. Properties set to null will be removed."
-      },
-      "PostDatabaseQuery200ResponseRequestStatus": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/PostDatabaseQuery200ResponseRequestStatusType"
-          },
-          "incomplete_reason": {
-            "$ref": "#/components/schemas/PostDatabaseQuery200ResponseRequestStatusIncompleteReason"
-          }
-        }
       },
       "CreateADatabaseRequestProperties": {
         "type": "object",
@@ -37654,20 +37054,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "PostSearch200ResponseRequestStatus": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/PostSearch200ResponseRequestStatusType"
-          },
-          "incomplete_reason": {
-            "$ref": "#/components/schemas/PostSearch200ResponseRequestStatusIncompleteReason"
-          }
-        }
       },
       "CreateACommentRequestAttachmentsItem": {
         "required": [
@@ -38808,90 +38194,6 @@
           },
           "name": {
             "type": "string"
-          }
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesPlacePlace": {
-        "required": [
-          "lat",
-          "lon"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "lat": {
-            "type": "number"
-          },
-          "lon": {
-            "type": "number"
-          },
-          "name": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "address": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "aws_place_id": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "google_place_id": {
-            "type": [
-              "null",
-              "string"
-            ]
-          }
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesPlacePlace": {
-        "required": [
-          "lat",
-          "lon"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "lat": {
-            "type": "number"
-          },
-          "lon": {
-            "type": "number"
-          },
-          "name": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "address": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "aws_place_id": {
-            "type": [
-              "null",
-              "string"
-            ]
-          },
-          "google_place_id": {
-            "type": [
-              "null",
-              "string"
-            ]
           }
         }
       },
@@ -48961,6 +48263,40 @@
           ]
         }
       },
+      "PageOrDataSourceType": {
+        "enum": [
+          "page_or_data_source"
+        ],
+        "type": "string",
+        "x-client-original-const": "page_or_data_source",
+        "x-ms-enum": {
+          "name": "PageOrDataSourceType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "page_or_data_source",
+              "name": "PageOrDataSource"
+            }
+          ]
+        }
+      },
+      "ListObject": {
+        "enum": [
+          "list"
+        ],
+        "type": "string",
+        "x-client-original-const": "list",
+        "x-ms-enum": {
+          "name": "ListObject",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "list",
+              "name": "List"
+            }
+          ]
+        }
+      },
       "PagePropertiesUpdatedType": {
         "enum": [
           "page.properties_updated"
@@ -49760,14 +49096,14 @@
           ]
         }
       },
-      "ListObject": {
+      "PropertyItemPropertyItemListResponseObject": {
         "enum": [
           "list"
         ],
         "type": "string",
         "x-client-original-const": "list",
         "x-ms-enum": {
-          "name": "ListObject",
+          "name": "PropertyItemPropertyItemListResponseObject",
           "modelAsString": false,
           "values": [
             {
@@ -58088,6 +57424,278 @@
           ]
         }
       },
+      "PagePropertiesRequestAdditionalPropertiesTitleType": {
+        "enum": [
+          "title"
+        ],
+        "type": "string",
+        "x-client-original-const": "title",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesTitleType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "title",
+              "name": "Title"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesRichTextType": {
+        "enum": [
+          "rich_text"
+        ],
+        "type": "string",
+        "x-client-original-const": "rich_text",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesRichTextType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "rich_text",
+              "name": "RichText"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesNumberType": {
+        "enum": [
+          "number"
+        ],
+        "type": "string",
+        "x-client-original-const": "number",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesNumberType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "number",
+              "name": "Number"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesUrlType": {
+        "enum": [
+          "url"
+        ],
+        "type": "string",
+        "x-client-original-const": "url",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesUrlType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "url",
+              "name": "Url"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesSelectType": {
+        "enum": [
+          "select"
+        ],
+        "type": "string",
+        "x-client-original-const": "select",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesSelectType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "select",
+              "name": "Select"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesMultiSelectType": {
+        "enum": [
+          "multi_select"
+        ],
+        "type": "string",
+        "x-client-original-const": "multi_select",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesMultiSelectType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "multi_select",
+              "name": "MultiSelect"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesPeopleType": {
+        "enum": [
+          "people"
+        ],
+        "type": "string",
+        "x-client-original-const": "people",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesPeopleType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "people",
+              "name": "People"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesEmailType": {
+        "enum": [
+          "email"
+        ],
+        "type": "string",
+        "x-client-original-const": "email",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesEmailType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "email",
+              "name": "Email"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesPhoneNumberType": {
+        "enum": [
+          "phone_number"
+        ],
+        "type": "string",
+        "x-client-original-const": "phone_number",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesPhoneNumberType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "phone_number",
+              "name": "PhoneNumber"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesDateType": {
+        "enum": [
+          "date"
+        ],
+        "type": "string",
+        "x-client-original-const": "date",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesDateType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date",
+              "name": "Date"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesCheckboxType": {
+        "enum": [
+          "checkbox"
+        ],
+        "type": "string",
+        "x-client-original-const": "checkbox",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesCheckboxType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "checkbox",
+              "name": "Checkbox"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesRelationType": {
+        "enum": [
+          "relation"
+        ],
+        "type": "string",
+        "x-client-original-const": "relation",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesRelationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "relation",
+              "name": "Relation"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesFilesType": {
+        "enum": [
+          "files"
+        ],
+        "type": "string",
+        "x-client-original-const": "files",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesFilesType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "files",
+              "name": "Files"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesStatusType": {
+        "enum": [
+          "status"
+        ],
+        "type": "string",
+        "x-client-original-const": "status",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesStatusType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "status",
+              "name": "Status"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesPlaceType": {
+        "enum": [
+          "place"
+        ],
+        "type": "string",
+        "x-client-original-const": "place",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesPlaceType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "place",
+              "name": "Place"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesVerificationType": {
+        "enum": [
+          "verification"
+        ],
+        "type": "string",
+        "x-client-original-const": "verification",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesVerificationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "verification",
+              "name": "Verification"
+            }
+          ]
+        }
+      },
       "PropertyItemPropertyItemListResponsePropertyItemTitleType": {
         "enum": [
           "title"
@@ -58847,6 +58455,40 @@
           ]
         }
       },
+      "VerifiedState": {
+        "enum": [
+          "verified"
+        ],
+        "type": "string",
+        "x-client-original-const": "verified",
+        "x-ms-enum": {
+          "name": "VerifiedState",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "verified",
+              "name": "Verified"
+            }
+          ]
+        }
+      },
+      "PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2State": {
+        "enum": [
+          "unverified"
+        ],
+        "type": "string",
+        "x-client-original-const": "unverified",
+        "x-ms-enum": {
+          "name": "PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2State",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unverified",
+              "name": "Unverified"
+            }
+          ]
+        }
+      },
       "PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumberType": {
         "enum": [
           "number"
@@ -59195,6 +58837,43 @@
             {
               "value": "agent",
               "name": "Agent"
+            }
+          ]
+        }
+      },
+      "PageOrDataSourceListResponseRequestStatusType": {
+        "enum": [
+          "complete",
+          "incomplete"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "PageOrDataSourceListResponseRequestStatusType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "complete",
+              "name": "Complete"
+            },
+            {
+              "value": "incomplete",
+              "name": "Incomplete"
+            }
+          ]
+        }
+      },
+      "PageOrDataSourceListResponseRequestStatusIncompleteReason": {
+        "enum": [
+          "query_result_limit_reached"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "PageOrDataSourceListResponseRequestStatusIncompleteReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "query_result_limit_reached",
+              "name": "QueryResultLimitReached"
             }
           ]
         }
@@ -59932,40 +59611,6 @@
           ]
         }
       },
-      "PageOrDataSourceType": {
-        "enum": [
-          "page_or_data_source"
-        ],
-        "type": "string",
-        "x-client-original-const": "page_or_data_source",
-        "x-ms-enum": {
-          "name": "PageOrDataSourceType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "page_or_data_source",
-              "name": "PageOrDataSource"
-            }
-          ]
-        }
-      },
-      "PostDatabaseQuery200ResponseObject": {
-        "enum": [
-          "list"
-        ],
-        "type": "string",
-        "x-client-original-const": "list",
-        "x-ms-enum": {
-          "name": "PostDatabaseQuery200ResponseObject",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "list",
-              "name": "List"
-            }
-          ]
-        }
-      },
       "CreateDatabaseRequestDatabaseType": {
         "enum": [
           "tasks",
@@ -59989,40 +59634,6 @@
             {
               "value": "skills",
               "name": "Skills"
-            }
-          ]
-        }
-      },
-      "PostSearch200ResponseType": {
-        "enum": [
-          "page_or_data_source"
-        ],
-        "type": "string",
-        "x-client-original-const": "page_or_data_source",
-        "x-ms-enum": {
-          "name": "PostSearch200ResponseType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "page_or_data_source",
-              "name": "PageOrDataSource"
-            }
-          ]
-        }
-      },
-      "PostSearch200ResponseObject": {
-        "enum": [
-          "list"
-        ],
-        "type": "string",
-        "x-client-original-const": "list",
-        "x-ms-enum": {
-          "name": "PostSearch200ResponseObject",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "list",
-              "name": "List"
             }
           ]
         }
@@ -62690,278 +62301,6 @@
           ]
         }
       },
-      "PostPageRequestPropertiesAdditionalPropertiesTitleType": {
-        "enum": [
-          "title"
-        ],
-        "type": "string",
-        "x-client-original-const": "title",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesTitleType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "title",
-              "name": "Title"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesRichTextType": {
-        "enum": [
-          "rich_text"
-        ],
-        "type": "string",
-        "x-client-original-const": "rich_text",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesRichTextType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "rich_text",
-              "name": "RichText"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesNumberType": {
-        "enum": [
-          "number"
-        ],
-        "type": "string",
-        "x-client-original-const": "number",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesNumberType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "number",
-              "name": "Number"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesUrlType": {
-        "enum": [
-          "url"
-        ],
-        "type": "string",
-        "x-client-original-const": "url",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesUrlType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "url",
-              "name": "Url"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesSelectType": {
-        "enum": [
-          "select"
-        ],
-        "type": "string",
-        "x-client-original-const": "select",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesSelectType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "select",
-              "name": "Select"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesMultiSelectType": {
-        "enum": [
-          "multi_select"
-        ],
-        "type": "string",
-        "x-client-original-const": "multi_select",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesMultiSelectType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "multi_select",
-              "name": "MultiSelect"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesPeopleType": {
-        "enum": [
-          "people"
-        ],
-        "type": "string",
-        "x-client-original-const": "people",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesPeopleType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "people",
-              "name": "People"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesEmailType": {
-        "enum": [
-          "email"
-        ],
-        "type": "string",
-        "x-client-original-const": "email",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesEmailType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "email",
-              "name": "Email"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesPhoneNumberType": {
-        "enum": [
-          "phone_number"
-        ],
-        "type": "string",
-        "x-client-original-const": "phone_number",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesPhoneNumberType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "phone_number",
-              "name": "PhoneNumber"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesDateType": {
-        "enum": [
-          "date"
-        ],
-        "type": "string",
-        "x-client-original-const": "date",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesDateType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "date",
-              "name": "Date"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesCheckboxType": {
-        "enum": [
-          "checkbox"
-        ],
-        "type": "string",
-        "x-client-original-const": "checkbox",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesCheckboxType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "checkbox",
-              "name": "Checkbox"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesRelationType": {
-        "enum": [
-          "relation"
-        ],
-        "type": "string",
-        "x-client-original-const": "relation",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesRelationType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "relation",
-              "name": "Relation"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesFilesType": {
-        "enum": [
-          "files"
-        ],
-        "type": "string",
-        "x-client-original-const": "files",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesFilesType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "files",
-              "name": "Files"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesStatusType": {
-        "enum": [
-          "status"
-        ],
-        "type": "string",
-        "x-client-original-const": "status",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesStatusType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "status",
-              "name": "Status"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesPlaceType": {
-        "enum": [
-          "place"
-        ],
-        "type": "string",
-        "x-client-original-const": "place",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesPlaceType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "place",
-              "name": "Place"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesVerificationType": {
-        "enum": [
-          "verification"
-        ],
-        "type": "string",
-        "x-client-original-const": "verification",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesVerificationType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "verification",
-              "name": "Verification"
-            }
-          ]
-        }
-      },
       "NoneType": {
         "enum": [
           "none"
@@ -63043,278 +62382,6 @@
             {
               "value": "mcp",
               "name": "Mcp"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesTitleType": {
-        "enum": [
-          "title"
-        ],
-        "type": "string",
-        "x-client-original-const": "title",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesTitleType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "title",
-              "name": "Title"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesRichTextType": {
-        "enum": [
-          "rich_text"
-        ],
-        "type": "string",
-        "x-client-original-const": "rich_text",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesRichTextType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "rich_text",
-              "name": "RichText"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesNumberType": {
-        "enum": [
-          "number"
-        ],
-        "type": "string",
-        "x-client-original-const": "number",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesNumberType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "number",
-              "name": "Number"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesUrlType": {
-        "enum": [
-          "url"
-        ],
-        "type": "string",
-        "x-client-original-const": "url",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesUrlType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "url",
-              "name": "Url"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesSelectType": {
-        "enum": [
-          "select"
-        ],
-        "type": "string",
-        "x-client-original-const": "select",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesSelectType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "select",
-              "name": "Select"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesMultiSelectType": {
-        "enum": [
-          "multi_select"
-        ],
-        "type": "string",
-        "x-client-original-const": "multi_select",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesMultiSelectType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "multi_select",
-              "name": "MultiSelect"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesPeopleType": {
-        "enum": [
-          "people"
-        ],
-        "type": "string",
-        "x-client-original-const": "people",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesPeopleType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "people",
-              "name": "People"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesEmailType": {
-        "enum": [
-          "email"
-        ],
-        "type": "string",
-        "x-client-original-const": "email",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesEmailType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "email",
-              "name": "Email"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesPhoneNumberType": {
-        "enum": [
-          "phone_number"
-        ],
-        "type": "string",
-        "x-client-original-const": "phone_number",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesPhoneNumberType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "phone_number",
-              "name": "PhoneNumber"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesDateType": {
-        "enum": [
-          "date"
-        ],
-        "type": "string",
-        "x-client-original-const": "date",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesDateType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "date",
-              "name": "Date"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesCheckboxType": {
-        "enum": [
-          "checkbox"
-        ],
-        "type": "string",
-        "x-client-original-const": "checkbox",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesCheckboxType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "checkbox",
-              "name": "Checkbox"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesRelationType": {
-        "enum": [
-          "relation"
-        ],
-        "type": "string",
-        "x-client-original-const": "relation",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesRelationType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "relation",
-              "name": "Relation"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesFilesType": {
-        "enum": [
-          "files"
-        ],
-        "type": "string",
-        "x-client-original-const": "files",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesFilesType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "files",
-              "name": "Files"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesStatusType": {
-        "enum": [
-          "status"
-        ],
-        "type": "string",
-        "x-client-original-const": "status",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesStatusType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "status",
-              "name": "Status"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesPlaceType": {
-        "enum": [
-          "place"
-        ],
-        "type": "string",
-        "x-client-original-const": "place",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesPlaceType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "place",
-              "name": "Place"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesVerificationType": {
-        "enum": [
-          "verification"
-        ],
-        "type": "string",
-        "x-client-original-const": "verification",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesVerificationType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "verification",
-              "name": "Verification"
             }
           ]
         }
@@ -66883,74 +65950,6 @@
           ]
         }
       },
-      "VerifiedState": {
-        "enum": [
-          "verified"
-        ],
-        "type": "string",
-        "x-client-original-const": "verified",
-        "x-ms-enum": {
-          "name": "VerifiedState",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "verified",
-              "name": "Verified"
-            }
-          ]
-        }
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2State": {
-        "enum": [
-          "unverified"
-        ],
-        "type": "string",
-        "x-client-original-const": "unverified",
-        "x-ms-enum": {
-          "name": "PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2State",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "unverified",
-              "name": "Unverified"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1State": {
-        "enum": [
-          "verified"
-        ],
-        "type": "string",
-        "x-client-original-const": "verified",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1State",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "verified",
-              "name": "Verified"
-            }
-          ]
-        }
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2State": {
-        "enum": [
-          "unverified"
-        ],
-        "type": "string",
-        "x-client-original-const": "unverified",
-        "x-ms-enum": {
-          "name": "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2State",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "unverified",
-              "name": "Unverified"
-            }
-          ]
-        }
-      },
       "QueryAgentsRequestFilterOneOf2OneOf1AndItemOneOf1OneOf1Property": {
         "enum": [
           "id"
@@ -70241,80 +69240,6 @@
             {
               "value": "mcp_server",
               "name": "McpServer"
-            }
-          ]
-        }
-      },
-      "PostDatabaseQuery200ResponseRequestStatusType": {
-        "enum": [
-          "complete",
-          "incomplete"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "PostDatabaseQuery200ResponseRequestStatusType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "complete",
-              "name": "Complete"
-            },
-            {
-              "value": "incomplete",
-              "name": "Incomplete"
-            }
-          ]
-        }
-      },
-      "PostDatabaseQuery200ResponseRequestStatusIncompleteReason": {
-        "enum": [
-          "query_result_limit_reached"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "PostDatabaseQuery200ResponseRequestStatusIncompleteReason",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "query_result_limit_reached",
-              "name": "QueryResultLimitReached"
-            }
-          ]
-        }
-      },
-      "PostSearch200ResponseRequestStatusType": {
-        "enum": [
-          "complete",
-          "incomplete"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "PostSearch200ResponseRequestStatusType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "complete",
-              "name": "Complete"
-            },
-            {
-              "value": "incomplete",
-              "name": "Incomplete"
-            }
-          ]
-        }
-      },
-      "PostSearch200ResponseRequestStatusIncompleteReason": {
-        "enum": [
-          "query_result_limit_reached"
-        ],
-        "type": "string",
-        "x-ms-enum": {
-          "name": "PostSearch200ResponseRequestStatusIncompleteReason",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "query_result_limit_reached",
-              "name": "QueryResultLimitReached"
             }
           ]
         }
@@ -74536,7 +73461,7 @@
             "$ref": "#/components/schemas/PropertyItemPropertyItemListResponsePropertyItem"
           },
           "object": {
-            "$ref": "#/components/schemas/ListObject"
+            "$ref": "#/components/schemas/PropertyItemPropertyItemListResponseObject"
           },
           "next_cursor": {
             "type": [
@@ -82356,6 +81281,45 @@
           }
         ]
       },
+      "PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerification"
+          },
+          {
+            "required": [
+              "state"
+            ],
+            "type": "object",
+            "properties": {
+              "state": {
+                "$ref": "#/components/schemas/VerifiedState"
+              },
+              "date": {
+                "$ref": "#/components/schemas/DateRequest"
+              }
+            }
+          }
+        ]
+      },
+      "PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerification"
+          },
+          {
+            "required": [
+              "state"
+            ],
+            "type": "object",
+            "properties": {
+              "state": {
+                "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2State"
+              }
+            }
+          }
+        ]
+      },
       "PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumberVariant": {
         "allOf": [
           {
@@ -85605,84 +84569,6 @@
               }
             },
             "additionalProperties": false
-          }
-        ]
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerification"
-          },
-          {
-            "required": [
-              "state"
-            ],
-            "type": "object",
-            "properties": {
-              "state": {
-                "$ref": "#/components/schemas/VerifiedState"
-              },
-              "date": {
-                "$ref": "#/components/schemas/DateRequest"
-              }
-            }
-          }
-        ]
-      },
-      "PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerification"
-          },
-          {
-            "required": [
-              "state"
-            ],
-            "type": "object",
-            "properties": {
-              "state": {
-                "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2State"
-              }
-            }
-          }
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerification"
-          },
-          {
-            "required": [
-              "state"
-            ],
-            "type": "object",
-            "properties": {
-              "state": {
-                "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1State"
-              },
-              "date": {
-                "$ref": "#/components/schemas/DateRequest"
-              }
-            }
-          }
-        ]
-      },
-      "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2Variant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerification"
-          },
-          {
-            "required": [
-              "state"
-            ],
-            "type": "object",
-            "properties": {
-              "state": {
-                "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2State"
-              }
-            }
           }
         ]
       },
@@ -93653,6 +92539,12 @@
       },
       "additionalProperties": false
     },
+    "PagePropertiesRequest": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/PagePropertiesRequestAdditionalProperties"
+      }
+    },
     "ParagraphBlockObjectResponse": {
       "title": "Paragraph",
       "required": [
@@ -93994,7 +92886,7 @@
           "$ref": "#/components/schemas/PropertyItemPropertyItemListResponsePropertyItem"
         },
         "object": {
-          "$ref": "#/components/schemas/ListObject"
+          "$ref": "#/components/schemas/PropertyItemPropertyItemListResponseObject"
         },
         "next_cursor": {
           "type": [
@@ -97924,6 +96816,31 @@
       },
       "additionalProperties": false
     },
+    "PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf1": {
+      "required": [
+        "state"
+      ],
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/components/schemas/VerifiedState"
+        },
+        "date": {
+          "$ref": "#/components/schemas/DateRequest"
+        }
+      }
+    },
+    "PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2": {
+      "required": [
+        "state"
+      ],
+      "type": "object",
+      "properties": {
+        "state": {
+          "$ref": "#/components/schemas/PagePropertiesRequestAdditionalPropertiesVerificationVerificationAnyOf2State"
+        }
+      }
+    },
     "PropertyItemPropertyItemListResponsePropertyItemRollupRollupNumber": {
       "title": "Number",
       "required": [
@@ -98572,30 +97489,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "PostSearch200ResponseResultsItem": {
-      "anyOf": [
-        {
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/PageObjectResponse"
-            },
-            {
-              "$ref": "#/components/schemas/PartialPageObjectResponse"
-            }
-          ]
-        },
-        {
-          "anyOf": [
-            {
-              "$ref": "#/components/schemas/PartialDataSourceObjectResponse"
-            },
-            {
-              "$ref": "#/components/schemas/DataSourceObjectResponse"
-            }
-          ]
-        }
-      ]
     },
     "CreateACommentRequestAllOf1OneOf1": {
       "required": [
@@ -100193,69 +99086,6 @@
         }
       }
     },
-    "PostPageRequestPropertiesAdditionalPropertiesPeoplePeopleItem": {
-      "anyOf": [
-        {
-          "$ref": "#/components/schemas/PartialUserObjectRequest"
-        },
-        {
-          "$ref": "#/components/schemas/GroupObjectRequest"
-        }
-      ]
-    },
-    "PostPageRequestPropertiesAdditionalPropertiesDateDate": {
-      "required": [
-        "start"
-      ],
-      "type": [
-        "object",
-        "null"
-      ],
-      "properties": {
-        "start": {
-          "type": "string",
-          "description": "The start date of the date object.",
-          "format": "date"
-        },
-        "end": {
-          "type": [
-            "null",
-            "string"
-          ],
-          "description": "The end date of the date object, if any.",
-          "format": "date"
-        },
-        "time_zone": {
-          "type": [
-            "null",
-            "string"
-          ],
-          "description": "The time zone of the date object, if any. E.g. America/Los_Angeles, Europe/London, etc.",
-          "example": "Africa/Abidjan"
-        }
-      },
-      "additionalProperties": false,
-      "x-client-original-nullable-union": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DateRequest"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      }
-    },
-    "PostPageRequestPropertiesAdditionalPropertiesFilesFilesItem": {
-      "anyOf": [
-        {
-          "$ref": "#/components/schemas/InternalOrExternalFileWithNameRequest"
-        },
-        {
-          "$ref": "#/components/schemas/FileUploadWithOptionalNameRequest"
-        }
-      ]
-    },
     "UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf1": {
       "required": [
         "type"
@@ -101312,56 +100142,6 @@
       "type": "string",
       "x-client-inline-scalar": true,
       "description": "The agent ID (a UUID), or \u0060notion_ai\u0060 for the personal agent. Endpoint-specific restrictions still apply."
-    },
-    "PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1": {
-      "required": [
-        "state"
-      ],
-      "type": "object",
-      "properties": {
-        "state": {
-          "$ref": "#/components/schemas/VerifiedState"
-        },
-        "date": {
-          "$ref": "#/components/schemas/DateRequest"
-        }
-      }
-    },
-    "PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2": {
-      "required": [
-        "state"
-      ],
-      "type": "object",
-      "properties": {
-        "state": {
-          "$ref": "#/components/schemas/PostPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2State"
-        }
-      }
-    },
-    "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1": {
-      "required": [
-        "state"
-      ],
-      "type": "object",
-      "properties": {
-        "state": {
-          "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf1State"
-        },
-        "date": {
-          "$ref": "#/components/schemas/DateRequest"
-        }
-      }
-    },
-    "PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2": {
-      "required": [
-        "state"
-      ],
-      "type": "object",
-      "properties": {
-        "state": {
-          "$ref": "#/components/schemas/PatchPageRequestPropertiesAdditionalPropertiesVerificationVerificationAnyOf2State"
-        }
-      }
     },
     "RetrieveAsyncTask200ResponseOneOf3ErrorOneOf1AdditionalDataAdditionalProperties": {
       "oneOf": [

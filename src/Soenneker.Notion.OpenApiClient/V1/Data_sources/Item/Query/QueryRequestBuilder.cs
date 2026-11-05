@@ -36,7 +36,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         /// <summary>
         /// Query a data source
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,11 +53,11 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
         /// <exception cref="global::Soenneker.Notion.OpenApiClient.Models.ErrorApi529">When receiving a 529 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse?> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse> PostAsync(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequest body, Action<RequestConfiguration<global::Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query.QueryRequestBuilder.QueryRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -78,7 +78,7 @@ namespace Soenneker.Notion.OpenApiClient.V1.Data_sources.Item.Query
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse>(requestInfo, global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Query a data source

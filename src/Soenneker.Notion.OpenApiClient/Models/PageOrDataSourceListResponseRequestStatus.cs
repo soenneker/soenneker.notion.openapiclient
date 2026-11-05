@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostSearch200ResponseRequestStatus : IAdditionalDataHolder, IParsable
+    public partial class PageOrDataSourceListResponseRequestStatus : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -26,27 +26,27 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The incomplete_reason property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusIncompleteReason? IncompleteReason { get => _explicitNullValueIncompleteReason; set { _explicitNullValueIncompleteReason = value; AdditionalData?.Remove("incomplete_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete_reason"); else _explicitNullProperties?.Remove("incomplete_reason"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusIncompleteReason? _explicitNullValueIncompleteReason = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatusIncompleteReason? IncompleteReason { get => _explicitNullValueIncompleteReason; set { _explicitNullValueIncompleteReason = value; AdditionalData?.Remove("incomplete_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete_reason"); else _explicitNullProperties?.Remove("incomplete_reason"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatusIncompleteReason? _explicitNullValueIncompleteReason = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusType? _explicitNullValueType = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatusType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatusType? _explicitNullValueType = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus"/> and sets the default values.
         /// </summary>
-        public PostSearch200ResponseRequestStatus()
+        public PageOrDataSourceListResponseRequestStatus()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatus(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,8 +56,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "incomplete_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusIncompleteReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIncompleteReason = default; _explicitNullProperties?.Remove("incomplete_reason"); AdditionalData["incomplete_reason"] = unknown; } else { IncompleteReason = parsed; AdditionalData.Remove("incomplete_reason"); } } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "incomplete_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatusIncompleteReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIncompleteReason = default; _explicitNullProperties?.Remove("incomplete_reason"); AdditionalData["incomplete_reason"] = unknown; } else { IncompleteReason = parsed; AdditionalData.Remove("incomplete_reason"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatusType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusIncompleteReason>("incomplete_reason", IncompleteReason);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostSearch200ResponseRequestStatusType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatusIncompleteReason>("incomplete_reason", IncompleteReason);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatusType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PostDatabaseQuery200Response : IAdditionalDataHolder, IParsable
+    public partial class PageOrDataSourceListResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -49,8 +49,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         private string _explicitNullValueNextCursor = default!;
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; AdditionalData?.Remove("object"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseObject? _explicitNullValueObject = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.ListObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; AdditionalData?.Remove("object"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.ListObject? _explicitNullValueObject = default!;
         /// <summary>The page_or_data_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,12 +64,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The request_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus? RequestStatus { get => _explicitNullValueRequestStatus; set { _explicitNullValueRequestStatus = value; AdditionalData?.Remove("request_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_status"); else _explicitNullProperties?.Remove("request_status"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus? _explicitNullValueRequestStatus = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus? RequestStatus { get => _explicitNullValueRequestStatus; set { _explicitNullValueRequestStatus = value; AdditionalData?.Remove("request_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_status"); else _explicitNullProperties?.Remove("request_status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus? _explicitNullValueRequestStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus RequestStatus { get => _explicitNullValueRequestStatus; set { _explicitNullValueRequestStatus = value; AdditionalData?.Remove("request_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_status"); else _explicitNullProperties?.Remove("request_status"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus _explicitNullValueRequestStatus = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus RequestStatus { get => _explicitNullValueRequestStatus; set { _explicitNullValueRequestStatus = value; AdditionalData?.Remove("request_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_status"); else _explicitNullProperties?.Remove("request_status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus _explicitNullValueRequestStatus = default!;
 #endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,21 +85,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType? _explicitNullValueType = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse"/> and sets the default values.
         /// </summary>
-        public PostDatabaseQuery200Response()
+        public PageOrDataSourceListResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200Response(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,9 +111,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
-                { "object", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseObject>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueObject = default; _explicitNullProperties?.Remove("object"); AdditionalData["object"] = unknown; } else { Object = parsed; AdditionalData.Remove("object"); } } },
+                { "object", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueObject = default; _explicitNullProperties?.Remove("object"); AdditionalData["object"] = unknown; } else { Object = parsed; AdditionalData.Remove("object"); } } },
                 { "page_or_data_source", n => { PageOrDataSource = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>(global::Soenneker.Notion.OpenApiClient.Models.EmptyObject.CreateFromDiscriminatorValue); } },
-                { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus>(global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus.CreateFromDiscriminatorValue); } },
+                { "request_status", n => { RequestStatus = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus>(global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus.CreateFromDiscriminatorValue); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
@@ -127,9 +127,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_cursor", NextCursor);
-            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ListObject>("object", Object);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.EmptyObject>("page_or_data_source", PageOrDataSource);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQuery200ResponseRequestStatus>("request_status", RequestStatus);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceListResponseRequestStatus>("request_status", RequestStatus);
             writer.WriteCollectionOfPrimitiveValues<UntypedNode>("results", Results);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PageOrDataSourceType>("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
