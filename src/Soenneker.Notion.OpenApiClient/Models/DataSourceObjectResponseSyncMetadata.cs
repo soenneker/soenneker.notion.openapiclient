@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Stored sync metadata, included when listing or retrieving data sources.
+    /// Sync identity and available health, included when listing or retrieving data sources.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DataSourceObjectResponseSyncMetadata : IParsable
@@ -22,6 +22,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if (parseNode.GetChildNode("external_collection_type") is { } nullNodeExternalCollectionType && nullNodeExternalCollectionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalCollectionType = null;
             if (parseNode.GetChildNode("external_database_sync") is null) { _explicitNullValueExternalDatabaseSync = default!; _explicitNullProperties?.Remove("external_database_sync"); }
             else if (parseNode.GetChildNode("external_database_sync") is { } nullNodeExternalDatabaseSync && nullNodeExternalDatabaseSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalDatabaseSync = null;
+            if (parseNode.GetChildNode("health") is null) { _explicitNullValueHealth = default!; _explicitNullProperties?.Remove("health"); }
+            else if (parseNode.GetChildNode("health") is { } nullNodeHealth && nullNodeHealth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Health = null;
+            if (parseNode.GetChildNode("owner_user_id") is null) { _explicitNullValueOwnerUserId = default!; _explicitNullProperties?.Remove("owner_user_id"); }
+            else if (parseNode.GetChildNode("owner_user_id") is { } nullNodeOwnerUserId && nullNodeOwnerUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerUserId = null;
+            if (parseNode.GetChildNode("resource") is null) { _explicitNullValueResource = default!; _explicitNullProperties?.Remove("resource"); }
+            else if (parseNode.GetChildNode("resource") is { } nullNodeResource && nullNodeResource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resource = null;
             if (parseNode.GetChildNode("synced_collection_key") is null) { _explicitNullValueSyncedCollectionKey = default!; _explicitNullProperties?.Remove("synced_collection_key"); }
             else if (parseNode.GetChildNode("synced_collection_key") is { } nullNodeSyncedCollectionKey && nullNodeSyncedCollectionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncedCollectionKey = null;
             if (parseNode.GetChildNode("sync_id") is null) { _explicitNullValueSyncId = default!; _explicitNullProperties?.Remove("sync_id"); }
@@ -42,6 +48,29 @@ namespace Soenneker.Notion.OpenApiClient.Models
 #else
         public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataExternalDatabaseSync ExternalDatabaseSync { get => _explicitNullValueExternalDatabaseSync; set { _explicitNullValueExternalDatabaseSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_database_sync"); else _explicitNullProperties?.Remove("external_database_sync"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataExternalDatabaseSync _explicitNullValueExternalDatabaseSync = default!;
+#endif
+        /// <summary>Live collection sync health. Null means unavailable, not unhealthy. Missing timestamps are unknown.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealth? Health { get => _explicitNullValueHealth; set { _explicitNullValueHealth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health"); else _explicitNullProperties?.Remove("health"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealth? _explicitNullValueHealth = default!;
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealth Health { get => _explicitNullValueHealth; set { _explicitNullValueHealth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health"); else _explicitNullProperties?.Remove("health"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealth _explicitNullValueHealth = default!;
+#endif
+        /// <summary>The owner_user_id property</summary>
+        public Guid? OwnerUserId { get => _explicitNullValueOwnerUserId; set { _explicitNullValueOwnerUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_user_id"); else _explicitNullProperties?.Remove("owner_user_id"); } }
+        private Guid? _explicitNullValueOwnerUserId = default!;
+        /// <summary>Provider resource synced to this data source, when available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        private string? _explicitNullValueResource = default!;
+#nullable restore
+#else
+        public string Resource { get => _explicitNullValueResource; set { _explicitNullValueResource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resource"); else _explicitNullProperties?.Remove("resource"); } }
+        private string _explicitNullValueResource = default!;
 #endif
         /// <summary>Opaque, developer-defined collection key for a worker sync. It is not a globally unique ID or a credential. Worker status is not included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,6 +115,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             {
                 { "external_collection_type", n => { ExternalCollectionType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataExternalCollectionType>(); } },
                 { "external_database_sync", n => { ExternalDatabaseSync = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataExternalDatabaseSync>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataExternalDatabaseSync.CreateFromDiscriminatorValue); } },
+                { "health", n => { Health = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealth>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealth.CreateFromDiscriminatorValue); } },
+                { "owner_user_id", n => { OwnerUserId = n.GetGuidValue(); } },
+                { "resource", n => { Resource = n.GetStringValue(); } },
                 { "sync_id", n => { SyncId = n.GetGuidValue(); } },
                 { "sync_state", n => { SyncState = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataSyncState>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataSyncState.CreateFromDiscriminatorValue); } },
                 { "synced_collection_key", n => { SyncedCollectionKey = n.GetStringValue(); } },
@@ -100,6 +132,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataExternalCollectionType>("external_collection_type", ExternalCollectionType);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataExternalDatabaseSync>("external_database_sync", ExternalDatabaseSync);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealth>("health", Health);
+            writer.WriteGuidValue("owner_user_id", OwnerUserId);
+            writer.WriteStringValue("resource", Resource);
             writer.WriteStringValue("synced_collection_key", SyncedCollectionKey);
             writer.WriteGuidValue("sync_id", SyncId);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataSyncState>("sync_state", SyncState);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

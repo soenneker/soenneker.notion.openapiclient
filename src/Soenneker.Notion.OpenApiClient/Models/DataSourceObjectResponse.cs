@@ -175,7 +175,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string PublicUrl { get => _explicitNullValuePublicUrl; set { _explicitNullValuePublicUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_url"); else _explicitNullProperties?.Remove("public_url"); } }
         private string _explicitNullValuePublicUrl = default!;
 #endif
-        /// <summary>Stored sync metadata, included when listing or retrieving data sources.</summary>
+        /// <summary>Sync identity and available health, included when listing or retrieving data sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadata? SyncMetadata { get => _explicitNullValueSyncMetadata; set { _explicitNullValueSyncMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_metadata"); else _explicitNullProperties?.Remove("sync_metadata"); } }

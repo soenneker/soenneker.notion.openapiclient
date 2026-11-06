@@ -6095,6 +6095,115 @@
 					"sync_metadata": {
 						"type": "object",
 						"properties": {
+							"health": {
+								"anyOf": [
+									{
+										"type": "null"
+									},
+									{
+										"type": "object",
+										"properties": {
+											"checks": {
+												"type": "object",
+												"properties": {
+													"sync_version_updated_at": {
+														"type": "string"
+													},
+													"delta_synced_through_at": {
+														"type": "string"
+													},
+													"last_execution_succeeded_at": {
+														"type": "string"
+													}
+												},
+												"additionalProperties": false,
+												"required": ["sync_version_updated_at"]
+											},
+											"error": {
+												"type": "object",
+												"properties": {
+													"code": {
+														"type": "string"
+													},
+													"severity": {
+														"type": "string",
+														"enum": ["action_required", "degraded", "failing"]
+													}
+												},
+												"additionalProperties": false,
+												"required": ["code", "severity"]
+											},
+											"ok": {
+												"type": "boolean",
+												"const": false
+											},
+											"paused": {
+												"type": "boolean"
+											},
+											"stage": {
+												"type": "string",
+												"enum": ["backfilling", "initializing", "steady"]
+											}
+										},
+										"additionalProperties": false,
+										"required": ["checks", "error", "ok", "paused", "stage"]
+									},
+									{
+										"type": "object",
+										"properties": {
+											"checks": {
+												"type": "object",
+												"properties": {
+													"sync_version_updated_at": {
+														"type": "string"
+													},
+													"delta_synced_through_at": {
+														"type": "string"
+													},
+													"last_execution_succeeded_at": {
+														"type": "string"
+													}
+												},
+												"additionalProperties": false,
+												"required": ["sync_version_updated_at"]
+											},
+											"ok": {
+												"type": "boolean",
+												"const": true
+											},
+											"paused": {
+												"type": "boolean"
+											},
+											"stage": {
+												"type": "string",
+												"enum": ["backfilling", "initializing", "steady"]
+											}
+										},
+										"additionalProperties": false,
+										"required": ["checks", "ok", "paused", "stage"]
+									},
+									{
+										"type": "object",
+										"properties": {
+											"paused": {
+												"type": "boolean",
+												"const": true
+											}
+										},
+										"additionalProperties": false,
+										"required": ["paused"]
+									}
+								],
+								"description": "Live collection sync health. Null means unavailable, not unhealthy. Missing timestamps are unknown."
+							},
+							"owner_user_id": {
+								"$ref": "#/components/schemas/idResponse",
+								"description": "Notion user who owns the sync credential, included when health is available."
+							},
+							"resource": {
+								"type": "string",
+								"description": "Provider resource synced to this data source, when available."
+							},
 							"external_database_sync": {
 								"type": "object",
 								"properties": {
@@ -6163,7 +6272,7 @@
 							}
 						},
 						"additionalProperties": false,
-						"description": "Stored sync metadata, included when listing or retrieving data sources."
+						"description": "Sync identity and available health, included when listing or retrieving data sources."
 					}
 				},
 				"additionalProperties": false,
@@ -6222,6 +6331,115 @@
 					"sync_metadata": {
 						"type": "object",
 						"properties": {
+							"health": {
+								"anyOf": [
+									{
+										"type": "null"
+									},
+									{
+										"type": "object",
+										"properties": {
+											"checks": {
+												"type": "object",
+												"properties": {
+													"sync_version_updated_at": {
+														"type": "string"
+													},
+													"delta_synced_through_at": {
+														"type": "string"
+													},
+													"last_execution_succeeded_at": {
+														"type": "string"
+													}
+												},
+												"additionalProperties": false,
+												"required": ["sync_version_updated_at"]
+											},
+											"error": {
+												"type": "object",
+												"properties": {
+													"code": {
+														"type": "string"
+													},
+													"severity": {
+														"type": "string",
+														"enum": ["action_required", "degraded", "failing"]
+													}
+												},
+												"additionalProperties": false,
+												"required": ["code", "severity"]
+											},
+											"ok": {
+												"type": "boolean",
+												"const": false
+											},
+											"paused": {
+												"type": "boolean"
+											},
+											"stage": {
+												"type": "string",
+												"enum": ["backfilling", "initializing", "steady"]
+											}
+										},
+										"additionalProperties": false,
+										"required": ["checks", "error", "ok", "paused", "stage"]
+									},
+									{
+										"type": "object",
+										"properties": {
+											"checks": {
+												"type": "object",
+												"properties": {
+													"sync_version_updated_at": {
+														"type": "string"
+													},
+													"delta_synced_through_at": {
+														"type": "string"
+													},
+													"last_execution_succeeded_at": {
+														"type": "string"
+													}
+												},
+												"additionalProperties": false,
+												"required": ["sync_version_updated_at"]
+											},
+											"ok": {
+												"type": "boolean",
+												"const": true
+											},
+											"paused": {
+												"type": "boolean"
+											},
+											"stage": {
+												"type": "string",
+												"enum": ["backfilling", "initializing", "steady"]
+											}
+										},
+										"additionalProperties": false,
+										"required": ["checks", "ok", "paused", "stage"]
+									},
+									{
+										"type": "object",
+										"properties": {
+											"paused": {
+												"type": "boolean",
+												"const": true
+											}
+										},
+										"additionalProperties": false,
+										"required": ["paused"]
+									}
+								],
+								"description": "Live collection sync health. Null means unavailable, not unhealthy. Missing timestamps are unknown."
+							},
+							"owner_user_id": {
+								"$ref": "#/components/schemas/idResponse",
+								"description": "Notion user who owns the sync credential, included when health is available."
+							},
+							"resource": {
+								"type": "string",
+								"description": "Provider resource synced to this data source, when available."
+							},
 							"external_database_sync": {
 								"type": "object",
 								"properties": {
@@ -6290,7 +6508,7 @@
 							}
 						},
 						"additionalProperties": false,
-						"description": "Stored sync metadata, included when retrieving a database."
+						"description": "Sync identity and available health, included when retrieving a database."
 					}
 				},
 				"additionalProperties": false,

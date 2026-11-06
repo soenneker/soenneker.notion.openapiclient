@@ -19870,6 +19870,23 @@
         ],
         "description": "The cover of the data source."
       },
+      "DataSourceObjectResponseSyncMetadataHealth": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf3"
+          },
+          {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf4"
+          }
+        ],
+        "description": "Live collection sync health. Null means unavailable, not unhealthy. Missing timestamps are unknown."
+      },
       "DataSourceObjectResponseSyncMetadataSyncStateSyncing": {
         "oneOf": [
           {
@@ -19880,6 +19897,23 @@
           }
         ],
         "description": "Stored legacy sync state: true means syncing, false means not syncing, and row_limit_exceeded means the row limit stopped syncing. False does not guarantee a successful sync."
+      },
+      "DataSourceReferenceResponseSyncMetadataHealth": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf2"
+          },
+          {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf3"
+          },
+          {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf4"
+          }
+        ],
+        "description": "Live collection sync health. Null means unavailable, not unhealthy. Missing timestamps are unknown."
       },
       "DataSourceReferenceResponseSyncMetadataSyncStateSyncing": {
         "oneOf": [
@@ -22974,6 +23008,146 @@
           }
         ]
       },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf2": {
+        "required": [
+          "checks",
+          "error",
+          "ok",
+          "paused",
+          "stage"
+        ],
+        "type": "object",
+        "properties": {
+          "checks": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf2Checks"
+          },
+          "error": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf2Error"
+          },
+          "ok": {
+            "type": "boolean",
+            "default": false,
+            "x-client-original-const": false
+          },
+          "paused": {
+            "type": "boolean"
+          },
+          "stage": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf2Stage"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf3": {
+        "required": [
+          "checks",
+          "ok",
+          "paused",
+          "stage"
+        ],
+        "type": "object",
+        "properties": {
+          "checks": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf3Checks"
+          },
+          "ok": {
+            "type": "boolean",
+            "default": true,
+            "x-client-original-const": true
+          },
+          "paused": {
+            "type": "boolean"
+          },
+          "stage": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf3Stage"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf4": {
+        "required": [
+          "paused"
+        ],
+        "type": "object",
+        "properties": {
+          "paused": {
+            "type": "boolean",
+            "default": true,
+            "x-client-original-const": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf2": {
+        "required": [
+          "checks",
+          "error",
+          "ok",
+          "paused",
+          "stage"
+        ],
+        "type": "object",
+        "properties": {
+          "checks": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf2Checks"
+          },
+          "error": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf2Error"
+          },
+          "ok": {
+            "type": "boolean",
+            "default": false,
+            "x-client-original-const": false
+          },
+          "paused": {
+            "type": "boolean"
+          },
+          "stage": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf2Stage"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf3": {
+        "required": [
+          "checks",
+          "ok",
+          "paused",
+          "stage"
+        ],
+        "type": "object",
+        "properties": {
+          "checks": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf3Checks"
+          },
+          "ok": {
+            "type": "boolean",
+            "default": true,
+            "x-client-original-const": true
+          },
+          "paused": {
+            "type": "boolean"
+          },
+          "stage": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf3Stage"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf4": {
+        "required": [
+          "paused"
+        ],
+        "type": "object",
+        "properties": {
+          "paused": {
+            "type": "boolean",
+            "default": true,
+            "x-client-original-const": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ErrorApi403OneOf2AllOf2AdditionalDataAdditionalProperties": {
         "oneOf": [
           {
@@ -24698,6 +24872,17 @@
       "DataSourceObjectResponseSyncMetadata": {
         "type": "object",
         "properties": {
+          "health": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealth"
+          },
+          "owner_user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "resource": {
+            "type": "string",
+            "description": "Provider resource synced to this data source, when available."
+          },
           "external_database_sync": {
             "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataExternalDatabaseSync"
           },
@@ -24717,11 +24902,22 @@
           }
         },
         "additionalProperties": false,
-        "description": "Stored sync metadata, included when listing or retrieving data sources."
+        "description": "Sync identity and available health, included when listing or retrieving data sources."
       },
       "DataSourceReferenceResponseSyncMetadata": {
         "type": "object",
         "properties": {
+          "health": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealth"
+          },
+          "owner_user_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "resource": {
+            "type": "string",
+            "description": "Provider resource synced to this data source, when available."
+          },
           "external_database_sync": {
             "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataExternalDatabaseSync"
           },
@@ -24741,7 +24937,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Stored sync metadata, included when retrieving a database."
+        "description": "Sync identity and available health, included when retrieving a database."
       },
       "DualPropertyDatabasePropertyRelationConfigResponseDualProperty": {
         "required": [
@@ -26633,6 +26829,110 @@
         },
         "additionalProperties": false,
         "description": "Additional event-specific data."
+      },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf2Checks": {
+        "required": [
+          "sync_version_updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "sync_version_updated_at": {
+            "type": "string"
+          },
+          "delta_synced_through_at": {
+            "type": "string"
+          },
+          "last_execution_succeeded_at": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf2Error": {
+        "required": [
+          "code",
+          "severity"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/DataSourceObjectResponseSyncMetadataHealthAnyOf2ErrorSeverity"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf3Checks": {
+        "required": [
+          "sync_version_updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "sync_version_updated_at": {
+            "type": "string"
+          },
+          "delta_synced_through_at": {
+            "type": "string"
+          },
+          "last_execution_succeeded_at": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf2Checks": {
+        "required": [
+          "sync_version_updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "sync_version_updated_at": {
+            "type": "string"
+          },
+          "delta_synced_through_at": {
+            "type": "string"
+          },
+          "last_execution_succeeded_at": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf2Error": {
+        "required": [
+          "code",
+          "severity"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/DataSourceReferenceResponseSyncMetadataHealthAnyOf2ErrorSeverity"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf3Checks": {
+        "required": [
+          "sync_version_updated_at"
+        ],
+        "type": "object",
+        "properties": {
+          "sync_version_updated_at": {
+            "type": "string"
+          },
+          "delta_synced_through_at": {
+            "type": "string"
+          },
+          "last_execution_succeeded_at": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
       },
       "FileUploadObjectResponseFileImportResultAllOf2ErrorError": {
         "required": [
@@ -56940,6 +57240,110 @@
           ]
         }
       },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf2Stage": {
+        "enum": [
+          "backfilling",
+          "initializing",
+          "steady"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "DataSourceObjectResponseSyncMetadataHealthAnyOf2Stage",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "backfilling",
+              "name": "Backfilling"
+            },
+            {
+              "value": "initializing",
+              "name": "Initializing"
+            },
+            {
+              "value": "steady",
+              "name": "Steady"
+            }
+          ]
+        }
+      },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf3Stage": {
+        "enum": [
+          "backfilling",
+          "initializing",
+          "steady"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "DataSourceObjectResponseSyncMetadataHealthAnyOf3Stage",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "backfilling",
+              "name": "Backfilling"
+            },
+            {
+              "value": "initializing",
+              "name": "Initializing"
+            },
+            {
+              "value": "steady",
+              "name": "Steady"
+            }
+          ]
+        }
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf2Stage": {
+        "enum": [
+          "backfilling",
+          "initializing",
+          "steady"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "DataSourceReferenceResponseSyncMetadataHealthAnyOf2Stage",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "backfilling",
+              "name": "Backfilling"
+            },
+            {
+              "value": "initializing",
+              "name": "Initializing"
+            },
+            {
+              "value": "steady",
+              "name": "Steady"
+            }
+          ]
+        }
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf3Stage": {
+        "enum": [
+          "backfilling",
+          "initializing",
+          "steady"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "DataSourceReferenceResponseSyncMetadataHealthAnyOf3Stage",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "backfilling",
+              "name": "Backfilling"
+            },
+            {
+              "value": "initializing",
+              "name": "Initializing"
+            },
+            {
+              "value": "steady",
+              "name": "Steady"
+            }
+          ]
+        }
+      },
       "SuccessType": {
         "enum": [
           "success"
@@ -59154,6 +59558,58 @@
             {
               "value": "configuration",
               "name": "Configuration"
+            }
+          ]
+        }
+      },
+      "DataSourceObjectResponseSyncMetadataHealthAnyOf2ErrorSeverity": {
+        "enum": [
+          "action_required",
+          "degraded",
+          "failing"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "DataSourceObjectResponseSyncMetadataHealthAnyOf2ErrorSeverity",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "action_required",
+              "name": "ActionRequired"
+            },
+            {
+              "value": "degraded",
+              "name": "Degraded"
+            },
+            {
+              "value": "failing",
+              "name": "Failing"
+            }
+          ]
+        }
+      },
+      "DataSourceReferenceResponseSyncMetadataHealthAnyOf2ErrorSeverity": {
+        "enum": [
+          "action_required",
+          "degraded",
+          "failing"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "DataSourceReferenceResponseSyncMetadataHealthAnyOf2ErrorSeverity",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "action_required",
+              "name": "ActionRequired"
+            },
+            {
+              "value": "degraded",
+              "name": "Degraded"
+            },
+            {
+              "value": "failing",
+              "name": "Failing"
             }
           ]
         }

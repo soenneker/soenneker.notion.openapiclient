@@ -38,7 +38,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Stored sync metadata, included when retrieving a database.</summary>
+        /// <summary>Sync identity and available health, included when retrieving a database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.DataSourceReferenceResponseSyncMetadata? SyncMetadata { get => _explicitNullValueSyncMetadata; set { _explicitNullValueSyncMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_metadata"); else _explicitNullProperties?.Remove("sync_metadata"); } }
