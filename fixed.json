@@ -16839,6 +16839,10 @@
               "string"
             ],
             "description": "The avatar URL of the user."
+          },
+          "agent_id": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false
