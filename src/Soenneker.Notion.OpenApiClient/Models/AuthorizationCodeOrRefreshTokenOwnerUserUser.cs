@@ -8,23 +8,23 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUserPerson"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson"/>, <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateAToken200ResponseOwnerUserUser : IComposedTypeWrapper, IParsable
+    public partial class AuthorizationCodeOrRefreshTokenOwnerUserUser : IComposedTypeWrapper, IParsable
     , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
         // Preserve ambiguous union payloads without inventing a discriminator.
         /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUserPerson"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUserPerson? CreateAToken200ResponseOwnerUserUserPerson { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson? AuthorizationCodeOrRefreshTokenOwnerUserUserPerson { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUserPerson CreateAToken200ResponseOwnerUserUserPerson { get; set; }
+        public global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson AuthorizationCodeOrRefreshTokenOwnerUserUserPerson { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,26 +37,26 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUser"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUser();
+            var result = new global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUser();
             
             
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema3213(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema8788(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema216(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema8788(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.CreateAToken200ResponseOwnerUserUserPerson == null && result.PartialUserObjectResponse == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.CreateAToken200ResponseOwnerUserUserPerson = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUserPerson(), parseNode);
+            bool noSelectedUnionBranch = result.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson == null && result.PartialUserObjectResponse == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.PartialUserObjectResponse = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.PartialUserObjectResponse(), parseNode);
-            if (result.CreateAToken200ResponseOwnerUserUserPerson == null && result.PartialUserObjectResponse == null) result.UnrecognizedValue = unionPayload;
+            if (result.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson == null && result.PartialUserObjectResponse == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -67,9 +67,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(CreateAToken200ResponseOwnerUserUserPerson != null || PartialUserObjectResponse != null)
+            if(AuthorizationCodeOrRefreshTokenOwnerUserUserPerson != null || PartialUserObjectResponse != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateAToken200ResponseOwnerUserUserPerson, PartialUserObjectResponse);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AuthorizationCodeOrRefreshTokenOwnerUserUserPerson, PartialUserObjectResponse);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -80,15 +80,15 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (CreateAToken200ResponseOwnerUserUserPerson == null && PartialUserObjectResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AuthorizationCodeOrRefreshTokenOwnerUserUserPerson == null && PartialUserObjectResponse == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (CreateAToken200ResponseOwnerUserUserPerson != null) selectedUnionBranches++;
+            if (AuthorizationCodeOrRefreshTokenOwnerUserUserPerson != null) selectedUnionBranches++;
             if (PartialUserObjectResponse != null) selectedUnionBranches++;
-            if (CreateAToken200ResponseOwnerUserUserPerson != null && selectedUnionBranches == 1) { if (CreateAToken200ResponseOwnerUserUserPerson is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CreateAToken200ResponseOwnerUserUserPerson); return; }
+            if (AuthorizationCodeOrRefreshTokenOwnerUserUserPerson != null && selectedUnionBranches == 1) { if (AuthorizationCodeOrRefreshTokenOwnerUserUserPerson is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AuthorizationCodeOrRefreshTokenOwnerUserUserPerson); return; }
             if (PartialUserObjectResponse != null && selectedUnionBranches == 1) { if (PartialUserObjectResponse is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PartialUserObjectResponse); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerUserUserPerson>(null, CreateAToken200ResponseOwnerUserUserPerson, PartialUserObjectResponse);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerUserUserPerson>(null, AuthorizationCodeOrRefreshTokenOwnerUserUserPerson, PartialUserObjectResponse);
         }
     }
 }

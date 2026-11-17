@@ -6631,7 +6631,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateAToken200Response"
+                  "$ref": "#/components/schemas/AuthorizationCodeOrRefreshToken"
                 }
               }
             }
@@ -30162,24 +30162,24 @@
         "discriminator": {
           "propertyName": "grant_type",
           "mapping": {
-            "authorization_code": "#/components/schemas/CreateATokenRequestAnyOf1Variant",
-            "refresh_token": "#/components/schemas/CreateATokenRequestAnyOf2Variant"
+            "authorization_code": "#/components/schemas/CreateATokenRequestAuthorizationCodeVariant",
+            "refresh_token": "#/components/schemas/CreateATokenRequestRefreshTokenVariant"
           }
         },
         "x-client-original-tagged-union": {
           "oneOf": [
             {
-              "$ref": "#/components/schemas/CreateATokenRequestAnyOf1"
+              "$ref": "#/components/schemas/CreateATokenRequestAuthorizationCode"
             },
             {
-              "$ref": "#/components/schemas/CreateATokenRequestAnyOf2"
+              "$ref": "#/components/schemas/CreateATokenRequestRefreshToken"
             }
           ],
           "discriminator": {
             "propertyName": "grant_type",
             "mapping": {
-              "authorization_code": "#/components/schemas/CreateATokenRequestAnyOf1",
-              "refresh_token": "#/components/schemas/CreateATokenRequestAnyOf2"
+              "authorization_code": "#/components/schemas/CreateATokenRequestAuthorizationCode",
+              "refresh_token": "#/components/schemas/CreateATokenRequestRefreshToken"
             }
           }
         },
@@ -30193,7 +30193,8 @@
           "grant_type"
         ]
       },
-      "CreateAToken200Response": {
+      "AuthorizationCodeOrRefreshToken": {
+        "title": "Authorization code or refresh token",
         "required": [
           "access_token",
           "token_type",
@@ -30240,7 +30241,7 @@
             "format": "uuid"
           },
           "owner": {
-            "$ref": "#/components/schemas/CreateAToken200ResponseOwner"
+            "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwner"
           },
           "duplicated_template_id": {
             "type": [
@@ -32717,28 +32718,28 @@
           "type"
         ]
       },
-      "CreateAToken200ResponseOwner": {
+      "AuthorizationCodeOrRefreshTokenOwner": {
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "user": "#/components/schemas/CreateAToken200ResponseOwnerUserVariant",
-            "workspace": "#/components/schemas/CreateAToken200ResponseOwnerWorkspaceVariant"
+            "user": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserVariant",
+            "workspace": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerWorkspaceVariant"
           }
         },
         "x-client-original-tagged-union": {
           "oneOf": [
             {
-              "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUser"
+              "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUser"
             },
             {
-              "$ref": "#/components/schemas/CreateAToken200ResponseOwnerWorkspace"
+              "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerWorkspace"
             }
           ],
           "discriminator": {
             "propertyName": "type",
             "mapping": {
-              "user": "#/components/schemas/CreateAToken200ResponseOwnerUser",
-              "workspace": "#/components/schemas/CreateAToken200ResponseOwnerWorkspace"
+              "user": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUser",
+              "workspace": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerWorkspace"
             }
           }
         },
@@ -34912,10 +34913,10 @@
           "type"
         ]
       },
-      "CreateAToken200ResponseOwnerUserUser": {
+      "AuthorizationCodeOrRefreshTokenOwnerUserUser": {
         "anyOf": [
           {
-            "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUserUserPerson"
+            "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserUserPerson"
           },
           {
             "$ref": "#/components/schemas/PartialUserObjectResponse"
@@ -35737,7 +35738,7 @@
         },
         "additionalProperties": false
       },
-      "CreateAToken200ResponseOwnerUserUserPerson": {
+      "AuthorizationCodeOrRefreshTokenOwnerUserUserPerson": {
         "title": "Person",
         "required": [
           "type",
@@ -35750,10 +35751,10 @@
         "type": "object",
         "properties": {
           "type": {
-            "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUserUserPersonType"
+            "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserUserPersonType"
           },
           "person": {
-            "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUserUserPersonPerson"
+            "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserUserPersonPerson"
           },
           "name": {
             "type": [
@@ -35771,7 +35772,7 @@
             "type": "string"
           },
           "object": {
-            "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUserUserPersonObject"
+            "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserUserPersonObject"
           }
         }
       },
@@ -38958,7 +38959,7 @@
           "type": "string"
         }
       },
-      "CreateATokenRequestAnyOf1ExternalAccount": {
+      "CreateATokenRequestAuthorizationCodeExternalAccount": {
         "required": [
           "key",
           "name"
@@ -40663,7 +40664,7 @@
         },
         "additionalProperties": false
       },
-      "CreateAToken200ResponseOwnerUserUserPersonPerson": {
+      "AuthorizationCodeOrRefreshTokenOwnerUserUserPersonPerson": {
         "required": [
           "email"
         ],
@@ -65622,14 +65623,14 @@
           ]
         }
       },
-      "CreateAToken200ResponseOwnerUserType": {
+      "AuthorizationCodeOrRefreshTokenOwnerUserType": {
         "enum": [
           "user"
         ],
         "type": "string",
         "x-client-original-const": "user",
         "x-ms-enum": {
-          "name": "CreateAToken200ResponseOwnerUserType",
+          "name": "AuthorizationCodeOrRefreshTokenOwnerUserType",
           "modelAsString": false,
           "values": [
             {
@@ -65639,14 +65640,14 @@
           ]
         }
       },
-      "CreateAToken200ResponseOwnerWorkspaceType": {
+      "AuthorizationCodeOrRefreshTokenOwnerWorkspaceType": {
         "enum": [
           "workspace"
         ],
         "type": "string",
         "x-client-original-const": "workspace",
         "x-ms-enum": {
-          "name": "CreateAToken200ResponseOwnerWorkspaceType",
+          "name": "AuthorizationCodeOrRefreshTokenOwnerWorkspaceType",
           "modelAsString": false,
           "values": [
             {
@@ -68997,14 +68998,14 @@
           ]
         }
       },
-      "CreateAToken200ResponseOwnerUserUserPersonType": {
+      "AuthorizationCodeOrRefreshTokenOwnerUserUserPersonType": {
         "enum": [
           "person"
         ],
         "type": "string",
         "x-client-original-const": "person",
         "x-ms-enum": {
-          "name": "CreateAToken200ResponseOwnerUserUserPersonType",
+          "name": "AuthorizationCodeOrRefreshTokenOwnerUserUserPersonType",
           "modelAsString": false,
           "values": [
             {
@@ -69014,14 +69015,14 @@
           ]
         }
       },
-      "CreateAToken200ResponseOwnerUserUserPersonObject": {
+      "AuthorizationCodeOrRefreshTokenOwnerUserUserPersonObject": {
         "enum": [
           "user"
         ],
         "type": "string",
         "x-client-original-const": "user",
         "x-ms-enum": {
-          "name": "CreateAToken200ResponseOwnerUserUserPersonObject",
+          "name": "AuthorizationCodeOrRefreshTokenOwnerUserUserPersonObject",
           "modelAsString": false,
           "values": [
             {
@@ -83240,12 +83241,13 @@
           }
         ]
       },
-      "CreateATokenRequestAnyOf1Variant": {
+      "CreateATokenRequestAuthorizationCodeVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateATokenRequest"
           },
           {
+            "title": "Authorization code",
             "required": [
               "grant_type",
               "code"
@@ -83262,18 +83264,19 @@
                 "type": "string"
               },
               "external_account": {
-                "$ref": "#/components/schemas/CreateATokenRequestAnyOf1ExternalAccount"
+                "$ref": "#/components/schemas/CreateATokenRequestAuthorizationCodeExternalAccount"
               }
             }
           }
         ]
       },
-      "CreateATokenRequestAnyOf2Variant": {
+      "CreateATokenRequestRefreshTokenVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateATokenRequest"
           },
           {
+            "title": "Refresh token",
             "required": [
               "grant_type",
               "refresh_token"
@@ -85134,10 +85137,10 @@
           }
         ]
       },
-      "CreateAToken200ResponseOwnerUserVariant": {
+      "AuthorizationCodeOrRefreshTokenOwnerUserVariant": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/CreateAToken200ResponseOwner"
+            "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwner"
           },
           {
             "title": "User",
@@ -85148,19 +85151,19 @@
             "type": "object",
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUserType"
+                "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserType"
               },
               "user": {
-                "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUserUser"
+                "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserUser"
               }
             }
           }
         ]
       },
-      "CreateAToken200ResponseOwnerWorkspaceVariant": {
+      "AuthorizationCodeOrRefreshTokenOwnerWorkspaceVariant": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/CreateAToken200ResponseOwner"
+            "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwner"
           },
           {
             "title": "Workspace",
@@ -85171,7 +85174,7 @@
             "type": "object",
             "properties": {
               "type": {
-                "$ref": "#/components/schemas/CreateAToken200ResponseOwnerWorkspaceType"
+                "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerWorkspaceType"
               },
               "workspace": {
                 "type": "boolean",
@@ -99117,7 +99120,8 @@
         }
       }
     },
-    "CreateATokenRequestAnyOf1": {
+    "CreateATokenRequestAuthorizationCode": {
+      "title": "Authorization code",
       "required": [
         "grant_type",
         "code"
@@ -99134,11 +99138,12 @@
           "type": "string"
         },
         "external_account": {
-          "$ref": "#/components/schemas/CreateATokenRequestAnyOf1ExternalAccount"
+          "$ref": "#/components/schemas/CreateATokenRequestAuthorizationCodeExternalAccount"
         }
       }
     },
-    "CreateATokenRequestAnyOf2": {
+    "CreateATokenRequestRefreshToken": {
+      "title": "Refresh token",
       "required": [
         "grant_type",
         "refresh_token"
@@ -100581,7 +100586,7 @@
       },
       "additionalProperties": false
     },
-    "CreateAToken200ResponseOwnerUser": {
+    "AuthorizationCodeOrRefreshTokenOwnerUser": {
       "title": "User",
       "required": [
         "type",
@@ -100590,14 +100595,14 @@
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUserType"
+          "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserType"
         },
         "user": {
-          "$ref": "#/components/schemas/CreateAToken200ResponseOwnerUserUser"
+          "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerUserUser"
         }
       }
     },
-    "CreateAToken200ResponseOwnerWorkspace": {
+    "AuthorizationCodeOrRefreshTokenOwnerWorkspace": {
       "title": "Workspace",
       "required": [
         "type",
@@ -100606,7 +100611,7 @@
       "type": "object",
       "properties": {
         "type": {
-          "$ref": "#/components/schemas/CreateAToken200ResponseOwnerWorkspaceType"
+          "$ref": "#/components/schemas/AuthorizationCodeOrRefreshTokenOwnerWorkspaceType"
         },
         "workspace": {
           "type": "boolean",

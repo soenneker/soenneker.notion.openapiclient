@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateAToken200ResponseOwnerWorkspaceVariant : global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner, IParsable
+    public partial class AuthorizationCodeOrRefreshTokenOwnerWorkspaceVariant : global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwner, IParsable
     #pragma warning restore CS1591
     {
         // Track explicitly assigned nulls separately from absent properties.
@@ -26,21 +26,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public bool? Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
         private bool? _explicitNullValueWorkspace = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspaceVariant"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerWorkspaceVariant"/> and sets the default values.
         /// </summary>
-        public CreateAToken200ResponseOwnerWorkspaceVariant() : base()
+        public AuthorizationCodeOrRefreshTokenOwnerWorkspaceVariant() : base()
         {
             Workspace = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspaceVariant"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerWorkspaceVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspaceVariant CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerWorkspaceVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwnerWorkspaceVariant(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwnerWorkspaceVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

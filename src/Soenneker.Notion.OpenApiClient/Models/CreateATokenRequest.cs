@@ -51,8 +51,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("grant_type")?.GetStringValue();
             return mappingValue switch
             {
-                "authorization_code" => new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1Variant(),
-                "refresh_token" => new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2Variant(),
+                "authorization_code" => new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeVariant(),
+                "refresh_token" => new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestRefreshTokenVariant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest(),
             };
         }

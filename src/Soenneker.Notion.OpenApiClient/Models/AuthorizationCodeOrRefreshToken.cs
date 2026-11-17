@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateAToken200Response : IAdditionalDataHolder, IParsable
+    public partial class AuthorizationCodeOrRefreshToken : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -60,12 +60,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner? _explicitNullValueOwner = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner _explicitNullValueOwner = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>The refresh_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,21 +107,21 @@ namespace Soenneker.Notion.OpenApiClient.Models
         private string _explicitNullValueWorkspaceName = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200Response"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshToken"/> and sets the default values.
         /// </summary>
-        public CreateAToken200Response()
+        public AuthorizationCodeOrRefreshToken()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshToken"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshToken CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200Response(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshToken(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,7 +134,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "access_token", n => { AccessToken = n.GetStringValue(); } },
                 { "bot_id", n => { BotId = n.GetGuidValue(); } },
                 { "duplicated_template_id", n => { DuplicatedTemplateId = n.GetGuidValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner>(global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwner>(global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwner.CreateFromDiscriminatorValue); } },
                 { "refresh_token", n => { RefreshToken = n.GetStringValue(); } },
                 { "request_id", n => { RequestId = n.GetGuidValue(); } },
                 { "token_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BearerTokenType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTokenType = default; _explicitNullProperties?.Remove("token_type"); AdditionalData["token_type"] = unknown; } else { TokenType = parsed; AdditionalData.Remove("token_type"); } } },
@@ -153,7 +153,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("access_token", AccessToken);
             writer.WriteGuidValue("bot_id", BotId);
             writer.WriteGuidValue("duplicated_template_id", DuplicatedTemplateId);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateAToken200ResponseOwner>("owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.AuthorizationCodeOrRefreshTokenOwner>("owner", Owner);
             writer.WriteStringValue("refresh_token", RefreshToken);
             writer.WriteGuidValue("request_id", RequestId);
             writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BearerTokenType>("token_type", TokenType);

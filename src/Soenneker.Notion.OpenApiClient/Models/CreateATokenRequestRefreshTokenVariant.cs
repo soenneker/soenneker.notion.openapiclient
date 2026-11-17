@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateATokenRequestAnyOf2Variant : global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest, IParsable
+    public partial class CreateATokenRequestRefreshTokenVariant : global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest, IParsable
     #pragma warning restore CS1591
     {
         // Track explicitly assigned nulls separately from absent properties.
@@ -35,12 +35,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2Variant"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestRefreshTokenVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2Variant CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestRefreshTokenVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf2Variant(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestRefreshTokenVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

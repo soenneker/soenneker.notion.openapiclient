@@ -5,12 +5,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum CreateAToken200ResponseOwnerUserType
+    public enum AuthorizationCodeOrRefreshTokenOwnerUserUserPersonType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "user")]
+        [EnumMember(Value = "person")]
         #pragma warning disable CS1591
-        User,
+        Person,
         #pragma warning restore CS1591
     }
 }

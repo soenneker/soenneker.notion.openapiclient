@@ -43198,6 +43198,7 @@
 							"schema": {
 								"anyOf": [
 									{
+										"title": "Authorization code",
 										"type": "object",
 										"properties": {
 											"grant_type": {
@@ -43226,6 +43227,7 @@
 										"required": ["grant_type", "code"]
 									},
 									{
+										"title": "Refresh token",
 										"type": "object",
 										"properties": {
 											"grant_type": {
@@ -43249,6 +43251,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
+									"title": "Authorization code or refresh token",
 									"type": "object",
 									"properties": {
 										"access_token": {

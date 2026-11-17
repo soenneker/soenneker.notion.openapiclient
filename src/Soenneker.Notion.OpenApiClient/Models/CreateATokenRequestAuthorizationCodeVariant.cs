@@ -9,7 +9,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateATokenRequestAnyOf1Variant : global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest, IParsable
+    public partial class CreateATokenRequestAuthorizationCodeVariant : global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequest, IParsable
     #pragma warning restore CS1591
     {
         // Track explicitly assigned nulls separately from absent properties.
@@ -39,12 +39,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>The external_account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount? ExternalAccount { get => _explicitNullValueExternalAccount; set { _explicitNullValueExternalAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_account"); else _explicitNullProperties?.Remove("external_account"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount? _explicitNullValueExternalAccount = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeExternalAccount? ExternalAccount { get => _explicitNullValueExternalAccount; set { _explicitNullValueExternalAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_account"); else _explicitNullProperties?.Remove("external_account"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeExternalAccount? _explicitNullValueExternalAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount ExternalAccount { get => _explicitNullValueExternalAccount; set { _explicitNullValueExternalAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_account"); else _explicitNullProperties?.Remove("external_account"); } }
-        private global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount _explicitNullValueExternalAccount = default!;
+        public global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeExternalAccount ExternalAccount { get => _explicitNullValueExternalAccount; set { _explicitNullValueExternalAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_account"); else _explicitNullProperties?.Remove("external_account"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeExternalAccount _explicitNullValueExternalAccount = default!;
 #endif
         /// <summary>The redirect_uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,12 +59,12 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1Variant"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1Variant CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1Variant(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "external_account", n => { ExternalAccount = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount>(global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount.CreateFromDiscriminatorValue); } },
+                { "external_account", n => { ExternalAccount = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeExternalAccount>(global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeExternalAccount.CreateFromDiscriminatorValue); } },
                 { "redirect_uri", n => { RedirectUri = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAnyOf1ExternalAccount>("external_account", ExternalAccount);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateATokenRequestAuthorizationCodeExternalAccount>("external_account", ExternalAccount);
             writer.WriteStringValue("redirect_uri", RedirectUri);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
