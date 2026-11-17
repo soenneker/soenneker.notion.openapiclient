@@ -17,6 +17,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("archive_status") is null) { _explicitNullValueArchiveStatus = default!; _explicitNullProperties?.Remove("archive_status"); }
+            else if (parseNode.GetChildNode("archive_status") is { } nullNodeArchiveStatus && nullNodeArchiveStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchiveStatus = null;
             if (parseNode.GetChildNode("filter") is null) { _explicitNullValueFilter = default!; _explicitNullProperties?.Remove("filter"); }
             else if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
             if (parseNode.GetChildNode("is_archived") is null) { _explicitNullValueIsArchived = default!; _explicitNullProperties?.Remove("is_archived"); }
@@ -31,6 +33,9 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if (parseNode.GetChildNode("start_cursor") is { } nullNodeStartCursor && nullNodeStartCursor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCursor = null;
         }
 
+        /// <summary>Select active pages, archived pages, or both. Defaults to active. Takes precedence over is_archived. Trashed pages remain excluded, and permissions still apply.</summary>
+        public global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestArchiveStatus? ArchiveStatus { get => _explicitNullValueArchiveStatus; set { _explicitNullValueArchiveStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archive_status"); else _explicitNullProperties?.Remove("archive_status"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestArchiveStatus? _explicitNullValueArchiveStatus = default!;
         /// <summary>A property filter, timestamp filter, or compound and/or filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +46,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest _explicitNullValueFilter = default!;
 #endif
-        /// <summary>Whether to return archived pages. When omitted or false, returns non-archived pages. When true, returns archived pages.</summary>
+        /// <summary>Legacy archive selector. False selects active pages. True selects archived pages. Ignored when archive_status is provided.</summary>
+        [Obsolete("")]
         public bool? IsArchived { get => _explicitNullValueIsArchived; set { _explicitNullValueIsArchived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_archived"); else _explicitNullProperties?.Remove("is_archived"); } }
         private bool? _explicitNullValueIsArchived = default!;
         /// <summary>The page_size property</summary>
@@ -88,6 +94,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "archive_status", n => { ArchiveStatus = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestArchiveStatus>(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>(global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest.CreateFromDiscriminatorValue); } },
                 { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "page_size", n => { PageSize = n.GetIntValue(); } },
@@ -103,6 +110,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Notion.OpenApiClient.Models.PostDatabaseQueryRequestArchiveStatus>("archive_status", ArchiveStatus);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ViewFilterRequest>("filter", Filter);
             writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteIntValue("page_size", PageSize);

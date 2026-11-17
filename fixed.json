@@ -4782,6 +4782,204 @@
         "x-notion-docs-ref": "https://developers.notion.com/reference/query-meeting-notes"
       }
     },
+    "/v1/meeting_notes": {
+      "post": {
+        "tags": [
+          "Meeting notes"
+        ],
+        "summary": "Create a full-page meeting note",
+        "operationId": "CreateMeetingNotePage",
+        "parameters": [
+          {
+            "description": "The [API version](/reference/versioning) to use for this request. The latest version is \u00602026-03-11\u0060.",
+            "$ref": "#/components/parameters/notionVersion"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMeetingNotePageRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateMeetingNotePage200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_400"
+          },
+          "401": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_401"
+          },
+          "403": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi403Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_404"
+          },
+          "406": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_406"
+          },
+          "409": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_409"
+          },
+          "429": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_429"
+          },
+          "500": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_500"
+          },
+          "503": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_503"
+          },
+          "504": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_504"
+          },
+          "529": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_529"
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst response = await notion.request({\n  method: \u0022post\u0022,\n  path: \u0022meeting_notes\u0022,\n  body: {\n    parent: {\n      type: \u0022data_source_id\u0022,\n      data_source_id: \u0022c02fc1d3-db8b-45c5-a222-27595b15aea7\u0022\n    },\n    title: \u0022Weekly sync\u0022,\n    markdown: \u0022## Agenda\\n- Roadmap review\u0022\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/create-meeting-note-page"
+      }
+    },
+    "/v1/meeting_notes/{meetingNoteId}": {
+      "patch": {
+        "tags": [
+          "Meeting notes"
+        ],
+        "summary": "Link a full-page meeting note to a calendar event",
+        "operationId": "UpdateMeetingNotePage",
+        "parameters": [
+          {
+            "name": "meetingNoteId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "The [API version](/reference/versioning) to use for this request. The latest version is \u00602026-03-11\u0060.",
+            "$ref": "#/components/parameters/notionVersion"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateMeetingNotePageRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateMeetingNotePage200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_400"
+          },
+          "401": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_401"
+          },
+          "403": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorApi403Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_404"
+          },
+          "406": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_406"
+          },
+          "409": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_409"
+          },
+          "429": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_429"
+          },
+          "500": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_500"
+          },
+          "503": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_503"
+          },
+          "504": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_504"
+          },
+          "529": {
+            "description": "",
+            "$ref": "#/components/responses/error_api_529"
+          }
+        },
+        "x-codeSamples": [
+          {
+            "lang": "javascript",
+            "label": "TypeScript SDK",
+            "source": "import { Client } from \u0022@notionhq/client\u0022\n\nconst notion = new Client({ auth: process.env.NOTION_API_KEY })\n\nconst meetingNoteId = \u0022d7b3c8f4-9e6e-4c1a-b5b8-2c0f4a0c5b8e\u0022\nconst response = await notion.request({\n  method: \u0022patch\u0022,\n  path: \u0022meeting_notes/\u0022 \u002B encodeURIComponent(meetingNoteId),\n  body: {\n    calendar_event: {\n      calendar: {\n        account_id: \u0022a1b2c3d4-5678-9abc-def0-1234567890ab\u0022,\n        calendar_id: \u0022team@example.com\u0022\n      },\n      event_id: \u00225e2f8c1a9b3d4e6f\u0022\n    }\n  }\n})"
+          }
+        ],
+        "x-notion-docs-ref": "https://developers.notion.com/reference/update-meeting-note-page"
+      }
+    },
     "/v1/agents/query": {
       "post": {
         "tags": [
@@ -28125,9 +28323,13 @@
             "minimum": 1,
             "type": "integer"
           },
+          "archive_status": {
+            "$ref": "#/components/schemas/PostDatabaseQueryRequestArchiveStatus"
+          },
           "is_archived": {
             "type": "boolean",
-            "description": "Whether to return archived pages. When omitted or false, returns non-archived pages. When true, returns archived pages."
+            "description": "Legacy archive selector. False selects active pages. True selects archived pages. Ignored when archive_status is provided.",
+            "deprecated": true
           },
           "result_type": {
             "$ref": "#/components/schemas/PostDatabaseQueryRequestResultType"
@@ -28838,6 +29040,93 @@
           "has_more": {
             "type": "boolean",
             "description": "Whether additional results exist beyond the returned limit."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateMeetingNotePageRequest": {
+        "type": "object",
+        "properties": {
+          "parent": {
+            "$ref": "#/components/schemas/CreateMeetingNotePageRequestParent"
+          },
+          "title": {
+            "maxLength": 2000,
+            "type": "string",
+            "description": "Title for the meeting note. Not accepted with calendar_event."
+          },
+          "markdown": {
+            "type": "string",
+            "description": "Content for the meeting note\u0027s Notes tab, as Markdown. Not accepted with calendar_event."
+          },
+          "calendar_event": {
+            "$ref": "#/components/schemas/CreateMeetingNotePageRequestCalendarEvent"
+          },
+          "markdown_version": {
+            "$ref": "#/components/schemas/CreateMeetingNotePageRequestMarkdownVersion"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateMeetingNotePage200Response": {
+        "required": [
+          "object",
+          "meeting_note",
+          "created"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/MeetingNotePageResultObject"
+          },
+          "meeting_note": {
+            "$ref": "#/components/schemas/CreateMeetingNotePage200ResponseMeetingNote"
+          },
+          "created": {
+            "type": "boolean",
+            "description": "Whether the meeting note was created, rather than an existing meeting note for the event returned."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateMeetingNotePageRequest": {
+        "required": [
+          "calendar_event"
+        ],
+        "type": "object",
+        "properties": {
+          "calendar_event": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePageRequestCalendarEvent"
+          },
+          "allow_other_meeting_notes": {
+            "type": "boolean",
+            "description": "Link even when other meeting notes are linked to the same event. Defaults to false, which returns a 409 listing them instead."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateMeetingNotePage200Response": {
+        "required": [
+          "object",
+          "meeting_note",
+          "other_meeting_note_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseObject"
+          },
+          "meeting_note": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseMeetingNote"
+          },
+          "other_meeting_note_ids": {
+            "maxItems": 50,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "IDs of other meeting notes you can read that are linked to the same event. For a meeting note inside a page, this is the page\u0027s ID. Only the first 50 meeting notes found are checked."
           }
         },
         "additionalProperties": false
@@ -29650,7 +29939,7 @@
               "null",
               "number"
             ],
-            "description": "Premium AI credits this session consumed. Reported with at most two decimal places, rounded down."
+            "description": "Premium AI credits this session consumed. Values of 0.01 or more have at most two decimal places, and values below 0.01 have at most two significant figures. Both round down."
           },
           "runs_completed": {
             "minimum": 0,
@@ -31366,6 +31655,43 @@
           {
             "$ref": "#/components/schemas/QueryMeetingNotesRequestFilterFiltersItemOneOf2"
           }
+        ]
+      },
+      "CreateMeetingNotePageRequestParent": {
+        "description": "Page or data source to create the meeting note in. Defaults to the user\u0027s meeting notes database, which is created if they don\u0027t have one. Not accepted with calendar_event.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "page_id": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf1Variant",
+            "data_source_id": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf2Variant"
+          }
+        },
+        "x-client-original-tagged-union": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf1"
+            },
+            {
+              "$ref": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf2"
+            }
+          ],
+          "description": "Page or data source to create the meeting note in. Defaults to the user\u0027s meeting notes database, which is created if they don\u0027t have one. Not accepted with calendar_event.",
+          "discriminator": {
+            "propertyName": "type",
+            "mapping": {
+              "page_id": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf1",
+              "data_source_id": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf2"
+            }
+          }
+        },
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
         ]
       },
       "QueryAgentsRequestFilter": {
@@ -37477,6 +37803,152 @@
         },
         "additionalProperties": false
       },
+      "CreateMeetingNotePageRequestCalendarEvent": {
+        "required": [
+          "calendar",
+          "event_id"
+        ],
+        "type": "object",
+        "properties": {
+          "calendar": {
+            "$ref": "#/components/schemas/CreateMeetingNotePageRequestCalendarEventCalendar"
+          },
+          "event_id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "ID of the event, as returned in eventId by Notion MCP\u0027s notion-calendar-list-events."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Calendar event to get or create the meeting note for. The meeting note is filed and titled like the event\u0027s other meeting notes. Add content to it afterwards."
+      },
+      "CreateMeetingNotePage200ResponseMeetingNote": {
+        "required": [
+          "object",
+          "id",
+          "type",
+          "meeting_notes",
+          "created_time",
+          "last_edited_time",
+          "created_by",
+          "last_edited_by",
+          "has_children",
+          "in_trash"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/CreateMeetingNotePage200ResponseMeetingNoteObject"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/CreateMeetingNotePage200ResponseMeetingNoteType"
+          },
+          "meeting_notes": {
+            "$ref": "#/components/schemas/CreateMeetingNotePage200ResponseMeetingNoteMeetingNotes"
+          },
+          "created_time": {
+            "type": "string",
+            "description": "ISO-8601 timestamp when this meeting note was created."
+          },
+          "last_edited_time": {
+            "type": "string",
+            "description": "ISO-8601 timestamp when this meeting note was last edited."
+          },
+          "created_by": {
+            "$ref": "#/components/schemas/PartialUserObjectResponse"
+          },
+          "last_edited_by": {
+            "$ref": "#/components/schemas/PartialUserObjectResponse"
+          },
+          "has_children": {
+            "type": "boolean",
+            "description": "Whether this block has child blocks."
+          },
+          "in_trash": {
+            "type": "boolean",
+            "description": "Whether this meeting note is in the trash."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The full-page meeting note, as a meeting_notes block."
+      },
+      "UpdateMeetingNotePageRequestCalendarEvent": {
+        "required": [
+          "calendar",
+          "event_id"
+        ],
+        "type": "object",
+        "properties": {
+          "calendar": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePageRequestCalendarEventCalendar"
+          },
+          "event_id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "ID of the event, as returned in eventId by Notion MCP\u0027s notion-calendar-list-events."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Calendar event to link the meeting note to. Replaces any event it is already linked to."
+      },
+      "UpdateMeetingNotePage200ResponseMeetingNote": {
+        "required": [
+          "object",
+          "id",
+          "type",
+          "meeting_notes",
+          "created_time",
+          "last_edited_time",
+          "created_by",
+          "last_edited_by",
+          "has_children",
+          "in_trash"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseMeetingNoteObject"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseMeetingNoteType"
+          },
+          "meeting_notes": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotes"
+          },
+          "created_time": {
+            "type": "string",
+            "description": "ISO-8601 timestamp when this meeting note was created."
+          },
+          "last_edited_time": {
+            "type": "string",
+            "description": "ISO-8601 timestamp when this meeting note was last edited."
+          },
+          "created_by": {
+            "$ref": "#/components/schemas/PartialUserObjectResponse"
+          },
+          "last_edited_by": {
+            "$ref": "#/components/schemas/PartialUserObjectResponse"
+          },
+          "has_children": {
+            "type": "boolean",
+            "description": "Whether this block has child blocks."
+          },
+          "in_trash": {
+            "type": "boolean",
+            "description": "Whether this meeting note is in the trash."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The full-page meeting note, as a meeting_notes block."
+      },
       "QueryAgentsRequestSortsItem": {
         "required": [
           "property",
@@ -38004,7 +38476,7 @@
               "null",
               "number"
             ],
-            "description": "Premium AI credits this session consumed. Reported with at most two decimal places, rounded down."
+            "description": "Premium AI credits this session consumed. Values of 0.01 or more have at most two decimal places, and values below 0.01 have at most two significant figures. Both round down."
           },
           "runs_completed": {
             "minimum": 0,
@@ -41699,6 +42171,116 @@
         "additionalProperties": false,
         "description": "Meeting note content fields."
       },
+      "CreateMeetingNotePageRequestCalendarEventCalendar": {
+        "required": [
+          "account_id",
+          "calendar_id"
+        ],
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "ID of the calendar account."
+          },
+          "calendar_id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "ID of the calendar."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The calendar the event belongs to."
+      },
+      "CreateMeetingNotePage200ResponseMeetingNoteMeetingNotes": {
+        "required": [
+          "is_full_page"
+        ],
+        "type": "object",
+        "properties": {
+          "is_full_page": {
+            "type": "boolean",
+            "description": "Whether this is a full-page meeting note."
+          },
+          "title": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemResponse"
+            },
+            "description": "Title of the meeting note as rich text."
+          },
+          "status": {
+            "$ref": "#/components/schemas/CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesStatus"
+          },
+          "children": {
+            "$ref": "#/components/schemas/CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesChildren"
+          },
+          "calendar_event": {
+            "$ref": "#/components/schemas/CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesCalendarEvent"
+          },
+          "recording": {
+            "$ref": "#/components/schemas/CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesRecording"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Meeting note content fields."
+      },
+      "UpdateMeetingNotePageRequestCalendarEventCalendar": {
+        "required": [
+          "account_id",
+          "calendar_id"
+        ],
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "ID of the calendar account."
+          },
+          "calendar_id": {
+            "minLength": 1,
+            "type": "string",
+            "description": "ID of the calendar."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The calendar the event belongs to."
+      },
+      "UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotes": {
+        "required": [
+          "is_full_page"
+        ],
+        "type": "object",
+        "properties": {
+          "is_full_page": {
+            "type": "boolean",
+            "description": "Whether this is a full-page meeting note."
+          },
+          "title": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RichTextItemResponse"
+            },
+            "description": "Title of the meeting note as rich text."
+          },
+          "status": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesStatus"
+          },
+          "children": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesChildren"
+          },
+          "calendar_event": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesCalendarEvent"
+          },
+          "recording": {
+            "$ref": "#/components/schemas/UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesRecording"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Meeting note content fields."
+      },
       "GetAgent200ResponseTriggersItemSchedule": {
         "required": [
           "frequency",
@@ -42368,6 +42950,138 @@
         "description": "Calendar event metadata associated with this meeting note."
       },
       "QueryMeetingNotes200ResponseResultsItemMeetingNotesRecording": {
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "type": "string",
+            "description": "ISO-8601 timestamp when the recording started."
+          },
+          "end_time": {
+            "type": "string",
+            "description": "ISO-8601 timestamp when the recording ended."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Start and end times of the actual recording."
+      },
+      "CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesChildren": {
+        "type": "object",
+        "properties": {
+          "summary_block_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "notes_block_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "transcript_block_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Block IDs for each tab (summary, notes, transcript)."
+      },
+      "CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesCalendarEvent": {
+        "required": [
+          "start_time",
+          "end_time"
+        ],
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "type": "string",
+            "description": "ISO-8601 start time of the calendar event."
+          },
+          "end_time": {
+            "type": "string",
+            "description": "ISO-8601 end time of the calendar event."
+          },
+          "event_id": {
+            "type": "string",
+            "description": "ID of the calendar event, as returned by the calendar tools."
+          },
+          "attendees": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "List of attendee user IDs."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Calendar event metadata associated with this meeting note."
+      },
+      "CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesRecording": {
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "type": "string",
+            "description": "ISO-8601 timestamp when the recording started."
+          },
+          "end_time": {
+            "type": "string",
+            "description": "ISO-8601 timestamp when the recording ended."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Start and end times of the actual recording."
+      },
+      "UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesChildren": {
+        "type": "object",
+        "properties": {
+          "summary_block_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "notes_block_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "transcript_block_id": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Block IDs for each tab (summary, notes, transcript)."
+      },
+      "UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesCalendarEvent": {
+        "required": [
+          "start_time",
+          "end_time"
+        ],
+        "type": "object",
+        "properties": {
+          "start_time": {
+            "type": "string",
+            "description": "ISO-8601 start time of the calendar event."
+          },
+          "end_time": {
+            "type": "string",
+            "description": "ISO-8601 end time of the calendar event."
+          },
+          "event_id": {
+            "type": "string",
+            "description": "ID of the calendar event, as returned by the calendar tools."
+          },
+          "attendees": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "List of attendee user IDs."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Calendar event metadata associated with this meeting note."
+      },
+      "UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesRecording": {
         "type": "object",
         "properties": {
           "start_time": {
@@ -60049,6 +60763,33 @@
           ]
         }
       },
+      "PostDatabaseQueryRequestArchiveStatus": {
+        "enum": [
+          "active",
+          "archived",
+          "all"
+        ],
+        "type": "string",
+        "description": "Select active pages, archived pages, or both. Defaults to active. Takes precedence over is_archived. Trashed pages remain excluded, and permissions still apply.",
+        "x-ms-enum": {
+          "name": "PostDatabaseQueryRequestArchiveStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "active",
+              "name": "Active"
+            },
+            {
+              "value": "archived",
+              "name": "Archived"
+            },
+            {
+              "value": "all",
+              "name": "All"
+            }
+          ]
+        }
+      },
       "PostDatabaseQueryRequestResultType": {
         "enum": [
           "page",
@@ -60436,6 +61177,64 @@
             {
               "value": "pl",
               "name": "Pl"
+            }
+          ]
+        }
+      },
+      "CreateMeetingNotePageRequestMarkdownVersion": {
+        "enum": [
+          "v1",
+          "v2"
+        ],
+        "type": "string",
+        "description": "The Markdown syntax to use. \u0060v2\u0060 is [Notion-flavored Markdown](/guides/data-apis/notion-flavored-markdown) and is recommended. \u0060v1\u0060 is enhanced markdown. It\u0027s deprecated. It\u0027s the default on current Notion-Versions. The next Notion-Version rejects \u0060v1\u0060 with a \u0060400\u0060 \u0060validation_error\u0060.",
+        "x-ms-enum": {
+          "name": "CreateMeetingNotePageRequestMarkdownVersion",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "v1",
+              "name": "V1"
+            },
+            {
+              "value": "v2",
+              "name": "V2"
+            }
+          ]
+        }
+      },
+      "MeetingNotePageResultObject": {
+        "enum": [
+          "meeting_note_page_result"
+        ],
+        "type": "string",
+        "description": "Always \u0022meeting_note_page_result\u0022.",
+        "x-client-original-const": "meeting_note_page_result",
+        "x-ms-enum": {
+          "name": "MeetingNotePageResultObject",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "meeting_note_page_result",
+              "name": "MeetingNotePageResult"
+            }
+          ]
+        }
+      },
+      "UpdateMeetingNotePage200ResponseObject": {
+        "enum": [
+          "meeting_note_page_result"
+        ],
+        "type": "string",
+        "description": "Always \u0022meeting_note_page_result\u0022.",
+        "x-client-original-const": "meeting_note_page_result",
+        "x-ms-enum": {
+          "name": "UpdateMeetingNotePage200ResponseObject",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "meeting_note_page_result",
+              "name": "MeetingNotePageResult"
             }
           ]
         }
@@ -63142,6 +63941,42 @@
             {
               "value": "or",
               "name": "Or"
+            }
+          ]
+        }
+      },
+      "CreateMeetingNotePageRequestParentOneOf1Type": {
+        "enum": [
+          "page_id"
+        ],
+        "type": "string",
+        "description": "Always \u0060page_id\u0060",
+        "x-client-original-const": "page_id",
+        "x-ms-enum": {
+          "name": "CreateMeetingNotePageRequestParentOneOf1Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "page_id",
+              "name": "PageId"
+            }
+          ]
+        }
+      },
+      "CreateMeetingNotePageRequestParentOneOf2Type": {
+        "enum": [
+          "data_source_id"
+        ],
+        "type": "string",
+        "description": "Always \u0060data_source_id\u0060",
+        "x-client-original-const": "data_source_id",
+        "x-ms-enum": {
+          "name": "CreateMeetingNotePageRequestParentOneOf2Type",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "data_source_id",
+              "name": "DataSourceId"
             }
           ]
         }
@@ -69844,6 +70679,78 @@
           ]
         }
       },
+      "CreateMeetingNotePage200ResponseMeetingNoteObject": {
+        "enum": [
+          "block"
+        ],
+        "type": "string",
+        "description": "Always \u0022block\u0022.",
+        "x-client-original-const": "block",
+        "x-ms-enum": {
+          "name": "CreateMeetingNotePage200ResponseMeetingNoteObject",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "block",
+              "name": "Block"
+            }
+          ]
+        }
+      },
+      "CreateMeetingNotePage200ResponseMeetingNoteType": {
+        "enum": [
+          "meeting_notes"
+        ],
+        "type": "string",
+        "description": "Always \u0022meeting_notes\u0022.",
+        "x-client-original-const": "meeting_notes",
+        "x-ms-enum": {
+          "name": "CreateMeetingNotePage200ResponseMeetingNoteType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "meeting_notes",
+              "name": "MeetingNotes"
+            }
+          ]
+        }
+      },
+      "UpdateMeetingNotePage200ResponseMeetingNoteObject": {
+        "enum": [
+          "block"
+        ],
+        "type": "string",
+        "description": "Always \u0022block\u0022.",
+        "x-client-original-const": "block",
+        "x-ms-enum": {
+          "name": "UpdateMeetingNotePage200ResponseMeetingNoteObject",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "block",
+              "name": "Block"
+            }
+          ]
+        }
+      },
+      "UpdateMeetingNotePage200ResponseMeetingNoteType": {
+        "enum": [
+          "meeting_notes"
+        ],
+        "type": "string",
+        "description": "Always \u0022meeting_notes\u0022.",
+        "x-client-original-const": "meeting_notes",
+        "x-ms-enum": {
+          "name": "UpdateMeetingNotePage200ResponseMeetingNoteType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "meeting_notes",
+              "name": "MeetingNotes"
+            }
+          ]
+        }
+      },
       "QueryAgentsRequestSortsItemProperty": {
         "enum": [
           "created_time",
@@ -72237,6 +73144,90 @@
         "description": "Current processing status of the meeting note transcription.",
         "x-ms-enum": {
           "name": "QueryMeetingNotes200ResponseResultsItemMeetingNotesStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "transcription_not_started",
+              "name": "TranscriptionNotStarted"
+            },
+            {
+              "value": "transcription_paused",
+              "name": "TranscriptionPaused"
+            },
+            {
+              "value": "transcription_in_progress",
+              "name": "TranscriptionInProgress"
+            },
+            {
+              "value": "transcription_failed",
+              "name": "TranscriptionFailed"
+            },
+            {
+              "value": "summary_in_progress",
+              "name": "SummaryInProgress"
+            },
+            {
+              "value": "notes_ready",
+              "name": "NotesReady"
+            }
+          ]
+        }
+      },
+      "CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesStatus": {
+        "enum": [
+          "transcription_not_started",
+          "transcription_paused",
+          "transcription_in_progress",
+          "transcription_failed",
+          "summary_in_progress",
+          "notes_ready"
+        ],
+        "type": "string",
+        "description": "Current processing status of the meeting note transcription.",
+        "x-ms-enum": {
+          "name": "CreateMeetingNotePage200ResponseMeetingNoteMeetingNotesStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "transcription_not_started",
+              "name": "TranscriptionNotStarted"
+            },
+            {
+              "value": "transcription_paused",
+              "name": "TranscriptionPaused"
+            },
+            {
+              "value": "transcription_in_progress",
+              "name": "TranscriptionInProgress"
+            },
+            {
+              "value": "transcription_failed",
+              "name": "TranscriptionFailed"
+            },
+            {
+              "value": "summary_in_progress",
+              "name": "SummaryInProgress"
+            },
+            {
+              "value": "notes_ready",
+              "name": "NotesReady"
+            }
+          ]
+        }
+      },
+      "UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesStatus": {
+        "enum": [
+          "transcription_not_started",
+          "transcription_paused",
+          "transcription_in_progress",
+          "transcription_failed",
+          "summary_in_progress",
+          "notes_ready"
+        ],
+        "type": "string",
+        "description": "Current processing status of the meeting note transcription.",
+        "x-ms-enum": {
+          "name": "UpdateMeetingNotePage200ResponseMeetingNoteMeetingNotesStatus",
           "modelAsString": false,
           "values": [
             {
@@ -82737,6 +83728,52 @@
                 "$ref": "#/components/schemas/CreateACommentRequestDisplayNameCustomCustom"
               }
             }
+          }
+        ]
+      },
+      "CreateMeetingNotePageRequestParentOneOf1Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CreateMeetingNotePageRequestParent"
+          },
+          {
+            "required": [
+              "type",
+              "page_id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf1Type"
+              },
+              "page_id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "CreateMeetingNotePageRequestParentOneOf2Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CreateMeetingNotePageRequestParent"
+          },
+          {
+            "required": [
+              "type",
+              "data_source_id"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf2Type"
+              },
+              "data_source_id": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
           }
         ]
       },
@@ -98408,6 +99445,38 @@
           "$ref": "#/components/schemas/CreateACommentRequestDisplayNameCustomCustom"
         }
       }
+    },
+    "CreateMeetingNotePageRequestParentOneOf1": {
+      "required": [
+        "type",
+        "page_id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf1Type"
+        },
+        "page_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "CreateMeetingNotePageRequestParentOneOf2": {
+      "required": [
+        "type",
+        "data_source_id"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/CreateMeetingNotePageRequestParentOneOf2Type"
+        },
+        "data_source_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
     },
     "QueryAgents200ResponseResultsItemOneOf1": {
       "required": [

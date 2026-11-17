@@ -102,7 +102,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemCreatedBy CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
         private global::Soenneker.Notion.OpenApiClient.Models.QuerySessions200ResponseResultsItemCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
-        /// <summary>Premium AI credits this session consumed. Reported with at most two decimal places, rounded down.</summary>
+        /// <summary>Premium AI credits this session consumed. Values of 0.01 or more have at most two decimal places, and values below 0.01 have at most two significant figures. Both round down.</summary>
         public double? CreditsUsed { get => _explicitNullValueCreditsUsed; set { _explicitNullValueCreditsUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credits_used"); else _explicitNullProperties?.Remove("credits_used"); } }
         private double? _explicitNullValueCreditsUsed = default!;
         /// <summary>The error property</summary>

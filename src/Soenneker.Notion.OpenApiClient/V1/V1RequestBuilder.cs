@@ -11,6 +11,7 @@ using Soenneker.Notion.OpenApiClient.V1.Custom_emojis;
 using Soenneker.Notion.OpenApiClient.V1.Data_sources;
 using Soenneker.Notion.OpenApiClient.V1.Databases;
 using Soenneker.Notion.OpenApiClient.V1.File_uploads;
+using Soenneker.Notion.OpenApiClient.V1.Meeting_notes;
 using Soenneker.Notion.OpenApiClient.V1.Oauth;
 using Soenneker.Notion.OpenApiClient.V1.Pages;
 using Soenneker.Notion.OpenApiClient.V1.Search;
@@ -73,6 +74,11 @@ namespace Soenneker.Notion.OpenApiClient.V1
         public global::Soenneker.Notion.OpenApiClient.V1.File_uploads.File_uploadsRequestBuilder File_uploads
         {
             get => new global::Soenneker.Notion.OpenApiClient.V1.File_uploads.File_uploadsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The meeting_notes property</summary>
+        public global::Soenneker.Notion.OpenApiClient.V1.Meeting_notes.Meeting_notesRequestBuilder Meeting_notes
+        {
+            get => new global::Soenneker.Notion.OpenApiClient.V1.Meeting_notes.Meeting_notesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The oauth property</summary>
         public global::Soenneker.Notion.OpenApiClient.V1.Oauth.OauthRequestBuilder Oauth
