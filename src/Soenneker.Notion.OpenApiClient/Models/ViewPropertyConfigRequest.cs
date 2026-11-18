@@ -91,7 +91,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "card_property_width_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestCardPropertyWidthMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCardPropertyWidthMode = default; _explicitNullProperties?.Remove("card_property_width_mode"); AdditionalData["card_property_width_mode"] = unknown; } else { CardPropertyWidthMode = parsed; AdditionalData.Remove("card_property_width_mode"); } } },
                 { "date_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigRequestDateFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDateFormat = default; _explicitNullProperties?.Remove("date_format"); AdditionalData["date_format"] = unknown; } else { DateFormat = parsed; AdditionalData.Remove("date_format"); } } },

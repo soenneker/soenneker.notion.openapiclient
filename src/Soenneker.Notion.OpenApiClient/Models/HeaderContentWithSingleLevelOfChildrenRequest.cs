@@ -69,7 +69,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildren>(global::Soenneker.Notion.OpenApiClient.Models.BlockObjectRequestWithoutChildren.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "color", n => { Color = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ApiColor>(); } },

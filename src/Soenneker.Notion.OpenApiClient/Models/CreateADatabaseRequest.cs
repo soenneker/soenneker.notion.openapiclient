@@ -92,7 +92,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "icon", n => { Icon = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest>(global::Soenneker.Notion.OpenApiClient.Models.PageIconRequest.CreateFromDiscriminatorValue); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceRequest>(global::Soenneker.Notion.OpenApiClient.Models.ParentOfDataSourceRequest.CreateFromDiscriminatorValue); } },

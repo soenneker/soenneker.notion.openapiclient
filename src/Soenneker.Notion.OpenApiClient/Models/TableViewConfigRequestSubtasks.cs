@@ -81,7 +81,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "display_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestDisplayMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisplayMode = default; _explicitNullProperties?.Remove("display_mode"); AdditionalData["display_mode"] = unknown; } else { DisplayMode = parsed; AdditionalData.Remove("display_mode"); } } },
                 { "filter_scope", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.SubtaskConfigRequestFilterScope>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFilterScope = default; _explicitNullProperties?.Remove("filter_scope"); AdditionalData["filter_scope"] = unknown; } else { FilterScope = parsed; AdditionalData.Remove("filter_scope"); } } },

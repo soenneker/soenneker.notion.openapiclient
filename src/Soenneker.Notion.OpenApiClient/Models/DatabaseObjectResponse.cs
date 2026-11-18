@@ -183,7 +183,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "cover", n => { Cover = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse>(global::Soenneker.Notion.OpenApiClient.Models.PageCoverResponse.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },

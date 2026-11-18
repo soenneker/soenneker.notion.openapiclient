@@ -62,7 +62,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest>(global::Soenneker.Notion.OpenApiClient.Models.TableRowRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "has_column_header", n => { HasColumnHeader = n.GetBoolValue(); } },

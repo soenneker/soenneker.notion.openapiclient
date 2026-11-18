@@ -135,7 +135,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "end", n => { End = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEnd>(global::Soenneker.Notion.OpenApiClient.Models.QueryAgents200ResponseResultsItemOneOf2TriggersItemScheduleEnd.CreateFromDiscriminatorValue); } },
                 { "frequency", n => { Frequency = n.GetStringValue(); } },

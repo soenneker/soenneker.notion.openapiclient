@@ -255,7 +255,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(23)
             {
                 { "agent_type", n => { AgentType = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentType>(); } },
                 { "agent_version", n => { AgentVersion = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentVersion>(global::Soenneker.Notion.OpenApiClient.Models.GetAgent200ResponseAgentVersion.CreateFromDiscriminatorValue); } },

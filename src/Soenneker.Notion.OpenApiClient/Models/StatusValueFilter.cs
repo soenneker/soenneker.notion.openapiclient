@@ -93,7 +93,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "does_not_equal", n => { DoesNotEqual = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray>(global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray.CreateFromDiscriminatorValue); } },
                 { "equals", n => { EqualsEscaped = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray>(global::Soenneker.Notion.OpenApiClient.Models.StringOrStringArray.CreateFromDiscriminatorValue); } },

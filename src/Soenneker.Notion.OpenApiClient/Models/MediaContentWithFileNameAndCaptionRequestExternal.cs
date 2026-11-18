@@ -76,7 +76,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "caption", n => { Caption = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest>(global::Soenneker.Notion.OpenApiClient.Models.RichTextItemRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "external", n => { External = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.ExternalFileRequest>(global::Soenneker.Notion.OpenApiClient.Models.ExternalFileRequest.CreateFromDiscriminatorValue); } },

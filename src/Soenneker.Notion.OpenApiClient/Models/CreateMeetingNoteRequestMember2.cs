@@ -97,7 +97,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "language", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestLanguage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLanguage = default; _explicitNullProperties?.Remove("language"); AdditionalData["language"] = unknown; } else { Language = parsed; AdditionalData.Remove("language"); } } },
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestOptions>(global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNoteRequestOptions.CreateFromDiscriminatorValue); } },

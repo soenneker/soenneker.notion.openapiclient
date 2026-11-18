@@ -94,7 +94,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "calendar_event", n => { CalendarEvent = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent>(global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesCalendarEvent.CreateFromDiscriminatorValue); } },
                 { "children", n => { Children = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren>(global::Soenneker.Notion.OpenApiClient.Models.CreateMeetingNote200ResponseOneOf2MeetingNotesChildren.CreateFromDiscriminatorValue); } },

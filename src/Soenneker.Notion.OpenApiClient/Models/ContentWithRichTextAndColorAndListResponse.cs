@@ -71,7 +71,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "color", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ApiColor>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueColor = default; _explicitNullProperties?.Remove("color"); AdditionalData["color"] = unknown; } else { Color = parsed; AdditionalData.Remove("color"); } } },
                 { "list_format", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.NumberedListFormat>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueListFormat = default; _explicitNullProperties?.Remove("list_format"); AdditionalData["list_format"] = unknown; } else { ListFormat = parsed; AdditionalData.Remove("list_format"); } } },

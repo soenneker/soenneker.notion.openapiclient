@@ -94,7 +94,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "card_property_width_mode", n => { CardPropertyWidthMode = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponseCardPropertyWidthMode>(); } },
                 { "date_format", n => { DateFormat = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponseDateFormat>(); } },

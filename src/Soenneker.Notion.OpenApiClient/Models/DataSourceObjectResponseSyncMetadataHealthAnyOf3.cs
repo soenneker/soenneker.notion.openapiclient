@@ -69,7 +69,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "checks", n => { Checks = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealthAnyOf3Checks>(global::Soenneker.Notion.OpenApiClient.Models.DataSourceObjectResponseSyncMetadataHealthAnyOf3Checks.CreateFromDiscriminatorValue); } },
                 { "ok", n => { Ok = n.GetBoolValue(); } },

@@ -158,7 +158,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "accessible_by", n => { AccessibleBy = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAccessibleByItem>(global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadAccessibleByItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "api_version", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.BaseWebhookPayloadApiVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApiVersion = default; _explicitNullProperties?.Remove("api_version"); AdditionalData["api_version"] = unknown; } else { ApiVersion = parsed; AdditionalData.Remove("api_version"); } } },

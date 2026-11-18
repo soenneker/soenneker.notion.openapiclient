@@ -83,7 +83,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "color", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineRequestColor>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueColor = default; _explicitNullProperties?.Remove("color"); AdditionalData["color"] = unknown; } else { Color = parsed; AdditionalData.Remove("color"); } } },
                 { "dash_style", n => { var parsed = n.GetEnumValue<global::Soenneker.Notion.OpenApiClient.Models.ChartReferenceLineRequestDashStyle>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDashStyle = default; _explicitNullProperties?.Remove("dash_style"); AdditionalData["dash_style"] = unknown; } else { DashStyle = parsed; AdditionalData.Remove("dash_style"); } } },
