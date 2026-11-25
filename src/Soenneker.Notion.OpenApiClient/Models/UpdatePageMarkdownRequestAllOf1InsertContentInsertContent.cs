@@ -28,7 +28,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Selection of existing content to insert after, using the ellipsis format (&quot;start text...end text&quot;). Omit to append at the end of the page.</summary>
+        /// <summary>Deprecated: use `position` with `{&quot;type&quot;:&quot;after_content&quot;,&quot;anchor&quot;:&quot;...&quot;}` instead. Selection of existing content to insert after, using the ellipsis format (&quot;start text...end text&quot;). Cannot be combined with `position`.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? After { get => _explicitNullValueAfter; set { _explicitNullValueAfter = value; AdditionalData?.Remove("after"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("after"); else _explicitNullProperties?.Remove("after"); } }
@@ -48,7 +49,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
         private string _explicitNullValueContent = default!;
 #endif
-        /// <summary>Explicit position for inserted content. Use {&quot;type&quot;:&quot;start&quot;} to prepend or {&quot;type&quot;:&quot;end&quot;} to append. Cannot be combined with after.</summary>
+        /// <summary>Where to insert the content. Use `{&quot;type&quot;:&quot;start&quot;}` to prepend or `{&quot;type&quot;:&quot;end&quot;}` to append. Use `{&quot;type&quot;:&quot;after_content&quot;,&quot;anchor&quot;:&quot;...&quot;}` or `{&quot;type&quot;:&quot;before_content&quot;,&quot;anchor&quot;:&quot;...&quot;}` to insert next to the block that the anchor matches; anchored positions require `markdown_version: &quot;v2&quot;`. Omit to append at the end of the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPosition? Position { get => _explicitNullValuePosition; set { _explicitNullValuePosition = value; AdditionalData?.Remove("position"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position"); else _explicitNullProperties?.Remove("position"); } }

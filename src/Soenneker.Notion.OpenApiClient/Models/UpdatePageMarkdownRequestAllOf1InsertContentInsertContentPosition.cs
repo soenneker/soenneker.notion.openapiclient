@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Notion.OpenApiClient.Models
 {
     /// <summary>
-    /// Explicit position for inserted content. Use {&quot;type&quot;:&quot;start&quot;} to prepend or {&quot;type&quot;:&quot;end&quot;} to append. Cannot be combined with after.
+    /// Where to insert the content. Use `{&quot;type&quot;:&quot;start&quot;}` to prepend or `{&quot;type&quot;:&quot;end&quot;}` to append. Use `{&quot;type&quot;:&quot;after_content&quot;,&quot;anchor&quot;:&quot;...&quot;}` or `{&quot;type&quot;:&quot;before_content&quot;,&quot;anchor&quot;:&quot;...&quot;}` to insert next to the block that the anchor matches; anchored positions require `markdown_version: &quot;v2&quot;`. Omit to append at the end of the page.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPosition : IAdditionalDataHolder, IParsable
@@ -52,6 +52,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
+                "after_content" => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf3Variant(),
+                "before_content" => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf4Variant(),
                 "end" => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf2Variant(),
                 "start" => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf1Variant(),
                 _ => new global::Soenneker.Notion.OpenApiClient.Models.UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPosition(),

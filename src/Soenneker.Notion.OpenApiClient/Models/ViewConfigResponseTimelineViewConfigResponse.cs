@@ -30,6 +30,8 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if (parseNode.GetChildNode("end_date_property_id") is { } nullNodeEndDatePropertyId && nullNodeEndDatePropertyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDatePropertyId = null;
             if (parseNode.GetChildNode("end_date_property_name") is null) { _explicitNullValueEndDatePropertyName = default!; _explicitNullProperties?.Remove("end_date_property_name"); }
             else if (parseNode.GetChildNode("end_date_property_name") is { } nullNodeEndDatePropertyName && nullNodeEndDatePropertyName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDatePropertyName = null;
+            if (parseNode.GetChildNode("group_by") is null) { _explicitNullValueGroupBy = default!; _explicitNullProperties?.Remove("group_by"); }
+            else if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
             if (parseNode.GetChildNode("preference") is null) { _explicitNullValuePreference = default!; _explicitNullProperties?.Remove("preference"); }
             else if (parseNode.GetChildNode("preference") is { } nullNodePreference && nullNodePreference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preference = null;
             if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
@@ -93,6 +95,16 @@ namespace Soenneker.Notion.OpenApiClient.Models
         public string EndDatePropertyName { get => _explicitNullValueEndDatePropertyName; set { _explicitNullValueEndDatePropertyName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date_property_name"); else _explicitNullProperties?.Remove("end_date_property_name"); } }
         private string _explicitNullValueEndDatePropertyName = default!;
 #endif
+        /// <summary>Group-by configuration based on property type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse? _explicitNullValueGroupBy = default!;
+#nullable restore
+#else
+        public global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse GroupBy { get => _explicitNullValueGroupBy; set { _explicitNullValueGroupBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_by"); else _explicitNullProperties?.Remove("group_by"); } }
+        private global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse _explicitNullValueGroupBy = default!;
+#endif
         /// <summary>The preference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +162,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
                 { "date_property_name", n => { DatePropertyName = n.GetStringValue(); } },
                 { "end_date_property_id", n => { EndDatePropertyId = n.GetStringValue(); } },
                 { "end_date_property_name", n => { EndDatePropertyName = n.GetStringValue(); } },
+                { "group_by", n => { GroupBy = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse.CreateFromDiscriminatorValue); } },
                 { "preference", n => { Preference = n.GetObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse>(global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>(global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "show_table", n => { ShowTable = n.GetBoolValue(); } },
@@ -170,6 +183,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             writer.WriteStringValue("date_property_name", DatePropertyName);
             writer.WriteStringValue("end_date_property_id", EndDatePropertyId);
             writer.WriteStringValue("end_date_property_name", EndDatePropertyName);
+            writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.GroupByConfigResponse>("group_by", GroupBy);
             writer.WriteObjectValue<global::Soenneker.Notion.OpenApiClient.Models.TimelinePreferenceResponse>("preference", Preference);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Notion.OpenApiClient.Models.ViewPropertyConfigResponse>("properties", Properties);
             writer.WriteBoolValue("show_table", ShowTable);

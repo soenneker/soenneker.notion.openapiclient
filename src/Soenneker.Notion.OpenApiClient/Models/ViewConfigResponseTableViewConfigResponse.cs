@@ -32,7 +32,7 @@ namespace Soenneker.Notion.OpenApiClient.Models
             else if (parseNode.GetChildNode("wrap_cells") is { } nullNodeWrapCells && nullNodeWrapCells.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WrapCells = null;
         }
 
-        /// <summary>Index of the last frozen column. Columns up to and including this index are frozen.</summary>
+        /// <summary>Index of the last frozen column. Columns up to and including this index are frozen. -1 means no columns are frozen.</summary>
         public int? FrozenColumnIndex { get => _explicitNullValueFrozenColumnIndex; set { _explicitNullValueFrozenColumnIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frozen_column_index"); else _explicitNullProperties?.Remove("frozen_column_index"); } }
         private int? _explicitNullValueFrozenColumnIndex = default!;
         /// <summary>Group-by configuration based on property type.</summary>

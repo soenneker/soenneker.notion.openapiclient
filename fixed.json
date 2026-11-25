@@ -13864,6 +13864,81 @@
           }
         }
       },
+      "PagePermissionsUpdatedWebhookPayload": {
+        "required": [
+          "id",
+          "timestamp",
+          "workspace_id",
+          "workspace_name",
+          "subscription_id",
+          "integration_id",
+          "authors",
+          "attempt_number",
+          "api_version",
+          "type",
+          "entity",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier for this webhook event."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of when the event occurred. Can be used to order events."
+          },
+          "workspace_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "workspace_name": {
+            "type": "string",
+            "description": "The name of the workspace where the event originated."
+          },
+          "subscription_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "integration_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "authors": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseWebhookPayloadAuthorsItem"
+            },
+            "description": "The users or bots that performed the action. Typically an array of length 1; can be more for aggregated events."
+          },
+          "attempt_number": {
+            "type": "integer",
+            "description": "The delivery attempt number (1-8) of the current event delivery."
+          },
+          "api_version": {
+            "$ref": "#/components/schemas/BaseWebhookPayloadApiVersion"
+          },
+          "accessible_by": {
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BaseWebhookPayloadAccessibleByItem"
+            },
+            "description": "The users or bots who own the bot connection to the \u0060integration_id\u0060 and have access to the webhook\u0027s \u0060entity\u0060. Only present for public integrations."
+          },
+          "type": {
+            "$ref": "#/components/schemas/PagePermissionsUpdatedType"
+          },
+          "entity": {
+            "$ref": "#/components/schemas/WebhookPageEntity"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PagePermissionsUpdatedWebhookPayloadAllOf2Data"
+          }
+        }
+      },
       "PagePositionSchema": {
         "discriminator": {
           "propertyName": "type",
@@ -26900,6 +26975,19 @@
         "additionalProperties": false,
         "description": "Additional event-specific data."
       },
+      "PagePermissionsUpdatedWebhookPayloadAllOf2Data": {
+        "required": [
+          "parent"
+        ],
+        "type": "object",
+        "properties": {
+          "parent": {
+            "$ref": "#/components/schemas/WebhookParentBlock"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Additional event-specific data."
+      },
       "PagePositionSchemaAnyOf1AfterBlock": {
         "required": [
           "id"
@@ -32874,12 +32962,14 @@
         }
       },
       "UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPosition": {
-        "description": "Explicit position for inserted content. Use {\u0022type\u0022:\u0022start\u0022} to prepend or {\u0022type\u0022:\u0022end\u0022} to append. Cannot be combined with after.",
+        "description": "Where to insert the content. Use \u0060{\u0022type\u0022:\u0022start\u0022}\u0060 to prepend or \u0060{\u0022type\u0022:\u0022end\u0022}\u0060 to append. Use \u0060{\u0022type\u0022:\u0022after_content\u0022,\u0022anchor\u0022:\u0022...\u0022}\u0060 or \u0060{\u0022type\u0022:\u0022before_content\u0022,\u0022anchor\u0022:\u0022...\u0022}\u0060 to insert next to the block that the anchor matches; anchored positions require \u0060markdown_version: \u0022v2\u0022\u0060. Omit to append at the end of the page.",
         "discriminator": {
           "propertyName": "type",
           "mapping": {
             "start": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf1Variant",
-            "end": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf2Variant"
+            "end": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf2Variant",
+            "after_content": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf3Variant",
+            "before_content": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf4Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -32889,14 +32979,22 @@
             },
             {
               "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf2"
+            },
+            {
+              "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf3"
+            },
+            {
+              "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf4"
             }
           ],
-          "description": "Explicit position for inserted content. Use {\u0022type\u0022:\u0022start\u0022} to prepend or {\u0022type\u0022:\u0022end\u0022} to append. Cannot be combined with after.",
+          "description": "Where to insert the content. Use \u0060{\u0022type\u0022:\u0022start\u0022}\u0060 to prepend or \u0060{\u0022type\u0022:\u0022end\u0022}\u0060 to append. Use \u0060{\u0022type\u0022:\u0022after_content\u0022,\u0022anchor\u0022:\u0022...\u0022}\u0060 or \u0060{\u0022type\u0022:\u0022before_content\u0022,\u0022anchor\u0022:\u0022...\u0022}\u0060 to insert next to the block that the anchor matches; anchored positions require \u0060markdown_version: \u0022v2\u0022\u0060. Omit to append at the end of the page.",
           "discriminator": {
             "propertyName": "type",
             "mapping": {
               "start": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf1",
-              "end": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf2"
+              "end": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf2",
+              "after_content": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf3",
+              "before_content": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf4"
             }
           }
         },
@@ -38585,7 +38683,8 @@
           },
           "after": {
             "type": "string",
-            "description": "Selection of existing content to insert after, using the ellipsis format (\u0022start text...end text\u0022). Omit to append at the end of the page."
+            "description": "Deprecated: use \u0060position\u0060 with \u0060{\u0022type\u0022:\u0022after_content\u0022,\u0022anchor\u0022:\u0022...\u0022}\u0060 instead. Selection of existing content to insert after, using the ellipsis format (\u0022start text...end text\u0022). Cannot be combined with \u0060position\u0060.",
+            "deprecated": true
           },
           "position": {
             "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPosition"
@@ -49312,6 +49411,24 @@
             {
               "value": "list",
               "name": "List"
+            }
+          ]
+        }
+      },
+      "PagePermissionsUpdatedType": {
+        "enum": [
+          "page.permissions_updated"
+        ],
+        "type": "string",
+        "description": "Always \u0060page.permissions_updated\u0060",
+        "x-client-original-const": "page.permissions_updated",
+        "x-ms-enum": {
+          "name": "PagePermissionsUpdatedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "page.permissions_updated",
+              "name": "PagePermissionsUpdated"
             }
           ]
         }
@@ -65693,6 +65810,42 @@
           ]
         }
       },
+      "AfterContentType": {
+        "enum": [
+          "after_content"
+        ],
+        "type": "string",
+        "description": "Insert the content after the block where the anchor ends, at that block\u0027s nesting level, so anchoring on a parent block inserts after its children.",
+        "x-client-original-const": "after_content",
+        "x-ms-enum": {
+          "name": "AfterContentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "after_content",
+              "name": "AfterContent"
+            }
+          ]
+        }
+      },
+      "BeforeContentType": {
+        "enum": [
+          "before_content"
+        ],
+        "type": "string",
+        "description": "Insert the content before the block where the anchor starts, at that block\u0027s nesting level.",
+        "x-client-original-const": "before_content",
+        "x-ms-enum": {
+          "name": "BeforeContentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "before_content",
+              "name": "BeforeContent"
+            }
+          ]
+        }
+      },
       "RetrieveAsyncTask200ResponseOneOf3ErrorOneOf1Object": {
         "enum": [
           "error"
@@ -80469,9 +80622,9 @@
                 "description": "Whether to wrap cell content in the table."
               },
               "frozen_column_index": {
-                "minimum": 0,
+                "minimum": -1,
                 "type": "integer",
-                "description": "Number of columns frozen from the left side of the table."
+                "description": "Index of the last frozen column. Columns up to and including this index are frozen. Use -1 to unfreeze all columns."
               },
               "show_vertical_lines": {
                 "type": "boolean",
@@ -80975,9 +81128,9 @@
                 "description": "Whether to wrap cell content by default."
               },
               "frozen_column_index": {
-                "minimum": 0,
+                "minimum": -1,
                 "type": "integer",
-                "description": "Index of the last frozen column. Columns up to and including this index are frozen."
+                "description": "Index of the last frozen column. Columns up to and including this index are frozen. -1 means no columns are frozen."
               },
               "show_vertical_lines": {
                 "type": "boolean",
@@ -81116,6 +81269,9 @@
                 },
                 "description": "Properties to display on timeline items."
               },
+              "group_by": {
+                "$ref": "#/components/schemas/GroupByConfigResponse"
+              },
               "show_table": {
                 "type": "boolean",
                 "description": "Whether to show the table panel alongside the timeline."
@@ -81165,6 +81321,9 @@
                 },
                 "description": "Properties to display on gallery cards."
               },
+              "group_by": {
+                "$ref": "#/components/schemas/GroupByConfigResponse"
+              },
               "cover": {
                 "$ref": "#/components/schemas/CoverConfigResponse"
               },
@@ -81203,6 +81362,9 @@
                   "$ref": "#/components/schemas/ViewPropertyConfigResponse"
                 },
                 "description": "Properties to display in list items."
+              },
+              "group_by": {
+                "$ref": "#/components/schemas/GroupByConfigResponse"
               }
             },
             "additionalProperties": false
@@ -85216,6 +85378,58 @@
             "properties": {
               "type": {
                 "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf2Type"
+              }
+            }
+          }
+        ]
+      },
+      "UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf3Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPosition"
+          },
+          {
+            "required": [
+              "type",
+              "anchor"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/AfterContentType"
+              },
+              "anchor": {
+                "examples": [
+                  "## Next steps"
+                ],
+                "type": "string",
+                "description": "Text copied exactly from the page, starting at the beginning of a line with its leading syntax, such as \u0060## \u0060 or \u0060- \u0060, and keeping its inline formatting and escapes. It doesn\u0027t need the whole line, only enough to match exactly one place on the page. If the target\u0027s text repeats, extend the anchor without moving its end for after_content or its start for before_content: start after_content at an earlier unique line, and continue before_content into the lines after it."
+              }
+            }
+          }
+        ]
+      },
+      "UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf4Variant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPosition"
+          },
+          {
+            "required": [
+              "type",
+              "anchor"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "$ref": "#/components/schemas/BeforeContentType"
+              },
+              "anchor": {
+                "examples": [
+                  "## Next steps"
+                ],
+                "type": "string",
+                "description": "Text copied exactly from the page, starting at the beginning of a line with its leading syntax, such as \u0060## \u0060 or \u0060- \u0060, and keeping its inline formatting and escapes. It doesn\u0027t need the whole line, only enough to match exactly one place on the page. If the target\u0027s text repeats, extend the anchor without moving its end for after_content or its start for before_content: start after_content at an earlier unique line, and continue before_content into the lines after it."
               }
             }
           }
@@ -90462,6 +90676,31 @@
         "security": []
       }
     },
+    "pagePermissionsUpdated": {
+      "post": {
+        "tags": [
+          "Page webhooks"
+        ],
+        "summary": "Page permissions updated",
+        "description": "Webhook event sent when a page\u0027s sharing or access settings change, such as sharing it to the web. The payload does not say what changed. Fetch the page to see its current state.",
+        "operationId": "WebhookPagePermissionsUpdated",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PagePermissionsUpdatedWebhookPayload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Return an HTTP 200 status code to indicate that the data was received successfully."
+          }
+        },
+        "security": []
+      }
+    },
     "pagePropertiesUpdated": {
       "post": {
         "tags": [
@@ -93045,6 +93284,9 @@
           },
           "description": "Properties to display on gallery cards."
         },
+        "group_by": {
+          "$ref": "#/components/schemas/GroupByConfigResponse"
+        },
         "cover": {
           "$ref": "#/components/schemas/CoverConfigResponse"
         },
@@ -93585,6 +93827,9 @@
             "$ref": "#/components/schemas/ViewPropertyConfigResponse"
           },
           "description": "Properties to display in list items."
+        },
+        "group_by": {
+          "$ref": "#/components/schemas/GroupByConfigResponse"
         }
       },
       "additionalProperties": false
@@ -95355,9 +95600,9 @@
           "description": "Whether to wrap cell content in the table."
         },
         "frozen_column_index": {
-          "minimum": 0,
+          "minimum": -1,
           "type": "integer",
-          "description": "Number of columns frozen from the left side of the table."
+          "description": "Index of the last frozen column. Columns up to and including this index are frozen. Use -1 to unfreeze all columns."
         },
         "show_vertical_lines": {
           "type": "boolean",
@@ -95393,9 +95638,9 @@
           "description": "Whether to wrap cell content by default."
         },
         "frozen_column_index": {
-          "minimum": 0,
+          "minimum": -1,
           "type": "integer",
-          "description": "Index of the last frozen column. Columns up to and including this index are frozen."
+          "description": "Index of the last frozen column. Columns up to and including this index are frozen. -1 means no columns are frozen."
         },
         "show_vertical_lines": {
           "type": "boolean",
@@ -95728,6 +95973,9 @@
             "$ref": "#/components/schemas/ViewPropertyConfigResponse"
           },
           "description": "Properties to display on timeline items."
+        },
+        "group_by": {
+          "$ref": "#/components/schemas/GroupByConfigResponse"
         },
         "show_table": {
           "type": "boolean",
@@ -96928,6 +97176,25 @@
         },
         "data": {
           "$ref": "#/components/schemas/PageMovedWebhookPayloadAllOf2Data"
+        }
+      }
+    },
+    "PagePermissionsUpdatedWebhookPayloadAllOf2": {
+      "required": [
+        "type",
+        "entity",
+        "data"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/PagePermissionsUpdatedType"
+        },
+        "entity": {
+          "$ref": "#/components/schemas/WebhookPageEntity"
+        },
+        "data": {
+          "$ref": "#/components/schemas/PagePermissionsUpdatedWebhookPayloadAllOf2Data"
         }
       }
     },
@@ -98820,8 +99087,7 @@
         "insert_content": {
           "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContent"
         }
-      },
-      "deprecated": true
+      }
     },
     "UpdatePageMarkdownRequestAllOf1ReplaceContentRange": {
       "title": "Replace Content Range",
@@ -100639,6 +100905,44 @@
       "properties": {
         "type": {
           "$ref": "#/components/schemas/UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf2Type"
+        }
+      }
+    },
+    "UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf3": {
+      "required": [
+        "type",
+        "anchor"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/AfterContentType"
+        },
+        "anchor": {
+          "examples": [
+            "## Next steps"
+          ],
+          "type": "string",
+          "description": "Text copied exactly from the page, starting at the beginning of a line with its leading syntax, such as \u0060## \u0060 or \u0060- \u0060, and keeping its inline formatting and escapes. It doesn\u0027t need the whole line, only enough to match exactly one place on the page. If the target\u0027s text repeats, extend the anchor without moving its end for after_content or its start for before_content: start after_content at an earlier unique line, and continue before_content into the lines after it."
+        }
+      }
+    },
+    "UpdatePageMarkdownRequestAllOf1InsertContentInsertContentPositionOneOf4": {
+      "required": [
+        "type",
+        "anchor"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "$ref": "#/components/schemas/BeforeContentType"
+        },
+        "anchor": {
+          "examples": [
+            "## Next steps"
+          ],
+          "type": "string",
+          "description": "Text copied exactly from the page, starting at the beginning of a line with its leading syntax, such as \u0060## \u0060 or \u0060- \u0060, and keeping its inline formatting and escapes. It doesn\u0027t need the whole line, only enough to match exactly one place on the page. If the target\u0027s text repeats, extend the anchor without moving its end for after_content or its start for before_content: start after_content at an earlier unique line, and continue before_content into the lines after it."
         }
       }
     },
